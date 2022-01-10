@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
-    /// </p>
+    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
-    /// </p>
+    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
     }
@@ -30,14 +28,12 @@ pub mod update_webhook_output {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
     impl Builder {
-        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
-        /// </p>
+        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
             self
         }
-        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
-        /// </p>
+        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -61,15 +57,11 @@ impl UpdateWebhookOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportGroupOutput {
-    /// <p>
-    /// Information about the updated report group.
-    /// </p>
+    /// <p> Information about the updated report group. </p>
     pub report_group: std::option::Option<crate::model::ReportGroup>,
 }
 impl UpdateReportGroupOutput {
-    /// <p>
-    /// Information about the updated report group.
-    /// </p>
+    /// <p> Information about the updated report group. </p>
     pub fn report_group(&self) -> std::option::Option<&crate::model::ReportGroup> {
         self.report_group.as_ref()
     }
@@ -90,16 +82,12 @@ pub mod update_report_group_output {
         pub(crate) report_group: std::option::Option<crate::model::ReportGroup>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the updated report group.
-        /// </p>
+        /// <p> Information about the updated report group. </p>
         pub fn report_group(mut self, input: crate::model::ReportGroup) -> Self {
             self.report_group = Some(input);
             self
         }
-        /// <p>
-        /// Information about the updated report group.
-        /// </p>
+        /// <p> Information about the updated report group. </p>
         pub fn set_report_group(
             mut self,
             input: std::option::Option<crate::model::ReportGroup>,
@@ -131,13 +119,16 @@ pub struct UpdateProjectVisibilityOutput {
     /// <p>Contains the project identifier used with the public build APIs. </p>
     pub public_project_alias: std::option::Option<std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-    ///
     /// <dl>
-    /// <dt>PUBLIC_READ</dt>
+    /// <dt>
+    /// PUBLIC_READ
+    /// </dt>
     /// <dd>
     /// <p>The project builds are visible to the public.</p>
     /// </dd>
-    /// <dt>PRIVATE</dt>
+    /// <dt>
+    /// PRIVATE
+    /// </dt>
     /// <dd>
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
@@ -154,13 +145,16 @@ impl UpdateProjectVisibilityOutput {
         self.public_project_alias.as_deref()
     }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-    ///
     /// <dl>
-    /// <dt>PUBLIC_READ</dt>
+    /// <dt>
+    /// PUBLIC_READ
+    /// </dt>
     /// <dd>
     /// <p>The project builds are visible to the public.</p>
     /// </dd>
-    /// <dt>PRIVATE</dt>
+    /// <dt>
+    /// PRIVATE
+    /// </dt>
     /// <dd>
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
@@ -213,13 +207,16 @@ pub mod update_project_visibility_output {
             self
         }
         /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        ///
         /// <dl>
-        /// <dt>PUBLIC_READ</dt>
+        /// <dt>
+        /// PUBLIC_READ
+        /// </dt>
         /// <dd>
         /// <p>The project builds are visible to the public.</p>
         /// </dd>
-        /// <dt>PRIVATE</dt>
+        /// <dt>
+        /// PRIVATE
+        /// </dt>
         /// <dd>
         /// <p>The project builds are not visible to the public.</p>
         /// </dd>
@@ -229,13 +226,16 @@ pub mod update_project_visibility_output {
             self
         }
         /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        ///
         /// <dl>
-        /// <dt>PUBLIC_READ</dt>
+        /// <dt>
+        /// PUBLIC_READ
+        /// </dt>
         /// <dd>
         /// <p>The project builds are visible to the public.</p>
         /// </dd>
-        /// <dt>PRIVATE</dt>
+        /// <dt>
+        /// PRIVATE
+        /// </dt>
         /// <dd>
         /// <p>The project builds are not visible to the public.</p>
         /// </dd>
@@ -667,13 +667,11 @@ impl RetryBuildOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
-    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
-    /// associated with a resource policy. </p>
+    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
-    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
-    /// associated with a resource policy. </p>
+    /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -694,14 +692,12 @@ pub mod put_resource_policy_output {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
-        /// associated with a resource policy. </p>
+        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
-        /// associated with a resource policy. </p>
+        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -725,16 +721,12 @@ impl PutResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSourceCredentialsOutput {
-    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-    /// <code>SourceCredentialsInfo</code> object includes the authentication type, token
-    /// ARN, and type of source provider for one set of credentials. </p>
+    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
     pub source_credentials_infos:
         std::option::Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
 }
 impl ListSourceCredentialsOutput {
-    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-    /// <code>SourceCredentialsInfo</code> object includes the authentication type, token
-    /// ARN, and type of source provider for one set of credentials. </p>
+    /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
     pub fn source_credentials_infos(
         &self,
     ) -> std::option::Option<&[crate::model::SourceCredentialsInfo]> {
@@ -762,21 +754,17 @@ pub mod list_source_credentials_output {
         ///
         /// To override the contents of this collection use [`set_source_credentials_infos`](Self::set_source_credentials_infos).
         ///
-        /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-        /// <code>SourceCredentialsInfo</code> object includes the authentication type, token
-        /// ARN, and type of source provider for one set of credentials. </p>
+        /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
         pub fn source_credentials_infos(
             mut self,
-            input: impl Into<crate::model::SourceCredentialsInfo>,
+            input: crate::model::SourceCredentialsInfo,
         ) -> Self {
             let mut v = self.source_credentials_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_credentials_infos = Some(v);
             self
         }
-        /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each
-        /// <code>SourceCredentialsInfo</code> object includes the authentication type, token
-        /// ARN, and type of source provider for one set of credentials. </p>
+        /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
         pub fn set_source_credentials_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
@@ -803,29 +791,17 @@ impl ListSourceCredentialsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedReportGroupsOutput {
-    /// <p> During a previous call, the maximum number of items that can be returned is the value
-    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-    /// string called a <i>nextToken</i> is returned. To get the next batch of
-    /// items in the list, call this operation again, adding the next token to the call. To get
-    /// all of the items in the list, keep calling this operation with each subsequent next
-    /// token that is returned, until no more next tokens are returned. </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
-    /// </p>
+    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSharedReportGroupsOutput {
-    /// <p> During a previous call, the maximum number of items that can be returned is the value
-    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-    /// string called a <i>nextToken</i> is returned. To get the next batch of
-    /// items in the list, call this operation again, adding the next token to the call. To get
-    /// all of the items in the list, keep calling this operation with each subsequent next
-    /// token that is returned, until no more next tokens are returned. </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
-    /// </p>
+    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
     pub fn report_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.report_groups.as_deref()
     }
@@ -848,22 +824,12 @@ pub mod list_shared_report_groups_output {
         pub(crate) report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -872,16 +838,14 @@ pub mod list_shared_report_groups_output {
         ///
         /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
         ///
-        /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
-        /// </p>
+        /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
         pub fn report_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_groups.unwrap_or_default();
             v.push(input.into());
             self.report_groups = Some(v);
             self
         }
-        /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
-        /// </p>
+        /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
         pub fn set_report_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -909,29 +873,17 @@ impl ListSharedReportGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedProjectsOutput {
-    /// <p> During a previous call, the maximum number of items that can be returned is the value
-    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-    /// string called a <i>nextToken</i> is returned. To get the next batch of
-    /// items in the list, call this operation again, adding the next token to the call. To get
-    /// all of the items in the list, keep calling this operation with each subsequent next
-    /// token that is returned, until no more next tokens are returned. </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
-    /// </p>
+    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListSharedProjectsOutput {
-    /// <p> During a previous call, the maximum number of items that can be returned is the value
-    /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-    /// string called a <i>nextToken</i> is returned. To get the next batch of
-    /// items in the list, call this operation again, adding the next token to the call. To get
-    /// all of the items in the list, keep calling this operation with each subsequent next
-    /// token that is returned, until no more next tokens are returned. </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
-    /// </p>
+    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
     pub fn projects(&self) -> std::option::Option<&[std::string::String]> {
         self.projects.as_deref()
     }
@@ -954,22 +906,12 @@ pub mod list_shared_projects_output {
         pub(crate) projects: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -978,16 +920,14 @@ pub mod list_shared_projects_output {
         ///
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
-        /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
-        /// </p>
+        /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
         pub fn projects(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.projects.unwrap_or_default();
             v.push(input.into());
             self.projects = Some(v);
             self
         }
-        /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
-        /// </p>
+        /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
         pub fn set_projects(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1015,33 +955,17 @@ impl ListSharedProjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportsForReportGroupOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The list of report ARNs.
-    /// </p>
+    /// <p> The list of report ARNs. </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportsForReportGroupOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The list of report ARNs.
-    /// </p>
+    /// <p> The list of report ARNs. </p>
     pub fn reports(&self) -> std::option::Option<&[std::string::String]> {
         self.reports.as_deref()
     }
@@ -1064,24 +988,12 @@ pub mod list_reports_for_report_group_output {
         pub(crate) reports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1090,18 +1002,14 @@ pub mod list_reports_for_report_group_output {
         ///
         /// To override the contents of this collection use [`set_reports`](Self::set_reports).
         ///
-        /// <p>
-        /// The list of report ARNs.
-        /// </p>
+        /// <p> The list of report ARNs. </p>
         pub fn reports(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reports.unwrap_or_default();
             v.push(input.into());
             self.reports = Some(v);
             self
         }
-        /// <p>
-        /// The list of report ARNs.
-        /// </p>
+        /// <p> The list of report ARNs. </p>
         pub fn set_reports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1129,33 +1037,17 @@ impl ListReportsForReportGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportsOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The list of returned ARNs for the reports in the current Amazon Web Services account.
-    /// </p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportsOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The list of returned ARNs for the reports in the current Amazon Web Services account.
-    /// </p>
+    /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
     pub fn reports(&self) -> std::option::Option<&[std::string::String]> {
         self.reports.as_deref()
     }
@@ -1178,24 +1070,12 @@ pub mod list_reports_output {
         pub(crate) reports: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1204,18 +1084,14 @@ pub mod list_reports_output {
         ///
         /// To override the contents of this collection use [`set_reports`](Self::set_reports).
         ///
-        /// <p>
-        /// The list of returned ARNs for the reports in the current Amazon Web Services account.
-        /// </p>
+        /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
         pub fn reports(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reports.unwrap_or_default();
             v.push(input.into());
             self.reports = Some(v);
             self
         }
-        /// <p>
-        /// The list of returned ARNs for the reports in the current Amazon Web Services account.
-        /// </p>
+        /// <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
         pub fn set_reports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1243,33 +1119,17 @@ impl ListReportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportGroupsOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The list of ARNs for the report groups in the current Amazon Web Services account.
-    /// </p>
+    /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListReportGroupsOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The list of ARNs for the report groups in the current Amazon Web Services account.
-    /// </p>
+    /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
     pub fn report_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.report_groups.as_deref()
     }
@@ -1292,24 +1152,12 @@ pub mod list_report_groups_output {
         pub(crate) report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1318,18 +1166,14 @@ pub mod list_report_groups_output {
         ///
         /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
         ///
-        /// <p>
-        /// The list of ARNs for the report groups in the current Amazon Web Services account.
-        /// </p>
+        /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
         pub fn report_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_groups.unwrap_or_default();
             v.push(input.into());
             self.report_groups = Some(v);
             self
         }
-        /// <p>
-        /// The list of ARNs for the report groups in the current Amazon Web Services account.
-        /// </p>
+        /// <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
         pub fn set_report_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1357,25 +1201,17 @@ impl ListReportGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsOutput {
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The list of build project names, with each build project name representing a single
-    /// build project.</p>
+    /// <p>The list of build project names, with each build project name representing a single build project.</p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListProjectsOutput {
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The list of build project names, with each build project name representing a single
-    /// build project.</p>
+    /// <p>The list of build project names, with each build project name representing a single build project.</p>
     pub fn projects(&self) -> std::option::Option<&[std::string::String]> {
         self.projects.as_deref()
     }
@@ -1398,18 +1234,12 @@ pub mod list_projects_output {
         pub(crate) projects: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1418,16 +1248,14 @@ pub mod list_projects_output {
         ///
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
-        /// <p>The list of build project names, with each build project name representing a single
-        /// build project.</p>
+        /// <p>The list of build project names, with each build project name representing a single build project.</p>
         pub fn projects(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.projects.unwrap_or_default();
             v.push(input.into());
             self.projects = Some(v);
             self
         }
-        /// <p>The list of build project names, with each build project name representing a single
-        /// build project.</p>
+        /// <p>The list of build project names, with each build project name representing a single build project.</p>
         pub fn set_projects(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1455,13 +1283,11 @@ impl ListProjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCuratedEnvironmentImagesOutput {
-    /// <p>Information about supported platforms for Docker images that are managed by
-    /// CodeBuild.</p>
+    /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
 }
 impl ListCuratedEnvironmentImagesOutput {
-    /// <p>Information about supported platforms for Docker images that are managed by
-    /// CodeBuild.</p>
+    /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
     pub fn platforms(&self) -> std::option::Option<&[crate::model::EnvironmentPlatform]> {
         self.platforms.as_deref()
     }
@@ -1486,16 +1312,14 @@ pub mod list_curated_environment_images_output {
         ///
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
-        /// <p>Information about supported platforms for Docker images that are managed by
-        /// CodeBuild.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::EnvironmentPlatform>) -> Self {
+        /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
+        pub fn platforms(mut self, input: crate::model::EnvironmentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
-        /// <p>Information about supported platforms for Docker images that are managed by
-        /// CodeBuild.</p>
+        /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
         pub fn set_platforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
@@ -1522,25 +1346,17 @@ impl ListCuratedEnvironmentImagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsForProjectOutput {
-    /// <p>A list of build identifiers for the specified build project, with each build ID representing a
-    /// single build.</p>
+    /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsForProjectOutput {
-    /// <p>A list of build identifiers for the specified build project, with each build ID representing a
-    /// single build.</p>
+    /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1567,16 +1383,14 @@ pub mod list_builds_for_project_output {
         ///
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
-        /// <p>A list of build identifiers for the specified build project, with each build ID representing a
-        /// single build.</p>
+        /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
-        /// <p>A list of build identifiers for the specified build project, with each build ID representing a
-        /// single build.</p>
+        /// <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1584,18 +1398,12 @@ pub mod list_builds_for_project_output {
             self.ids = input;
             self
         }
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1622,10 +1430,7 @@ impl ListBuildsForProjectOutput {
 pub struct ListBuildsOutput {
     /// <p>A list of build IDs, with each build ID representing a single build.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildsOutput {
@@ -1633,10 +1438,7 @@ impl ListBuildsOutput {
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-    /// along with a unique string called a <i>nextToken</i>. To get the next
-    /// batch of items in the list, call this operation again, adding the next token to the
-    /// call.</p>
+    /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1678,18 +1480,12 @@ pub mod list_builds_output {
             self.ids = input;
             self
         }
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than 100 items in the list, only the first 100 items are returned,
-        /// along with a unique string called a <i>nextToken</i>. To get the next
-        /// batch of items in the list, call this operation again, adding the next token to the
-        /// call.</p>
+        /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1716,9 +1512,7 @@ impl ListBuildsOutput {
 pub struct ListBuildBatchesForProjectOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If there are more items to return, this contains a token that is passed to a
-    /// subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of
-    /// items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesForProjectOutput {
@@ -1726,9 +1520,7 @@ impl ListBuildBatchesForProjectOutput {
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>If there are more items to return, this contains a token that is passed to a
-    /// subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of
-    /// items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1770,16 +1562,12 @@ pub mod list_build_batches_for_project_output {
             self.ids = input;
             self
         }
-        /// <p>If there are more items to return, this contains a token that is passed to a
-        /// subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of
-        /// items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more items to return, this contains a token that is passed to a
-        /// subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of
-        /// items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1806,8 +1594,7 @@ impl ListBuildBatchesForProjectOutput {
 pub struct ListBuildBatchesOutput {
     /// <p>An array of strings that contains the batch build identifiers.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-    /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuildBatchesOutput {
@@ -1815,8 +1602,7 @@ impl ListBuildBatchesOutput {
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-    /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1858,14 +1644,12 @@ pub mod list_build_batches_output {
             self.ids = input;
             self
         }
-        /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-        /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-        /// call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2077,9 +1861,9 @@ pub mod get_report_group_trend_output {
         /// To override the contents of this collection use [`set_raw_data`](Self::set_raw_data).
         ///
         /// <p>An array that contains the raw data for each report.</p>
-        pub fn raw_data(mut self, input: impl Into<crate::model::ReportWithRawData>) -> Self {
+        pub fn raw_data(mut self, input: crate::model::ReportWithRawData) -> Self {
             let mut v = self.raw_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.raw_data = Some(v);
             self
         }
@@ -2111,33 +1895,17 @@ impl GetReportGroupTrendOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTestCasesOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The returned list of test cases.
-    /// </p>
+    /// <p> The returned list of test cases. </p>
     pub test_cases: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
 }
 impl DescribeTestCasesOutput {
-    /// <p>
-    /// During a previous call, the maximum number of items that can be returned is the value specified in
-    /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-    /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-    /// to the call. To get all of the items in the list, keep calling this operation with each
-    /// subsequent next token that is returned, until no more next tokens are returned.
-    /// </p>
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The returned list of test cases.
-    /// </p>
+    /// <p> The returned list of test cases. </p>
     pub fn test_cases(&self) -> std::option::Option<&[crate::model::TestCase]> {
         self.test_cases.as_deref()
     }
@@ -2160,24 +1928,12 @@ pub mod describe_test_cases_output {
         pub(crate) test_cases: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
     }
     impl Builder {
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2186,18 +1942,14 @@ pub mod describe_test_cases_output {
         ///
         /// To override the contents of this collection use [`set_test_cases`](Self::set_test_cases).
         ///
-        /// <p>
-        /// The returned list of test cases.
-        /// </p>
-        pub fn test_cases(mut self, input: impl Into<crate::model::TestCase>) -> Self {
+        /// <p> The returned list of test cases. </p>
+        pub fn test_cases(mut self, input: crate::model::TestCase) -> Self {
             let mut v = self.test_cases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_cases = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of test cases.
-        /// </p>
+        /// <p> The returned list of test cases. </p>
         pub fn set_test_cases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestCase>>,
@@ -2225,15 +1977,13 @@ impl DescribeTestCasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeCoveragesOutput {
-    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-    /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
     pub code_coverages: std::option::Option<std::vec::Vec<crate::model::CodeCoverage>>,
 }
 impl DescribeCodeCoveragesOutput {
-    /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-    /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2260,14 +2010,12 @@ pub mod describe_code_coverages_output {
         pub(crate) code_coverages: std::option::Option<std::vec::Vec<crate::model::CodeCoverage>>,
     }
     impl Builder {
-        /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-        /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more items to return, this contains a token that is passed to a subsequent
-        /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+        /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2277,9 +2025,9 @@ pub mod describe_code_coverages_output {
         /// To override the contents of this collection use [`set_code_coverages`](Self::set_code_coverages).
         ///
         /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-        pub fn code_coverages(mut self, input: impl Into<crate::model::CodeCoverage>) -> Self {
+        pub fn code_coverages(mut self, input: crate::model::CodeCoverage) -> Self {
             let mut v = self.code_coverages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_coverages = Some(v);
             self
         }
@@ -2517,8 +2265,7 @@ pub struct DeleteBuildBatchOutput {
     pub status_code: std::option::Option<std::string::String>,
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
     pub builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
-    /// deleted.</p>
+    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
     pub builds_not_deleted: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
 }
 impl DeleteBuildBatchOutput {
@@ -2530,8 +2277,7 @@ impl DeleteBuildBatchOutput {
     pub fn builds_deleted(&self) -> std::option::Option<&[std::string::String]> {
         self.builds_deleted.as_deref()
     }
-    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
-    /// deleted.</p>
+    /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
     pub fn builds_not_deleted(&self) -> std::option::Option<&[crate::model::BuildNotDeleted]> {
         self.builds_not_deleted.as_deref()
     }
@@ -2590,19 +2336,14 @@ pub mod delete_build_batch_output {
         ///
         /// To override the contents of this collection use [`set_builds_not_deleted`](Self::set_builds_not_deleted).
         ///
-        /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
-        /// deleted.</p>
-        pub fn builds_not_deleted(
-            mut self,
-            input: impl Into<crate::model::BuildNotDeleted>,
-        ) -> Self {
+        /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
+        pub fn builds_not_deleted(mut self, input: crate::model::BuildNotDeleted) -> Self {
             let mut v = self.builds_not_deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds_not_deleted = Some(v);
             self
         }
-        /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be
-        /// deleted.</p>
+        /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
         pub fn set_builds_not_deleted(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
@@ -2631,13 +2372,11 @@ impl DeleteBuildBatchOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookOutput {
-    /// <p>Information about a webhook that connects repository events to a build project in
-    /// CodeBuild.</p>
+    /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl CreateWebhookOutput {
-    /// <p>Information about a webhook that connects repository events to a build project in
-    /// CodeBuild.</p>
+    /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
     }
@@ -2658,14 +2397,12 @@ pub mod create_webhook_output {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
     impl Builder {
-        /// <p>Information about a webhook that connects repository events to a build project in
-        /// CodeBuild.</p>
+        /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
             self
         }
-        /// <p>Information about a webhook that connects repository events to a build project in
-        /// CodeBuild.</p>
+        /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -2689,15 +2426,11 @@ impl CreateWebhookOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportGroupOutput {
-    /// <p>
-    /// Information about the report group that was created.
-    /// </p>
+    /// <p> Information about the report group that was created. </p>
     pub report_group: std::option::Option<crate::model::ReportGroup>,
 }
 impl CreateReportGroupOutput {
-    /// <p>
-    /// Information about the report group that was created.
-    /// </p>
+    /// <p> Information about the report group that was created. </p>
     pub fn report_group(&self) -> std::option::Option<&crate::model::ReportGroup> {
         self.report_group.as_ref()
     }
@@ -2718,16 +2451,12 @@ pub mod create_report_group_output {
         pub(crate) report_group: std::option::Option<crate::model::ReportGroup>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the report group that was created.
-        /// </p>
+        /// <p> Information about the report group that was created. </p>
         pub fn report_group(mut self, input: crate::model::ReportGroup) -> Self {
             self.report_group = Some(input);
             self
         }
-        /// <p>
-        /// Information about the report group that was created.
-        /// </p>
+        /// <p> Information about the report group that was created. </p>
         pub fn set_report_group(
             mut self,
             input: std::option::Option<crate::model::ReportGroup>,
@@ -2808,25 +2537,17 @@ impl CreateProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportsOutput {
-    /// <p>
-    /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
-    /// </p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub reports: std::option::Option<std::vec::Vec<crate::model::Report>>,
-    /// <p>
-    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
-    /// </p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub reports_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportsOutput {
-    /// <p>
-    /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
-    /// </p>
+    /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     pub fn reports(&self) -> std::option::Option<&[crate::model::Report]> {
         self.reports.as_deref()
     }
-    /// <p>
-    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
-    /// </p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
     pub fn reports_not_found(&self) -> std::option::Option<&[std::string::String]> {
         self.reports_not_found.as_deref()
     }
@@ -2853,18 +2574,14 @@ pub mod batch_get_reports_output {
         ///
         /// To override the contents of this collection use [`set_reports`](Self::set_reports).
         ///
-        /// <p>
-        /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
-        /// </p>
-        pub fn reports(mut self, input: impl Into<crate::model::Report>) -> Self {
+        /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
+        pub fn reports(mut self, input: crate::model::Report) -> Self {
             let mut v = self.reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reports = Some(v);
             self
         }
-        /// <p>
-        /// The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
-        /// </p>
+        /// <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
         pub fn set_reports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Report>>,
@@ -2876,18 +2593,14 @@ pub mod batch_get_reports_output {
         ///
         /// To override the contents of this collection use [`set_reports_not_found`](Self::set_reports_not_found).
         ///
-        /// <p>
-        /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
-        /// </p>
+        /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
         pub fn reports_not_found(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reports_not_found.unwrap_or_default();
             v.push(input.into());
             self.reports_not_found = Some(v);
             self
         }
-        /// <p>
-        /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>.
-        /// </p>
+        /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
         pub fn set_reports_not_found(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2915,25 +2628,17 @@ impl BatchGetReportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetReportGroupsOutput {
-    /// <p>
-    /// The array of report groups returned by <code>BatchGetReportGroups</code>.
-    /// </p>
+    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
     pub report_groups: std::option::Option<std::vec::Vec<crate::model::ReportGroup>>,
-    /// <p>
-    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.
-    /// </p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
     pub report_groups_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetReportGroupsOutput {
-    /// <p>
-    /// The array of report groups returned by <code>BatchGetReportGroups</code>.
-    /// </p>
+    /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
     pub fn report_groups(&self) -> std::option::Option<&[crate::model::ReportGroup]> {
         self.report_groups.as_deref()
     }
-    /// <p>
-    /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.
-    /// </p>
+    /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
     pub fn report_groups_not_found(&self) -> std::option::Option<&[std::string::String]> {
         self.report_groups_not_found.as_deref()
     }
@@ -2960,18 +2665,14 @@ pub mod batch_get_report_groups_output {
         ///
         /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
         ///
-        /// <p>
-        /// The array of report groups returned by <code>BatchGetReportGroups</code>.
-        /// </p>
-        pub fn report_groups(mut self, input: impl Into<crate::model::ReportGroup>) -> Self {
+        /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+        pub fn report_groups(mut self, input: crate::model::ReportGroup) -> Self {
             let mut v = self.report_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_groups = Some(v);
             self
         }
-        /// <p>
-        /// The array of report groups returned by <code>BatchGetReportGroups</code>.
-        /// </p>
+        /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
         pub fn set_report_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReportGroup>>,
@@ -2983,18 +2684,14 @@ pub mod batch_get_report_groups_output {
         ///
         /// To override the contents of this collection use [`set_report_groups_not_found`](Self::set_report_groups_not_found).
         ///
-        /// <p>
-        /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.
-        /// </p>
+        /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
         pub fn report_groups_not_found(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_groups_not_found.unwrap_or_default();
             v.push(input.into());
             self.report_groups_not_found = Some(v);
             self
         }
-        /// <p>
-        /// An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>.
-        /// </p>
+        /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
         pub fn set_report_groups_not_found(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3060,9 +2757,9 @@ pub mod batch_get_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>Information about the requested build projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -3151,9 +2848,9 @@ pub mod batch_get_builds_output {
         /// To override the contents of this collection use [`set_builds`](Self::set_builds).
         ///
         /// <p>Information about the requested builds.</p>
-        pub fn builds(mut self, input: impl Into<crate::model::Build>) -> Self {
+        pub fn builds(mut self, input: crate::model::Build) -> Self {
             let mut v = self.builds.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds = Some(v);
             self
         }
@@ -3204,15 +2901,13 @@ impl BatchGetBuildsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetBuildBatchesOutput {
-    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
-    /// builds.</p>
+    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
     pub build_batches: std::option::Option<std::vec::Vec<crate::model::BuildBatch>>,
     /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
     pub build_batches_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildBatchesOutput {
-    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
-    /// builds.</p>
+    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
     pub fn build_batches(&self) -> std::option::Option<&[crate::model::BuildBatch]> {
         self.build_batches.as_deref()
     }
@@ -3243,16 +2938,14 @@ pub mod batch_get_build_batches_output {
         ///
         /// To override the contents of this collection use [`set_build_batches`](Self::set_build_batches).
         ///
-        /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
-        /// builds.</p>
-        pub fn build_batches(mut self, input: impl Into<crate::model::BuildBatch>) -> Self {
+        /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
+        pub fn build_batches(mut self, input: crate::model::BuildBatch) -> Self {
             let mut v = self.build_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.build_batches = Some(v);
             self
         }
-        /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch
-        /// builds.</p>
+        /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
         pub fn set_build_batches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildBatch>>,
@@ -3357,12 +3050,9 @@ pub mod batch_delete_builds_output {
         /// To override the contents of this collection use [`set_builds_not_deleted`](Self::set_builds_not_deleted).
         ///
         /// <p>Information about any builds that could not be successfully deleted.</p>
-        pub fn builds_not_deleted(
-            mut self,
-            input: impl Into<crate::model::BuildNotDeleted>,
-        ) -> Self {
+        pub fn builds_not_deleted(mut self, input: crate::model::BuildNotDeleted) -> Self {
             let mut v = self.builds_not_deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.builds_not_deleted = Some(v);
             self
         }

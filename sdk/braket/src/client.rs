@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Braket
@@ -143,6 +143,7 @@ where
     ///
     /// See [`SearchDevices`](crate::client::fluent_builders::SearchDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchDevices::into_paginator).
     pub fn search_devices(&self) -> fluent_builders::SearchDevices<C, M, R> {
         fluent_builders::SearchDevices::new(self.handle.clone())
     }
@@ -150,6 +151,7 @@ where
     ///
     /// See [`SearchJobs`](crate::client::fluent_builders::SearchJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchJobs::into_paginator).
     pub fn search_jobs(&self) -> fluent_builders::SearchJobs<C, M, R> {
         fluent_builders::SearchJobs::new(self.handle.clone())
     }
@@ -157,6 +159,7 @@ where
     ///
     /// See [`SearchQuantumTasks`](crate::client::fluent_builders::SearchQuantumTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchQuantumTasks::into_paginator).
     pub fn search_quantum_tasks(&self) -> fluent_builders::SearchQuantumTasks<C, M, R> {
         fluent_builders::SearchQuantumTasks::new(self.handle.clone())
     }
@@ -186,7 +189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelJob`.
     ///
     /// <p>Cancels an Amazon Braket job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -231,10 +234,10 @@ pub mod fluent_builders {
                 crate::input::CancelJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -243,8 +246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon Braket job to cancel.</p>
-        pub fn job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_arn(inp);
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon Braket job to cancel.</p>
@@ -256,7 +259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelQuantumTask`.
     ///
     /// <p>Cancels the specified task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -301,10 +304,10 @@ pub mod fluent_builders {
                 crate::input::CancelQuantumTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -313,8 +316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the task to cancel.</p>
-        pub fn quantum_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quantum_task_arn(inp);
+        pub fn quantum_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quantum_task_arn(input.into());
             self
         }
         /// <p>The ARN of the task to cancel.</p>
@@ -326,8 +329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token associated with the request.</p>
@@ -339,7 +342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>Creates an Amazon Braket job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -384,10 +387,10 @@ pub mod fluent_builders {
                 crate::input::CreateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -396,8 +399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -405,17 +408,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn algorithm_specification(
             mut self,
-            inp: crate::model::AlgorithmSpecification,
+            input: crate::model::AlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.algorithm_specification(inp);
+            self.inner = self.inner.algorithm_specification(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -427,14 +428,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
-        pub fn input_data_config(mut self, inp: impl Into<crate::model::InputFileConfig>) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
@@ -442,14 +441,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
-        pub fn output_data_config(mut self, inp: crate::model::JobOutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+        pub fn output_data_config(mut self, input: crate::model::JobOutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::JobOutputDataConfig>,
@@ -458,8 +455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the output locations for job checkpoint data.</p>
-        pub fn checkpoint_config(mut self, inp: crate::model::JobCheckpointConfig) -> Self {
-            self.inner = self.inner.checkpoint_config(inp);
+        pub fn checkpoint_config(mut self, input: crate::model::JobCheckpointConfig) -> Self {
+            self.inner = self.inner.checkpoint_config(input);
             self
         }
         /// <p>Information about the output locations for job checkpoint data.</p>
@@ -471,8 +468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Braket job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the Amazon Braket job.</p>
@@ -480,23 +477,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p> The user-defined criteria that specifies when a job stops running.</p>
-        pub fn stopping_condition(mut self, inp: crate::model::JobStoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(inp);
+        pub fn stopping_condition(mut self, input: crate::model::JobStoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p> The user-defined criteria that specifies when a job stops running.</p>
@@ -507,14 +500,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
-        pub fn instance_config(mut self, inp: crate::model::InstanceConfig) -> Self {
-            self.inner = self.inner.instance_config(inp);
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
+        pub fn instance_config(mut self, input: crate::model::InstanceConfig) -> Self {
+            self.inner = self.inner.instance_config(input);
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn set_instance_config(
             mut self,
             input: std::option::Option<crate::model::InstanceConfig>,
@@ -526,20 +517,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameters(k, v);
+            self.inner = self.inner.hyper_parameters(k.into(), v.into());
             self
         }
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -550,8 +537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
-        pub fn device_config(mut self, inp: crate::model::DeviceConfig) -> Self {
-            self.inner = self.inner.device_config(inp);
+        pub fn device_config(mut self, input: crate::model::DeviceConfig) -> Self {
+            self.inner = self.inner.device_config(input);
             self
         }
         /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
@@ -572,7 +559,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
@@ -589,7 +576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateQuantumTask`.
     ///
     /// <p>Creates a quantum task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -634,10 +621,10 @@ pub mod fluent_builders {
                 crate::input::CreateQuantumTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -646,8 +633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The client token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token associated with the request.</p>
@@ -656,8 +643,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the device to run the task on.</p>
-        pub fn device_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(inp);
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to run the task on.</p>
@@ -666,8 +653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters for the device to run the task on.</p>
-        pub fn device_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_parameters(inp);
+        pub fn device_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_parameters(input.into());
             self
         }
         /// <p>The parameters for the device to run the task on.</p>
@@ -679,8 +666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shots to use for the task.</p>
-        pub fn shots(mut self, inp: i64) -> Self {
-            self.inner = self.inner.shots(inp);
+        pub fn shots(mut self, input: i64) -> Self {
+            self.inner = self.inner.shots(input);
             self
         }
         /// <p>The number of shots to use for the task.</p>
@@ -689,8 +676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 bucket to store task result files in.</p>
-        pub fn output_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_bucket(inp);
+        pub fn output_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_bucket(input.into());
             self
         }
         /// <p>The S3 bucket to store task result files in.</p>
@@ -702,8 +689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_key_prefix(inp);
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_key_prefix(input.into());
             self
         }
         /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
@@ -715,8 +702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action associated with the task.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
         /// <p>The action associated with the task.</p>
@@ -734,7 +721,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to be added to the quantum task you're creating.</p>
@@ -748,8 +735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-        pub fn job_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_token(inp);
+        pub fn job_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_token(input.into());
             self
         }
         /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
@@ -761,7 +748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevice`.
     ///
     /// <p>Retrieves the devices available in Amazon Braket.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -806,10 +793,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -818,8 +805,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device to retrieve.</p>
-        pub fn device_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(inp);
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to retrieve.</p>
@@ -831,7 +818,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>Retrieves the specified Amazon Braket job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -876,10 +863,10 @@ pub mod fluent_builders {
                 crate::input::GetJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -888,8 +875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the job to retrieve.</p>
-        pub fn job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_arn(inp);
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(input.into());
             self
         }
         /// <p>The ARN of the job to retrieve.</p>
@@ -901,7 +888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetQuantumTask`.
     ///
     /// <p>Retrieves the specified quantum task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQuantumTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -946,10 +933,10 @@ pub mod fluent_builders {
                 crate::input::GetQuantumTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -958,8 +945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>the ARN of the task to retrieve.</p>
-        pub fn quantum_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quantum_task_arn(inp);
+        pub fn quantum_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quantum_task_arn(input.into());
             self
         }
         /// <p>the ARN of the task to retrieve.</p>
@@ -974,7 +961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Shows the tags associated with this resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1019,10 +1006,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1031,8 +1018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
@@ -1044,7 +1031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchDevices`.
     ///
     /// <p>Searches for devices using the specified filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1089,10 +1076,10 @@ pub mod fluent_builders {
                 crate::input::SearchDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1100,9 +1087,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchDevicesPaginator<C, M, R> {
+            crate::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -1111,8 +1104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1125,8 +1118,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use to search for a device.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SearchDevicesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SearchDevicesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filter values to use to search for a device.</p>
@@ -1141,7 +1134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchJobs`.
     ///
     /// <p>Searches for Amazon Braket jobs that match the specified filter values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1186,10 +1179,10 @@ pub mod fluent_builders {
                 crate::input::SearchJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1197,21 +1190,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchJobsPaginator<C, M, R> {
+            crate::paginator::SearchJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1224,8 +1221,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use when searching for a job.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SearchJobsFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SearchJobsFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filter values to use when searching for a job.</p>
@@ -1240,7 +1237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchQuantumTasks`.
     ///
     /// <p>Searches for tasks that match the specified filter values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchQuantumTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1285,10 +1282,10 @@ pub mod fluent_builders {
                 crate::input::SearchQuantumTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1296,9 +1293,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchQuantumTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchQuantumTasksPaginator<C, M, R> {
+            crate::paginator::SearchQuantumTasksPaginator::new(self.handle, self.inner)
+        }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -1307,8 +1310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to return in the response.</p>
@@ -1321,8 +1324,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SearchQuantumTasksFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SearchQuantumTasksFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
@@ -1337,7 +1340,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add a tag to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1382,10 +1385,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1394,8 +1397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
@@ -1413,7 +1416,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specify the tags to add to the resource.</p>
@@ -1430,7 +1433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1475,10 +1478,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1487,8 +1490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
@@ -1501,8 +1504,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Specify the keys for the tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Specify the keys for the tags to remove from the resource.</p>
@@ -1515,6 +1518,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

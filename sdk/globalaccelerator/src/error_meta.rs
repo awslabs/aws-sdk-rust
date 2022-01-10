@@ -9,11 +9,9 @@ pub enum Error {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-    /// from a listener before you can delete it.</p>
+    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
-    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-    /// accelerator before you can delete it.</p>
+    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
@@ -27,8 +25,7 @@ pub enum Error {
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
     /// <p>The endpoint that you specified doesn't exist.</p>
     EndpointNotFoundException(crate::error::EndpointNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),

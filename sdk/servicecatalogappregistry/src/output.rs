@@ -387,12 +387,9 @@ pub mod list_attribute_groups_output {
         /// To override the contents of this collection use [`set_attribute_groups`](Self::set_attribute_groups).
         ///
         /// <p>This list of attribute groups.</p>
-        pub fn attribute_groups(
-            mut self,
-            input: impl Into<crate::model::AttributeGroupSummary>,
-        ) -> Self {
+        pub fn attribute_groups(mut self, input: crate::model::AttributeGroupSummary) -> Self {
             let mut v = self.attribute_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_groups = Some(v);
             self
         }
@@ -472,9 +469,9 @@ pub mod list_associated_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Information about the resources.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::ResourceInfo>) -> Self {
+        pub fn resources(mut self, input: crate::model::ResourceInfo) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -637,9 +634,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>This list of applications.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::ApplicationSummary>) -> Self {
+        pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT 1-Click Projects Service
@@ -154,6 +154,7 @@ where
     ///
     /// See [`ListPlacements`](crate::client::fluent_builders::ListPlacements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlacements::into_paginator).
     pub fn list_placements(&self) -> fluent_builders::ListPlacements<C, M, R> {
         fluent_builders::ListPlacements::new(self.handle.clone())
     }
@@ -161,6 +162,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -211,7 +213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDeviceWithPlacement`.
     ///
     /// <p>Associates a physical device with a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDeviceWithPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -256,10 +258,10 @@ pub mod fluent_builders {
                 crate::input::AssociateDeviceWithPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -268,8 +270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project containing the placement in which to associate the device.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project containing the placement in which to associate the device.</p>
@@ -278,8 +280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement in which to associate the device.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement in which to associate the device.</p>
@@ -290,23 +292,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_name(input);
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_device_id(input);
             self
         }
         /// <p>The device template name to associate with the device ID.</p>
-        pub fn device_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_template_name(inp);
+        pub fn device_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_template_name(input.into());
             self
         }
         /// <p>The device template name to associate with the device ID.</p>
@@ -321,7 +319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePlacement`.
     ///
     /// <p>Creates an empty placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -366,10 +364,10 @@ pub mod fluent_builders {
                 crate::input::CreatePlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -378,8 +376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement to be created.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement to be created.</p>
@@ -391,8 +389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project in which to create the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project in which to create the placement.</p>
@@ -404,18 +402,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -428,9 +424,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates an empty project with a placement template. A project contains zero or more
-    /// placements that adhere to the placement template defined in the project.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -475,10 +470,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -487,8 +482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to create.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to create.</p>
@@ -497,8 +492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the project.</p>
@@ -506,18 +501,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
-        pub fn placement_template(mut self, inp: crate::model::PlacementTemplate) -> Self {
-            self.inner = self.inner.placement_template(inp);
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
+        pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
+            self.inner = self.inner.placement_template(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -529,20 +518,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -555,12 +540,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePlacement`.
     ///
-    /// <p>Deletes a placement. To delete a placement, it must not have any devices associated with
-    /// it.</p>
-    /// <note>
+    /// <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note>
     /// <p>When you delete a placement, all associated data becomes irretrievable.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -605,10 +588,10 @@ pub mod fluent_builders {
                 crate::input::DeletePlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -617,8 +600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the empty placement to delete.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the empty placement to delete.</p>
@@ -630,8 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The project containing the empty placement to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The project containing the empty placement to delete.</p>
@@ -642,12 +625,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p>Deletes a project. To delete a project, it must not have any placements associated with
-    /// it.</p>
-    /// <note>
+    /// <p>Deletes a project. To delete a project, it must not have any placements associated with it.</p> <note>
     /// <p>When you delete a project, all associated data becomes irretrievable.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -692,10 +673,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -704,8 +685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the empty project to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the empty project to delete.</p>
@@ -717,7 +698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePlacement`.
     ///
     /// <p>Describes a placement in a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -762,10 +743,10 @@ pub mod fluent_builders {
                 crate::input::DescribePlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -774,8 +755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement within a project.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement within a project.</p>
@@ -787,8 +768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The project containing the placement to be described.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The project containing the placement to be described.</p>
@@ -800,7 +781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Returns an object describing a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -845,10 +826,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -857,8 +838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be described.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to be described.</p>
@@ -870,7 +851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDeviceFromPlacement`.
     ///
     /// <p>Removes a physical device from a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDeviceFromPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -915,10 +896,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateDeviceFromPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -927,8 +908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the placement.</p>
@@ -937,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement that the device should be removed from.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement that the device should be removed from.</p>
@@ -950,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device ID that should be removed from the placement.</p>
-        pub fn device_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_template_name(inp);
+        pub fn device_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_template_name(input.into());
             self
         }
         /// <p>The device ID that should be removed from the placement.</p>
@@ -966,7 +947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicesInPlacement`.
     ///
     /// <p>Returns an object enumerating the devices in a placement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicesInPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1011,10 +992,10 @@ pub mod fluent_builders {
                 crate::input::GetDevicesInPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1023,8 +1004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project containing the placement.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project containing the placement.</p>
@@ -1033,8 +1014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the placement to get the devices from.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement to get the devices from.</p>
@@ -1049,7 +1030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPlacements`.
     ///
     /// <p>Lists the placement(s) of a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlacements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1094,10 +1075,10 @@ pub mod fluent_builders {
                 crate::input::ListPlacementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1105,9 +1086,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPlacementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPlacementsPaginator<C, M, R> {
+            crate::paginator::ListPlacementsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The project containing the placements to be listed.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The project containing the placements to be listed.</p>
@@ -1116,8 +1103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -1125,14 +1112,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1141,7 +1126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1186,10 +1171,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1197,9 +1182,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -1207,14 +1198,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1223,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata key/value pairs) which you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1268,10 +1257,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1280,8 +1269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
@@ -1292,10 +1281,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be
-    /// used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1340,10 +1327,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1352,8 +1339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
@@ -1365,18 +1352,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1390,7 +1375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (metadata key/value pairs) from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1435,10 +1420,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1447,8 +1432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tag you want to remove.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tag you want to remove.</p>
@@ -1461,8 +1446,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of those tags which you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of those tags which you want to remove.</p>
@@ -1476,9 +1461,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePlacement`.
     ///
-    /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value
-    /// (i.e., "").</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "").</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1523,10 +1507,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1535,8 +1519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the placement to update.</p>
-        pub fn placement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_name(inp);
+        pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_name(input.into());
             self
         }
         /// <p>The name of the placement to update.</p>
@@ -1548,8 +1532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project containing the placement to be updated.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project containing the placement to be updated.</p>
@@ -1561,18 +1545,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1585,11 +1567,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>Updates a project associated with your AWS account and region. With the exception of
-    /// device template names, you can pass just the values that need to be updated because the update
-    /// request will change only the values that are provided. To clear a value, pass the empty string
-    /// (i.e., <code>""</code>).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a project associated with your AWS account and region. With the exception of device template names, you can pass just the values that need to be updated because the update request will change only the values that are provided. To clear a value, pass the empty string (i.e., <code>""</code>).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1634,10 +1613,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1646,8 +1625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be updated.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to be updated.</p>
@@ -1656,8 +1635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional user-defined description for the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional user-defined description for the project.</p>
@@ -1665,18 +1644,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
-        pub fn placement_template(mut self, inp: crate::model::PlacementTemplate) -> Self {
-            self.inner = self.inner.placement_template(inp);
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
+        pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
+            self.inner = self.inner.placement_template(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -1686,6 +1659,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

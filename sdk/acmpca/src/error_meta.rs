@@ -3,35 +3,27 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The certificate authority certificate you are importing does not comply with
-    /// conditions specified in the certificate that signed it.</p>
+    /// <p>The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.</p>
     CertificateMismatchException(crate::error::CertificateMismatchException),
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token
-    /// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The resource policy is invalid or is missing a required statement. For general
-    /// information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// <p>The request action cannot be performed or is prohibited.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the
-    /// message field.</p>
+    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-    /// quota that was exceeded.</p>
+    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The current action was prevented because it would lock the caller out from performing
-    /// subsequent actions. Verify that the specified parameters would not result in the caller
-    /// being denied access to the resource. </p>
+    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
     LockoutPreventedException(crate::error::LockoutPreventedException),
     /// <p>The certificate signing request is invalid.</p>
     MalformedCsrException(crate::error::MalformedCsrException),
@@ -45,11 +37,9 @@ pub enum Error {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You can associate up to 50 tags with a private CA. Exception information is contained
-    /// in the exception message field.</p>
+    /// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

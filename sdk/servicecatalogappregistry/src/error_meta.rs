@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),

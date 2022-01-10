@@ -12,31 +12,19 @@ pub struct AssociateExternalConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateExternalConnectionErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -89,8 +77,6 @@ impl AssociateExternalConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -191,31 +177,19 @@ pub struct CopyPackageVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyPackageVersionsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -264,8 +238,6 @@ impl CopyPackageVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -364,31 +336,19 @@ pub struct CreateDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDomainErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -437,8 +397,6 @@ impl CreateDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -525,31 +483,19 @@ pub struct CreateRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRepositoryErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -598,8 +544,6 @@ impl CreateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -695,23 +639,15 @@ pub struct DeleteDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -758,8 +694,6 @@ impl DeleteDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -830,27 +764,17 @@ pub struct DeleteDomainPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -905,8 +829,6 @@ impl DeleteDomainPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -999,27 +921,17 @@ pub struct DeletePackageVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePackageVersionsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1067,8 +979,6 @@ impl DeletePackageVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1159,27 +1069,17 @@ pub struct DeleteRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1227,8 +1127,6 @@ impl DeleteRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1316,27 +1214,17 @@ pub struct DeleteRepositoryPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1397,8 +1285,6 @@ impl DeleteRepositoryPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1495,23 +1381,15 @@ pub struct DescribeDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDomainErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1558,8 +1436,6 @@ impl DescribeDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1636,27 +1512,17 @@ pub struct DescribePackageVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePackageVersionErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1704,8 +1570,6 @@ impl DescribePackageVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1796,23 +1660,15 @@ pub struct DescribeRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRepositoryErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1859,8 +1715,6 @@ impl DescribeRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1943,31 +1797,19 @@ pub struct DisassociateExternalConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateExternalConnectionErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2025,8 +1867,6 @@ impl DisassociateExternalConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2131,27 +1971,17 @@ pub struct DisposePackageVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisposePackageVersionsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2199,8 +2029,6 @@ impl DisposePackageVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2291,23 +2119,15 @@ pub struct GetAuthorizationTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizationTokenErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2354,8 +2174,6 @@ impl GetAuthorizationTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2438,23 +2256,15 @@ pub struct GetDomainPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2501,8 +2311,6 @@ impl GetDomainPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2585,27 +2393,17 @@ pub struct GetPackageVersionAssetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPackageVersionAssetErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2653,8 +2451,6 @@ impl GetPackageVersionAssetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2745,23 +2541,15 @@ pub struct GetPackageVersionReadmeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPackageVersionReadmeErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2808,8 +2596,6 @@ impl GetPackageVersionReadmeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2892,23 +2678,15 @@ pub struct GetRepositoryEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRepositoryEndpointErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2955,8 +2733,6 @@ impl GetRepositoryEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3039,23 +2815,15 @@ pub struct GetRepositoryPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRepositoryPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3109,8 +2877,6 @@ impl GetRepositoryPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3197,19 +2963,13 @@ pub struct ListDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3255,8 +3015,6 @@ impl ListDomainsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3319,23 +3077,15 @@ pub struct ListPackagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPackagesErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3382,8 +3132,6 @@ impl ListPackagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3457,23 +3205,15 @@ pub struct ListPackageVersionAssetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPackageVersionAssetsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3520,8 +3260,6 @@ impl ListPackageVersionAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3604,23 +3342,15 @@ pub struct ListPackageVersionDependenciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPackageVersionDependenciesErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3674,8 +3404,6 @@ impl ListPackageVersionDependenciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3762,23 +3490,15 @@ pub struct ListPackageVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPackageVersionsErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3825,8 +3545,6 @@ impl ListPackageVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3909,19 +3627,13 @@ pub struct ListRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRepositoriesErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3967,8 +3679,6 @@ impl ListRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4043,23 +3753,15 @@ pub struct ListRepositoriesInDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRepositoriesInDomainErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4106,8 +3808,6 @@ impl ListRepositoriesInDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4190,21 +3890,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4250,8 +3942,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4326,31 +4016,19 @@ pub struct PutDomainPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDomainPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4401,8 +4079,6 @@ impl PutDomainPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4503,31 +4179,19 @@ pub struct PutRepositoryPermissionsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRepositoryPermissionsPolicyErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4585,8 +4249,6 @@ impl PutRepositoryPermissionsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4691,25 +4353,15 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4756,8 +4408,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4831,21 +4481,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4891,8 +4533,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4958,27 +4598,17 @@ pub struct UpdatePackageVersionsStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePackageVersionsStatusErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5028,8 +4658,6 @@ impl UpdatePackageVersionsStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5120,31 +4748,19 @@ pub struct UpdateRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRepositoryErrorKind {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5193,8 +4809,6 @@ impl UpdateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5277,23 +4891,17 @@ impl std::error::Error for UpdateRepositoryError {
     }
 }
 
-/// <p>
-/// The operation did not succeed because a parameter in the request was sent with an invalid value.
-/// </p>
+/// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    ///
-    /// </p>
+    /// <p> </p>
     pub reason: std::option::Option<crate::model::ValidationExceptionReason>,
 }
 impl ValidationException {
-    /// <p>
-    ///
-    /// </p>
+    /// <p> </p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
         self.reason.as_ref()
     }
@@ -5342,16 +4950,12 @@ pub mod validation_exception {
             self.message = input;
             self
         }
-        /// <p>
-        ///
-        /// </p>
+        /// <p> </p>
         pub fn reason(mut self, input: crate::model::ValidationExceptionReason) -> Self {
             self.reason = Some(input);
             self
         }
-        /// <p>
-        ///
-        /// </p>
+        /// <p> </p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ValidationExceptionReason>,
@@ -5375,23 +4979,17 @@ impl ValidationException {
     }
 }
 
-/// <p>
-/// The operation did not succeed because too many requests are sent to the service.
-/// </p>
+/// <p> The operation did not succeed because too many requests are sent to the service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The time period, in seconds, to wait before retrying the request.
-    /// </p>
+    /// <p> The time period, in seconds, to wait before retrying the request. </p>
     pub retry_after_seconds: std::option::Option<i32>,
 }
 impl ThrottlingException {
-    /// <p>
-    /// The time period, in seconds, to wait before retrying the request.
-    /// </p>
+    /// <p> The time period, in seconds, to wait before retrying the request. </p>
     pub fn retry_after_seconds(&self) -> std::option::Option<i32> {
         self.retry_after_seconds
     }
@@ -5440,16 +5038,12 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The time period, in seconds, to wait before retrying the request.
-        /// </p>
+        /// <p> The time period, in seconds, to wait before retrying the request. </p>
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
             self.retry_after_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The time period, in seconds, to wait before retrying the request.
-        /// </p>
+        /// <p> The time period, in seconds, to wait before retrying the request. </p>
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_after_seconds = input;
             self
@@ -5470,33 +5064,23 @@ impl ThrottlingException {
     }
 }
 
-/// <p>
-/// The operation did not succeed because it would have exceeded a service limit for your account.
-/// </p>
+/// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ServiceQuotaExceededException {
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -5547,30 +5131,22 @@ pub mod service_quota_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5595,33 +5171,23 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>
-/// The operation did not succeed because the resource requested is not found in the service.
-/// </p>
+/// <p> The operation did not succeed because the resource requested is not found in the service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ResourceNotFoundException {
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -5672,30 +5238,22 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5784,33 +5342,23 @@ impl InternalServerException {
     }
 }
 
-/// <p>
-/// The operation did not succeed because prerequisites are not met.
-/// </p>
+/// <p> The operation did not succeed because prerequisites are not met. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl ConflictException {
-    /// <p>
-    /// The ID of the resource.
-    /// </p>
+    /// <p> The ID of the resource. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>
-    /// The type of AWS resource.
-    /// </p>
+    /// <p> The type of AWS resource. </p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -5861,30 +5409,22 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the resource.
-        /// </p>
+        /// <p> The ID of the resource. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of AWS resource.
-        /// </p>
+        /// <p> The type of AWS resource. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5909,9 +5449,7 @@ impl ConflictException {
     }
 }
 
-/// <p>
-/// The operation did not succeed because of an unauthorized access attempt.
-/// </p>
+/// <p> The operation did not succeed because of an unauthorized access attempt. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

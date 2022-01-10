@@ -18,8 +18,7 @@ pub enum DeleteRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -94,8 +93,6 @@ impl DeleteRecommendationPreferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -220,8 +217,7 @@ pub enum DescribeRecommendationExportJobsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -296,8 +292,6 @@ impl DescribeRecommendationExportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -426,8 +420,7 @@ pub enum ExportAutoScalingGroupRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -502,8 +495,6 @@ impl ExportAutoScalingGroupRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -636,8 +627,7 @@ pub enum ExportEBSVolumeRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -708,8 +698,6 @@ impl ExportEBSVolumeRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -832,8 +820,7 @@ pub enum ExportEC2InstanceRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -906,8 +893,6 @@ impl ExportEC2InstanceRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1036,8 +1021,7 @@ pub enum ExportLambdaFunctionRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1112,8 +1096,6 @@ impl ExportLambdaFunctionRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1244,8 +1226,7 @@ pub enum GetAutoScalingGroupRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1322,8 +1303,6 @@ impl GetAutoScalingGroupRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1452,8 +1431,7 @@ pub enum GetEBSVolumeRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1519,8 +1497,6 @@ impl GetEBSVolumeRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1639,8 +1615,7 @@ pub enum GetEC2InstanceRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1711,8 +1686,6 @@ impl GetEC2InstanceRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1833,8 +1806,7 @@ pub enum GetEC2RecommendationProjectedMetricsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1911,8 +1883,6 @@ impl GetEC2RecommendationProjectedMetricsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2043,8 +2013,7 @@ pub enum GetEffectiveRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2121,8 +2090,6 @@ impl GetEffectiveRecommendationPreferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2253,8 +2220,7 @@ pub enum GetEnrollmentStatusErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2306,8 +2272,6 @@ impl GetEnrollmentStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2404,8 +2368,7 @@ pub enum GetEnrollmentStatusesForOrganizationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2472,8 +2435,6 @@ impl GetEnrollmentStatusesForOrganizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2586,8 +2547,7 @@ pub enum GetLambdaFunctionRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2660,8 +2620,6 @@ impl GetLambdaFunctionRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2788,8 +2746,7 @@ pub enum GetRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2855,8 +2812,6 @@ impl GetRecommendationPreferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2977,8 +2932,7 @@ pub enum GetRecommendationSummariesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -3039,8 +2993,6 @@ impl GetRecommendationSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3149,8 +3101,7 @@ pub enum PutRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -3216,8 +3167,6 @@ impl PutRecommendationPreferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3338,8 +3287,7 @@ pub enum UpdateEnrollmentStatusErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3393,8 +3341,6 @@ impl UpdateEnrollmentStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3600,8 +3546,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-/// or X.509 certificate.</p>
+/// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingAuthenticationToken {

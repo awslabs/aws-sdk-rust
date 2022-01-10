@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Snow Device Management
@@ -131,6 +131,7 @@ where
     ///
     /// See [`ListDeviceResources`](crate::client::fluent_builders::ListDeviceResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceResources::into_paginator).
     pub fn list_device_resources(&self) -> fluent_builders::ListDeviceResources<C, M, R> {
         fluent_builders::ListDeviceResources::new(self.handle.clone())
     }
@@ -138,6 +139,7 @@ where
     ///
     /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
@@ -145,6 +147,7 @@ where
     ///
     /// See [`ListExecutions`](crate::client::fluent_builders::ListExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
     pub fn list_executions(&self) -> fluent_builders::ListExecutions<C, M, R> {
         fluent_builders::ListExecutions::new(self.handle.clone())
     }
@@ -159,6 +162,7 @@ where
     ///
     /// See [`ListTasks`](crate::client::fluent_builders::ListTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTasks::into_paginator).
     pub fn list_tasks(&self) -> fluent_builders::ListTasks<C, M, R> {
         fluent_builders::ListTasks::new(self.handle.clone())
     }
@@ -187,13 +191,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelTask`.
     ///
-    /// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a
-    /// <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p>
-    /// <note>
-    /// <p>A task might still run if it's processed from the queue before the
-    /// <code>CancelTask</code> operation changes the task's state.</p>
+    /// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note>
+    /// <p>A task might still run if it's processed from the queue before the <code>CancelTask</code> operation changes the task's state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -238,10 +239,10 @@ pub mod fluent_builders {
                 crate::input::CancelTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -249,14 +250,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
@@ -265,7 +264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTask`.
     ///
     /// <p>Instructs one or more devices to start a task, such as unlocking or rebooting.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -310,10 +309,10 @@ pub mod fluent_builders {
                 crate::input::CreateTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -326,8 +325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>A list of managed device IDs.</p>
-        pub fn targets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.targets(input.into());
             self
         }
         /// <p>A list of managed device IDs.</p>
@@ -339,8 +338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
-        pub fn command(mut self, inp: crate::model::Command) -> Self {
-            self.inner = self.inner.command(inp);
+        pub fn command(mut self, input: crate::model::Command) -> Self {
+            self.inner = self.inner.command(input);
             self
         }
         /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
@@ -349,8 +348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the task and its targets.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the task and its targets.</p>
@@ -362,18 +361,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -384,8 +381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token ensuring that the action is called only once with the specified details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -396,9 +393,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
-    /// <p>Checks device-specific information, such as the device type, software version, IP
-    /// addresses, and lock status.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Checks device-specific information, such as the device type, software version, IP addresses, and lock status.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -443,10 +439,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -455,8 +451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the device that you are checking the information of.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(input.into());
             self
         }
         /// <p>The ID of the device that you are checking the information of.</p>
@@ -470,10 +466,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeviceEc2Instances`.
     ///
-    /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to
-    /// <code>describeDevice</code>, but the results are sourced from the device cache in the
-    /// Amazon Web Services Cloud and include a subset of the available fields. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeviceEc2Instances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -518,10 +512,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeviceEc2InstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -530,8 +524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed device.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(input.into());
             self
         }
         /// <p>The ID of the managed device.</p>
@@ -547,8 +541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>A list of instance IDs associated with the managed device.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>A list of instance IDs associated with the managed device.</p>
@@ -563,7 +557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExecution`.
     ///
     /// <p>Checks the status of a remote task running on one or more target devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -608,10 +602,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -620,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task that the action is describing.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the task that the action is describing.</p>
@@ -630,8 +624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the managed device.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(input.into());
             self
         }
         /// <p>The ID of the managed device.</p>
@@ -646,7 +640,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTask`.
     ///
     /// <p>Checks the metadata for a given task on a device. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -691,10 +685,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -703,8 +697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the task to be described.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the task to be described.</p>
@@ -716,7 +710,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceResources`.
     ///
     /// <p>Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -761,10 +755,10 @@ pub mod fluent_builders {
                 crate::input::ListDeviceResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -772,9 +766,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeviceResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeviceResourcesPaginator<C, M, R> {
+            crate::paginator::ListDeviceResourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the managed device that you are listing the resources of.</p>
-        pub fn managed_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_device_id(inp);
+        pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_device_id(input.into());
             self
         }
         /// <p>The ID of the managed device that you are listing the resources of.</p>
@@ -786,8 +786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure used to filter the results by type of resource.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>A structure used to filter the results by type of resource.</p>
@@ -796,8 +796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resources per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of resources per page.</p>
@@ -806,8 +806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
@@ -818,9 +818,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevices`.
     ///
-    /// <p>Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management
-    /// enabled in the Amazon Web Services Region where the command is run.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of all devices on your Amazon Web Services account that have Amazon Web Services Snow Device Management enabled in the Amazon Web Services Region where the command is run.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -865,10 +864,10 @@ pub mod fluent_builders {
                 crate::input::ListDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -876,9 +875,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevicesPaginator<C, M, R> {
+            crate::paginator::ListDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the job used to order the device.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the job used to order the device.</p>
@@ -887,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of devices to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of devices to list per page.</p>
@@ -897,8 +902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to continue to the next page of results.</p>
@@ -910,7 +915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExecutions`.
     ///
     /// <p>Returns the status of tasks for one or more target devices.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,10 +960,10 @@ pub mod fluent_builders {
                 crate::input::ListExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -966,9 +971,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExecutionsPaginator<C, M, R> {
+            crate::paginator::ListExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the task.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the task.</p>
@@ -977,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure used to filter the tasks by their current state.</p>
-        pub fn state(mut self, inp: crate::model::ExecutionState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::ExecutionState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>A structure used to filter the tasks by their current state.</p>
@@ -990,8 +1001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tasks to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tasks to list per page.</p>
@@ -1000,8 +1011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
@@ -1013,7 +1024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags for a managed device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1058,10 +1069,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1070,8 +1081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1083,7 +1094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTasks`.
     ///
     /// <p>Returns a list of tasks that can be filtered by state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1128,10 +1139,10 @@ pub mod fluent_builders {
                 crate::input::ListTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1139,9 +1150,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTasksPaginator<C, M, R> {
+            crate::paginator::ListTasksPaginator::new(self.handle, self.inner)
+        }
         /// <p>A structure used to filter the list of tasks.</p>
-        pub fn state(mut self, inp: crate::model::TaskState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::TaskState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>A structure used to filter the list of tasks.</p>
@@ -1150,8 +1167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tasks per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tasks per page.</p>
@@ -1160,8 +1177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to continue to the next page of tasks.</p>
@@ -1173,7 +1190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or replaces tags on a device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1218,10 +1235,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,8 +1247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1243,18 +1260,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1268,7 +1283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from a device or task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1313,10 +1328,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1325,8 +1340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
@@ -1338,14 +1353,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1355,6 +1368,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -66,8 +66,6 @@ impl AssociateAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -142,8 +140,7 @@ pub struct AssociateResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateResourceErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -195,8 +192,6 @@ impl AssociateResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -268,8 +263,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -318,8 +312,6 @@ impl CreateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -383,8 +375,7 @@ pub struct CreateAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAttributeGroupErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -436,8 +427,6 @@ impl CreateAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -561,8 +550,6 @@ impl DeleteApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -678,8 +665,6 @@ impl DeleteAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -795,8 +780,6 @@ impl DisassociateAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -909,8 +892,6 @@ impl DisassociateResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1018,8 +999,6 @@ impl GetApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1132,8 +1111,6 @@ impl GetAssociatedResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1249,8 +1226,6 @@ impl GetAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1363,8 +1338,6 @@ impl ListApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1479,8 +1452,6 @@ impl ListAssociatedAttributeGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1598,8 +1569,6 @@ impl ListAssociatedResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1712,8 +1681,6 @@ impl ListAttributeGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1821,8 +1788,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1889,8 +1854,7 @@ pub struct SyncResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SyncResourceErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1939,8 +1903,6 @@ impl SyncResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2053,8 +2015,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2164,8 +2124,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2229,8 +2187,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2279,8 +2236,6 @@ impl UpdateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2344,8 +2299,7 @@ pub struct UpdateAttributeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAttributeGroupErrorKind {
-    /// <p>There was a conflict when processing the request (for example, a resource with the given name already
-    /// exists within the account).</p>
+    /// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2397,8 +2351,6 @@ impl UpdateAttributeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2652,8 +2604,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>There was a conflict when processing the request (for example, a resource with the given name already
-/// exists within the account).</p>
+/// <p>There was a conflict when processing the request (for example, a resource with the given name already exists within the account).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

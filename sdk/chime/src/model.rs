@@ -126,10 +126,7 @@ impl AsRef<str> for ErrorCode {
     }
 }
 
-/// <p>The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice
-/// Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in
-/// your group. This creates a fault tolerant mechanism for fallback in case of availability
-/// events.</p>
+/// <p>The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorGroup {
@@ -229,12 +226,9 @@ pub mod voice_connector_group {
         /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
         ///
         /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
-        pub fn voice_connector_items(
-            mut self,
-            input: impl Into<crate::model::VoiceConnectorItem>,
-        ) -> Self {
+        pub fn voice_connector_items(mut self, input: crate::model::VoiceConnectorItem) -> Self {
             let mut v = self.voice_connector_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.voice_connector_items = Some(v);
             self
         }
@@ -305,9 +299,7 @@ impl VoiceConnectorGroup {
     }
 }
 
-/// <p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3
-/// <code>VoiceConnectorItems</code>
-/// per Amazon Chime Voice Connector group.</p>
+/// <p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorItem {
@@ -383,17 +375,13 @@ impl VoiceConnectorItem {
     }
 }
 
-/// <p>The Amazon Chime Voice Connector configuration, including outbound host name and encryption
-/// settings.</p>
+/// <p>The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnector {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default:
-    /// <code>us-east-1</code>.
-    /// </p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
     pub aws_region: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub name: std::option::Option<std::string::String>,
@@ -413,10 +401,7 @@ impl VoiceConnector {
     pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
-    /// <p>
-    /// The AWS Region in which the Amazon Chime Voice Connector is created. Default:
-    /// <code>us-east-1</code>.
-    /// </p>
+    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
     pub fn aws_region(&self) -> std::option::Option<&crate::model::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
@@ -488,18 +473,12 @@ pub mod voice_connector {
             self.voice_connector_id = input;
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default:
-        /// <code>us-east-1</code>.
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
         pub fn aws_region(mut self, input: crate::model::VoiceConnectorAwsRegion) -> Self {
             self.aws_region = Some(input);
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default:
-        /// <code>us-east-1</code>.
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>. </p>
         pub fn set_aws_region(
             mut self,
             input: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
@@ -656,8 +635,7 @@ impl AsRef<str> for VoiceConnectorAwsRegion {
     }
 }
 
-/// <p>Settings associated with an Amazon Chime user, including inbound and outbound calling and text
-/// messaging.</p>
+/// <p>Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSettings {
@@ -714,8 +692,7 @@ impl UserSettings {
     }
 }
 
-/// <p>Settings that allow management of telephony permissions for an Amazon Chime user, such as
-/// inbound and outbound calling and text messaging.</p>
+/// <p>Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TelephonySettings {
@@ -1461,17 +1438,11 @@ pub struct SipRule {
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
     pub disabled: std::option::Option<bool>,
-    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or
-    /// <code>ToPhoneNumber</code>.</p>
+    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
-    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-    /// outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is
-    /// <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in
-    /// E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or
-    /// <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
     pub trigger_value: std::option::Option<std::string::String>,
-    /// <p>Target SIP media application and other details, such as priority and AWS Region, to be
-    /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+    /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
     pub target_applications:
         std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
@@ -1492,21 +1463,15 @@ impl SipRule {
     pub fn disabled(&self) -> std::option::Option<bool> {
         self.disabled
     }
-    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or
-    /// <code>ToPhoneNumber</code>.</p>
+    /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::SipRuleTriggerType> {
         self.trigger_type.as_ref()
     }
-    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-    /// outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is
-    /// <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in
-    /// E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or
-    /// <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+    /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
     pub fn trigger_value(&self) -> std::option::Option<&str> {
         self.trigger_value.as_deref()
     }
-    /// <p>Target SIP media application and other details, such as priority and AWS Region, to be
-    /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+    /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
     pub fn target_applications(
         &self,
     ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
@@ -1582,14 +1547,12 @@ pub mod sip_rule {
             self.disabled = input;
             self
         }
-        /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or
-        /// <code>ToPhoneNumber</code>.</p>
+        /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
         pub fn trigger_type(mut self, input: crate::model::SipRuleTriggerType) -> Self {
             self.trigger_type = Some(input);
             self
         }
-        /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or
-        /// <code>ToPhoneNumber</code>.</p>
+        /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
         pub fn set_trigger_type(
             mut self,
             input: std::option::Option<crate::model::SipRuleTriggerType>,
@@ -1597,20 +1560,12 @@ pub mod sip_rule {
             self.trigger_type = input;
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-        /// outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in
-        /// E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or
-        /// <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
         pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.trigger_value = Some(input.into());
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the
-        /// outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in
-        /// E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or
-        /// <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name or <code>ToPhoneNumber</code> matches in the incoming SIP request.</p>
         pub fn set_trigger_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1622,19 +1577,17 @@ pub mod sip_rule {
         ///
         /// To override the contents of this collection use [`set_target_applications`](Self::set_target_applications).
         ///
-        /// <p>Target SIP media application and other details, such as priority and AWS Region, to be
-        /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+        /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
         pub fn target_applications(
             mut self,
-            input: impl Into<crate::model::SipRuleTargetApplication>,
+            input: crate::model::SipRuleTargetApplication,
         ) -> Self {
             let mut v = self.target_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_applications = Some(v);
             self
         }
-        /// <p>Target SIP media application and other details, such as priority and AWS Region, to be
-        /// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+        /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
         pub fn set_target_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
@@ -1690,8 +1643,7 @@ impl SipRule {
     }
 }
 
-/// <p>Target SIP media application and other details, such as priority and AWS Region, to be
-/// specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
+/// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SipRuleTargetApplication {
@@ -2006,12 +1958,9 @@ pub mod sip_media_application {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
-        pub fn endpoints(
-            mut self,
-            input: impl Into<crate::model::SipMediaApplicationEndpoint>,
-        ) -> Self {
+        pub fn endpoints(mut self, input: crate::model::SipMediaApplicationEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -2853,9 +2802,9 @@ pub mod proxy_session {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The proxy session capabilities.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -2911,9 +2860,9 @@ pub mod proxy_session {
         /// To override the contents of this collection use [`set_participants`](Self::set_participants).
         ///
         /// <p>The proxy session participants.</p>
-        pub fn participants(mut self, input: impl Into<crate::model::Participant>) -> Self {
+        pub fn participants(mut self, input: crate::model::Participant) -> Self {
             let mut v = self.participants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.participants = Some(v);
             self
         }
@@ -3367,8 +3316,7 @@ impl AsRef<str> for ProxySessionStatus {
     }
 }
 
-/// <p>A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice
-/// Connector.</p>
+/// <p>A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumber {
@@ -3587,12 +3535,9 @@ pub mod phone_number {
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
         /// <p>The phone number associations.</p>
-        pub fn associations(
-            mut self,
-            input: impl Into<crate::model::PhoneNumberAssociation>,
-        ) -> Self {
+        pub fn associations(mut self, input: crate::model::PhoneNumberAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -3761,15 +3706,13 @@ impl AsRef<str> for CallingNameStatus {
     }
 }
 
-/// <p>The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon
-/// Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
+/// <p>The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberAssociation {
     /// <p>Contains the ID for the entity specified in Name.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector
-    /// ID, or Amazon Chime Voice Connector group ID.</p>
+    /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
     pub name: std::option::Option<crate::model::PhoneNumberAssociationName>,
     /// <p>The timestamp of the phone number association, in ISO 8601 format.</p>
     pub associated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -3779,8 +3722,7 @@ impl PhoneNumberAssociation {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector
-    /// ID, or Amazon Chime Voice Connector group ID.</p>
+    /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::PhoneNumberAssociationName> {
         self.name.as_ref()
     }
@@ -3819,14 +3761,12 @@ pub mod phone_number_association {
             self.value = input;
             self
         }
-        /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector
-        /// ID, or Amazon Chime Voice Connector group ID.</p>
+        /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
         pub fn name(mut self, input: crate::model::PhoneNumberAssociationName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector
-        /// ID, or Amazon Chime Voice Connector group ID.</p>
+        /// <p>Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberAssociationName>,
@@ -3937,8 +3877,7 @@ impl AsRef<str> for PhoneNumberAssociationName {
     }
 }
 
-/// <p>The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled
-/// inbound and outbound calling and text messaging.</p>
+/// <p>The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberCapabilities {
@@ -4293,8 +4232,7 @@ impl AsRef<str> for PhoneNumberType {
     }
 }
 
-/// <p>The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for
-/// storing call detail records.</p>
+/// <p>The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoiceConnectorSettings {
@@ -4348,8 +4286,7 @@ impl VoiceConnectorSettings {
     }
 }
 
-/// <p>The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any
-/// Amazon S3 buckets designated for storing call detail records.</p>
+/// <p>The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessCallingSettings {
@@ -4724,16 +4661,13 @@ impl AsRef<str> for BotType {
     }
 }
 
-/// <p>Settings related to the Amazon Chime account. This includes settings that start or stop
-/// remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see
-/// <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+/// <p>Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
     pub disable_remote_control: std::option::Option<bool>,
-    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub enable_dial_out: std::option::Option<bool>,
 }
 impl AccountSettings {
@@ -4741,8 +4675,7 @@ impl AccountSettings {
     pub fn disable_remote_control(&self) -> std::option::Option<bool> {
         self.disable_remote_control
     }
-    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub fn enable_dial_out(&self) -> std::option::Option<bool> {
         self.enable_dial_out
     }
@@ -4775,14 +4708,12 @@ pub mod account_settings {
             self.disable_remote_control = input;
             self
         }
-        /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see
-        /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+        /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
         pub fn enable_dial_out(mut self, input: bool) -> Self {
             self.enable_dial_out = Some(input);
             self
         }
-        /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see
-        /// <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+        /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
         pub fn set_enable_dial_out(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_dial_out = input;
             self
@@ -4813,9 +4744,7 @@ pub struct Account {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Chime account name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Chime account type. For more information about different account types, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-    /// Guide</i>.</p>
+    /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub account_type: std::option::Option<crate::model::AccountType>,
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -4842,9 +4771,7 @@ impl Account {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Chime account type. For more information about different account types, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-    /// Guide</i>.</p>
+    /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub fn account_type(&self) -> std::option::Option<&crate::model::AccountType> {
         self.account_type.as_ref()
     }
@@ -4937,16 +4864,12 @@ pub mod account {
             self.name = input;
             self
         }
-        /// <p>The Amazon Chime account type. For more information about different account types, see
-        /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-        /// Guide</i>.</p>
+        /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
         pub fn account_type(mut self, input: crate::model::AccountType) -> Self {
             self.account_type = Some(input);
             self
         }
-        /// <p>The Amazon Chime account type. For more information about different account types, see
-        /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-        /// Guide</i>.</p>
+        /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
         pub fn set_account_type(
             mut self,
             input: std::option::Option<crate::model::AccountType>,
@@ -4985,9 +4908,9 @@ pub mod account {
         /// To override the contents of this collection use [`set_supported_licenses`](Self::set_supported_licenses).
         ///
         /// <p>Supported licenses for the Amazon Chime account.</p>
-        pub fn supported_licenses(mut self, input: impl Into<crate::model::License>) -> Self {
+        pub fn supported_licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.supported_licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_licenses = Some(v);
             self
         }
@@ -5017,12 +4940,9 @@ pub mod account {
         /// To override the contents of this collection use [`set_signin_delegate_groups`](Self::set_signin_delegate_groups).
         ///
         /// <p>The sign-in delegate groups associated with the account.</p>
-        pub fn signin_delegate_groups(
-            mut self,
-            input: impl Into<crate::model::SigninDelegateGroup>,
-        ) -> Self {
+        pub fn signin_delegate_groups(mut self, input: crate::model::SigninDelegateGroup) -> Self {
             let mut v = self.signin_delegate_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signin_delegate_groups = Some(v);
             self
         }
@@ -5928,13 +5848,8 @@ pub struct EngineTranscribeSettings {
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
     pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>
-    /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-    ///
-    /// <p>
-    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model used during transcription.</p>
     pub language_model_name: std::option::Option<std::string::String>,
@@ -5985,13 +5900,8 @@ impl EngineTranscribeSettings {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    /// <p>
-    /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-    ///
-    /// <p>
-    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
@@ -6176,25 +6086,15 @@ pub mod engine_transcribe_settings {
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-        ///
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.pii_entity_types = Some(input.into());
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated. The available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-        ///
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6780,15 +6680,13 @@ impl AsRef<str> for ChannelMessageType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Credential {
-    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII
-    /// format.</p>
+    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
     pub password: std::option::Option<std::string::String>,
 }
 impl Credential {
-    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII
-    /// format.</p>
+    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -6815,14 +6713,12 @@ pub mod credential {
         pub(crate) password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII
-        /// format.</p>
+        /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII
-        /// format.</p>
+        /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -6853,13 +6749,11 @@ impl Credential {
     }
 }
 
-/// <p>Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime
-/// Voice Connector.</p>
+/// <p>Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Termination {
-    /// <p>The limit on calls per second. Max value based on account service quota. Default value of
-    /// 1.</p>
+    /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub cps_limit: std::option::Option<i32>,
     /// <p>The default caller ID phone number.</p>
     pub default_phone_number: std::option::Option<std::string::String>,
@@ -6871,8 +6765,7 @@ pub struct Termination {
     pub disabled: std::option::Option<bool>,
 }
 impl Termination {
-    /// <p>The limit on calls per second. Max value based on account service quota. Default value of
-    /// 1.</p>
+    /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub fn cps_limit(&self) -> std::option::Option<i32> {
         self.cps_limit
     }
@@ -6917,14 +6810,12 @@ pub mod termination {
         pub(crate) disabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The limit on calls per second. Max value based on account service quota. Default value of
-        /// 1.</p>
+        /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
         pub fn cps_limit(mut self, input: i32) -> Self {
             self.cps_limit = Some(input);
             self
         }
-        /// <p>The limit on calls per second. Max value based on account service quota. Default value of
-        /// 1.</p>
+        /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
         pub fn set_cps_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.cps_limit = input;
             self
@@ -7009,9 +6900,7 @@ impl Termination {
     }
 }
 
-/// <p>The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether
-/// media streaming is enabled for sending to Amazon Kinesis, and shows the retention period
-/// for the Amazon Kinesis data, in hours.</p>
+/// <p>The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingConfiguration {
@@ -7090,10 +6979,10 @@ pub mod streaming_configuration {
         /// <p>The streaming notification targets.</p>
         pub fn streaming_notification_targets(
             mut self,
-            input: impl Into<crate::model::StreamingNotificationTarget>,
+            input: crate::model::StreamingNotificationTarget,
         ) -> Self {
             let mut v = self.streaming_notification_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_notification_targets = Some(v);
             self
         }
@@ -7367,29 +7256,23 @@ impl Proxy {
     }
 }
 
-/// <p>Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime
-/// Voice Connector.</p>
-/// <note>
+/// <p>Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.</p> <note>
 /// <p>The parameters listed below are not required, but you must use at least one. </p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Origination {
-    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
-    /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
     pub routes: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
-    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-    /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub disabled: std::option::Option<bool>,
 }
 impl Origination {
-    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
-    /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+    /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
     pub fn routes(&self) -> std::option::Option<&[crate::model::OriginationRoute]> {
         self.routes.as_deref()
     }
-    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-    /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+    /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub fn disabled(&self) -> std::option::Option<bool> {
         self.disabled
     }
@@ -7416,16 +7299,14 @@ pub mod origination {
         ///
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
-        /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
-        /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::OriginationRoute>) -> Self {
+        /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+        pub fn routes(mut self, input: crate::model::OriginationRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
-        /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1.
-        /// Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
+        /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
         pub fn set_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
@@ -7433,14 +7314,12 @@ pub mod origination {
             self.routes = input;
             self
         }
-        /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-        /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+        /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
         pub fn disabled(mut self, input: bool) -> Self {
             self.disabled = Some(input);
             self
         }
-        /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime
-        /// Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
+        /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.disabled = input;
             self
@@ -7461,10 +7340,7 @@ impl Origination {
     }
 }
 
-/// <p>Origination routes define call distribution properties for your SIP hosts to receive inbound
-/// calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each
-/// Amazon Chime Voice Connector.</p>
-/// <note>
+/// <p>Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.</p> <note>
 /// <p>The parameters listed below are not required, but you must use at least one. </p>
 /// </note>
 #[non_exhaustive]
@@ -7476,11 +7352,9 @@ pub struct OriginationRoute {
     pub port: std::option::Option<i32>,
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
     pub protocol: std::option::Option<crate::model::OriginationRouteProtocol>,
-    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority
-    /// hosts are attempted first.</p>
+    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
-    /// them based on their relative weight.</p>
+    /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
     pub weight: std::option::Option<i32>,
 }
 impl OriginationRoute {
@@ -7496,13 +7370,11 @@ impl OriginationRoute {
     pub fn protocol(&self) -> std::option::Option<&crate::model::OriginationRouteProtocol> {
         self.protocol.as_ref()
     }
-    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority
-    /// hosts are attempted first.</p>
+    /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
-    /// them based on their relative weight.</p>
+    /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
     pub fn weight(&self) -> std::option::Option<i32> {
         self.weight
     }
@@ -7564,26 +7436,22 @@ pub mod origination_route {
             self.protocol = input;
             self
         }
-        /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority
-        /// hosts are attempted first.</p>
+        /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority
-        /// hosts are attempted first.</p>
+        /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
-        /// them based on their relative weight.</p>
+        /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
         pub fn weight(mut self, input: i32) -> Self {
             self.weight = Some(input);
             self
         }
-        /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among
-        /// them based on their relative weight.</p>
+        /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
             self.weight = input;
             self
@@ -7751,12 +7619,9 @@ pub mod emergency_calling_configuration {
         /// To override the contents of this collection use [`set_dnis`](Self::set_dnis).
         ///
         /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-        pub fn dnis(
-            mut self,
-            input: impl Into<crate::model::DnisEmergencyCallingConfiguration>,
-        ) -> Self {
+        pub fn dnis(mut self, input: crate::model::DnisEmergencyCallingConfiguration) -> Self {
             let mut v = self.dnis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dnis = Some(v);
             self
         }
@@ -8566,10 +8431,10 @@ pub mod phone_number_country {
         /// <p>The supported phone number types. </p>
         pub fn supported_phone_number_types(
             mut self,
-            input: impl Into<crate::model::PhoneNumberType>,
+            input: crate::model::PhoneNumberType,
         ) -> Self {
             let mut v = self.supported_phone_number_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_phone_number_types = Some(v);
             self
         }
@@ -8607,8 +8472,7 @@ pub struct PhoneNumberOrder {
     pub product_type: std::option::Option<crate::model::PhoneNumberProductType>,
     /// <p>The status of the phone number order.</p>
     pub status: std::option::Option<crate::model::PhoneNumberOrderStatus>,
-    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
-    /// number status.</p>
+    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
     pub ordered_phone_numbers: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -8628,8 +8492,7 @@ impl PhoneNumberOrder {
     pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberOrderStatus> {
         self.status.as_ref()
     }
-    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
-    /// number status.</p>
+    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
     pub fn ordered_phone_numbers(
         &self,
     ) -> std::option::Option<&[crate::model::OrderedPhoneNumber]> {
@@ -8714,19 +8577,14 @@ pub mod phone_number_order {
         ///
         /// To override the contents of this collection use [`set_ordered_phone_numbers`](Self::set_ordered_phone_numbers).
         ///
-        /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
-        /// number status.</p>
-        pub fn ordered_phone_numbers(
-            mut self,
-            input: impl Into<crate::model::OrderedPhoneNumber>,
-        ) -> Self {
+        /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
+        pub fn ordered_phone_numbers(mut self, input: crate::model::OrderedPhoneNumber) -> Self {
             let mut v = self.ordered_phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ordered_phone_numbers = Some(v);
             self
         }
-        /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone
-        /// number status.</p>
+        /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
         pub fn set_ordered_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
@@ -8991,12 +8849,7 @@ pub struct Meeting {
     pub external_meeting_id: std::option::Option<std::string::String>,
     /// <p>The media placement for the meeting.</p>
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
-    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-    /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-    /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-    /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-    /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-    /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub media_region: std::option::Option<std::string::String>,
 }
 impl Meeting {
@@ -9012,12 +8865,7 @@ impl Meeting {
     pub fn media_placement(&self) -> std::option::Option<&crate::model::MediaPlacement> {
         self.media_placement.as_ref()
     }
-    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-    /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-    /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-    /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-    /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-    /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
@@ -9080,22 +8928,12 @@ pub mod meeting {
             self.media_placement = input;
             self
         }
-        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-        /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-        /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-        /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-        /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-        /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-        /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-        /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-        /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-        /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-        /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_region = input;
             self
@@ -11502,23 +11340,8 @@ impl ChannelBanSummary {
     }
 }
 
-/// <p>
-/// An Amazon Chime SDK meeting attendee. Includes a unique
-/// <code>AttendeeId</code>
-/// and
-/// <code>JoinToken</code>
-/// . The
-/// <code>JoinToken</code>
-/// allows a client to authenticate and join as the specified attendee. The
-/// <code>JoinToken</code>
-/// expires when the meeting ends or when
-/// <a>DeleteAttendee</a>
-/// is called. After that, the attendee is unable to join the meeting.
-/// </p>
-///
-/// <p>We recommend securely transferring each <code>JoinToken</code> from your server application
-/// to the client so that no other client has access to the token except for the one
-/// authorized to represent the attendee.</p>
+/// <p> An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code> . The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+/// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attendee {
@@ -11855,8 +11678,7 @@ impl AppInstanceAdminSummary {
     }
 }
 
-/// <p>Invitation object returned after emailing users to invite them to join the Amazon Chime
-/// <code>Team</code> account.</p>
+/// <p>Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invite {
@@ -12035,8 +11857,7 @@ impl AsRef<str> for EmailStatus {
     }
 }
 
-/// <p>The termination health details, including the source IP address and timestamp of the last
-/// successful SIP <code>OPTIONS</code> message from your SIP infrastructure.</p>
+/// <p>The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminationHealth {
@@ -12423,8 +12244,7 @@ impl ChannelMessage {
     }
 }
 
-/// <p>If the phone number action fails for one or more of the phone numbers in the request, a list of
-/// the phone numbers is returned, along with error codes and error messages.</p>
+/// <p>If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberError {
@@ -13670,9 +13490,9 @@ pub mod create_attendee_request_item {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -13700,9 +13520,7 @@ impl CreateAttendeeRequestItem {
     }
 }
 
-/// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-/// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-/// Virginia) AWS Region (<code>us-east-1</code>). </p>
+/// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeetingNotificationConfiguration {
@@ -13781,8 +13599,7 @@ impl MeetingNotificationConfiguration {
     }
 }
 
-/// <p>The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or
-/// <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.</p>
+/// <p>The list of errors returned when errors are encountered during the <code>BatchSuspendUser</code>, <code>BatchUnsuspendUser</code>, or <code>BatchUpdateUser</code> actions. This includes user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserError {
@@ -13880,8 +13697,7 @@ impl UserError {
     }
 }
 
-/// <p>The user ID and user fields to update, used with the
-/// <a>BatchUpdateUser</a> action.</p>
+/// <p>The user ID and user fields to update, used with the <code>BatchUpdateUser</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserRequestItem {
@@ -14007,8 +13823,7 @@ impl UpdateUserRequestItem {
     }
 }
 
-/// <p>The phone number ID, product type, or calling name fields to update, used with the
-/// <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.</p>
+/// <p>The phone number ID, product type, or calling name fields to update, used with the <code>BatchUpdatePhoneNumber</code> and <code>UpdatePhoneNumber</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberRequestItem {
@@ -14378,8 +14193,7 @@ impl BatchCreateChannelMembershipError {
     }
 }
 
-/// <p>The membership information, including member ARNs, the channel ARN, and membership
-/// types.</p>
+/// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchChannelMemberships {
@@ -14463,9 +14277,9 @@ pub mod batch_channel_memberships {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The users successfully added to the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Identity>) -> Self {
+        pub fn members(mut self, input: crate::model::Identity) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }

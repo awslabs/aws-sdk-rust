@@ -9,17 +9,13 @@ pub enum Error {
     BatchTooLarge(crate::error::BatchTooLarge),
     /// <p>The CNAME specified is already defined for CloudFront.</p>
     CnameAlreadyExists(crate::error::CnameAlreadyExists),
-    /// <p>A cache policy with this name already exists. You must provide a unique name. To
-    /// modify an existing cache policy, use <code>UpdateCachePolicy</code>.</p>
+    /// <p>A cache policy with this name already exists. You must provide a unique name. To modify an existing cache policy, use <code>UpdateCachePolicy</code>.</p>
     CachePolicyAlreadyExists(crate::error::CachePolicyAlreadyExists),
-    /// <p>Cannot delete the cache policy because it is attached to one or more cache
-    /// behaviors.</p>
+    /// <p>Cannot delete the cache policy because it is attached to one or more cache behaviors.</p>
     CachePolicyInUse(crate::error::CachePolicyInUse),
     /// <p>You can't change the value of a public key.</p>
     CannotChangeImmutablePublicKeyFields(crate::error::CannotChangeImmutablePublicKeyFields),
-    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content
-    /// of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a
-    /// <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
+    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
     CloudFrontOriginAccessIdentityAlreadyExists(
         crate::error::CloudFrontOriginAccessIdentityAlreadyExists,
     ),
@@ -27,8 +23,7 @@ pub enum Error {
     CloudFrontOriginAccessIdentityInUse(crate::error::CloudFrontOriginAccessIdentityInUse),
     /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
     DistributionAlreadyExists(crate::error::DistributionAlreadyExists),
-    /// <p>The specified CloudFront distribution is not disabled. You must disable
-    /// the distribution before you can delete it.</p>
+    /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
     DistributionNotDisabled(crate::error::DistributionNotDisabled),
     /// <p>The specified configuration for field-level encryption already exists.</p>
     FieldLevelEncryptionConfigAlreadyExists(crate::error::FieldLevelEncryptionConfigAlreadyExists),
@@ -42,15 +37,11 @@ pub enum Error {
     FieldLevelEncryptionProfileInUse(crate::error::FieldLevelEncryptionProfileInUse),
     /// <p>The maximum size of a profile for field-level encryption was exceeded.</p>
     FieldLevelEncryptionProfileSizeExceeded(crate::error::FieldLevelEncryptionProfileSizeExceeded),
-    /// <p>A function with the same name already exists in this Amazon Web Services account. To create a
-    /// function, you must provide a unique name. To update an existing function, use
-    /// <code>UpdateFunction</code>.</p>
+    /// <p>A function with the same name already exists in this Amazon Web Services account. To create a function, you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.</p>
     FunctionAlreadyExists(crate::error::FunctionAlreadyExists),
-    /// <p>Cannot delete the function because it’s attached to one or more cache
-    /// behaviors.</p>
+    /// <p>Cannot delete the function because it’s attached to one or more cache behaviors.</p>
     FunctionInUse(crate::error::FunctionInUse),
-    /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     FunctionSizeLimitExceeded(crate::error::FunctionSizeLimitExceeded),
     /// <p>You cannot delete a managed policy.</p>
     IllegalDelete(crate::error::IllegalDelete),
@@ -68,8 +59,7 @@ pub enum Error {
     InvalidDefaultRootObject(crate::error::InvalidDefaultRootObject),
     /// <p>An invalid error code was specified.</p>
     InvalidErrorCode(crate::error::InvalidErrorCode),
-    /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code>
-    /// list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
+    /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
     InvalidForwardCookies(crate::error::InvalidForwardCookies),
     /// <p>A CloudFront function association is invalid.</p>
     InvalidFunctionAssociation(crate::error::InvalidFunctionAssociation),
@@ -93,15 +83,13 @@ pub enum Error {
     InvalidOriginKeepaliveTimeout(crate::error::InvalidOriginKeepaliveTimeout),
     /// <p>The read timeout specified for the origin is not valid.</p>
     InvalidOriginReadTimeout(crate::error::InvalidOriginReadTimeout),
-    /// <p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support
-    /// Server Name Indication (SNI).</p>
+    /// <p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support Server Name Indication (SNI).</p>
     InvalidProtocolSettings(crate::error::InvalidProtocolSettings),
     /// <p>The query string parameters specified are not valid.</p>
     InvalidQueryStringParameters(crate::error::InvalidQueryStringParameters),
     /// <p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>
     InvalidRelativePath(crate::error::InvalidRelativePath),
-    /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the
-    /// <code>RequiredProtocols</code> element from your distribution configuration.</p>
+    /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>
     InvalidRequiredProtocol(crate::error::InvalidRequiredProtocol),
     /// <p>A response code is not valid.</p>
     InvalidResponseCode(crate::error::InvalidResponseCode),
@@ -111,14 +99,9 @@ pub enum Error {
     InvalidTagging(crate::error::InvalidTagging),
     /// <p>A viewer certificate specified is not valid.</p>
     InvalidViewerCertificate(crate::error::InvalidViewerCertificate),
-    /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest
-    /// version of WAF, use the ACL ARN, for example
-    /// <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-    /// To specify a web ACL created using WAF Classic, use the ACL ID, for example
-    /// <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+    /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
     InvalidWebAclId(crate::error::InvalidWebAclId),
-    /// <p>A key group with this name already exists. You must provide a unique name. To modify an
-    /// existing key group, use <code>UpdateKeyGroup</code>.</p>
+    /// <p>A key group with this name already exists. You must provide a unique name. To modify an existing key group, use <code>UpdateKeyGroup</code>.</p>
     KeyGroupAlreadyExists(crate::error::KeyGroupAlreadyExists),
     /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
     MissingBody(crate::error::MissingBody),
@@ -150,15 +133,11 @@ pub enum Error {
     NoSuchResponseHeadersPolicy(crate::error::NoSuchResponseHeadersPolicy),
     /// <p>The specified streaming distribution does not exist.</p>
     NoSuchStreamingDistribution(crate::error::NoSuchStreamingDistribution),
-    /// <p>An origin request policy with this name already exists. You must provide a unique
-    /// name. To modify an existing origin request policy, use
-    /// <code>UpdateOriginRequestPolicy</code>.</p>
+    /// <p>An origin request policy with this name already exists. You must provide a unique name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.</p>
     OriginRequestPolicyAlreadyExists(crate::error::OriginRequestPolicyAlreadyExists),
-    /// <p>Cannot delete the origin request policy because it is attached to one or more cache
-    /// behaviors.</p>
+    /// <p>Cannot delete the origin request policy because it is attached to one or more cache behaviors.</p>
     OriginRequestPolicyInUse(crate::error::OriginRequestPolicyInUse),
-    /// <p>The precondition in one or more of the request fields evaluated to
-    /// <code>false</code>.</p>
+    /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::error::PreconditionFailed),
     /// <p>The specified public key already exists.</p>
     PublicKeyAlreadyExists(crate::error::PublicKeyAlreadyExists),
@@ -166,37 +145,27 @@ pub enum Error {
     PublicKeyInUse(crate::error::PublicKeyInUse),
     /// <p>No profile specified for the field-level encryption query argument.</p>
     QueryArgProfileEmpty(crate::error::QueryArgProfileEmpty),
-    /// <p>A real-time log configuration with this name already exists. You must provide a unique name.
-    /// To modify an existing real-time log configuration, use
-    /// <code>UpdateRealtimeLogConfig</code>.</p>
+    /// <p>A real-time log configuration with this name already exists. You must provide a unique name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.</p>
     RealtimeLogConfigAlreadyExists(crate::error::RealtimeLogConfigAlreadyExists),
-    /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache
-    /// behaviors.</p>
+    /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.</p>
     RealtimeLogConfigInUse(crate::error::RealtimeLogConfigInUse),
     /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
     RealtimeLogConfigOwnerMismatch(crate::error::RealtimeLogConfigOwnerMismatch),
     /// <p>Cannot delete this resource because it is in use.</p>
     ResourceInUse(crate::error::ResourceInUse),
-    /// <p>A response headers policy with this name already exists. You must provide a unique name. To
-    /// modify an existing response headers policy, use
-    /// <code>UpdateResponseHeadersPolicy</code>.</p>
+    /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
     ResponseHeadersPolicyAlreadyExists(crate::error::ResponseHeadersPolicyAlreadyExists),
-    /// <p>Cannot delete the response headers policy because it is attached to one or more cache
-    /// behaviors in a CloudFront distribution. </p>
+    /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution. </p>
     ResponseHeadersPolicyInUse(crate::error::ResponseHeadersPolicyInUse),
-    /// <p>The caller reference you attempted to create the streaming distribution with
-    /// is associated with another distribution</p>
+    /// <p>The caller reference you attempted to create the streaming distribution with is associated with another distribution</p>
     StreamingDistributionAlreadyExists(crate::error::StreamingDistributionAlreadyExists),
-    /// <p>The specified CloudFront distribution is not disabled. You must disable
-    /// the distribution before you can delete it.</p>
+    /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
     StreamingDistributionNotDisabled(crate::error::StreamingDistributionNotDisabled),
     /// <p>The CloudFront function failed.</p>
     TestFunctionFailed(crate::error::TestFunctionFailed),
     /// <p>You cannot create more cache behaviors for the distribution.</p>
     TooManyCacheBehaviors(crate::error::TooManyCacheBehaviors),
-    /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCachePolicies(crate::error::TooManyCachePolicies),
     /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
     TooManyCertificates(crate::error::TooManyCertificates),
@@ -204,17 +173,12 @@ pub enum Error {
     TooManyCloudFrontOriginAccessIdentities(crate::error::TooManyCloudFrontOriginAccessIdentities),
     /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
     TooManyCookieNamesInWhiteList(crate::error::TooManyCookieNamesInWhiteList),
-    /// <p>The number of cookies in the cache policy exceeds the maximum. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of cookies in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCookiesInCachePolicy(crate::error::TooManyCookiesInCachePolicy),
-    /// <p>The number of cookies in the origin request policy exceeds the maximum. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of cookies in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCookiesInOriginRequestPolicy(crate::error::TooManyCookiesInOriginRequestPolicy),
     /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyCustomHeadersInResponseHeadersPolicy(
         crate::error::TooManyCustomHeadersInResponseHeadersPolicy,
     ),
@@ -222,9 +186,7 @@ pub enum Error {
     TooManyDistributionCnamEs(crate::error::TooManyDistributionCnamEs),
     /// <p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>
     TooManyDistributions(crate::error::TooManyDistributions),
-    /// <p>The maximum number of distributions have been associated with the specified cache
-    /// policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToCachePolicy(
         crate::error::TooManyDistributionsAssociatedToCachePolicy,
     ),
@@ -232,38 +194,28 @@ pub enum Error {
     TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
         crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig,
     ),
-    /// <p>The number of distributions that reference this key group is more than the maximum
-    /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToKeyGroup(
         crate::error::TooManyDistributionsAssociatedToKeyGroup,
     ),
-    /// <p>The maximum number of distributions have been associated with the specified origin
-    /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(
         crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
     ),
-    /// <p>The maximum number of distributions have been associated with the specified response headers
-    /// policy.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToResponseHeadersPolicy(
         crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
     ),
-    /// <p>You have reached the maximum number of distributions that are associated with a CloudFront
-    /// function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsWithFunctionAssociations(
         crate::error::TooManyDistributionsWithFunctionAssociations,
     ),
-    /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner
-    /// to be exceeded.</p>
+    /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
     TooManyDistributionsWithLambdaAssociations(
         crate::error::TooManyDistributionsWithLambdaAssociations,
     ),
-    /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge
-    /// function.</p>
+    /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
     TooManyDistributionsWithSingleFunctionArn(
         crate::error::TooManyDistributionsWithSingleFunctionArn,
     ),
@@ -287,33 +239,21 @@ pub enum Error {
     TooManyFieldLevelEncryptionQueryArgProfiles(
         crate::error::TooManyFieldLevelEncryptionQueryArgProfiles,
     ),
-    /// <p>You have reached the maximum number of CloudFront function associations for this
-    /// distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctionAssociations(crate::error::TooManyFunctionAssociations),
-    /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctions(crate::error::TooManyFunctions),
-    /// <p>The number of headers in the cache policy exceeds the maximum. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of headers in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyHeadersInCachePolicy(crate::error::TooManyHeadersInCachePolicy),
     /// <p>Your request contains too many headers in forwarded values.</p>
     TooManyHeadersInForwardedValues(crate::error::TooManyHeadersInForwardedValues),
-    /// <p>The number of headers in the origin request policy exceeds the maximum. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of headers in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyHeadersInOriginRequestPolicy(crate::error::TooManyHeadersInOriginRequestPolicy),
     /// <p>You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.</p>
     TooManyInvalidationsInProgress(crate::error::TooManyInvalidationsInProgress),
-    /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyKeyGroups(crate::error::TooManyKeyGroups),
-    /// <p>The number of key groups referenced by this distribution is more than the maximum
-    /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyKeyGroupsAssociatedToDistribution(
         crate::error::TooManyKeyGroupsAssociatedToDistribution,
     ),
@@ -323,38 +263,26 @@ pub enum Error {
     TooManyOriginCustomHeaders(crate::error::TooManyOriginCustomHeaders),
     /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
     TooManyOriginGroupsPerDistribution(crate::error::TooManyOriginGroupsPerDistribution),
-    /// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyOriginRequestPolicies(crate::error::TooManyOriginRequestPolicies),
     /// <p>You cannot create more origins for the distribution.</p>
     TooManyOrigins(crate::error::TooManyOrigins),
     /// <p>The maximum number of public keys for field-level encryption have been created. To create a new public key, delete one of the existing keys.</p>
     TooManyPublicKeys(crate::error::TooManyPublicKeys),
-    /// <p>The number of public keys in this key group is more than the maximum allowed. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of public keys in this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyPublicKeysInKeyGroup(crate::error::TooManyPublicKeysInKeyGroup),
     /// <p>Your request contains too many query string parameters.</p>
     TooManyQueryStringParameters(crate::error::TooManyQueryStringParameters),
-    /// <p>The number of query strings in the cache policy exceeds the maximum. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of query strings in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyQueryStringsInCachePolicy(crate::error::TooManyQueryStringsInCachePolicy),
-    /// <p>The number of query strings in the origin request policy exceeds the maximum. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The number of query strings in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyQueryStringsInOriginRequestPolicy(
         crate::error::TooManyQueryStringsInOriginRequestPolicy,
     ),
-    /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyRealtimeLogConfigs(crate::error::TooManyRealtimeLogConfigs),
-    /// <p>You have reached the maximum number of response headers policies for this
-    /// Amazon Web Services account.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyResponseHeadersPolicies(crate::error::TooManyResponseHeadersPolicies),
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyStreamingDistributionCnamEs(crate::error::TooManyStreamingDistributionCnamEs),

@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbCluster {
-    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-    /// can be created in.</p>
+    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     pub backup_retention_period: std::option::Option<i32>,
-    /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that
-    /// identifies a cluster.</p>
+    /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
     pub db_cluster_parameter_group: std::option::Option<std::string::String>,
@@ -19,8 +17,7 @@ pub struct DbCluster {
     pub status: std::option::Option<std::string::String>,
     /// <p>Specifies the progress of the operation as a percentage.</p>
     pub percent_progress: std::option::Option<std::string::String>,
-    /// <p>The earliest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
     pub earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
     pub endpoint: std::option::Option<std::string::String>,
@@ -33,18 +30,15 @@ pub struct DbCluster {
     pub engine: std::option::Option<std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>Specifies the latest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub port: std::option::Option<i32>,
     /// <p>Contains the master user name for the cluster.</p>
     pub master_username: std::option::Option<std::string::String>,
-    /// <p>Specifies the daily time range during which automated backups are created if automated
-    /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
-    /// <p>Specifies the weekly time range during which system maintenance can occur, in
-    /// Universal Coordinated Time (UTC).</p>
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
     pub replication_source_identifier: std::option::Option<std::string::String>,
@@ -52,39 +46,30 @@ pub struct DbCluster {
     pub read_replica_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Provides the list of instances that make up the cluster.</p>
     pub db_cluster_members: std::option::Option<std::vec::Vec<crate::model::DbClusterMember>>,
-    /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster
-    /// belongs to.</p>
+    /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the cluster is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-    /// the encrypted cluster.</p>
+    /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is
-    /// found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
     pub db_cluster_arn: std::option::Option<std::string::String>,
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
-    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-    /// (UTC).</p>
+    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
-    /// Logs.</p>
+    /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is
-    /// enabled, the cluster cannot be deleted unless it is modified and
-    /// <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
-    /// protects clusters from being accidentally deleted.</p>
+    /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: bool,
 }
 impl DbCluster {
-    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-    /// can be created in.</p>
+    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
@@ -92,8 +77,7 @@ impl DbCluster {
     pub fn backup_retention_period(&self) -> std::option::Option<i32> {
         self.backup_retention_period
     }
-    /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that
-    /// identifies a cluster.</p>
+    /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -113,8 +97,7 @@ impl DbCluster {
     pub fn percent_progress(&self) -> std::option::Option<&str> {
         self.percent_progress.as_deref()
     }
-    /// <p>The earliest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
     pub fn earliest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earliest_restorable_time.as_ref()
     }
@@ -139,8 +122,7 @@ impl DbCluster {
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Specifies the latest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
@@ -152,13 +134,11 @@ impl DbCluster {
     pub fn master_username(&self) -> std::option::Option<&str> {
         self.master_username.as_deref()
     }
-    /// <p>Specifies the daily time range during which automated backups are created if automated
-    /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
-    /// <p>Specifies the weekly time range during which system maintenance can occur, in
-    /// Universal Coordinated Time (UTC).</p>
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -174,8 +154,7 @@ impl DbCluster {
     pub fn db_cluster_members(&self) -> std::option::Option<&[crate::model::DbClusterMember]> {
         self.db_cluster_members.as_deref()
     }
-    /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster
-    /// belongs to.</p>
+    /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
     pub fn vpc_security_groups(
         &self,
     ) -> std::option::Option<&[crate::model::VpcSecurityGroupMembership]> {
@@ -189,13 +168,11 @@ impl DbCluster {
     pub fn storage_encrypted(&self) -> bool {
         self.storage_encrypted
     }
-    /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-    /// the encrypted cluster.</p>
+    /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is
-    /// found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+    /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     pub fn db_cluster_resource_id(&self) -> std::option::Option<&str> {
         self.db_cluster_resource_id.as_deref()
     }
@@ -207,20 +184,15 @@ impl DbCluster {
     pub fn associated_roles(&self) -> std::option::Option<&[crate::model::DbClusterRole]> {
         self.associated_roles.as_deref()
     }
-    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-    /// (UTC).</p>
+    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
-    /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
-    /// Logs.</p>
+    /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
     pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.enabled_cloudwatch_logs_exports.as_deref()
     }
-    /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is
-    /// enabled, the cluster cannot be deleted unless it is modified and
-    /// <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
-    /// protects clusters from being accidentally deleted.</p>
+    /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(&self) -> bool {
         self.deletion_protection
     }
@@ -322,16 +294,14 @@ pub mod db_cluster {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-        /// can be created in.</p>
+        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-        /// can be created in.</p>
+        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -349,14 +319,12 @@ pub mod db_cluster {
             self.backup_retention_period = input;
             self
         }
-        /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that
-        /// identifies a cluster.</p>
+        /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that
-        /// identifies a cluster.</p>
+        /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -413,14 +381,12 @@ pub mod db_cluster {
             self.percent_progress = input;
             self
         }
-        /// <p>The earliest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
         pub fn earliest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.earliest_restorable_time = Some(input);
             self
         }
-        /// <p>The earliest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
         pub fn set_earliest_restorable_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -486,14 +452,12 @@ pub mod db_cluster {
             self.engine_version = input;
             self
         }
-        /// <p>Specifies the latest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
         pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
-        /// <p>Specifies the latest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
         pub fn set_latest_restorable_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -524,14 +488,12 @@ pub mod db_cluster {
             self.master_username = input;
             self
         }
-        /// <p>Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p>Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+        /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -539,8 +501,7 @@ pub mod db_cluster {
             self.preferred_backup_window = input;
             self
         }
-        /// <p>Specifies the weekly time range during which system maintenance can occur, in
-        /// Universal Coordinated Time (UTC).</p>
+        /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -548,8 +509,7 @@ pub mod db_cluster {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which system maintenance can occur, in
-        /// Universal Coordinated Time (UTC).</p>
+        /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -597,12 +557,9 @@ pub mod db_cluster {
         /// To override the contents of this collection use [`set_db_cluster_members`](Self::set_db_cluster_members).
         ///
         /// <p>Provides the list of instances that make up the cluster.</p>
-        pub fn db_cluster_members(
-            mut self,
-            input: impl Into<crate::model::DbClusterMember>,
-        ) -> Self {
+        pub fn db_cluster_members(mut self, input: crate::model::DbClusterMember) -> Self {
             let mut v = self.db_cluster_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_members = Some(v);
             self
         }
@@ -618,19 +575,17 @@ pub mod db_cluster {
         ///
         /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
         ///
-        /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster
-        /// belongs to.</p>
+        /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
-        /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster
-        /// belongs to.</p>
+        /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
         pub fn set_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
@@ -661,26 +616,22 @@ pub mod db_cluster {
             self.storage_encrypted = input;
             self
         }
-        /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted cluster.</p>
+        /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted cluster.</p>
+        /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is
-        /// found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
         pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_resource_id = Some(input.into());
             self
         }
-        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is
-        /// found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
+        /// <p>The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
         pub fn set_db_cluster_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,9 +657,9 @@ pub mod db_cluster {
         /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
         ///
         /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
-        pub fn associated_roles(mut self, input: impl Into<crate::model::DbClusterRole>) -> Self {
+        pub fn associated_roles(mut self, input: crate::model::DbClusterRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_roles = Some(v);
             self
         }
@@ -720,14 +671,12 @@ pub mod db_cluster {
             self.associated_roles = input;
             self
         }
-        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-        /// (UTC).</p>
+        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
         pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
-        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-        /// (UTC).</p>
+        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
         pub fn set_cluster_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -739,8 +688,7 @@ pub mod db_cluster {
         ///
         /// To override the contents of this collection use [`set_enabled_cloudwatch_logs_exports`](Self::set_enabled_cloudwatch_logs_exports).
         ///
-        /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
-        /// Logs.</p>
+        /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
         pub fn enabled_cloudwatch_logs_exports(
             mut self,
             input: impl Into<std::string::String>,
@@ -750,8 +698,7 @@ pub mod db_cluster {
             self.enabled_cloudwatch_logs_exports = Some(v);
             self
         }
-        /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch
-        /// Logs.</p>
+        /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
         pub fn set_enabled_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -759,18 +706,12 @@ pub mod db_cluster {
             self.enabled_cloudwatch_logs_exports = input;
             self
         }
-        /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is
-        /// enabled, the cluster cannot be deleted unless it is modified and
-        /// <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
-        /// protects clusters from being accidentally deleted.</p>
+        /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is
-        /// enabled, the cluster cannot be deleted unless it is modified and
-        /// <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code>
-        /// protects clusters from being accidentally deleted.</p>
+        /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -820,51 +761,30 @@ impl DbCluster {
     }
 }
 
-/// <p>Describes an Identity and Access Management (IAM) role that is associated with a
-/// cluster.</p>
+/// <p>Describes an Identity and Access Management (IAM) role that is associated with a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRole {
-    /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB
-    /// cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
 }
 impl DbClusterRole {
-    /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB
-    /// cluster.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -888,32 +808,21 @@ pub mod db_cluster_role {
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB
-        /// cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB
-        /// cluster.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+        /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -921,18 +830,9 @@ pub mod db_cluster_role {
         }
         /// <p>Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web Services services on your behalf.</p> </li>
+        /// <li> <p> <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.</p> </li>
+        /// <li> <p> <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole to access other Amazon Web Services services on your behalf.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -954,8 +854,7 @@ impl DbClusterRole {
     }
 }
 
-/// <p>Used as a response element for queries on virtual private cloud (VPC) security group
-/// membership.</p>
+/// <p>Used as a response element for queries on virtual private cloud (VPC) security group membership.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcSecurityGroupMembership {
@@ -1037,14 +936,11 @@ impl VpcSecurityGroupMembership {
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>A value that is <code>true</code> if the cluster member is the primary instance for
-    /// the cluster and <code>false</code> otherwise.</p>
+    /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
     pub is_cluster_writer: bool,
-    /// <p>Specifies the status of the cluster parameter group for this member of the DB
-    /// cluster.</p>
+    /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-    /// primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     pub promotion_tier: std::option::Option<i32>,
 }
 impl DbClusterMember {
@@ -1052,18 +948,15 @@ impl DbClusterMember {
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>A value that is <code>true</code> if the cluster member is the primary instance for
-    /// the cluster and <code>false</code> otherwise.</p>
+    /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
     pub fn is_cluster_writer(&self) -> bool {
         self.is_cluster_writer
     }
-    /// <p>Specifies the status of the cluster parameter group for this member of the DB
-    /// cluster.</p>
+    /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_status.as_deref()
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-    /// primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
@@ -1106,20 +999,17 @@ pub mod db_cluster_member {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>A value that is <code>true</code> if the cluster member is the primary instance for
-        /// the cluster and <code>false</code> otherwise.</p>
+        /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
         pub fn is_cluster_writer(mut self, input: bool) -> Self {
             self.is_cluster_writer = Some(input);
             self
         }
-        /// <p>A value that is <code>true</code> if the cluster member is the primary instance for
-        /// the cluster and <code>false</code> otherwise.</p>
+        /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
         pub fn set_is_cluster_writer(mut self, input: std::option::Option<bool>) -> Self {
             self.is_cluster_writer = input;
             self
         }
-        /// <p>Specifies the status of the cluster parameter group for this member of the DB
-        /// cluster.</p>
+        /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
         pub fn db_cluster_parameter_group_status(
             mut self,
             input: impl Into<std::string::String>,
@@ -1127,8 +1017,7 @@ pub mod db_cluster_member {
             self.db_cluster_parameter_group_status = Some(input.into());
             self
         }
-        /// <p>Specifies the status of the cluster parameter group for this member of the DB
-        /// cluster.</p>
+        /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
         pub fn set_db_cluster_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1136,14 +1025,12 @@ pub mod db_cluster_member {
             self.db_cluster_parameter_group_status = input;
             self
         }
-        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-        /// primary instance after a failure of the existing primary instance. </p>
+        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
         pub fn promotion_tier(mut self, input: i32) -> Self {
             self.promotion_tier = Some(input);
             self
         }
-        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-        /// primary instance after a failure of the existing primary instance. </p>
+        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
         pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
             self.promotion_tier = input;
             self
@@ -1257,9 +1144,7 @@ pub struct Parameter {
     pub data_type: std::option::Option<std::string::String>,
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub allowed_values: std::option::Option<std::string::String>,
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-    /// be modified. Some parameters have security or operational implications that prevent them
-    /// from being changed. </p>
+    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
     pub is_modifiable: bool,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: std::option::Option<std::string::String>,
@@ -1295,9 +1180,7 @@ impl Parameter {
     pub fn allowed_values(&self) -> std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-    /// be modified. Some parameters have security or operational implications that prevent them
-    /// from being changed. </p>
+    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
     pub fn is_modifiable(&self) -> bool {
         self.is_modifiable
     }
@@ -1423,16 +1306,12 @@ pub mod parameter {
             self.allowed_values = input;
             self
         }
-        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-        /// be modified. Some parameters have security or operational implications that prevent them
-        /// from being changed. </p>
+        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
         pub fn is_modifiable(mut self, input: bool) -> Self {
             self.is_modifiable = Some(input);
             self
         }
-        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-        /// be modified. Some parameters have security or operational implications that prevent them
-        /// from being changed. </p>
+        /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_modifiable = input;
             self
@@ -1546,8 +1425,7 @@ impl AsRef<str> for ApplyMethod {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscription {
-    /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
-    /// subscription.</p>
+    /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
     pub customer_aws_id: std::option::Option<std::string::String>,
     /// <p>The Amazon DocumentDB event notification subscription ID.</p>
     pub cust_subscription_id: std::option::Option<std::string::String>,
@@ -1555,13 +1433,8 @@ pub struct EventSubscription {
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>,
-    /// <code>deleting</code>, <code>active</code>, <code>no-permission</code>,
-    /// <code>topic-not-exist</code>
-    /// </p>
-    /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission
-    /// to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the
-    /// topic was deleted after the subscription was created.</p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The time at which the Amazon DocumentDB event notification subscription was created.</p>
     pub subscription_creation_time: std::option::Option<std::string::String>,
@@ -1571,15 +1444,13 @@ pub struct EventSubscription {
     pub source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event categories for the Amazon DocumentDB event notification subscription.</p>
     pub event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A Boolean value indicating whether the subscription is enabled. A value of
-    /// <code>true</code> indicates that the subscription is enabled.</p>
+    /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
     pub enabled: bool,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub event_subscription_arn: std::option::Option<std::string::String>,
 }
 impl EventSubscription {
-    /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
-    /// subscription.</p>
+    /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
     pub fn customer_aws_id(&self) -> std::option::Option<&str> {
         self.customer_aws_id.as_deref()
     }
@@ -1593,13 +1464,8 @@ impl EventSubscription {
     }
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>,
-    /// <code>deleting</code>, <code>active</code>, <code>no-permission</code>,
-    /// <code>topic-not-exist</code>
-    /// </p>
-    /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission
-    /// to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the
-    /// topic was deleted after the subscription was created.</p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -1619,8 +1485,7 @@ impl EventSubscription {
     pub fn event_categories_list(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories_list.as_deref()
     }
-    /// <p>A Boolean value indicating whether the subscription is enabled. A value of
-    /// <code>true</code> indicates that the subscription is enabled.</p>
+    /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -1666,14 +1531,12 @@ pub mod event_subscription {
         pub(crate) event_subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
-        /// subscription.</p>
+        /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
         pub fn customer_aws_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_aws_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
-        /// subscription.</p>
+        /// <p>The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification subscription.</p>
         pub fn set_customer_aws_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1709,26 +1572,16 @@ pub mod event_subscription {
         }
         /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
         /// <p>Constraints:</p>
-        /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>,
-        /// <code>deleting</code>, <code>active</code>, <code>no-permission</code>,
-        /// <code>topic-not-exist</code>
-        /// </p>
-        /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission
-        /// to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the
-        /// topic was deleted after the subscription was created.</p>
+        /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+        /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
         /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
         /// <p>Constraints:</p>
-        /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>,
-        /// <code>deleting</code>, <code>active</code>, <code>no-permission</code>,
-        /// <code>topic-not-exist</code>
-        /// </p>
-        /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission
-        /// to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the
-        /// topic was deleted after the subscription was created.</p>
+        /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+        /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1794,14 +1647,12 @@ pub mod event_subscription {
             self.event_categories_list = input;
             self
         }
-        /// <p>A Boolean value indicating whether the subscription is enabled. A value of
-        /// <code>true</code> indicates that the subscription is enabled.</p>
+        /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether the subscription is enabled. A value of
-        /// <code>true</code> indicates that the subscription is enabled.</p>
+        /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1847,7 +1698,7 @@ impl EventSubscription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalCluster {
-    /// <p>Contains a user-supplied global  cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
@@ -1870,7 +1721,7 @@ pub struct GlobalCluster {
         std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
 }
 impl GlobalCluster {
-    /// <p>Contains a user-supplied global  cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
+    /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
     pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
@@ -1951,12 +1802,12 @@ pub mod global_cluster {
             std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
     }
     impl Builder {
-        /// <p>Contains a user-supplied global  cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
+        /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
         pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>Contains a user-supplied global  cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
+        /// <p>Contains a user-supplied global cluster identifier. This identifier is the unique key that identifies a global cluster. </p>
         pub fn set_global_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2061,12 +1912,9 @@ pub mod global_cluster {
         /// To override the contents of this collection use [`set_global_cluster_members`](Self::set_global_cluster_members).
         ///
         /// <p>The list of cluster IDs for secondary clusters within the global cluster. Currently limited to one item. </p>
-        pub fn global_cluster_members(
-            mut self,
-            input: impl Into<crate::model::GlobalClusterMember>,
-        ) -> Self {
+        pub fn global_cluster_members(mut self, input: crate::model::GlobalClusterMember) -> Self {
             let mut v = self.global_cluster_members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_cluster_members = Some(v);
             self
         }
@@ -2210,8 +2058,7 @@ impl GlobalClusterMember {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstance {
-    /// <p>Contains a user-provided database identifier. This identifier is the unique key that
-    /// identifies an instance.</p>
+    /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the instance.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
@@ -2223,9 +2070,7 @@ pub struct DbInstance {
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>Provides the date and time that the instance was created.</p>
     pub instance_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies the daily time range during which automated backups are created if
-    /// automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
-    /// </p>
+    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub preferred_backup_window: std::option::Option<std::string::String>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     pub backup_retention_period: i32,
@@ -2236,39 +2081,31 @@ pub struct DbInstance {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>Specifies information on the subnet group that is associated with the instance, including the name, description, and subnets in the subnet group.</p>
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
-    /// <p>Specifies the weekly time range during which system maintenance can occur, in
-    /// Universal Coordinated Time (UTC).</p>
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>Specifies that changes to the instance are pending. This element is included only when changes are pending. Specific changes are identified by subelements.</p>
     pub pending_modified_values: std::option::Option<crate::model::PendingModifiedValues>,
-    /// <p>Specifies the latest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     pub auto_minor_version_upgrade: bool,
-    /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value
-    /// of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+    /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
     pub publicly_accessible: bool,
-    /// <p>The status of a read replica. If the instance is not a read replica, this is
-    /// blank.</p>
+    /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
     pub status_infos: std::option::Option<std::vec::Vec<crate::model::DbInstanceStatusInfo>>,
-    /// <p>Contains the name of the cluster that the instance is a member of if the
-    /// instance is a member of a cluster.</p>
+    /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies whether or not the instance is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-    /// the encrypted instance. </p>
+    /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is
-    /// accessed.</p>
+    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-    /// primary instance after a failure of the existing primary instance.</p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub promotion_tier: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the instance.</p>
     pub db_instance_arn: std::option::Option<std::string::String>,
@@ -2276,8 +2113,7 @@ pub struct DbInstance {
     pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DbInstance {
-    /// <p>Contains a user-provided database identifier. This identifier is the unique key that
-    /// identifies an instance.</p>
+    /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -2301,9 +2137,7 @@ impl DbInstance {
     pub fn instance_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
-    /// <p> Specifies the daily time range during which automated backups are created if
-    /// automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
-    /// </p>
+    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -2325,8 +2159,7 @@ impl DbInstance {
     pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
-    /// <p>Specifies the weekly time range during which system maintenance can occur, in
-    /// Universal Coordinated Time (UTC).</p>
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -2336,8 +2169,7 @@ impl DbInstance {
     ) -> std::option::Option<&crate::model::PendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
-    /// <p>Specifies the latest time to which a database can be restored with point-in-time
-    /// restore.</p>
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
@@ -2349,18 +2181,15 @@ impl DbInstance {
     pub fn auto_minor_version_upgrade(&self) -> bool {
         self.auto_minor_version_upgrade
     }
-    /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value
-    /// of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+    /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
-    /// <p>The status of a read replica. If the instance is not a read replica, this is
-    /// blank.</p>
+    /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
     pub fn status_infos(&self) -> std::option::Option<&[crate::model::DbInstanceStatusInfo]> {
         self.status_infos.as_deref()
     }
-    /// <p>Contains the name of the cluster that the instance is a member of if the
-    /// instance is a member of a cluster.</p>
+    /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -2368,13 +2197,11 @@ impl DbInstance {
     pub fn storage_encrypted(&self) -> bool {
         self.storage_encrypted
     }
-    /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-    /// the encrypted instance. </p>
+    /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is
-    /// accessed.</p>
+    /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
     pub fn dbi_resource_id(&self) -> std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
@@ -2382,8 +2209,7 @@ impl DbInstance {
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
-    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-    /// primary instance after a failure of the existing primary instance.</p>
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
     }
@@ -2475,14 +2301,12 @@ pub mod db_instance {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Contains a user-provided database identifier. This identifier is the unique key that
-        /// identifies an instance.</p>
+        /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
         pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_identifier = Some(input.into());
             self
         }
-        /// <p>Contains a user-provided database identifier. This identifier is the unique key that
-        /// identifies an instance.</p>
+        /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
         pub fn set_db_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2549,16 +2373,12 @@ pub mod db_instance {
             self.instance_create_time = input;
             self
         }
-        /// <p> Specifies the daily time range during which automated backups are created if
-        /// automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
-        /// </p>
+        /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
         pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_backup_window = Some(input.into());
             self
         }
-        /// <p> Specifies the daily time range during which automated backups are created if
-        /// automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
-        /// </p>
+        /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2583,10 +2403,10 @@ pub mod db_instance {
         /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -2624,8 +2444,7 @@ pub mod db_instance {
             self.db_subnet_group = input;
             self
         }
-        /// <p>Specifies the weekly time range during which system maintenance can occur, in
-        /// Universal Coordinated Time (UTC).</p>
+        /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -2633,8 +2452,7 @@ pub mod db_instance {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which system maintenance can occur, in
-        /// Universal Coordinated Time (UTC).</p>
+        /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,14 +2476,12 @@ pub mod db_instance {
             self.pending_modified_values = input;
             self
         }
-        /// <p>Specifies the latest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
         pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
-        /// <p>Specifies the latest time to which a database can be restored with point-in-time
-        /// restore.</p>
+        /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
         pub fn set_latest_restorable_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2696,14 +2512,12 @@ pub mod db_instance {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value
-        /// of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+        /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
-        /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value
-        /// of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+        /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -2712,19 +2526,14 @@ pub mod db_instance {
         ///
         /// To override the contents of this collection use [`set_status_infos`](Self::set_status_infos).
         ///
-        /// <p>The status of a read replica. If the instance is not a read replica, this is
-        /// blank.</p>
-        pub fn status_infos(
-            mut self,
-            input: impl Into<crate::model::DbInstanceStatusInfo>,
-        ) -> Self {
+        /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
+        pub fn status_infos(mut self, input: crate::model::DbInstanceStatusInfo) -> Self {
             let mut v = self.status_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.status_infos = Some(v);
             self
         }
-        /// <p>The status of a read replica. If the instance is not a read replica, this is
-        /// blank.</p>
+        /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
         pub fn set_status_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DbInstanceStatusInfo>>,
@@ -2732,14 +2541,12 @@ pub mod db_instance {
             self.status_infos = input;
             self
         }
-        /// <p>Contains the name of the cluster that the instance is a member of if the
-        /// instance is a member of a cluster.</p>
+        /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>Contains the name of the cluster that the instance is a member of if the
-        /// instance is a member of a cluster.</p>
+        /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2757,26 +2564,22 @@ pub mod db_instance {
             self.storage_encrypted = input;
             self
         }
-        /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted instance. </p>
+        /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted instance. </p>
+        /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is
-        /// accessed.</p>
+        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
         }
-        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is
-        /// accessed.</p>
+        /// <p>The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
         pub fn set_dbi_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2797,14 +2600,12 @@ pub mod db_instance {
             self.ca_certificate_identifier = input;
             self
         }
-        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-        /// primary instance after a failure of the existing primary instance.</p>
+        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         pub fn promotion_tier(mut self, input: i32) -> Self {
             self.promotion_tier = Some(input);
             self
         }
-        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the
-        /// primary instance after a failure of the existing primary instance.</p>
+        /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
             self.promotion_tier = input;
             self
@@ -2890,15 +2691,11 @@ impl DbInstance {
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "<code>read replication</code>."</p>
     pub status_type: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or
-    /// <code>false</code> if the instance is in an error state.</p>
+    /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
     pub normal: bool,
-    /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values
-    /// can be <code>replicating</code>, error, <code>stopped</code>, or
-    /// <code>terminated</code>.</p>
+    /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Details of the error if there is an error for the instance. If the instance is not in
-    /// an error state, this value is blank.</p>
+    /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl DbInstanceStatusInfo {
@@ -2906,19 +2703,15 @@ impl DbInstanceStatusInfo {
     pub fn status_type(&self) -> std::option::Option<&str> {
         self.status_type.as_deref()
     }
-    /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or
-    /// <code>false</code> if the instance is in an error state.</p>
+    /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
     pub fn normal(&self) -> bool {
         self.normal
     }
-    /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values
-    /// can be <code>replicating</code>, error, <code>stopped</code>, or
-    /// <code>terminated</code>.</p>
+    /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Details of the error if there is an error for the instance. If the instance is not in
-    /// an error state, this value is blank.</p>
+    /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -2955,40 +2748,32 @@ pub mod db_instance_status_info {
             self.status_type = input;
             self
         }
-        /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or
-        /// <code>false</code> if the instance is in an error state.</p>
+        /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
         pub fn normal(mut self, input: bool) -> Self {
             self.normal = Some(input);
             self
         }
-        /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or
-        /// <code>false</code> if the instance is in an error state.</p>
+        /// <p>A Boolean value that is <code>true</code> if the instance is operating normally, or <code>false</code> if the instance is in an error state.</p>
         pub fn set_normal(mut self, input: std::option::Option<bool>) -> Self {
             self.normal = input;
             self
         }
-        /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values
-        /// can be <code>replicating</code>, error, <code>stopped</code>, or
-        /// <code>terminated</code>.</p>
+        /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values
-        /// can be <code>replicating</code>, error, <code>stopped</code>, or
-        /// <code>terminated</code>.</p>
+        /// <p>Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Details of the error if there is an error for the instance. If the instance is not in
-        /// an error state, this value is blank.</p>
+        /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Details of the error if there is an error for the instance. If the instance is not in
-        /// an error state, this value is blank.</p>
+        /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3011,19 +2796,15 @@ impl DbInstanceStatusInfo {
     }
 }
 
-/// <p> One or more modified settings for an instance. These modified settings have been
-/// requested, but haven't been applied yet.</p>
+/// <p> One or more modified settings for an instance. These modified settings have been requested, but haven't been applied yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
-    /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
     pub db_instance_class: std::option::Option<std::string::String>,
-    /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>Contains the pending or currently in-progress change of the master credentials for the
-    /// instance.</p>
+    /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>Specifies the pending port for the instance.</p>
     pub port: std::option::Option<i32>,
@@ -3034,41 +2815,32 @@ pub struct PendingModifiedValues {
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The license model for the instance.</p>
-    /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
-    /// <code>general-public-license</code>
-    /// </p>
+    /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
     pub license_model: std::option::Option<std::string::String>,
-    /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or
-    /// is currently being applied.</p>
+    /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
     pub iops: std::option::Option<i32>,
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type to be associated with the instance.</p>
     pub storage_type: std::option::Option<std::string::String>,
-    /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB
-    /// instance.</p>
+    /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The new subnet group for the instance. </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
-    /// <p>A list of the log types whose configuration is still pending. These log types are in
-    /// the process of being activated or deactivated.</p>
+    /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
     pub pending_cloudwatch_logs_exports:
         std::option::Option<crate::model::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValues {
-    /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
-    /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>Contains the pending or currently in-progress change of the master credentials for the
-    /// instance.</p>
+    /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
@@ -3089,19 +2861,15 @@ impl PendingModifiedValues {
         self.engine_version.as_deref()
     }
     /// <p>The license model for the instance.</p>
-    /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
-    /// <code>general-public-license</code>
-    /// </p>
+    /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
     pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or
-    /// is currently being applied.</p>
+    /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
-    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
-    /// applied or is currently being applied. </p>
+    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -3109,8 +2877,7 @@ impl PendingModifiedValues {
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB
-    /// instance.</p>
+    /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
@@ -3118,8 +2885,7 @@ impl PendingModifiedValues {
     pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
-    /// <p>A list of the log types whose configuration is still pending. These log types are in
-    /// the process of being activated or deactivated.</p>
+    /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
     pub fn pending_cloudwatch_logs_exports(
         &self,
     ) -> std::option::Option<&crate::model::PendingCloudwatchLogsExports> {
@@ -3172,14 +2938,12 @@ pub mod pending_modified_values {
             std::option::Option<crate::model::PendingCloudwatchLogsExports>,
     }
     impl Builder {
-        /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being applied. </p>
         pub fn set_db_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3187,26 +2951,22 @@ pub mod pending_modified_values {
             self.db_instance_class = input;
             self
         }
-        /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
         }
-        /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being applied. </p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_storage = input;
             self
         }
-        /// <p>Contains the pending or currently in-progress change of the master credentials for the
-        /// instance.</p>
+        /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
             self
         }
-        /// <p>Contains the pending or currently in-progress change of the master credentials for the
-        /// instance.</p>
+        /// <p>Contains the pending or currently in-progress change of the master credentials for the instance.</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3258,17 +3018,13 @@ pub mod pending_modified_values {
             self
         }
         /// <p>The license model for the instance.</p>
-        /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
-        /// <code>general-public-license</code>
-        /// </p>
+        /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
         pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_model = Some(input.into());
             self
         }
         /// <p>The license model for the instance.</p>
-        /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
-        /// <code>general-public-license</code>
-        /// </p>
+        /// <p>Valid values: <code>license-included</code>, <code>bring-your-own-license</code>, <code>general-public-license</code> </p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3276,26 +3032,22 @@ pub mod pending_modified_values {
             self.license_model = input;
             self
         }
-        /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or
-        /// is currently being applied.</p>
+        /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or
-        /// is currently being applied.</p>
+        /// <p>Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
         }
-        /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
         pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_identifier = Some(input.into());
             self
         }
-        /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
-        /// applied or is currently being applied. </p>
+        /// <p> Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being applied. </p>
         pub fn set_db_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3313,14 +3065,12 @@ pub mod pending_modified_values {
             self.storage_type = input;
             self
         }
-        /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB
-        /// instance.</p>
+        /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
         pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_identifier = Some(input.into());
             self
         }
-        /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB
-        /// instance.</p>
+        /// <p>Specifies the identifier of the certificate authority (CA) certificate for the DB instance.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3341,8 +3091,7 @@ pub mod pending_modified_values {
             self.db_subnet_group_name = input;
             self
         }
-        /// <p>A list of the log types whose configuration is still pending. These log types are in
-        /// the process of being activated or deactivated.</p>
+        /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
         pub fn pending_cloudwatch_logs_exports(
             mut self,
             input: crate::model::PendingCloudwatchLogsExports,
@@ -3350,8 +3099,7 @@ pub mod pending_modified_values {
             self.pending_cloudwatch_logs_exports = Some(input);
             self
         }
-        /// <p>A list of the log types whose configuration is still pending. These log types are in
-        /// the process of being activated or deactivated.</p>
+        /// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
         pub fn set_pending_cloudwatch_logs_exports(
             mut self,
             input: std::option::Option<crate::model::PendingCloudwatchLogsExports>,
@@ -3387,26 +3135,21 @@ impl PendingModifiedValues {
     }
 }
 
-/// <p>A list of the log types whose configuration is still pending. These log types are in
-/// the process of being activated or deactivated.</p>
+/// <p>A list of the log types whose configuration is still pending. These log types are in the process of being activated or deactivated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingCloudwatchLogsExports {
-    /// <p>Log types that are in the process of being deactivated. After they are deactivated,
-    /// these log types aren't exported to CloudWatch Logs.</p>
+    /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
     pub log_types_to_enable: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Log types that are in the process of being enabled. After they are enabled, these log
-    /// types are exported to Amazon CloudWatch Logs.</p>
+    /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
     pub log_types_to_disable: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PendingCloudwatchLogsExports {
-    /// <p>Log types that are in the process of being deactivated. After they are deactivated,
-    /// these log types aren't exported to CloudWatch Logs.</p>
+    /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
     pub fn log_types_to_enable(&self) -> std::option::Option<&[std::string::String]> {
         self.log_types_to_enable.as_deref()
     }
-    /// <p>Log types that are in the process of being enabled. After they are enabled, these log
-    /// types are exported to Amazon CloudWatch Logs.</p>
+    /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
     pub fn log_types_to_disable(&self) -> std::option::Option<&[std::string::String]> {
         self.log_types_to_disable.as_deref()
     }
@@ -3433,16 +3176,14 @@ pub mod pending_cloudwatch_logs_exports {
         ///
         /// To override the contents of this collection use [`set_log_types_to_enable`](Self::set_log_types_to_enable).
         ///
-        /// <p>Log types that are in the process of being deactivated. After they are deactivated,
-        /// these log types aren't exported to CloudWatch Logs.</p>
+        /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
         pub fn log_types_to_enable(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_types_to_enable.unwrap_or_default();
             v.push(input.into());
             self.log_types_to_enable = Some(v);
             self
         }
-        /// <p>Log types that are in the process of being deactivated. After they are deactivated,
-        /// these log types aren't exported to CloudWatch Logs.</p>
+        /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
         pub fn set_log_types_to_enable(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3454,16 +3195,14 @@ pub mod pending_cloudwatch_logs_exports {
         ///
         /// To override the contents of this collection use [`set_log_types_to_disable`](Self::set_log_types_to_disable).
         ///
-        /// <p>Log types that are in the process of being enabled. After they are enabled, these log
-        /// types are exported to Amazon CloudWatch Logs.</p>
+        /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
         pub fn log_types_to_disable(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_types_to_disable.unwrap_or_default();
             v.push(input.into());
             self.log_types_to_disable = Some(v);
             self
         }
-        /// <p>Log types that are in the process of being enabled. After they are enabled, these log
-        /// types are exported to Amazon CloudWatch Logs.</p>
+        /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
         pub fn set_log_types_to_disable(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3616,9 +3355,9 @@ pub mod db_subnet_group {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>Detailed information about one or more subnets within a subnet group.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -3816,8 +3555,7 @@ impl AvailabilityZone {
     }
 }
 
-/// <p>Network information for accessing a cluster or instance. Client programs must
-/// specify a valid endpoint to access these Amazon DocumentDB resources.</p>
+/// <p>Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access these Amazon DocumentDB resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Endpoint {
@@ -3912,8 +3650,7 @@ impl Endpoint {
     }
 }
 
-/// <p>Detailed information about the attributes that are associated with a cluster
-/// snapshot.</p>
+/// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAttributesResult {
@@ -3983,10 +3720,10 @@ pub mod db_cluster_snapshot_attributes_result {
         /// <p>The list of attributes and values for the cluster snapshot.</p>
         pub fn db_cluster_snapshot_attributes(
             mut self,
-            input: impl Into<crate::model::DbClusterSnapshotAttribute>,
+            input: crate::model::DbClusterSnapshotAttribute,
         ) -> Self {
             let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.db_cluster_snapshot_attributes = Some(v);
             self
         }
@@ -4108,11 +3845,8 @@ impl DbClusterSnapshotAttribute {
     }
 }
 
-/// <p>The configuration setting for the log types to be enabled for export to Amazon
-/// CloudWatch Logs for a specific instance or cluster.</p>
-/// <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
-/// which logs are exported (or not exported) to CloudWatch Logs. The values within these
-/// arrays depend on the engine that is being used.</p>
+/// <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.</p>
+/// <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudwatchLogsExportConfiguration {
@@ -4203,8 +3937,7 @@ impl CloudwatchLogsExportConfiguration {
     }
 }
 
-/// <p>A named set of filter values, used to return a more specific list of results. You can
-/// use a filter to match a set of resources by specific criteria, such as IDs.</p>
+/// <p>A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.</p>
 /// <p>Wildcards are not supported in filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4287,27 +4020,22 @@ impl Filter {
     }
 }
 
-/// <p>Represents the output of <a>ApplyPendingMaintenanceAction</a>.
-/// </p>
+/// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcePendingMaintenanceActions {
-    /// <p>The Amazon Resource Name (ARN) of the resource that has pending
-    /// maintenance actions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
-    /// <p>A list that provides details about the pending maintenance actions
-    /// for the resource.</p>
+    /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
     pub pending_maintenance_action_details:
         std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
 }
 impl ResourcePendingMaintenanceActions {
-    /// <p>The Amazon Resource Name (ARN) of the resource that has pending
-    /// maintenance actions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
-    /// <p>A list that provides details about the pending maintenance actions
-    /// for the resource.</p>
+    /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
     pub fn pending_maintenance_action_details(
         &self,
     ) -> std::option::Option<&[crate::model::PendingMaintenanceAction]> {
@@ -4336,14 +4064,12 @@ pub mod resource_pending_maintenance_actions {
             std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that has pending
-        /// maintenance actions.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that has pending
-        /// maintenance actions.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4355,19 +4081,17 @@ pub mod resource_pending_maintenance_actions {
         ///
         /// To override the contents of this collection use [`set_pending_maintenance_action_details`](Self::set_pending_maintenance_action_details).
         ///
-        /// <p>A list that provides details about the pending maintenance actions
-        /// for the resource.</p>
+        /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
         pub fn pending_maintenance_action_details(
             mut self,
-            input: impl Into<crate::model::PendingMaintenanceAction>,
+            input: crate::model::PendingMaintenanceAction,
         ) -> Self {
             let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_maintenance_action_details = Some(v);
             self
         }
-        /// <p>A list that provides details about the pending maintenance actions
-        /// for the resource.</p>
+        /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
         pub fn set_pending_maintenance_action_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
@@ -4397,19 +4121,13 @@ impl ResourcePendingMaintenanceActions {
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The date of the maintenance window when the action is applied. The maintenance action
-    /// is applied to the resource during its first maintenance window after this date. If this
-    /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+    /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the maintenance action is automatically applied. The maintenance action
-    /// is applied to the resource on this date regardless of the maintenance window for the
-    /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
-    /// ignored.</p>
+    /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     pub opt_in_status: std::option::Option<std::string::String>,
-    /// <p>The effective date when the pending maintenance action is applied to the
-    /// resource.</p>
+    /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
@@ -4419,16 +4137,11 @@ impl PendingMaintenanceAction {
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The date of the maintenance window when the action is applied. The maintenance action
-    /// is applied to the resource during its first maintenance window after this date. If this
-    /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+    /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
-    /// <p>The date when the maintenance action is automatically applied. The maintenance action
-    /// is applied to the resource on this date regardless of the maintenance window for the
-    /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
-    /// ignored.</p>
+    /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
@@ -4436,8 +4149,7 @@ impl PendingMaintenanceAction {
     pub fn opt_in_status(&self) -> std::option::Option<&str> {
         self.opt_in_status.as_deref()
     }
-    /// <p>The effective date when the pending maintenance action is applied to the
-    /// resource.</p>
+    /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
@@ -4482,16 +4194,12 @@ pub mod pending_maintenance_action {
             self.action = input;
             self
         }
-        /// <p>The date of the maintenance window when the action is applied. The maintenance action
-        /// is applied to the resource during its first maintenance window after this date. If this
-        /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+        /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
         pub fn auto_applied_after_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.auto_applied_after_date = Some(input);
             self
         }
-        /// <p>The date of the maintenance window when the action is applied. The maintenance action
-        /// is applied to the resource during its first maintenance window after this date. If this
-        /// date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+        /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
         pub fn set_auto_applied_after_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4499,18 +4207,12 @@ pub mod pending_maintenance_action {
             self.auto_applied_after_date = input;
             self
         }
-        /// <p>The date when the maintenance action is automatically applied. The maintenance action
-        /// is applied to the resource on this date regardless of the maintenance window for the
-        /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
-        /// ignored.</p>
+        /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
         pub fn forced_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.forced_apply_date = Some(input);
             self
         }
-        /// <p>The date when the maintenance action is automatically applied. The maintenance action
-        /// is applied to the resource on this date regardless of the maintenance window for the
-        /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
-        /// ignored.</p>
+        /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
         pub fn set_forced_apply_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4531,14 +4233,12 @@ pub mod pending_maintenance_action {
             self.opt_in_status = input;
             self
         }
-        /// <p>The effective date when the pending maintenance action is applied to the
-        /// resource.</p>
+        /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
         pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.current_apply_date = Some(input);
             self
         }
-        /// <p>The effective date when the pending maintenance action is applied to the
-        /// resource.</p>
+        /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
         pub fn set_current_apply_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4700,12 +4400,9 @@ pub mod orderable_db_instance_option {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>A list of Availability Zones for an instance.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -5071,16 +4768,13 @@ impl EventCategoriesMap {
     }
 }
 
-/// <p>Contains the result of a successful invocation of the
-/// <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+/// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The parameters of a particular cluster parameter group family.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -5090,9 +4784,7 @@ impl EngineDefaults {
     pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-    /// includes only records beyond the marker, up to the value specified by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5134,16 +4826,12 @@ pub mod engine_defaults {
             self.db_parameter_group_family = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5153,9 +4841,9 @@ pub mod engine_defaults {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters of a particular cluster parameter group family.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -5200,11 +4888,9 @@ pub struct DbEngineVersion {
     pub db_engine_version_description: std::option::Option<std::string::String>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
-    /// <p>The types of logs that the database engine has available for export to Amazon
-    /// CloudWatch Logs.</p>
+    /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
     pub exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A value that indicates whether the engine version supports exporting the log types
-    /// specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: bool,
 }
 impl DbEngineVersion {
@@ -5232,13 +4918,11 @@ impl DbEngineVersion {
     pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
         self.valid_upgrade_target.as_deref()
     }
-    /// <p>The types of logs that the database engine has available for export to Amazon
-    /// CloudWatch Logs.</p>
+    /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
     pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
         self.exportable_log_types.as_deref()
     }
-    /// <p>A value that indicates whether the engine version supports exporting the log types
-    /// specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
         self.supports_log_exports_to_cloudwatch_logs
     }
@@ -5350,12 +5034,9 @@ pub mod db_engine_version {
         /// To override the contents of this collection use [`set_valid_upgrade_target`](Self::set_valid_upgrade_target).
         ///
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn valid_upgrade_target(
-            mut self,
-            input: impl Into<crate::model::UpgradeTarget>,
-        ) -> Self {
+        pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.valid_upgrade_target = Some(v);
             self
         }
@@ -5371,16 +5052,14 @@ pub mod db_engine_version {
         ///
         /// To override the contents of this collection use [`set_exportable_log_types`](Self::set_exportable_log_types).
         ///
-        /// <p>The types of logs that the database engine has available for export to Amazon
-        /// CloudWatch Logs.</p>
+        /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
         pub fn exportable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exportable_log_types.unwrap_or_default();
             v.push(input.into());
             self.exportable_log_types = Some(v);
             self
         }
-        /// <p>The types of logs that the database engine has available for export to Amazon
-        /// CloudWatch Logs.</p>
+        /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
         pub fn set_exportable_log_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5388,14 +5067,12 @@ pub mod db_engine_version {
             self.exportable_log_types = input;
             self
         }
-        /// <p>A value that indicates whether the engine version supports exporting the log types
-        /// specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+        /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
         pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
             self.supports_log_exports_to_cloudwatch_logs = Some(input);
             self
         }
-        /// <p>A value that indicates whether the engine version supports exporting the log types
-        /// specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+        /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
         pub fn set_supports_log_exports_to_cloudwatch_logs(
             mut self,
             input: std::option::Option<bool>,
@@ -5439,8 +5116,7 @@ pub struct UpgradeTarget {
     pub description: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
     pub auto_upgrade: bool,
-    /// <p>A value that indicates whether a database engine is upgraded to a major
-    /// version.</p>
+    /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub is_major_version_upgrade: bool,
 }
 impl UpgradeTarget {
@@ -5460,8 +5136,7 @@ impl UpgradeTarget {
     pub fn auto_upgrade(&self) -> bool {
         self.auto_upgrade
     }
-    /// <p>A value that indicates whether a database engine is upgraded to a major
-    /// version.</p>
+    /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub fn is_major_version_upgrade(&self) -> bool {
         self.is_major_version_upgrade
     }
@@ -5533,14 +5208,12 @@ pub mod upgrade_target {
             self.auto_upgrade = input;
             self
         }
-        /// <p>A value that indicates whether a database engine is upgraded to a major
-        /// version.</p>
+        /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
         pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
             self.is_major_version_upgrade = Some(input);
             self
         }
-        /// <p>A value that indicates whether a database engine is upgraded to a major
-        /// version.</p>
+        /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
         pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.is_major_version_upgrade = input;
             self
@@ -5568,13 +5241,11 @@ impl UpgradeTarget {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshot {
-    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-    /// snapshot can be restored in.</p>
+    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the identifier for the cluster snapshot.</p>
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot
-    /// was created from.</p>
+    /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Provides the time when the snapshot was taken, in UTC.</p>
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5582,14 +5253,11 @@ pub struct DbClusterSnapshot {
     pub engine: std::option::Option<std::string::String>,
     /// <p>Specifies the status of this cluster snapshot.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Specifies the port that the cluster was listening on at the time of the
-    /// snapshot.</p>
+    /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
     pub port: i32,
-    /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster
-    /// snapshot.</p>
+    /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-    /// (UTC).</p>
+    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Provides the master user name for the cluster snapshot.</p>
     pub master_username: std::option::Option<std::string::String>,
@@ -5605,13 +5273,11 @@ pub struct DbClusterSnapshot {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster snapshot.</p>
     pub db_cluster_snapshot_arn: std::option::Option<std::string::String>,
-    /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for
-    /// the source cluster snapshot; otherwise, a null value.</p>
+    /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
     pub source_db_cluster_snapshot_arn: std::option::Option<std::string::String>,
 }
 impl DbClusterSnapshot {
-    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-    /// snapshot can be restored in.</p>
+    /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
@@ -5619,8 +5285,7 @@ impl DbClusterSnapshot {
     pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
-    /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot
-    /// was created from.</p>
+    /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
@@ -5636,18 +5301,15 @@ impl DbClusterSnapshot {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Specifies the port that the cluster was listening on at the time of the
-    /// snapshot.</p>
+    /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
-    /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster
-    /// snapshot.</p>
+    /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-    /// (UTC).</p>
+    /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
@@ -5679,8 +5341,7 @@ impl DbClusterSnapshot {
     pub fn db_cluster_snapshot_arn(&self) -> std::option::Option<&str> {
         self.db_cluster_snapshot_arn.as_deref()
     }
-    /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for
-    /// the source cluster snapshot; otherwise, a null value.</p>
+    /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
     pub fn source_db_cluster_snapshot_arn(&self) -> std::option::Option<&str> {
         self.source_db_cluster_snapshot_arn.as_deref()
     }
@@ -5743,16 +5404,14 @@ pub mod db_cluster_snapshot {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-        /// snapshot can be restored in.</p>
+        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster
-        /// snapshot can be restored in.</p>
+        /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5776,14 +5435,12 @@ pub mod db_cluster_snapshot {
             self.db_cluster_snapshot_identifier = input;
             self
         }
-        /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot
-        /// was created from.</p>
+        /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_identifier = Some(input.into());
             self
         }
-        /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot
-        /// was created from.</p>
+        /// <p>Specifies the cluster identifier of the cluster that this cluster snapshot was created from.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5824,38 +5481,32 @@ pub mod db_cluster_snapshot {
             self.status = input;
             self
         }
-        /// <p>Specifies the port that the cluster was listening on at the time of the
-        /// snapshot.</p>
+        /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>Specifies the port that the cluster was listening on at the time of the
-        /// snapshot.</p>
+        /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster
-        /// snapshot.</p>
+        /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster
-        /// snapshot.</p>
+        /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
-        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-        /// (UTC).</p>
+        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
         pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
             self
         }
-        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time
-        /// (UTC).</p>
+        /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
         pub fn set_cluster_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5945,8 +5596,7 @@ pub mod db_cluster_snapshot {
             self.db_cluster_snapshot_arn = input;
             self
         }
-        /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for
-        /// the source cluster snapshot; otherwise, a null value.</p>
+        /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
         pub fn source_db_cluster_snapshot_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -5954,8 +5604,7 @@ pub mod db_cluster_snapshot {
             self.source_db_cluster_snapshot_arn = Some(input.into());
             self
         }
-        /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for
-        /// the source cluster snapshot; otherwise, a null value.</p>
+        /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
         pub fn set_source_db_cluster_snapshot_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6000,11 +5649,9 @@ impl DbClusterSnapshot {
 pub struct DbClusterParameterGroup {
     /// <p>Provides the name of the cluster parameter group.</p>
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>Provides the name of the parameter group family that this cluster parameter
-    /// group is compatible with.</p>
+    /// <p>Provides the name of the parameter group family that this cluster parameter group is compatible with.</p>
     pub db_parameter_group_family: std::option::Option<std::string::String>,
-    /// <p>Provides the customer-specified description for this cluster parameter
-    /// group.</p>
+    /// <p>Provides the customer-specified description for this cluster parameter group.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster parameter group.</p>
     pub db_cluster_parameter_group_arn: std::option::Option<std::string::String>,
@@ -6014,13 +5661,11 @@ impl DbClusterParameterGroup {
     pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
-    /// <p>Provides the name of the parameter group family that this cluster parameter
-    /// group is compatible with.</p>
+    /// <p>Provides the name of the parameter group family that this cluster parameter group is compatible with.</p>
     pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
-    /// <p>Provides the customer-specified description for this cluster parameter
-    /// group.</p>
+    /// <p>Provides the customer-specified description for this cluster parameter group.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6073,14 +5718,12 @@ pub mod db_cluster_parameter_group {
             self.db_cluster_parameter_group_name = input;
             self
         }
-        /// <p>Provides the name of the parameter group family that this cluster parameter
-        /// group is compatible with.</p>
+        /// <p>Provides the name of the parameter group family that this cluster parameter group is compatible with.</p>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_parameter_group_family = Some(input.into());
             self
         }
-        /// <p>Provides the name of the parameter group family that this cluster parameter
-        /// group is compatible with.</p>
+        /// <p>Provides the name of the parameter group family that this cluster parameter group is compatible with.</p>
         pub fn set_db_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6088,14 +5731,12 @@ pub mod db_cluster_parameter_group {
             self.db_parameter_group_family = input;
             self
         }
-        /// <p>Provides the customer-specified description for this cluster parameter
-        /// group.</p>
+        /// <p>Provides the customer-specified description for this cluster parameter group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Provides the customer-specified description for this cluster parameter
-        /// group.</p>
+        /// <p>Provides the customer-specified description for this cluster parameter group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6139,38 +5780,31 @@ impl DbClusterParameterGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code>
-    /// </p>
+    /// <p>Example: <code>rds-ca-2019</code> </p>
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code>
-    /// </p>
+    /// <p>Example: <code>CA</code> </p>
     pub certificate_type: std::option::Option<std::string::String>,
     /// <p>The thumbprint of the certificate.</p>
     pub thumbprint: std::option::Option<std::string::String>,
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code>
-    /// </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
     pub valid_from: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code>
-    /// </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
     pub valid_till: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code>
-    /// </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl Certificate {
     /// <p>The unique key that identifies a certificate.</p>
-    /// <p>Example: <code>rds-ca-2019</code>
-    /// </p>
+    /// <p>Example: <code>rds-ca-2019</code> </p>
     pub fn certificate_identifier(&self) -> std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>The type of the certificate.</p>
-    /// <p>Example: <code>CA</code>
-    /// </p>
+    /// <p>Example: <code>CA</code> </p>
     pub fn certificate_type(&self) -> std::option::Option<&str> {
         self.certificate_type.as_deref()
     }
@@ -6179,20 +5813,17 @@ impl Certificate {
         self.thumbprint.as_deref()
     }
     /// <p>The starting date-time from which the certificate is valid.</p>
-    /// <p>Example: <code>2019-07-31T17:57:09Z</code>
-    /// </p>
+    /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
     pub fn valid_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
     /// <p>The date-time after which the certificate is no longer valid.</p>
-    /// <p>Example: <code>2024-07-31T17:57:09Z</code>
-    /// </p>
+    /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
     pub fn valid_till(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_till.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code>
-    /// </p>
+    /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -6224,15 +5855,13 @@ pub mod certificate {
     }
     impl Builder {
         /// <p>The unique key that identifies a certificate.</p>
-        /// <p>Example: <code>rds-ca-2019</code>
-        /// </p>
+        /// <p>Example: <code>rds-ca-2019</code> </p>
         pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_identifier = Some(input.into());
             self
         }
         /// <p>The unique key that identifies a certificate.</p>
-        /// <p>Example: <code>rds-ca-2019</code>
-        /// </p>
+        /// <p>Example: <code>rds-ca-2019</code> </p>
         pub fn set_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6241,15 +5870,13 @@ pub mod certificate {
             self
         }
         /// <p>The type of the certificate.</p>
-        /// <p>Example: <code>CA</code>
-        /// </p>
+        /// <p>Example: <code>CA</code> </p>
         pub fn certificate_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_type = Some(input.into());
             self
         }
         /// <p>The type of the certificate.</p>
-        /// <p>Example: <code>CA</code>
-        /// </p>
+        /// <p>Example: <code>CA</code> </p>
         pub fn set_certificate_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6268,15 +5895,13 @@ pub mod certificate {
             self
         }
         /// <p>The starting date-time from which the certificate is valid.</p>
-        /// <p>Example: <code>2019-07-31T17:57:09Z</code>
-        /// </p>
+        /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
         pub fn valid_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_from = Some(input);
             self
         }
         /// <p>The starting date-time from which the certificate is valid.</p>
-        /// <p>Example: <code>2019-07-31T17:57:09Z</code>
-        /// </p>
+        /// <p>Example: <code>2019-07-31T17:57:09Z</code> </p>
         pub fn set_valid_from(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6285,15 +5910,13 @@ pub mod certificate {
             self
         }
         /// <p>The date-time after which the certificate is no longer valid.</p>
-        /// <p>Example: <code>2024-07-31T17:57:09Z</code>
-        /// </p>
+        /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
         pub fn valid_till(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_till = Some(input);
             self
         }
         /// <p>The date-time after which the certificate is no longer valid.</p>
-        /// <p>Example: <code>2024-07-31T17:57:09Z</code>
-        /// </p>
+        /// <p>Example: <code>2024-07-31T17:57:09Z</code> </p>
         pub fn set_valid_till(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6302,15 +5925,13 @@ pub mod certificate {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-        /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code>
-        /// </p>
+        /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-        /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code>
-        /// </p>
+        /// <p>Example: <code>arn:aws:rds:us-east-1::cert:rds-ca-2019</code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,

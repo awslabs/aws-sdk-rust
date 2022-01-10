@@ -72,8 +72,7 @@ impl TemplateLocation {
     }
 }
 
-/// <p>The object that contains the Docker image URI for either your robot or simulation
-/// applications.</p>
+/// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -1140,16 +1139,13 @@ impl DeploymentApplicationConfig {
 pub struct DeploymentLaunchConfig {
     /// <p>The package name.</p>
     pub package_name: std::option::Option<std::string::String>,
-    /// <p>The deployment pre-launch file. This file will be executed prior to the launch
-    /// file.</p>
+    /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub pre_launch_file: std::option::Option<std::string::String>,
     /// <p>The launch file name.</p>
     pub launch_file: std::option::Option<std::string::String>,
-    /// <p>The deployment post-launch file. This file will be executed after the launch
-    /// file.</p>
+    /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub post_launch_file: std::option::Option<std::string::String>,
-    /// <p>An array of key/value pairs specifying environment variables for the robot
-    /// application</p>
+    /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1158,8 +1154,7 @@ impl DeploymentLaunchConfig {
     pub fn package_name(&self) -> std::option::Option<&str> {
         self.package_name.as_deref()
     }
-    /// <p>The deployment pre-launch file. This file will be executed prior to the launch
-    /// file.</p>
+    /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub fn pre_launch_file(&self) -> std::option::Option<&str> {
         self.pre_launch_file.as_deref()
     }
@@ -1167,13 +1162,11 @@ impl DeploymentLaunchConfig {
     pub fn launch_file(&self) -> std::option::Option<&str> {
         self.launch_file.as_deref()
     }
-    /// <p>The deployment post-launch file. This file will be executed after the launch
-    /// file.</p>
+    /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub fn post_launch_file(&self) -> std::option::Option<&str> {
         self.post_launch_file.as_deref()
     }
-    /// <p>An array of key/value pairs specifying environment variables for the robot
-    /// application</p>
+    /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     pub fn environment_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1217,14 +1210,12 @@ pub mod deployment_launch_config {
             self.package_name = input;
             self
         }
-        /// <p>The deployment pre-launch file. This file will be executed prior to the launch
-        /// file.</p>
+        /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
         pub fn pre_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_launch_file = Some(input.into());
             self
         }
-        /// <p>The deployment pre-launch file. This file will be executed prior to the launch
-        /// file.</p>
+        /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
         pub fn set_pre_launch_file(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1242,14 +1233,12 @@ pub mod deployment_launch_config {
             self.launch_file = input;
             self
         }
-        /// <p>The deployment post-launch file. This file will be executed after the launch
-        /// file.</p>
+        /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
         pub fn post_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
             self.post_launch_file = Some(input.into());
             self
         }
-        /// <p>The deployment post-launch file. This file will be executed after the launch
-        /// file.</p>
+        /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
         pub fn set_post_launch_file(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1261,8 +1250,7 @@ pub mod deployment_launch_config {
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
-        /// <p>An array of key/value pairs specifying environment variables for the robot
-        /// application</p>
+        /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1273,8 +1261,7 @@ pub mod deployment_launch_config {
             self.environment_variables = Some(hash_map);
             self
         }
-        /// <p>An array of key/value pairs specifying environment variables for the robot
-        /// application</p>
+        /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -1311,8 +1298,7 @@ pub struct DeploymentConfig {
     pub concurrent_deployment_percentage: std::option::Option<i32>,
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
     pub failure_threshold_percentage: std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete.
-    /// Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+    /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
     pub robot_deployment_timeout_in_seconds: std::option::Option<i64>,
     /// <p>The download condition file.</p>
     pub download_condition_file: std::option::Option<crate::model::S3Object>,
@@ -1326,8 +1312,7 @@ impl DeploymentConfig {
     pub fn failure_threshold_percentage(&self) -> std::option::Option<i32> {
         self.failure_threshold_percentage
     }
-    /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete.
-    /// Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+    /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
     pub fn robot_deployment_timeout_in_seconds(&self) -> std::option::Option<i64> {
         self.robot_deployment_timeout_in_seconds
     }
@@ -1390,14 +1375,12 @@ pub mod deployment_config {
             self.failure_threshold_percentage = input;
             self
         }
-        /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete.
-        /// Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+        /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
         pub fn robot_deployment_timeout_in_seconds(mut self, input: i64) -> Self {
             self.robot_deployment_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete.
-        /// Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+        /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
         pub fn set_robot_deployment_timeout_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1612,8 +1595,7 @@ impl AsRef<str> for DeploymentStatus {
 pub struct SimulationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the simulation job.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1633,8 +1615,7 @@ impl SimulationJobSummary {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -1707,14 +1688,12 @@ pub mod simulation_job_summary {
             self.arn = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2001,28 +1980,27 @@ pub struct SimulationJobRequest {
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
-    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-    /// seconds) or less.</p>
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub max_job_duration_in_seconds: i64,
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-    /// specified in its associated policies on your behalf. This is how credentials are passed in
-    /// to your simulation job. </p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
     /// </dl>
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default
-    /// applications include Gazebo, rqt, rviz and terminal access. </p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub use_default_applications: std::option::Option<bool>,
     /// <p>The robot applications to use in the simulation job.</p>
     pub robot_applications:
@@ -2030,21 +2008,15 @@ pub struct SimulationJobRequest {
     /// <p>The simulation applications to use in the simulation job.</p>
     pub simulation_applications:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-    /// <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all
-    /// <code>DataSourceConfig</code> objects. </p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
-    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-    /// VPC. You must provide at least one security group and two subnet IDs.</p>
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Compute information for the simulation job</p>
     pub compute: std::option::Option<crate::model::Compute>,
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-    /// request.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2057,25 +2029,25 @@ impl SimulationJobRequest {
     pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
-    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-    /// seconds) or less.</p>
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-    /// specified in its associated policies on your behalf. This is how credentials are passed in
-    /// to your simulation job. </p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
@@ -2083,8 +2055,7 @@ impl SimulationJobRequest {
     pub fn failure_behavior(&self) -> std::option::Option<&crate::model::FailureBehavior> {
         self.failure_behavior.as_ref()
     }
-    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default
-    /// applications include Gazebo, rqt, rviz and terminal access. </p>
+    /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
     pub fn use_default_applications(&self) -> std::option::Option<bool> {
         self.use_default_applications
     }
@@ -2100,18 +2071,13 @@ impl SimulationJobRequest {
     ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-    /// <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all
-    /// <code>DataSourceConfig</code> objects. </p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
         self.data_sources.as_deref()
     }
-    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-    /// VPC. You must provide at least one security group and two subnet IDs.</p>
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -2119,8 +2085,7 @@ impl SimulationJobRequest {
     pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
         self.compute.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-    /// request.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2199,40 +2164,37 @@ pub mod simulation_job_request {
             self.logging_config = input;
             self
         }
-        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-        /// seconds) or less.</p>
+        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
             self.max_job_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-        /// seconds) or less.</p>
+        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.max_job_duration_in_seconds = input;
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2243,12 +2205,15 @@ pub mod simulation_job_request {
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2260,14 +2225,12 @@ pub mod simulation_job_request {
             self.failure_behavior = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default applications in the simulation job. Default
-        /// applications include Gazebo, rqt, rviz and terminal access. </p>
+        /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
         pub fn use_default_applications(mut self, input: bool) -> Self {
             self.use_default_applications = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default applications in the simulation job. Default
-        /// applications include Gazebo, rqt, rviz and terminal access. </p>
+        /// <p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
         pub fn set_use_default_applications(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_applications = input;
             self
@@ -2277,12 +2240,9 @@ pub mod simulation_job_request {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot applications to use in the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -2301,10 +2261,10 @@ pub mod simulation_job_request {
         /// <p>The simulation applications to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -2320,23 +2280,17 @@ pub mod simulation_job_request {
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceConfig>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn set_data_sources(
             mut self,
@@ -2345,16 +2299,12 @@ pub mod simulation_job_request {
             self.data_sources = input;
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and two subnet IDs.</p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and two subnet IDs.</p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2376,8 +2326,7 @@ pub mod simulation_job_request {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-        /// request.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2388,8 +2337,7 @@ pub mod simulation_job_request {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-        /// request.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2429,22 +2377,15 @@ impl SimulationJobRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Compute {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximum value provided. The
-    /// default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     pub simulation_unit_limit: std::option::Option<i32>,
     /// <p>Compute type information for the simulation job.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
-    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-    /// allocated to the SimulationJob.</p>
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub gpu_unit_limit: std::option::Option<i32>,
 }
 impl Compute {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximum value provided. The
-    /// default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     pub fn simulation_unit_limit(&self) -> std::option::Option<i32> {
         self.simulation_unit_limit
     }
@@ -2452,8 +2393,7 @@ impl Compute {
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
-    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-    /// allocated to the SimulationJob.</p>
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
         self.gpu_unit_limit
     }
@@ -2478,18 +2418,12 @@ pub mod compute {
         pub(crate) gpu_unit_limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-        /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximum value provided. The
-        /// default is 15. </p>
+        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn simulation_unit_limit(mut self, input: i32) -> Self {
             self.simulation_unit_limit = Some(input);
             self
         }
-        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-        /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximum value provided. The
-        /// default is 15. </p>
+        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn set_simulation_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.simulation_unit_limit = input;
             self
@@ -2507,14 +2441,12 @@ pub mod compute {
             self.compute_type = input;
             self
         }
-        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-        /// allocated to the SimulationJob.</p>
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn gpu_unit_limit(mut self, input: i32) -> Self {
             self.gpu_unit_limit = Some(input);
             self
         }
-        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-        /// allocated to the SimulationJob.</p>
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.gpu_unit_limit = input;
             self
@@ -2536,9 +2468,7 @@ impl Compute {
     }
 }
 
-/// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-/// identifying the list of security group IDs and subnet IDs. These must belong to the same
-/// VPC. You must provide at least one security group and two subnet IDs.</p>
+/// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfig {
@@ -2658,20 +2588,13 @@ pub struct DataSourceConfig {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The data type for the data source that you're using for your container image or
-    /// simulation job. You can use this field to specify whether your data source is an Archive,
-    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-    /// you must provide an Amazon S3 object key to your archive. The object key must point to
-    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-    /// source.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub destination: std::option::Option<std::string::String>,
 }
 impl DataSourceConfig {
@@ -2687,22 +2610,15 @@ impl DataSourceConfig {
     pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_keys.as_deref()
     }
-    /// <p>The data type for the data source that you're using for your container image or
-    /// simulation job. You can use this field to specify whether your data source is an Archive,
-    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-    /// you must provide an Amazon S3 object key to your archive. The object key must point to
-    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-    /// source.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
@@ -2770,17 +2686,13 @@ pub mod data_source_config {
             self.s3_keys = input;
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or
-        /// simulation job. You can use this field to specify whether your data source is an Archive,
-        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or
-        /// simulation job. You can use this field to specify whether your data source is an Archive,
-        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn set_type(
             mut self,
@@ -2790,27 +2702,17 @@ pub mod data_source_config {
             self
         }
         /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-        /// you must provide an Amazon S3 object key to your archive. The object key must point to
-        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-        /// source.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
         /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-        /// you must provide an Amazon S3 object key to your archive. The object key must point to
-        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-        /// source.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -2908,15 +2810,12 @@ pub struct SimulationApplicationConfig {
         std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
     /// <p>A list of world configurations.</p>
     pub world_configs: std::option::Option<std::vec::Vec<crate::model::WorldConfig>>,
-    /// <p>A Boolean indicating whether to use default upload configurations. By default,
-    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default
-    /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl SimulationApplicationConfig {
@@ -2942,9 +2841,7 @@ impl SimulationApplicationConfig {
     pub fn world_configs(&self) -> std::option::Option<&[crate::model::WorldConfig]> {
         self.world_configs.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default upload configurations. By default,
-    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
@@ -2953,8 +2850,7 @@ impl SimulationApplicationConfig {
     pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default
-    /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -3034,12 +2930,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_upload_configurations`](Self::set_upload_configurations).
         ///
         /// <p>Information about upload configurations for the simulation application.</p>
-        pub fn upload_configurations(
-            mut self,
-            input: impl Into<crate::model::UploadConfiguration>,
-        ) -> Self {
+        pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upload_configurations = Some(v);
             self
         }
@@ -3056,9 +2949,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_world_configs`](Self::set_world_configs).
         ///
         /// <p>A list of world configurations.</p>
-        pub fn world_configs(mut self, input: impl Into<crate::model::WorldConfig>) -> Self {
+        pub fn world_configs(mut self, input: crate::model::WorldConfig) -> Self {
             let mut v = self.world_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_configs = Some(v);
             self
         }
@@ -3070,17 +2963,13 @@ pub mod simulation_application_config {
             self.world_configs = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default,
-        /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-        /// terminates and all ROS topics will be recorded.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
         /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default,
-        /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-        /// terminates and all ROS topics will be recorded.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
         /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
         pub fn set_use_default_upload_configurations(
             mut self,
@@ -3094,9 +2983,9 @@ pub mod simulation_application_config {
         /// To override the contents of this collection use [`set_tools`](Self::set_tools).
         ///
         /// <p>Information about tools configured for the simulation application.</p>
-        pub fn tools(mut self, input: impl Into<crate::model::Tool>) -> Self {
+        pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tools = Some(v);
             self
         }
@@ -3108,14 +2997,12 @@ pub mod simulation_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default
-        /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default simulation application tools. The default
-        /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -3146,28 +3033,19 @@ impl SimulationApplicationConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tool {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
-    /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-    /// the tool as it is running in the simulation. It must have a graphical user interface. The
-    /// default is <code>False</code>. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub stream_ui: std::option::Option<bool>,
     /// <p>The name of the tool.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub command: std::option::Option<std::string::String>,
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
-    /// is <code>False</code>. </p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub stream_output_to_cloud_watch: std::option::Option<bool>,
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
-    /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
-    /// default is <code>RESTART</code>. </p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub exit_behavior: std::option::Option<crate::model::ExitBehavior>,
 }
 impl Tool {
-    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
-    /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-    /// the tool as it is running in the simulation. It must have a graphical user interface. The
-    /// default is <code>False</code>. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub fn stream_ui(&self) -> std::option::Option<bool> {
         self.stream_ui
     }
@@ -3179,14 +3057,11 @@ impl Tool {
     pub fn command(&self) -> std::option::Option<&str> {
         self.command.as_deref()
     }
-    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
-    /// is <code>False</code>. </p>
+    /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(&self) -> std::option::Option<bool> {
         self.stream_output_to_cloud_watch
     }
-    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
-    /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
-    /// default is <code>RESTART</code>. </p>
+    /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
     pub fn exit_behavior(&self) -> std::option::Option<&crate::model::ExitBehavior> {
         self.exit_behavior.as_ref()
     }
@@ -3218,18 +3093,12 @@ pub mod tool {
         pub(crate) exit_behavior: std::option::Option<crate::model::ExitBehavior>,
     }
     impl Builder {
-        /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
-        /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// the tool as it is running in the simulation. It must have a graphical user interface. The
-        /// default is <code>False</code>. </p>
+        /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
         pub fn stream_ui(mut self, input: bool) -> Self {
             self.stream_ui = Some(input);
             self
         }
-        /// <p>Boolean indicating whether a streaming session will be configured for the tool. If
-        /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// the tool as it is running in the simulation. It must have a graphical user interface. The
-        /// default is <code>False</code>. </p>
+        /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
         pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
             self.stream_ui = input;
             self
@@ -3254,14 +3123,12 @@ pub mod tool {
             self.command = input;
             self
         }
-        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
-        /// is <code>False</code>. </p>
+        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
         pub fn stream_output_to_cloud_watch(mut self, input: bool) -> Self {
             self.stream_output_to_cloud_watch = Some(input);
             self
         }
-        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
-        /// is <code>False</code>. </p>
+        /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
         pub fn set_stream_output_to_cloud_watch(
             mut self,
             input: std::option::Option<bool>,
@@ -3269,16 +3136,12 @@ pub mod tool {
             self.stream_output_to_cloud_watch = input;
             self
         }
-        /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
-        /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
-        /// default is <code>RESTART</code>. </p>
+        /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
         pub fn exit_behavior(mut self, input: crate::model::ExitBehavior) -> Self {
             self.exit_behavior = Some(input);
             self
         }
-        /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
-        /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The
-        /// default is <code>RESTART</code>. </p>
+        /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
         pub fn set_exit_behavior(
             mut self,
             input: std::option::Option<crate::model::ExitBehavior>,
@@ -3412,72 +3275,69 @@ impl WorldConfig {
     }
 }
 
-/// <p>Provides upload configuration information. Files are uploaded from the simulation job to
-/// a location you specify. </p>
+/// <p>Provides upload configuration information. Files are uploaded from the simulation job to a location you specify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadConfiguration {
-    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
-    /// simulation output location to determine the final path. </p>
-    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
-    /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
-    /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
+    /// <simid>
+    /// /
+    /// <runid>
+    /// /robot-test
+    /// </runid>
+    /// </simid></code>. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
-    /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
-    /// For example, specifying <code>/var/log/**.log</code> causes all .log files in the
-    /// <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+    /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies when to upload the files:</p>
     /// <dl>
-    /// <dt>UPLOAD_ON_TERMINATE</dt>
+    /// <dt>
+    /// UPLOAD_ON_TERMINATE
+    /// </dt>
     /// <dd>
-    /// <p>Matching files are uploaded once the simulation enters the
-    /// <code>TERMINATING</code> state. Matching files are not uploaded until all of
-    /// your code (including tools) have stopped. </p>
-    /// <p>If there is a problem uploading a file, the upload is retried. If problems
-    /// persist, no further upload attempts will be made.</p>
+    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
+    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
     /// </dd>
-    /// <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt>
+    /// <dt>
+    /// UPLOAD_ROLLING_AUTO_REMOVE
+    /// </dt>
     /// <dd>
-    /// <p>Matching files are uploaded as they are created. They are deleted after they
-    /// are uploaded. The specified path is checked every 5 seconds. A final check is made
-    /// when all of your code (including tools) have stopped. </p>
+    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
     pub upload_behavior: std::option::Option<crate::model::UploadBehavior>,
 }
 impl UploadConfiguration {
-    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
-    /// simulation output location to determine the final path. </p>
-    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
-    /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
-    /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
+    /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+    /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
+    /// <simid>
+    /// /
+    /// <runid>
+    /// /robot-test
+    /// </runid>
+    /// </simid></code>. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
-    /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
-    /// For example, specifying <code>/var/log/**.log</code> causes all .log files in the
-    /// <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+    /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Specifies when to upload the files:</p>
     /// <dl>
-    /// <dt>UPLOAD_ON_TERMINATE</dt>
+    /// <dt>
+    /// UPLOAD_ON_TERMINATE
+    /// </dt>
     /// <dd>
-    /// <p>Matching files are uploaded once the simulation enters the
-    /// <code>TERMINATING</code> state. Matching files are not uploaded until all of
-    /// your code (including tools) have stopped. </p>
-    /// <p>If there is a problem uploading a file, the upload is retried. If problems
-    /// persist, no further upload attempts will be made.</p>
+    /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
+    /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
     /// </dd>
-    /// <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt>
+    /// <dt>
+    /// UPLOAD_ROLLING_AUTO_REMOVE
+    /// </dt>
     /// <dd>
-    /// <p>Matching files are uploaded as they are created. They are deleted after they
-    /// are uploaded. The specified path is checked every 5 seconds. A final check is made
-    /// when all of your code (including tools) have stopped. </p>
+    /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
     /// </dd>
     /// </dl>
     pub fn upload_behavior(&self) -> std::option::Option<&crate::model::UploadBehavior> {
@@ -3504,55 +3364,54 @@ pub mod upload_configuration {
         pub(crate) upload_behavior: std::option::Option<crate::model::UploadBehavior>,
     }
     impl Builder {
-        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
-        /// simulation output location to determine the final path. </p>
-        /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
-        /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
-        /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
+        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+        /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
+        /// <simid>
+        /// /
+        /// <runid>
+        /// /robot-test
+        /// </runid>
+        /// </simid></code>. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the
-        /// simulation output location to determine the final path. </p>
-        /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your
-        /// upload configuration name is <code>robot-test</code>, your files will be uploaded to
-        /// <code>s3://my-bucket/<simid>/<runid>/robot-test</code>. </p>
+        /// <p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p>
+        /// <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/
+        /// <simid>
+        /// /
+        /// <runid>
+        /// /robot-test
+        /// </runid>
+        /// </simid></code>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
-        /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
-        /// For example, specifying <code>/var/log/**.log</code> causes all .log files in the
-        /// <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+        /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
-        /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>.
-        /// For example, specifying <code>/var/log/**.log</code> causes all .log files in the
-        /// <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
+        /// <p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
         /// <p>Specifies when to upload the files:</p>
         /// <dl>
-        /// <dt>UPLOAD_ON_TERMINATE</dt>
+        /// <dt>
+        /// UPLOAD_ON_TERMINATE
+        /// </dt>
         /// <dd>
-        /// <p>Matching files are uploaded once the simulation enters the
-        /// <code>TERMINATING</code> state. Matching files are not uploaded until all of
-        /// your code (including tools) have stopped. </p>
-        /// <p>If there is a problem uploading a file, the upload is retried. If problems
-        /// persist, no further upload attempts will be made.</p>
+        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
+        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
         /// </dd>
-        /// <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt>
+        /// <dt>
+        /// UPLOAD_ROLLING_AUTO_REMOVE
+        /// </dt>
         /// <dd>
-        /// <p>Matching files are uploaded as they are created. They are deleted after they
-        /// are uploaded. The specified path is checked every 5 seconds. A final check is made
-        /// when all of your code (including tools) have stopped. </p>
+        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
         /// </dd>
         /// </dl>
         pub fn upload_behavior(mut self, input: crate::model::UploadBehavior) -> Self {
@@ -3561,19 +3420,18 @@ pub mod upload_configuration {
         }
         /// <p>Specifies when to upload the files:</p>
         /// <dl>
-        /// <dt>UPLOAD_ON_TERMINATE</dt>
+        /// <dt>
+        /// UPLOAD_ON_TERMINATE
+        /// </dt>
         /// <dd>
-        /// <p>Matching files are uploaded once the simulation enters the
-        /// <code>TERMINATING</code> state. Matching files are not uploaded until all of
-        /// your code (including tools) have stopped. </p>
-        /// <p>If there is a problem uploading a file, the upload is retried. If problems
-        /// persist, no further upload attempts will be made.</p>
+        /// <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p>
+        /// <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p>
         /// </dd>
-        /// <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt>
+        /// <dt>
+        /// UPLOAD_ROLLING_AUTO_REMOVE
+        /// </dt>
         /// <dd>
-        /// <p>Matching files are uploaded as they are created. They are deleted after they
-        /// are uploaded. The specified path is checked every 5 seconds. A final check is made
-        /// when all of your code (including tools) have stopped. </p>
+        /// <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p>
         /// </dd>
         /// </dl>
         pub fn set_upload_behavior(
@@ -3668,10 +3526,7 @@ pub struct LaunchConfig {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The port forwarding configuration.</p>
     pub port_forwarding_config: std::option::Option<crate::model::PortForwardingConfig>,
-    /// <p>Boolean indicating whether a streaming session will be configured for the application.
-    /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-    /// your application as it is running in the simulation. You must configure and launch the
-    /// component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     pub stream_ui: bool,
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
@@ -3699,10 +3554,7 @@ impl LaunchConfig {
     ) -> std::option::Option<&crate::model::PortForwardingConfig> {
         self.port_forwarding_config.as_ref()
     }
-    /// <p>Boolean indicating whether a streaming session will be configured for the application.
-    /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-    /// your application as it is running in the simulation. You must configure and launch the
-    /// component. It must have a graphical user interface. </p>
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     pub fn stream_ui(&self) -> bool {
         self.stream_ui
     }
@@ -3798,18 +3650,12 @@ pub mod launch_config {
             self.port_forwarding_config = input;
             self
         }
-        /// <p>Boolean indicating whether a streaming session will be configured for the application.
-        /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// your application as it is running in the simulation. You must configure and launch the
-        /// component. It must have a graphical user interface. </p>
+        /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
         pub fn stream_ui(mut self, input: bool) -> Self {
             self.stream_ui = Some(input);
             self
         }
-        /// <p>Boolean indicating whether a streaming session will be configured for the application.
-        /// If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// your application as it is running in the simulation. You must configure and launch the
-        /// component. It must have a graphical user interface. </p>
+        /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
         pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
             self.stream_ui = input;
             self
@@ -3889,9 +3735,9 @@ pub mod port_forwarding_config {
         /// To override the contents of this collection use [`set_port_mappings`](Self::set_port_mappings).
         ///
         /// <p>The port mappings for the configuration.</p>
-        pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
+        pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_mappings = Some(v);
             self
         }
@@ -3922,8 +3768,7 @@ impl PortForwardingConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PortMapping {
-    /// <p>The port number on the simulation job instance to use as a remote connection point.
-    /// </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     pub job_port: i32,
     /// <p>The port number on the application.</p>
     pub application_port: i32,
@@ -3931,8 +3776,7 @@ pub struct PortMapping {
     pub enable_on_public_ip: bool,
 }
 impl PortMapping {
-    /// <p>The port number on the simulation job instance to use as a remote connection point.
-    /// </p>
+    /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
     pub fn job_port(&self) -> i32 {
         self.job_port
     }
@@ -3965,14 +3809,12 @@ pub mod port_mapping {
         pub(crate) enable_on_public_ip: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The port number on the simulation job instance to use as a remote connection point.
-        /// </p>
+        /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
         pub fn job_port(mut self, input: i32) -> Self {
             self.job_port = Some(input);
             self
         }
-        /// <p>The port number on the simulation job instance to use as a remote connection point.
-        /// </p>
+        /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
         pub fn set_job_port(mut self, input: std::option::Option<i32>) -> Self {
             self.job_port = input;
             self
@@ -4027,15 +3869,12 @@ pub struct RobotApplicationConfig {
     /// <p>The upload configurations for the robot application.</p>
     pub upload_configurations:
         std::option::Option<std::vec::Vec<crate::model::UploadConfiguration>>,
-    /// <p>A Boolean indicating whether to use default upload configurations. By default,
-    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
     pub use_default_upload_configurations: std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
     pub tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools
-    /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub use_default_tools: std::option::Option<bool>,
 }
 impl RobotApplicationConfig {
@@ -4057,9 +3896,7 @@ impl RobotApplicationConfig {
     ) -> std::option::Option<&[crate::model::UploadConfiguration]> {
         self.upload_configurations.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default upload configurations. By default,
-    /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-    /// terminates and all ROS topics will be recorded.</p>
+    /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
     pub fn use_default_upload_configurations(&self) -> std::option::Option<bool> {
         self.use_default_upload_configurations
@@ -4068,8 +3905,7 @@ impl RobotApplicationConfig {
     pub fn tools(&self) -> std::option::Option<&[crate::model::Tool]> {
         self.tools.as_deref()
     }
-    /// <p>A Boolean indicating whether to use default robot application tools. The default tools
-    /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+    /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
     pub fn use_default_tools(&self) -> std::option::Option<bool> {
         self.use_default_tools
     }
@@ -4147,12 +3983,9 @@ pub mod robot_application_config {
         /// To override the contents of this collection use [`set_upload_configurations`](Self::set_upload_configurations).
         ///
         /// <p>The upload configurations for the robot application.</p>
-        pub fn upload_configurations(
-            mut self,
-            input: impl Into<crate::model::UploadConfiguration>,
-        ) -> Self {
+        pub fn upload_configurations(mut self, input: crate::model::UploadConfiguration) -> Self {
             let mut v = self.upload_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.upload_configurations = Some(v);
             self
         }
@@ -4164,17 +3997,13 @@ pub mod robot_application_config {
             self.upload_configurations = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default,
-        /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-        /// terminates and all ROS topics will be recorded.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
         /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
         pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
             self.use_default_upload_configurations = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default upload configurations. By default,
-        /// <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application
-        /// terminates and all ROS topics will be recorded.</p>
+        /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
         /// <p>If you set this value, you must specify an <code>outputLocation</code>. </p>
         pub fn set_use_default_upload_configurations(
             mut self,
@@ -4188,9 +4017,9 @@ pub mod robot_application_config {
         /// To override the contents of this collection use [`set_tools`](Self::set_tools).
         ///
         /// <p>Information about tools configured for the robot application.</p>
-        pub fn tools(mut self, input: impl Into<crate::model::Tool>) -> Self {
+        pub fn tools(mut self, input: crate::model::Tool) -> Self {
             let mut v = self.tools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tools = Some(v);
             self
         }
@@ -4202,14 +4031,12 @@ pub mod robot_application_config {
             self.tools = input;
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools
-        /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn use_default_tools(mut self, input: bool) -> Self {
             self.use_default_tools = Some(input);
             self
         }
-        /// <p>A Boolean indicating whether to use default robot application tools. The default tools
-        /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
+        /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. </p>
         pub fn set_use_default_tools(mut self, input: std::option::Option<bool>) -> Self {
             self.use_default_tools = input;
             self
@@ -4838,39 +4665,21 @@ impl AsRef<str> for SimulationJobBatchErrorCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPolicy {
-    /// <p>The amount of time, in seconds, to wait for the batch to complete.
-    ///
-    /// </p>
-    /// <p>If a batch times out, and there are pending requests that were failing due to an
-    /// internal failure (like <code>InternalServiceError</code>), they will be moved to the failed
-    /// list and the batch status will be <code>Failed</code>. If the pending requests were failing
-    /// for any other reason, the failed pending requests will be moved to the failed list and the
-    /// batch status will be <code>TimedOut</code>. </p>
+    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+    /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
     pub timeout_in_seconds: std::option::Option<i64>,
-    /// <p>The number of active simulation jobs create as part of the batch that can be in an
-    /// active state at the same time. </p>
-    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>,
-    /// <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and
-    /// <code>Terminating</code>. All other states are terminal states. </p>
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     pub max_concurrency: std::option::Option<i32>,
 }
 impl BatchPolicy {
-    /// <p>The amount of time, in seconds, to wait for the batch to complete.
-    ///
-    /// </p>
-    /// <p>If a batch times out, and there are pending requests that were failing due to an
-    /// internal failure (like <code>InternalServiceError</code>), they will be moved to the failed
-    /// list and the batch status will be <code>Failed</code>. If the pending requests were failing
-    /// for any other reason, the failed pending requests will be moved to the failed list and the
-    /// batch status will be <code>TimedOut</code>. </p>
+    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+    /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
         self.timeout_in_seconds
     }
-    /// <p>The number of active simulation jobs create as part of the batch that can be in an
-    /// active state at the same time. </p>
-    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>,
-    /// <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and
-    /// <code>Terminating</code>. All other states are terminal states. </p>
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     pub fn max_concurrency(&self) -> std::option::Option<i32> {
         self.max_concurrency
     }
@@ -4893,44 +4702,26 @@ pub mod batch_policy {
         pub(crate) max_concurrency: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of time, in seconds, to wait for the batch to complete.
-        ///
-        /// </p>
-        /// <p>If a batch times out, and there are pending requests that were failing due to an
-        /// internal failure (like <code>InternalServiceError</code>), they will be moved to the failed
-        /// list and the batch status will be <code>Failed</code>. If the pending requests were failing
-        /// for any other reason, the failed pending requests will be moved to the failed list and the
-        /// batch status will be <code>TimedOut</code>. </p>
+        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+        /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
         pub fn timeout_in_seconds(mut self, input: i64) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, to wait for the batch to complete.
-        ///
-        /// </p>
-        /// <p>If a batch times out, and there are pending requests that were failing due to an
-        /// internal failure (like <code>InternalServiceError</code>), they will be moved to the failed
-        /// list and the batch status will be <code>Failed</code>. If the pending requests were failing
-        /// for any other reason, the failed pending requests will be moved to the failed list and the
-        /// batch status will be <code>TimedOut</code>. </p>
+        /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+        /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_in_seconds = input;
             self
         }
-        /// <p>The number of active simulation jobs create as part of the batch that can be in an
-        /// active state at the same time. </p>
-        /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>,
-        /// <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and
-        /// <code>Terminating</code>. All other states are terminal states. </p>
+        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+        /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
         pub fn max_concurrency(mut self, input: i32) -> Self {
             self.max_concurrency = Some(input);
             self
         }
-        /// <p>The number of active simulation jobs create as part of the batch that can be in an
-        /// active state at the same time. </p>
-        /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>,
-        /// <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and
-        /// <code>Terminating</code>. All other states are terminal states. </p>
+        /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+        /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrency = input;
             self
@@ -5387,37 +5178,49 @@ pub struct WorldGenerationJobSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the world generator job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the world generator job:</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generator job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generator job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generator job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
@@ -5439,39 +5242,51 @@ impl WorldGenerationJobSummary {
     pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the world generator job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the world generator job:</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generator job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generator job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generator job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
@@ -5540,14 +5355,12 @@ pub mod world_generation_job_summary {
             self.template = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generator job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generator job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5557,32 +5370,45 @@ pub mod world_generation_job_summary {
         }
         /// <p>The status of the world generator job:</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generator job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generator job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generator job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is being cancelled.</p>
         /// </dd>
@@ -5593,32 +5419,45 @@ pub mod world_generation_job_summary {
         }
         /// <p>The status of the world generator job:</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generator job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generator job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generator job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is being cancelled.</p>
         /// </dd>
@@ -5684,13 +5523,8 @@ impl WorldGenerationJobSummary {
     }
 }
 
-/// <p>The number of worlds that will be created. You can configure the number of unique
-/// floorplans and the number of unique interiors for each floor plan. For example, if you want
-/// 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and
-/// <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds
-/// (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p>
-/// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan =
-/// 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
+/// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p>
+/// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorldCount {
@@ -5857,28 +5691,39 @@ pub struct WorldExportJobSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.
-    /// </p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -5896,28 +5741,39 @@ impl WorldExportJobSummary {
     }
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.
-    /// </p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -5968,28 +5824,39 @@ pub mod world_export_job_summary {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information.
-        /// </p>
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -6000,28 +5867,39 @@ pub mod world_export_job_summary {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information.
-        /// </p>
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -6167,58 +6045,64 @@ impl AsRef<str> for WorldExportJobStatus {
 pub struct SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
@@ -6236,62 +6120,68 @@ impl SimulationJobBatchSummary {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
@@ -6350,14 +6240,12 @@ pub mod simulation_job_batch_summary {
             self.arn = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6365,14 +6253,12 @@ pub mod simulation_job_batch_summary {
             self.last_updated_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6382,50 +6268,58 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The status of the simulation job batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -6436,50 +6330,58 @@ pub mod simulation_job_batch_summary {
         }
         /// <p>The status of the simulation job batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -6552,8 +6454,7 @@ pub struct SimulationApplicationSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the simulation application.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -6573,8 +6474,7 @@ impl SimulationApplicationSummary {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -6646,14 +6546,12 @@ pub mod simulation_application_summary {
             self.version = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7024,8 +6922,7 @@ pub struct RobotApplicationSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The version of the robot application.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
@@ -7043,8 +6940,7 @@ impl RobotApplicationSummary {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -7107,14 +7003,12 @@ pub mod robot_application_summary {
             self.version = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7447,10 +7341,10 @@ pub mod deployment_job {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -7692,9 +7586,9 @@ pub mod failure_summary {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>The worlds that failed.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::WorldFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::WorldFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -7728,31 +7622,39 @@ impl FailureSummary {
 pub struct WorldFailure {
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as
-    /// the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
     pub sample_failure_reason: std::option::Option<std::string::String>,
     /// <p>The number of failed worlds.</p>
     pub failure_count: i32,
@@ -7760,24 +7662,33 @@ pub struct WorldFailure {
 impl WorldFailure {
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -7785,8 +7696,7 @@ impl WorldFailure {
     pub fn failure_code(&self) -> std::option::Option<&crate::model::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as
-    /// the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
     pub fn sample_failure_reason(&self) -> std::option::Option<&str> {
         self.sample_failure_reason.as_deref()
     }
@@ -7817,24 +7727,33 @@ pub mod world_failure {
     impl Builder {
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -7845,24 +7764,33 @@ pub mod world_failure {
         }
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -7874,14 +7802,12 @@ pub mod world_failure {
             self.failure_code = input;
             self
         }
-        /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as
-        /// the <code>sampleFailureReason</code>. </p>
+        /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
         pub fn sample_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.sample_failure_reason = Some(input.into());
             self
         }
-        /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as
-        /// the <code>sampleFailureReason</code>. </p>
+        /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
         pub fn set_sample_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8076,22 +8002,15 @@ impl AsRef<str> for WorldExportJobErrorCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComputeResponse {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximum value provided. The
-    /// default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     pub simulation_unit_limit: std::option::Option<i32>,
     /// <p>Compute type response information for the simulation job.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
-    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-    /// allocated to the SimulationJob.</p>
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub gpu_unit_limit: std::option::Option<i32>,
 }
 impl ComputeResponse {
-    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-    /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-    /// only billed for the SU utilization you consume up to the maximum value provided. The
-    /// default is 15. </p>
+    /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
     pub fn simulation_unit_limit(&self) -> std::option::Option<i32> {
         self.simulation_unit_limit
     }
@@ -8099,8 +8018,7 @@ impl ComputeResponse {
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
-    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-    /// allocated to the SimulationJob.</p>
+    /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
     pub fn gpu_unit_limit(&self) -> std::option::Option<i32> {
         self.gpu_unit_limit
     }
@@ -8125,18 +8043,12 @@ pub mod compute_response {
         pub(crate) gpu_unit_limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-        /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximum value provided. The
-        /// default is 15. </p>
+        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn simulation_unit_limit(mut self, input: i32) -> Self {
             self.simulation_unit_limit = Some(input);
             self
         }
-        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to
-        /// the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are
-        /// only billed for the SU utilization you consume up to the maximum value provided. The
-        /// default is 15. </p>
+        /// <p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>
         pub fn set_simulation_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.simulation_unit_limit = input;
             self
@@ -8154,14 +8066,12 @@ pub mod compute_response {
             self.compute_type = input;
             self
         }
-        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-        /// allocated to the SimulationJob.</p>
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn gpu_unit_limit(mut self, input: i32) -> Self {
             self.gpu_unit_limit = Some(input);
             self
         }
-        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
-        /// allocated to the SimulationJob.</p>
+        /// <p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>
         pub fn set_gpu_unit_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.gpu_unit_limit = input;
             self
@@ -8423,20 +8333,13 @@ pub struct DataSource {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_keys: std::option::Option<std::vec::Vec<crate::model::S3KeyOutput>>,
-    /// <p>The data type for the data source that you're using for your container image or
-    /// simulation job. You can use this field to specify whether your data source is an Archive,
-    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-    /// you must provide an Amazon S3 object key to your archive. The object key must point to
-    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-    /// source.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub destination: std::option::Option<std::string::String>,
 }
 impl DataSource {
@@ -8452,22 +8355,15 @@ impl DataSource {
     pub fn s3_keys(&self) -> std::option::Option<&[crate::model::S3KeyOutput]> {
         self.s3_keys.as_deref()
     }
-    /// <p>The data type for the data source that you're using for your container image or
-    /// simulation job. You can use this field to specify whether your data source is an Archive,
-    /// an Amazon S3 prefix, or a file.</p>
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The location where your files are mounted in the container image.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-    /// you must provide an Amazon S3 object key to your archive. The object key must point to
-    /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-    /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-    /// source.</p>
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-    /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
@@ -8521,9 +8417,9 @@ pub mod data_source {
         /// To override the contents of this collection use [`set_s3_keys`](Self::set_s3_keys).
         ///
         /// <p>The list of S3 keys identifying the data source files.</p>
-        pub fn s3_keys(mut self, input: impl Into<crate::model::S3KeyOutput>) -> Self {
+        pub fn s3_keys(mut self, input: crate::model::S3KeyOutput) -> Self {
             let mut v = self.s3_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_keys = Some(v);
             self
         }
@@ -8535,17 +8431,13 @@ pub mod data_source {
             self.s3_keys = input;
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or
-        /// simulation job. You can use this field to specify whether your data source is an Archive,
-        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The data type for the data source that you're using for your container image or
-        /// simulation job. You can use this field to specify whether your data source is an Archive,
-        /// an Amazon S3 prefix, or a file.</p>
+        /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
         /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
         pub fn set_type(
             mut self,
@@ -8555,27 +8447,17 @@ pub mod data_source {
             self
         }
         /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-        /// you must provide an Amazon S3 object key to your archive. The object key must point to
-        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-        /// source.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
         }
         /// <p>The location where your files are mounted in the container image.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-        /// you must provide an Amazon S3 object key to your archive. The object key must point to
-        /// either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-        /// you provide the Amazon S3 prefix that points to the files that you are using for your data
-        /// source.</p>
-        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you
-        /// provide the Amazon S3 path to the file that you're using as your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
+        /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -8861,39 +8743,47 @@ impl RobotDeployment {
 pub struct ProgressDetail {
     /// <p>The current progress status.</p>
     /// <dl>
-    /// <dt>Validating</dt>
+    /// <dt>
+    /// Validating
+    /// </dt>
     /// <dd>
     /// <p>Validating the deployment.</p>
     /// </dd>
-    /// <dt>DownloadingExtracting</dt>
+    /// <dt>
+    /// DownloadingExtracting
+    /// </dt>
     /// <dd>
     /// <p>Downloading and extracting the bundle on the robot.</p>
     /// </dd>
-    /// <dt>ExecutingPreLaunch</dt>
+    /// <dt>
+    /// ExecutingPreLaunch
+    /// </dt>
     /// <dd>
     /// <p>Executing pre-launch script(s) if provided.</p>
     /// </dd>
-    /// <dt>Launching</dt>
+    /// <dt>
+    /// Launching
+    /// </dt>
     /// <dd>
     /// <p>Launching the robot application.</p>
     /// </dd>
-    /// <dt>ExecutingPostLaunch</dt>
+    /// <dt>
+    /// ExecutingPostLaunch
+    /// </dt>
     /// <dd>
     /// <p>Executing post-launch script(s) if provided.</p>
     /// </dd>
-    /// <dt>Finished</dt>
+    /// <dt>
+    /// Finished
+    /// </dt>
     /// <dd>
     /// <p>Deployment is complete.</p>
     /// </dd>
     /// </dl>
     pub current_progress: std::option::Option<crate::model::RobotDeploymentStep>,
-    /// <p>Precentage of the step that is done. This currently only applies to the
-    /// <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-    /// steps.</p>
+    /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub percent_done: std::option::Option<f32>,
-    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies
-    /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-    /// steps.</p>
+    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub estimated_time_remaining_seconds: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     pub target_resource: std::option::Option<std::string::String>,
@@ -8901,27 +8791,39 @@ pub struct ProgressDetail {
 impl ProgressDetail {
     /// <p>The current progress status.</p>
     /// <dl>
-    /// <dt>Validating</dt>
+    /// <dt>
+    /// Validating
+    /// </dt>
     /// <dd>
     /// <p>Validating the deployment.</p>
     /// </dd>
-    /// <dt>DownloadingExtracting</dt>
+    /// <dt>
+    /// DownloadingExtracting
+    /// </dt>
     /// <dd>
     /// <p>Downloading and extracting the bundle on the robot.</p>
     /// </dd>
-    /// <dt>ExecutingPreLaunch</dt>
+    /// <dt>
+    /// ExecutingPreLaunch
+    /// </dt>
     /// <dd>
     /// <p>Executing pre-launch script(s) if provided.</p>
     /// </dd>
-    /// <dt>Launching</dt>
+    /// <dt>
+    /// Launching
+    /// </dt>
     /// <dd>
     /// <p>Launching the robot application.</p>
     /// </dd>
-    /// <dt>ExecutingPostLaunch</dt>
+    /// <dt>
+    /// ExecutingPostLaunch
+    /// </dt>
     /// <dd>
     /// <p>Executing post-launch script(s) if provided.</p>
     /// </dd>
-    /// <dt>Finished</dt>
+    /// <dt>
+    /// Finished
+    /// </dt>
     /// <dd>
     /// <p>Deployment is complete.</p>
     /// </dd>
@@ -8929,15 +8831,11 @@ impl ProgressDetail {
     pub fn current_progress(&self) -> std::option::Option<&crate::model::RobotDeploymentStep> {
         self.current_progress.as_ref()
     }
-    /// <p>Precentage of the step that is done. This currently only applies to the
-    /// <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-    /// steps.</p>
+    /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn percent_done(&self) -> std::option::Option<f32> {
         self.percent_done
     }
-    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies
-    /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-    /// steps.</p>
+    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn estimated_time_remaining_seconds(&self) -> std::option::Option<i32> {
         self.estimated_time_remaining_seconds
     }
@@ -8973,27 +8871,39 @@ pub mod progress_detail {
     impl Builder {
         /// <p>The current progress status.</p>
         /// <dl>
-        /// <dt>Validating</dt>
+        /// <dt>
+        /// Validating
+        /// </dt>
         /// <dd>
         /// <p>Validating the deployment.</p>
         /// </dd>
-        /// <dt>DownloadingExtracting</dt>
+        /// <dt>
+        /// DownloadingExtracting
+        /// </dt>
         /// <dd>
         /// <p>Downloading and extracting the bundle on the robot.</p>
         /// </dd>
-        /// <dt>ExecutingPreLaunch</dt>
+        /// <dt>
+        /// ExecutingPreLaunch
+        /// </dt>
         /// <dd>
         /// <p>Executing pre-launch script(s) if provided.</p>
         /// </dd>
-        /// <dt>Launching</dt>
+        /// <dt>
+        /// Launching
+        /// </dt>
         /// <dd>
         /// <p>Launching the robot application.</p>
         /// </dd>
-        /// <dt>ExecutingPostLaunch</dt>
+        /// <dt>
+        /// ExecutingPostLaunch
+        /// </dt>
         /// <dd>
         /// <p>Executing post-launch script(s) if provided.</p>
         /// </dd>
-        /// <dt>Finished</dt>
+        /// <dt>
+        /// Finished
+        /// </dt>
         /// <dd>
         /// <p>Deployment is complete.</p>
         /// </dd>
@@ -9004,27 +8914,39 @@ pub mod progress_detail {
         }
         /// <p>The current progress status.</p>
         /// <dl>
-        /// <dt>Validating</dt>
+        /// <dt>
+        /// Validating
+        /// </dt>
         /// <dd>
         /// <p>Validating the deployment.</p>
         /// </dd>
-        /// <dt>DownloadingExtracting</dt>
+        /// <dt>
+        /// DownloadingExtracting
+        /// </dt>
         /// <dd>
         /// <p>Downloading and extracting the bundle on the robot.</p>
         /// </dd>
-        /// <dt>ExecutingPreLaunch</dt>
+        /// <dt>
+        /// ExecutingPreLaunch
+        /// </dt>
         /// <dd>
         /// <p>Executing pre-launch script(s) if provided.</p>
         /// </dd>
-        /// <dt>Launching</dt>
+        /// <dt>
+        /// Launching
+        /// </dt>
         /// <dd>
         /// <p>Launching the robot application.</p>
         /// </dd>
-        /// <dt>ExecutingPostLaunch</dt>
+        /// <dt>
+        /// ExecutingPostLaunch
+        /// </dt>
         /// <dd>
         /// <p>Executing post-launch script(s) if provided.</p>
         /// </dd>
-        /// <dt>Finished</dt>
+        /// <dt>
+        /// Finished
+        /// </dt>
         /// <dd>
         /// <p>Deployment is complete.</p>
         /// </dd>
@@ -9036,30 +8958,22 @@ pub mod progress_detail {
             self.current_progress = input;
             self
         }
-        /// <p>Precentage of the step that is done. This currently only applies to the
-        /// <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-        /// steps.</p>
+        /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn percent_done(mut self, input: f32) -> Self {
             self.percent_done = Some(input);
             self
         }
-        /// <p>Precentage of the step that is done. This currently only applies to the
-        /// <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-        /// steps.</p>
+        /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn set_percent_done(mut self, input: std::option::Option<f32>) -> Self {
             self.percent_done = input;
             self
         }
-        /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies
-        /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-        /// steps.</p>
+        /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn estimated_time_remaining_seconds(mut self, input: i32) -> Self {
             self.estimated_time_remaining_seconds = Some(input);
             self
         }
-        /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies
-        /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other
-        /// steps.</p>
+        /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
         pub fn set_estimated_time_remaining_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -9191,20 +9105,21 @@ pub struct SimulationJob {
     pub name: std::option::Option<std::string::String>,
     /// <p>Status of the simulation job.</p>
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
@@ -9220,14 +9135,11 @@ pub struct SimulationJob {
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
-    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-    /// seconds) or less.</p>
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub simulation_time_millis: i64,
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-    /// in its associated policies on your behalf. This is how credentials are passed in to your
-    /// simulation job. </p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A list of robot applications.</p>
     pub robot_applications:
@@ -9237,8 +9149,7 @@ pub struct SimulationJob {
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>VPC configuration information.</p>
@@ -9261,24 +9172,25 @@ impl SimulationJob {
     pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the host running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
@@ -9306,8 +9218,7 @@ impl SimulationJob {
     pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
-    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-    /// seconds) or less.</p>
+    /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
@@ -9315,9 +9226,7 @@ impl SimulationJob {
     pub fn simulation_time_millis(&self) -> i64 {
         self.simulation_time_millis
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-    /// in its associated policies on your behalf. This is how credentials are passed in to your
-    /// simulation job. </p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -9337,8 +9246,7 @@ impl SimulationJob {
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9454,14 +9362,12 @@ pub mod simulation_job {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn set_last_started_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9469,14 +9375,12 @@ pub mod simulation_job {
             self.last_started_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9486,12 +9390,15 @@ pub mod simulation_job {
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -9502,12 +9409,15 @@ pub mod simulation_job {
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the host running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -9584,14 +9494,12 @@ pub mod simulation_job {
             self.logging_config = input;
             self
         }
-        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-        /// seconds) or less.</p>
+        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
             self.max_job_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200
-        /// seconds) or less.</p>
+        /// <p>The maximum simulation job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.max_job_duration_in_seconds = input;
             self
@@ -9606,16 +9514,12 @@ pub mod simulation_job {
             self.simulation_time_millis = input;
             self
         }
-        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-        /// in its associated policies on your behalf. This is how credentials are passed in to your
-        /// simulation job. </p>
+        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-        /// in its associated policies on your behalf. This is how credentials are passed in to your
-        /// simulation job. </p>
+        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -9625,12 +9529,9 @@ pub mod simulation_job {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>A list of robot applications.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -9649,10 +9550,10 @@ pub mod simulation_job {
         /// <p>A list of simulation applications.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -9669,9 +9570,9 @@ pub mod simulation_job {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -9687,8 +9588,7 @@ pub mod simulation_job {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9699,8 +9599,7 @@ pub mod simulation_job {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

@@ -12,15 +12,11 @@ pub struct AcceptMatchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptMatchErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -68,8 +64,6 @@ impl AcceptMatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -138,25 +132,15 @@ pub struct ClaimGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ClaimGameServerErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The specified game server group has no available game servers to fulfill a
-    /// <code>ClaimGameServer</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.
-    ///
-    /// </p>
+    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
     OutOfCapacityException(crate::error::OutOfCapacityException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -206,8 +190,6 @@ impl ClaimGameServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -292,24 +274,15 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -359,8 +332,6 @@ impl CreateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -436,21 +407,13 @@ pub struct CreateBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBuildErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -499,8 +462,6 @@ impl CreateBuildError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -571,27 +532,17 @@ pub struct CreateFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -645,8 +596,6 @@ impl CreateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -735,19 +684,13 @@ pub struct CreateFleetLocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetLocationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -799,8 +742,6 @@ impl CreateFleetLocationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -891,19 +832,13 @@ pub struct CreateGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameServerGroupErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -952,8 +887,6 @@ impl CreateGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1036,39 +969,23 @@ pub struct CreateGameSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameSessionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The specified fleet has no available instances to fulfill a
-    /// <code>CreateGameSession</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.</p>
+    /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
-    /// <p>A game session with this custom ID string already exists in this fleet. Resolve
-    /// this conflict before retrying this request.</p>
+    /// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1127,8 +1044,6 @@ impl CreateGameSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1255,23 +1170,15 @@ pub struct CreateGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1321,8 +1228,6 @@ impl CreateGameSessionQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1413,23 +1318,15 @@ pub struct CreateMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -1492,8 +1389,6 @@ impl CreateMatchmakingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1590,17 +1485,11 @@ pub struct CreateMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -1648,8 +1537,6 @@ impl CreateMatchmakingRuleSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1724,28 +1611,17 @@ pub struct CreatePlayerSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlayerSessionErrorKind {
-    /// <p>The game instance is currently full and cannot allow the requested player(s) to
-    /// join. Clients can retry such requests immediately or after a waiting period.</p>
+    /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
     GameSessionFullException(crate::error::GameSessionFullException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1798,8 +1674,6 @@ impl CreatePlayerSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1898,28 +1772,17 @@ pub struct CreatePlayerSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlayerSessionsErrorKind {
-    /// <p>The game instance is currently full and cannot allow the requested player(s) to
-    /// join. Clients can retry such requests immediately or after a waiting period.</p>
+    /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
     GameSessionFullException(crate::error::GameSessionFullException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1974,8 +1837,6 @@ impl CreatePlayerSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2076,21 +1937,13 @@ pub struct CreateScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateScriptErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2139,8 +1992,6 @@ impl CreateScriptError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2214,15 +2065,11 @@ pub struct CreateVpcPeeringAuthorizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcPeeringAuthorizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2277,8 +2124,6 @@ impl CreateVpcPeeringAuthorizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2355,15 +2200,11 @@ pub struct CreateVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcPeeringConnectionErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2411,8 +2252,6 @@ impl CreateVpcPeeringConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2487,20 +2326,13 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2549,8 +2381,6 @@ impl DeleteAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2621,20 +2451,13 @@ pub struct DeleteBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2683,8 +2506,6 @@ impl DeleteBuildError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2755,24 +2576,15 @@ pub struct DeleteFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFleetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2822,8 +2634,6 @@ impl DeleteFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2902,15 +2712,11 @@ pub struct DeleteFleetLocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFleetLocationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2961,8 +2767,6 @@ impl DeleteFleetLocationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3045,15 +2849,11 @@ pub struct DeleteGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3101,8 +2901,6 @@ impl DeleteGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3177,20 +2975,13 @@ pub struct DeleteGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3239,8 +3030,6 @@ impl DeleteGameSessionQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3323,20 +3112,13 @@ pub struct DeleteMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -3396,8 +3178,6 @@ impl DeleteMatchmakingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3486,20 +3266,13 @@ pub struct DeleteMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -3548,8 +3321,6 @@ impl DeleteMatchmakingRuleSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3632,15 +3403,11 @@ pub struct DeleteScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScalingPolicyErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3688,8 +3455,6 @@ impl DeleteScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3764,20 +3529,13 @@ pub struct DeleteScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3826,8 +3584,6 @@ impl DeleteScriptError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3901,15 +3657,11 @@ pub struct DeleteVpcPeeringAuthorizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcPeeringAuthorizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3964,8 +3716,6 @@ impl DeleteVpcPeeringAuthorizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4042,15 +3792,11 @@ pub struct DeleteVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcPeeringConnectionErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4098,8 +3844,6 @@ impl DeleteVpcPeeringConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4174,15 +3918,11 @@ pub struct DeregisterGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4230,8 +3970,6 @@ impl DeregisterGameServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4306,15 +4044,11 @@ pub struct DescribeAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4362,8 +4096,6 @@ impl DescribeAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4432,15 +4164,11 @@ pub struct DescribeBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4488,8 +4216,6 @@ impl DescribeBuildError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4558,12 +4284,9 @@ pub struct DescribeEC2InstanceLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEC2InstanceLimitsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4613,8 +4336,6 @@ impl DescribeEC2InstanceLimitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4689,15 +4410,11 @@ pub struct DescribeFleetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetAttributesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4745,8 +4462,6 @@ impl DescribeFleetAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4821,15 +4536,11 @@ pub struct DescribeFleetCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetCapacityErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4877,8 +4588,6 @@ impl DescribeFleetCapacityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4953,15 +4662,11 @@ pub struct DescribeFleetEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetEventsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5009,8 +4714,6 @@ impl DescribeFleetEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5085,15 +4788,11 @@ pub struct DescribeFleetLocationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationAttributesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5155,8 +4854,6 @@ impl DescribeFleetLocationAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5245,15 +4942,11 @@ pub struct DescribeFleetLocationCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationCapacityErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5313,8 +5006,6 @@ impl DescribeFleetLocationCapacityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5401,15 +5092,11 @@ pub struct DescribeFleetLocationUtilizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationUtilizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5471,8 +5158,6 @@ impl DescribeFleetLocationUtilizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5563,15 +5248,11 @@ pub struct DescribeFleetPortSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetPortSettingsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5619,8 +5300,6 @@ impl DescribeFleetPortSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5695,15 +5374,11 @@ pub struct DescribeFleetUtilizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetUtilizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5751,8 +5426,6 @@ impl DescribeFleetUtilizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5827,15 +5500,11 @@ pub struct DescribeGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5883,8 +5552,6 @@ impl DescribeGameServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5959,15 +5626,11 @@ pub struct DescribeGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6015,8 +5678,6 @@ impl DescribeGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6091,15 +5752,11 @@ pub struct DescribeGameServerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerInstancesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6147,8 +5804,6 @@ impl DescribeGameServerInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6223,21 +5878,13 @@ pub struct DescribeGameSessionDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionDetailsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6293,8 +5940,6 @@ impl DescribeGameSessionDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6387,15 +6032,11 @@ pub struct DescribeGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6445,8 +6086,6 @@ impl DescribeGameSessionPlacementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6521,15 +6160,11 @@ pub struct DescribeGameSessionQueuesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionQueuesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6577,8 +6212,6 @@ impl DescribeGameSessionQueuesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6653,21 +6286,13 @@ pub struct DescribeGameSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6721,8 +6346,6 @@ impl DescribeGameSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6813,15 +6436,11 @@ pub struct DescribeInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstancesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6872,8 +6491,6 @@ impl DescribeInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6953,12 +6570,9 @@ pub struct DescribeMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -7005,8 +6619,6 @@ impl DescribeMatchmakingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7073,12 +6685,9 @@ pub struct DescribeMatchmakingConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingConfigurationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -7134,8 +6743,6 @@ impl DescribeMatchmakingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7208,15 +6815,11 @@ pub struct DescribeMatchmakingRuleSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingRuleSetsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -7266,8 +6869,6 @@ impl DescribeMatchmakingRuleSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7344,15 +6945,11 @@ pub struct DescribePlayerSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePlayerSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7400,8 +6997,6 @@ impl DescribePlayerSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7476,15 +7071,11 @@ pub struct DescribeRuntimeConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRuntimeConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7534,8 +7125,6 @@ impl DescribeRuntimeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7610,15 +7199,11 @@ pub struct DescribeScalingPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingPoliciesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7669,8 +7254,6 @@ impl DescribeScalingPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7753,15 +7336,11 @@ pub struct DescribeScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7809,8 +7388,6 @@ impl DescribeScriptError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7882,12 +7459,9 @@ pub struct DescribeVpcPeeringAuthorizationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcPeeringAuthorizationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7943,8 +7517,6 @@ impl DescribeVpcPeeringAuthorizationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8017,15 +7589,11 @@ pub struct DescribeVpcPeeringConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcPeeringConnectionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8080,8 +7648,6 @@ impl DescribeVpcPeeringConnectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8158,15 +7724,11 @@ pub struct GetGameSessionLogUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGameSessionLogUrlErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8214,8 +7776,6 @@ impl GetGameSessionLogUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8290,15 +7850,11 @@ pub struct GetInstanceAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceAccessErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8346,8 +7902,6 @@ impl GetInstanceAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8419,12 +7973,9 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8471,8 +8022,6 @@ impl ListAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8533,12 +8082,9 @@ pub struct ListBuildsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuildsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8585,8 +8131,6 @@ impl ListBuildsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8644,15 +8188,11 @@ pub struct ListFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFleetsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8700,8 +8240,6 @@ impl ListFleetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8764,12 +8302,9 @@ pub struct ListGameServerGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGameServerGroupsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8816,8 +8351,6 @@ impl ListGameServerGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8884,12 +8417,9 @@ pub struct ListGameServersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGameServersErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8936,8 +8466,6 @@ impl ListGameServersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9004,12 +8532,9 @@ pub struct ListScriptsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListScriptsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9056,8 +8581,6 @@ impl ListScriptsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9118,20 +8641,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9177,8 +8693,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9253,15 +8767,11 @@ pub struct PutScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScalingPolicyErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9309,8 +8819,6 @@ impl PutScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9382,19 +8890,13 @@ pub struct RegisterGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterGameServerErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9443,8 +8945,6 @@ impl RegisterGameServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9527,15 +9027,11 @@ pub struct RequestUploadCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RequestUploadCredentialsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9583,8 +9079,6 @@ impl RequestUploadCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9659,21 +9153,13 @@ pub struct ResolveAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResolveAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9722,8 +9208,6 @@ impl ResolveAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9800,15 +9284,11 @@ pub struct ResumeGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9856,8 +9336,6 @@ impl ResumeGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9932,21 +9410,13 @@ pub struct SearchGameSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchGameSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9998,8 +9468,6 @@ impl SearchGameSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10090,15 +9558,11 @@ pub struct StartFleetActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartFleetActionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10149,8 +9613,6 @@ impl StartFleetActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10230,15 +9692,11 @@ pub struct StartGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10286,8 +9744,6 @@ impl StartGameSessionPlacementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10362,15 +9818,11 @@ pub struct StartMatchBackfillError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMatchBackfillErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10418,8 +9870,6 @@ impl StartMatchBackfillError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10494,15 +9944,11 @@ pub struct StartMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10550,8 +9996,6 @@ impl StartMatchmakingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10623,15 +10067,11 @@ pub struct StopFleetActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopFleetActionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10682,8 +10122,6 @@ impl StopFleetActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10763,15 +10201,11 @@ pub struct StopGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10819,8 +10253,6 @@ impl StopGameSessionPlacementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10895,15 +10327,11 @@ pub struct StopMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10951,8 +10379,6 @@ impl StopMatchmakingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11024,15 +10450,11 @@ pub struct SuspendGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SuspendGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11080,8 +10502,6 @@ impl SuspendGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11156,20 +10576,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11215,8 +10628,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11282,20 +10693,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11341,8 +10745,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11414,15 +10816,11 @@ pub struct UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11470,8 +10868,6 @@ impl UpdateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11537,15 +10933,11 @@ pub struct UpdateBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11593,8 +10985,6 @@ impl UpdateBuildError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11660,26 +11050,17 @@ pub struct UpdateFleetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetAttributesErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11730,8 +11111,6 @@ impl UpdateFleetAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11830,26 +11209,17 @@ pub struct UpdateFleetCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetCapacityErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11903,8 +11273,6 @@ impl UpdateFleetCapacityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12011,26 +11379,17 @@ pub struct UpdateFleetPortSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetPortSettingsErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12081,8 +11440,6 @@ impl UpdateFleetPortSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12181,15 +11538,11 @@ pub struct UpdateGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12237,8 +11590,6 @@ impl UpdateGameServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12310,15 +11661,11 @@ pub struct UpdateGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12366,8 +11713,6 @@ impl UpdateGameServerGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12442,23 +11787,15 @@ pub struct UpdateGameSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameSessionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12508,8 +11845,6 @@ impl UpdateGameSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12594,15 +11929,11 @@ pub struct UpdateGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12650,8 +11981,6 @@ impl UpdateGameSessionQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12726,15 +12055,11 @@ pub struct UpdateMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -12791,8 +12116,6 @@ impl UpdateMatchmakingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12873,19 +12196,13 @@ pub struct UpdateRuntimeConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuntimeConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12936,8 +12253,6 @@ impl UpdateRuntimeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13022,15 +12337,11 @@ pub struct UpdateScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13078,8 +12389,6 @@ impl UpdateScriptError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13148,12 +12457,9 @@ pub struct ValidateMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -13202,8 +12508,6 @@ impl ValidateMatchmakingRuleSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13321,8 +12625,7 @@ impl UnsupportedRegionException {
     }
 }
 
-/// <p>One or more parameter values in the request are invalid. Correct the invalid
-/// parameter values before retrying.</p>
+/// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -13386,9 +12689,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The service encountered an unrecoverable internal failure while processing the
-/// request. Clients can retry such requests immediately or after a waiting
-/// period.</p>
+/// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
@@ -13516,8 +12817,7 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>A service resource associated with the request could not be found. Clients should
-/// not retry such requests.</p>
+/// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -13581,9 +12881,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a resource
-/// associated with the request and/or the fleet. Resolve the conflict before
-/// retrying.</p>
+/// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFleetStatusException {
@@ -13647,9 +12945,7 @@ impl InvalidFleetStatusException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a resource
-/// associated with the request and/or the game instance. Resolve the conflict before
-/// retrying.</p>
+/// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGameSessionStatusException {
@@ -13713,9 +13009,7 @@ impl InvalidGameSessionStatusException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a service
-/// resource associated with the request. Resolve the conflict before retrying this
-/// request.</p>
+/// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -13779,8 +13073,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The requested operation would cause the resource to exceed the allowed service
-/// limit. Resolve the issue before retrying.</p>
+/// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -13844,10 +13137,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>
-/// The requested tagging operation did not succeed. This may be due to invalid tag format
-/// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-/// </p>
+/// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaggingFailedException {
@@ -13911,11 +13201,7 @@ impl TaggingFailedException {
     }
 }
 
-/// <p>The service is unable to resolve the routing for a particular alias because it has
-/// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-/// this exception is the message defined in the routing strategy itself. Such requests
-/// should only be retried if the routing strategy for the specified alias is modified.
-/// </p>
+/// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminalRoutingStrategyException {
@@ -13979,8 +13265,7 @@ impl TerminalRoutingStrategyException {
     }
 }
 
-/// <p>The game instance is currently full and cannot allow the requested player(s) to
-/// join. Clients can retry such requests immediately or after a waiting period.</p>
+/// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameSessionFullException {
@@ -14044,8 +13329,7 @@ impl GameSessionFullException {
     }
 }
 
-/// <p>A game session with this custom ID string already exists in this fleet. Resolve
-/// this conflict before retrying this request.</p>
+/// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -14109,9 +13393,7 @@ impl IdempotentParameterMismatchException {
     }
 }
 
-/// <p>The specified fleet has no available instances to fulfill a
-/// <code>CreateGameSession</code> request. Clients can retry such requests immediately
-/// or after a waiting period.</p>
+/// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetCapacityExceededException {
@@ -14175,11 +13457,7 @@ impl FleetCapacityExceededException {
     }
 }
 
-/// <p>The specified game server group has no available game servers to fulfill a
-/// <code>ClaimGameServer</code> request. Clients can retry such requests immediately
-/// or after a waiting period.
-///
-/// </p>
+/// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutOfCapacityException {

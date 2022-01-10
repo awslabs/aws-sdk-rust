@@ -64,16 +64,12 @@ impl ResendValidationEmailOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCertificateOutput {
     /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl RequestCertificateOutput {
     /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -95,17 +91,13 @@ pub mod request_certificate_output {
     }
     impl Builder {
         /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
         /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -252,9 +244,9 @@ pub mod list_tags_for_certificate_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs that define the applied tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -283,16 +275,14 @@ impl ListTagsForCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesOutput {
-    /// <p>When the list is truncated, this value is present and contains the value to use for the
-    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of ACM certificates.</p>
     pub certificate_summary_list:
         std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
 }
 impl ListCertificatesOutput {
-    /// <p>When the list is truncated, this value is present and contains the value to use for the
-    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -322,14 +312,12 @@ pub mod list_certificates_output {
             std::option::Option<std::vec::Vec<crate::model::CertificateSummary>>,
     }
     impl Builder {
-        /// <p>When the list is truncated, this value is present and contains the value to use for the
-        /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+        /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the list is truncated, this value is present and contains the value to use for the
-        /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+        /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -339,12 +327,9 @@ pub mod list_certificates_output {
         /// To override the contents of this collection use [`set_certificate_summary_list`](Self::set_certificate_summary_list).
         ///
         /// <p>A list of ACM certificates.</p>
-        pub fn certificate_summary_list(
-            mut self,
-            input: impl Into<crate::model::CertificateSummary>,
-        ) -> Self {
+        pub fn certificate_summary_list(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificate_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_summary_list = Some(v);
             self
         }
@@ -376,13 +361,11 @@ impl ListCertificatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-    /// (ARN)</a> of the imported certificate.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ImportCertificateOutput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-    /// (ARN)</a> of the imported certificate.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -403,14 +386,12 @@ pub mod import_certificate_output {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-        /// (ARN)</a> of the imported certificate.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-        /// (ARN)</a> of the imported certificate.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -439,9 +420,7 @@ impl ImportCertificateOutput {
 pub struct GetCertificateOutput {
     /// <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the
-    /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
-    /// </p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateOutput {
@@ -449,9 +428,7 @@ impl GetCertificateOutput {
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the
-    /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
-    /// </p>
+    /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -484,16 +461,12 @@ pub mod get_certificate_output {
             self.certificate = input;
             self
         }
-        /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the
-        /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
-        /// </p>
+        /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the
-        /// certificate of the issuing CA and the intermediate certificates of any other subordinate CAs.
-        /// </p>
+        /// <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -521,13 +494,11 @@ impl GetCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountConfigurationOutput {
-    /// <p>Expiration events
-    /// configuration options associated with the Amazon Web Services account.</p>
+    /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
     pub expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
 }
 impl GetAccountConfigurationOutput {
-    /// <p>Expiration events
-    /// configuration options associated with the Amazon Web Services account.</p>
+    /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
     pub fn expiry_events(&self) -> std::option::Option<&crate::model::ExpiryEventsConfiguration> {
         self.expiry_events.as_ref()
     }
@@ -548,14 +519,12 @@ pub mod get_account_configuration_output {
         pub(crate) expiry_events: std::option::Option<crate::model::ExpiryEventsConfiguration>,
     }
     impl Builder {
-        /// <p>Expiration events
-        /// configuration options associated with the Amazon Web Services account.</p>
+        /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
         pub fn expiry_events(mut self, input: crate::model::ExpiryEventsConfiguration) -> Self {
             self.expiry_events = Some(input);
             self
         }
-        /// <p>Expiration events
-        /// configuration options associated with the Amazon Web Services account.</p>
+        /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
         pub fn set_expiry_events(
             mut self,
             input: std::option::Option<crate::model::ExpiryEventsConfiguration>,
@@ -584,11 +553,9 @@ impl GetAccountConfigurationOutput {
 pub struct ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you
-    /// are exporting.</p>
+    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
-    /// <p>The encrypted private key associated with the public key in the certificate. The key is
-    /// output in PKCS #8 format and is base64 PEM-encoded. </p>
+    /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub private_key: std::option::Option<std::string::String>,
 }
 impl ExportCertificateOutput {
@@ -596,13 +563,11 @@ impl ExportCertificateOutput {
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you
-    /// are exporting.</p>
+    /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>The encrypted private key associated with the public key in the certificate. The key is
-    /// output in PKCS #8 format and is base64 PEM-encoded. </p>
+    /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
     pub fn private_key(&self) -> std::option::Option<&str> {
         self.private_key.as_deref()
     }
@@ -637,14 +602,12 @@ pub mod export_certificate_output {
             self.certificate = input;
             self
         }
-        /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you
-        /// are exporting.</p>
+        /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you
-        /// are exporting.</p>
+        /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -652,14 +615,12 @@ pub mod export_certificate_output {
             self.certificate_chain = input;
             self
         }
-        /// <p>The encrypted private key associated with the public key in the certificate. The key is
-        /// output in PKCS #8 format and is base64 PEM-encoded. </p>
+        /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.private_key = Some(input.into());
             self
         }
-        /// <p>The encrypted private key associated with the public key in the certificate. The key is
-        /// output in PKCS #8 format and is base64 PEM-encoded. </p>
+        /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self

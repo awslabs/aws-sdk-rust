@@ -16,8 +16,7 @@ pub enum CreateChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -74,8 +73,6 @@ impl CreateChangesetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -169,8 +166,7 @@ pub enum CreateDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -227,8 +223,6 @@ impl CreateDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -317,8 +311,7 @@ pub struct CreateDataViewError {
 pub enum CreateDataViewErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -374,8 +367,6 @@ impl CreateDataViewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -461,8 +452,7 @@ pub enum DeleteDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -519,8 +509,6 @@ impl DeleteDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -611,8 +599,7 @@ pub enum GetChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -666,8 +653,6 @@ impl GetChangesetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -750,8 +735,7 @@ pub enum GetDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -805,8 +789,6 @@ impl GetDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -884,8 +866,7 @@ pub struct GetDataViewError {
 pub enum GetDataViewErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -938,8 +919,6 @@ impl GetDataViewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1012,8 +991,7 @@ pub struct GetProgrammaticAccessCredentialsError {
 pub enum GetProgrammaticAccessCredentialsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1070,8 +1048,6 @@ impl GetProgrammaticAccessCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1152,8 +1128,7 @@ pub struct GetWorkingLocationError {
 pub enum GetWorkingLocationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1203,8 +1178,6 @@ impl GetWorkingLocationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1283,8 +1256,7 @@ pub enum ListChangesetsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1338,8 +1310,6 @@ impl ListChangesetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1423,8 +1393,7 @@ pub struct ListDatasetsError {
 pub enum ListDatasetsErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1477,8 +1446,6 @@ impl ListDatasetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1554,8 +1521,7 @@ pub struct ListDataViewsError {
 pub enum ListDataViewsErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1608,8 +1574,6 @@ impl ListDataViewsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1687,8 +1651,7 @@ pub enum UpdateChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1742,8 +1705,6 @@ impl UpdateChangesetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1829,8 +1790,7 @@ pub enum UpdateDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1884,8 +1844,6 @@ impl UpdateDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2143,8 +2101,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception or
-/// failure.</p>
+/// <p>The request processing has failed because of an unknown error, exception or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

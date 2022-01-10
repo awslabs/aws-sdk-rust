@@ -470,12 +470,9 @@ pub mod list_suite_runs_output {
         /// To override the contents of this collection use [`set_suite_runs_list`](Self::set_suite_runs_list).
         ///
         /// <p>An array of objects that provide summaries of information about the suite runs in the list.</p>
-        pub fn suite_runs_list(
-            mut self,
-            input: impl Into<crate::model::SuiteRunInformation>,
-        ) -> Self {
+        pub fn suite_runs_list(mut self, input: crate::model::SuiteRunInformation) -> Self {
             let mut v = self.suite_runs_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suite_runs_list = Some(v);
             self
         }
@@ -564,10 +561,10 @@ pub mod list_suite_definitions_output {
         /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
         pub fn suite_definition_information_list(
             mut self,
-            input: impl Into<crate::model::SuiteDefinitionInformation>,
+            input: crate::model::SuiteDefinitionInformation,
         ) -> Self {
             let mut v = self.suite_definition_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suite_definition_information_list = Some(v);
             self
         }

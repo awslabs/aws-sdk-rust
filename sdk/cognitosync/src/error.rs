@@ -16,17 +16,13 @@ pub enum BulkPublishErrorKind {
     AlreadyStreamedException(crate::error::AlreadyStreamedException),
     /// An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
     DuplicateRequestException(crate::error::DuplicateRequestException),
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -74,8 +70,6 @@ impl BulkPublishError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -160,23 +154,17 @@ pub struct DeleteDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if an update can't be applied because
-    /// the resource was changed by another call and this would result in a conflict.
+    /// Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -224,8 +212,6 @@ impl DeleteDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -316,20 +302,15 @@ pub struct DescribeDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -376,8 +357,6 @@ impl DescribeDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -460,20 +439,15 @@ pub struct DescribeIdentityPoolUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIdentityPoolUsageErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -520,8 +494,6 @@ impl DescribeIdentityPoolUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -604,20 +576,15 @@ pub struct DescribeIdentityUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIdentityUsageErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -664,8 +631,6 @@ impl DescribeIdentityUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -748,17 +713,13 @@ pub struct GetBulkPublishDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBulkPublishDetailsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -804,8 +765,6 @@ impl GetBulkPublishDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -880,20 +839,15 @@ pub struct GetCognitoEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCognitoEventsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -940,8 +894,6 @@ impl GetCognitoEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1024,20 +976,15 @@ pub struct GetIdentityPoolConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityPoolConfigurationErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1090,8 +1037,6 @@ impl GetIdentityPoolConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1178,17 +1123,13 @@ pub struct ListDatasetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatasetsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1234,8 +1175,6 @@ impl ListDatasetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1304,17 +1243,13 @@ pub struct ListIdentityPoolUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIdentityPoolUsageErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1360,8 +1295,6 @@ impl ListIdentityPoolUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1436,17 +1369,13 @@ pub struct ListRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecordsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1492,8 +1421,6 @@ impl ListRecordsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1562,22 +1489,17 @@ pub struct RegisterDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterDeviceErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1625,8 +1547,6 @@ impl RegisterDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1717,20 +1637,15 @@ pub struct SetCognitoEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetCognitoEventsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1777,8 +1692,6 @@ impl SetCognitoEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1863,20 +1776,15 @@ pub struct SetIdentityPoolConfigurationError {
 pub enum SetIdentityPoolConfigurationErrorKind {
     /// <p>Thrown if there are parallel requests to modify a resource.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1932,8 +1840,6 @@ impl SetIdentityPoolConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2030,22 +1936,17 @@ pub struct SubscribeToDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubscribeToDatasetErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2093,8 +1994,6 @@ impl SubscribeToDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2185,22 +2084,17 @@ pub struct UnsubscribeFromDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnsubscribeFromDatasetErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2248,8 +2142,6 @@ impl UnsubscribeFromDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2340,30 +2232,23 @@ pub struct UpdateRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRecordsErrorKind {
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The AWS Lambda function returned invalid output or an exception.</p>
     InvalidLambdaFunctionOutputException(crate::error::InvalidLambdaFunctionOutputException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS Lambda throttled your account, please contact AWS Support</p>
     LambdaThrottledException(crate::error::LambdaThrottledException),
-    /// Thrown when the limit on the number of objects or
-    /// operations has been exceeded.
+    /// Thrown when the limit on the number of objects or operations has been exceeded.
     LimitExceededException(crate::error::LimitExceededException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if an update can't be applied because
-    /// the resource was changed by another call and this would result in a conflict.
+    /// Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2414,8 +2299,6 @@ impl UpdateRecordsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2517,13 +2400,11 @@ impl std::error::Error for UpdateRecordsError {
     }
 }
 
-/// Thrown if the request is
-/// throttled.
+/// Thrown if the request is throttled.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
-    /// Message returned by a
-    /// TooManyRequestsException.
+    /// Message returned by a TooManyRequestsException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -2558,14 +2439,12 @@ pub mod too_many_requests_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by a
-        /// TooManyRequestsException.
+        /// Message returned by a TooManyRequestsException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by a
-        /// TooManyRequestsException.
+        /// Message returned by a TooManyRequestsException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2585,13 +2464,11 @@ impl TooManyRequestsException {
     }
 }
 
-/// Thrown if the resource doesn't
-/// exist.
+/// Thrown if the resource doesn't exist.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
-    /// Message returned by a
-    /// ResourceNotFoundException.
+    /// Message returned by a ResourceNotFoundException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -2626,14 +2503,12 @@ pub mod resource_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by a
-        /// ResourceNotFoundException.
+        /// Message returned by a ResourceNotFoundException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by a
-        /// ResourceNotFoundException.
+        /// Message returned by a ResourceNotFoundException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2653,13 +2528,11 @@ impl ResourceNotFoundException {
     }
 }
 
-/// Thrown if an update can't be applied because
-/// the resource was changed by another call and this would result in a conflict.
+/// Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
-    /// The message returned by a
-    /// ResourceConflictException.
+    /// The message returned by a ResourceConflictException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceConflictException {
@@ -2694,14 +2567,12 @@ pub mod resource_conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The message returned by a
-        /// ResourceConflictException.
+        /// The message returned by a ResourceConflictException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// The message returned by a
-        /// ResourceConflictException.
+        /// The message returned by a ResourceConflictException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2721,13 +2592,11 @@ impl ResourceConflictException {
     }
 }
 
-/// Thrown when a user is not authorized to access the
-/// requested resource.
+/// Thrown when a user is not authorized to access the requested resource.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
-    /// The message returned by a
-    /// NotAuthorizedException.
+    /// The message returned by a NotAuthorizedException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -2762,14 +2631,12 @@ pub mod not_authorized_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The message returned by a
-        /// NotAuthorizedException.
+        /// The message returned by a NotAuthorizedException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// The message returned by a
-        /// NotAuthorizedException.
+        /// The message returned by a NotAuthorizedException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2789,13 +2656,11 @@ impl NotAuthorizedException {
     }
 }
 
-/// Thrown when the limit on the number of objects or
-/// operations has been exceeded.
+/// Thrown when the limit on the number of objects or operations has been exceeded.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
-    /// Message returned by
-    /// LimitExceededException.
+    /// Message returned by LimitExceededException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -2830,14 +2695,12 @@ pub mod limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by
-        /// LimitExceededException.
+        /// Message returned by LimitExceededException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by
-        /// LimitExceededException.
+        /// Message returned by LimitExceededException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2921,13 +2784,11 @@ impl LambdaThrottledException {
     }
 }
 
-/// Thrown when a request parameter does not comply
-/// with the associated constraints.
+/// Thrown when a request parameter does not comply with the associated constraints.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
-    /// Message returned by
-    /// InvalidParameterException.
+    /// Message returned by InvalidParameterException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -2962,14 +2823,12 @@ pub mod invalid_parameter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by
-        /// InvalidParameterException.
+        /// Message returned by InvalidParameterException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by
-        /// InvalidParameterException.
+        /// Message returned by InvalidParameterException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3053,13 +2912,11 @@ impl InvalidLambdaFunctionOutputException {
     }
 }
 
-/// Indicates an internal service
-/// error.
+/// Indicates an internal service error.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
-    /// Message returned by
-    /// InternalErrorException.
+    /// Message returned by InternalErrorException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalErrorException {
@@ -3094,14 +2951,12 @@ pub mod internal_error_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by
-        /// InternalErrorException.
+        /// Message returned by InternalErrorException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by
-        /// InternalErrorException.
+        /// Message returned by InternalErrorException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3125,8 +2980,7 @@ impl InternalErrorException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationException {
-    /// Message returned by
-    /// InvalidConfigurationException.
+    /// Message returned by InvalidConfigurationException.
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidConfigurationException {
@@ -3161,14 +3015,12 @@ pub mod invalid_configuration_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Message returned by
-        /// InvalidConfigurationException.
+        /// Message returned by InvalidConfigurationException.
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// Message returned by
-        /// InvalidConfigurationException.
+        /// Message returned by InvalidConfigurationException.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

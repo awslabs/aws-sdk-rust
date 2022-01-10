@@ -522,9 +522,9 @@ pub mod metric_datum {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>Internal only API.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -964,38 +964,14 @@ pub struct Environment {
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - Indicates the request to create the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
@@ -1057,38 +1033,14 @@ impl Environment {
     }
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code> - Indicates the request to create the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
+    /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
+    /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
@@ -1292,38 +1244,14 @@ pub mod environment {
         }
         /// <p>The status of the Amazon MWAA environment. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - Indicates the request to create the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+        /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
+        /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
+        /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
         /// </ul>
         /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
@@ -1332,38 +1260,14 @@ pub mod environment {
         }
         /// <p>The status of the Amazon MWAA environment. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code> - Indicates the request to create the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code> - Indicates the request to create the environment is in progress.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p> </li>
+        /// <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p> </li>
+        /// <li> <p> <code>UPDATING</code> - Indicates the request to update the environment is in progress.</p> </li>
+        /// <li> <p> <code>DELETING</code> - Indicates the request to delete the environment is in progress.</p> </li>
+        /// <li> <p> <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p> </li>
+        /// <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p> </li>
+        /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
         /// </ul>
         /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
         pub fn set_status(

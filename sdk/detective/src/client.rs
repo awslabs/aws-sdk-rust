@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Detective
@@ -118,12 +118,39 @@ where
     pub fn delete_members(&self) -> fluent_builders::DeleteMembers<C, M, R> {
         fluent_builders::DeleteMembers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeOrganizationConfiguration` operation.
+    ///
+    /// See [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn describe_organization_configuration(
+        &self,
+    ) -> fluent_builders::DescribeOrganizationConfiguration<C, M, R> {
+        fluent_builders::DescribeOrganizationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisableOrganizationAdminAccount` operation.
+    ///
+    /// See [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) for more information about the
+    /// operation and its arguments.
+    pub fn disable_organization_admin_account(
+        &self,
+    ) -> fluent_builders::DisableOrganizationAdminAccount<C, M, R> {
+        fluent_builders::DisableOrganizationAdminAccount::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisassociateMembership` operation.
     ///
     /// See [`DisassociateMembership`](crate::client::fluent_builders::DisassociateMembership) for more information about the
     /// operation and its arguments.
     pub fn disassociate_membership(&self) -> fluent_builders::DisassociateMembership<C, M, R> {
         fluent_builders::DisassociateMembership::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `EnableOrganizationAdminAccount` operation.
+    ///
+    /// See [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) for more information about the
+    /// operation and its arguments.
+    pub fn enable_organization_admin_account(
+        &self,
+    ) -> fluent_builders::EnableOrganizationAdminAccount<C, M, R> {
+        fluent_builders::EnableOrganizationAdminAccount::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetMembers` operation.
     ///
@@ -136,6 +163,7 @@ where
     ///
     /// See [`ListGraphs`](crate::client::fluent_builders::ListGraphs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGraphs::into_paginator).
     pub fn list_graphs(&self) -> fluent_builders::ListGraphs<C, M, R> {
         fluent_builders::ListGraphs::new(self.handle.clone())
     }
@@ -143,6 +171,7 @@ where
     ///
     /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
@@ -150,8 +179,19 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListOrganizationAdminAccounts` operation.
+    ///
+    /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    pub fn list_organization_admin_accounts(
+        &self,
+    ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
+        fluent_builders::ListOrganizationAdminAccounts::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTagsForResource` operation.
     ///
@@ -188,6 +228,15 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateOrganizationConfiguration` operation.
+    ///
+    /// See [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn update_organization_configuration(
+        &self,
+    ) -> fluent_builders::UpdateOrganizationConfiguration<C, M, R> {
+        fluent_builders::UpdateOrganizationConfiguration::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -199,11 +248,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
-    /// <p>Accepts an invitation for the member account to contribute data to a behavior graph.
-    /// This operation can only be called by an invited member account. </p>
+    /// <p>Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be called by an invited member account. </p>
     /// <p>The request provides the ARN of behavior graph.</p>
     /// <p>The member account status in the graph must be <code>INVITED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -248,10 +296,10 @@ pub mod fluent_builders {
                 crate::input::AcceptInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -259,15 +307,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
@@ -276,23 +322,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGraph`.
     ///
-    /// <p>Creates a new behavior graph for the calling account, and sets that account as the
-    /// administrator account. This operation is called by the account that is enabling
-    /// Detective.</p>
-    /// <p>Before you try to enable Detective, make sure that your account has been enrolled in
-    /// Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot enable
-    /// Detective. If you do meet the GuardDuty prerequisite, then when you make the request to enable
-    /// Detective, it checks whether your data volume is within the Detective quota. If it exceeds the
-    /// quota, then you cannot enable Detective. </p>
-    /// <p>The operation also enables Detective for the calling account in the currently selected
-    /// Region. It returns the ARN of the new behavior graph.</p>
-    /// <p>
-    /// <code>CreateGraph</code> triggers a process to create the corresponding data tables for
-    /// the new behavior graph.</p>
-    /// <p>An account can only be the administrator account for one behavior graph within a Region.
-    /// If the same account calls <code>CreateGraph</code> with the same administrator account, it
-    /// always returns the same behavior graph ARN. It does not create a new behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new behavior graph for the calling account, and sets that account as the administrator account. This operation is called by the account that is enabling Detective.</p>
+    /// <p>Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within the Detective quota. If it exceeds the quota, then you cannot enable Detective. </p>
+    /// <p>The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN of the new behavior graph.</p>
+    /// <p> <code>CreateGraph</code> triggers a process to create the corresponding data tables for the new behavior graph.</p>
+    /// <p>An account can only be the administrator account for one behavior graph within a Region. If the same account calls <code>CreateGraph</code> with the same administrator account, it always returns the same behavior graph ARN. It does not create a new behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -337,10 +372,10 @@ pub mod fluent_builders {
                 crate::input::CreateGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -352,20 +387,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -378,29 +409,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Sends a request to invite the specified AWS accounts to be member accounts in the
-    /// behavior graph. This operation can only be called by the administrator account for a
-    /// behavior graph. </p>
-    /// <p>
-    /// <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
-    /// The administrator can optionally specify to not send invitation emails to the member
-    /// accounts. This would be used when the administrator manages their member accounts
-    /// centrally.</p>
-    /// <p>The request provides the behavior graph ARN and the list of accounts to invite.</p>
+    /// <p> <code>CreateMembers</code> is used to send invitations to accounts. For the organization behavior graph, the Detective administrator account uses <code>CreateMembers</code> to enable organization accounts as member accounts.</p>
+    /// <p>For invited accounts, <code>CreateMembers</code> sends a request to invite the specified Amazon Web Services accounts to be member accounts in the behavior graph. This operation can only be called by the administrator account for a behavior graph. </p>
+    /// <p> <code>CreateMembers</code> verifies the accounts and then invites the verified accounts. The administrator can optionally specify to not send invitation emails to the member accounts. This would be used when the administrator manages their member accounts centrally.</p>
+    /// <p>For organization accounts in the organization behavior graph, <code>CreateMembers</code> attempts to enable the accounts. The organization accounts do not receive invitations.</p>
+    /// <p>The request provides the behavior graph ARN and the list of accounts to invite or to enable.</p>
     /// <p>The response separates the requested accounts into two lists:</p>
     /// <ul>
-    /// <li>
-    /// <p>The accounts that <code>CreateMembers</code> was able to start the verification
-    /// for. This list includes member accounts that are being verified, that have passed
-    /// verification and are to be invited, and that have failed verification.</p>
-    /// </li>
-    /// <li>
-    /// <p>The accounts that <code>CreateMembers</code> was unable to process. This list
-    /// includes accounts that were already invited to be member accounts in the behavior
-    /// graph.</p>
-    /// </li>
+    /// <li> <p>The accounts that <code>CreateMembers</code> was able to process. For invited accounts, includes member accounts that are being verified, that have passed verification and are to be invited, and that have failed verification. For organization accounts in the organization behavior graph, includes accounts that can be enabled and that cannot be enabled.</p> </li>
+    /// <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This list includes accounts that were already invited to be member accounts in the behavior graph.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -445,10 +464,10 @@ pub mod fluent_builders {
                 crate::input::CreateMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -456,40 +475,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+        /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
+        pub fn disable_email_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+        /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
         pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_disable_email_notification(input);
             self
@@ -498,16 +511,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
-        pub fn accounts(mut self, inp: impl Into<crate::model::Account>) -> Self {
-            self.inner = self.inner.accounts(inp);
+        /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
+            self.inner = self.inner.accounts(input);
             self
         }
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -518,12 +527,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGraph`.
     ///
-    /// <p>Disables the specified behavior graph and queues it to be deleted. This operation
-    /// removes the graph from each member account's list of behavior graphs.</p>
-    /// <p>
-    /// <code>DeleteGraph</code> can only be called by the administrator account for a behavior
-    /// graph.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the specified behavior graph and queues it to be deleted. This operation removes the behavior graph from each member account's list of behavior graphs.</p>
+    /// <p> <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -568,10 +574,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -580,8 +586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to disable.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to disable.</p>
@@ -592,12 +598,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMembers`.
     ///
-    /// <p>Deletes one or more member accounts from the administrator account's behavior graph.
-    /// This operation can only be called by a Detective administrator account. That account cannot use
-    /// <code>DeleteMembers</code> to delete their own account from the behavior graph. To
-    /// disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API
-    /// method.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified member accounts from the behavior graph. The removed accounts no longer contribute data to the behavior graph. This operation can only be called by the administrator account for the behavior graph.</p>
+    /// <p>For invited accounts, the removed accounts are deleted from the list of accounts in the behavior graph. To restore the account, the administrator account must send another invitation.</p>
+    /// <p>For organization accounts in the organization behavior graph, the Detective administrator account can always enable the organization account again. Organization accounts that are not enabled as member accounts are not included in the <code>ListMembers</code> results for the organization behavior graph.</p>
+    /// <p>An administrator account cannot use <code>DeleteMembers</code> to remove their own account from the behavior graph. To disable a behavior graph, the administrator account uses the <code>DeleteGraph</code> API method.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -642,10 +647,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -653,12 +658,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the behavior graph to delete members from.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        /// <p>The ARN of the behavior graph to remove members from.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to delete members from.</p>
+        /// <p>The ARN of the behavior graph to remove members from.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
@@ -667,14 +672,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -683,11 +686,143 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
+    ///
+    /// <p>Returns information about the configuration for the organization behavior graph. Currently indicates whether to automatically enable new organization accounts as member accounts.</p>
+    /// <p>Can only be called by the Detective administrator account for the organization. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeOrganizationConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_organization_configuration_input::Builder,
+    }
+    impl<C, M, R> DescribeOrganizationConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeOrganizationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeOrganizationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeOrganizationConfigurationInputOperationOutputAlias,
+                crate::output::DescribeOrganizationConfigurationOutput,
+                crate::error::DescribeOrganizationConfigurationError,
+                crate::input::DescribeOrganizationConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
+    ///
+    /// <p>Removes the Detective administrator account for the organization in the current Region. Deletes the behavior graph for that account.</p>
+    /// <p>Can only be called by the organization management account. Before you can select a different Detective administrator account, you must remove the Detective administrator account in all Regions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisableOrganizationAdminAccount<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disable_organization_admin_account_input::Builder,
+    }
+    impl<C, M, R> DisableOrganizationAdminAccount<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisableOrganizationAdminAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisableOrganizationAdminAccountOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisableOrganizationAdminAccountError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisableOrganizationAdminAccountInputOperationOutputAlias,
+                crate::output::DisableOrganizationAdminAccountOutput,
+                crate::error::DisableOrganizationAdminAccountError,
+                crate::input::DisableOrganizationAdminAccountInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateMembership`.
     ///
-    /// <p>Removes the member account from the specified behavior graph. This operation can only be
-    /// called by a member account that has the <code>ENABLED</code> status.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the member account from the specified behavior graph. This operation can only be called by an invited member account that has the <code>ENABLED</code> status.</p>
+    /// <p> <code>DisassociateMembership</code> cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -732,10 +867,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -744,25 +879,95 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
+    ///
+    /// <p>Designates the Detective administrator account for the organization in the current Region.</p>
+    /// <p>If the account does not have Detective enabled, then enables Detective for that account and creates a new behavior graph.</p>
+    /// <p>Can only be called by the organization management account.</p>
+    /// <p>The Detective administrator account for an organization must be the same in all Regions. If you already designated a Detective administrator account in another Region, then you must designate the same account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct EnableOrganizationAdminAccount<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::enable_organization_admin_account_input::Builder,
+    }
+    impl<C, M, R> EnableOrganizationAdminAccount<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `EnableOrganizationAdminAccount`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::EnableOrganizationAdminAccountOutput,
+            aws_smithy_http::result::SdkError<crate::error::EnableOrganizationAdminAccountError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::EnableOrganizationAdminAccountInputOperationOutputAlias,
+                crate::output::EnableOrganizationAdminAccountOutput,
+                crate::error::EnableOrganizationAdminAccountError,
+                crate::input::EnableOrganizationAdminAccountInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_account_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetMembers`.
     ///
-    /// <p>Returns the membership details for specified member accounts for a behavior
-    /// graph.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the membership details for specified member accounts for a behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,10 +1012,10 @@ pub mod fluent_builders {
                 crate::input::GetMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -819,8 +1024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph for which to request the member details.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to request the member details.</p>
@@ -832,18 +1037,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -854,11 +1055,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGraphs`.
     ///
-    /// <p>Returns the list of behavior graphs that the calling account is an administrator account
-    /// of. This operation can only be called by an administrator account.</p>
-    /// <p>Because an account can currently only be the administrator of one behavior graph within
-    /// a Region, the results always contain a single behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p>
+    /// <p>Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGraphs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -903,10 +1102,10 @@ pub mod fluent_builders {
                 crate::input::ListGraphsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -914,28 +1113,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGraphsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGraphsPaginator<C, M, R> {
+            crate::paginator::ListGraphsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -943,13 +1142,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Retrieves the list of open and accepted behavior graph invitations for the member
-    /// account. This operation can only be called by a member account.</p>
+    /// <p>Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can only be called by an invited member account.</p>
     /// <p>Open invitations are invitations that the member account has not responded to.</p>
-    /// <p>The results do not include behavior graphs for which the member account declined the
-    /// invitation. The results also do not include behavior graphs that the member account
-    /// resigned from or was removed from.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The results do not include behavior graphs for which the member account declined the invitation. The results also do not include behavior graphs that the member account resigned from or was removed from.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -994,10 +1190,10 @@ pub mod fluent_builders {
                 crate::input::ListInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1005,30 +1201,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInvitationsPaginator<C, M, R> {
+            crate::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1036,9 +1230,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMembers`.
     ///
-    /// <p>Retrieves the list of member accounts for a behavior graph. Does not return member
-    /// accounts that were removed from the behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the list of member accounts for a behavior graph.</p>
+    /// <p>For invited accounts, the results do not include member accounts that were removed from the behavior graph.</p>
+    /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1083,10 +1278,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1094,9 +1289,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
@@ -1104,28 +1305,110 @@ pub mod fluent_builders {
             self.inner = self.inner.set_graph_arn(input);
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
+    ///
+    /// <p>Returns information about the Detective administrator account for an organization. Can only be called by the organization management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListOrganizationAdminAccounts<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_organization_admin_accounts_input::Builder,
+    }
+    impl<C, M, R> ListOrganizationAdminAccounts<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListOrganizationAdminAccounts`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListOrganizationAdminAccountsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListOrganizationAdminAccountsInputOperationOutputAlias,
+                crate::output::ListOrganizationAdminAccountsOutput,
+                crate::error::ListOrganizationAdminAccountsError,
+                crate::input::ListOrganizationAdminAccountsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationAdminAccountsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationAdminAccountsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1134,7 +1417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns the tag values that are assigned to a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1179,10 +1462,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1191,8 +1474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
@@ -1203,9 +1486,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectInvitation`.
     ///
-    /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation
-    /// must be called by a member account that has the <code>INVITED</code> status.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by an invited member account that has the <code>INVITED</code> status.</p>
+    /// <p> <code>RejectInvitation</code> cannot be called by an organization account in the organization behavior graph. In the organization behavior graph, organization accounts do not receive an invitation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1250,10 +1533,10 @@ pub mod fluent_builders {
                 crate::input::RejectInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1262,15 +1545,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
             self
@@ -1278,20 +1559,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMonitoringMember`.
     ///
-    /// <p>Sends a request to enable data ingest for a member account that has a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>.</p>
+    /// <p>Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>
     /// <p>For valid member accounts, the status is updated as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>If Detective enabled the member account, then the new status is
-    /// <code>ENABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If Detective cannot enable the member account, the status remains
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
-    /// </li>
+    /// <li> <p>If Detective enabled the member account, then the new status is <code>ENABLED</code>.</p> </li>
+    /// <li> <p>If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1336,10 +1610,10 @@ pub mod fluent_builders {
                 crate::input::StartMonitoringMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1348,8 +1622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph.</p>
-        pub fn graph_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.graph_arn(inp);
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph.</p>
@@ -1358,15 +1632,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -1375,7 +1647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies tag values to a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1420,10 +1692,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1432,8 +1704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to assign the tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to assign the tags to.</p>
@@ -1445,20 +1717,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1472,7 +1740,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a behavior graph.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1517,10 +1785,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1529,8 +1797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the behavior graph to remove the tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the tags from.</p>
@@ -1542,14 +1810,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1558,7 +1824,88 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
+    ///
+    /// <p>Updates the configuration for the Organizations integration in the current Region. Can only be called by the Detective administrator account for the organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateOrganizationConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_organization_configuration_input::Builder,
+    }
+    impl<C, M, R> UpdateOrganizationConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateOrganizationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateOrganizationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateOrganizationConfigurationInputOperationOutputAlias,
+                crate::output::UpdateOrganizationConfigurationOutput,
+                crate::error::UpdateOrganizationConfigurationError,
+                crate::input::UpdateOrganizationConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+        /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_enable(input);
+            self
+        }
+        /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+        pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_enable(input);
+            self
+        }
+    }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

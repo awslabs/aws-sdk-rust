@@ -69,8 +69,6 @@ impl AcceptSharedDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -163,8 +161,7 @@ pub enum AddIpRoutesErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
-    /// address blocks.</p>
+    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
     IpRouteLimitExceededException(crate::error::IpRouteLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -215,8 +212,6 @@ impl AddIpRoutesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -313,8 +308,7 @@ pub enum AddRegionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
-    /// was created. Specify a different Region and try again.</p>
+    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
     DirectoryAlreadyInRegionException(crate::error::DirectoryAlreadyInRegionException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
@@ -324,8 +318,7 @@ pub enum AddRegionErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You have reached the limit for maximum number of simultaneous Region replications per
-    /// directory.</p>
+    /// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
     RegionLimitExceededException(crate::error::RegionLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -381,8 +374,6 @@ impl AddRegionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -548,8 +539,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -675,8 +664,6 @@ impl CancelSchemaExtensionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -745,9 +732,7 @@ pub struct ConnectDirectoryError {
 pub enum ConnectDirectoryErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -797,8 +782,6 @@ impl ConnectDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -922,8 +905,6 @@ impl CreateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1064,8 +1045,6 @@ impl CreateComputerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1235,8 +1214,6 @@ impl CreateConditionalForwarderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1345,9 +1322,7 @@ pub struct CreateDirectoryError {
 pub enum CreateDirectoryErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1397,8 +1372,6 @@ impl CreateDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1527,8 +1500,6 @@ impl CreateLogSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1623,9 +1594,7 @@ pub struct CreateMicrosoftADError {
 pub enum CreateMicrosoftADErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1678,8 +1647,6 @@ impl CreateMicrosoftADError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1764,9 +1731,7 @@ pub enum CreateSnapshotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-    /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-    /// for a directory.</p>
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1813,8 +1778,6 @@ impl CreateSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1949,8 +1912,6 @@ impl CreateTrustError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2099,8 +2060,6 @@ impl DeleteConditionalForwarderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2246,8 +2205,6 @@ impl DeleteDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2360,8 +2317,6 @@ impl DeleteLogSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2488,8 +2443,6 @@ impl DeleteSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2613,8 +2566,6 @@ impl DeleteTrustError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2693,8 +2644,7 @@ pub struct DeregisterCertificateError {
 pub enum DeregisterCertificateErrorKind {
     /// <p>The certificate is not present in the system for describe or deregister activities.</p>
     CertificateDoesNotExistException(crate::error::CertificateDoesNotExistException),
-    /// <p>The certificate is being used for the LDAP security connection and cannot be removed
-    /// without disabling LDAP security.</p>
+    /// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
     CertificateInUseException(crate::error::CertificateInUseException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
@@ -2758,8 +2708,6 @@ impl DeregisterCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2920,8 +2868,6 @@ impl DeregisterEventTopicError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3054,8 +3000,6 @@ impl DescribeCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3214,8 +3158,6 @@ impl DescribeClientAuthenticationSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3385,8 +3327,6 @@ impl DescribeConditionalForwardersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3540,8 +3480,6 @@ impl DescribeDirectoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3683,8 +3621,6 @@ impl DescribeDomainControllersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3829,8 +3765,6 @@ impl DescribeEventTopicsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3960,8 +3894,6 @@ impl DescribeLDAPSSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4113,8 +4045,6 @@ impl DescribeRegionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4269,8 +4199,6 @@ impl DescribeSharedDirectoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4418,8 +4346,6 @@ impl DescribeSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4554,8 +4480,6 @@ impl DescribeTrustsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4704,8 +4628,6 @@ impl DisableClientAuthenticationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4808,8 +4730,7 @@ pub enum DisableLDAPSErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-    /// status.</p>
+    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::error::InvalidLdapsStatusException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4864,8 +4785,6 @@ impl DisableLDAPSError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5007,8 +4926,6 @@ impl DisableRadiusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5124,8 +5041,6 @@ impl DisableSsoError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5210,8 +5125,7 @@ pub enum EnableClientAuthenticationErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>Client authentication is already enabled.</p>
     InvalidClientAuthStatusException(crate::error::InvalidClientAuthStatusException),
-    /// <p>Client authentication setup could not be completed because at least one valid certificate must be
-    /// registered in the system.</p>
+    /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
     NoAvailableCertificateException(crate::error::NoAvailableCertificateException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -5272,8 +5186,6 @@ impl EnableClientAuthenticationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5386,13 +5298,11 @@ pub enum EnableLDAPSErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-    /// status.</p>
+    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::error::InvalidLdapsStatusException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Client authentication setup could not be completed because at least one valid certificate must be
-    /// registered in the system.</p>
+    /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
     NoAvailableCertificateException(crate::error::NoAvailableCertificateException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -5446,8 +5356,6 @@ impl EnableLDAPSError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5603,8 +5511,6 @@ impl EnableRadiusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5736,8 +5642,6 @@ impl EnableSsoError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5863,8 +5767,6 @@ impl GetDirectoryLimitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5974,8 +5876,6 @@ impl GetSnapshotLimitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6094,8 +5994,6 @@ impl ListCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6235,8 +6133,6 @@ impl ListIpRoutesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6365,8 +6261,6 @@ impl ListLogSubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6493,8 +6387,6 @@ impl ListSchemaExtensionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6624,8 +6516,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6776,8 +6666,6 @@ impl RegisterCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6941,8 +6829,6 @@ impl RegisterEventTopicError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7068,8 +6954,6 @@ impl RejectSharedDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7207,8 +7091,6 @@ impl RemoveIpRoutesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7343,8 +7225,6 @@ impl RemoveRegionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7478,8 +7358,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7560,8 +7438,7 @@ pub enum ResetUserPasswordErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>The specified entity could not be found.</p>
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
-    /// <p>The new password provided by the user does not meet the password complexity
-    /// requirements defined in your directory.</p>
+    /// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -7616,8 +7493,6 @@ impl ResetUserPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7762,8 +7637,6 @@ impl RestoreFromSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7851,8 +7724,7 @@ pub enum ShareDirectoryErrorKind {
     OrganizationsException(crate::error::OrganizationsException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
-    /// reached.</p>
+    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
     ShareLimitExceededException(crate::error::ShareLimitExceededException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -7906,8 +7778,6 @@ impl ShareDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8034,9 +7904,7 @@ pub enum StartSchemaExtensionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-    /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-    /// for a directory.</p>
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8084,8 +7952,6 @@ impl StartSchemaExtensionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8231,8 +8097,6 @@ impl UnshareDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8373,8 +8237,6 @@ impl UpdateConditionalForwarderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8475,8 +8337,7 @@ pub enum UpdateNumberOfDomainControllersErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The
-    /// default limit per directory is 20 domain controllers.</p>
+    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::error::DomainControllerLimitExceededException),
     /// <p>The specified entity could not be found.</p>
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
@@ -8546,8 +8407,6 @@ impl UpdateNumberOfDomainControllersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8708,8 +8567,6 @@ impl UpdateRadiusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8830,8 +8687,6 @@ impl UpdateTrustError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8955,8 +8810,6 @@ impl VerifyTrustError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9445,8 +9298,7 @@ impl ClientException {
     }
 }
 
-/// <p>The maximum allowed number of domain controllers per directory was exceeded. The
-/// default limit per directory is 20 domain controllers.</p>
+/// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainControllerLimitExceededException {
@@ -9786,9 +9638,7 @@ impl DirectoryNotSharedException {
     }
 }
 
-/// <p>The maximum number of manual snapshots for the directory has been reached. You can
-/// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-/// for a directory.</p>
+/// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotLimitExceededException {
@@ -9873,8 +9723,7 @@ impl SnapshotLimitExceededException {
     }
 }
 
-/// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
-/// reached.</p>
+/// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareLimitExceededException {
@@ -10299,8 +10148,7 @@ impl UserDoesNotExistException {
     }
 }
 
-/// <p>The new password provided by the user does not meet the password complexity
-/// requirements defined in your directory.</p>
+/// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
@@ -11065,8 +10913,7 @@ impl EntityAlreadyExistsException {
     }
 }
 
-/// <p>Client authentication setup could not be completed because at least one valid certificate must be
-/// registered in the system.</p>
+/// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableCertificateException {
@@ -11151,8 +10998,7 @@ impl NoAvailableCertificateException {
     }
 }
 
-/// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-/// status.</p>
+/// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLdapsStatusException {
@@ -11410,8 +11256,7 @@ impl CertificateDoesNotExistException {
     }
 }
 
-/// <p>The certificate is being used for the LDAP security connection and cannot be removed
-/// without disabling LDAP security.</p>
+/// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateInUseException {
@@ -11496,9 +11341,7 @@ impl CertificateInUseException {
     }
 }
 
-/// <p>The maximum number of directories in the region has been reached. You can use the
-/// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-/// the region.</p>
+/// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryLimitExceededException {
@@ -11668,8 +11511,7 @@ impl TagLimitExceededException {
     }
 }
 
-/// <p>You have reached the limit for maximum number of simultaneous Region replications per
-/// directory.</p>
+/// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionLimitExceededException {
@@ -11754,8 +11596,7 @@ impl RegionLimitExceededException {
     }
 }
 
-/// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
-/// was created. Specify a different Region and try again.</p>
+/// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyInRegionException {
@@ -11840,8 +11681,7 @@ impl DirectoryAlreadyInRegionException {
     }
 }
 
-/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
-/// address blocks.</p>
+/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRouteLimitExceededException {

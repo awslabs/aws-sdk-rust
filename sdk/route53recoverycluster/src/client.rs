@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Route53 Recovery Cluster
@@ -119,17 +119,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetRoutingControlState`.
     ///
-    /// <p>Get the state for a routing control. A routing control is a simple on/off switch
-    /// that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's off, traffic does not flow. </p>
-    /// <p>Before you can create a routing control, you first must create a cluster to host the control.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html">CreateCluster</a>.
-    /// Access one of the endpoints for the cluster to get or update the routing control state to
-    /// redirect traffic.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's off, traffic does not flow. </p>
+    /// <p>Before you can create a routing control, you first must create a cluster to host the control. For more information, see <a href="https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html">CreateCluster</a>. Access one of the endpoints for the cluster to get or update the routing control state to redirect traffic.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -174,10 +167,10 @@ pub mod fluent_builders {
                 crate::input::GetRoutingControlStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -186,8 +179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
@@ -201,12 +194,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlState`.
     ///
-    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off.
-    /// When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -251,10 +241,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingControlStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -263,8 +253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
@@ -276,8 +266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-        pub fn routing_control_state(mut self, inp: crate::model::RoutingControlState) -> Self {
-            self.inner = self.inner.routing_control_state(inp);
+        pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
+            self.inner = self.inner.routing_control_state(input);
             self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>
@@ -291,12 +281,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
     ///
-    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off.
-    /// When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -341,10 +328,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingControlStatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -359,9 +346,9 @@ pub mod fluent_builders {
         /// <p>A set of routing control entries that you want to update.</p>
         pub fn update_routing_control_state_entries(
             mut self,
-            inp: impl Into<crate::model::UpdateRoutingControlStateEntry>,
+            input: crate::model::UpdateRoutingControlStateEntry,
         ) -> Self {
-            self.inner = self.inner.update_routing_control_state_entries(inp);
+            self.inner = self.inner.update_routing_control_state_entries(input);
             self
         }
         /// <p>A set of routing control entries that you want to update.</p>
@@ -374,6 +361,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

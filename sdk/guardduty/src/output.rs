@@ -93,13 +93,11 @@ impl UpdateOrganizationConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberDetectorsOutput {
-    /// <p>A list of member account IDs that were unable to be processed along with an explanation
-    /// for why they were not processed.</p>
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl UpdateMemberDetectorsOutput {
-    /// <p>A list of member account IDs that were unable to be processed along with an explanation
-    /// for why they were not processed.</p>
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -125,19 +123,14 @@ pub mod update_member_detectors_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of member account IDs that were unable to be processed along with an explanation
-        /// for why they were not processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of member account IDs that were unable to be processed along with an explanation
-        /// for why they were not processed.</p>
+        /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -396,13 +389,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringMembersOutput {
-    /// <p>A list of objects that contain an accountId for each account that could not be processed,
-    /// and a result string that indicates why the account was not processed. </p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl StopMonitoringMembersOutput {
-    /// <p>A list of objects that contain an accountId for each account that could not be processed,
-    /// and a result string that indicates why the account was not processed. </p>
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -428,19 +419,14 @@ pub mod stop_monitoring_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain an accountId for each account that could not be processed,
-        /// and a result string that indicates why the account was not processed. </p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain an accountId for each account that could not be processed,
-        /// and a result string that indicates why the account was not processed. </p>
+        /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -467,13 +453,11 @@ impl StopMonitoringMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl StartMonitoringMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -499,19 +483,14 @@ pub mod start_monitoring_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -540,8 +519,7 @@ impl StartMonitoringMembersOutput {
 pub struct ListThreatIntelSetsOutput {
     /// <p>The IDs of the ThreatIntelSet resources.</p>
     pub threat_intel_set_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThreatIntelSetsOutput {
@@ -549,8 +527,7 @@ impl ListThreatIntelSetsOutput {
     pub fn threat_intel_set_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.threat_intel_set_ids.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -592,14 +569,12 @@ pub mod list_threat_intel_sets_output {
             self.threat_intel_set_ids = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -697,25 +672,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishingDestinationsOutput {
-    /// <p>A <code>Destinations</code> object that includes information about each publishing
-    /// destination returned.</p>
+    /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublishingDestinationsOutput {
-    /// <p>A <code>Destinations</code> object that includes information about each publishing
-    /// destination returned.</p>
+    /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
         self.destinations.as_deref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -742,16 +709,14 @@ pub mod list_publishing_destinations_output {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A <code>Destinations</code> object that includes information about each publishing
-        /// destination returned.</p>
-        pub fn destinations(mut self, input: impl Into<crate::model::Destination>) -> Self {
+        /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>A <code>Destinations</code> object that includes information about each publishing
-        /// destination returned.</p>
+        /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
@@ -759,18 +724,12 @@ pub mod list_publishing_destinations_output {
             self.destinations = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -795,21 +754,17 @@ impl ListPublishingDestinationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
-    /// <p>A list of accounts configured as GuardDuty delegated
-    /// administrators.</p>
+    /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
     pub admin_accounts: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
-    /// <p>A list of accounts configured as GuardDuty delegated
-    /// administrators.</p>
+    /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
     pub fn admin_accounts(&self) -> std::option::Option<&[crate::model::AdminAccount]> {
         self.admin_accounts.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -836,16 +791,14 @@ pub mod list_organization_admin_accounts_output {
         ///
         /// To override the contents of this collection use [`set_admin_accounts`](Self::set_admin_accounts).
         ///
-        /// <p>A list of accounts configured as GuardDuty delegated
-        /// administrators.</p>
-        pub fn admin_accounts(mut self, input: impl Into<crate::model::AdminAccount>) -> Self {
+        /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
+        pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.admin_accounts = Some(v);
             self
         }
-        /// <p>A list of accounts configured as GuardDuty delegated
-        /// administrators.</p>
+        /// <p>A list of accounts configured as GuardDuty delegated administrators.</p>
         pub fn set_admin_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdminAccount>>,
@@ -853,14 +806,12 @@ pub mod list_organization_admin_accounts_output {
             self.admin_accounts = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -887,8 +838,7 @@ impl ListOrganizationAdminAccountsOutput {
 pub struct ListMembersOutput {
     /// <p>A list of members.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersOutput {
@@ -896,8 +846,7 @@ impl ListMembersOutput {
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -925,9 +874,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -939,14 +888,12 @@ pub mod list_members_output {
             self.members = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -973,8 +920,7 @@ impl ListMembersOutput {
 pub struct ListIpSetsOutput {
     /// <p>The IDs of the IPSet resources.</p>
     pub ip_set_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpSetsOutput {
@@ -982,8 +928,7 @@ impl ListIpSetsOutput {
     pub fn ip_set_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_set_ids.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1025,14 +970,12 @@ pub mod list_ip_sets_output {
             self.ip_set_ids = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1059,8 +1002,7 @@ impl ListIpSetsOutput {
 pub struct ListInvitationsOutput {
     /// <p>A list of invitation descriptions.</p>
     pub invitations: std::option::Option<std::vec::Vec<crate::model::Invitation>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsOutput {
@@ -1068,8 +1010,7 @@ impl ListInvitationsOutput {
     pub fn invitations(&self) -> std::option::Option<&[crate::model::Invitation]> {
         self.invitations.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1097,9 +1038,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>A list of invitation descriptions.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -1111,14 +1052,12 @@ pub mod list_invitations_output {
             self.invitations = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1145,8 +1084,7 @@ impl ListInvitationsOutput {
 pub struct ListFindingsOutput {
     /// <p>The IDs of the findings that you're listing.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsOutput {
@@ -1154,8 +1092,7 @@ impl ListFindingsOutput {
     pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1197,14 +1134,12 @@ pub mod list_findings_output {
             self.finding_ids = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1231,8 +1166,7 @@ impl ListFindingsOutput {
 pub struct ListFiltersOutput {
     /// <p>A list of filter names.</p>
     pub filter_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersOutput {
@@ -1240,8 +1174,7 @@ impl ListFiltersOutput {
     pub fn filter_names(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_names.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1283,14 +1216,12 @@ pub mod list_filters_output {
             self.filter_names = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1317,8 +1248,7 @@ impl ListFiltersOutput {
 pub struct ListDetectorsOutput {
     /// <p>A list of detector IDs.</p>
     pub detector_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsOutput {
@@ -1326,8 +1256,7 @@ impl ListDetectorsOutput {
     pub fn detector_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.detector_ids.as_deref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1369,14 +1298,12 @@ pub mod list_detectors_output {
             self.detector_ids = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1401,13 +1328,11 @@ impl ListDetectorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl InviteMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -1433,19 +1358,14 @@ pub mod invite_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -1472,21 +1392,17 @@ impl InviteMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsOutput {
-    /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects
-    /// representing other types will be null.</p>
+    /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
     pub usage_statistics: std::option::Option<crate::model::UsageStatistics>,
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUsageStatisticsOutput {
-    /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects
-    /// representing other types will be null.</p>
+    /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
     pub fn usage_statistics(&self) -> std::option::Option<&crate::model::UsageStatistics> {
         self.usage_statistics.as_ref()
     }
-    /// <p>The pagination parameter to be used on the next list operation to retrieve more
-    /// items.</p>
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1509,14 +1425,12 @@ pub mod get_usage_statistics_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects
-        /// representing other types will be null.</p>
+        /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
         pub fn usage_statistics(mut self, input: crate::model::UsageStatistics) -> Self {
             self.usage_statistics = Some(input);
             self
         }
-        /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects
-        /// representing other types will be null.</p>
+        /// <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
         pub fn set_usage_statistics(
             mut self,
             input: std::option::Option<crate::model::UsageStatistics>,
@@ -1524,14 +1438,12 @@ pub mod get_usage_statistics_output {
             self.usage_statistics = input;
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination parameter to be used on the next list operation to retrieve more
-        /// items.</p>
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1556,13 +1468,11 @@ impl GetUsageStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThreatIntelSetOutput {
-    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the threatIntelSet.</p>
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of threatIntelSet file uploaded.</p>
     pub status: std::option::Option<crate::model::ThreatIntelSetStatus>,
@@ -1571,8 +1481,7 @@ pub struct GetThreatIntelSetOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetThreatIntelSetOutput {
-    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1580,8 +1489,7 @@ impl GetThreatIntelSetOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -1623,14 +1531,12 @@ pub mod get_threat_intel_set_output {
         >,
     }
     impl Builder {
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1648,14 +1554,12 @@ pub mod get_threat_intel_set_output {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1723,8 +1627,7 @@ impl GetThreatIntelSetOutput {
 pub struct GetMembersOutput {
     /// <p>A list of members.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetMembersOutput {
@@ -1732,8 +1635,7 @@ impl GetMembersOutput {
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -1762,9 +1664,9 @@ pub mod get_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -1780,19 +1682,14 @@ pub mod get_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -1823,8 +1720,7 @@ pub struct GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
     pub member_data_source_configurations:
         std::option::Option<std::vec::Vec<crate::model::MemberDataSourceConfiguration>>,
-    /// <p>A list of member account IDs that were unable to be processed along with an explanation
-    /// for why they were not processed.</p>
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl GetMemberDetectorsOutput {
@@ -1834,8 +1730,7 @@ impl GetMemberDetectorsOutput {
     ) -> std::option::Option<&[crate::model::MemberDataSourceConfiguration]> {
         self.member_data_source_configurations.as_deref()
     }
-    /// <p>A list of member account IDs that were unable to be processed along with an explanation
-    /// for why they were not processed.</p>
+    /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -1870,10 +1765,10 @@ pub mod get_member_detectors_output {
         /// <p>An object that describes which data sources are enabled for a member account.</p>
         pub fn member_data_source_configurations(
             mut self,
-            input: impl Into<crate::model::MemberDataSourceConfiguration>,
+            input: crate::model::MemberDataSourceConfiguration,
         ) -> Self {
             let mut v = self.member_data_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_data_source_configurations = Some(v);
             self
         }
@@ -1889,19 +1784,14 @@ pub mod get_member_detectors_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of member account IDs that were unable to be processed along with an explanation
-        /// for why they were not processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of member account IDs that were unable to be processed along with an explanation
-        /// for why they were not processed.</p>
+        /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -1987,8 +1877,7 @@ pub struct GetIpSetOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
     pub format: std::option::Option<crate::model::IpSetFormat>,
-    /// <p>The URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of IPSet file that was uploaded.</p>
     pub status: std::option::Option<crate::model::IpSetStatus>,
@@ -2005,8 +1894,7 @@ impl GetIpSetOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -2068,14 +1956,12 @@ pub mod get_ip_set_output {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2279,9 +2165,9 @@ pub mod get_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>A list of findings.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -2318,8 +2204,7 @@ pub struct GetFilterOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub action: std::option::Option<crate::model::FilterAction>,
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
@@ -2340,8 +2225,7 @@ impl GetFilterOutput {
     pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
         self.action.as_ref()
     }
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
@@ -2418,14 +2302,12 @@ pub mod get_filter_output {
             self.action = input;
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -2731,13 +2613,11 @@ impl EnableOrganizationAdminAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DisassociateMembersOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -2763,19 +2643,14 @@ pub mod disassociate_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -2864,16 +2739,13 @@ impl DisableOrganizationAdminAccountOutput {
 pub struct DescribePublishingDestinationOutput {
     /// <p>The ID of the publishing destination.</p>
     pub destination_id: std::option::Option<std::string::String>,
-    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-    /// supported.</p>
+    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub destination_type: std::option::Option<crate::model::DestinationType>,
     /// <p>The status of the publishing destination.</p>
     pub status: std::option::Option<crate::model::PublishingStatus>,
-    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish
-    /// findings to the destination.</p>
+    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     pub publishing_failure_start_timestamp: i64,
-    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
 }
 impl DescribePublishingDestinationOutput {
@@ -2881,8 +2753,7 @@ impl DescribePublishingDestinationOutput {
     pub fn destination_id(&self) -> std::option::Option<&str> {
         self.destination_id.as_deref()
     }
-    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-    /// supported.</p>
+    /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
     pub fn destination_type(&self) -> std::option::Option<&crate::model::DestinationType> {
         self.destination_type.as_ref()
     }
@@ -2890,13 +2761,11 @@ impl DescribePublishingDestinationOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::PublishingStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish
-    /// findings to the destination.</p>
+    /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
     pub fn publishing_failure_start_timestamp(&self) -> i64 {
         self.publishing_failure_start_timestamp
     }
-    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn destination_properties(
         &self,
     ) -> std::option::Option<&crate::model::DestinationProperties> {
@@ -2943,14 +2812,12 @@ pub mod describe_publishing_destination_output {
             self.destination_id = input;
             self
         }
-        /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
         pub fn destination_type(mut self, input: crate::model::DestinationType) -> Self {
             self.destination_type = Some(input);
             self
         }
-        /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -2971,14 +2838,12 @@ pub mod describe_publishing_destination_output {
             self.status = input;
             self
         }
-        /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish
-        /// findings to the destination.</p>
+        /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
         pub fn publishing_failure_start_timestamp(mut self, input: i64) -> Self {
             self.publishing_failure_start_timestamp = Some(input);
             self
         }
-        /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish
-        /// findings to the destination.</p>
+        /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
         pub fn set_publishing_failure_start_timestamp(
             mut self,
             input: std::option::Option<i64>,
@@ -2986,8 +2851,7 @@ pub mod describe_publishing_destination_output {
             self.publishing_failure_start_timestamp = input;
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationProperties,
@@ -2995,8 +2859,7 @@ pub mod describe_publishing_destination_output {
             self.destination_properties = Some(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -3029,29 +2892,23 @@ impl DescribePublishingDestinationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationOutput {
-    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the
-    /// organization.</p>
+    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     pub auto_enable: bool,
-    /// <p>Indicates whether the maximum number of allowed member accounts are already associated
-    /// with the delegated administrator account for your organization.</p>
+    /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
     pub member_account_limit_reached: bool,
-    /// <p>Describes which data sources are enabled automatically for member
-    /// accounts.</p>
+    /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     pub data_sources: std::option::Option<crate::model::OrganizationDataSourceConfigurationsResult>,
 }
 impl DescribeOrganizationConfigurationOutput {
-    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the
-    /// organization.</p>
+    /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
     }
-    /// <p>Indicates whether the maximum number of allowed member accounts are already associated
-    /// with the delegated administrator account for your organization.</p>
+    /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
     pub fn member_account_limit_reached(&self) -> bool {
         self.member_account_limit_reached
     }
-    /// <p>Describes which data sources are enabled automatically for member
-    /// accounts.</p>
+    /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     pub fn data_sources(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationDataSourceConfigurationsResult> {
@@ -3082,26 +2939,22 @@ pub mod describe_organization_configuration_output {
             std::option::Option<crate::model::OrganizationDataSourceConfigurationsResult>,
     }
     impl Builder {
-        /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the
-        /// organization.</p>
+        /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.auto_enable = Some(input);
             self
         }
-        /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the
-        /// organization.</p>
+        /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
         }
-        /// <p>Indicates whether the maximum number of allowed member accounts are already associated
-        /// with the delegated administrator account for your organization.</p>
+        /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
         pub fn member_account_limit_reached(mut self, input: bool) -> Self {
             self.member_account_limit_reached = Some(input);
             self
         }
-        /// <p>Indicates whether the maximum number of allowed member accounts are already associated
-        /// with the delegated administrator account for your organization.</p>
+        /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
         pub fn set_member_account_limit_reached(
             mut self,
             input: std::option::Option<bool>,
@@ -3109,8 +2962,7 @@ pub mod describe_organization_configuration_output {
             self.member_account_limit_reached = input;
             self
         }
-        /// <p>Describes which data sources are enabled automatically for member
-        /// accounts.</p>
+        /// <p>Describes which data sources are enabled automatically for member accounts.</p>
         pub fn data_sources(
             mut self,
             input: crate::model::OrganizationDataSourceConfigurationsResult,
@@ -3118,8 +2970,7 @@ pub mod describe_organization_configuration_output {
             self.data_sources = Some(input);
             self
         }
-        /// <p>Describes which data sources are enabled automatically for member
-        /// accounts.</p>
+        /// <p>Describes which data sources are enabled automatically for member accounts.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::OrganizationDataSourceConfigurationsResult>,
@@ -3239,12 +3090,9 @@ pub mod delete_members_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>The accounts that could not be processed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -3305,13 +3153,11 @@ impl DeleteIpSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeleteInvitationsOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -3337,19 +3183,14 @@ pub mod delete_invitations_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -3436,13 +3277,11 @@ impl DeleteDetectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl DeclineInvitationsOutput {
-    /// <p>A list of objects that contain the unprocessed account and a result string that explains
-    /// why it was unprocessed.</p>
+    /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -3468,19 +3307,14 @@ pub mod decline_invitations_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that contain the unprocessed account and a result string that explains
-        /// why it was unprocessed.</p>
+        /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
@@ -3651,13 +3485,11 @@ impl CreatePublishingDestinationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
-    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
-    /// a result string that explains why each was unprocessed.</p>
+    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
 }
 impl CreateMembersOutput {
-    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
-    /// a result string that explains why each was unprocessed.</p>
+    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
     pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
@@ -3683,19 +3515,14 @@ pub mod create_members_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
-        /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
-        /// a result string that explains why each was unprocessed.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
-        /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and
-        /// a result string that explains why each was unprocessed.</p>
+        /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
         pub fn set_unprocessed_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Machine Learning
@@ -187,6 +187,7 @@ where
     ///
     /// See [`DescribeBatchPredictions`](crate::client::fluent_builders::DescribeBatchPredictions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBatchPredictions::into_paginator).
     pub fn describe_batch_predictions(&self) -> fluent_builders::DescribeBatchPredictions<C, M, R> {
         fluent_builders::DescribeBatchPredictions::new(self.handle.clone())
     }
@@ -194,6 +195,7 @@ where
     ///
     /// See [`DescribeDataSources`](crate::client::fluent_builders::DescribeDataSources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataSources::into_paginator).
     pub fn describe_data_sources(&self) -> fluent_builders::DescribeDataSources<C, M, R> {
         fluent_builders::DescribeDataSources::new(self.handle.clone())
     }
@@ -201,6 +203,7 @@ where
     ///
     /// See [`DescribeEvaluations`](crate::client::fluent_builders::DescribeEvaluations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvaluations::into_paginator).
     pub fn describe_evaluations(&self) -> fluent_builders::DescribeEvaluations<C, M, R> {
         fluent_builders::DescribeEvaluations::new(self.handle.clone())
     }
@@ -208,6 +211,7 @@ where
     ///
     /// See [`DescribeMLModels`](crate::client::fluent_builders::DescribeMLModels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMLModels::into_paginator).
     pub fn describe_ml_models(&self) -> fluent_builders::DescribeMLModels<C, M, R> {
         fluent_builders::DescribeMLModels::new(self.handle.clone())
     }
@@ -292,10 +296,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key
-    /// and an optional value. If you add a tag using a key that is already associated with the ML object,
-    /// <code>AddTags</code> updates the tag's value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value. If you add a tag using a key that is already associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -340,10 +342,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -356,8 +358,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
@@ -369,8 +371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
@@ -379,8 +381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the ML object to tag.</p>
-        pub fn resource_type(mut self, inp: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the ML object to tag.</p>
@@ -394,19 +396,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBatchPrediction`.
     ///
-    /// <p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced
-    /// by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data
-    /// files referenced by the <code>DataSource</code> as information sources.
-    /// </p>
-    ///
-    /// <p>
-    /// <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
-    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code> status to <code>PENDING</code>.
-    /// After the <code>BatchPrediction</code> completes, Amazon ML sets the status to <code>COMPLETED</code>.
-    /// </p>
-    /// <p>You can poll for status updates by using the <a>GetBatchPrediction</a> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears,
-    /// the results are available in the location specified by the <code>OutputUri</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data files referenced by the <code>DataSource</code> as information sources. </p>
+    /// <p> <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code> status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon ML sets the status to <code>COMPLETED</code>. </p>
+    /// <p>You can poll for status updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears, the results are available in the location specified by the <code>OutputUri</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -451,10 +444,10 @@ pub mod fluent_builders {
                 crate::input::CreateBatchPredictionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -462,14 +455,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A user-supplied ID that uniquely identifies the
-        /// <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(inp);
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
-        /// <p>A user-supplied ID that uniquely identifies the
-        /// <code>BatchPrediction</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,8 +469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-        pub fn batch_prediction_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_name(inp);
+        pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
@@ -491,8 +482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
@@ -503,9 +494,9 @@ pub mod fluent_builders {
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
         pub fn batch_prediction_data_source_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.batch_prediction_data_source_id(inp);
+            self.inner = self.inner.batch_prediction_data_source_id(input.into());
             self
         }
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
@@ -518,8 +509,8 @@ pub mod fluent_builders {
         }
         /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
         /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-        pub fn output_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_uri(inp);
+        pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_uri(input.into());
             self
         }
         /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
@@ -532,18 +523,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSourceFromRDS`.
     ///
     /// <p>Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>
-    ///
-    /// <p>
-    /// <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRDS</code>,
-    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
-    /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-    /// <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state can
-    /// be used only to perform <code>>CreateMLModel</code>>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
-    /// </p>
-    /// <p>
-    /// If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. </p>
+    /// <p> If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromRDS<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -588,10 +570,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataSourceFromRdsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -599,14 +581,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-        /// becomes the ID for a <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
-        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
-        /// becomes the ID for a <code>DataSource</code>.</p>
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -615,8 +595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-        pub fn data_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(inp);
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -629,103 +609,41 @@ pub mod fluent_builders {
         }
         /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-        /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-        /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        pub fn rds_data(mut self, inp: crate::model::RdsDataSpec) -> Self {
-            self.inner = self.inner.rds_data(inp);
+        pub fn rds_data(mut self, input: crate::model::RdsDataSpec) -> Self {
+            self.inner = self.inner.rds_data(input);
             self
         }
         /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p>
-        /// </li>
-        /// <li>
-        /// <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-        /// Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS
-        /// to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
-        /// </li>
-        /// <li>
-        /// <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>
+        /// <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>
+        /// <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>
+        /// <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>
+        /// <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_rds_data(
             mut self,
@@ -734,32 +652,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rds_data(input);
             self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-        /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
         /// <p></p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
-        /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
+        /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
         /// <p></p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-        /// </p>
-        pub fn compute_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.compute_statistics(inp);
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
-        /// </p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_compute_statistics(input);
             self
@@ -767,40 +677,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataSourceFromRedshift`.
     ///
-    /// <p>Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster. A
-    /// <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
-    /// operations.</p>
-    ///
-    /// <p>
-    /// <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
-    /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-    /// <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> states can be
-    /// used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
-    /// </p>
-    ///
-    /// <p>
-    /// If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code>
-    /// attribute of the <code>GetDataSource</code> operation response.
-    /// </p>
-    ///
-    /// <p>The observations should be contained in the database hosted on an Amazon Redshift cluster
-    /// and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML executes an
-    /// <code>Unload</code> command in Amazon Redshift to transfer the result set of
-    /// the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
-    ///
-    /// <p>After the <code>DataSource</code> has been created, it's ready for use in evaluations and
-    /// batch predictions. If you plan to use the <code>DataSource</code> to train an
-    /// <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe
-    /// describes how each input variable will be used in training an <code>MLModel</code>. Will
-    /// the variable be included or excluded from training? Will the variable be manipulated;
-    /// for example, will it be combined with another variable or will it be split apart into
-    /// word combinations? The recipe provides answers to these questions.</p>
-    /// <p>You can't change an existing datasource, but you can copy and modify the settings from an
-    /// existing Amazon Redshift datasource to create a new datasource. To do so, call
-    /// <code>GetDataSource</code> for an existing datasource and copy the values to a
-    /// <code>CreateDataSource</code> call. Change the settings that you want to change and
-    /// make sure that all required fields have the appropriate values.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster. A <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>
+    /// <p> <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> states can be used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. </p>
+    /// <p> If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response. </p>
+    /// <p>The observations should be contained in the database hosted on an Amazon Redshift cluster and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML executes an <code>Unload</code> command in Amazon Redshift to transfer the result set of the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
+    /// <p>After the <code>DataSource</code> has been created, it's ready for use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe describes how each input variable will be used in training an <code>MLModel</code>. Will the variable be included or excluded from training? Will the variable be manipulated; for example, will it be combined with another variable or will it be split apart into word combinations? The recipe provides answers to these questions.</p>
+    /// <p>You can't change an existing datasource, but you can copy and modify the settings from an existing Amazon Redshift datasource to create a new datasource. To do so, call <code>GetDataSource</code> for an existing datasource and copy the values to a <code>CreateDataSource</code> call. Change the settings that you want to change and make sure that all required fields have the appropriate values.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromRedshift<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -845,10 +728,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataSourceFromRedshiftInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -857,8 +740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -870,8 +753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn data_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(inp);
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -884,87 +767,35 @@ pub mod fluent_builders {
         }
         /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-        /// <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-        /// Redshift data. The data retrieved from Amazon Redshift using
-        /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        pub fn data_spec(mut self, inp: crate::model::RedshiftDataSpec) -> Self {
-            self.inner = self.inner.data_spec(inp);
+        pub fn data_spec(mut self, input: crate::model::RedshiftDataSpec) -> Self {
+            self.inner = self.inner.data_spec(input);
             self
         }
         /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DatabaseInformation -</p>
+        /// <li> <p>DatabaseInformation -</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DatabaseName</code> - The name of the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p>
-        /// </li>
-        /// <li>
-        /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the
-        /// <code>Datasource</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon
-        /// Redshift data. The data retrieved from Amazon Redshift using
-        /// the <code>SelectSqlQuery</code> query is stored in this location.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+        /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+        /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+        /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+        /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_data_spec(
             mut self,
@@ -974,47 +805,29 @@ pub mod fluent_builders {
             self
         }
         /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+        /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-        /// be used for <code>MLModel</code> training.</p>
-        pub fn compute_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.compute_statistics(inp);
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
-        /// be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_compute_statistics(input);
             self
@@ -1022,38 +835,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataSourceFromS3`.
     ///
-    /// <p>Creates a <code>DataSource</code> object. A <code>DataSource</code> references data that
-    /// can be used to perform  <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-    /// <code>CreateBatchPrediction</code> operations.</p>
-    ///
-    /// <p>
-    /// <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to
-    /// <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately
-    /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the
-    /// <code>DataSource</code> has been created and is ready for use, Amazon ML sets the
-    /// <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in
-    /// the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform only
-    /// <code>CreateMLModel</code>, <code>CreateEvaluation</code> or
-    /// <code>CreateBatchPrediction</code> operations. </p>
-    ///
-    /// <p> If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter to
-    /// <code>FAILED</code> and includes an error message in the <code>Message</code>
-    /// attribute of the <code>GetDataSource</code> operation response. </p>
-    ///
-    /// <p>The observation data used in a <code>DataSource</code> should be ready to use; that is,
-    /// it should have a consistent structure, and missing data values should be kept to a
-    /// minimum. The observation data must reside in one or more .csv files in an Amazon Simple
-    /// Storage Service (Amazon S3) location, along with a schema that describes the data items
-    /// by name and type. The same schema must be used for all of the data files referenced by
-    /// the <code>DataSource</code>. </p>
-    /// <p>After the <code>DataSource</code> has been created, it's ready to use in evaluations and
-    /// batch predictions. If you plan to use the <code>DataSource</code> to train an
-    /// <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe
-    /// describes how each input variable will be used in training an <code>MLModel</code>. Will
-    /// the variable be included or excluded from training? Will the variable be manipulated;
-    /// for example, will it be combined with another variable or will it be split apart into
-    /// word combinations? The recipe provides answers to these questions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>DataSource</code> object. A <code>DataSource</code> references data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>
+    /// <p> <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After the <code>DataSource</code> has been created and is ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code> or <code>CreateBatchPrediction</code> operations. </p>
+    /// <p> If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute of the <code>GetDataSource</code> operation response. </p>
+    /// <p>The observation data used in a <code>DataSource</code> should be ready to use; that is, it should have a consistent structure, and missing data values should be kept to a minimum. The observation data must reside in one or more .csv files in an Amazon Simple Storage Service (Amazon S3) location, along with a schema that describes the data items by name and type. The same schema must be used for all of the data files referenced by the <code>DataSource</code>. </p>
+    /// <p>After the <code>DataSource</code> has been created, it's ready to use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe describes how each input variable will be used in training an <code>MLModel</code>. Will the variable be included or excluded from training? Will the variable be manipulated; for example, will it be combined with another variable or will it be split apart into word combinations? The recipe provides answers to these questions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSourceFromS3<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1098,10 +885,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataSourceFromS3InputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1110,8 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
@@ -1123,8 +910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn data_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(inp);
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -1137,43 +924,21 @@ pub mod fluent_builders {
         }
         /// <p>The data specification of a <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
-        pub fn data_spec(mut self, inp: crate::model::S3DataSpec) -> Self {
-            self.inner = self.inner.data_spec(inp);
+        pub fn data_spec(mut self, input: crate::model::S3DataSpec) -> Self {
+            self.inner = self.inner.data_spec(input);
             self
         }
         /// <p>The data specification of a <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p>
-        /// </li>
-        /// <li>
-        /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p>
-        /// <p> Sample -
-        /// <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>
+        /// <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+        /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+        /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
         /// </ul>
         pub fn set_data_spec(
             mut self,
@@ -1182,16 +947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_spec(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-        pub fn compute_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.compute_statistics(inp);
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
-        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
-        /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
-        /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+        /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_compute_statistics(input);
             self
@@ -1199,19 +960,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEvaluation`.
     ///
-    /// <p>Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code> is evaluated on a set of observations associated to a <code>DataSource</code>. Like a <code>DataSource</code>
-    /// for an <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code> contains values for the <code>Target Variable</code>. The <code>Evaluation</code> compares the predicted result for each observation to the actual outcome and provides a
-    /// summary so that you know how effective the <code>MLModel</code> functions on the test
-    /// data. Evaluation generates a relevant performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>.
-    ///
-    /// </p>
-    /// <p>
-    /// <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
-    /// returns and sets the evaluation status to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for use,
-    /// Amazon ML sets the status to <code>COMPLETED</code>.
-    /// </p>
+    /// <p>Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code> is evaluated on a set of observations associated to a <code>DataSource</code>. Like a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code> contains values for the <code>Target Variable</code>. The <code>Evaluation</code> compares the predicted result for each observation to the actual outcome and provides a summary so that you know how effective the <code>MLModel</code> functions on the test data. Evaluation generates a relevant performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
+    /// <p> <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for use, Amazon ML sets the status to <code>COMPLETED</code>. </p>
     /// <p>You can use the <code>GetEvaluation</code> operation to check progress of the evaluation during the creation operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1256,10 +1008,10 @@ pub mod fluent_builders {
                 crate::input::CreateEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1268,8 +1020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-        pub fn evaluation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(inp);
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
@@ -1281,8 +1033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-        pub fn evaluation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_name(inp);
+        pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -1295,8 +1047,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
         /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
@@ -1305,14 +1057,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ml_model_id(input);
             self
         }
-        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-        /// must match the schema used to create the <code>MLModel</code>.</p>
-        pub fn evaluation_data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_data_source_id(inp);
+        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+        pub fn evaluation_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_data_source_id(input.into());
             self
         }
-        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-        /// must match the schema used to create the <code>MLModel</code>.</p>
+        /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
         pub fn set_evaluation_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1323,27 +1073,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMLModel`.
     ///
-    /// <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the recipe as
-    /// information sources. </p>
-    /// <p>An <code>MLModel</code> is nearly immutable. Users can update only the
-    /// <code>MLModelName</code> and the <code>ScoreThreshold</code> in an
-    /// <code>MLModel</code> without creating a new <code>MLModel</code>. </p>
-    /// <p>
-    /// <code>CreateMLModel</code> is an asynchronous operation. In response to
-    /// <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately returns
-    /// and sets the <code>MLModel</code> status to <code>PENDING</code>. After the
-    /// <code>MLModel</code> has been created and ready is for use, Amazon ML sets the
-    /// status to <code>COMPLETED</code>. </p>
-    /// <p>You can use the <code>GetMLModel</code> operation to check the progress of the
-    /// <code>MLModel</code> during the creation operation.</p>
-    ///
-    /// <p>
-    /// <code>CreateMLModel</code> requires a <code>DataSource</code> with computed statistics,
-    /// which can be created by setting <code>ComputeStatistics</code> to <code>true</code> in
-    /// <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or
-    /// <code>CreateDataSourceFromRedshift</code> operations.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the recipe as information sources. </p>
+    /// <p>An <code>MLModel</code> is nearly immutable. Users can update only the <code>MLModelName</code> and the <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new <code>MLModel</code>. </p>
+    /// <p> <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After the <code>MLModel</code> has been created and ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. </p>
+    /// <p>You can use the <code>GetMLModel</code> operation to check the progress of the <code>MLModel</code> during the creation operation.</p>
+    /// <p> <code>CreateMLModel</code> requires a <code>DataSource</code> with computed statistics, which can be created by setting <code>ComputeStatistics</code> to <code>true</code> in <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or <code>CreateDataSourceFromRedshift</code> operations. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1388,10 +1123,10 @@ pub mod fluent_builders {
                 crate::input::CreateMlModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1400,8 +1135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
@@ -1410,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn ml_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_name(inp);
+        pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -1424,32 +1159,20 @@ pub mod fluent_builders {
         }
         /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-        /// </li>
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
         /// </ul>
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-        pub fn ml_model_type(mut self, inp: crate::model::MlModelType) -> Self {
-            self.inner = self.inner.ml_model_type(inp);
+        pub fn ml_model_type(mut self, input: crate::model::MlModelType) -> Self {
+            self.inner = self.inner.ml_model_type(input);
             self
         }
         /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
         /// <ul>
-        /// <li>
-        /// <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p>
-        /// </li>
-        /// <li>
-        /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p>
-        /// </li>
+        /// <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>
+        /// <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>
+        /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
         /// </ul>
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
         pub fn set_ml_model_type(
@@ -1463,103 +1186,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-        /// a map of key-value pairs.</p>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
         /// <p>The following is the current set of training parameters:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-        /// input data, the size of the model might affect its performance.</p>
-        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-        /// observations to build the <code>MLModel</code>. The value is an integer that
-        /// ranges from <code>1</code> to <code>10000</code>. The default value is
-        /// <code>10</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-        /// the data improves a model's ability to find the optimal solution for a variety
-        /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-        /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to zero, resulting in a sparse feature set. If you use this
-        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L1 normalization. This parameter can't be used when
-        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to small, nonzero values. If you use this parameter, start by
-        /// specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L2 normalization. This parameter can't be used when
-        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
         /// </ul>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.parameters(k, v);
+            self.inner = self.inner.parameters(k.into(), v.into());
             self
         }
-        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
-        /// a map of key-value pairs.</p>
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
         /// <p>The following is the current set of training parameters:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
-        /// input data, the size of the model might affect its performance.</p>
-        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
-        /// observations to build the <code>MLModel</code>. The value is an integer that
-        /// ranges from <code>1</code> to <code>10000</code>. The default value is
-        /// <code>10</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
-        /// the data improves a model's ability to find the optimal solution for a variety
-        /// of data types. The valid values are <code>auto</code> and <code>none</code>. The
-        /// default value is <code>none</code>. We strongly recommend that you shuffle your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to zero, resulting in a sparse feature set. If you use this
-        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L1 normalization. This parameter can't be used when
-        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
-        /// overfitting the data by penalizing large coefficients. This tends to drive
-        /// coefficients to small, nonzero values. If you use this parameter, start by
-        /// specifying a small value, such as <code>1.0E-08</code>.</p>
-        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L2 normalization. This parameter can't be used when
-        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
-        /// </li>
+        /// <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>
+        /// <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>
+        /// <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>
+        /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
+        /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -1571,8 +1222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
-        pub fn training_data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_data_source_id(inp);
+        pub fn training_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_data_source_id(input.into());
             self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
@@ -1583,21 +1234,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_data_source_id(input);
             self
         }
-        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-        /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-        pub fn recipe(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe(inp);
+        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+        pub fn recipe(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe(input.into());
             self
         }
-        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
-        /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+        /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
         pub fn set_recipe(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_recipe(input);
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-        pub fn recipe_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_uri(inp);
+        pub fn recipe_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_uri(input.into());
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
@@ -1609,7 +1258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRealtimeEndpoint`.
     ///
     /// <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the URI of the <code>MLModel</code>; that is, the location to send real-time prediction requests for the specified <code>MLModel</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRealtimeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1654,10 +1303,10 @@ pub mod fluent_builders {
                 crate::input::CreateRealtimeEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1666,8 +1315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -1679,12 +1328,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBatchPrediction`.
     ///
     /// <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.</p>
-    /// <p>After using the <code>DeleteBatchPrediction</code> operation, you can use the <a>GetBatchPrediction</a>
-    /// operation to verify that the status of the <code>BatchPrediction</code> changed to DELETED.</p>
-    ///
-    /// <p>
-    /// <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After using the <code>DeleteBatchPrediction</code> operation, you can use the <code>GetBatchPrediction</code> operation to verify that the status of the <code>BatchPrediction</code> changed to DELETED.</p>
+    /// <p> <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1729,10 +1375,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBatchPredictionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1741,8 +1387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(inp);
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
@@ -1757,10 +1403,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataSource`.
     ///
     /// <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.</p>
-    /// <p>After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a> operation to verify that the status of the <code>DataSource</code> changed to DELETED.</p>
-    /// <p>
-    /// <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After using the <code>DeleteDataSource</code> operation, you can use the <code>GetDataSource</code> operation to verify that the status of the <code>DataSource</code> changed to DELETED.</p>
+    /// <p> <b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1805,10 +1450,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1817,8 +1462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -1833,12 +1478,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEvaluation`.
     ///
     /// <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it unusable.</p>
-    ///
-    /// <p>After invoking the <code>DeleteEvaluation</code> operation, you can use the
-    /// <code>GetEvaluation</code> operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-    /// <p>
-    /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code> operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
+    /// <p> <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1883,10 +1525,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1895,8 +1537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-        pub fn evaluation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(inp);
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
@@ -1911,12 +1553,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMLModel`.
     ///
     /// <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.</p>
-    /// <p>After using the <code>DeleteMLModel</code> operation, you can use the
-    /// <code>GetMLModel</code> operation to verify that the status of the <code>MLModel</code> changed to DELETED.</p>
-    ///
-    /// <p>
-    /// <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code> operation to verify that the status of the <code>MLModel</code> changed to DELETED.</p>
+    /// <p> <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1961,10 +1600,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMlModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1973,8 +1612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
@@ -1986,7 +1625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRealtimeEndpoint`.
     ///
     /// <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRealtimeEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2031,10 +1670,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRealtimeEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2043,8 +1682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -2057,7 +1696,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified tags associated with an ML object. After this operation is complete, you can't recover deleted tags.</p>
     /// <p>If you specify a tag that doesn't exist, Amazon ML ignores it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2102,10 +1741,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2118,8 +1757,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>One or more tags to delete.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>One or more tags to delete.</p>
@@ -2131,8 +1770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
@@ -2141,8 +1780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the tagged ML object.</p>
-        pub fn resource_type(mut self, inp: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the tagged ML object.</p>
@@ -2157,7 +1796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBatchPredictions`.
     ///
     /// <p>Returns a list of <code>BatchPrediction</code> operations that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBatchPredictions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2202,10 +1841,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBatchPredictionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2213,75 +1852,40 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBatchPredictionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBatchPredictionsPaginator<C, M, R> {
+            crate::paginator::DescribeBatchPredictionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
-        pub fn filter_variable(mut self, inp: crate::model::BatchPredictionFilterVariable) -> Self {
-            self.inner = self.inner.filter_variable(inp);
+        pub fn filter_variable(
+            mut self,
+            input: crate::model::BatchPredictionFilterVariable,
+        ) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>
+        /// <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -2290,57 +1894,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_variable(input);
             self
         }
-        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(inp);
+        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eq(input);
             self
         }
-        /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(inp);
+        /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gt(input);
             self
         }
-        /// <p>The less than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(inp);
+        /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
-        /// <p>The less than operator. The <code>BatchPrediction</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lt(input);
             self
         }
-        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
-        pub fn ge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(inp);
+        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ge(input);
             self
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(inp);
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2349,8 +1945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(inp);
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2359,44 +1955,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_prefix(input);
@@ -2404,30 +1978,18 @@ pub mod fluent_builders {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -2438,8 +2000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An ID of the page in the paginated results.</p>
@@ -2448,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -2461,7 +2023,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataSources`.
     ///
     /// <p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2506,10 +2068,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDataSourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2517,57 +2079,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDataSourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeDataSourcesPaginator<C, M, R> {
+            crate::paginator::DescribeDataSourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
         /// </ul>
-        pub fn filter_variable(mut self, inp: crate::model::DataSourceFilterVariable) -> Self {
-            self.inner = self.inner.filter_variable(inp);
+        pub fn filter_variable(mut self, input: crate::model::DataSourceFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -2576,57 +2112,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_variable(input);
             self
         }
-        /// <p>The equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(inp);
+        /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eq(input);
             self
         }
-        /// <p>The greater than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(inp);
+        /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gt(input);
             self
         }
-        /// <p>The less than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(inp);
+        /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
-        /// <p>The less than operator. The <code>DataSource</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lt(input);
             self
         }
-        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
-        pub fn ge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(inp);
+        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ge(input);
             self
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(inp);
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2635,8 +2163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(inp);
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2645,44 +2173,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_prefix(input);
@@ -2690,30 +2196,18 @@ pub mod fluent_builders {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -2724,8 +2218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -2734,8 +2228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
@@ -2747,7 +2241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEvaluations`.
     ///
     /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvaluations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2792,10 +2286,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEvaluationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2803,75 +2297,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEvaluationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEvaluationsPaginator<C, M, R> {
+            crate::paginator::DescribeEvaluationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
-        pub fn filter_variable(mut self, inp: crate::model::EvaluationFilterVariable) -> Self {
-            self.inner = self.inner.filter_variable(inp);
+        pub fn filter_variable(mut self, input: crate::model::EvaluationFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
-        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
+        /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
+        /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
+        /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -2880,57 +2334,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_variable(input);
             self
         }
-        /// <p>The equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(inp);
+        /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eq(input);
             self
         }
-        /// <p>The greater than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(inp);
+        /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gt(input);
             self
         }
-        /// <p>The less than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(inp);
+        /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
-        /// <p>The less than operator. The <code>Evaluation</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lt(input);
             self
         }
-        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
-        pub fn ge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(inp);
+        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ge(input);
             self
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(inp);
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2939,8 +2385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(inp);
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2949,44 +2395,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_prefix(input);
@@ -2994,30 +2418,18 @@ pub mod fluent_builders {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -3028,8 +2440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -3038,8 +2450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
@@ -3051,7 +2463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMLModels`.
     ///
     /// <p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMLModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3096,10 +2508,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMlModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3107,91 +2519,39 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMlModelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeMlModelsPaginator<C, M, R> {
+            crate::paginator::DescribeMlModelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
-        pub fn filter_variable(mut self, inp: crate::model::MlModelFilterVariable) -> Self {
-            self.inner = self.inner.filter_variable(inp);
+        pub fn filter_variable(mut self, input: crate::model::MlModelFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-        /// <b> </b>
-        /// <code>Name</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
-        /// </li>
+        /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>
+        /// <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>
+        /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>
+        /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>
+        /// <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>
+        /// <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>
+        /// <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>
+        /// <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>
+        /// <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
         /// </ul>
         pub fn set_filter_variable(
             mut self,
@@ -3200,57 +2560,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_variable(input);
             self
         }
-        /// <p>The equal to operator. The <code>MLModel</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(inp);
+        /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
-        /// <p>The equal to operator. The <code>MLModel</code> results will have
-        /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+        /// <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
         pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eq(input);
             self
         }
-        /// <p>The greater than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(inp);
+        /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
-        /// <p>The greater than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+        /// <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
         pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gt(input);
             self
         }
-        /// <p>The less than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(inp);
+        /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
-        /// <p>The less than operator. The <code>MLModel</code> results will
-        /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+        /// <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
         pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lt(input);
             self
         }
-        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
-        pub fn ge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(inp);
+        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
-        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
-        /// </p>
+        /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
         pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ge(input);
             self
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(inp);
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -3259,8 +2611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(inp);
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -3269,44 +2621,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code>
-        /// <code>2014-09-09-HolidayGiftMailer</code>. To search for
-        /// this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the
-        /// <code>Prefix</code>:
-        /// </p>
-        ///
+        /// <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
         /// <ul>
-        /// <li>
-        /// <p>2014-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09</p>
-        /// </li>
-        /// <li>
-        /// <p>2014-09-09-Holiday</p>
-        /// </li>
+        /// <li> <p>2014-09</p> </li>
+        /// <li> <p>2014-09-09</p> </li>
+        /// <li> <p>2014-09-09-Holiday</p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_prefix(input);
@@ -3314,30 +2644,18 @@ pub mod fluent_builders {
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p>
-        /// </li>
+        /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+        /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
         pub fn set_sort_order(
@@ -3348,8 +2666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -3358,8 +2676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -3371,7 +2689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes one or more of the tags for your Amazon ML object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3416,10 +2734,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3428,8 +2746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
@@ -3438,8 +2756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the ML object.</p>
-        pub fn resource_type(mut self, inp: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the ML object.</p>
@@ -3453,9 +2771,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBatchPrediction`.
     ///
-    /// <p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a
-    /// <code>Batch Prediction</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a <code>Batch Prediction</code> request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3500,10 +2817,10 @@ pub mod fluent_builders {
                 crate::input::GetBatchPredictionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3512,8 +2829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-        pub fn batch_prediction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(inp);
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
@@ -3528,10 +2845,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataSource`.
     ///
     /// <p>Returns a <code>DataSource</code> that includes metadata and data file information, as well as the current status of the <code>DataSource</code>.</p>
-    /// <p>
-    /// <code>GetDataSource</code> provides results in normal or verbose format. The verbose format
-    /// adds the schema description and the list of files pointed to by the DataSource to the normal format.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>GetDataSource</code> provides results in normal or verbose format. The verbose format adds the schema description and the list of files pointed to by the DataSource to the normal format.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3576,10 +2891,10 @@ pub mod fluent_builders {
                 crate::input::GetDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3588,8 +2903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
@@ -3603,8 +2918,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
         /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
         /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-        pub fn verbose(mut self, inp: bool) -> Self {
-            self.inner = self.inner.verbose(inp);
+        pub fn verbose(mut self, input: bool) -> Self {
+            self.inner = self.inner.verbose(input);
             self
         }
         /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
@@ -3618,7 +2933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvaluation`.
     ///
     /// <p>Returns an <code>Evaluation</code> that includes metadata as well as the current status of the <code>Evaluation</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3663,10 +2978,10 @@ pub mod fluent_builders {
                 crate::input::GetEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3675,8 +2990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-        pub fn evaluation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(inp);
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
@@ -3691,9 +3006,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMLModel`.
     ///
     /// <p>Returns an <code>MLModel</code> that includes detailed metadata, data source information, and the current status of the <code>MLModel</code>.</p>
-    /// <p>
-    /// <code>GetMLModel</code> provides results in normal or verbose format. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>GetMLModel</code> provides results in normal or verbose format. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3738,10 +3052,10 @@ pub mod fluent_builders {
                 crate::input::GetMlModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3750,8 +3064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
@@ -3762,8 +3076,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
         /// <p>If true, <code>Recipe</code> is returned.</p>
         /// <p>If false, <code>Recipe</code> is not returned.</p>
-        pub fn verbose(mut self, inp: bool) -> Self {
-            self.inner = self.inner.verbose(inp);
+        pub fn verbose(mut self, input: bool) -> Self {
+            self.inner = self.inner.verbose(input);
             self
         }
         /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
@@ -3777,10 +3091,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Predict`.
     ///
     /// <p>Generates a prediction for the observation using the specified <code>ML Model</code>.</p>
-    /// <p>
-    /// <b>Note:</b> Not all response parameters will be populated. Whether a
-    /// response parameter is populated depends on the type of model requested.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Note:</b> Not all response parameters will be populated. Whether a response parameter is populated depends on the type of model requested.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Predict<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3825,10 +3137,10 @@ pub mod fluent_builders {
                 crate::input::PredictInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3837,8 +3149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier of the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A unique identifier of the <code>MLModel</code>.</p>
@@ -3856,7 +3168,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record(k, v);
+            self.inner = self.inner.record(k.into(), v.into());
             self
         }
         /// <p>A map of variable name-value pairs that represent an observation.</p>
@@ -3870,8 +3182,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn predict_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predict_endpoint(inp);
+        pub fn predict_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predict_endpoint(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3887,7 +3199,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.</p>
     /// <p>You can use the <code>GetBatchPrediction</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBatchPrediction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3932,10 +3244,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBatchPredictionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3944,8 +3256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-        pub fn batch_prediction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(inp);
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
@@ -3957,8 +3269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_name(inp);
+        pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -3974,7 +3286,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
     /// <p>You can use the <code>GetDataSource</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4019,10 +3331,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4031,8 +3343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-        pub fn data_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(inp);
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
@@ -4044,8 +3356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-        pub fn data_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(inp);
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
@@ -4061,7 +3373,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
     /// <p>You can use the <code>GetEvaluation</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4106,10 +3418,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4118,8 +3430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-        pub fn evaluation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(inp);
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
@@ -4131,8 +3443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-        pub fn evaluation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_name(inp);
+        pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
@@ -4148,7 +3460,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.</p>
     /// <p>You can use the <code>GetMLModel</code> operation to view the contents of the updated data element.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMLModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4193,10 +3505,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMlModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4205,8 +3517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(inp);
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -4215,8 +3527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn ml_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_name(inp);
+        pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -4229,8 +3541,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
         /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
-        pub fn score_threshold(mut self, inp: f32) -> Self {
-            self.inner = self.inner.score_threshold(inp);
+        pub fn score_threshold(mut self, input: f32) -> Self {
+            self.inner = self.inner.score_threshold(input);
             self
         }
         /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
@@ -4241,6 +3553,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

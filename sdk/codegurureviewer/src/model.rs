@@ -54,141 +54,55 @@ impl AsRef<str> for Reaction {
     }
 }
 
-/// <p>Summary information about a repository association. The
-/// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-/// <code>ListRepositoryAssociations</code>
-/// </a>
-/// operation returns a list of <code>RepositoryAssociationSummary</code> objects.</p>
+/// <p>Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAssociationSummary {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub association_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub connection_arn: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, since the repository association
-    /// was last updated.
-    /// </p>
+    /// <p>The time, in milliseconds since the epoch, since the repository association was last updated. </p>
     pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The repository association ID.
-    /// </p>
+    /// <p> The repository association ID. </p>
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository association.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider type of the repository association.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::RepositoryAssociationState>,
 }
 impl RepositoryAssociationSummary {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, since the repository association
-    /// was last updated.
-    /// </p>
+    /// <p>The time, in milliseconds since the epoch, since the repository association was last updated. </p>
     pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
-    /// <p>
-    /// The repository association ID.
-    /// </p>
+    /// <p> The repository association ID. </p>
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
@@ -196,9 +110,7 @@ impl RepositoryAssociationSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -209,57 +121,17 @@ impl RepositoryAssociationSummary {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::RepositoryAssociationState> {
         self.state.as_ref()
@@ -295,30 +167,12 @@ pub mod repository_association_summary {
         pub(crate) state: std::option::Option<crate::model::RepositoryAssociationState>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,26 +180,12 @@ pub mod repository_association_summary {
             self.association_arn = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -353,16 +193,12 @@ pub mod repository_association_summary {
             self.connection_arn = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, since the repository association
-        /// was last updated.
-        /// </p>
+        /// <p>The time, in milliseconds since the epoch, since the repository association was last updated. </p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, since the repository association
-        /// was last updated.
-        /// </p>
+        /// <p>The time, in milliseconds since the epoch, since the repository association was last updated. </p>
         pub fn set_last_updated_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -370,16 +206,12 @@ pub mod repository_association_summary {
             self.last_updated_time_stamp = input;
             self
         }
-        /// <p>
-        /// The repository association ID.
-        /// </p>
+        /// <p> The repository association ID. </p>
         pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The repository association ID.
-        /// </p>
+        /// <p> The repository association ID. </p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -397,16 +229,12 @@ pub mod repository_association_summary {
             self.name = input;
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -427,57 +255,17 @@ pub mod repository_association_summary {
         /// <p>The state of the repository association.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             self.state = Some(input);
@@ -486,57 +274,17 @@ pub mod repository_association_summary {
         /// <p>The state of the repository association.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -713,35 +461,23 @@ impl AsRef<str> for ProviderType {
     }
 }
 
-/// <p>
-/// Information about recommendations.
-/// </p>
+/// <p> Information about recommendations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationSummary {
     /// <p>Name of the file on which a recommendation is provided.</p>
     pub file_path: std::option::Option<std::string::String>,
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Start line from where the recommendation is applicable in the source commit or source branch.
-    /// </p>
+    /// <p> Start line from where the recommendation is applicable in the source commit or source branch. </p>
     pub start_line: std::option::Option<i32>,
-    /// <p>
-    /// Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.
-    /// </p>
+    /// <p> Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same. </p>
     pub end_line: std::option::Option<i32>,
-    /// <p>
-    /// A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.
-    /// </p>
+    /// <p> A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of a recommendation.</p>
     pub recommendation_category: std::option::Option<crate::model::RecommendationCategory>,
-    /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
-    /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
-    /// included in analysis results if code is detected that violates the rule.</p>
+    /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
     pub rule_metadata: std::option::Option<crate::model::RuleMetadata>,
     /// <p>The severity of the issue in the code that generated this recommendation.</p>
     pub severity: std::option::Option<crate::model::Severity>,
@@ -751,27 +487,19 @@ impl RecommendationSummary {
     pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>
-    /// Start line from where the recommendation is applicable in the source commit or source branch.
-    /// </p>
+    /// <p> Start line from where the recommendation is applicable in the source commit or source branch. </p>
     pub fn start_line(&self) -> std::option::Option<i32> {
         self.start_line
     }
-    /// <p>
-    /// Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.
-    /// </p>
+    /// <p> Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same. </p>
     pub fn end_line(&self) -> std::option::Option<i32> {
         self.end_line
     }
-    /// <p>
-    /// A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.
-    /// </p>
+    /// <p> A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -781,9 +509,7 @@ impl RecommendationSummary {
     ) -> std::option::Option<&crate::model::RecommendationCategory> {
         self.recommendation_category.as_ref()
     }
-    /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
-    /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
-    /// included in analysis results if code is detected that violates the rule.</p>
+    /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
     pub fn rule_metadata(&self) -> std::option::Option<&crate::model::RuleMetadata> {
         self.rule_metadata.as_ref()
     }
@@ -833,16 +559,12 @@ pub mod recommendation_summary {
             self.file_path = input;
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -850,44 +572,32 @@ pub mod recommendation_summary {
             self.recommendation_id = input;
             self
         }
-        /// <p>
-        /// Start line from where the recommendation is applicable in the source commit or source branch.
-        /// </p>
+        /// <p> Start line from where the recommendation is applicable in the source commit or source branch. </p>
         pub fn start_line(mut self, input: i32) -> Self {
             self.start_line = Some(input);
             self
         }
-        /// <p>
-        /// Start line from where the recommendation is applicable in the source commit or source branch.
-        /// </p>
+        /// <p> Start line from where the recommendation is applicable in the source commit or source branch. </p>
         pub fn set_start_line(mut self, input: std::option::Option<i32>) -> Self {
             self.start_line = input;
             self
         }
-        /// <p>
-        /// Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.
-        /// </p>
+        /// <p> Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same. </p>
         pub fn end_line(mut self, input: i32) -> Self {
             self.end_line = Some(input);
             self
         }
-        /// <p>
-        /// Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same.
-        /// </p>
+        /// <p> Last line where the recommendation is applicable in the source commit or source branch. For a single line comment the start line and end line values are the same. </p>
         pub fn set_end_line(mut self, input: std::option::Option<i32>) -> Self {
             self.end_line = input;
             self
         }
-        /// <p>
-        /// A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.
-        /// </p>
+        /// <p> A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line.
-        /// </p>
+        /// <p> A description of the recommendation generated by CodeGuru Reviewer for the lines of code between the start line and the end line. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -908,16 +618,12 @@ pub mod recommendation_summary {
             self.recommendation_category = input;
             self
         }
-        /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
-        /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
-        /// included in analysis results if code is detected that violates the rule.</p>
+        /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
         pub fn rule_metadata(mut self, input: crate::model::RuleMetadata) -> Self {
             self.rule_metadata = Some(input);
             self
         }
-        /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
-        /// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
-        /// included in analysis results if code is detected that violates the rule.</p>
+        /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
         pub fn set_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::RuleMetadata>,
@@ -1024,9 +730,7 @@ impl AsRef<str> for Severity {
     }
 }
 
-/// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a
-/// short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is
-/// included in analysis results if code is detected that violates the rule.</p>
+/// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleMetadata {
@@ -1274,51 +978,29 @@ impl AsRef<str> for RecommendationCategory {
     }
 }
 
-/// <p>
-/// Information about recommendation feedback summaries.
-/// </p>
+/// <p> Information about recommendation feedback summaries. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationFeedbackSummary {
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. </p>
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-    /// <p>
-    /// The ID of the user that gave the feedback.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> The ID of the user that gave the feedback. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl RecommendationFeedbackSummary {
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. </p>
     pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
         self.reactions.as_deref()
     }
-    /// <p>
-    /// The ID of the user that gave the feedback.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> The ID of the user that gave the feedback. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -1343,16 +1025,12 @@ pub mod recommendation_feedback_summary {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1364,18 +1042,14 @@ pub mod recommendation_feedback_summary {
         ///
         /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).
         ///
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis.
-        /// </p>
-        pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. </p>
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions = Some(v);
             self
         }
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis.
-        /// </p>
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. </p>
         pub fn set_reactions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
@@ -1383,26 +1057,14 @@ pub mod recommendation_feedback_summary {
             self.reactions = input;
             self
         }
-        /// <p>
-        /// The ID of the user that gave the feedback.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> The ID of the user that gave the feedback. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the user that gave the feedback.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> The ID of the user that gave the feedback. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -1424,179 +1086,95 @@ impl RecommendationFeedbackSummary {
     }
 }
 
-/// <p>
-/// Information about the summary of the code review.
-/// </p>
+/// <p> Information about the summary of the code review. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeReviewSummary {
-    /// <p>
-    /// The name of the code review.
-    /// </p>
+    /// <p> The name of the code review. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the repository.
-    /// </p>
+    /// <p> The name of the repository. </p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>
-    /// The provider type of the repository association.
-    /// </p>
+    /// <p> The provider type of the repository association. </p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>
-    /// The state of the code review.
-    /// </p>
+    /// <p> The state of the code review. </p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::JobState>,
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was created.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was last updated.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
     pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The type of the code review.
-    /// </p>
+    /// <p> The type of the code review. </p>
     pub r#type: std::option::Option<crate::model::Type>,
-    /// <p>
-    /// The pull request ID for the code review.
-    /// </p>
+    /// <p> The pull request ID for the code review. </p>
     pub pull_request_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The statistics from the code review.
-    /// </p>
+    /// <p> The statistics from the code review. </p>
     pub metrics_summary: std::option::Option<crate::model::MetricsSummary>,
-    /// <p>
-    /// Specifies the source code that is analyzed in a code review.
-    /// </p>
+    /// <p> Specifies the source code that is analyzed in a code review. </p>
     pub source_code_type: std::option::Option<crate::model::SourceCodeType>,
 }
 impl CodeReviewSummary {
-    /// <p>
-    /// The name of the code review.
-    /// </p>
+    /// <p> The name of the code review. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// The name of the repository.
-    /// </p>
+    /// <p> The name of the repository. </p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>
-    /// The provider type of the repository association.
-    /// </p>
+    /// <p> The provider type of the repository association. </p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>
-    /// The state of the code review.
-    /// </p>
+    /// <p> The state of the code review. </p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::JobState> {
         self.state.as_ref()
     }
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was created.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
     pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was last updated.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
     pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
-    /// <p>
-    /// The type of the code review.
-    /// </p>
+    /// <p> The type of the code review. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
-    /// <p>
-    /// The pull request ID for the code review.
-    /// </p>
+    /// <p> The pull request ID for the code review. </p>
     pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
-    /// <p>
-    /// The statistics from the code review.
-    /// </p>
+    /// <p> The statistics from the code review. </p>
     pub fn metrics_summary(&self) -> std::option::Option<&crate::model::MetricsSummary> {
         self.metrics_summary.as_ref()
     }
-    /// <p>
-    /// Specifies the source code that is analyzed in a code review.
-    /// </p>
+    /// <p> Specifies the source code that is analyzed in a code review. </p>
     pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
@@ -1639,32 +1217,22 @@ pub mod code_review_summary {
         pub(crate) source_code_type: std::option::Option<crate::model::SourceCodeType>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the code review.
-        /// </p>
+        /// <p> The name of the code review. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the code review.
-        /// </p>
+        /// <p> The name of the code review. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1672,16 +1240,12 @@ pub mod code_review_summary {
             self.code_review_arn = input;
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
+        /// <p> The name of the repository. </p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
+        /// <p> The name of the repository. </p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1689,30 +1253,22 @@ pub mod code_review_summary {
             self.repository_name = input;
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>
-        /// The provider type of the repository association.
-        /// </p>
+        /// <p> The provider type of the repository association. </p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>
-        /// The provider type of the repository association.
-        /// </p>
+        /// <p> The provider type of the repository association. </p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -1720,76 +1276,36 @@ pub mod code_review_summary {
             self.provider_type = input;
             self
         }
-        /// <p>
-        /// The state of the code review.
-        /// </p>
+        /// <p> The state of the code review. </p>
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::JobState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>
-        /// The state of the code review.
-        /// </p>
+        /// <p> The state of the code review. </p>
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was created.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was created.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
         pub fn set_created_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1797,16 +1313,12 @@ pub mod code_review_summary {
             self.created_time_stamp = input;
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was last updated.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was last updated.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
         pub fn set_last_updated_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1814,30 +1326,22 @@ pub mod code_review_summary {
             self.last_updated_time_stamp = input;
             self
         }
-        /// <p>
-        /// The type of the code review.
-        /// </p>
+        /// <p> The type of the code review. </p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the code review.
-        /// </p>
+        /// <p> The type of the code review. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>
-        /// The pull request ID for the code review.
-        /// </p>
+        /// <p> The pull request ID for the code review. </p>
         pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pull_request_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The pull request ID for the code review.
-        /// </p>
+        /// <p> The pull request ID for the code review. </p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,16 +1349,12 @@ pub mod code_review_summary {
             self.pull_request_id = input;
             self
         }
-        /// <p>
-        /// The statistics from the code review.
-        /// </p>
+        /// <p> The statistics from the code review. </p>
         pub fn metrics_summary(mut self, input: crate::model::MetricsSummary) -> Self {
             self.metrics_summary = Some(input);
             self
         }
-        /// <p>
-        /// The statistics from the code review.
-        /// </p>
+        /// <p> The statistics from the code review. </p>
         pub fn set_metrics_summary(
             mut self,
             input: std::option::Option<crate::model::MetricsSummary>,
@@ -1862,16 +1362,12 @@ pub mod code_review_summary {
             self.metrics_summary = input;
             self
         }
-        /// <p>
-        /// Specifies the source code that is analyzed in a code review.
-        /// </p>
+        /// <p> Specifies the source code that is analyzed in a code review. </p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
             self.source_code_type = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the source code that is analyzed in a code review.
-        /// </p>
+        /// <p> Specifies the source code that is analyzed in a code review. </p>
         pub fn set_source_code_type(
             mut self,
             input: std::option::Option<crate::model::SourceCodeType>,
@@ -1905,91 +1401,41 @@ impl CodeReviewSummary {
     }
 }
 
-/// <p>
-/// Specifies the source code that is analyzed in a code review.
-/// </p>
+/// <p> Specifies the source code that is analyzed in a code review. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceCodeType {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies a commit diff created by a pull request on an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated repository. </p>
     pub commit_diff: std::option::Option<crate::model::CommitDiffSourceCodeType>,
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that specifies
-    /// the tip of a branch in an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
     pub repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
-    /// <p>
-    /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies a source branch name and a destination branch name in an associated repository.
-    /// </p>
+    /// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an associated repository. </p>
     pub branch_diff: std::option::Option<crate::model::BranchDiffSourceCodeType>,
-    /// <p>
-    /// Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object.
-    /// The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
-    /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> for
-    /// <code>S3BucketRepository</code> based code reviews.
-    /// </p>
+    /// <p> Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews. </p>
     pub s3_bucket_repository: std::option::Option<crate::model::S3BucketRepository>,
-    /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The
-    /// <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with
-    /// an event trigger, such as a push or a pull request. </p>
+    /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request. </p>
     pub request_metadata: std::option::Option<crate::model::RequestMetadata>,
 }
 impl SourceCodeType {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies a commit diff created by a pull request on an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated repository. </p>
     pub fn commit_diff(&self) -> std::option::Option<&crate::model::CommitDiffSourceCodeType> {
         self.commit_diff.as_ref()
     }
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that specifies
-    /// the tip of a branch in an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
     pub fn repository_head(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
-    /// <p>
-    /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies a source branch name and a destination branch name in an associated repository.
-    /// </p>
+    /// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an associated repository. </p>
     pub fn branch_diff(&self) -> std::option::Option<&crate::model::BranchDiffSourceCodeType> {
         self.branch_diff.as_ref()
     }
-    /// <p>
-    /// Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object.
-    /// The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
-    /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> for
-    /// <code>S3BucketRepository</code> based code reviews.
-    /// </p>
+    /// <p> Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews. </p>
     pub fn s3_bucket_repository(&self) -> std::option::Option<&crate::model::S3BucketRepository> {
         self.s3_bucket_repository.as_ref()
     }
-    /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The
-    /// <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with
-    /// an event trigger, such as a push or a pull request. </p>
+    /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request. </p>
     pub fn request_metadata(&self) -> std::option::Option<&crate::model::RequestMetadata> {
         self.request_metadata.as_ref()
     }
@@ -2018,22 +1464,12 @@ pub mod source_code_type {
         pub(crate) request_metadata: std::option::Option<crate::model::RequestMetadata>,
     }
     impl Builder {
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies a commit diff created by a pull request on an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated repository. </p>
         pub fn commit_diff(mut self, input: crate::model::CommitDiffSourceCodeType) -> Self {
             self.commit_diff = Some(input);
             self
         }
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies a commit diff created by a pull request on an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated repository. </p>
         pub fn set_commit_diff(
             mut self,
             input: std::option::Option<crate::model::CommitDiffSourceCodeType>,
@@ -2041,12 +1477,7 @@ pub mod source_code_type {
             self.commit_diff = input;
             self
         }
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that specifies
-        /// the tip of a branch in an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
         pub fn repository_head(
             mut self,
             input: crate::model::RepositoryHeadSourceCodeType,
@@ -2054,12 +1485,7 @@ pub mod source_code_type {
             self.repository_head = Some(input);
             self
         }
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that specifies
-        /// the tip of a branch in an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
         pub fn set_repository_head(
             mut self,
             input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
@@ -2067,22 +1493,12 @@ pub mod source_code_type {
             self.repository_head = input;
             self
         }
-        /// <p>
-        /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies a source branch name and a destination branch name in an associated repository.
-        /// </p>
+        /// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an associated repository. </p>
         pub fn branch_diff(mut self, input: crate::model::BranchDiffSourceCodeType) -> Self {
             self.branch_diff = Some(input);
             self
         }
-        /// <p>
-        /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies a source branch name and a destination branch name in an associated repository.
-        /// </p>
+        /// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an associated repository. </p>
         pub fn set_branch_diff(
             mut self,
             input: std::option::Option<crate::model::BranchDiffSourceCodeType>,
@@ -2090,26 +1506,12 @@ pub mod source_code_type {
             self.branch_diff = input;
             self
         }
-        /// <p>
-        /// Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object.
-        /// The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
-        /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> for
-        /// <code>S3BucketRepository</code> based code reviews.
-        /// </p>
+        /// <p> Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews. </p>
         pub fn s3_bucket_repository(mut self, input: crate::model::S3BucketRepository) -> Self {
             self.s3_bucket_repository = Some(input);
             self
         }
-        /// <p>
-        /// Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object.
-        /// The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
-        /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> for
-        /// <code>S3BucketRepository</code> based code reviews.
-        /// </p>
+        /// <p> Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews. </p>
         pub fn set_s3_bucket_repository(
             mut self,
             input: std::option::Option<crate::model::S3BucketRepository>,
@@ -2117,16 +1519,12 @@ pub mod source_code_type {
             self.s3_bucket_repository = input;
             self
         }
-        /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The
-        /// <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with
-        /// an event trigger, such as a push or a pull request. </p>
+        /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request. </p>
         pub fn request_metadata(mut self, input: crate::model::RequestMetadata) -> Self {
             self.request_metadata = Some(input);
             self
         }
-        /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The
-        /// <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with
-        /// an event trigger, such as a push or a pull request. </p>
+        /// <p>Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request. </p>
         pub fn set_request_metadata(
             mut self,
             input: std::option::Option<crate::model::RequestMetadata>,
@@ -2153,23 +1551,17 @@ impl SourceCodeType {
     }
 }
 
-/// <p>Metadata that is associated with a code review. This applies to both pull request
-/// and repository analysis code reviews.</p>
+/// <p>Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestMetadata {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>An identifier, such as a name or account ID, that is associated with the requester. The
-    /// <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
+    /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
     pub requester: std::option::Option<std::string::String>,
     /// <p>Information about the event associated with a code review.</p>
     pub event_info: std::option::Option<crate::model::EventInfo>,
-    /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code
-    /// review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code
-    /// review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is
-    /// <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more
-    /// information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
+    /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
     pub vendor_name: std::option::Option<crate::model::VendorName>,
 }
 impl RequestMetadata {
@@ -2177,8 +1569,7 @@ impl RequestMetadata {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>An identifier, such as a name or account ID, that is associated with the requester. The
-    /// <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
+    /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
     pub fn requester(&self) -> std::option::Option<&str> {
         self.requester.as_deref()
     }
@@ -2186,11 +1577,7 @@ impl RequestMetadata {
     pub fn event_info(&self) -> std::option::Option<&crate::model::EventInfo> {
         self.event_info.as_ref()
     }
-    /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code
-    /// review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code
-    /// review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is
-    /// <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more
-    /// information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
+    /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
     pub fn vendor_name(&self) -> std::option::Option<&crate::model::VendorName> {
         self.vendor_name.as_ref()
     }
@@ -2227,14 +1614,12 @@ pub mod request_metadata {
             self.request_id = input;
             self
         }
-        /// <p>An identifier, such as a name or account ID, that is associated with the requester. The
-        /// <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
+        /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
         pub fn requester(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester = Some(input.into());
             self
         }
-        /// <p>An identifier, such as a name or account ID, that is associated with the requester. The
-        /// <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
+        /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
         pub fn set_requester(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.requester = input;
             self
@@ -2252,20 +1637,12 @@ pub mod request_metadata {
             self.event_info = input;
             self
         }
-        /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code
-        /// review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code
-        /// review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is
-        /// <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more
-        /// information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
+        /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
         pub fn vendor_name(mut self, input: crate::model::VendorName) -> Self {
             self.vendor_name = Some(input);
             self
         }
-        /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code
-        /// review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code
-        /// review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is
-        /// <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more
-        /// information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
+        /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>. </p>
         pub fn set_vendor_name(
             mut self,
             input: std::option::Option<crate::model::VendorName>,
@@ -2354,17 +1731,13 @@ impl AsRef<str> for VendorName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventInfo {
-    /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>,
-    /// <code>schedule</code>, and <code>push</code>
-    /// </p>
+    /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of an event. The state might be open, closed, or another state.</p>
     pub state: std::option::Option<std::string::String>,
 }
 impl EventInfo {
-    /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>,
-    /// <code>schedule</code>, and <code>push</code>
-    /// </p>
+    /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -2391,16 +1764,12 @@ pub mod event_info {
         pub(crate) state: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>,
-        /// <code>schedule</code>, and <code>push</code>
-        /// </p>
+        /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>,
-        /// <code>schedule</code>, and <code>push</code>
-        /// </p>
+        /// <p>The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2431,36 +1800,21 @@ impl EventInfo {
     }
 }
 
-/// <p>
-/// Information about an associated repository in an S3 bucket. The associated repository contains a source code
-/// .zip file and a build artifacts .zip file that contains .jar or .class files.
-/// </p>
+/// <p> Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketRepository {
-    /// <p>
-    /// The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.
-    /// </p>
+    /// <p> The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and
-    /// a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-    /// object keys for a source code .zip file and for a build artifacts .zip file.
-    /// </p>
+    /// <p> An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file. </p>
     pub details: std::option::Option<crate::model::S3RepositoryDetails>,
 }
 impl S3BucketRepository {
-    /// <p>
-    /// The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.
-    /// </p>
+    /// <p> The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and
-    /// a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-    /// object keys for a source code .zip file and for a build artifacts .zip file.
-    /// </p>
+    /// <p> An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file. </p>
     pub fn details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
         self.details.as_ref()
     }
@@ -2483,34 +1837,22 @@ pub mod s3_bucket_repository {
         pub(crate) details: std::option::Option<crate::model::S3RepositoryDetails>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.
-        /// </p>
+        /// <p> The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.
-        /// </p>
+        /// <p> The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>
-        /// An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and
-        /// a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-        /// object keys for a source code .zip file and for a build artifacts .zip file.
-        /// </p>
+        /// <p> An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file. </p>
         pub fn details(mut self, input: crate::model::S3RepositoryDetails) -> Self {
             self.details = Some(input);
             self
         }
-        /// <p>
-        /// An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and
-        /// a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-        /// object keys for a source code .zip file and for a build artifacts .zip file.
-        /// </p>
+        /// <p> An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file. </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::S3RepositoryDetails>,
@@ -2534,32 +1876,21 @@ impl S3BucketRepository {
     }
 }
 
-/// <p>
-/// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3
-/// object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-/// </p>
+/// <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3RepositoryDetails {
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-    /// <code>codeguru-reviewer-</code>. </p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-    /// object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    /// </p>
+    /// <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
     pub code_artifacts: std::option::Option<crate::model::CodeArtifacts>,
 }
 impl S3RepositoryDetails {
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-    /// <code>codeguru-reviewer-</code>. </p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p>
-    /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-    /// object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    /// </p>
+    /// <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
     pub fn code_artifacts(&self) -> std::option::Option<&crate::model::CodeArtifacts> {
         self.code_artifacts.as_ref()
     }
@@ -2582,30 +1913,22 @@ pub mod s3_repository_details {
         pub(crate) code_artifacts: std::option::Option<crate::model::CodeArtifacts>,
     }
     impl Builder {
-        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-        /// <code>codeguru-reviewer-</code>. </p>
+        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-        /// <code>codeguru-reviewer-</code>. </p>
+        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
         }
-        /// <p>
-        /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-        /// object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-        /// </p>
+        /// <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
         pub fn code_artifacts(mut self, input: crate::model::CodeArtifacts) -> Self {
             self.code_artifacts = Some(input);
             self
         }
-        /// <p>
-        /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3
-        /// object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-        /// </p>
+        /// <p> A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
         pub fn set_code_artifacts(
             mut self,
             input: std::option::Option<crate::model::CodeArtifacts>,
@@ -2631,23 +1954,15 @@ impl S3RepositoryDetails {
 
 /// <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p>
 /// <ul>
-/// <li>
-/// <p>Source code artifacts are source code files in a Git repository that are
-/// compressed into a .zip file.</p>
-/// </li>
-/// <li>
-/// <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p>
-/// </li>
+/// <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li>
+/// <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeArtifacts {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
     pub source_code_artifacts_object_key: std::option::Option<std::string::String>,
-    /// <p>The S3 object key for a build artifacts .zip file that
-    /// contains .jar or .class files. This is required for a code review with security analysis. For more
-    /// information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security
-    /// analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+    /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub build_artifacts_object_key: std::option::Option<std::string::String>,
 }
 impl CodeArtifacts {
@@ -2655,10 +1970,7 @@ impl CodeArtifacts {
     pub fn source_code_artifacts_object_key(&self) -> std::option::Option<&str> {
         self.source_code_artifacts_object_key.as_deref()
     }
-    /// <p>The S3 object key for a build artifacts .zip file that
-    /// contains .jar or .class files. This is required for a code review with security analysis. For more
-    /// information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security
-    /// analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+    /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub fn build_artifacts_object_key(&self) -> std::option::Option<&str> {
         self.build_artifacts_object_key.as_deref()
     }
@@ -2703,18 +2015,12 @@ pub mod code_artifacts {
             self.source_code_artifacts_object_key = input;
             self
         }
-        /// <p>The S3 object key for a build artifacts .zip file that
-        /// contains .jar or .class files. This is required for a code review with security analysis. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security
-        /// analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+        /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
         pub fn build_artifacts_object_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_artifacts_object_key = Some(input.into());
             self
         }
-        /// <p>The S3 object key for a build artifacts .zip file that
-        /// contains .jar or .class files. This is required for a code review with security analysis. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security
-        /// analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+        /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
         pub fn set_build_artifacts_object_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2738,12 +2044,7 @@ impl CodeArtifacts {
     }
 }
 
-/// <p>
-/// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-/// <code>SourceCodeType</code>
-/// </a> that
-/// specifies a code diff between a source and destination branch in an associated repository.
-/// </p>
+/// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a code diff between a source and destination branch in an associated repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchDiffSourceCodeType {
@@ -2822,26 +2123,15 @@ impl BranchDiffSourceCodeType {
     }
 }
 
-/// <p>
-/// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-/// <code>SourceCodeType</code>
-/// </a> that specifies
-/// the tip of a branch in an associated repository.
-/// </p>
+/// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryHeadSourceCodeType {
-    /// <p>
-    /// The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies
-    /// the tip of this branch.
-    /// </p>
+    /// <p> The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl RepositoryHeadSourceCodeType {
-    /// <p>
-    /// The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies
-    /// the tip of this branch.
-    /// </p>
+    /// <p> The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch. </p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
@@ -2862,18 +2152,12 @@ pub mod repository_head_source_code_type {
         pub(crate) branch_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies
-        /// the tip of this branch.
-        /// </p>
+        /// <p> The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies
-        /// the tip of this branch.
-        /// </p>
+        /// <p> The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -2893,37 +2177,23 @@ impl RepositoryHeadSourceCodeType {
     }
 }
 
-/// <p>
-/// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-/// <code>SourceCodeType</code>
-/// </a> that
-/// specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code>
-/// and <code>DestinationCommit</code> fields are required to do a pull request code review.
-/// </p>
+/// <p> A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommitDiffSourceCodeType {
-    /// <p>
-    /// The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
-    /// </p>
+    /// <p> The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review. </p>
     pub source_commit: std::option::Option<std::string::String>,
-    /// <p>
-    /// The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
-    /// </p>
+    /// <p> The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review. </p>
     pub destination_commit: std::option::Option<std::string::String>,
     /// <p>The SHA of the merge base of a commit.</p>
     pub merge_base_commit: std::option::Option<std::string::String>,
 }
 impl CommitDiffSourceCodeType {
-    /// <p>
-    /// The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
-    /// </p>
+    /// <p> The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review. </p>
     pub fn source_commit(&self) -> std::option::Option<&str> {
         self.source_commit.as_deref()
     }
-    /// <p>
-    /// The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
-    /// </p>
+    /// <p> The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review. </p>
     pub fn destination_commit(&self) -> std::option::Option<&str> {
         self.destination_commit.as_deref()
     }
@@ -2952,16 +2222,12 @@ pub mod commit_diff_source_code_type {
         pub(crate) merge_base_commit: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
-        /// </p>
+        /// <p> The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review. </p>
         pub fn source_commit(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_commit = Some(input.into());
             self
         }
-        /// <p>
-        /// The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
-        /// </p>
+        /// <p> The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review. </p>
         pub fn set_source_commit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2969,16 +2235,12 @@ pub mod commit_diff_source_code_type {
             self.source_commit = input;
             self
         }
-        /// <p>
-        /// The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
-        /// </p>
+        /// <p> The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review. </p>
         pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_commit = Some(input.into());
             self
         }
-        /// <p>
-        /// The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
-        /// </p>
+        /// <p> The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review. </p>
         pub fn set_destination_commit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3016,43 +2278,21 @@ impl CommitDiffSourceCodeType {
     }
 }
 
-/// <p>
-/// Information about metrics summaries.
-/// </p>
+/// <p> Information about metrics summaries. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsSummary {
-    /// <p>
-    /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-    /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-    /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-    /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-    /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-    /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-    /// code for a total of 2,725 lines of code.
-    /// </p>
+    /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
     pub metered_lines_of_code_count: std::option::Option<i64>,
-    /// <p>
-    /// Total number of recommendations found in the code review.
-    /// </p>
+    /// <p> Total number of recommendations found in the code review. </p>
     pub findings_count: std::option::Option<i64>,
 }
 impl MetricsSummary {
-    /// <p>
-    /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-    /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-    /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-    /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-    /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-    /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-    /// code for a total of 2,725 lines of code.
-    /// </p>
+    /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
     pub fn metered_lines_of_code_count(&self) -> std::option::Option<i64> {
         self.metered_lines_of_code_count
     }
-    /// <p>
-    /// Total number of recommendations found in the code review.
-    /// </p>
+    /// <p> Total number of recommendations found in the code review. </p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
         self.findings_count
     }
@@ -3078,42 +2318,22 @@ pub mod metrics_summary {
         pub(crate) findings_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>
-        /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-        /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-        /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-        /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-        /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-        /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-        /// code for a total of 2,725 lines of code.
-        /// </p>
+        /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
         pub fn metered_lines_of_code_count(mut self, input: i64) -> Self {
             self.metered_lines_of_code_count = Some(input);
             self
         }
-        /// <p>
-        /// Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
-        /// this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already
-        /// existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments
-        /// and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in
-        /// a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files,
-        /// <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of
-        /// code for a total of 2,725 lines of code.
-        /// </p>
+        /// <p> Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code. </p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metered_lines_of_code_count = input;
             self
         }
-        /// <p>
-        /// Total number of recommendations found in the code review.
-        /// </p>
+        /// <p> Total number of recommendations found in the code review. </p>
         pub fn findings_count(mut self, input: i64) -> Self {
             self.findings_count = Some(input);
             self
         }
-        /// <p>
-        /// Total number of recommendations found in the code review.
-        /// </p>
+        /// <p> Total number of recommendations found in the code review. </p>
         pub fn set_findings_count(mut self, input: std::option::Option<i64>) -> Self {
             self.findings_count = input;
             self
@@ -3252,11 +2472,7 @@ impl AsRef<str> for JobState {
     }
 }
 
-/// <p>Information about a repository association. The
-/// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">
-/// <code>DescribeRepositoryAssociation</code>
-/// </a>
-/// operation returns a <code>RepositoryAssociation</code> object.</p>
+/// <p>Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"> <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAssociation {
@@ -3264,77 +2480,28 @@ pub struct RepositoryAssociation {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
     pub association_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The provider type of the repository association.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::RepositoryAssociationState>,
     /// <p>A description of why the repository association is in the current state.</p>
@@ -3345,20 +2512,11 @@ pub struct RepositoryAssociation {
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that
-    /// is associated with this respository association.</p>
-    /// </li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
     /// </ul>
     pub kms_key_details: std::option::Option<crate::model::KmsKeyDetails>,
-    /// <p>
-    /// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3
-    /// object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    /// </p>
+    /// <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
     pub s3_repository_details: std::option::Option<crate::model::S3RepositoryDetails>,
 }
 impl RepositoryAssociation {
@@ -3370,14 +2528,7 @@ impl RepositoryAssociation {
     pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
@@ -3385,9 +2536,7 @@ impl RepositoryAssociation {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -3398,57 +2547,17 @@ impl RepositoryAssociation {
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::RepositoryAssociationState> {
         self.state.as_ref()
@@ -3467,22 +2576,13 @@ impl RepositoryAssociation {
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that
-    /// is associated with this respository association.</p>
-    /// </li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
     /// </ul>
     pub fn kms_key_details(&self) -> std::option::Option<&crate::model::KmsKeyDetails> {
         self.kms_key_details.as_ref()
     }
-    /// <p>
-    /// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3
-    /// object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    /// </p>
+    /// <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
     pub fn s3_repository_details(&self) -> std::option::Option<&crate::model::S3RepositoryDetails> {
         self.s3_repository_details.as_ref()
     }
@@ -3551,26 +2651,12 @@ pub mod repository_association {
             self.association_arn = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3588,16 +2674,12 @@ pub mod repository_association {
             self.name = input;
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3618,57 +2700,17 @@ pub mod repository_association {
         /// <p>The state of the repository association.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             self.state = Some(input);
@@ -3677,57 +2719,17 @@ pub mod repository_association {
         /// <p>The state of the repository association.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -3774,14 +2776,8 @@ pub mod repository_association {
         }
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of the Amazon Web Services KMS key that
-        /// is associated with this respository association.</p>
-        /// </li>
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
         /// </ul>
         pub fn kms_key_details(mut self, input: crate::model::KmsKeyDetails) -> Self {
             self.kms_key_details = Some(input);
@@ -3789,14 +2785,8 @@ pub mod repository_association {
         }
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of the Amazon Web Services KMS key that
-        /// is associated with this respository association.</p>
-        /// </li>
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
         /// </ul>
         pub fn set_kms_key_details(
             mut self,
@@ -3805,18 +2795,12 @@ pub mod repository_association {
             self.kms_key_details = input;
             self
         }
-        /// <p>
-        /// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3
-        /// object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-        /// </p>
+        /// <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
         pub fn s3_repository_details(mut self, input: crate::model::S3RepositoryDetails) -> Self {
             self.s3_repository_details = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3
-        /// object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-        /// </p>
+        /// <p> Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files. </p>
         pub fn set_s3_repository_details(
             mut self,
             input: std::option::Option<crate::model::S3RepositoryDetails>,
@@ -3852,22 +2836,15 @@ impl RepositoryAssociation {
 
 /// <p>An object that contains:</p>
 /// <ul>
-/// <li>
-/// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
-/// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-/// </li>
-/// <li>
-/// <p>The ID of the Amazon Web Services KMS key that
-/// is associated with a respository association.</p>
-/// </li>
+/// <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+/// <li> <p>The ID of the Amazon Web Services KMS key that is associated with a respository association.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a respository association.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub encryption_option: std::option::Option<crate::model::EncryptionOption>,
 }
 impl KmsKeyDetails {
@@ -3875,8 +2852,7 @@ impl KmsKeyDetails {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+    /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub fn encryption_option(&self) -> std::option::Option<&crate::model::EncryptionOption> {
         self.encryption_option.as_ref()
     }
@@ -3909,14 +2885,12 @@ pub mod kms_key_details {
             self.kms_key_id = input;
             self
         }
-        /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+        /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         pub fn encryption_option(mut self, input: crate::model::EncryptionOption) -> Self {
             self.encryption_option = Some(input);
             self
         }
-        /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+        /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
         pub fn set_encryption_option(
             mut self,
             input: std::option::Option<crate::model::EncryptionOption>,
@@ -3995,83 +2969,47 @@ impl AsRef<str> for EncryptionOption {
     }
 }
 
-/// <p>
-/// Information about the recommendation feedback.
-/// </p>
+/// <p> Information about the recommendation feedback. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationFeedback {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback. </p>
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
-    /// <p>
-    /// The ID of the user that made the API call.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> The ID of the user that made the API call. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The time at which the feedback was created.
-    /// </p>
+    /// <p> The time at which the feedback was created. </p>
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The time at which the feedback was last updated.
-    /// </p>
+    /// <p> The time at which the feedback was last updated. </p>
     pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecommendationFeedback {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback. </p>
     pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
         self.reactions.as_deref()
     }
-    /// <p>
-    /// The ID of the user that made the API call.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> The ID of the user that made the API call. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>
-    /// The time at which the feedback was created.
-    /// </p>
+    /// <p> The time at which the feedback was created. </p>
     pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
-    /// <p>
-    /// The time at which the feedback was last updated.
-    /// </p>
+    /// <p> The time at which the feedback was last updated. </p>
     pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
@@ -4102,18 +3040,12 @@ pub mod recommendation_feedback {
         pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4121,16 +3053,12 @@ pub mod recommendation_feedback {
             self.code_review_arn = input;
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback. </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4142,18 +3070,14 @@ pub mod recommendation_feedback {
         ///
         /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).
         ///
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
-        /// </p>
-        pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback. </p>
+        pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactions = Some(v);
             self
         }
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
-        /// </p>
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback. </p>
         pub fn set_reactions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
@@ -4161,40 +3085,24 @@ pub mod recommendation_feedback {
             self.reactions = input;
             self
         }
-        /// <p>
-        /// The ID of the user that made the API call.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> The ID of the user that made the API call. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the user that made the API call.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> The ID of the user that made the API call. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
-        /// <p>
-        /// The time at which the feedback was created.
-        /// </p>
+        /// <p> The time at which the feedback was created. </p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time at which the feedback was created.
-        /// </p>
+        /// <p> The time at which the feedback was created. </p>
         pub fn set_created_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4202,16 +3110,12 @@ pub mod recommendation_feedback {
             self.created_time_stamp = input;
             self
         }
-        /// <p>
-        /// The time at which the feedback was last updated.
-        /// </p>
+        /// <p> The time at which the feedback was last updated. </p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time at which the feedback was last updated.
-        /// </p>
+        /// <p> The time at which the feedback was last updated. </p>
         pub fn set_last_updated_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4239,215 +3143,111 @@ impl RecommendationFeedback {
     }
 }
 
-/// <p>
-/// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-/// </p>
+/// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeReview {
-    /// <p>
-    /// The name of the code review.
-    /// </p>
+    /// <p> The name of the code review. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the repository.
-    /// </p>
+    /// <p> The name of the repository. </p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
-    /// </p>
+    /// <p> The type of repository that contains the reviewed code (for example, GitHub or Bitbucket). </p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::JobState>,
-    /// <p>
-    /// The reason for the state of the code review.
-    /// </p>
+    /// <p> The reason for the state of the code review. </p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was created.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was last updated.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
     pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The type of code review.
-    /// </p>
+    /// <p> The type of code review. </p>
     pub r#type: std::option::Option<crate::model::Type>,
-    /// <p>
-    /// The pull request ID for the code review.
-    /// </p>
+    /// <p> The pull request ID for the code review. </p>
     pub pull_request_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the source code for the code review.
-    /// </p>
+    /// <p> The type of the source code for the code review. </p>
     pub source_code_type: std::option::Option<crate::model::SourceCodeType>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> that contains
-    /// the reviewed source code. You can retrieve associated repository ARNs by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub association_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The statistics from the code review.
-    /// </p>
+    /// <p> The statistics from the code review. </p>
     pub metrics: std::option::Option<crate::model::Metrics>,
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-    /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
 }
 impl CodeReview {
-    /// <p>
-    /// The name of the code review.
-    /// </p>
+    /// <p> The name of the code review. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// The name of the repository.
-    /// </p>
+    /// <p> The name of the repository. </p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-    /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-    /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+    /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>
-    /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
-    /// </p>
+    /// <p> The type of repository that contains the reviewed code (for example, GitHub or Bitbucket). </p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::JobState> {
         self.state.as_ref()
     }
-    /// <p>
-    /// The reason for the state of the code review.
-    /// </p>
+    /// <p> The reason for the state of the code review. </p>
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was created.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
     pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
-    /// <p>
-    /// The time, in milliseconds since the epoch, when the code review was last updated.
-    /// </p>
+    /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
     pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
-    /// <p>
-    /// The type of code review.
-    /// </p>
+    /// <p> The type of code review. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
-    /// <p>
-    /// The pull request ID for the code review.
-    /// </p>
+    /// <p> The pull request ID for the code review. </p>
     pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
-    /// <p>
-    /// The type of the source code for the code review.
-    /// </p>
+    /// <p> The type of the source code for the code review. </p>
     pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> that contains
-    /// the reviewed source code. You can retrieve associated repository ARNs by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
-    /// <p>
-    /// The statistics from the code review.
-    /// </p>
+    /// <p> The statistics from the code review. </p>
     pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
         self.metrics.as_ref()
     }
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-    /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
     }
@@ -4496,32 +3296,22 @@ pub mod code_review {
         pub(crate) analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the code review.
-        /// </p>
+        /// <p> The name of the code review. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the code review.
-        /// </p>
+        /// <p> The name of the code review. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4529,16 +3319,12 @@ pub mod code_review {
             self.code_review_arn = input;
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
+        /// <p> The name of the repository. </p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
+        /// <p> The name of the repository. </p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4546,30 +3332,22 @@ pub mod code_review {
             self.repository_name = input;
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the
-        /// account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository.
-        /// For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
+        /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>
-        /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
-        /// </p>
+        /// <p> The type of repository that contains the reviewed code (for example, GitHub or Bitbucket). </p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).
-        /// </p>
+        /// <p> The type of repository that contains the reviewed code (for example, GitHub or Bitbucket). </p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -4579,26 +3357,10 @@ pub mod code_review {
         }
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::JobState) -> Self {
             self.state = Some(input);
@@ -4606,55 +3368,31 @@ pub mod code_review {
         }
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>
-        /// The reason for the state of the code review.
-        /// </p>
+        /// <p> The reason for the state of the code review. </p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_reason = Some(input.into());
             self
         }
-        /// <p>
-        /// The reason for the state of the code review.
-        /// </p>
+        /// <p> The reason for the state of the code review. </p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_reason = input;
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was created.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
         pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was created.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was created. </p>
         pub fn set_created_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4662,16 +3400,12 @@ pub mod code_review {
             self.created_time_stamp = input;
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was last updated.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
         pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time_stamp = Some(input);
             self
         }
-        /// <p>
-        /// The time, in milliseconds since the epoch, when the code review was last updated.
-        /// </p>
+        /// <p> The time, in milliseconds since the epoch, when the code review was last updated. </p>
         pub fn set_last_updated_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4679,30 +3413,22 @@ pub mod code_review {
             self.last_updated_time_stamp = input;
             self
         }
-        /// <p>
-        /// The type of code review.
-        /// </p>
+        /// <p> The type of code review. </p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The type of code review.
-        /// </p>
+        /// <p> The type of code review. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>
-        /// The pull request ID for the code review.
-        /// </p>
+        /// <p> The pull request ID for the code review. </p>
         pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pull_request_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The pull request ID for the code review.
-        /// </p>
+        /// <p> The pull request ID for the code review. </p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4710,16 +3436,12 @@ pub mod code_review {
             self.pull_request_id = input;
             self
         }
-        /// <p>
-        /// The type of the source code for the code review.
-        /// </p>
+        /// <p> The type of the source code for the code review. </p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
             self.source_code_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the source code for the code review.
-        /// </p>
+        /// <p> The type of the source code for the code review. </p>
         pub fn set_source_code_type(
             mut self,
             input: std::option::Option<crate::model::SourceCodeType>,
@@ -4727,30 +3449,12 @@ pub mod code_review {
             self.source_code_type = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> that contains
-        /// the reviewed source code. You can retrieve associated repository ARNs by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> that contains
-        /// the reviewed source code. You can retrieve associated repository ARNs by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4758,16 +3462,12 @@ pub mod code_review {
             self.association_arn = input;
             self
         }
-        /// <p>
-        /// The statistics from the code review.
-        /// </p>
+        /// <p> The statistics from the code review. </p>
         pub fn metrics(mut self, input: crate::model::Metrics) -> Self {
             self.metrics = Some(input);
             self
         }
-        /// <p>
-        /// The statistics from the code review.
-        /// </p>
+        /// <p> The statistics from the code review. </p>
         pub fn set_metrics(mut self, input: std::option::Option<crate::model::Metrics>) -> Self {
             self.metrics = input;
             self
@@ -4776,16 +3476,14 @@ pub mod code_review {
         ///
         /// To override the contents of this collection use [`set_analysis_types`](Self::set_analysis_types).
         ///
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-        /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn analysis_types(mut self, input: impl Into<crate::model::AnalysisType>) -> Self {
+        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_types = Some(v);
             self
         }
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-        /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn set_analysis_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
@@ -4877,33 +3575,21 @@ impl AsRef<str> for AnalysisType {
     }
 }
 
-/// <p>
-/// Information about the statistics from the code review.
-/// </p>
+/// <p> Information about the statistics from the code review. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
-    /// <p>
-    /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
-    /// This does not include non-code lines such as comments and blank lines.
-    /// </p>
+    /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
     pub metered_lines_of_code_count: std::option::Option<i64>,
-    /// <p>
-    /// Total number of recommendations found in the code review.
-    /// </p>
+    /// <p> Total number of recommendations found in the code review. </p>
     pub findings_count: std::option::Option<i64>,
 }
 impl Metrics {
-    /// <p>
-    /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
-    /// This does not include non-code lines such as comments and blank lines.
-    /// </p>
+    /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
     pub fn metered_lines_of_code_count(&self) -> std::option::Option<i64> {
         self.metered_lines_of_code_count
     }
-    /// <p>
-    /// Total number of recommendations found in the code review.
-    /// </p>
+    /// <p> Total number of recommendations found in the code review. </p>
     pub fn findings_count(&self) -> std::option::Option<i64> {
         self.findings_count
     }
@@ -4929,32 +3615,22 @@ pub mod metrics {
         pub(crate) findings_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>
-        /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
-        /// This does not include non-code lines such as comments and blank lines.
-        /// </p>
+        /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
         pub fn metered_lines_of_code_count(mut self, input: i64) -> Self {
             self.metered_lines_of_code_count = Some(input);
             self
         }
-        /// <p>
-        /// <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened.
-        /// This does not include non-code lines such as comments and blank lines.
-        /// </p>
+        /// <p> <code>MeteredLinesOfCode</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines. </p>
         pub fn set_metered_lines_of_code_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metered_lines_of_code_count = input;
             self
         }
-        /// <p>
-        /// Total number of recommendations found in the code review.
-        /// </p>
+        /// <p> Total number of recommendations found in the code review. </p>
         pub fn findings_count(mut self, input: i64) -> Self {
             self.findings_count = Some(input);
             self
         }
-        /// <p>
-        /// Total number of recommendations found in the code review.
-        /// </p>
+        /// <p> Total number of recommendations found in the code review. </p>
         pub fn set_findings_count(mut self, input: std::option::Option<i64>) -> Self {
             self.findings_count = input;
             self
@@ -4975,46 +3651,25 @@ impl Metrics {
     }
 }
 
-/// <p>
-/// The type of a code review. There are two code review types:         
-/// </p>
+/// <p> The type of a code review. There are two code review types: </p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository.
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified
-/// branch in an associated repository. The associated repository is specified using its ARN
-/// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-/// <code>CreateCodeReview</code>
-/// </a>. </p>
-/// </li>
+/// <li> <p> <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository. </p> </li>
+/// <li> <p> <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeReviewType {
-    /// <p> A code review that analyzes all code under a specified branch in an associated
-    /// repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-    /// <code>CreateCodeReview</code>
-    /// </a>. </p>
+    /// <p> A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p>
     pub repository_analysis: std::option::Option<crate::model::RepositoryAnalysis>,
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-    /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
 }
 impl CodeReviewType {
-    /// <p> A code review that analyzes all code under a specified branch in an associated
-    /// repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-    /// <code>CreateCodeReview</code>
-    /// </a>. </p>
+    /// <p> A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p>
     pub fn repository_analysis(&self) -> std::option::Option<&crate::model::RepositoryAnalysis> {
         self.repository_analysis.as_ref()
     }
-    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-    /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn analysis_types(&self) -> std::option::Option<&[crate::model::AnalysisType]> {
         self.analysis_types.as_deref()
     }
@@ -5037,18 +3692,12 @@ pub mod code_review_type {
         pub(crate) analysis_types: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
     }
     impl Builder {
-        /// <p> A code review that analyzes all code under a specified branch in an associated
-        /// repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-        /// <code>CreateCodeReview</code>
-        /// </a>. </p>
+        /// <p> A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p>
         pub fn repository_analysis(mut self, input: crate::model::RepositoryAnalysis) -> Self {
             self.repository_analysis = Some(input);
             self
         }
-        /// <p> A code review that analyzes all code under a specified branch in an associated
-        /// repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-        /// <code>CreateCodeReview</code>
-        /// </a>. </p>
+        /// <p> A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p>
         pub fn set_repository_analysis(
             mut self,
             input: std::option::Option<crate::model::RepositoryAnalysis>,
@@ -5060,16 +3709,14 @@ pub mod code_review_type {
         ///
         /// To override the contents of this collection use [`set_analysis_types`](Self::set_analysis_types).
         ///
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-        /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-        pub fn analysis_types(mut self, input: impl Into<crate::model::AnalysisType>) -> Self {
+        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        pub fn analysis_types(mut self, input: crate::model::AnalysisType) -> Self {
             let mut v = self.analysis_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_types = Some(v);
             self
         }
-        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either
-        /// <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+        /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
         pub fn set_analysis_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalysisType>>,
@@ -5093,40 +3740,23 @@ impl CodeReviewType {
     }
 }
 
-/// <p> A code review type that analyzes all code under a specified branch in an associated
-/// repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-/// <code>CreateCodeReview</code>
-/// </a>. </p>
+/// <p> A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAnalysis {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies the tip of a branch in an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
     pub repository_head: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
-    /// <p>
-    /// Specifies the source code that is analyzed in a code review.
-    /// </p>
+    /// <p> Specifies the source code that is analyzed in a code review. </p>
     pub source_code_type: std::option::Option<crate::model::SourceCodeType>,
 }
 impl RepositoryAnalysis {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code>
-    /// </a> that
-    /// specifies the tip of a branch in an associated repository.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
     pub fn repository_head(
         &self,
     ) -> std::option::Option<&crate::model::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
-    /// <p>
-    /// Specifies the source code that is analyzed in a code review.
-    /// </p>
+    /// <p> Specifies the source code that is analyzed in a code review. </p>
     pub fn source_code_type(&self) -> std::option::Option<&crate::model::SourceCodeType> {
         self.source_code_type.as_ref()
     }
@@ -5149,12 +3779,7 @@ pub mod repository_analysis {
         pub(crate) source_code_type: std::option::Option<crate::model::SourceCodeType>,
     }
     impl Builder {
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies the tip of a branch in an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
         pub fn repository_head(
             mut self,
             input: crate::model::RepositoryHeadSourceCodeType,
@@ -5162,12 +3787,7 @@ pub mod repository_analysis {
             self.repository_head = Some(input);
             self
         }
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code>
-        /// </a> that
-        /// specifies the tip of a branch in an associated repository.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository. </p>
         pub fn set_repository_head(
             mut self,
             input: std::option::Option<crate::model::RepositoryHeadSourceCodeType>,
@@ -5175,16 +3795,12 @@ pub mod repository_analysis {
             self.repository_head = input;
             self
         }
-        /// <p>
-        /// Specifies the source code that is analyzed in a code review.
-        /// </p>
+        /// <p> Specifies the source code that is analyzed in a code review. </p>
         pub fn source_code_type(mut self, input: crate::model::SourceCodeType) -> Self {
             self.source_code_type = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the source code that is analyzed in a code review.
-        /// </p>
+        /// <p> Specifies the source code that is analyzed in a code review. </p>
         pub fn set_source_code_type(
             mut self,
             input: std::option::Option<crate::model::SourceCodeType>,
@@ -5208,27 +3824,17 @@ impl RepositoryAnalysis {
     }
 }
 
-/// <p>
-/// Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed
-/// by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object
-/// is not used if your source code is in an associated GitHub repository.
-/// </p>
+/// <p> Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     pub code_commit: std::option::Option<crate::model::CodeCommitRepository>,
-    /// <p>
-    /// Information about a Bitbucket repository.
-    /// </p>
+    /// <p> Information about a Bitbucket repository. </p>
     pub bitbucket: std::option::Option<crate::model::ThirdPartySourceRepository>,
-    /// <p>
-    /// Information about a GitHub Enterprise Server repository.
-    /// </p>
+    /// <p> Information about a GitHub Enterprise Server repository. </p>
     pub git_hub_enterprise_server: std::option::Option<crate::model::ThirdPartySourceRepository>,
-    /// <p>
-    /// Information about a repository in an S3 bucket.
-    /// </p>
+    /// <p> Information about a repository in an S3 bucket. </p>
     pub s3_bucket: std::option::Option<crate::model::S3Repository>,
 }
 impl Repository {
@@ -5236,23 +3842,17 @@ impl Repository {
     pub fn code_commit(&self) -> std::option::Option<&crate::model::CodeCommitRepository> {
         self.code_commit.as_ref()
     }
-    /// <p>
-    /// Information about a Bitbucket repository.
-    /// </p>
+    /// <p> Information about a Bitbucket repository. </p>
     pub fn bitbucket(&self) -> std::option::Option<&crate::model::ThirdPartySourceRepository> {
         self.bitbucket.as_ref()
     }
-    /// <p>
-    /// Information about a GitHub Enterprise Server repository.
-    /// </p>
+    /// <p> Information about a GitHub Enterprise Server repository. </p>
     pub fn git_hub_enterprise_server(
         &self,
     ) -> std::option::Option<&crate::model::ThirdPartySourceRepository> {
         self.git_hub_enterprise_server.as_ref()
     }
-    /// <p>
-    /// Information about a repository in an S3 bucket.
-    /// </p>
+    /// <p> Information about a repository in an S3 bucket. </p>
     pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3Repository> {
         self.s3_bucket.as_ref()
     }
@@ -5293,16 +3893,12 @@ pub mod repository {
             self.code_commit = input;
             self
         }
-        /// <p>
-        /// Information about a Bitbucket repository.
-        /// </p>
+        /// <p> Information about a Bitbucket repository. </p>
         pub fn bitbucket(mut self, input: crate::model::ThirdPartySourceRepository) -> Self {
             self.bitbucket = Some(input);
             self
         }
-        /// <p>
-        /// Information about a Bitbucket repository.
-        /// </p>
+        /// <p> Information about a Bitbucket repository. </p>
         pub fn set_bitbucket(
             mut self,
             input: std::option::Option<crate::model::ThirdPartySourceRepository>,
@@ -5310,9 +3906,7 @@ pub mod repository {
             self.bitbucket = input;
             self
         }
-        /// <p>
-        /// Information about a GitHub Enterprise Server repository.
-        /// </p>
+        /// <p> Information about a GitHub Enterprise Server repository. </p>
         pub fn git_hub_enterprise_server(
             mut self,
             input: crate::model::ThirdPartySourceRepository,
@@ -5320,9 +3914,7 @@ pub mod repository {
             self.git_hub_enterprise_server = Some(input);
             self
         }
-        /// <p>
-        /// Information about a GitHub Enterprise Server repository.
-        /// </p>
+        /// <p> Information about a GitHub Enterprise Server repository. </p>
         pub fn set_git_hub_enterprise_server(
             mut self,
             input: std::option::Option<crate::model::ThirdPartySourceRepository>,
@@ -5330,16 +3922,12 @@ pub mod repository {
             self.git_hub_enterprise_server = input;
             self
         }
-        /// <p>
-        /// Information about a repository in an S3 bucket.
-        /// </p>
+        /// <p> Information about a repository in an S3 bucket. </p>
         pub fn s3_bucket(mut self, input: crate::model::S3Repository) -> Self {
             self.s3_bucket = Some(input);
             self
         }
-        /// <p>
-        /// Information about a repository in an S3 bucket.
-        /// </p>
+        /// <p> Information about a repository in an S3 bucket. </p>
         pub fn set_s3_bucket(
             mut self,
             input: std::option::Option<crate::model::S3Repository>,
@@ -5365,16 +3953,13 @@ impl Repository {
     }
 }
 
-/// <p>
-/// Information about a repository in an S3 bucket.
-/// </p>
+/// <p> Information about a repository in an S3 bucket. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Repository {
     /// <p> The name of the repository in the S3 bucket. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-    /// <code>codeguru-reviewer-</code>. </p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl S3Repository {
@@ -5382,8 +3967,7 @@ impl S3Repository {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-    /// <code>codeguru-reviewer-</code>. </p>
+    /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
@@ -5416,14 +4000,12 @@ pub mod s3_repository {
             self.name = input;
             self
         }
-        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-        /// <code>codeguru-reviewer-</code>. </p>
+        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with
-        /// <code>codeguru-reviewer-</code>. </p>
+        /// <p>The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -5444,55 +4026,27 @@ impl S3Repository {
     }
 }
 
-/// <p>
-/// Information about a third-party source repository connected to CodeGuru Reviewer.
-/// </p>
+/// <p> Information about a third-party source repository connected to CodeGuru Reviewer. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThirdPartySourceRepository {
-    /// <p>
-    /// The name of the third party source repository.
-    /// </p>
+    /// <p> The name of the third party source repository. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub connection_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
-    /// this is the username for the account that owns the repository. For an S3 repository,
-    /// this can be the username or Amazon Web Services account ID.
-    /// </p>
+    /// <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID. </p>
     pub owner: std::option::Option<std::string::String>,
 }
 impl ThirdPartySourceRepository {
-    /// <p>
-    /// The name of the third party source repository.
-    /// </p>
+    /// <p> The name of the third party source repository. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-    /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-    /// <code>Connection</code>
-    /// </a> in
-    /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
-    /// <p>
-    /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
-    /// this is the username for the account that owns the repository. For an S3 repository,
-    /// this can be the username or Amazon Web Services account ID.
-    /// </p>
+    /// <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID. </p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -5517,40 +4071,22 @@ pub mod third_party_source_repository {
         pub(crate) owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the third party source repository.
-        /// </p>
+        /// <p> The name of the third party source repository. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the third party source repository.
-        /// </p>
+        /// <p> The name of the third party source repository. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is
-        /// <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code>
-        /// </a> in
-        /// the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"> <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>. </p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5558,20 +4094,12 @@ pub mod third_party_source_repository {
             self.connection_arn = input;
             self
         }
-        /// <p>
-        /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
-        /// this is the username for the account that owns the repository. For an S3 repository,
-        /// this can be the username or Amazon Web Services account ID.
-        /// </p>
+        /// <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID. </p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>
-        /// The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository,
-        /// this is the username for the account that owns the repository. For an S3 repository,
-        /// this can be the username or Amazon Web Services account ID.
-        /// </p>
+        /// <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID. </p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -5593,20 +4121,15 @@ impl ThirdPartySourceRepository {
     }
 }
 
-/// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same
-/// Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
+/// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCommitRepository {
-    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-    /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
+    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl CodeCommitRepository {
-    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-    /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
+    /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -5627,16 +4150,12 @@ pub mod code_commit_repository {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-        /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
+        /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a>
-        /// in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
+        /// <p>The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

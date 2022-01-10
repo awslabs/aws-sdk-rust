@@ -60,25 +60,19 @@ impl ValidationError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Behavior {
-    /// <p>The name
-    /// you've given to the behavior.</p>
+    /// <p>The name you've given to the behavior.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>What is measured by the behavior.</p>
     pub metric: std::option::Option<std::string::String>,
-    /// <p>The dimension for a metric in your behavior. For example, using a
-    /// <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+    /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub metric_dimension: std::option::Option<crate::model::MetricDimension>,
-    /// <p>The criteria that determine if a device is behaving normally in regard to
-    /// the <code>metric</code>.</p>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     pub criteria: std::option::Option<crate::model::BehaviorCriteria>,
-    /// <p>
-    /// Suppresses alerts.
-    /// </p>
+    /// <p> Suppresses alerts. </p>
     pub suppress_alerts: std::option::Option<bool>,
 }
 impl Behavior {
-    /// <p>The name
-    /// you've given to the behavior.</p>
+    /// <p>The name you've given to the behavior.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -86,19 +80,15 @@ impl Behavior {
     pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
-    /// <p>The dimension for a metric in your behavior. For example, using a
-    /// <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+    /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn metric_dimension(&self) -> std::option::Option<&crate::model::MetricDimension> {
         self.metric_dimension.as_ref()
     }
-    /// <p>The criteria that determine if a device is behaving normally in regard to
-    /// the <code>metric</code>.</p>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     pub fn criteria(&self) -> std::option::Option<&crate::model::BehaviorCriteria> {
         self.criteria.as_ref()
     }
-    /// <p>
-    /// Suppresses alerts.
-    /// </p>
+    /// <p> Suppresses alerts. </p>
     pub fn suppress_alerts(&self) -> std::option::Option<bool> {
         self.suppress_alerts
     }
@@ -127,14 +117,12 @@ pub mod behavior {
         pub(crate) suppress_alerts: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name
-        /// you've given to the behavior.</p>
+        /// <p>The name you've given to the behavior.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name
-        /// you've given to the behavior.</p>
+        /// <p>The name you've given to the behavior.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -149,14 +137,12 @@ pub mod behavior {
             self.metric = input;
             self
         }
-        /// <p>The dimension for a metric in your behavior. For example, using a
-        /// <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+        /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
         pub fn metric_dimension(mut self, input: crate::model::MetricDimension) -> Self {
             self.metric_dimension = Some(input);
             self
         }
-        /// <p>The dimension for a metric in your behavior. For example, using a
-        /// <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
+        /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
         pub fn set_metric_dimension(
             mut self,
             input: std::option::Option<crate::model::MetricDimension>,
@@ -164,14 +150,12 @@ pub mod behavior {
             self.metric_dimension = input;
             self
         }
-        /// <p>The criteria that determine if a device is behaving normally in regard to
-        /// the <code>metric</code>.</p>
+        /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
         pub fn criteria(mut self, input: crate::model::BehaviorCriteria) -> Self {
             self.criteria = Some(input);
             self
         }
-        /// <p>The criteria that determine if a device is behaving normally in regard to
-        /// the <code>metric</code>.</p>
+        /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
         pub fn set_criteria(
             mut self,
             input: std::option::Option<crate::model::BehaviorCriteria>,
@@ -179,16 +163,12 @@ pub mod behavior {
             self.criteria = input;
             self
         }
-        /// <p>
-        /// Suppresses alerts.
-        /// </p>
+        /// <p> Suppresses alerts. </p>
         pub fn suppress_alerts(mut self, input: bool) -> Self {
             self.suppress_alerts = Some(input);
             self
         }
-        /// <p>
-        /// Suppresses alerts.
-        /// </p>
+        /// <p> Suppresses alerts. </p>
         pub fn set_suppress_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_alerts = input;
             self
@@ -216,80 +196,34 @@ impl Behavior {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BehaviorCriteria {
-    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria
-    /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
+    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The value to be compared with the <code>metric</code>.</p>
     pub value: std::option::Option<crate::model::MetricValue>,
-    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that
-    /// have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a
-    /// <code>statisticalThreshhold</code> metric comparison, measurements from all devices are
-    /// accumulated over this time duration before being used to calculate percentiles, and later,
-    /// measurements from an individual device are also accumulated over this time duration before
-    /// being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
     pub duration_seconds: std::option::Option<i32>,
-    /// <p>If a device is in violation of the behavior for the specified number of consecutive
-    /// datapoints, an alarm occurs. If not specified, the default is 1.</p>
+    /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
     pub consecutive_datapoints_to_alarm: std::option::Option<i32>,
-    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior
-    /// for the specified number of consecutive datapoints, the alarm is cleared. If not specified,
-    /// the default is 1.</p>
+    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
     pub consecutive_datapoints_to_clear: std::option::Option<i32>,
-    /// <p>A statistical ranking (percentile)that
-    /// indicates a threshold value by which a behavior is determined to be in compliance or in
-    /// violation of the behavior.</p>
+    /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
     pub statistical_threshold: std::option::Option<crate::model::StatisticalThreshold>,
-    /// <p>
-    /// The configuration of an ML Detect
-    /// </p>
+    /// <p> The configuration of an ML Detect </p>
     pub ml_detection_config: std::option::Option<crate::model::MachineLearningDetectionConfig>,
 }
 impl BehaviorCriteria {
-    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria
-    /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
+    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
     /// </ul>
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
@@ -298,37 +232,25 @@ impl BehaviorCriteria {
     pub fn value(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.value.as_ref()
     }
-    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that
-    /// have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a
-    /// <code>statisticalThreshhold</code> metric comparison, measurements from all devices are
-    /// accumulated over this time duration before being used to calculate percentiles, and later,
-    /// measurements from an individual device are also accumulated over this time duration before
-    /// being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
     }
-    /// <p>If a device is in violation of the behavior for the specified number of consecutive
-    /// datapoints, an alarm occurs. If not specified, the default is 1.</p>
+    /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
     pub fn consecutive_datapoints_to_alarm(&self) -> std::option::Option<i32> {
         self.consecutive_datapoints_to_alarm
     }
-    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior
-    /// for the specified number of consecutive datapoints, the alarm is cleared. If not specified,
-    /// the default is 1.</p>
+    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
     pub fn consecutive_datapoints_to_clear(&self) -> std::option::Option<i32> {
         self.consecutive_datapoints_to_clear
     }
-    /// <p>A statistical ranking (percentile)that
-    /// indicates a threshold value by which a behavior is determined to be in compliance or in
-    /// violation of the behavior.</p>
+    /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
     pub fn statistical_threshold(
         &self,
     ) -> std::option::Option<&crate::model::StatisticalThreshold> {
         self.statistical_threshold.as_ref()
     }
-    /// <p>
-    /// The configuration of an ML Detect
-    /// </p>
+    /// <p> The configuration of an ML Detect </p>
     pub fn ml_detection_config(
         &self,
     ) -> std::option::Option<&crate::model::MachineLearningDetectionConfig> {
@@ -370,57 +292,23 @@ pub mod behavior_criteria {
             std::option::Option<crate::model::MachineLearningDetectionConfig>,
     }
     impl Builder {
-        /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+        /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+        /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+        /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
+        /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
         /// </ul>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+        /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+        /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+        /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
+        /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
         /// </ul>
         pub fn set_comparison_operator(
             mut self,
@@ -439,34 +327,22 @@ pub mod behavior_criteria {
             self.value = input;
             self
         }
-        /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that
-        /// have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a
-        /// <code>statisticalThreshhold</code> metric comparison, measurements from all devices are
-        /// accumulated over this time duration before being used to calculate percentiles, and later,
-        /// measurements from an individual device are also accumulated over this time duration before
-        /// being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+        /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
         pub fn duration_seconds(mut self, input: i32) -> Self {
             self.duration_seconds = Some(input);
             self
         }
-        /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that
-        /// have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a
-        /// <code>statisticalThreshhold</code> metric comparison, measurements from all devices are
-        /// accumulated over this time duration before being used to calculate percentiles, and later,
-        /// measurements from an individual device are also accumulated over this time duration before
-        /// being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+        /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_seconds = input;
             self
         }
-        /// <p>If a device is in violation of the behavior for the specified number of consecutive
-        /// datapoints, an alarm occurs. If not specified, the default is 1.</p>
+        /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
         pub fn consecutive_datapoints_to_alarm(mut self, input: i32) -> Self {
             self.consecutive_datapoints_to_alarm = Some(input);
             self
         }
-        /// <p>If a device is in violation of the behavior for the specified number of consecutive
-        /// datapoints, an alarm occurs. If not specified, the default is 1.</p>
+        /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
         pub fn set_consecutive_datapoints_to_alarm(
             mut self,
             input: std::option::Option<i32>,
@@ -474,16 +350,12 @@ pub mod behavior_criteria {
             self.consecutive_datapoints_to_alarm = input;
             self
         }
-        /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior
-        /// for the specified number of consecutive datapoints, the alarm is cleared. If not specified,
-        /// the default is 1.</p>
+        /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
         pub fn consecutive_datapoints_to_clear(mut self, input: i32) -> Self {
             self.consecutive_datapoints_to_clear = Some(input);
             self
         }
-        /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior
-        /// for the specified number of consecutive datapoints, the alarm is cleared. If not specified,
-        /// the default is 1.</p>
+        /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
         pub fn set_consecutive_datapoints_to_clear(
             mut self,
             input: std::option::Option<i32>,
@@ -491,16 +363,12 @@ pub mod behavior_criteria {
             self.consecutive_datapoints_to_clear = input;
             self
         }
-        /// <p>A statistical ranking (percentile)that
-        /// indicates a threshold value by which a behavior is determined to be in compliance or in
-        /// violation of the behavior.</p>
+        /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
         pub fn statistical_threshold(mut self, input: crate::model::StatisticalThreshold) -> Self {
             self.statistical_threshold = Some(input);
             self
         }
-        /// <p>A statistical ranking (percentile)that
-        /// indicates a threshold value by which a behavior is determined to be in compliance or in
-        /// violation of the behavior.</p>
+        /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
         pub fn set_statistical_threshold(
             mut self,
             input: std::option::Option<crate::model::StatisticalThreshold>,
@@ -508,9 +376,7 @@ pub mod behavior_criteria {
             self.statistical_threshold = input;
             self
         }
-        /// <p>
-        /// The configuration of an ML Detect
-        /// </p>
+        /// <p> The configuration of an ML Detect </p>
         pub fn ml_detection_config(
             mut self,
             input: crate::model::MachineLearningDetectionConfig,
@@ -518,9 +384,7 @@ pub mod behavior_criteria {
             self.ml_detection_config = Some(input);
             self
         }
-        /// <p>
-        /// The configuration of an ML Detect
-        /// </p>
+        /// <p> The configuration of an ML Detect </p>
         pub fn set_ml_detection_config(
             mut self,
             input: std::option::Option<crate::model::MachineLearningDetectionConfig>,
@@ -549,21 +413,15 @@ impl BehaviorCriteria {
     }
 }
 
-/// <p>
-/// The configuration of an ML Detect Security Profile.
-/// </p>
+/// <p> The configuration of an ML Detect Security Profile. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MachineLearningDetectionConfig {
-    /// <p>
-    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-    /// </p>
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
 impl MachineLearningDetectionConfig {
-    /// <p>
-    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-    /// </p>
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
         self.confidence_level.as_ref()
     }
@@ -584,16 +442,12 @@ pub mod machine_learning_detection_config {
         pub(crate) confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
     }
     impl Builder {
-        /// <p>
-        /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-        /// </p>
+        /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
         pub fn confidence_level(mut self, input: crate::model::ConfidenceLevel) -> Self {
             self.confidence_level = Some(input);
             self
         }
-        /// <p>
-        /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-        /// </p>
+        /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
         pub fn set_confidence_level(
             mut self,
             input: std::option::Option<crate::model::ConfidenceLevel>,
@@ -675,31 +529,15 @@ impl AsRef<str> for ConfidenceLevel {
     }
 }
 
-/// <p>A statistical ranking (percentile) that
-/// indicates a threshold value by which a behavior is determined to be in compliance or in
-/// violation of the behavior.</p>
+/// <p>A statistical ranking (percentile) that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatisticalThreshold {
-    /// <p>The percentile that
-    /// resolves to a threshold value by which compliance with a behavior is determined. Metrics are
-    /// collected over the specified period (<code>durationSeconds</code>) from all reporting devices
-    /// in your account and statistical ranks are calculated. Then, the measurements from a device are
-    /// collected over the same period. If the accumulated measurements from the device fall above or
-    /// below (<code>comparisonOperator</code>) the value associated with the percentile specified,
-    /// then the device is considered to be in compliance with the behavior, otherwise a violation
-    /// occurs.</p>
+    /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub statistic: std::option::Option<std::string::String>,
 }
 impl StatisticalThreshold {
-    /// <p>The percentile that
-    /// resolves to a threshold value by which compliance with a behavior is determined. Metrics are
-    /// collected over the specified period (<code>durationSeconds</code>) from all reporting devices
-    /// in your account and statistical ranks are calculated. Then, the measurements from a device are
-    /// collected over the same period. If the accumulated measurements from the device fall above or
-    /// below (<code>comparisonOperator</code>) the value associated with the percentile specified,
-    /// then the device is considered to be in compliance with the behavior, otherwise a violation
-    /// occurs.</p>
+    /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub fn statistic(&self) -> std::option::Option<&str> {
         self.statistic.as_deref()
     }
@@ -720,26 +558,12 @@ pub mod statistical_threshold {
         pub(crate) statistic: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The percentile that
-        /// resolves to a threshold value by which compliance with a behavior is determined. Metrics are
-        /// collected over the specified period (<code>durationSeconds</code>) from all reporting devices
-        /// in your account and statistical ranks are calculated. Then, the measurements from a device are
-        /// collected over the same period. If the accumulated measurements from the device fall above or
-        /// below (<code>comparisonOperator</code>) the value associated with the percentile specified,
-        /// then the device is considered to be in compliance with the behavior, otherwise a violation
-        /// occurs.</p>
+        /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
         pub fn statistic(mut self, input: impl Into<std::string::String>) -> Self {
             self.statistic = Some(input.into());
             self
         }
-        /// <p>The percentile that
-        /// resolves to a threshold value by which compliance with a behavior is determined. Metrics are
-        /// collected over the specified period (<code>durationSeconds</code>) from all reporting devices
-        /// in your account and statistical ranks are calculated. Then, the measurements from a device are
-        /// collected over the same period. If the accumulated measurements from the device fall above or
-        /// below (<code>comparisonOperator</code>) the value associated with the percentile specified,
-        /// then the device is considered to be in compliance with the behavior, otherwise a violation
-        /// occurs.</p>
+        /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
         pub fn set_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statistic = input;
             self
@@ -763,59 +587,41 @@ impl StatisticalThreshold {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricValue {
-    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this
-    /// to specify that numeric value to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     pub count: std::option::Option<i64>,
-    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this
-    /// to specify that set to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
-    /// to specify that set to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub ports: std::option::Option<std::vec::Vec<i32>>,
-    /// <p>
-    /// The numeral value of a metric.
-    /// </p>
+    /// <p> The numeral value of a metric. </p>
     pub number: std::option::Option<f64>,
-    /// <p>
-    /// The numeral values of a metric.
-    /// </p>
+    /// <p> The numeral values of a metric. </p>
     pub numbers: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>
-    /// The string values of a metric.
-    /// </p>
+    /// <p> The string values of a metric. </p>
     pub strings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MetricValue {
-    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this
-    /// to specify that numeric value to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
-    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this
-    /// to specify that set to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
         self.cidrs.as_deref()
     }
-    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
-    /// to specify that set to be compared with the <code>metric</code>.</p>
+    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn ports(&self) -> std::option::Option<&[i32]> {
         self.ports.as_deref()
     }
-    /// <p>
-    /// The numeral value of a metric.
-    /// </p>
+    /// <p> The numeral value of a metric. </p>
     pub fn number(&self) -> std::option::Option<f64> {
         self.number
     }
-    /// <p>
-    /// The numeral values of a metric.
-    /// </p>
+    /// <p> The numeral values of a metric. </p>
     pub fn numbers(&self) -> std::option::Option<&[f64]> {
         self.numbers.as_deref()
     }
-    /// <p>
-    /// The string values of a metric.
-    /// </p>
+    /// <p> The string values of a metric. </p>
     pub fn strings(&self) -> std::option::Option<&[std::string::String]> {
         self.strings.as_deref()
     }
@@ -846,14 +652,12 @@ pub mod metric_value {
         pub(crate) strings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this
-        /// to specify that numeric value to be compared with the <code>metric</code>.</p>
+        /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
         pub fn count(mut self, input: i64) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this
-        /// to specify that numeric value to be compared with the <code>metric</code>.</p>
+        /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -862,16 +666,14 @@ pub mod metric_value {
         ///
         /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
         ///
-        /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this
-        /// to specify that set to be compared with the <code>metric</code>.</p>
+        /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
         pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidrs.unwrap_or_default();
             v.push(input.into());
             self.cidrs = Some(v);
             self
         }
-        /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this
-        /// to specify that set to be compared with the <code>metric</code>.</p>
+        /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
         pub fn set_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -883,30 +685,24 @@ pub mod metric_value {
         ///
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
-        /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
-        /// to specify that set to be compared with the <code>metric</code>.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
-        /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this
-        /// to specify that set to be compared with the <code>metric</code>.</p>
+        /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
         pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.ports = input;
             self
         }
-        /// <p>
-        /// The numeral value of a metric.
-        /// </p>
+        /// <p> The numeral value of a metric. </p>
         pub fn number(mut self, input: f64) -> Self {
             self.number = Some(input);
             self
         }
-        /// <p>
-        /// The numeral value of a metric.
-        /// </p>
+        /// <p> The numeral value of a metric. </p>
         pub fn set_number(mut self, input: std::option::Option<f64>) -> Self {
             self.number = input;
             self
@@ -915,18 +711,14 @@ pub mod metric_value {
         ///
         /// To override the contents of this collection use [`set_numbers`](Self::set_numbers).
         ///
-        /// <p>
-        /// The numeral values of a metric.
-        /// </p>
-        pub fn numbers(mut self, input: impl Into<f64>) -> Self {
+        /// <p> The numeral values of a metric. </p>
+        pub fn numbers(mut self, input: f64) -> Self {
             let mut v = self.numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.numbers = Some(v);
             self
         }
-        /// <p>
-        /// The numeral values of a metric.
-        /// </p>
+        /// <p> The numeral values of a metric. </p>
         pub fn set_numbers(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.numbers = input;
             self
@@ -935,18 +727,14 @@ pub mod metric_value {
         ///
         /// To override the contents of this collection use [`set_strings`](Self::set_strings).
         ///
-        /// <p>
-        /// The string values of a metric.
-        /// </p>
+        /// <p> The string values of a metric. </p>
         pub fn strings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.strings.unwrap_or_default();
             v.push(input.into());
             self.strings = Some(v);
             self
         }
-        /// <p>
-        /// The string values of a metric.
-        /// </p>
+        /// <p> The string values of a metric. </p>
         pub fn set_strings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1357,34 +1145,26 @@ impl ThingGroupProperties {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with
-    /// the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p>
-    /// <note>
+    /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub merge: bool,
 }
 impl AttributePayload {
     /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
     }
-    /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with
-    /// the attributes stored in the registry, instead of overwriting them.</p>
-    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p>
-    /// <note>
+    /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
+    /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
     /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
     /// </note>
     pub fn merge(&self) -> bool {
@@ -1416,9 +1196,7 @@ pub mod attribute_payload {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1430,9 +1208,7 @@ pub mod attribute_payload {
             self
         }
         /// <p>A JSON string containing up to three key-value pair in JSON format. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1442,20 +1218,16 @@ pub mod attribute_payload {
             self.attributes = input;
             self
         }
-        /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with
-        /// the attributes stored in the registry, instead of overwriting them.</p>
-        /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p>
-        /// <note>
+        /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
+        /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
         /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
         /// </note>
         pub fn merge(mut self, input: bool) -> Self {
             self.merge = Some(input);
             self
         }
-        /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with
-        /// the attributes stored in the registry, instead of overwriting them.</p>
-        /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p>
-        /// <note>
+        /// <p>Specifies whether the list of attributes provided in the <code>AttributePayload</code> is merged with the attributes stored in the registry, instead of overwriting them.</p>
+        /// <p>To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.</p> <note>
         /// <p>The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or <code>UpdateThingGroup</code>.</p>
         /// </note>
         pub fn set_merge(mut self, input: std::option::Option<bool>) -> Self {
@@ -1728,8 +1500,7 @@ impl MetricToRetain {
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     pub alert_target_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants permission to send alerts to the
-    /// notification target.</p>
+    /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl AlertTarget {
@@ -1737,8 +1508,7 @@ impl AlertTarget {
     pub fn alert_target_arn(&self) -> std::option::Option<&str> {
         self.alert_target_arn.as_deref()
     }
-    /// <p>The ARN of the role that grants permission to send alerts to the
-    /// notification target.</p>
+    /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -1774,14 +1544,12 @@ pub mod alert_target {
             self.alert_target_arn = input;
             self
         }
-        /// <p>The ARN of the role that grants permission to send alerts to the
-        /// notification target.</p>
+        /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants permission to send alerts to the
-        /// notification target.</p>
+        /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1991,30 +1759,25 @@ impl AsRef<str> for AuditFrequency {
     }
 }
 
-/// <p>Structure that contains <code>payloadVersion</code> and
-/// <code>targetArn</code>.</p>
+/// <p>Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
-    /// <p>
-    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub payload_version: std::option::Option<std::string::String>,
     /// <p>The ARN of the target function.</p>
-    /// <p>
-    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
-    /// <p>
-    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn payload_version(&self) -> std::option::Option<&str> {
         self.payload_version.as_deref()
     }
     /// <p>The ARN of the target function.</p>
-    /// <p>
-    /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+    /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -2038,15 +1801,13 @@ pub mod provisioning_hook {
     }
     impl Builder {
         /// <p>The payload that was sent to the target function.</p>
-        /// <p>
-        /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+        /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
         pub fn payload_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.payload_version = Some(input.into());
             self
         }
         /// <p>The payload that was sent to the target function.</p>
-        /// <p>
-        /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+        /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
         pub fn set_payload_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2055,15 +1816,13 @@ pub mod provisioning_hook {
             self
         }
         /// <p>The ARN of the target function.</p>
-        /// <p>
-        /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+        /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the target function.</p>
-        /// <p>
-        /// <i>Note:</i> Only Lambda functions are currently supported.</p>
+        /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -2911,26 +2670,213 @@ impl AsRef<str> for DeviceCertificateUpdateAction {
     }
 }
 
-/// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-/// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-/// execution status is not set to another terminal state before the timer expires, it will
-/// be automatically set to <code>TIMED_OUT</code>.</p>
+/// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobExecutionsRetryConfig {
+    /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+    pub criteria_list: std::option::Option<std::vec::Vec<crate::model::RetryCriteria>>,
+}
+impl JobExecutionsRetryConfig {
+    /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+    pub fn criteria_list(&self) -> std::option::Option<&[crate::model::RetryCriteria]> {
+        self.criteria_list.as_deref()
+    }
+}
+impl std::fmt::Debug for JobExecutionsRetryConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobExecutionsRetryConfig");
+        formatter.field("criteria_list", &self.criteria_list);
+        formatter.finish()
+    }
+}
+/// See [`JobExecutionsRetryConfig`](crate::model::JobExecutionsRetryConfig)
+pub mod job_executions_retry_config {
+    /// A builder for [`JobExecutionsRetryConfig`](crate::model::JobExecutionsRetryConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) criteria_list: std::option::Option<std::vec::Vec<crate::model::RetryCriteria>>,
+    }
+    impl Builder {
+        /// Appends an item to `criteria_list`.
+        ///
+        /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
+        ///
+        /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+        pub fn criteria_list(mut self, input: crate::model::RetryCriteria) -> Self {
+            let mut v = self.criteria_list.unwrap_or_default();
+            v.push(input);
+            self.criteria_list = Some(v);
+            self
+        }
+        /// <p>The list of criteria that determines how many retries are allowed for each failure type for a job.</p>
+        pub fn set_criteria_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RetryCriteria>>,
+        ) -> Self {
+            self.criteria_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobExecutionsRetryConfig`](crate::model::JobExecutionsRetryConfig)
+        pub fn build(self) -> crate::model::JobExecutionsRetryConfig {
+            crate::model::JobExecutionsRetryConfig {
+                criteria_list: self.criteria_list,
+            }
+        }
+    }
+}
+impl JobExecutionsRetryConfig {
+    /// Creates a new builder-style object to manufacture [`JobExecutionsRetryConfig`](crate::model::JobExecutionsRetryConfig)
+    pub fn builder() -> crate::model::job_executions_retry_config::Builder {
+        crate::model::job_executions_retry_config::Builder::default()
+    }
+}
+
+/// <p>The criteria that determines how many retries are allowed for each failure type for a job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RetryCriteria {
+    /// <p>The type of job execution failures that can initiate a job retry.</p>
+    pub failure_type: std::option::Option<crate::model::RetryableFailureType>,
+    /// <p>The number of retries allowed for a failure type for the job.</p>
+    pub number_of_retries: std::option::Option<i32>,
+}
+impl RetryCriteria {
+    /// <p>The type of job execution failures that can initiate a job retry.</p>
+    pub fn failure_type(&self) -> std::option::Option<&crate::model::RetryableFailureType> {
+        self.failure_type.as_ref()
+    }
+    /// <p>The number of retries allowed for a failure type for the job.</p>
+    pub fn number_of_retries(&self) -> std::option::Option<i32> {
+        self.number_of_retries
+    }
+}
+impl std::fmt::Debug for RetryCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RetryCriteria");
+        formatter.field("failure_type", &self.failure_type);
+        formatter.field("number_of_retries", &self.number_of_retries);
+        formatter.finish()
+    }
+}
+/// See [`RetryCriteria`](crate::model::RetryCriteria)
+pub mod retry_criteria {
+    /// A builder for [`RetryCriteria`](crate::model::RetryCriteria)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) failure_type: std::option::Option<crate::model::RetryableFailureType>,
+        pub(crate) number_of_retries: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The type of job execution failures that can initiate a job retry.</p>
+        pub fn failure_type(mut self, input: crate::model::RetryableFailureType) -> Self {
+            self.failure_type = Some(input);
+            self
+        }
+        /// <p>The type of job execution failures that can initiate a job retry.</p>
+        pub fn set_failure_type(
+            mut self,
+            input: std::option::Option<crate::model::RetryableFailureType>,
+        ) -> Self {
+            self.failure_type = input;
+            self
+        }
+        /// <p>The number of retries allowed for a failure type for the job.</p>
+        pub fn number_of_retries(mut self, input: i32) -> Self {
+            self.number_of_retries = Some(input);
+            self
+        }
+        /// <p>The number of retries allowed for a failure type for the job.</p>
+        pub fn set_number_of_retries(mut self, input: std::option::Option<i32>) -> Self {
+            self.number_of_retries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RetryCriteria`](crate::model::RetryCriteria)
+        pub fn build(self) -> crate::model::RetryCriteria {
+            crate::model::RetryCriteria {
+                failure_type: self.failure_type,
+                number_of_retries: self.number_of_retries,
+            }
+        }
+    }
+}
+impl RetryCriteria {
+    /// Creates a new builder-style object to manufacture [`RetryCriteria`](crate::model::RetryCriteria)
+    pub fn builder() -> crate::model::retry_criteria::Builder {
+        crate::model::retry_criteria::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RetryableFailureType {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    TimedOut,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RetryableFailureType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => RetryableFailureType::All,
+            "FAILED" => RetryableFailureType::Failed,
+            "TIMED_OUT" => RetryableFailureType::TimedOut,
+            other => RetryableFailureType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RetryableFailureType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RetryableFailureType::from(s))
+    }
+}
+impl RetryableFailureType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RetryableFailureType::All => "ALL",
+            RetryableFailureType::Failed => "FAILED",
+            RetryableFailureType::TimedOut => "TIMED_OUT",
+            RetryableFailureType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "FAILED", "TIMED_OUT"]
+    }
+}
+impl AsRef<str> for RetryableFailureType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeoutConfig {
-    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  
-    /// The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The
-    /// in progress timer can't be updated and will apply to all job executions for the job. Whenever a job
-    /// execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail
-    /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl TimeoutConfig {
-    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  
-    /// The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The
-    /// in progress timer can't be updated and will apply to all job executions for the job. Whenever a job
-    /// execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail
-    /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.in_progress_timeout_in_minutes
     }
@@ -2954,20 +2900,12 @@ pub mod timeout_config {
         pub(crate) in_progress_timeout_in_minutes: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  
-        /// The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The
-        /// in progress timer can't be updated and will apply to all job executions for the job. Whenever a job
-        /// execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail
-        /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
+        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
         pub fn in_progress_timeout_in_minutes(mut self, input: i64) -> Self {
             self.in_progress_timeout_in_minutes = Some(input);
             self
         }
-        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  
-        /// The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The
-        /// in progress timer can't be updated and will apply to all job executions for the job. Whenever a job
-        /// execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail
-        /// and switch to the terminal <code>TIMED_OUT</code> status.</p>
+        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
         pub fn set_in_progress_timeout_in_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -3024,9 +2962,9 @@ pub mod abort_config {
         /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
         ///
         /// <p>The list of criteria that determine when and how to abort the job.</p>
-        pub fn criteria_list(mut self, input: impl Into<crate::model::AbortCriteria>) -> Self {
+        pub fn criteria_list(mut self, input: crate::model::AbortCriteria) -> Self {
             let mut v = self.criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.criteria_list = Some(v);
             self
         }
@@ -3064,8 +3002,7 @@ pub struct AbortCriteria {
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub threshold_percentage: std::option::Option<f64>,
-    /// <p>The minimum number of things which must receive job execution notifications before the job
-    /// can be aborted.</p>
+    /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub min_number_of_executed_things: std::option::Option<i32>,
 }
 impl AbortCriteria {
@@ -3082,8 +3019,7 @@ impl AbortCriteria {
     pub fn threshold_percentage(&self) -> std::option::Option<f64> {
         self.threshold_percentage
     }
-    /// <p>The minimum number of things which must receive job execution notifications before the job
-    /// can be aborted.</p>
+    /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
         self.min_number_of_executed_things
     }
@@ -3148,14 +3084,12 @@ pub mod abort_criteria {
             self.threshold_percentage = input;
             self
         }
-        /// <p>The minimum number of things which must receive job execution notifications before the job
-        /// can be aborted.</p>
+        /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
         pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
             self.min_number_of_executed_things = Some(input);
             self
         }
-        /// <p>The minimum number of things which must receive job execution notifications before the job
-        /// can be aborted.</p>
+        /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
         pub fn set_min_number_of_executed_things(
             mut self,
             input: std::option::Option<i32>,
@@ -3299,21 +3233,17 @@ impl AsRef<str> for JobExecutionFailureType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionsRolloutConfig {
-    /// <p>The maximum number of things that will be notified of a pending job, per minute.
-    /// This parameter allows you to create a staged rollout.</p>
+    /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
     pub maximum_per_minute: std::option::Option<i32>,
-    /// <p>The rate of increase for a job rollout.
-    /// This parameter allows you to define an exponential rate for a job rollout.</p>
+    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
     pub exponential_rate: std::option::Option<crate::model::ExponentialRolloutRate>,
 }
 impl JobExecutionsRolloutConfig {
-    /// <p>The maximum number of things that will be notified of a pending job, per minute.
-    /// This parameter allows you to create a staged rollout.</p>
+    /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
     pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
         self.maximum_per_minute
     }
-    /// <p>The rate of increase for a job rollout.
-    /// This parameter allows you to define an exponential rate for a job rollout.</p>
+    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
     pub fn exponential_rate(&self) -> std::option::Option<&crate::model::ExponentialRolloutRate> {
         self.exponential_rate.as_ref()
     }
@@ -3336,26 +3266,22 @@ pub mod job_executions_rollout_config {
         pub(crate) exponential_rate: std::option::Option<crate::model::ExponentialRolloutRate>,
     }
     impl Builder {
-        /// <p>The maximum number of things that will be notified of a pending job, per minute.
-        /// This parameter allows you to create a staged rollout.</p>
+        /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
         pub fn maximum_per_minute(mut self, input: i32) -> Self {
             self.maximum_per_minute = Some(input);
             self
         }
-        /// <p>The maximum number of things that will be notified of a pending job, per minute.
-        /// This parameter allows you to create a staged rollout.</p>
+        /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
         pub fn set_maximum_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_per_minute = input;
             self
         }
-        /// <p>The rate of increase for a job rollout.
-        /// This parameter allows you to define an exponential rate for a job rollout.</p>
+        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
         pub fn exponential_rate(mut self, input: crate::model::ExponentialRolloutRate) -> Self {
             self.exponential_rate = Some(input);
             self
         }
-        /// <p>The rate of increase for a job rollout.
-        /// This parameter allows you to define an exponential rate for a job rollout.</p>
+        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
         pub fn set_exponential_rate(
             mut self,
             input: std::option::Option<crate::model::ExponentialRolloutRate>,
@@ -3383,8 +3309,7 @@ impl JobExecutionsRolloutConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExponentialRolloutRate {
-    /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout.
-    /// This parameter allows you to define the initial rate of rollout.</p>
+    /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
     pub base_rate_per_minute: std::option::Option<i32>,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
@@ -3393,8 +3318,7 @@ pub struct ExponentialRolloutRate {
     pub rate_increase_criteria: std::option::Option<crate::model::RateIncreaseCriteria>,
 }
 impl ExponentialRolloutRate {
-    /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout.
-    /// This parameter allows you to define the initial rate of rollout.</p>
+    /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
     pub fn base_rate_per_minute(&self) -> std::option::Option<i32> {
         self.base_rate_per_minute
     }
@@ -3430,14 +3354,12 @@ pub mod exponential_rollout_rate {
         pub(crate) rate_increase_criteria: std::option::Option<crate::model::RateIncreaseCriteria>,
     }
     impl Builder {
-        /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout.
-        /// This parameter allows you to define the initial rate of rollout.</p>
+        /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
         pub fn base_rate_per_minute(mut self, input: i32) -> Self {
             self.base_rate_per_minute = Some(input);
             self
         }
-        /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout.
-        /// This parameter allows you to define the initial rate of rollout.</p>
+        /// <p>The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.</p>
         pub fn set_base_rate_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.base_rate_per_minute = input;
             self
@@ -3564,21 +3486,17 @@ impl RateIncreaseCriteria {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PresignedUrlConfig {
-    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-    /// data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
-    /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
     pub expires_in_sec: std::option::Option<i64>,
 }
 impl PresignedUrlConfig {
-    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-    /// data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+    /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
-    /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
     pub fn expires_in_sec(&self) -> std::option::Option<i64> {
         self.expires_in_sec
     }
@@ -3601,26 +3519,22 @@ pub mod presigned_url_config {
         pub(crate) expires_in_sec: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-        /// data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-        /// data/updates are stored. The role must also grant permission for IoT to download the files.</p>
+        /// <p>The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
-        /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
         pub fn expires_in_sec(mut self, input: i64) -> Self {
             self.expires_in_sec = Some(input);
             self
         }
-        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600
-        /// seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
+        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 3600 seconds. Pre-signed URLs are generated when Jobs receives an MQTT request for the job document.</p>
         pub fn set_expires_in_sec(mut self, input: std::option::Option<i64>) -> Self {
             self.expires_in_sec = input;
             self
@@ -3647,11 +3561,9 @@ impl PresignedUrlConfig {
 pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
     pub thing_group_indexing_mode: std::option::Option<crate::model::ThingGroupIndexingMode>,
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-    /// service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
-    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
-    /// the GetIndexingConfiguration API to get a list of managed fields.</p>
+    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
 }
@@ -3662,13 +3574,11 @@ impl ThingGroupIndexingConfiguration {
     ) -> std::option::Option<&crate::model::ThingGroupIndexingMode> {
         self.thing_group_indexing_mode.as_ref()
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-    /// service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
     pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.managed_fields.as_deref()
     }
-    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
-    /// the GetIndexingConfiguration API to get a list of managed fields.</p>
+    /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
     pub fn custom_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.custom_fields.as_deref()
@@ -3715,16 +3625,14 @@ pub mod thing_group_indexing_configuration {
         ///
         /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
         ///
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.</p>
-        pub fn managed_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+        pub fn managed_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.managed_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_fields = Some(v);
             self
         }
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.</p>
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
         pub fn set_managed_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -3736,17 +3644,15 @@ pub mod thing_group_indexing_configuration {
         ///
         /// To override the contents of this collection use [`set_custom_fields`](Self::set_custom_fields).
         ///
-        /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
-        /// the GetIndexingConfiguration API to get a list of managed fields.</p>
+        /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
         /// <p>Contains custom field names and their data type.</p>
-        pub fn custom_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn custom_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.custom_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_fields = Some(v);
             self
         }
-        /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use
-        /// the GetIndexingConfiguration API to get a list of managed fields.</p>
+        /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
         /// <p>Contains custom field names and their data type.</p>
         pub fn set_custom_fields(
             mut self,
@@ -3959,68 +3865,40 @@ impl AsRef<str> for ThingGroupIndexingMode {
     }
 }
 
-/// <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing
-/// Thing Indexing</a>.</p>
+/// <p>The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingIndexingConfiguration {
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>REGISTRY – Your thing index contains registry data only.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Thing indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>REGISTRY – Your thing index contains registry data only.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
+    /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
     pub thing_indexing_mode: std::option::Option<crate::model::ThingIndexingMode>,
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-    /// connectivity indexing, <i>thingIndexMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Thing connectivity status indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
     /// </ul>
     pub thing_connectivity_indexing_mode:
         std::option::Option<crate::model::ThingConnectivityIndexingMode>,
     /// <p>Device Defender indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
-    /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Device Defender indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
     /// </ul>
-    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
-    /// </p>
+    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
     pub device_defender_indexing_mode:
         std::option::Option<crate::model::DeviceDefenderIndexingMode>,
     /// <p>Named shadow indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ON – Your thing index contains named shadow. To enable thing
-    /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Named shadow indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
     /// </ul>
-    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-    /// </p>
+    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub named_shadow_indexing_mode: std::option::Option<crate::model::NamedShadowIndexingMode>,
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-    /// service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -4028,29 +3906,17 @@ pub struct ThingIndexingConfiguration {
 impl ThingIndexingConfiguration {
     /// <p>Thing indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>REGISTRY – Your thing index contains registry data only.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Thing indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>REGISTRY – Your thing index contains registry data only.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
+    /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
     pub fn thing_indexing_mode(&self) -> std::option::Option<&crate::model::ThingIndexingMode> {
         self.thing_indexing_mode.as_ref()
     }
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-    /// connectivity indexing, <i>thingIndexMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Thing connectivity status indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
     /// </ul>
     pub fn thing_connectivity_indexing_mode(
         &self,
@@ -4059,17 +3925,10 @@ impl ThingIndexingConfiguration {
     }
     /// <p>Device Defender indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
-    /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Device Defender indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
     /// </ul>
-    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
-    /// </p>
+    /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
     pub fn device_defender_indexing_mode(
         &self,
     ) -> std::option::Option<&crate::model::DeviceDefenderIndexingMode> {
@@ -4077,24 +3936,16 @@ impl ThingIndexingConfiguration {
     }
     /// <p>Named shadow indexing mode. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>ON – Your thing index contains named shadow. To enable thing
-    /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
-    /// OFF.</p>
-    /// </li>
-    /// <li>
-    /// <p>OFF - Named shadow indexing is disabled.</p>
-    /// </li>
+    /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
+    /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
     /// </ul>
-    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-    /// </p>
+    /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn named_shadow_indexing_mode(
         &self,
     ) -> std::option::Option<&crate::model::NamedShadowIndexingMode> {
         self.named_shadow_indexing_mode.as_ref()
     }
-    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-    /// service.</p>
+    /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
     pub fn managed_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.managed_fields.as_deref()
     }
@@ -4143,15 +3994,9 @@ pub mod thing_indexing_configuration {
     impl Builder {
         /// <p>Thing indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>REGISTRY – Your thing index contains registry data only.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Thing indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>REGISTRY – Your thing index contains registry data only.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
+        /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
         /// </ul>
         pub fn thing_indexing_mode(mut self, input: crate::model::ThingIndexingMode) -> Self {
             self.thing_indexing_mode = Some(input);
@@ -4159,15 +4004,9 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Thing indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>REGISTRY – Your thing index contains registry data only.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Thing indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>REGISTRY – Your thing index contains registry data only.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
+        /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
         /// </ul>
         pub fn set_thing_indexing_mode(
             mut self,
@@ -4178,14 +4017,8 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Thing connectivity indexing mode. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-        /// connectivity indexing, <i>thingIndexMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Thing connectivity status indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
         /// </ul>
         pub fn thing_connectivity_indexing_mode(
             mut self,
@@ -4196,14 +4029,8 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Thing connectivity indexing mode. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>STATUS – Your thing index contains connectivity status. To enable thing
-        /// connectivity indexing, <i>thingIndexMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Thing connectivity status indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
         /// </ul>
         pub fn set_thing_connectivity_indexing_mode(
             mut self,
@@ -4214,17 +4041,10 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Device Defender indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
-        /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Device Defender indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
         /// </ul>
-        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
-        /// </p>
+        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
         pub fn device_defender_indexing_mode(
             mut self,
             input: crate::model::DeviceDefenderIndexingMode,
@@ -4234,17 +4054,10 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Device Defender indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
-        /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Device Defender indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>VIOLATIONS – Your thing index contains Device Defender violations. To enable Device Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
         /// </ul>
-        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a>
-        /// </p>
+        /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
         pub fn set_device_defender_indexing_mode(
             mut self,
             input: std::option::Option<crate::model::DeviceDefenderIndexingMode>,
@@ -4254,17 +4067,10 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Named shadow indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>ON – Your thing index contains named shadow. To enable thing
-        /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Named shadow indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
         /// </ul>
-        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-        /// </p>
+        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
         pub fn named_shadow_indexing_mode(
             mut self,
             input: crate::model::NamedShadowIndexingMode,
@@ -4274,17 +4080,10 @@ pub mod thing_indexing_configuration {
         }
         /// <p>Named shadow indexing mode. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>ON – Your thing index contains named shadow. To enable thing
-        /// named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to
-        /// OFF.</p>
-        /// </li>
-        /// <li>
-        /// <p>OFF - Named shadow indexing is disabled.</p>
-        /// </li>
+        /// <li> <p>ON – Your thing index contains named shadow. To enable thing named shadow indexing, <i>namedShadowIndexingMode</i> must not be set to OFF.</p> </li>
+        /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
         /// </ul>
-        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-        /// </p>
+        /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
         pub fn set_named_shadow_indexing_mode(
             mut self,
             input: std::option::Option<crate::model::NamedShadowIndexingMode>,
@@ -4296,16 +4095,14 @@ pub mod thing_indexing_configuration {
         ///
         /// To override the contents of this collection use [`set_managed_fields`](Self::set_managed_fields).
         ///
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.</p>
-        pub fn managed_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
+        pub fn managed_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.managed_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_fields = Some(v);
             self
         }
-        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing
-        /// service.</p>
+        /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
         pub fn set_managed_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -4318,9 +4115,9 @@ pub mod thing_indexing_configuration {
         /// To override the contents of this collection use [`set_custom_fields`](Self::set_custom_fields).
         ///
         /// <p>Contains custom field names and their data type.</p>
-        pub fn custom_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn custom_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.custom_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_fields = Some(v);
             self
         }
@@ -6412,9 +6209,7 @@ pub struct AuthResult {
     pub allowed: std::option::Option<crate::model::Allowed>,
     /// <p>The policies and statements that denied the specified action.</p>
     pub denied: std::option::Option<crate::model::Denied>,
-    /// <p>The final authorization decision of this scenario. Multiple statements are taken into
-    /// account when determining the authorization decision. An explicit deny statement can
-    /// override multiple allow statements.</p>
+    /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
     pub auth_decision: std::option::Option<crate::model::AuthDecision>,
     /// <p>Contains any missing context values found while evaluating policy.</p>
     pub missing_context_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6432,9 +6227,7 @@ impl AuthResult {
     pub fn denied(&self) -> std::option::Option<&crate::model::Denied> {
         self.denied.as_ref()
     }
-    /// <p>The final authorization decision of this scenario. Multiple statements are taken into
-    /// account when determining the authorization decision. An explicit deny statement can
-    /// override multiple allow statements.</p>
+    /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
     pub fn auth_decision(&self) -> std::option::Option<&crate::model::AuthDecision> {
         self.auth_decision.as_ref()
     }
@@ -6497,16 +6290,12 @@ pub mod auth_result {
             self.denied = input;
             self
         }
-        /// <p>The final authorization decision of this scenario. Multiple statements are taken into
-        /// account when determining the authorization decision. An explicit deny statement can
-        /// override multiple allow statements.</p>
+        /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
         pub fn auth_decision(mut self, input: crate::model::AuthDecision) -> Self {
             self.auth_decision = Some(input);
             self
         }
-        /// <p>The final authorization decision of this scenario. Multiple statements are taken into
-        /// account when determining the authorization decision. An explicit deny statement can
-        /// override multiple allow statements.</p>
+        /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
         pub fn set_auth_decision(
             mut self,
             input: std::option::Option<crate::model::AuthDecision>,
@@ -6615,17 +6404,13 @@ impl AsRef<str> for AuthDecision {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Denied {
-    /// <p>Information that implicitly denies the authorization. When a policy doesn't
-    /// explicitly deny or allow an action on a resource it is considered an implicit
-    /// deny.</p>
+    /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     pub implicit_deny: std::option::Option<crate::model::ImplicitDeny>,
     /// <p>Information that explicitly denies the authorization. </p>
     pub explicit_deny: std::option::Option<crate::model::ExplicitDeny>,
 }
 impl Denied {
-    /// <p>Information that implicitly denies the authorization. When a policy doesn't
-    /// explicitly deny or allow an action on a resource it is considered an implicit
-    /// deny.</p>
+    /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     pub fn implicit_deny(&self) -> std::option::Option<&crate::model::ImplicitDeny> {
         self.implicit_deny.as_ref()
     }
@@ -6652,16 +6437,12 @@ pub mod denied {
         pub(crate) explicit_deny: std::option::Option<crate::model::ExplicitDeny>,
     }
     impl Builder {
-        /// <p>Information that implicitly denies the authorization. When a policy doesn't
-        /// explicitly deny or allow an action on a resource it is considered an implicit
-        /// deny.</p>
+        /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
         pub fn implicit_deny(mut self, input: crate::model::ImplicitDeny) -> Self {
             self.implicit_deny = Some(input);
             self
         }
-        /// <p>Information that implicitly denies the authorization. When a policy doesn't
-        /// explicitly deny or allow an action on a resource it is considered an implicit
-        /// deny.</p>
+        /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
         pub fn set_implicit_deny(
             mut self,
             input: std::option::Option<crate::model::ImplicitDeny>,
@@ -6732,9 +6513,9 @@ pub mod explicit_deny {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The policies that denied the authorization.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -6834,18 +6615,15 @@ impl Policy {
     }
 }
 
-/// <p>Information that implicitly denies authorization. When policy doesn't explicitly deny
-/// or allow an action on a resource it is considered an implicit deny.</p>
+/// <p>Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImplicitDeny {
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified
-    /// action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
 }
 impl ImplicitDeny {
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified
-    /// action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
     }
@@ -6870,16 +6648,14 @@ pub mod implicit_deny {
         ///
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
-        /// <p>Policies that don't contain a matching allow or deny statement for the specified
-        /// action on the specified resource. </p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
-        /// <p>Policies that don't contain a matching allow or deny statement for the specified
-        /// action on the specified resource. </p>
+        /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Policy>>,
@@ -6936,9 +6712,9 @@ pub mod allowed {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>A list of policies that allowed the authentication.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: crate::model::Policy) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -6971,8 +6747,7 @@ impl Allowed {
 pub struct AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>The resources for which the principal is being authorized to perform the specified
-    /// action.</p>
+    /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AuthInfo {
@@ -6980,8 +6755,7 @@ impl AuthInfo {
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>The resources for which the principal is being authorized to perform the specified
-    /// action.</p>
+    /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
@@ -7021,16 +6795,14 @@ pub mod auth_info {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>The resources for which the principal is being authorized to perform the specified
-        /// action.</p>
+        /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
-        /// <p>The resources for which the principal is being authorized to perform the specified
-        /// action.</p>
+        /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7190,31 +6962,21 @@ impl Tag {
     }
 }
 
-/// <p>
-/// Specifies the time period of which violation events occurred between.
-/// </p>
+/// <p> Specifies the time period of which violation events occurred between. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationEventOccurrenceRange {
-    /// <p>
-    /// The start date and time of a time period in which violation events occurred.
-    /// </p>
+    /// <p> The start date and time of a time period in which violation events occurred. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end date and time of a time period in which violation events occurred.
-    /// </p>
+    /// <p> The end date and time of a time period in which violation events occurred. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ViolationEventOccurrenceRange {
-    /// <p>
-    /// The start date and time of a time period in which violation events occurred.
-    /// </p>
+    /// <p> The start date and time of a time period in which violation events occurred. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end date and time of a time period in which violation events occurred.
-    /// </p>
+    /// <p> The end date and time of a time period in which violation events occurred. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -7237,16 +6999,12 @@ pub mod violation_event_occurrence_range {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The start date and time of a time period in which violation events occurred.
-        /// </p>
+        /// <p> The start date and time of a time period in which violation events occurred. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// The start date and time of a time period in which violation events occurred.
-        /// </p>
+        /// <p> The start date and time of a time period in which violation events occurred. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7254,16 +7012,12 @@ pub mod violation_event_occurrence_range {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end date and time of a time period in which violation events occurred.
-        /// </p>
+        /// <p> The end date and time of a time period in which violation events occurred. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end date and time of a time period in which violation events occurred.
-        /// </p>
+        /// <p> The end date and time of a time period in which violation events occurred. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7287,41 +7041,27 @@ impl ViolationEventOccurrenceRange {
     }
 }
 
-/// <p>
-/// The target of a mitigation action task.
-/// </p>
+/// <p> The target of a mitigation action task. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskTarget {
-    /// <p>
-    /// The unique identifiers of the violations.
-    /// </p>
+    /// <p> The unique identifiers of the violations. </p>
     pub violation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the behavior.
-    /// </p>
+    /// <p> The name of the behavior. </p>
     pub behavior_name: std::option::Option<std::string::String>,
 }
 impl DetectMitigationActionsTaskTarget {
-    /// <p>
-    /// The unique identifiers of the violations.
-    /// </p>
+    /// <p> The unique identifiers of the violations. </p>
     pub fn violation_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.violation_ids.as_deref()
     }
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The name of the behavior.
-    /// </p>
+    /// <p> The name of the behavior. </p>
     pub fn behavior_name(&self) -> std::option::Option<&str> {
         self.behavior_name.as_deref()
     }
@@ -7350,18 +7090,14 @@ pub mod detect_mitigation_actions_task_target {
         ///
         /// To override the contents of this collection use [`set_violation_ids`](Self::set_violation_ids).
         ///
-        /// <p>
-        /// The unique identifiers of the violations.
-        /// </p>
+        /// <p> The unique identifiers of the violations. </p>
         pub fn violation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.violation_ids.unwrap_or_default();
             v.push(input.into());
             self.violation_ids = Some(v);
             self
         }
-        /// <p>
-        /// The unique identifiers of the violations.
-        /// </p>
+        /// <p> The unique identifiers of the violations. </p>
         pub fn set_violation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7369,16 +7105,12 @@ pub mod detect_mitigation_actions_task_target {
             self.violation_ids = input;
             self
         }
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7386,16 +7118,12 @@ pub mod detect_mitigation_actions_task_target {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The name of the behavior.
-        /// </p>
+        /// <p> The name of the behavior. </p>
         pub fn behavior_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.behavior_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the behavior.
-        /// </p>
+        /// <p> The name of the behavior. </p>
         pub fn set_behavior_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7516,10 +7244,10 @@ pub mod audit_mitigation_actions_task_target {
         pub fn audit_check_to_reason_code_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.audit_check_to_reason_code_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_to_reason_code_filter = Some(hash_map);
             self
         }
@@ -7939,8 +7667,7 @@ pub struct ThingDocument {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-    /// </p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub shadow: std::option::Option<std::string::String>,
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
@@ -7973,8 +7700,7 @@ impl ThingDocument {
         self.attributes.as_ref()
     }
     /// <p>The unnamed shadow and named shadow.</p>
-    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-    /// </p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn shadow(&self) -> std::option::Option<&str> {
         self.shadow.as_deref()
     }
@@ -8098,15 +7824,13 @@ pub mod thing_document {
             self
         }
         /// <p>The unnamed shadow and named shadow.</p>
-        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-        /// </p>
+        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
         pub fn shadow(mut self, input: impl Into<std::string::String>) -> Self {
             self.shadow = Some(input.into());
             self
         }
         /// <p>The unnamed shadow and named shadow.</p>
-        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a>
-        /// </p>
+        /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
         pub fn set_shadow(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shadow = input;
             self
@@ -8165,23 +7889,19 @@ impl ThingDocument {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingConnectivity {
-    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
-    /// connected.</p>
+    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     pub connected: bool,
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-    /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub timestamp: std::option::Option<i64>,
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     pub disconnect_reason: std::option::Option<std::string::String>,
 }
 impl ThingConnectivity {
-    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
-    /// connected.</p>
+    /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     pub fn connected(&self) -> bool {
         self.connected
     }
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-    /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub fn timestamp(&self) -> std::option::Option<i64> {
         self.timestamp
     }
@@ -8210,26 +7930,22 @@ pub mod thing_connectivity {
         pub(crate) disconnect_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
-        /// connected.</p>
+        /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
         pub fn connected(mut self, input: bool) -> Self {
             self.connected = Some(input);
             self
         }
-        /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not
-        /// connected.</p>
+        /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
         pub fn set_connected(mut self, input: std::option::Option<bool>) -> Self {
             self.connected = input;
             self
         }
-        /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-        /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
+        /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the
-        /// thing has been disconnected for approximately an hour, the time value might be missing.</p>
+        /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -8268,8 +7984,7 @@ impl ThingConnectivity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicRulePayload {
-    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
-    /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub sql: std::option::Option<std::string::String>,
     /// <p>The description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
@@ -8283,8 +7998,7 @@ pub struct TopicRulePayload {
     pub error_action: std::option::Option<crate::model::Action>,
 }
 impl TopicRulePayload {
-    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
-    /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
@@ -8335,14 +8049,12 @@ pub mod topic_rule_payload {
         pub(crate) error_action: std::option::Option<crate::model::Action>,
     }
     impl Builder {
-        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
-        /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
+        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
         pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql = Some(input.into());
             self
         }
-        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL
-        /// Reference</a> in the <i>IoT Developer Guide</i>.</p>
+        /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -8362,9 +8074,9 @@ pub mod topic_rule_payload {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions associated with the rule.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -8438,9 +8150,7 @@ impl TopicRulePayload {
 pub struct Action {
     /// <p>Write to a DynamoDB table.</p>
     pub dynamo_db: std::option::Option<crate::model::DynamoDbAction>,
-    /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
-    /// you to write each attribute in an MQTT message payload into a separate DynamoDB
-    /// column.</p>
+    /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
     pub dynamo_d_bv2: std::option::Option<crate::model::DynamoDBv2Action>,
     /// <p>Invoke a Lambda function.</p>
     pub lambda: std::option::Option<crate::model::LambdaAction>,
@@ -8462,12 +8172,8 @@ pub struct Action {
     pub cloudwatch_alarm: std::option::Option<crate::model::CloudwatchAlarmAction>,
     /// <p>Send data to CloudWatch Logs.</p>
     pub cloudwatch_logs: std::option::Option<crate::model::CloudwatchLogsAction>,
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
-    /// <note>
-    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
-    /// To create a new rule action or to update an existing rule action, use the
-    /// <code>OpenSearch</code> rule action instead. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub elasticsearch: std::option::Option<crate::model::ElasticsearchAction>,
     /// <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
@@ -8476,14 +8182,11 @@ pub struct Action {
     pub iot_analytics: std::option::Option<crate::model::IotAnalyticsAction>,
     /// <p>Sends an input to an IoT Events detector.</p>
     pub iot_events: std::option::Option<crate::model::IotEventsAction>,
-    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
-    /// properties.</p>
+    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
     pub iot_site_wise: std::option::Option<crate::model::IotSiteWiseAction>,
     /// <p>Starts execution of a Step Functions state machine.</p>
     pub step_functions: std::option::Option<crate::model::StepFunctionsAction>,
-    /// <p>The Timestream rule action writes attributes (measures) from an MQTT message
-    /// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
-    /// topic rule action documentation.</p>
+    /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
     pub timestream: std::option::Option<crate::model::TimestreamAction>,
     /// <p>Send data to an HTTPS endpoint.</p>
     pub http: std::option::Option<crate::model::HttpAction>,
@@ -8497,9 +8200,7 @@ impl Action {
     pub fn dynamo_db(&self) -> std::option::Option<&crate::model::DynamoDbAction> {
         self.dynamo_db.as_ref()
     }
-    /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
-    /// you to write each attribute in an MQTT message payload into a separate DynamoDB
-    /// column.</p>
+    /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
     pub fn dynamo_d_bv2(&self) -> std::option::Option<&crate::model::DynamoDBv2Action> {
         self.dynamo_d_bv2.as_ref()
     }
@@ -8543,12 +8244,8 @@ impl Action {
     pub fn cloudwatch_logs(&self) -> std::option::Option<&crate::model::CloudwatchLogsAction> {
         self.cloudwatch_logs.as_ref()
     }
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
-    /// <note>
-    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
-    /// To create a new rule action or to update an existing rule action, use the
-    /// <code>OpenSearch</code> rule action instead. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn elasticsearch(&self) -> std::option::Option<&crate::model::ElasticsearchAction> {
         self.elasticsearch.as_ref()
@@ -8565,8 +8262,7 @@ impl Action {
     pub fn iot_events(&self) -> std::option::Option<&crate::model::IotEventsAction> {
         self.iot_events.as_ref()
     }
-    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
-    /// properties.</p>
+    /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
     pub fn iot_site_wise(&self) -> std::option::Option<&crate::model::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
     }
@@ -8574,9 +8270,7 @@ impl Action {
     pub fn step_functions(&self) -> std::option::Option<&crate::model::StepFunctionsAction> {
         self.step_functions.as_ref()
     }
-    /// <p>The Timestream rule action writes attributes (measures) from an MQTT message
-    /// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
-    /// topic rule action documentation.</p>
+    /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
     pub fn timestream(&self) -> std::option::Option<&crate::model::TimestreamAction> {
         self.timestream.as_ref()
     }
@@ -8664,16 +8358,12 @@ pub mod action {
             self.dynamo_db = input;
             self
         }
-        /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
-        /// you to write each attribute in an MQTT message payload into a separate DynamoDB
-        /// column.</p>
+        /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
         pub fn dynamo_d_bv2(mut self, input: crate::model::DynamoDBv2Action) -> Self {
             self.dynamo_d_bv2 = Some(input);
             self
         }
-        /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
-        /// you to write each attribute in an MQTT message payload into a separate DynamoDB
-        /// column.</p>
+        /// <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
         pub fn set_dynamo_d_bv2(
             mut self,
             input: std::option::Option<crate::model::DynamoDBv2Action>,
@@ -8802,23 +8492,15 @@ pub mod action {
             self.cloudwatch_logs = input;
             self
         }
-        /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
-        /// <note>
-        /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
-        /// To create a new rule action or to update an existing rule action, use the
-        /// <code>OpenSearch</code> rule action instead. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+        /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+        /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
         /// </note>
         pub fn elasticsearch(mut self, input: crate::model::ElasticsearchAction) -> Self {
             self.elasticsearch = Some(input);
             self
         }
-        /// <p>Write data to an Amazon OpenSearch Service domain.</p>   
-        /// <note>
-        /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions.
-        /// To create a new rule action or to update an existing rule action, use the
-        /// <code>OpenSearch</code> rule action instead. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+        /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+        /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
         /// </note>
         pub fn set_elasticsearch(
             mut self,
@@ -8866,14 +8548,12 @@ pub mod action {
             self.iot_events = input;
             self
         }
-        /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
-        /// properties.</p>
+        /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
         pub fn iot_site_wise(mut self, input: crate::model::IotSiteWiseAction) -> Self {
             self.iot_site_wise = Some(input);
             self
         }
-        /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset
-        /// properties.</p>
+        /// <p>Sends data from the MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
         pub fn set_iot_site_wise(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseAction>,
@@ -8894,16 +8574,12 @@ pub mod action {
             self.step_functions = input;
             self
         }
-        /// <p>The Timestream rule action writes attributes (measures) from an MQTT message
-        /// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
-        /// topic rule action documentation.</p>
+        /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
         pub fn timestream(mut self, input: crate::model::TimestreamAction) -> Self {
             self.timestream = Some(input);
             self
         }
-        /// <p>The Timestream rule action writes attributes (measures) from an MQTT message
-        /// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
-        /// topic rule action documentation.</p>
+        /// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
         pub fn set_timestream(
             mut self,
             input: std::option::Option<crate::model::TimestreamAction>,
@@ -8980,8 +8656,7 @@ impl Action {
     }
 }
 
-/// <p>Describes an action that writes data to an Amazon OpenSearch Service
-/// domain.</p>
+/// <p>Describes an action that writes data to an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenSearchAction {
@@ -9269,16 +8944,9 @@ impl KafkaAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpAction {
-    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a
-    /// <code>confirmationUrl</code>. If this is a new destination, a new
-    /// <code>TopicRuleDestination</code> is created if possible.</p>
+    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
-    /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
-    /// the endpoint URL as the confirmation URL. If you use substitution templates in the
-    /// confirmationUrl, you must create and enable topic rule destinations that match each
-    /// possible value of the substitution template before traffic is allowed to your endpoint
-    /// URL.</p>
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
     /// <p>The HTTP headers to send with the message data.</p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpActionHeader>>,
@@ -9286,18 +8954,11 @@ pub struct HttpAction {
     pub auth: std::option::Option<crate::model::HttpAuthorization>,
 }
 impl HttpAction {
-    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a
-    /// <code>confirmationUrl</code>. If this is a new destination, a new
-    /// <code>TopicRuleDestination</code> is created if possible.</p>
+    /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
-    /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
-    /// the endpoint URL as the confirmation URL. If you use substitution templates in the
-    /// confirmationUrl, you must create and enable topic rule destinations that match each
-    /// possible value of the substitution template before traffic is allowed to your endpoint
-    /// URL.</p>
+    /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
     }
@@ -9332,36 +8993,22 @@ pub mod http_action {
         pub(crate) auth: std::option::Option<crate::model::HttpAuthorization>,
     }
     impl Builder {
-        /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a
-        /// <code>confirmationUrl</code>. If this is a new destination, a new
-        /// <code>TopicRuleDestination</code> is created if possible.</p>
+        /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a
-        /// <code>confirmationUrl</code>. If this is a new destination, a new
-        /// <code>TopicRuleDestination</code> is created if possible.</p>
+        /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
-        /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
-        /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
-        /// the endpoint URL as the confirmation URL. If you use substitution templates in the
-        /// confirmationUrl, you must create and enable topic rule destinations that match each
-        /// possible value of the substitution template before traffic is allowed to your endpoint
-        /// URL.</p>
+        /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
         pub fn confirmation_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.confirmation_url = Some(input.into());
             self
         }
-        /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL
-        /// must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses
-        /// the endpoint URL as the confirmation URL. If you use substitution templates in the
-        /// confirmationUrl, you must create and enable topic rule destinations that match each
-        /// possible value of the substitution template before traffic is allowed to your endpoint
-        /// URL.</p>
+        /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
         pub fn set_confirmation_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9374,9 +9021,9 @@ pub mod http_action {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The HTTP headers to send with the message data.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpActionHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpActionHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -9423,13 +9070,11 @@ impl HttpAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpAuthorization {
-    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 Signing Process</a>.</p>
+    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
     pub sigv4: std::option::Option<crate::model::SigV4Authorization>,
 }
 impl HttpAuthorization {
-    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 Signing Process</a>.</p>
+    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
     pub fn sigv4(&self) -> std::option::Option<&crate::model::SigV4Authorization> {
         self.sigv4.as_ref()
     }
@@ -9450,14 +9095,12 @@ pub mod http_authorization {
         pub(crate) sigv4: std::option::Option<crate::model::SigV4Authorization>,
     }
     impl Builder {
-        /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4 Signing Process</a>.</p>
+        /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
         pub fn sigv4(mut self, input: crate::model::SigV4Authorization) -> Self {
             self.sigv4 = Some(input);
             self
         }
-        /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4 Signing Process</a>.</p>
+        /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
         pub fn set_sigv4(
             mut self,
             input: std::option::Option<crate::model::SigV4Authorization>,
@@ -9646,14 +9289,11 @@ impl HttpActionHeader {
     }
 }
 
-/// <p>The Timestream rule action writes attributes (measures) from an MQTT message
-/// into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
-/// topic rule action documentation.</p>
+/// <p>The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic rule action documentation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestreamAction {
-    /// <p>The ARN of the role that grants permission to write to the
-    /// Amazon Timestream database table.</p>
+    /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of an Amazon Timestream database.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -9661,18 +9301,13 @@ pub struct TimestreamAction {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Metadata attributes of the time series that are written in each measure record.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::TimestreamDimension>>,
-    /// <p>Specifies an application-defined value to replace the default value assigned to the
-    /// Timestream record's timestamp in the <code>time</code> column.</p>
-    /// <p>You can use this property to specify the value and the precision of the Timestream
-    /// record's timestamp. You can specify a value from the message payload or a value computed by
-    /// a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
-    /// processed the rule. </p>
+    /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
+    /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub timestamp: std::option::Option<crate::model::TimestreamTimestamp>,
 }
 impl TimestreamAction {
-    /// <p>The ARN of the role that grants permission to write to the
-    /// Amazon Timestream database table.</p>
+    /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -9688,13 +9323,9 @@ impl TimestreamAction {
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::TimestreamDimension]> {
         self.dimensions.as_deref()
     }
-    /// <p>Specifies an application-defined value to replace the default value assigned to the
-    /// Timestream record's timestamp in the <code>time</code> column.</p>
-    /// <p>You can use this property to specify the value and the precision of the Timestream
-    /// record's timestamp. You can specify a value from the message payload or a value computed by
-    /// a substitution template.</p>
-    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
-    /// processed the rule. </p>
+    /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
+    /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
     pub fn timestamp(&self) -> std::option::Option<&crate::model::TimestreamTimestamp> {
         self.timestamp.as_ref()
     }
@@ -9724,14 +9355,12 @@ pub mod timestream_action {
         pub(crate) timestamp: std::option::Option<crate::model::TimestreamTimestamp>,
     }
     impl Builder {
-        /// <p>The ARN of the role that grants permission to write to the
-        /// Amazon Timestream database table.</p>
+        /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants permission to write to the
-        /// Amazon Timestream database table.</p>
+        /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -9764,9 +9393,9 @@ pub mod timestream_action {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>Metadata attributes of the time series that are written in each measure record.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::TimestreamDimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::TimestreamDimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -9778,24 +9407,16 @@ pub mod timestream_action {
             self.dimensions = input;
             self
         }
-        /// <p>Specifies an application-defined value to replace the default value assigned to the
-        /// Timestream record's timestamp in the <code>time</code> column.</p>
-        /// <p>You can use this property to specify the value and the precision of the Timestream
-        /// record's timestamp. You can specify a value from the message payload or a value computed by
-        /// a substitution template.</p>
-        /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
-        /// processed the rule. </p>
+        /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
+        /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
+        /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
         pub fn timestamp(mut self, input: crate::model::TimestreamTimestamp) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>Specifies an application-defined value to replace the default value assigned to the
-        /// Timestream record's timestamp in the <code>time</code> column.</p>
-        /// <p>You can use this property to specify the value and the precision of the Timestream
-        /// record's timestamp. You can specify a value from the message payload or a value computed by
-        /// a substitution template.</p>
-        /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it
-        /// processed the rule. </p>
+        /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
+        /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
+        /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<crate::model::TimestreamTimestamp>,
@@ -9822,18 +9443,14 @@ impl TimestreamAction {
     }
 }
 
-/// <p>Describes how to interpret an application-defined timestamp value from an MQTT message
-/// payload and the precision of that value.</p>
+/// <p>Describes how to interpret an application-defined timestamp value from an MQTT message payload and the precision of that value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestreamTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>The precision of the timestamp value that results from the expression
-    /// described in <code>value</code>.</p>
-    /// <p>Valid values:  <code>SECONDS</code> | <code>MILLISECONDS</code> |
-    /// <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is
-    /// <code>MILLISECONDS</code>.</p>
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub unit: std::option::Option<std::string::String>,
 }
 impl TimestreamTimestamp {
@@ -9841,11 +9458,8 @@ impl TimestreamTimestamp {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The precision of the timestamp value that results from the expression
-    /// described in <code>value</code>.</p>
-    /// <p>Valid values:  <code>SECONDS</code> | <code>MILLISECONDS</code> |
-    /// <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is
-    /// <code>MILLISECONDS</code>.</p>
+    /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+    /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
@@ -9878,20 +9492,14 @@ pub mod timestream_timestamp {
             self.value = input;
             self
         }
-        /// <p>The precision of the timestamp value that results from the expression
-        /// described in <code>value</code>.</p>
-        /// <p>Valid values:  <code>SECONDS</code> | <code>MILLISECONDS</code> |
-        /// <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is
-        /// <code>MILLISECONDS</code>.</p>
+        /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+        /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.unit = Some(input.into());
             self
         }
-        /// <p>The precision of the timestamp value that results from the expression
-        /// described in <code>value</code>.</p>
-        /// <p>Valid values:  <code>SECONDS</code> | <code>MILLISECONDS</code> |
-        /// <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is
-        /// <code>MILLISECONDS</code>.</p>
+        /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
+        /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -9916,27 +9524,15 @@ impl TimestreamTimestamp {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestreamDimension {
-    /// <p>The metadata dimension name. This is the name of the column in the
-    /// Amazon Timestream database table record.</p>
-    /// <p>Dimensions cannot be named: <code>measure_name</code>,
-    /// <code>measure_value</code>, or <code>time</code>.
-    /// These  names are reserved. Dimension names cannot start
-    /// with <code>ts_</code> or <code>measure_value</code> and
-    /// they cannot contain the colon (<code>:</code>)
-    /// character.</p>
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value to write in this column of the database record.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl TimestreamDimension {
-    /// <p>The metadata dimension name. This is the name of the column in the
-    /// Amazon Timestream database table record.</p>
-    /// <p>Dimensions cannot be named: <code>measure_name</code>,
-    /// <code>measure_value</code>, or <code>time</code>.
-    /// These  names are reserved. Dimension names cannot start
-    /// with <code>ts_</code> or <code>measure_value</code> and
-    /// they cannot contain the colon (<code>:</code>)
-    /// character.</p>
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9963,26 +9559,14 @@ pub mod timestream_dimension {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The metadata dimension name. This is the name of the column in the
-        /// Amazon Timestream database table record.</p>
-        /// <p>Dimensions cannot be named: <code>measure_name</code>,
-        /// <code>measure_value</code>, or <code>time</code>.
-        /// These  names are reserved. Dimension names cannot start
-        /// with <code>ts_</code> or <code>measure_value</code> and
-        /// they cannot contain the colon (<code>:</code>)
-        /// character.</p>
+        /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+        /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The metadata dimension name. This is the name of the column in the
-        /// Amazon Timestream database table record.</p>
-        /// <p>Dimensions cannot be named: <code>measure_name</code>,
-        /// <code>measure_value</code>, or <code>time</code>.
-        /// These  names are reserved. Dimension names cannot start
-        /// with <code>ts_</code> or <code>measure_value</code> and
-        /// they cannot contain the colon (<code>:</code>)
-        /// character.</p>
+        /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+        /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10017,20 +9601,15 @@ impl TimestreamDimension {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StepFunctionsAction {
-    /// <p>(Optional) A name will be given to the state machine execution consisting of this
-    /// prefix followed by a UUID. Step Functions automatically creates a unique name for each state
-    /// machine execution if one is not provided.</p>
+    /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     pub execution_name_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
     pub state_machine_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
-    /// ("Action":"states:StartExecution").</p>
+    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl StepFunctionsAction {
-    /// <p>(Optional) A name will be given to the state machine execution consisting of this
-    /// prefix followed by a UUID. Step Functions automatically creates a unique name for each state
-    /// machine execution if one is not provided.</p>
+    /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     pub fn execution_name_prefix(&self) -> std::option::Option<&str> {
         self.execution_name_prefix.as_deref()
     }
@@ -10038,8 +9617,7 @@ impl StepFunctionsAction {
     pub fn state_machine_name(&self) -> std::option::Option<&str> {
         self.state_machine_name.as_deref()
     }
-    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
-    /// ("Action":"states:StartExecution").</p>
+    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10064,16 +9642,12 @@ pub mod step_functions_action {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Optional) A name will be given to the state machine execution consisting of this
-        /// prefix followed by a UUID. Step Functions automatically creates a unique name for each state
-        /// machine execution if one is not provided.</p>
+        /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
         pub fn execution_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_name_prefix = Some(input.into());
             self
         }
-        /// <p>(Optional) A name will be given to the state machine execution consisting of this
-        /// prefix followed by a UUID. Step Functions automatically creates a unique name for each state
-        /// machine execution if one is not provided.</p>
+        /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
         pub fn set_execution_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10094,14 +9668,12 @@ pub mod step_functions_action {
             self.state_machine_name = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
-        /// ("Action":"states:StartExecution").</p>
+        /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to start execution of a state machine
-        /// ("Action":"states:StartExecution").</p>
+        /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10123,16 +9695,14 @@ impl StepFunctionsAction {
     }
 }
 
-/// <p>Describes an action to send data from an MQTT message that triggered the rule to IoT
-/// SiteWise asset properties.</p>
+/// <p>Describes an action to send data from an MQTT message that triggered the rule to IoT SiteWise asset properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
     pub put_asset_property_value_entries:
         std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
-    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
-    /// policy can restrict access to specific asset hierarchy paths.</p>
+    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotSiteWiseAction {
@@ -10142,8 +9712,7 @@ impl IotSiteWiseAction {
     ) -> std::option::Option<&[crate::model::PutAssetPropertyValueEntry]> {
         self.put_asset_property_value_entries.as_deref()
     }
-    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
-    /// policy can restrict access to specific asset hierarchy paths.</p>
+    /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10177,10 +9746,10 @@ pub mod iot_site_wise_action {
         /// <p>A list of asset property value entries.</p>
         pub fn put_asset_property_value_entries(
             mut self,
-            input: impl Into<crate::model::PutAssetPropertyValueEntry>,
+            input: crate::model::PutAssetPropertyValueEntry,
         ) -> Self {
             let mut v = self.put_asset_property_value_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.put_asset_property_value_entries = Some(v);
             self
         }
@@ -10192,14 +9761,12 @@ pub mod iot_site_wise_action {
             self.put_asset_property_value_entries = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
-        /// policy can restrict access to specific asset hierarchy paths.</p>
+        /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust
-        /// policy can restrict access to specific asset hierarchy paths.</p>
+        /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10224,53 +9791,35 @@ impl IotSiteWiseAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAssetPropertyValueEntry {
-    /// <p>Optional. A unique identifier for this entry that you can define to better track which
-    /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
-    /// UUID.</p>
+    /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
     pub entry_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
-    /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-    /// templates.</p>
+    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub asset_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or
-    /// both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-    /// templates.</p>
+    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The name of the property alias associated with your asset property. You must specify
-    /// either a <code>propertyAlias</code> or both an <code>aliasId</code> and a
-    /// <code>propertyId</code>. Accepts substitution templates.</p>
+    /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub property_alias: std::option::Option<std::string::String>,
-    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
-    /// information.</p>
+    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntry {
-    /// <p>Optional. A unique identifier for this entry that you can define to better track which
-    /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
-    /// UUID.</p>
+    /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
     pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
     }
-    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
-    /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-    /// templates.</p>
+    /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or
-    /// both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-    /// templates.</p>
+    /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
-    /// <p>The name of the property alias associated with your asset property. You must specify
-    /// either a <code>propertyAlias</code> or both an <code>aliasId</code> and a
-    /// <code>propertyId</code>. Accepts substitution templates.</p>
+    /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub fn property_alias(&self) -> std::option::Option<&str> {
         self.property_alias.as_deref()
     }
-    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
-    /// information.</p>
+    /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
         self.property_values.as_deref()
     }
@@ -10300,58 +9849,42 @@ pub mod put_asset_property_value_entry {
             std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     }
     impl Builder {
-        /// <p>Optional. A unique identifier for this entry that you can define to better track which
-        /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
-        /// UUID.</p>
+        /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
         pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entry_id = Some(input.into());
             self
         }
-        /// <p>Optional. A unique identifier for this entry that you can define to better track which
-        /// message caused an error in case of failure. Accepts substitution templates. Defaults to a new
-        /// UUID.</p>
+        /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_id = input;
             self
         }
-        /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
-        /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-        /// templates.</p>
+        /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_id = Some(input.into());
             self
         }
-        /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code>
-        /// or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-        /// templates.</p>
+        /// <p>The ID of the IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_id = input;
             self
         }
-        /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or
-        /// both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-        /// templates.</p>
+        /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_id = Some(input.into());
             self
         }
-        /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or
-        /// both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution
-        /// templates.</p>
+        /// <p>The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.property_id = input;
             self
         }
-        /// <p>The name of the property alias associated with your asset property. You must specify
-        /// either a <code>propertyAlias</code> or both an <code>aliasId</code> and a
-        /// <code>propertyId</code>. Accepts substitution templates.</p>
+        /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
         }
-        /// <p>The name of the property alias associated with your asset property. You must specify
-        /// either a <code>propertyAlias</code> or both an <code>aliasId</code> and a
-        /// <code>propertyId</code>. Accepts substitution templates.</p>
+        /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10363,19 +9896,14 @@ pub mod put_asset_property_value_entry {
         ///
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
-        /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
-        /// information.</p>
-        pub fn property_values(
-            mut self,
-            input: impl Into<crate::model::AssetPropertyValue>,
-        ) -> Self {
+        /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
+        pub fn property_values(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }
-        /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV)
-        /// information.</p>
+        /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
         pub fn set_property_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
@@ -10410,8 +9938,7 @@ pub struct AssetPropertyValue {
     pub value: std::option::Option<crate::model::AssetPropertyVariant>,
     /// <p>The asset property value timestamp.</p>
     pub timestamp: std::option::Option<crate::model::AssetPropertyTimestamp>,
-    /// <p>Optional. A string that describes the quality of the value. Accepts substitution
-    /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+    /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub quality: std::option::Option<std::string::String>,
 }
 impl AssetPropertyValue {
@@ -10423,8 +9950,7 @@ impl AssetPropertyValue {
     pub fn timestamp(&self) -> std::option::Option<&crate::model::AssetPropertyTimestamp> {
         self.timestamp.as_ref()
     }
-    /// <p>Optional. A string that describes the quality of the value. Accepts substitution
-    /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+    /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
     pub fn quality(&self) -> std::option::Option<&str> {
         self.quality.as_deref()
     }
@@ -10475,14 +10001,12 @@ pub mod asset_property_value {
             self.timestamp = input;
             self
         }
-        /// <p>Optional. A string that describes the quality of the value. Accepts substitution
-        /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+        /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
         pub fn quality(mut self, input: impl Into<std::string::String>) -> Self {
             self.quality = Some(input.into());
             self
         }
-        /// <p>Optional. A string that describes the quality of the value. Accepts substitution
-        /// templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
+        /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
         pub fn set_quality(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quality = input;
             self
@@ -10508,21 +10032,17 @@ impl AssetPropertyValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetPropertyTimestamp {
-    /// <p>A string that contains the time in seconds since epoch. Accepts substitution
-    /// templates.</p>
+    /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     pub time_in_seconds: std::option::Option<std::string::String>,
-    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution
-    /// templates.</p>
+    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub offset_in_nanos: std::option::Option<std::string::String>,
 }
 impl AssetPropertyTimestamp {
-    /// <p>A string that contains the time in seconds since epoch. Accepts substitution
-    /// templates.</p>
+    /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     pub fn time_in_seconds(&self) -> std::option::Option<&str> {
         self.time_in_seconds.as_deref()
     }
-    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution
-    /// templates.</p>
+    /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub fn offset_in_nanos(&self) -> std::option::Option<&str> {
         self.offset_in_nanos.as_deref()
     }
@@ -10545,14 +10065,12 @@ pub mod asset_property_timestamp {
         pub(crate) offset_in_nanos: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string that contains the time in seconds since epoch. Accepts substitution
-        /// templates.</p>
+        /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
         pub fn time_in_seconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.time_in_seconds = Some(input.into());
             self
         }
-        /// <p>A string that contains the time in seconds since epoch. Accepts substitution
-        /// templates.</p>
+        /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
         pub fn set_time_in_seconds(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10560,14 +10078,12 @@ pub mod asset_property_timestamp {
             self.time_in_seconds = input;
             self
         }
-        /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution
-        /// templates.</p>
+        /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
         pub fn offset_in_nanos(mut self, input: impl Into<std::string::String>) -> Self {
             self.offset_in_nanos = Some(input.into());
             self
         }
-        /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution
-        /// templates.</p>
+        /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
         pub fn set_offset_in_nanos(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10595,14 +10111,11 @@ impl AssetPropertyTimestamp {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AssetPropertyVariant {
-    /// <p>Optional. A string that contains the boolean value (<code>true</code> or
-    /// <code>false</code>) of the value entry. Accepts substitution templates.</p>
+    /// <p>Optional. A string that contains the boolean value (<code>true</code> or <code>false</code>) of the value entry. Accepts substitution templates.</p>
     BooleanValue(std::string::String),
-    /// <p>Optional. A string that contains the double value of the value entry. Accepts substitution
-    /// templates.</p>
+    /// <p>Optional. A string that contains the double value of the value entry. Accepts substitution templates.</p>
     DoubleValue(std::string::String),
-    /// <p>Optional. A string that contains the integer value of the value entry. Accepts
-    /// substitution templates.</p>
+    /// <p>Optional. A string that contains the integer value of the value entry. Accepts substitution templates.</p>
     IntegerValue(std::string::String),
     /// <p>Optional. The string value of the value entry. Accepts substitution templates.</p>
     StringValue(std::string::String),
@@ -10682,24 +10195,14 @@ pub struct IotEventsAction {
     /// <p>The name of the IoT Events input.</p>
     pub input_name: std::option::Option<std::string::String>,
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-    /// <code>messageId</code>--a new UUID value will be assigned.</p>
-    /// <p>Assign a value to this property to ensure that only one input (message) with a given
-    /// <code>messageId</code> will be processed by an IoT Events detector.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+    /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub message_id: std::option::Option<std::string::String>,
-    /// <p>Whether to process the event actions as a batch. The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-    /// <code>messageId</code>. </p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-    /// to an Array, each Array element is treated as a separate message when it's sent to IoT
-    /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
-    /// <code>BatchPutMessage</code>
-    /// </a>.  The resulting array can't have more
-    /// than 10 messages.</p>
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub batch_mode: std::option::Option<bool>,
-    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
-    /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotEventsAction {
@@ -10708,28 +10211,18 @@ impl IotEventsAction {
         self.input_name.as_deref()
     }
     /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-    /// <code>messageId</code>--a new UUID value will be assigned.</p>
-    /// <p>Assign a value to this property to ensure that only one input (message) with a given
-    /// <code>messageId</code> will be processed by an IoT Events detector.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+    /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>Whether to process the event actions as a batch. The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-    /// <code>messageId</code>. </p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-    /// to an Array, each Array element is treated as a separate message when it's sent to IoT
-    /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
-    /// <code>BatchPutMessage</code>
-    /// </a>.  The resulting array can't have more
-    /// than 10 messages.</p>
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub fn batch_mode(&self) -> std::option::Option<bool> {
         self.batch_mode
     }
-    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
-    /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+    /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10767,59 +10260,39 @@ pub mod iot_events_action {
             self
         }
         /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-        /// <code>messageId</code>--a new UUID value will be assigned.</p>
-        /// <p>Assign a value to this property to ensure that only one input (message) with a given
-        /// <code>messageId</code> will be processed by an IoT Events detector.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+        /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
         /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-        /// <code>messageId</code>--a new UUID value will be assigned.</p>
-        /// <p>Assign a value to this property to ensure that only one input (message) with a given
-        /// <code>messageId</code> will be processed by an IoT Events detector.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
+        /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
         }
-        /// <p>Whether to process the event actions as a batch. The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-        /// <code>messageId</code>. </p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is treated as a separate message when it's sent to IoT
-        /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code>
-        /// </a>.  The resulting array can't have more
-        /// than 10 messages.</p>
+        /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
         pub fn batch_mode(mut self, input: bool) -> Self {
             self.batch_mode = Some(input);
             self
         }
-        /// <p>Whether to process the event actions as a batch. The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a
-        /// <code>messageId</code>. </p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is treated as a separate message when it's sent to IoT
-        /// Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code>
-        /// </a>.  The resulting array can't have more
-        /// than 10 messages.</p>
+        /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
         pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.batch_mode = input;
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
-        /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+        /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants IoT permission to send an input to an IoT
-        /// Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+        /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10846,26 +10319,18 @@ impl IotEventsAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotAnalyticsAction {
-    /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be
-    /// sent.</p>
+    /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Whether to process the action as a batch. The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-    /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-    /// <code>BatchPutMessage</code>
-    /// </a> to the IoT Analytics channel. The resulting array can't have more
-    /// than 100 messages.</p>
+    /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
     pub batch_mode: std::option::Option<bool>,
-    /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
-    /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+    /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl IotAnalyticsAction {
-    /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be
-    /// sent.</p>
+    /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -10873,18 +10338,12 @@ impl IotAnalyticsAction {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>Whether to process the action as a batch. The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-    /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-    /// <code>BatchPutMessage</code>
-    /// </a> to the IoT Analytics channel. The resulting array can't have more
-    /// than 100 messages.</p>
+    /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
     pub fn batch_mode(&self) -> std::option::Option<bool> {
         self.batch_mode
     }
-    /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
-    /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+    /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10911,14 +10370,12 @@ pub mod iot_analytics_action {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be
-        /// sent.</p>
+        /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be
-        /// sent.</p>
+        /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -10933,36 +10390,24 @@ pub mod iot_analytics_action {
             self.channel_name = input;
             self
         }
-        /// <p>Whether to process the action as a batch. The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code>
-        /// </a> to the IoT Analytics channel. The resulting array can't have more
-        /// than 100 messages.</p>
+        /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
         pub fn batch_mode(mut self, input: bool) -> Self {
             self.batch_mode = Some(input);
             self
         }
-        /// <p>Whether to process the action as a batch. The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code>
-        /// </a> to the IoT Analytics channel. The resulting array can't have more
-        /// than 100 messages.</p>
+        /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
         pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.batch_mode = input;
             self
         }
-        /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
-        /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+        /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send
-        /// message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+        /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10985,28 +10430,21 @@ impl IotAnalyticsAction {
     }
 }
 
-/// <p>Describes an action to write a message to a Salesforce IoT Cloud Input
-/// Stream.</p>
+/// <p>Describes an action to write a message to a Salesforce IoT Cloud Input Stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SalesforceAction {
-    /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The
-    /// token is available from the Salesforce IoT Cloud platform after creation of the Input
-    /// Stream.</p>
+    /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub token: std::option::Option<std::string::String>,
-    /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from
-    /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl SalesforceAction {
-    /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The
-    /// token is available from the Salesforce IoT Cloud platform after creation of the Input
-    /// Stream.</p>
+    /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from
-    /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -11029,28 +10467,22 @@ pub mod salesforce_action {
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The
-        /// token is available from the Salesforce IoT Cloud platform after creation of the Input
-        /// Stream.</p>
+        /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
             self.token = Some(input.into());
             self
         }
-        /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The
-        /// token is available from the Salesforce IoT Cloud platform after creation of the Input
-        /// Stream.</p>
+        /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
         }
-        /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from
-        /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+        /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from
-        /// the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+        /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -11071,12 +10503,8 @@ impl SalesforceAction {
     }
 }
 
-/// <p>Describes an action that writes data to an Amazon OpenSearch Service
-/// domain.</p>  
-/// <note>
-/// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a
-/// new rule action or to update an existing rule action, use the
-/// <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+/// <p>Describes an action that writes data to an Amazon OpenSearch Service domain.</p> <note>
+/// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11293,8 +10721,7 @@ pub struct CloudwatchAlarmAction {
     pub alarm_name: std::option::Option<std::string::String>,
     /// <p>The reason for the alarm change.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
-    /// INSUFFICIENT_DATA.</p>
+    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
     pub state_value: std::option::Option<std::string::String>,
 }
 impl CloudwatchAlarmAction {
@@ -11310,8 +10737,7 @@ impl CloudwatchAlarmAction {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
-    /// INSUFFICIENT_DATA.</p>
+    /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
     pub fn state_value(&self) -> std::option::Option<&str> {
         self.state_value.as_deref()
     }
@@ -11368,14 +10794,12 @@ pub mod cloudwatch_alarm_action {
             self.state_reason = input;
             self
         }
-        /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
-        /// INSUFFICIENT_DATA.</p>
+        /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
         pub fn state_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_value = Some(input.into());
             self
         }
-        /// <p>The value of the alarm state. Acceptable values are: OK, ALARM,
-        /// INSUFFICIENT_DATA.</p>
+        /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
         pub fn set_state_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_value = input;
             self
@@ -11410,8 +10834,7 @@ pub struct CloudwatchMetricAction {
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The CloudWatch metric value.</p>
     pub metric_value: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
-    /// unit</a> supported by CloudWatch.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
     pub metric_unit: std::option::Option<std::string::String>,
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
     pub metric_timestamp: std::option::Option<std::string::String>,
@@ -11433,8 +10856,7 @@ impl CloudwatchMetricAction {
     pub fn metric_value(&self) -> std::option::Option<&str> {
         self.metric_value.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
-    /// unit</a> supported by CloudWatch.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
     pub fn metric_unit(&self) -> std::option::Option<&str> {
         self.metric_unit.as_deref()
     }
@@ -11512,14 +10934,12 @@ pub mod cloudwatch_metric_action {
             self.metric_value = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
-        /// unit</a> supported by CloudWatch.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
         pub fn metric_unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_unit = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
-        /// unit</a> supported by CloudWatch.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
         pub fn set_metric_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_unit = input;
             self
@@ -11565,19 +10985,10 @@ pub struct FirehoseAction {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The delivery stream name.</p>
     pub delivery_stream_name: std::option::Option<std::string::String>,
-    /// <p>A character separator that will be used to separate records written to the Firehose
-    /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
-    /// (comma).</p>
+    /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub separator: std::option::Option<std::string::String>,
-    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-    /// <code>PutRecordBatch</code>
-    /// </a>.  The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
-    /// evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-    /// <code>PutRecordBatch</code>
-    /// </a> request. The resulting array can't have more
-    /// than 500 records.</p>
+    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
     pub batch_mode: std::option::Option<bool>,
 }
 impl FirehoseAction {
@@ -11589,21 +11000,12 @@ impl FirehoseAction {
     pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>A character separator that will be used to separate records written to the Firehose
-    /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
-    /// (comma).</p>
+    /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn separator(&self) -> std::option::Option<&str> {
         self.separator.as_deref()
     }
-    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-    /// <code>PutRecordBatch</code>
-    /// </a>.  The default value is
-    /// <code>false</code>.</p>
-    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
-    /// evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-    /// <code>PutRecordBatch</code>
-    /// </a> request. The resulting array can't have more
-    /// than 500 records.</p>
+    /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
     pub fn batch_mode(&self) -> std::option::Option<bool> {
         self.batch_mode
     }
@@ -11653,42 +11055,24 @@ pub mod firehose_action {
             self.delivery_stream_name = input;
             self
         }
-        /// <p>A character separator that will be used to separate records written to the Firehose
-        /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
-        /// (comma).</p>
+        /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
         pub fn separator(mut self, input: impl Into<std::string::String>) -> Self {
             self.separator = Some(input.into());
             self
         }
-        /// <p>A character separator that will be used to separate records written to the Firehose
-        /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
-        /// (comma).</p>
+        /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
         pub fn set_separator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.separator = input;
             self
         }
-        /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code>
-        /// </a>.  The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
-        /// evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code>
-        /// </a> request. The resulting array can't have more
-        /// than 500 records.</p>
+        /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
         pub fn batch_mode(mut self, input: bool) -> Self {
             self.batch_mode = Some(input);
             self
         }
-        /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code>
-        /// </a>.  The default value is
-        /// <code>false</code>.</p>
-        /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
-        /// evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code>
-        /// </a> request. The resulting array can't have more
-        /// than 500 records.</p>
+        /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+        /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
         pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.batch_mode = input;
             self
@@ -11721,8 +11105,7 @@ pub struct S3Action {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
-    /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub canned_acl: std::option::Option<crate::model::CannedAccessControlList>,
 }
 impl S3Action {
@@ -11738,8 +11121,7 @@ impl S3Action {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
-    /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+    /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn canned_acl(&self) -> std::option::Option<&crate::model::CannedAccessControlList> {
         self.canned_acl.as_ref()
     }
@@ -11796,14 +11178,12 @@ pub mod s3_action {
             self.key = input;
             self
         }
-        /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
-        /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+        /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
         pub fn canned_acl(mut self, input: crate::model::CannedAccessControlList) -> Self {
             self.canned_acl = Some(input);
             self
         }
-        /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object
-        /// key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
+        /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
         pub fn set_canned_acl(
             mut self,
             input: std::option::Option<crate::model::CannedAccessControlList>,
@@ -11925,8 +11305,7 @@ pub struct RepublishAction {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the MQTT topic.</p>
     pub topic: std::option::Option<std::string::String>,
-    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value
-    /// is 0.</p>
+    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub qos: std::option::Option<i32>,
 }
 impl RepublishAction {
@@ -11938,8 +11317,7 @@ impl RepublishAction {
     pub fn topic(&self) -> std::option::Option<&str> {
         self.topic.as_deref()
     }
-    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value
-    /// is 0.</p>
+    /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
     pub fn qos(&self) -> std::option::Option<i32> {
         self.qos
     }
@@ -11984,14 +11362,12 @@ pub mod republish_action {
             self.topic = input;
             self
         }
-        /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value
-        /// is 0.</p>
+        /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
         pub fn qos(mut self, input: i32) -> Self {
             self.qos = Some(input);
             self
         }
-        /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value
-        /// is 0.</p>
+        /// <p>The Quality of Service (QoS) level to use when republishing messages. The default value is 0.</p>
         pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
             self.qos = input;
             self
@@ -12208,10 +11584,7 @@ pub struct SnsAction {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that grants access.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON"
-    /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
-    /// if the payload should be parsed and relevant platform-specific bits of the payload should
-    /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+    /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub message_format: std::option::Option<crate::model::MessageFormat>,
 }
 impl SnsAction {
@@ -12223,10 +11596,7 @@ impl SnsAction {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON"
-    /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
-    /// if the payload should be parsed and relevant platform-specific bits of the payload should
-    /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+    /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormat> {
         self.message_format.as_ref()
     }
@@ -12271,18 +11641,12 @@ pub mod sns_action {
             self.role_arn = input;
             self
         }
-        /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON"
-        /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
-        /// if the payload should be parsed and relevant platform-specific bits of the payload should
-        /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+        /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
         pub fn message_format(mut self, input: crate::model::MessageFormat) -> Self {
             self.message_format = Some(input);
             self
         }
-        /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON"
-        /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
-        /// if the payload should be parsed and relevant platform-specific bits of the payload should
-        /// be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
+        /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
         pub fn set_message_format(
             mut self,
             input: std::option::Option<crate::model::MessageFormat>,
@@ -12417,21 +11781,15 @@ impl LambdaAction {
 }
 
 /// <p>Describes an action to write to a DynamoDB table.</p>
-/// <p>This DynamoDB action writes each attribute in the message payload into it's own
-/// column in the DynamoDB table.</p>
+/// <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the DynamoDB table to which the message data will be written. For
-    /// example:</p>
-    /// <p>
-    /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
-    /// "my-table" } } }</code>
-    /// </p>
-    /// <p>Each attribute in the message payload will be written to a separate column in the
-    /// DynamoDB database.</p>
+    /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+    /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
+    /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub put_item: std::option::Option<crate::model::PutItemInput>,
 }
 impl DynamoDBv2Action {
@@ -12439,14 +11797,9 @@ impl DynamoDBv2Action {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Specifies the DynamoDB table to which the message data will be written. For
-    /// example:</p>
-    /// <p>
-    /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
-    /// "my-table" } } }</code>
-    /// </p>
-    /// <p>Each attribute in the message payload will be written to a separate column in the
-    /// DynamoDB database.</p>
+    /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+    /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
+    /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub fn put_item(&self) -> std::option::Option<&crate::model::PutItemInput> {
         self.put_item.as_ref()
     }
@@ -12479,26 +11832,16 @@ pub mod dynamo_d_bv2_action {
             self.role_arn = input;
             self
         }
-        /// <p>Specifies the DynamoDB table to which the message data will be written. For
-        /// example:</p>
-        /// <p>
-        /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
-        /// "my-table" } } }</code>
-        /// </p>
-        /// <p>Each attribute in the message payload will be written to a separate column in the
-        /// DynamoDB database.</p>
+        /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+        /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
+        /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
         pub fn put_item(mut self, input: crate::model::PutItemInput) -> Self {
             self.put_item = Some(input);
             self
         }
-        /// <p>Specifies the DynamoDB table to which the message data will be written. For
-        /// example:</p>
-        /// <p>
-        /// <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName":
-        /// "my-table" } } }</code>
-        /// </p>
-        /// <p>Each attribute in the message payload will be written to a separate column in the
-        /// DynamoDB database.</p>
+        /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+        /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
+        /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
         pub fn set_put_item(
             mut self,
             input: std::option::Option<crate::model::PutItemInput>,
@@ -12522,8 +11865,7 @@ impl DynamoDBv2Action {
     }
 }
 
-/// <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which
-/// the message data will be written.</p>
+/// <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutItemInput {
@@ -12578,21 +11920,12 @@ impl PutItemInput {
 }
 
 /// <p>Describes an action to write to a DynamoDB table.</p>
-/// <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code>
-/// values must match the values used when you created the table.</p>
-/// <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a
-/// substitution template syntax. These templates provide data at runtime. The syntax is as
-/// follows: ${<i>sql-expression</i>}.</p>
-/// <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON
-/// properties, comparisons, calculations, and functions. For example, the following field uses
-/// the third level of the topic:</p>
-/// <p>
-/// <code>"hashKeyValue": "${topic(3)}"</code>
-/// </p>
+/// <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p>
+/// <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p>
+/// <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p>
+/// <p> <code>"hashKeyValue": "${topic(3)}"</code> </p>
 /// <p>The following field uses the timestamp:</p>
-/// <p>
-/// <code>"rangeKeyValue": "${timestamp()}"</code>
-/// </p>
+/// <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DynamoDbAction {
@@ -12600,9 +11933,7 @@ pub struct DynamoDbAction {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The type of operation to be performed. This follows the substitution template, so it
-    /// can be <code>${operation}</code>, but the substitution must result in one of the following:
-    /// <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+    /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
     pub operation: std::option::Option<std::string::String>,
     /// <p>The hash key name.</p>
     pub hash_key_field: std::option::Option<std::string::String>,
@@ -12628,9 +11959,7 @@ impl DynamoDbAction {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of operation to be performed. This follows the substitution template, so it
-    /// can be <code>${operation}</code>, but the substitution must result in one of the following:
-    /// <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+    /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
     pub fn operation(&self) -> std::option::Option<&str> {
         self.operation.as_deref()
     }
@@ -12717,16 +12046,12 @@ pub mod dynamo_db_action {
             self.role_arn = input;
             self
         }
-        /// <p>The type of operation to be performed. This follows the substitution template, so it
-        /// can be <code>${operation}</code>, but the substitution must result in one of the following:
-        /// <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+        /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation = Some(input.into());
             self
         }
-        /// <p>The type of operation to be performed. This follows the substitution template, so it
-        /// can be <code>${operation}</code>, but the substitution must result in one of the following:
-        /// <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
+        /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation = input;
             self
@@ -12983,9 +12308,7 @@ pub struct ViolationEvent {
     pub behavior: std::option::Option<crate::model::Behavior>,
     /// <p>The value of the metric (the measurement).</p>
     pub metric_value: std::option::Option<crate::model::MetricValue>,
-    /// <p>
-    /// The details of a violation event.
-    /// </p>
+    /// <p> The details of a violation event. </p>
     pub violation_event_additional_info:
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
@@ -13018,9 +12341,7 @@ impl ViolationEvent {
     pub fn metric_value(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.metric_value.as_ref()
     }
-    /// <p>
-    /// The details of a violation event.
-    /// </p>
+    /// <p> The details of a violation event. </p>
     pub fn violation_event_additional_info(
         &self,
     ) -> std::option::Option<&crate::model::ViolationEventAdditionalInfo> {
@@ -13140,9 +12461,7 @@ pub mod violation_event {
             self.metric_value = input;
             self
         }
-        /// <p>
-        /// The details of a violation event.
-        /// </p>
+        /// <p> The details of a violation event. </p>
         pub fn violation_event_additional_info(
             mut self,
             input: crate::model::ViolationEventAdditionalInfo,
@@ -13150,9 +12469,7 @@ pub mod violation_event {
             self.violation_event_additional_info = Some(input);
             self
         }
-        /// <p>
-        /// The details of a violation event.
-        /// </p>
+        /// <p> The details of a violation event. </p>
         pub fn set_violation_event_additional_info(
             mut self,
             input: std::option::Option<crate::model::ViolationEventAdditionalInfo>,
@@ -13298,21 +12615,15 @@ impl AsRef<str> for ViolationEventType {
     }
 }
 
-/// <p>
-/// The details of a violation event.
-/// </p>
+/// <p> The details of a violation event. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViolationEventAdditionalInfo {
-    /// <p>
-    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-    /// </p>
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
 }
 impl ViolationEventAdditionalInfo {
-    /// <p>
-    /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-    /// </p>
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn confidence_level(&self) -> std::option::Option<&crate::model::ConfidenceLevel> {
         self.confidence_level.as_ref()
     }
@@ -13333,16 +12644,12 @@ pub mod violation_event_additional_info {
         pub(crate) confidence_level: std::option::Option<crate::model::ConfidenceLevel>,
     }
     impl Builder {
-        /// <p>
-        /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-        /// </p>
+        /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
         pub fn confidence_level(mut self, input: crate::model::ConfidenceLevel) -> Self {
             self.confidence_level = Some(input);
             self
         }
-        /// <p>
-        /// The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>.
-        /// </p>
+        /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
         pub fn set_confidence_level(
             mut self,
             input: std::option::Option<crate::model::ConfidenceLevel>,
@@ -13644,34 +12951,29 @@ pub struct TopicRuleDestinationSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
@@ -13693,34 +12995,29 @@ impl TopicRuleDestinationSummary {
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
@@ -13792,34 +13089,29 @@ pub mod topic_rule_destination_summary {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn status(mut self, input: crate::model::TopicRuleDestinationStatus) -> Self {
@@ -13828,34 +13120,29 @@ pub mod topic_rule_destination_summary {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn set_status(
@@ -14087,13 +13374,11 @@ impl VpcDestinationSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationSummary {
-    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination
-    /// URL.</p>
+    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
 impl HttpUrlDestinationSummary {
-    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination
-    /// URL.</p>
+    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
     }
@@ -14114,14 +13399,12 @@ pub mod http_url_destination_summary {
         pub(crate) confirmation_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination
-        /// URL.</p>
+        /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
         pub fn confirmation_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.confirmation_url = Some(input.into());
             self
         }
-        /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination
-        /// URL.</p>
+        /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
         pub fn set_confirmation_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14154,9 +13437,7 @@ pub struct ThingTypeDefinition {
     pub thing_type_arn: std::option::Option<std::string::String>,
     /// <p>The ThingTypeProperties for the thing type.</p>
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
-    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
-    /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
-    /// deprecated.</p>
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub thing_type_metadata: std::option::Option<crate::model::ThingTypeMetadata>,
 }
 impl ThingTypeDefinition {
@@ -14172,9 +13453,7 @@ impl ThingTypeDefinition {
     pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
-    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
-    /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
-    /// deprecated.</p>
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn thing_type_metadata(&self) -> std::option::Option<&crate::model::ThingTypeMetadata> {
         self.thing_type_metadata.as_ref()
     }
@@ -14240,16 +13519,12 @@ pub mod thing_type_definition {
             self.thing_type_properties = input;
             self
         }
-        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
-        /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
-        /// deprecated.</p>
+        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
         pub fn thing_type_metadata(mut self, input: crate::model::ThingTypeMetadata) -> Self {
             self.thing_type_metadata = Some(input);
             self
         }
-        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
-        /// time, a value indicating whether the thing type is deprecated, and a date and time when it was
-        /// deprecated.</p>
+        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
         pub fn set_thing_type_metadata(
             mut self,
             input: std::option::Option<crate::model::ThingTypeMetadata>,
@@ -14275,14 +13550,11 @@ impl ThingTypeDefinition {
     }
 }
 
-/// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and
-/// time, a value indicating whether the thing type is deprecated, and a date and time when time was
-/// deprecated.</p>
+/// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingTypeMetadata {
-    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
-    /// associated with this type.</p>
+    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
     pub deprecated: bool,
     /// <p>The date and time when the thing type was deprecated.</p>
     pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -14290,8 +13562,7 @@ pub struct ThingTypeMetadata {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ThingTypeMetadata {
-    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
-    /// associated with this type.</p>
+    /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
     pub fn deprecated(&self) -> bool {
         self.deprecated
     }
@@ -14324,14 +13595,12 @@ pub mod thing_type_metadata {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
-        /// associated with this type.</p>
+        /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
         pub fn deprecated(mut self, input: bool) -> Self {
             self.deprecated = Some(input);
             self
         }
-        /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be
-        /// associated with this type.</p>
+        /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
         pub fn set_deprecated(mut self, input: std::option::Option<bool>) -> Self {
             self.deprecated = input;
             self
@@ -14379,8 +13648,7 @@ impl ThingTypeMetadata {
     }
 }
 
-/// <p>The ThingTypeProperties contains information about the thing type including: a thing type description,
-/// and a list of searchable thing attribute names.</p>
+/// <p>The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingTypeProperties {
@@ -14465,8 +13733,7 @@ impl ThingTypeProperties {
     }
 }
 
-/// <p>The properties of the thing, including thing name, thing type name, and a list of thing
-/// attributes.</p>
+/// <p>The properties of the thing, including thing name, thing type name, and a list of thing attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThingAttribute {
@@ -14821,8 +14088,7 @@ impl GroupNameAndArn {
     }
 }
 
-/// <p>A target to which an alert is sent when a security profile behavior is
-/// violated.</p>
+/// <p>A target to which an alert is sent when a security profile behavior is violated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityProfileTarget {
@@ -15156,13 +14422,9 @@ pub struct ScheduledAuditMetadata {
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
     /// <p>How often the scheduled audit occurs.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit is run (if the
-    /// <code>frequency</code> is "MONTHLY").
-    /// If days 29-31 are specified, and the month does not have that many
-    /// days, the audit takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit is run (if the
-    /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+    /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
 }
 impl ScheduledAuditMetadata {
@@ -15178,15 +14440,11 @@ impl ScheduledAuditMetadata {
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit is run (if the
-    /// <code>frequency</code> is "MONTHLY").
-    /// If days 29-31 are specified, and the month does not have that many
-    /// days, the audit takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit is run (if the
-    /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+    /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
@@ -15254,30 +14512,22 @@ pub mod scheduled_audit_metadata {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit is run (if the
-        /// <code>frequency</code> is "MONTHLY").
-        /// If days 29-31 are specified, and the month does not have that many
-        /// days, the audit takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit is run (if the
-        /// <code>frequency</code> is "MONTHLY").
-        /// If days 29-31 are specified, and the month does not have that many
-        /// days, the audit takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit is run (if the
-        /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+        /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit is run (if the
-        /// <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+        /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -15312,8 +14562,7 @@ pub struct ProvisioningTemplateVersionSummary {
     pub version_id: std::option::Option<i32>,
     /// <p>The date when the fleet provisioning template version was created</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>True if the fleet provisioning template version is the default version, otherwise
-    /// false.</p>
+    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
     pub is_default_version: bool,
 }
 impl ProvisioningTemplateVersionSummary {
@@ -15325,8 +14574,7 @@ impl ProvisioningTemplateVersionSummary {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>True if the fleet provisioning template version is the default version, otherwise
-    /// false.</p>
+    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
     }
@@ -15374,14 +14622,12 @@ pub mod provisioning_template_version_summary {
             self.creation_date = input;
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise
-        /// false.</p>
+        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise
-        /// false.</p>
+        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -16440,10 +15686,7 @@ pub struct JobSummary {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ID of the thing group.</p>
     pub thing_group_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The job summary status.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
@@ -16467,10 +15710,7 @@ impl JobSummary {
     pub fn thing_group_id(&self) -> std::option::Option<&str> {
         self.thing_group_id.as_deref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -16554,18 +15794,12 @@ pub mod job_summary {
             self.thing_group_id = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -16855,10 +16089,10 @@ pub struct JobExecutionSummary {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-    /// this particular device. It can be used later in commands which return or update job execution
-    /// information.</p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
     pub execution_number: std::option::Option<i64>,
+    /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+    pub retry_attempt: std::option::Option<i32>,
 }
 impl JobExecutionSummary {
     /// <p>The status of the job execution.</p>
@@ -16877,11 +16111,13 @@ impl JobExecutionSummary {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-    /// this particular device. It can be used later in commands which return or update job execution
-    /// information.</p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
+    }
+    /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+    pub fn retry_attempt(&self) -> std::option::Option<i32> {
+        self.retry_attempt
     }
 }
 impl std::fmt::Debug for JobExecutionSummary {
@@ -16892,6 +16128,7 @@ impl std::fmt::Debug for JobExecutionSummary {
         formatter.field("started_at", &self.started_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("execution_number", &self.execution_number);
+        formatter.field("retry_attempt", &self.retry_attempt);
         formatter.finish()
     }
 }
@@ -16906,6 +16143,7 @@ pub mod job_execution_summary {
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) execution_number: std::option::Option<i64>,
+        pub(crate) retry_attempt: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The status of the job execution.</p>
@@ -16960,18 +16198,24 @@ pub mod job_execution_summary {
             self.last_updated_at = input;
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-        /// this particular device. It can be used later in commands which return or update job execution
-        /// information.</p>
+        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-        /// this particular device. It can be used later in commands which return or update job execution
-        /// information.</p>
+        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
+            self
+        }
+        /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+        pub fn retry_attempt(mut self, input: i32) -> Self {
+            self.retry_attempt = Some(input);
+            self
+        }
+        /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
+        pub fn set_retry_attempt(mut self, input: std::option::Option<i32>) -> Self {
+            self.retry_attempt = input;
             self
         }
         /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::model::JobExecutionSummary)
@@ -16982,6 +16226,7 @@ pub mod job_execution_summary {
                 started_at: self.started_at,
                 last_updated_at: self.last_updated_at,
                 execution_number: self.execution_number,
+                retry_attempt: self.retry_attempt,
             }
         }
     }
@@ -17230,19 +16475,11 @@ impl FleetMetricNameAndArn {
     }
 }
 
-/// <p>The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain.
-/// A domain configuration can be associated with an Amazon Web Services-managed domain
-/// (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.</p>
+/// <p>The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an Amazon Web Services-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.</p>
 /// <ul>
-/// <li>
-/// <p>Data</p>
-/// </li>
-/// <li>
-/// <p>Jobs</p>
-/// </li>
-/// <li>
-/// <p>CredentialProvider</p>
-/// </li>
+/// <li> <p>Data</p> </li>
+/// <li> <p>Jobs</p> </li>
+/// <li> <p>CredentialProvider</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17403,116 +16640,74 @@ impl AsRef<str> for ServiceType {
     }
 }
 
-/// <p>
-/// The summary of the mitigation action tasks.
-/// </p>
+/// <p> The summary of the mitigation action tasks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskSummary {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of the task.
-    /// </p>
+    /// <p> The status of the task. </p>
     pub task_status: std::option::Option<crate::model::DetectMitigationActionsTaskStatus>,
-    /// <p>
-    /// The date the task started.
-    /// </p>
+    /// <p> The date the task started. </p>
     pub task_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The date the task ended.
-    /// </p>
+    /// <p> The date the task ended. </p>
     pub task_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub target: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub violation_event_occurrence_range:
         std::option::Option<crate::model::ViolationEventOccurrenceRange>,
-    /// <p>
-    /// Includes only active violations.
-    /// </p>
+    /// <p> Includes only active violations. </p>
     pub only_active_violations_included: bool,
-    /// <p>
-    /// Includes suppressed alerts.
-    /// </p>
+    /// <p> Includes suppressed alerts. </p>
     pub suppressed_alerts_included: bool,
-    /// <p>
-    /// The definition of the actions.
-    /// </p>
+    /// <p> The definition of the actions. </p>
     pub actions_definition: std::option::Option<std::vec::Vec<crate::model::MitigationAction>>,
-    /// <p>
-    /// The statistics of a mitigation action task.
-    /// </p>
+    /// <p> The statistics of a mitigation action task. </p>
     pub task_statistics: std::option::Option<crate::model::DetectMitigationActionsTaskStatistics>,
 }
 impl DetectMitigationActionsTaskSummary {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// The status of the task.
-    /// </p>
+    /// <p> The status of the task. </p>
     pub fn task_status(
         &self,
     ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
-    /// <p>
-    /// The date the task started.
-    /// </p>
+    /// <p> The date the task started. </p>
     pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
-    /// <p>
-    /// The date the task ended.
-    /// </p>
+    /// <p> The date the task ended. </p>
     pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(&self) -> std::option::Option<&crate::model::DetectMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(
         &self,
     ) -> std::option::Option<&crate::model::ViolationEventOccurrenceRange> {
         self.violation_event_occurrence_range.as_ref()
     }
-    /// <p>
-    /// Includes only active violations.
-    /// </p>
+    /// <p> Includes only active violations. </p>
     pub fn only_active_violations_included(&self) -> bool {
         self.only_active_violations_included
     }
-    /// <p>
-    /// Includes suppressed alerts.
-    /// </p>
+    /// <p> Includes suppressed alerts. </p>
     pub fn suppressed_alerts_included(&self) -> bool {
         self.suppressed_alerts_included
     }
-    /// <p>
-    /// The definition of the actions.
-    /// </p>
+    /// <p> The definition of the actions. </p>
     pub fn actions_definition(&self) -> std::option::Option<&[crate::model::MitigationAction]> {
         self.actions_definition.as_deref()
     }
-    /// <p>
-    /// The statistics of a mitigation action task.
-    /// </p>
+    /// <p> The statistics of a mitigation action task. </p>
     pub fn task_statistics(
         &self,
     ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskStatistics> {
@@ -17566,23 +16761,17 @@ pub mod detect_mitigation_actions_task_summary {
             std::option::Option<crate::model::DetectMitigationActionsTaskStatistics>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// The status of the task.
-        /// </p>
+        /// <p> The status of the task. </p>
         pub fn task_status(
             mut self,
             input: crate::model::DetectMitigationActionsTaskStatus,
@@ -17590,9 +16779,7 @@ pub mod detect_mitigation_actions_task_summary {
             self.task_status = Some(input);
             self
         }
-        /// <p>
-        /// The status of the task.
-        /// </p>
+        /// <p> The status of the task. </p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskStatus>,
@@ -17600,16 +16787,12 @@ pub mod detect_mitigation_actions_task_summary {
             self.task_status = input;
             self
         }
-        /// <p>
-        /// The date the task started.
-        /// </p>
+        /// <p> The date the task started. </p>
         pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_start_time = Some(input);
             self
         }
-        /// <p>
-        /// The date the task started.
-        /// </p>
+        /// <p> The date the task started. </p>
         pub fn set_task_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17617,16 +16800,12 @@ pub mod detect_mitigation_actions_task_summary {
             self.task_start_time = input;
             self
         }
-        /// <p>
-        /// The date the task ended.
-        /// </p>
+        /// <p> The date the task ended. </p>
         pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.task_end_time = Some(input);
             self
         }
-        /// <p>
-        /// The date the task ended.
-        /// </p>
+        /// <p> The date the task ended. </p>
         pub fn set_task_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17634,16 +16813,12 @@ pub mod detect_mitigation_actions_task_summary {
             self.task_end_time = input;
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn target(mut self, input: crate::model::DetectMitigationActionsTaskTarget) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
@@ -17651,9 +16826,7 @@ pub mod detect_mitigation_actions_task_summary {
             self.target = input;
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn violation_event_occurrence_range(
             mut self,
             input: crate::model::ViolationEventOccurrenceRange,
@@ -17661,9 +16834,7 @@ pub mod detect_mitigation_actions_task_summary {
             self.violation_event_occurrence_range = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn set_violation_event_occurrence_range(
             mut self,
             input: std::option::Option<crate::model::ViolationEventOccurrenceRange>,
@@ -17671,16 +16842,12 @@ pub mod detect_mitigation_actions_task_summary {
             self.violation_event_occurrence_range = input;
             self
         }
-        /// <p>
-        /// Includes only active violations.
-        /// </p>
+        /// <p> Includes only active violations. </p>
         pub fn only_active_violations_included(mut self, input: bool) -> Self {
             self.only_active_violations_included = Some(input);
             self
         }
-        /// <p>
-        /// Includes only active violations.
-        /// </p>
+        /// <p> Includes only active violations. </p>
         pub fn set_only_active_violations_included(
             mut self,
             input: std::option::Option<bool>,
@@ -17688,16 +16855,12 @@ pub mod detect_mitigation_actions_task_summary {
             self.only_active_violations_included = input;
             self
         }
-        /// <p>
-        /// Includes suppressed alerts.
-        /// </p>
+        /// <p> Includes suppressed alerts. </p>
         pub fn suppressed_alerts_included(mut self, input: bool) -> Self {
             self.suppressed_alerts_included = Some(input);
             self
         }
-        /// <p>
-        /// Includes suppressed alerts.
-        /// </p>
+        /// <p> Includes suppressed alerts. </p>
         pub fn set_suppressed_alerts_included(mut self, input: std::option::Option<bool>) -> Self {
             self.suppressed_alerts_included = input;
             self
@@ -17706,21 +16869,14 @@ pub mod detect_mitigation_actions_task_summary {
         ///
         /// To override the contents of this collection use [`set_actions_definition`](Self::set_actions_definition).
         ///
-        /// <p>
-        /// The definition of the actions.
-        /// </p>
-        pub fn actions_definition(
-            mut self,
-            input: impl Into<crate::model::MitigationAction>,
-        ) -> Self {
+        /// <p> The definition of the actions. </p>
+        pub fn actions_definition(mut self, input: crate::model::MitigationAction) -> Self {
             let mut v = self.actions_definition.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions_definition = Some(v);
             self
         }
-        /// <p>
-        /// The definition of the actions.
-        /// </p>
+        /// <p> The definition of the actions. </p>
         pub fn set_actions_definition(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MitigationAction>>,
@@ -17728,9 +16884,7 @@ pub mod detect_mitigation_actions_task_summary {
             self.actions_definition = input;
             self
         }
-        /// <p>
-        /// The statistics of a mitigation action task.
-        /// </p>
+        /// <p> The statistics of a mitigation action task. </p>
         pub fn task_statistics(
             mut self,
             input: crate::model::DetectMitigationActionsTaskStatistics,
@@ -17738,9 +16892,7 @@ pub mod detect_mitigation_actions_task_summary {
             self.task_statistics = Some(input);
             self
         }
-        /// <p>
-        /// The statistics of a mitigation action task.
-        /// </p>
+        /// <p> The statistics of a mitigation action task. </p>
         pub fn set_task_statistics(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskStatistics>,
@@ -17774,41 +16926,27 @@ impl DetectMitigationActionsTaskSummary {
     }
 }
 
-/// <p>
-/// The statistics of a mitigation action task.
-/// </p>
+/// <p> The statistics of a mitigation action task. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionsTaskStatistics {
-    /// <p>
-    /// The actions that were performed.
-    /// </p>
+    /// <p> The actions that were performed. </p>
     pub actions_executed: std::option::Option<i64>,
-    /// <p>
-    /// The actions that were skipped.
-    /// </p>
+    /// <p> The actions that were skipped. </p>
     pub actions_skipped: std::option::Option<i64>,
-    /// <p>
-    /// The actions that failed.
-    /// </p>
+    /// <p> The actions that failed. </p>
     pub actions_failed: std::option::Option<i64>,
 }
 impl DetectMitigationActionsTaskStatistics {
-    /// <p>
-    /// The actions that were performed.
-    /// </p>
+    /// <p> The actions that were performed. </p>
     pub fn actions_executed(&self) -> std::option::Option<i64> {
         self.actions_executed
     }
-    /// <p>
-    /// The actions that were skipped.
-    /// </p>
+    /// <p> The actions that were skipped. </p>
     pub fn actions_skipped(&self) -> std::option::Option<i64> {
         self.actions_skipped
     }
-    /// <p>
-    /// The actions that failed.
-    /// </p>
+    /// <p> The actions that failed. </p>
     pub fn actions_failed(&self) -> std::option::Option<i64> {
         self.actions_failed
     }
@@ -17833,44 +16971,32 @@ pub mod detect_mitigation_actions_task_statistics {
         pub(crate) actions_failed: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>
-        /// The actions that were performed.
-        /// </p>
+        /// <p> The actions that were performed. </p>
         pub fn actions_executed(mut self, input: i64) -> Self {
             self.actions_executed = Some(input);
             self
         }
-        /// <p>
-        /// The actions that were performed.
-        /// </p>
+        /// <p> The actions that were performed. </p>
         pub fn set_actions_executed(mut self, input: std::option::Option<i64>) -> Self {
             self.actions_executed = input;
             self
         }
-        /// <p>
-        /// The actions that were skipped.
-        /// </p>
+        /// <p> The actions that were skipped. </p>
         pub fn actions_skipped(mut self, input: i64) -> Self {
             self.actions_skipped = Some(input);
             self
         }
-        /// <p>
-        /// The actions that were skipped.
-        /// </p>
+        /// <p> The actions that were skipped. </p>
         pub fn set_actions_skipped(mut self, input: std::option::Option<i64>) -> Self {
             self.actions_skipped = input;
             self
         }
-        /// <p>
-        /// The actions that failed.
-        /// </p>
+        /// <p> The actions that failed. </p>
         pub fn actions_failed(mut self, input: i64) -> Self {
             self.actions_failed = Some(input);
             self
         }
-        /// <p>
-        /// The actions that failed.
-        /// </p>
+        /// <p> The actions that failed. </p>
         pub fn set_actions_failed(mut self, input: std::option::Option<i64>) -> Self {
             self.actions_failed = input;
             self
@@ -18069,103 +17195,65 @@ impl AsRef<str> for DetectMitigationActionsTaskStatus {
     }
 }
 
-/// <p>
-/// Describes which mitigation actions should be executed.
-/// </p>
+/// <p> Describes which mitigation actions should be executed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectMitigationActionExecution {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub violation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The friendly name that uniquely identifies the mitigation action.
-    /// </p>
+    /// <p> The friendly name that uniquely identifies the mitigation action. </p>
     pub action_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the thing.
-    /// </p>
+    /// <p> The name of the thing. </p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The date a mitigation action was started.
-    /// </p>
+    /// <p> The date a mitigation action was started. </p>
     pub execution_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The date a mitigation action ended.
-    /// </p>
+    /// <p> The date a mitigation action ended. </p>
     pub execution_end_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The status of a mitigation action.
-    /// </p>
+    /// <p> The status of a mitigation action. </p>
     pub status: std::option::Option<crate::model::DetectMitigationActionExecutionStatus>,
-    /// <p>
-    /// The error code of a mitigation action.
-    /// </p>
+    /// <p> The error code of a mitigation action. </p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>
-    /// The message of a mitigation action.
-    /// </p>
+    /// <p> The message of a mitigation action. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl DetectMitigationActionExecution {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(&self) -> std::option::Option<&str> {
         self.violation_id.as_deref()
     }
-    /// <p>
-    /// The friendly name that uniquely identifies the mitigation action.
-    /// </p>
+    /// <p> The friendly name that uniquely identifies the mitigation action. </p>
     pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
-    /// <p>
-    /// The name of the thing.
-    /// </p>
+    /// <p> The name of the thing. </p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>
-    /// The date a mitigation action was started.
-    /// </p>
+    /// <p> The date a mitigation action was started. </p>
     pub fn execution_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.execution_start_date.as_ref()
     }
-    /// <p>
-    /// The date a mitigation action ended.
-    /// </p>
+    /// <p> The date a mitigation action ended. </p>
     pub fn execution_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.execution_end_date.as_ref()
     }
-    /// <p>
-    /// The status of a mitigation action.
-    /// </p>
+    /// <p> The status of a mitigation action. </p>
     pub fn status(
         &self,
     ) -> std::option::Option<&crate::model::DetectMitigationActionExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// The error code of a mitigation action.
-    /// </p>
+    /// <p> The error code of a mitigation action. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>
-    /// The message of a mitigation action.
-    /// </p>
+    /// <p> The message of a mitigation action. </p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -18202,72 +17290,52 @@ pub mod detect_mitigation_action_execution {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.violation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.violation_id = input;
             self
         }
-        /// <p>
-        /// The friendly name that uniquely identifies the mitigation action.
-        /// </p>
+        /// <p> The friendly name that uniquely identifies the mitigation action. </p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The friendly name that uniquely identifies the mitigation action.
-        /// </p>
+        /// <p> The friendly name that uniquely identifies the mitigation action. </p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
         }
-        /// <p>
-        /// The name of the thing.
-        /// </p>
+        /// <p> The name of the thing. </p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the thing.
-        /// </p>
+        /// <p> The name of the thing. </p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
         }
-        /// <p>
-        /// The date a mitigation action was started.
-        /// </p>
+        /// <p> The date a mitigation action was started. </p>
         pub fn execution_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.execution_start_date = Some(input);
             self
         }
-        /// <p>
-        /// The date a mitigation action was started.
-        /// </p>
+        /// <p> The date a mitigation action was started. </p>
         pub fn set_execution_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -18275,16 +17343,12 @@ pub mod detect_mitigation_action_execution {
             self.execution_start_date = input;
             self
         }
-        /// <p>
-        /// The date a mitigation action ended.
-        /// </p>
+        /// <p> The date a mitigation action ended. </p>
         pub fn execution_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.execution_end_date = Some(input);
             self
         }
-        /// <p>
-        /// The date a mitigation action ended.
-        /// </p>
+        /// <p> The date a mitigation action ended. </p>
         pub fn set_execution_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -18292,9 +17356,7 @@ pub mod detect_mitigation_action_execution {
             self.execution_end_date = input;
             self
         }
-        /// <p>
-        /// The status of a mitigation action.
-        /// </p>
+        /// <p> The status of a mitigation action. </p>
         pub fn status(
             mut self,
             input: crate::model::DetectMitigationActionExecutionStatus,
@@ -18302,9 +17364,7 @@ pub mod detect_mitigation_action_execution {
             self.status = Some(input);
             self
         }
-        /// <p>
-        /// The status of a mitigation action.
-        /// </p>
+        /// <p> The status of a mitigation action. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionExecutionStatus>,
@@ -18312,30 +17372,22 @@ pub mod detect_mitigation_action_execution {
             self.status = input;
             self
         }
-        /// <p>
-        /// The error code of a mitigation action.
-        /// </p>
+        /// <p> The error code of a mitigation action. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>
-        /// The error code of a mitigation action.
-        /// </p>
+        /// <p> The error code of a mitigation action. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>
-        /// The message of a mitigation action.
-        /// </p>
+        /// <p> The message of a mitigation action. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The message of a mitigation action.
-        /// </p>
+        /// <p> The message of a mitigation action. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -18432,8 +17484,7 @@ impl AsRef<str> for DetectMitigationActionExecutionStatus {
 pub struct Certificate {
     /// <p>The ARN of the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The status of the certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
@@ -18448,8 +17499,7 @@ impl Certificate {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -18504,14 +17554,12 @@ pub mod certificate {
             self.certificate_arn = input;
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18846,8 +17894,7 @@ impl AuthorizerSummary {
 pub struct AuditTaskMetadata {
     /// <p>The ID of this audit.</p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED",
-    /// "FAILED", or "CANCELED".</p>
+    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
@@ -18857,8 +17904,7 @@ impl AuditTaskMetadata {
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED",
-    /// "FAILED", or "CANCELED".</p>
+    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
         self.task_status.as_ref()
     }
@@ -18897,14 +17943,12 @@ pub mod audit_task_metadata {
             self.task_id = input;
             self
         }
-        /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED",
-        /// "FAILED", or "CANCELED".</p>
+        /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn task_status(mut self, input: crate::model::AuditTaskStatus) -> Self {
             self.task_status = Some(input);
             self
         }
-        /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED",
-        /// "FAILED", or "CANCELED".</p>
+        /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::AuditTaskStatus>,
@@ -19064,31 +18108,19 @@ impl AsRef<str> for AuditTaskStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditSuppression {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
 }
 impl AuditSuppression {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -19096,21 +18128,15 @@ impl AuditSuppression {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -19139,18 +18165,12 @@ pub mod audit_suppression {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -19168,16 +18188,12 @@ pub mod audit_suppression {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -19185,30 +18201,22 @@ pub mod audit_suppression {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -19700,8 +18708,7 @@ impl AsRef<str> for AuditMitigationActionsExecutionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditFinding {
-    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply
-    /// mitigation tasks to one or more sets of findings.</p>
+    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
     pub finding_id: std::option::Option<std::string::String>,
     /// <p>The ID of the audit that generated this result (finding).</p>
     pub task_id: std::option::Option<std::string::String>,
@@ -19713,8 +18720,7 @@ pub struct AuditFinding {
     pub finding_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The severity of the result (finding).</p>
     pub severity: std::option::Option<crate::model::AuditFindingSeverity>,
-    /// <p>The resource that was found to be noncompliant with the
-    /// audit check.</p>
+    /// <p>The resource that was found to be noncompliant with the audit check.</p>
     pub non_compliant_resource: std::option::Option<crate::model::NonCompliantResource>,
     /// <p>The list of related resources.</p>
     pub related_resources: std::option::Option<std::vec::Vec<crate::model::RelatedResource>>,
@@ -19722,14 +18728,11 @@ pub struct AuditFinding {
     pub reason_for_non_compliance: std::option::Option<std::string::String>,
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
     pub reason_for_non_compliance_code: std::option::Option<std::string::String>,
-    /// <p>
-    /// Indicates whether the audit finding was suppressed or not during reporting.
-    /// </p>
+    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
     pub is_suppressed: std::option::Option<bool>,
 }
 impl AuditFinding {
-    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply
-    /// mitigation tasks to one or more sets of findings.</p>
+    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
     pub fn finding_id(&self) -> std::option::Option<&str> {
         self.finding_id.as_deref()
     }
@@ -19753,8 +18756,7 @@ impl AuditFinding {
     pub fn severity(&self) -> std::option::Option<&crate::model::AuditFindingSeverity> {
         self.severity.as_ref()
     }
-    /// <p>The resource that was found to be noncompliant with the
-    /// audit check.</p>
+    /// <p>The resource that was found to be noncompliant with the audit check.</p>
     pub fn non_compliant_resource(
         &self,
     ) -> std::option::Option<&crate::model::NonCompliantResource> {
@@ -19772,9 +18774,7 @@ impl AuditFinding {
     pub fn reason_for_non_compliance_code(&self) -> std::option::Option<&str> {
         self.reason_for_non_compliance_code.as_deref()
     }
-    /// <p>
-    /// Indicates whether the audit finding was suppressed or not during reporting.
-    /// </p>
+    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
     pub fn is_suppressed(&self) -> std::option::Option<bool> {
         self.is_suppressed
     }
@@ -19819,14 +18819,12 @@ pub mod audit_finding {
         pub(crate) is_suppressed: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A unique identifier for this set of audit findings. This identifier is used to apply
-        /// mitigation tasks to one or more sets of findings.</p>
+        /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
         pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.finding_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this set of audit findings. This identifier is used to apply
-        /// mitigation tasks to one or more sets of findings.</p>
+        /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
         pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.finding_id = input;
             self
@@ -19890,14 +18888,12 @@ pub mod audit_finding {
             self.severity = input;
             self
         }
-        /// <p>The resource that was found to be noncompliant with the
-        /// audit check.</p>
+        /// <p>The resource that was found to be noncompliant with the audit check.</p>
         pub fn non_compliant_resource(mut self, input: crate::model::NonCompliantResource) -> Self {
             self.non_compliant_resource = Some(input);
             self
         }
-        /// <p>The resource that was found to be noncompliant with the
-        /// audit check.</p>
+        /// <p>The resource that was found to be noncompliant with the audit check.</p>
         pub fn set_non_compliant_resource(
             mut self,
             input: std::option::Option<crate::model::NonCompliantResource>,
@@ -19910,12 +18906,9 @@ pub mod audit_finding {
         /// To override the contents of this collection use [`set_related_resources`](Self::set_related_resources).
         ///
         /// <p>The list of related resources.</p>
-        pub fn related_resources(
-            mut self,
-            input: impl Into<crate::model::RelatedResource>,
-        ) -> Self {
+        pub fn related_resources(mut self, input: crate::model::RelatedResource) -> Self {
             let mut v = self.related_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_resources = Some(v);
             self
         }
@@ -19956,16 +18949,12 @@ pub mod audit_finding {
             self.reason_for_non_compliance_code = input;
             self
         }
-        /// <p>
-        /// Indicates whether the audit finding was suppressed or not during reporting.
-        /// </p>
+        /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
         pub fn is_suppressed(mut self, input: bool) -> Self {
             self.is_suppressed = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether the audit finding was suppressed or not during reporting.
-        /// </p>
+        /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
         pub fn set_is_suppressed(mut self, input: std::option::Option<bool>) -> Self {
             self.is_suppressed = input;
             self
@@ -20398,9 +19387,7 @@ pub struct ActiveViolation {
     pub behavior: std::option::Option<crate::model::Behavior>,
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
     pub last_violation_value: std::option::Option<crate::model::MetricValue>,
-    /// <p>
-    /// The details of a violation event.
-    /// </p>
+    /// <p> The details of a violation event. </p>
     pub violation_event_additional_info:
         std::option::Option<crate::model::ViolationEventAdditionalInfo>,
     /// <p>The verification state of the violation (detect alarm).</p>
@@ -20433,9 +19420,7 @@ impl ActiveViolation {
     pub fn last_violation_value(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.last_violation_value.as_ref()
     }
-    /// <p>
-    /// The details of a violation event.
-    /// </p>
+    /// <p> The details of a violation event. </p>
     pub fn violation_event_additional_info(
         &self,
     ) -> std::option::Option<&crate::model::ViolationEventAdditionalInfo> {
@@ -20555,9 +19540,7 @@ pub mod active_violation {
             self.last_violation_value = input;
             self
         }
-        /// <p>
-        /// The details of a violation event.
-        /// </p>
+        /// <p> The details of a violation event. </p>
         pub fn violation_event_additional_info(
             mut self,
             input: crate::model::ViolationEventAdditionalInfo,
@@ -20565,9 +19548,7 @@ pub mod active_violation {
             self.violation_event_additional_info = Some(input);
             self
         }
-        /// <p>
-        /// The details of a violation event.
-        /// </p>
+        /// <p> The details of a violation event. </p>
         pub fn set_violation_event_additional_info(
             mut self,
             input: std::option::Option<crate::model::ViolationEventAdditionalInfo>,
@@ -20662,34 +19643,29 @@ pub struct TopicRuleDestination {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
@@ -20697,8 +19673,7 @@ pub struct TopicRuleDestination {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the topic rule destination was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Additional details or reason why the topic rule destination is in the current
-    /// status.</p>
+    /// <p>Additional details or reason why the topic rule destination is in the current status.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>Properties of the HTTP URL.</p>
     pub http_url_properties: std::option::Option<crate::model::HttpUrlDestinationProperties>,
@@ -20712,34 +19687,29 @@ impl TopicRuleDestination {
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
@@ -20753,8 +19723,7 @@ impl TopicRuleDestination {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>Additional details or reason why the topic rule destination is in the current
-    /// status.</p>
+    /// <p>Additional details or reason why the topic rule destination is in the current status.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -20810,34 +19779,29 @@ pub mod topic_rule_destination {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn status(mut self, input: crate::model::TopicRuleDestinationStatus) -> Self {
@@ -20846,34 +19810,29 @@ pub mod topic_rule_destination {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn set_status(
@@ -20909,14 +19868,12 @@ pub mod topic_rule_destination {
             self.last_updated_at = input;
             self
         }
-        /// <p>Additional details or reason why the topic rule destination is in the current
-        /// status.</p>
+        /// <p>Additional details or reason why the topic rule destination is in the current status.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>Additional details or reason why the topic rule destination is in the current
-        /// status.</p>
+        /// <p>Additional details or reason why the topic rule destination is in the current status.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21166,8 +20123,7 @@ impl HttpUrlDestinationProperties {
 pub struct TopicRule {
     /// <p>The name of the rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
-    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple
-    /// lines, be sure to escape the newline characters.</p>
+    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
     pub sql: std::option::Option<std::string::String>,
     /// <p>The description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
@@ -21187,8 +20143,7 @@ impl TopicRule {
     pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
-    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple
-    /// lines, be sure to escape the newline characters.</p>
+    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
     pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
@@ -21257,14 +20212,12 @@ pub mod topic_rule {
             self.rule_name = input;
             self
         }
-        /// <p>The SQL statement used to query the topic. When using a SQL query with multiple
-        /// lines, be sure to escape the newline characters.</p>
+        /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
         pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql = Some(input.into());
             self
         }
-        /// <p>The SQL statement used to query the topic. When using a SQL query with multiple
-        /// lines, be sure to escape the newline characters.</p>
+        /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -21297,9 +20250,9 @@ pub mod topic_rule {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions associated with the rule.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -21369,9 +20322,7 @@ impl TopicRule {
     }
 }
 
-/// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API,
-/// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html">
-/// Fleet indexing troubleshooting guide</a>.</p>
+/// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html"> Fleet indexing troubleshooting guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
@@ -21647,20 +20598,14 @@ pub struct OtaUpdateInfo {
     pub description: std::option::Option<std::string::String>,
     /// <p>The targets of the OTA update.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub aws_job_executions_rollout_config:
         std::option::Option<crate::model::AwsJobExecutionsRolloutConfig>,
-    /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
-    /// contains HTTP.</p>
+    /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
     pub aws_job_presigned_url_config: std::option::Option<crate::model::AwsJobPresignedUrlConfig>,
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those
-    /// things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also
-    /// be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when
-    /// the thing is added to a target group, even after the OTA update was completed by all things originally in
-    /// the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>A list of files associated with the OTA update.</p>
     pub ota_update_files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
@@ -21701,8 +20646,7 @@ impl OtaUpdateInfo {
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
     }
@@ -21712,18 +20656,13 @@ impl OtaUpdateInfo {
     ) -> std::option::Option<&crate::model::AwsJobExecutionsRolloutConfig> {
         self.aws_job_executions_rollout_config.as_ref()
     }
-    /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
-    /// contains HTTP.</p>
+    /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
     pub fn aws_job_presigned_url_config(
         &self,
     ) -> std::option::Option<&crate::model::AwsJobPresignedUrlConfig> {
         self.aws_job_presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those
-    /// things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also
-    /// be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when
-    /// the thing is added to a target group, even after the OTA update was completed by all things originally in
-    /// the group. </p>
+    /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -21897,16 +20836,14 @@ pub mod ota_update_info {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -21930,8 +20867,7 @@ pub mod ota_update_info {
             self.aws_job_executions_rollout_config = input;
             self
         }
-        /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
-        /// contains HTTP.</p>
+        /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
         pub fn aws_job_presigned_url_config(
             mut self,
             input: crate::model::AwsJobPresignedUrlConfig,
@@ -21939,8 +20875,7 @@ pub mod ota_update_info {
             self.aws_job_presigned_url_config = Some(input);
             self
         }
-        /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
-        /// contains HTTP.</p>
+        /// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
         pub fn set_aws_job_presigned_url_config(
             mut self,
             input: std::option::Option<crate::model::AwsJobPresignedUrlConfig>,
@@ -21948,20 +20883,12 @@ pub mod ota_update_info {
             self.aws_job_presigned_url_config = input;
             self
         }
-        /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those
-        /// things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also
-        /// be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when
-        /// the thing is added to a target group, even after the OTA update was completed by all things originally in
-        /// the group. </p>
+        /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those
-        /// things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also
-        /// be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when
-        /// the thing is added to a target group, even after the OTA update was completed by all things originally in
-        /// the group. </p>
+        /// <p>Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the OTA update (SNAPSHOT). If continuous, the OTA update may also be run on a thing when a change is detected in a target. For example, an OTA update will run on a thing when the thing is added to a target group, even after the OTA update was completed by all things originally in the group. </p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -21974,9 +20901,9 @@ pub mod ota_update_info {
         /// To override the contents of this collection use [`set_ota_update_files`](Self::set_ota_update_files).
         ///
         /// <p>A list of files associated with the OTA update.</p>
-        pub fn ota_update_files(mut self, input: impl Into<crate::model::OtaUpdateFile>) -> Self {
+        pub fn ota_update_files(mut self, input: crate::model::OtaUpdateFile) -> Self {
             let mut v = self.ota_update_files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ota_update_files = Some(v);
             self
         }
@@ -22174,8 +21101,7 @@ impl ErrorInfo {
 pub struct OtaUpdateFile {
     /// <p>The name of the file.</p>
     pub file_name: std::option::Option<std::string::String>,
-    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received
-    /// from the cloud.</p>
+    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
     pub file_type: std::option::Option<i32>,
     /// <p>The file version.</p>
     pub file_version: std::option::Option<std::string::String>,
@@ -22192,8 +21118,7 @@ impl OtaUpdateFile {
     pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
     }
-    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received
-    /// from the cloud.</p>
+    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
     pub fn file_type(&self) -> std::option::Option<i32> {
         self.file_type
     }
@@ -22255,14 +21180,12 @@ pub mod ota_update_file {
             self.file_name = input;
             self
         }
-        /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received
-        /// from the cloud.</p>
+        /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
         pub fn file_type(mut self, input: i32) -> Self {
             self.file_type = Some(input);
             self
         }
-        /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received
-        /// from the cloud.</p>
+        /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
         pub fn set_file_type(mut self, input: std::option::Option<i32>) -> Self {
             self.file_type = input;
             self
@@ -23210,18 +22133,15 @@ impl Stream {
     }
 }
 
-/// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code>
-/// contains HTTP.</p>
+/// <p>Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobPresignedUrlConfig {
-    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800
-    /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     pub expires_in_sec: std::option::Option<i64>,
 }
 impl AwsJobPresignedUrlConfig {
-    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800
-    /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
     pub fn expires_in_sec(&self) -> std::option::Option<i64> {
         self.expires_in_sec
     }
@@ -23242,14 +22162,12 @@ pub mod aws_job_presigned_url_config {
         pub(crate) expires_in_sec: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800
-        /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
         pub fn expires_in_sec(mut self, input: i64) -> Self {
             self.expires_in_sec = Some(input);
             self
         }
-        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800
-        /// seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+        /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
         pub fn set_expires_in_sec(mut self, input: std::option::Option<i64>) -> Self {
             self.expires_in_sec = input;
             self
@@ -23275,8 +22193,7 @@ impl AwsJobPresignedUrlConfig {
 pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
     pub maximum_per_minute: std::option::Option<i32>,
-    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
-    /// increase for a job rollout.</p>
+    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     pub exponential_rate: std::option::Option<crate::model::AwsJobExponentialRolloutRate>,
 }
 impl AwsJobExecutionsRolloutConfig {
@@ -23284,8 +22201,7 @@ impl AwsJobExecutionsRolloutConfig {
     pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
         self.maximum_per_minute
     }
-    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
-    /// increase for a job rollout.</p>
+    /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     pub fn exponential_rate(
         &self,
     ) -> std::option::Option<&crate::model::AwsJobExponentialRolloutRate> {
@@ -23321,8 +22237,7 @@ pub mod aws_job_executions_rollout_config {
             self.maximum_per_minute = input;
             self
         }
-        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
-        /// increase for a job rollout.</p>
+        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
         pub fn exponential_rate(
             mut self,
             input: crate::model::AwsJobExponentialRolloutRate,
@@ -23330,8 +22245,7 @@ pub mod aws_job_executions_rollout_config {
             self.exponential_rate = Some(input);
             self
         }
-        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
-        /// increase for a job rollout.</p>
+        /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
         pub fn set_exponential_rate(
             mut self,
             input: std::option::Option<crate::model::AwsJobExponentialRolloutRate>,
@@ -23355,29 +22269,24 @@ impl AwsJobExecutionsRolloutConfig {
     }
 }
 
-/// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate
-/// increase for a job rollout.</p>
+/// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobExponentialRolloutRate {
-    /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start
-    /// of the job rollout. This is the initial rate of the rollout.</p>
+    /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
     pub base_rate_per_minute: std::option::Option<i32>,
-    /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this
-    /// factor.</p>
+    /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
     pub rate_increase_criteria: std::option::Option<crate::model::AwsJobRateIncreaseCriteria>,
 }
 impl AwsJobExponentialRolloutRate {
-    /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start
-    /// of the job rollout. This is the initial rate of the rollout.</p>
+    /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
     pub fn base_rate_per_minute(&self) -> std::option::Option<i32> {
         self.base_rate_per_minute
     }
-    /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this
-    /// factor.</p>
+    /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
     pub fn increment_factor(&self) -> f64 {
         self.increment_factor
     }
@@ -23410,26 +22319,22 @@ pub mod aws_job_exponential_rollout_rate {
             std::option::Option<crate::model::AwsJobRateIncreaseCriteria>,
     }
     impl Builder {
-        /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start
-        /// of the job rollout. This is the initial rate of the rollout.</p>
+        /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
         pub fn base_rate_per_minute(mut self, input: i32) -> Self {
             self.base_rate_per_minute = Some(input);
             self
         }
-        /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start
-        /// of the job rollout. This is the initial rate of the rollout.</p>
+        /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
         pub fn set_base_rate_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.base_rate_per_minute = input;
             self
         }
-        /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this
-        /// factor.</p>
+        /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
         pub fn increment_factor(mut self, input: f64) -> Self {
             self.increment_factor = Some(input);
             self
         }
-        /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this
-        /// factor.</p>
+        /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
         pub fn set_increment_factor(mut self, input: std::option::Option<f64>) -> Self {
             self.increment_factor = input;
             self
@@ -23473,21 +22378,17 @@ impl AwsJobExponentialRolloutRate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobRateIncreaseCriteria {
-    /// <p>When this number of things have been notified, it will initiate an increase in the rollout
-    /// rate.</p>
+    /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub number_of_notified_things: std::option::Option<i32>,
-    /// <p>When this number of things have succeeded in their job execution, it will initiate an
-    /// increase in the rollout rate.</p>
+    /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
 impl AwsJobRateIncreaseCriteria {
-    /// <p>When this number of things have been notified, it will initiate an increase in the rollout
-    /// rate.</p>
+    /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
     pub fn number_of_notified_things(&self) -> std::option::Option<i32> {
         self.number_of_notified_things
     }
-    /// <p>When this number of things have succeeded in their job execution, it will initiate an
-    /// increase in the rollout rate.</p>
+    /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
     pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
         self.number_of_succeeded_things
     }
@@ -23513,26 +22414,22 @@ pub mod aws_job_rate_increase_criteria {
         pub(crate) number_of_succeeded_things: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>When this number of things have been notified, it will initiate an increase in the rollout
-        /// rate.</p>
+        /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
         pub fn number_of_notified_things(mut self, input: i32) -> Self {
             self.number_of_notified_things = Some(input);
             self
         }
-        /// <p>When this number of things have been notified, it will initiate an increase in the rollout
-        /// rate.</p>
+        /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
         pub fn set_number_of_notified_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_notified_things = input;
             self
         }
-        /// <p>When this number of things have succeeded in their job execution, it will initiate an
-        /// increase in the rollout rate.</p>
+        /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
         pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
             self.number_of_succeeded_things = Some(input);
             self
         }
-        /// <p>When this number of things have succeeded in their job execution, it will initiate an
-        /// increase in the rollout rate.</p>
+        /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
         pub fn set_number_of_succeeded_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_succeeded_things = input;
             self
@@ -23887,73 +22784,47 @@ impl TermsAggregation {
     }
 }
 
-/// <p>
-/// The summary of an ML Detect behavior model.
-/// </p>
+/// <p> The summary of an ML Detect behavior model. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BehaviorModelTrainingSummary {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the behavior.
-    /// </p>
+    /// <p> The name of the behavior. </p>
     pub behavior_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The date a training model started collecting data.
-    /// </p>
+    /// <p> The date a training model started collecting data. </p>
     pub training_data_collection_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The status of the behavior model.
-    /// </p>
+    /// <p> The status of the behavior model. </p>
     pub model_status: std::option::Option<crate::model::ModelStatus>,
-    /// <p>
-    /// The percentage of datapoints collected.
-    /// </p>
+    /// <p> The percentage of datapoints collected. </p>
     pub datapoints_collection_percentage: std::option::Option<f64>,
-    /// <p>
-    /// The date the model was last refreshed.
-    /// </p>
+    /// <p> The date the model was last refreshed. </p>
     pub last_model_refresh_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BehaviorModelTrainingSummary {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The name of the behavior.
-    /// </p>
+    /// <p> The name of the behavior. </p>
     pub fn behavior_name(&self) -> std::option::Option<&str> {
         self.behavior_name.as_deref()
     }
-    /// <p>
-    /// The date a training model started collecting data.
-    /// </p>
+    /// <p> The date a training model started collecting data. </p>
     pub fn training_data_collection_start_date(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_data_collection_start_date.as_ref()
     }
-    /// <p>
-    /// The status of the behavior model.
-    /// </p>
+    /// <p> The status of the behavior model. </p>
     pub fn model_status(&self) -> std::option::Option<&crate::model::ModelStatus> {
         self.model_status.as_ref()
     }
-    /// <p>
-    /// The percentage of datapoints collected.
-    /// </p>
+    /// <p> The percentage of datapoints collected. </p>
     pub fn datapoints_collection_percentage(&self) -> std::option::Option<f64> {
         self.datapoints_collection_percentage
     }
-    /// <p>
-    /// The date the model was last refreshed.
-    /// </p>
+    /// <p> The date the model was last refreshed. </p>
     pub fn last_model_refresh_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_model_refresh_date.as_ref()
     }
@@ -23991,16 +22862,12 @@ pub mod behavior_model_training_summary {
         pub(crate) last_model_refresh_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24008,16 +22875,12 @@ pub mod behavior_model_training_summary {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The name of the behavior.
-        /// </p>
+        /// <p> The name of the behavior. </p>
         pub fn behavior_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.behavior_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the behavior.
-        /// </p>
+        /// <p> The name of the behavior. </p>
         pub fn set_behavior_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24025,9 +22888,7 @@ pub mod behavior_model_training_summary {
             self.behavior_name = input;
             self
         }
-        /// <p>
-        /// The date a training model started collecting data.
-        /// </p>
+        /// <p> The date a training model started collecting data. </p>
         pub fn training_data_collection_start_date(
             mut self,
             input: aws_smithy_types::DateTime,
@@ -24035,9 +22896,7 @@ pub mod behavior_model_training_summary {
             self.training_data_collection_start_date = Some(input);
             self
         }
-        /// <p>
-        /// The date a training model started collecting data.
-        /// </p>
+        /// <p> The date a training model started collecting data. </p>
         pub fn set_training_data_collection_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24045,16 +22904,12 @@ pub mod behavior_model_training_summary {
             self.training_data_collection_start_date = input;
             self
         }
-        /// <p>
-        /// The status of the behavior model.
-        /// </p>
+        /// <p> The status of the behavior model. </p>
         pub fn model_status(mut self, input: crate::model::ModelStatus) -> Self {
             self.model_status = Some(input);
             self
         }
-        /// <p>
-        /// The status of the behavior model.
-        /// </p>
+        /// <p> The status of the behavior model. </p>
         pub fn set_model_status(
             mut self,
             input: std::option::Option<crate::model::ModelStatus>,
@@ -24062,16 +22917,12 @@ pub mod behavior_model_training_summary {
             self.model_status = input;
             self
         }
-        /// <p>
-        /// The percentage of datapoints collected.
-        /// </p>
+        /// <p> The percentage of datapoints collected. </p>
         pub fn datapoints_collection_percentage(mut self, input: f64) -> Self {
             self.datapoints_collection_percentage = Some(input);
             self
         }
-        /// <p>
-        /// The percentage of datapoints collected.
-        /// </p>
+        /// <p> The percentage of datapoints collected. </p>
         pub fn set_datapoints_collection_percentage(
             mut self,
             input: std::option::Option<f64>,
@@ -24079,16 +22930,12 @@ pub mod behavior_model_training_summary {
             self.datapoints_collection_percentage = input;
             self
         }
-        /// <p>
-        /// The date the model was last refreshed.
-        /// </p>
+        /// <p> The date the model was last refreshed. </p>
         pub fn last_model_refresh_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_model_refresh_date = Some(input);
             self
         }
-        /// <p>
-        /// The date the model was last refreshed.
-        /// </p>
+        /// <p> The date the model was last refreshed. </p>
         pub fn set_last_model_refresh_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24304,12 +23151,9 @@ pub mod thing_group_metadata {
         /// To override the contents of this collection use [`set_root_to_parent_thing_groups`](Self::set_root_to_parent_thing_groups).
         ///
         /// <p>The root parent thing group.</p>
-        pub fn root_to_parent_thing_groups(
-            mut self,
-            input: impl Into<crate::model::GroupNameAndArn>,
-        ) -> Self {
+        pub fn root_to_parent_thing_groups(mut self, input: crate::model::GroupNameAndArn) -> Self {
             let mut v = self.root_to_parent_thing_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.root_to_parent_thing_groups = Some(v);
             self
         }
@@ -24481,9 +23325,9 @@ pub mod stream_info {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -24733,51 +23577,39 @@ impl RoleAliasDescription {
     }
 }
 
-/// <p>A map of key-value pairs containing the patterns that need to be replaced in a managed
-/// template job document schema. You can use the description of each key as a guidance to specify
-/// the inputs during runtime when creating a job.</p>
+/// <p>A map of key-value pairs containing the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentParameter {
-    /// <p>Key of the map field containing the patterns that need to be replaced in a managed
-    /// template job document schema.</p>
+    /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Description of the map field containing the patterns that need to be replaced in a
-    /// managed template job document schema.</p>
+    /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A regular expression of the patterns that need to be replaced in a managed template
-    /// job document schema.</p>
+    /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
     pub regex: std::option::Option<std::string::String>,
-    /// <p>An example illustrating a pattern that need to be replaced in a managed template
-    /// job document schema.</p>
+    /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
     pub example: std::option::Option<std::string::String>,
-    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
-    /// schema is optional or required.</p>
+    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     pub optional: bool,
 }
 impl DocumentParameter {
-    /// <p>Key of the map field containing the patterns that need to be replaced in a managed
-    /// template job document schema.</p>
+    /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Description of the map field containing the patterns that need to be replaced in a
-    /// managed template job document schema.</p>
+    /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A regular expression of the patterns that need to be replaced in a managed template
-    /// job document schema.</p>
+    /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
     pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
     }
-    /// <p>An example illustrating a pattern that need to be replaced in a managed template
-    /// job document schema.</p>
+    /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
     pub fn example(&self) -> std::option::Option<&str> {
         self.example.as_deref()
     }
-    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
-    /// schema is optional or required.</p>
+    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     pub fn optional(&self) -> bool {
         self.optional
     }
@@ -24806,62 +23638,52 @@ pub mod document_parameter {
         pub(crate) optional: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Key of the map field containing the patterns that need to be replaced in a managed
-        /// template job document schema.</p>
+        /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Key of the map field containing the patterns that need to be replaced in a managed
-        /// template job document schema.</p>
+        /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Description of the map field containing the patterns that need to be replaced in a
-        /// managed template job document schema.</p>
+        /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Description of the map field containing the patterns that need to be replaced in a
-        /// managed template job document schema.</p>
+        /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>A regular expression of the patterns that need to be replaced in a managed template
-        /// job document schema.</p>
+        /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex = Some(input.into());
             self
         }
-        /// <p>A regular expression of the patterns that need to be replaced in a managed template
-        /// job document schema.</p>
+        /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
         pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.regex = input;
             self
         }
-        /// <p>An example illustrating a pattern that need to be replaced in a managed template
-        /// job document schema.</p>
+        /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
         pub fn example(mut self, input: impl Into<std::string::String>) -> Self {
             self.example = Some(input.into());
             self
         }
-        /// <p>An example illustrating a pattern that need to be replaced in a managed template
-        /// job document schema.</p>
+        /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
         pub fn set_example(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.example = input;
             self
         }
-        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
-        /// schema is optional or required.</p>
+        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
         pub fn optional(mut self, input: bool) -> Self {
             self.optional = Some(input);
             self
         }
-        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document
-        /// schema is optional or required.</p>
+        /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
         pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
             self.optional = input;
             self
@@ -24891,11 +23713,9 @@ impl DocumentParameter {
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to the job when it was created.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
-    /// CANCELED, or REJECTED).</p>
+    /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
-    /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
-    /// parameter set to <code>true</code>.</p>
+    /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub force_canceled: std::option::Option<bool>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     pub status_details: std::option::Option<crate::model::JobExecutionStatusDetails>,
@@ -24907,17 +23727,11 @@ pub struct JobExecution {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-    /// this particular device. It can be used in commands which return or update job execution information.
-    /// </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
     pub execution_number: std::option::Option<i64>,
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated
-    /// by a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
-    /// <p>The estimated number of seconds that remain before the job execution status will be
-    /// changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
-    /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
-    /// This value will not be included if the job execution has reached a terminal status.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
     pub approximate_seconds_before_timed_out: std::option::Option<i64>,
 }
 impl JobExecution {
@@ -24925,13 +23739,11 @@ impl JobExecution {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
-    /// CANCELED, or REJECTED).</p>
+    /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
-    /// parameter set to <code>true</code>.</p>
+    /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub fn force_canceled(&self) -> std::option::Option<bool> {
         self.force_canceled
     }
@@ -24955,21 +23767,15 @@ impl JobExecution {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-    /// this particular device. It can be used in commands which return or update job execution information.
-    /// </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated
-    /// by a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be
-    /// changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
-    /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
-    /// This value will not be included if the job execution has reached a terminal status.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
     pub fn approximate_seconds_before_timed_out(&self) -> std::option::Option<i64> {
         self.approximate_seconds_before_timed_out
     }
@@ -25023,14 +23829,12 @@ pub mod job_execution {
             self.job_id = input;
             self
         }
-        /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
-        /// CANCELED, or REJECTED).</p>
+        /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
         pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
-        /// CANCELED, or REJECTED).</p>
+        /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -25038,14 +23842,12 @@ pub mod job_execution {
             self.status = input;
             self
         }
-        /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
-        /// parameter set to <code>true</code>.</p>
+        /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
         pub fn force_canceled(mut self, input: bool) -> Self {
             self.force_canceled = Some(input);
             self
         }
-        /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
-        /// parameter set to <code>true</code>.</p>
+        /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
         pub fn set_force_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.force_canceled = input;
             self
@@ -25112,44 +23914,32 @@ pub mod job_execution {
             self.last_updated_at = input;
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-        /// this particular device. It can be used in commands which return or update job execution information.
-        /// </p>
+        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on
-        /// this particular device. It can be used in commands which return or update job execution information.
-        /// </p>
+        /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated
-        /// by a device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated
-        /// by a device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
         }
-        /// <p>The estimated number of seconds that remain before the job execution status will be
-        /// changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
-        /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
-        /// This value will not be included if the job execution has reached a terminal status.</p>
+        /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
         pub fn approximate_seconds_before_timed_out(mut self, input: i64) -> Self {
             self.approximate_seconds_before_timed_out = Some(input);
             self
         }
-        /// <p>The estimated number of seconds that remain before the job execution status will be
-        /// changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes).
-        /// The actual job execution timeout can occur up to 60 seconds later than the estimated duration.
-        /// This value will not be included if the job execution has reached a terminal status.</p>
+        /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
         pub fn set_approximate_seconds_before_timed_out(
             mut self,
             input: std::option::Option<i64>,
@@ -25265,17 +24055,11 @@ pub struct Job {
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a device when the thing representing
-    /// the device is added to a target group, even after the job was completed by all things originally in the
-    /// group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
-    /// <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
-    /// <code>true</code>.</p>
+    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub force_canceled: std::option::Option<bool>,
     /// <p>If the job was updated, provides the reason code for the update.</p>
     pub reason_code: std::option::Option<std::string::String>,
@@ -25300,26 +24084,19 @@ pub struct Job {
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the job process.</p>
     pub job_process_details: std::option::Option<crate::model::JobProcessDetails>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
-    /// template job document schema. You can use the description of each key as a guidance
-    /// to specify the inputs during runtime when creating a job.</p>
+    /// <p>The configuration for the criteria to retry the job.</p>
+    pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -25332,21 +24109,15 @@ impl Job {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a device when the thing representing
-    /// the device is added to a target group, even after the job was completed by all things originally in the
-    /// group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
-    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
-    /// <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+    /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
-    /// <code>true</code>.</p>
+    /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
     pub fn force_canceled(&self) -> std::option::Option<bool> {
         self.force_canceled
     }
@@ -25396,20 +24167,13 @@ impl Job {
     pub fn job_process_details(&self) -> std::option::Option<&crate::model::JobProcessDetails> {
         self.job_process_details.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -25419,9 +24183,13 @@ impl Job {
     pub fn job_template_arn(&self) -> std::option::Option<&str> {
         self.job_template_arn.as_deref()
     }
-    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
-    /// template job document schema. You can use the description of each key as a guidance
-    /// to specify the inputs during runtime when creating a job.</p>
+    /// <p>The configuration for the criteria to retry the job.</p>
+    pub fn job_executions_retry_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRetryConfig> {
+        self.job_executions_retry_config.as_ref()
+    }
+    /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
     pub fn document_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -25454,6 +24222,10 @@ impl std::fmt::Debug for Job {
         formatter.field("timeout_config", &self.timeout_config);
         formatter.field("namespace_id", &self.namespace_id);
         formatter.field("job_template_arn", &self.job_template_arn);
+        formatter.field(
+            "job_executions_retry_config",
+            &self.job_executions_retry_config,
+        );
         formatter.field("document_parameters", &self.document_parameters);
         formatter.finish()
     }
@@ -25484,6 +24256,8 @@ pub mod job {
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
         pub(crate) job_template_arn: std::option::Option<std::string::String>,
+        pub(crate) job_executions_retry_config:
+            std::option::Option<crate::model::JobExecutionsRetryConfig>,
         pub(crate) document_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -25509,20 +24283,12 @@ pub mod job {
             self.job_id = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a device when the thing representing
-        /// the device is added to a target group, even after the job was completed by all things originally in the
-        /// group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a device when the thing representing
-        /// the device is added to a target group, even after the job was completed by all things originally in the
-        /// group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -25530,26 +24296,22 @@ pub mod job {
             self.target_selection = input;
             self
         }
-        /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
-        /// <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+        /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
-        /// <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
+        /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
-        /// <code>true</code>.</p>
+        /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
         pub fn force_canceled(mut self, input: bool) -> Self {
             self.force_canceled = Some(input);
             self
         }
-        /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
-        /// <code>true</code>.</p>
+        /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
         pub fn set_force_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.force_canceled = input;
             self
@@ -25697,18 +24459,12 @@ pub mod job {
             self.job_process_details = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -25717,12 +24473,8 @@ pub mod job {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25730,12 +24482,8 @@ pub mod job {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -25755,13 +24503,27 @@ pub mod job {
             self.job_template_arn = input;
             self
         }
+        /// <p>The configuration for the criteria to retry the job.</p>
+        pub fn job_executions_retry_config(
+            mut self,
+            input: crate::model::JobExecutionsRetryConfig,
+        ) -> Self {
+            self.job_executions_retry_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the criteria to retry the job.</p>
+        pub fn set_job_executions_retry_config(
+            mut self,
+            input: std::option::Option<crate::model::JobExecutionsRetryConfig>,
+        ) -> Self {
+            self.job_executions_retry_config = input;
+            self
+        }
         /// Adds a key-value pair to `document_parameters`.
         ///
         /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
         ///
-        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
-        /// template job document schema. You can use the description of each key as a guidance
-        /// to specify the inputs during runtime when creating a job.</p>
+        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
         pub fn document_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -25772,9 +24534,7 @@ pub mod job {
             self.document_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed
-        /// template job document schema. You can use the description of each key as a guidance
-        /// to specify the inputs during runtime when creating a job.</p>
+        /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p>
         pub fn set_document_parameters(
             mut self,
             input: std::option::Option<
@@ -25806,6 +24566,7 @@ pub mod job {
                 timeout_config: self.timeout_config,
                 namespace_id: self.namespace_id,
                 job_template_arn: self.job_template_arn,
+                job_executions_retry_config: self.job_executions_retry_config,
                 document_parameters: self.document_parameters,
             }
         }
@@ -25836,8 +24597,7 @@ pub struct JobProcessDetails {
     pub number_of_queued_things: std::option::Option<i32>,
     /// <p>The number of things currently executing the job.</p>
     pub number_of_in_progress_things: std::option::Option<i32>,
-    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or
-    /// have been removed from the group that was a target of the job.</p>
+    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
     pub number_of_removed_things: std::option::Option<i32>,
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
     pub number_of_timed_out_things: std::option::Option<i32>,
@@ -25871,8 +24631,7 @@ impl JobProcessDetails {
     pub fn number_of_in_progress_things(&self) -> std::option::Option<i32> {
         self.number_of_in_progress_things
     }
-    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or
-    /// have been removed from the group that was a target of the job.</p>
+    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
     pub fn number_of_removed_things(&self) -> std::option::Option<i32> {
         self.number_of_removed_things
     }
@@ -26001,14 +24760,12 @@ pub mod job_process_details {
             self.number_of_in_progress_things = input;
             self
         }
-        /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or
-        /// have been removed from the group that was a target of the job.</p>
+        /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
         pub fn number_of_removed_things(mut self, input: i32) -> Self {
             self.number_of_removed_things = Some(input);
             self
         }
-        /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or
-        /// have been removed from the group that was a target of the job.</p>
+        /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
         pub fn set_number_of_removed_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_removed_things = input;
             self
@@ -26344,8 +25101,7 @@ pub struct AuthorizerDescription {
     pub authorizer_function_arn: std::option::Option<std::string::String>,
     /// <p>The key used to extract the token from the HTTP headers.</p>
     pub token_key_name: std::option::Option<std::string::String>,
-    /// <p>The public keys used to validate the token signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub token_signing_public_keys:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the authorizer.</p>
@@ -26356,6 +25112,8 @@ pub struct AuthorizerDescription {
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    pub enable_caching_for_http: std::option::Option<bool>,
 }
 impl AuthorizerDescription {
     /// <p>The authorizer name.</p>
@@ -26374,8 +25132,7 @@ impl AuthorizerDescription {
     pub fn token_key_name(&self) -> std::option::Option<&str> {
         self.token_key_name.as_deref()
     }
-    /// <p>The public keys used to validate the token signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub fn token_signing_public_keys(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -26398,6 +25155,10 @@ impl AuthorizerDescription {
     pub fn signing_disabled(&self) -> std::option::Option<bool> {
         self.signing_disabled
     }
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
+        self.enable_caching_for_http
+    }
 }
 impl std::fmt::Debug for AuthorizerDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26411,6 +25172,7 @@ impl std::fmt::Debug for AuthorizerDescription {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.field("signing_disabled", &self.signing_disabled);
+        formatter.field("enable_caching_for_http", &self.enable_caching_for_http);
         formatter.finish()
     }
 }
@@ -26431,6 +25193,7 @@ pub mod authorizer_description {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) signing_disabled: std::option::Option<bool>,
+        pub(crate) enable_caching_for_http: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The authorizer name.</p>
@@ -26489,8 +25252,7 @@ pub mod authorizer_description {
         ///
         /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
         ///
-        /// <p>The public keys used to validate the token signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
         pub fn token_signing_public_keys(
             mut self,
             k: impl Into<std::string::String>,
@@ -26501,8 +25263,7 @@ pub mod authorizer_description {
             self.token_signing_public_keys = Some(hash_map);
             self
         }
-        /// <p>The public keys used to validate the token signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
         pub fn set_token_signing_public_keys(
             mut self,
             input: std::option::Option<
@@ -26561,6 +25322,16 @@ pub mod authorizer_description {
             self.signing_disabled = input;
             self
         }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+        pub fn enable_caching_for_http(mut self, input: bool) -> Self {
+            self.enable_caching_for_http = Some(input);
+            self
+        }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+        pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_caching_for_http = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AuthorizerDescription`](crate::model::AuthorizerDescription)
         pub fn build(self) -> crate::model::AuthorizerDescription {
             crate::model::AuthorizerDescription {
@@ -26573,6 +25344,7 @@ pub mod authorizer_description {
                 creation_date: self.creation_date,
                 last_modified_date: self.last_modified_date,
                 signing_disabled: self.signing_disabled,
+                enable_caching_for_http: self.enable_caching_for_http,
             }
         }
     }
@@ -27161,8 +25933,7 @@ pub struct CaCertificateDescription {
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The date the CA certificate was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Whether the CA certificate configured for auto registration of device certificates.
-    /// Valid values are "ENABLE" and "DISABLE"</p>
+    /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     pub auto_registration_status: std::option::Option<crate::model::AutoRegistrationStatus>,
     /// <p>The date the CA certificate was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -27198,8 +25969,7 @@ impl CaCertificateDescription {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Whether the CA certificate configured for auto registration of device certificates.
-    /// Valid values are "ENABLE" and "DISABLE"</p>
+    /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     pub fn auto_registration_status(
         &self,
     ) -> std::option::Option<&crate::model::AutoRegistrationStatus> {
@@ -27334,8 +26104,7 @@ pub mod ca_certificate_description {
             self.creation_date = input;
             self
         }
-        /// <p>Whether the CA certificate configured for auto registration of device certificates.
-        /// Valid values are "ENABLE" and "DISABLE"</p>
+        /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
         pub fn auto_registration_status(
             mut self,
             input: crate::model::AutoRegistrationStatus,
@@ -27343,8 +26112,7 @@ pub mod ca_certificate_description {
             self.auto_registration_status = Some(input);
             self
         }
-        /// <p>Whether the CA certificate configured for auto registration of device certificates.
-        /// Valid values are "ENABLE" and "DISABLE"</p>
+        /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
         pub fn set_auto_registration_status(
             mut self,
             input: std::option::Option<crate::model::AutoRegistrationStatus>,
@@ -27487,8 +26255,7 @@ impl BillingGroupMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuditCheckDetails {
-    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
-    /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
     pub check_run_status: std::option::Option<crate::model::AuditCheckRunStatus>,
     /// <p>True if the check is complete and found all resources compliant.</p>
     pub check_compliant: std::option::Option<bool>,
@@ -27496,19 +26263,15 @@ pub struct AuditCheckDetails {
     pub total_resources_count: std::option::Option<i64>,
     /// <p>The number of resources that were found noncompliant during the check.</p>
     pub non_compliant_resources_count: std::option::Option<i64>,
-    /// <p>
-    /// Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.
-    /// </p>
+    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
     pub suppressed_non_compliant_resources_count: std::option::Option<i64>,
-    /// <p>The code of any error encountered when this check is performed during this audit.
-    /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+    /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl AuditCheckDetails {
-    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
-    /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+    /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
     pub fn check_run_status(&self) -> std::option::Option<&crate::model::AuditCheckRunStatus> {
         self.check_run_status.as_ref()
     }
@@ -27524,14 +26287,11 @@ impl AuditCheckDetails {
     pub fn non_compliant_resources_count(&self) -> std::option::Option<i64> {
         self.non_compliant_resources_count
     }
-    /// <p>
-    /// Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.
-    /// </p>
+    /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
     pub fn suppressed_non_compliant_resources_count(&self) -> std::option::Option<i64> {
         self.suppressed_non_compliant_resources_count
     }
-    /// <p>The code of any error encountered when this check is performed during this audit.
-    /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+    /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -27574,14 +26334,12 @@ pub mod audit_check_details {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
-        /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+        /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
         pub fn check_run_status(mut self, input: crate::model::AuditCheckRunStatus) -> Self {
             self.check_run_status = Some(input);
             self
         }
-        /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION",
-        /// "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+        /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
         pub fn set_check_run_status(
             mut self,
             input: std::option::Option<crate::model::AuditCheckRunStatus>,
@@ -27622,16 +26380,12 @@ pub mod audit_check_details {
             self.non_compliant_resources_count = input;
             self
         }
-        /// <p>
-        /// Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.
-        /// </p>
+        /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
         pub fn suppressed_non_compliant_resources_count(mut self, input: i64) -> Self {
             self.suppressed_non_compliant_resources_count = Some(input);
             self
         }
-        /// <p>
-        /// Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed.
-        /// </p>
+        /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
         pub fn set_suppressed_non_compliant_resources_count(
             mut self,
             input: std::option::Option<i64>,
@@ -27639,14 +26393,12 @@ pub mod audit_check_details {
             self.suppressed_non_compliant_resources_count = input;
             self
         }
-        /// <p>The code of any error encountered when this check is performed during this audit.
-        /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+        /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>The code of any error encountered when this check is performed during this audit.
-        /// One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
+        /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -28289,13 +27041,11 @@ impl VpcDestinationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpUrlDestinationConfiguration {
-    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
-    /// URL.</p>
+    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub confirmation_url: std::option::Option<std::string::String>,
 }
 impl HttpUrlDestinationConfiguration {
-    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
-    /// URL.</p>
+    /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
     pub fn confirmation_url(&self) -> std::option::Option<&str> {
         self.confirmation_url.as_deref()
     }
@@ -28316,14 +27066,12 @@ pub mod http_url_destination_configuration {
         pub(crate) confirmation_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
-        /// URL.</p>
+        /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
         pub fn confirmation_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.confirmation_url = Some(input.into());
             self
         }
-        /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination
-        /// URL.</p>
+        /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
         pub fn set_confirmation_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28419,26 +27167,15 @@ impl KeyPair {
     }
 }
 
-/// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-/// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-/// status is not set to another terminal state before the timer expires, it will be automatically
-/// set to <code>TIMED_OUT</code>.</p>
+/// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsJobTimeoutConfig {
-    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The
-    /// timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress
-    /// timer can't be updated and will apply to all job executions for the job. Whenever a job execution
-    /// remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and
-    /// switch to the terminal <code>TIMED_OUT</code> status.</p>
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl AwsJobTimeoutConfig {
-    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The
-    /// timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress
-    /// timer can't be updated and will apply to all job executions for the job. Whenever a job execution
-    /// remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and
-    /// switch to the terminal <code>TIMED_OUT</code> status.</p>
+    /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
     pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.in_progress_timeout_in_minutes
     }
@@ -28462,20 +27199,12 @@ pub mod aws_job_timeout_config {
         pub(crate) in_progress_timeout_in_minutes: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The
-        /// timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress
-        /// timer can't be updated and will apply to all job executions for the job. Whenever a job execution
-        /// remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and
-        /// switch to the terminal <code>TIMED_OUT</code> status.</p>
+        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
         pub fn in_progress_timeout_in_minutes(mut self, input: i64) -> Self {
             self.in_progress_timeout_in_minutes = Some(input);
             self
         }
-        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The
-        /// timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress
-        /// timer can't be updated and will apply to all job executions for the job. Whenever a job execution
-        /// remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and
-        /// switch to the terminal <code>TIMED_OUT</code> status.</p>
+        /// <p>Specifies the amount of time, in minutes, this device has to finish execution of this job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The in progress timer can't be updated and will apply to all job executions for the job. Whenever a job execution remains in the IN_PROGRESS status for longer than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code> status.</p>
         pub fn set_in_progress_timeout_in_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -28533,12 +27262,9 @@ pub mod aws_job_abort_config {
         /// To override the contents of this collection use [`set_abort_criteria_list`](Self::set_abort_criteria_list).
         ///
         /// <p>The list of criteria that determine when and how to abort the job.</p>
-        pub fn abort_criteria_list(
-            mut self,
-            input: impl Into<crate::model::AwsJobAbortCriteria>,
-        ) -> Self {
+        pub fn abort_criteria_list(mut self, input: crate::model::AwsJobAbortCriteria) -> Self {
             let mut v = self.abort_criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.abort_criteria_list = Some(v);
             self
         }
@@ -28576,8 +27302,7 @@ pub struct AwsJobAbortCriteria {
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub threshold_percentage: std::option::Option<f64>,
-    /// <p>The minimum number of things which must receive job execution notifications before the job
-    /// can be aborted.</p>
+    /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub min_number_of_executed_things: std::option::Option<i32>,
 }
 impl AwsJobAbortCriteria {
@@ -28596,8 +27321,7 @@ impl AwsJobAbortCriteria {
     pub fn threshold_percentage(&self) -> std::option::Option<f64> {
         self.threshold_percentage
     }
-    /// <p>The minimum number of things which must receive job execution notifications before the job
-    /// can be aborted.</p>
+    /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(&self) -> std::option::Option<i32> {
         self.min_number_of_executed_things
     }
@@ -28665,14 +27389,12 @@ pub mod aws_job_abort_criteria {
             self.threshold_percentage = input;
             self
         }
-        /// <p>The minimum number of things which must receive job execution notifications before the job
-        /// can be aborted.</p>
+        /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
         pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
             self.min_number_of_executed_things = Some(input);
             self
         }
-        /// <p>The minimum number of things which must receive job execution notifications before the job
-        /// can be aborted.</p>
+        /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
         pub fn set_min_number_of_executed_things(
             mut self,
             input: std::option::Option<i32>,

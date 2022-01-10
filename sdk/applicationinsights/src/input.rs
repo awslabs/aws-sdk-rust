@@ -28,46 +28,32 @@ pub mod create_application_input {
             self.resource_group_name = input;
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
             self.ops_center_enabled = Some(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.ops_center_enabled = input;
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
             self.cwe_monitor_enabled = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cwe_monitor_enabled = input;
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -79,20 +65,14 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -142,7 +122,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -153,7 +133,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -238,7 +218,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -335,7 +315,7 @@ pub mod create_component_input {
 #[doc(hidden)]
 pub type CreateComponentInputOperationOutputAlias = crate::operation::CreateComponent;
 #[doc(hidden)]
-pub type CreateComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
     #[allow(clippy::let_and_return)]
@@ -346,7 +326,7 @@ impl CreateComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -431,7 +411,7 @@ impl CreateComponentInput {
             "CreateComponent",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -513,16 +493,12 @@ pub mod create_log_pattern_input {
             self.pattern = input;
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -547,7 +523,7 @@ pub mod create_log_pattern_input {
 #[doc(hidden)]
 pub type CreateLogPatternInputOperationOutputAlias = crate::operation::CreateLogPattern;
 #[doc(hidden)]
-pub type CreateLogPatternInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLogPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLogPatternInput {
     /// Consumes the builder and constructs an Operation<[`CreateLogPattern`](crate::operation::CreateLogPattern)>
     #[allow(clippy::let_and_return)]
@@ -558,7 +534,7 @@ impl CreateLogPatternInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLogPattern,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -643,7 +619,7 @@ impl CreateLogPatternInput {
             "CreateLogPattern",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -704,7 +680,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -715,7 +691,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -800,7 +776,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -876,7 +852,7 @@ pub mod delete_component_input {
 #[doc(hidden)]
 pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
 #[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(clippy::let_and_return)]
@@ -887,7 +863,7 @@ impl DeleteComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -972,7 +948,7 @@ impl DeleteComponentInput {
             "DeleteComponent",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1060,7 +1036,7 @@ pub mod delete_log_pattern_input {
 #[doc(hidden)]
 pub type DeleteLogPatternInputOperationOutputAlias = crate::operation::DeleteLogPattern;
 #[doc(hidden)]
-pub type DeleteLogPatternInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLogPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLogPatternInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLogPattern`](crate::operation::DeleteLogPattern)>
     #[allow(clippy::let_and_return)]
@@ -1071,7 +1047,7 @@ impl DeleteLogPatternInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLogPattern,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1156,7 +1132,7 @@ impl DeleteLogPatternInput {
             "DeleteLogPattern",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1217,7 +1193,7 @@ pub mod describe_application_input {
 #[doc(hidden)]
 pub type DescribeApplicationInputOperationOutputAlias = crate::operation::DescribeApplication;
 #[doc(hidden)]
-pub type DescribeApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplication`](crate::operation::DescribeApplication)>
     #[allow(clippy::let_and_return)]
@@ -1228,7 +1204,7 @@ impl DescribeApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1313,7 +1289,7 @@ impl DescribeApplicationInput {
             "DescribeApplication",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1389,7 +1365,7 @@ pub mod describe_component_input {
 #[doc(hidden)]
 pub type DescribeComponentInputOperationOutputAlias = crate::operation::DescribeComponent;
 #[doc(hidden)]
-pub type DescribeComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComponentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComponent`](crate::operation::DescribeComponent)>
     #[allow(clippy::let_and_return)]
@@ -1400,7 +1376,7 @@ impl DescribeComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1485,7 +1461,7 @@ impl DescribeComponentInput {
             "DescribeComponent",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1562,7 +1538,8 @@ pub mod describe_component_configuration_input {
 pub type DescribeComponentConfigurationInputOperationOutputAlias =
     crate::operation::DescribeComponentConfiguration;
 #[doc(hidden)]
-pub type DescribeComponentConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeComponentConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComponentConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComponentConfiguration`](crate::operation::DescribeComponentConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1573,7 +1550,7 @@ impl DescribeComponentConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComponentConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1659,7 +1636,7 @@ impl DescribeComponentConfigurationInput {
             "DescribeComponentConfiguration",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1719,16 +1696,12 @@ pub mod describe_component_configuration_recommendation_input {
             self.component_name = input;
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
@@ -1755,7 +1728,7 @@ pub type DescribeComponentConfigurationRecommendationInputOperationOutputAlias =
     crate::operation::DescribeComponentConfigurationRecommendation;
 #[doc(hidden)]
 pub type DescribeComponentConfigurationRecommendationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComponentConfigurationRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComponentConfigurationRecommendation`](crate::operation::DescribeComponentConfigurationRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -1766,7 +1739,7 @@ impl DescribeComponentConfigurationRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComponentConfigurationRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1852,7 +1825,7 @@ impl DescribeComponentConfigurationRecommendationInput {
             "DescribeComponentConfigurationRecommendation",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1941,7 +1914,7 @@ pub mod describe_log_pattern_input {
 #[doc(hidden)]
 pub type DescribeLogPatternInputOperationOutputAlias = crate::operation::DescribeLogPattern;
 #[doc(hidden)]
-pub type DescribeLogPatternInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLogPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLogPatternInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLogPattern`](crate::operation::DescribeLogPattern)>
     #[allow(clippy::let_and_return)]
@@ -1952,7 +1925,7 @@ impl DescribeLogPatternInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLogPattern,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2037,7 +2010,7 @@ impl DescribeLogPatternInput {
             "DescribeLogPattern",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2098,7 +2071,7 @@ pub mod describe_observation_input {
 #[doc(hidden)]
 pub type DescribeObservationInputOperationOutputAlias = crate::operation::DescribeObservation;
 #[doc(hidden)]
-pub type DescribeObservationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeObservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeObservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeObservation`](crate::operation::DescribeObservation)>
     #[allow(clippy::let_and_return)]
@@ -2109,7 +2082,7 @@ impl DescribeObservationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeObservation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2194,7 +2167,7 @@ impl DescribeObservationInput {
             "DescribeObservation",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2252,7 +2225,7 @@ pub mod describe_problem_input {
 #[doc(hidden)]
 pub type DescribeProblemInputOperationOutputAlias = crate::operation::DescribeProblem;
 #[doc(hidden)]
-pub type DescribeProblemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProblemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProblemInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProblem`](crate::operation::DescribeProblem)>
     #[allow(clippy::let_and_return)]
@@ -2263,7 +2236,7 @@ impl DescribeProblemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProblem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2348,7 +2321,7 @@ impl DescribeProblemInput {
             "DescribeProblem",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2407,7 +2380,7 @@ pub mod describe_problem_observations_input {
 pub type DescribeProblemObservationsInputOperationOutputAlias =
     crate::operation::DescribeProblemObservations;
 #[doc(hidden)]
-pub type DescribeProblemObservationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProblemObservationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProblemObservationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProblemObservations`](crate::operation::DescribeProblemObservations)>
     #[allow(clippy::let_and_return)]
@@ -2418,7 +2391,7 @@ impl DescribeProblemObservationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProblemObservations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2504,7 +2477,7 @@ impl DescribeProblemObservationsInput {
             "DescribeProblemObservations",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2537,14 +2510,12 @@ pub mod list_applications_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2576,7 +2547,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -2587,7 +2558,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2672,7 +2643,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2719,14 +2690,12 @@ pub mod list_components_input {
             self.resource_group_name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2759,7 +2728,7 @@ pub mod list_components_input {
 #[doc(hidden)]
 pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
 #[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(clippy::let_and_return)]
@@ -2770,7 +2739,7 @@ impl ListComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2855,7 +2824,7 @@ impl ListComponentsInput {
             "ListComponents",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2944,40 +2913,22 @@ pub mod list_configuration_history_input {
             self.event_status = input;
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3004,7 +2955,7 @@ pub mod list_configuration_history_input {
 pub type ListConfigurationHistoryInputOperationOutputAlias =
     crate::operation::ListConfigurationHistory;
 #[doc(hidden)]
-pub type ListConfigurationHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConfigurationHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationHistoryInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationHistory`](crate::operation::ListConfigurationHistory)>
     #[allow(clippy::let_and_return)]
@@ -3015,7 +2966,7 @@ impl ListConfigurationHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3102,7 +3053,7 @@ impl ListConfigurationHistoryInput {
             "ListConfigurationHistory",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3163,14 +3114,12 @@ pub mod list_log_patterns_input {
             self.pattern_set_name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3204,7 +3153,7 @@ pub mod list_log_patterns_input {
 #[doc(hidden)]
 pub type ListLogPatternsInputOperationOutputAlias = crate::operation::ListLogPatterns;
 #[doc(hidden)]
-pub type ListLogPatternsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLogPatternsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLogPatternsInput {
     /// Consumes the builder and constructs an Operation<[`ListLogPatterns`](crate::operation::ListLogPatterns)>
     #[allow(clippy::let_and_return)]
@@ -3215,7 +3164,7 @@ impl ListLogPatternsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLogPatterns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3300,7 +3249,7 @@ impl ListLogPatternsInput {
             "ListLogPatterns",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3347,14 +3296,12 @@ pub mod list_log_pattern_sets_input {
             self.resource_group_name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3387,7 +3334,7 @@ pub mod list_log_pattern_sets_input {
 #[doc(hidden)]
 pub type ListLogPatternSetsInputOperationOutputAlias = crate::operation::ListLogPatternSets;
 #[doc(hidden)]
-pub type ListLogPatternSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLogPatternSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLogPatternSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListLogPatternSets`](crate::operation::ListLogPatternSets)>
     #[allow(clippy::let_and_return)]
@@ -3398,7 +3345,7 @@ impl ListLogPatternSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLogPatternSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3483,7 +3430,7 @@ impl ListLogPatternSetsInput {
             "ListLogPatternSets",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3533,14 +3480,12 @@ pub mod list_problems_input {
             self.resource_group_name = input;
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3548,14 +3493,12 @@ pub mod list_problems_input {
             self.start_time = input;
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3563,14 +3506,12 @@ pub mod list_problems_input {
             self.end_time = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3619,7 +3560,7 @@ pub mod list_problems_input {
 #[doc(hidden)]
 pub type ListProblemsInputOperationOutputAlias = crate::operation::ListProblems;
 #[doc(hidden)]
-pub type ListProblemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProblemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProblemsInput {
     /// Consumes the builder and constructs an Operation<[`ListProblems`](crate::operation::ListProblems)>
     #[allow(clippy::let_and_return)]
@@ -3630,7 +3571,7 @@ impl ListProblemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProblems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3714,7 +3655,7 @@ impl ListProblemsInput {
             "ListProblems",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3746,14 +3687,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3774,7 +3713,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3785,7 +3724,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3872,7 +3811,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3919,20 +3858,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3957,7 +3890,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3968,7 +3901,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4052,7 +3985,7 @@ impl TagResourceInput {
             "TagResource",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4099,22 +4032,16 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4139,7 +4066,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4150,7 +4077,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4234,7 +4161,7 @@ impl UntagResourceInput {
             "UntagResource",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4284,44 +4211,32 @@ pub mod update_application_input {
             self.resource_group_name = input;
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
             self.ops_center_enabled = Some(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.ops_center_enabled = input;
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
             self.cwe_monitor_enabled = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cwe_monitor_enabled = input;
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4329,14 +4244,12 @@ pub mod update_application_input {
             self.ops_item_sns_topic_arn = input;
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
         pub fn remove_sns_topic(mut self, input: bool) -> Self {
             self.remove_sns_topic = Some(input);
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
         pub fn set_remove_sns_topic(mut self, input: std::option::Option<bool>) -> Self {
             self.remove_sns_topic = input;
             self
@@ -4372,7 +4285,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -4383,7 +4296,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4468,7 +4381,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4580,7 +4493,7 @@ pub mod update_component_input {
 #[doc(hidden)]
 pub type UpdateComponentInputOperationOutputAlias = crate::operation::UpdateComponent;
 #[doc(hidden)]
-pub type UpdateComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateComponent`](crate::operation::UpdateComponent)>
     #[allow(clippy::let_and_return)]
@@ -4591,7 +4504,7 @@ impl UpdateComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4676,7 +4589,7 @@ impl UpdateComponentInput {
             "UpdateComponent",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4749,30 +4662,22 @@ pub mod update_component_configuration_input {
             self.monitor = input;
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
         pub fn component_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_configuration = Some(input.into());
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
         pub fn set_component_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4812,7 +4717,8 @@ pub mod update_component_configuration_input {
 pub type UpdateComponentConfigurationInputOperationOutputAlias =
     crate::operation::UpdateComponentConfiguration;
 #[doc(hidden)]
-pub type UpdateComponentConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateComponentConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateComponentConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateComponentConfiguration`](crate::operation::UpdateComponentConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4823,7 +4729,7 @@ impl UpdateComponentConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateComponentConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4909,7 +4815,7 @@ impl UpdateComponentConfigurationInput {
             "UpdateComponentConfiguration",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4991,16 +4897,12 @@ pub mod update_log_pattern_input {
             self.pattern = input;
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -5025,7 +4927,7 @@ pub mod update_log_pattern_input {
 #[doc(hidden)]
 pub type UpdateLogPatternInputOperationOutputAlias = crate::operation::UpdateLogPattern;
 #[doc(hidden)]
-pub type UpdateLogPatternInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLogPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLogPatternInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLogPattern`](crate::operation::UpdateLogPattern)>
     #[allow(clippy::let_and_return)]
@@ -5036,7 +4938,7 @@ impl UpdateLogPatternInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLogPattern,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5121,7 +5023,7 @@ impl UpdateLogPatternInput {
             "UpdateLogPattern",
             "applicationinsights",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5156,9 +5058,7 @@ pub struct UpdateLogPatternInput {
     pub pattern_name: std::option::Option<std::string::String>,
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub pattern: std::option::Option<std::string::String>,
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub rank: i32,
 }
 impl UpdateLogPatternInput {
@@ -5178,9 +5078,7 @@ impl UpdateLogPatternInput {
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
@@ -5207,13 +5105,9 @@ pub struct UpdateComponentConfigurationInput {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application component is monitored.</p>
     pub monitor: std::option::Option<bool>,
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-    /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
     pub tier: std::option::Option<crate::model::Tier>,
-    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-    /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-    /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-    /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub component_configuration: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub auto_config_enabled: std::option::Option<bool>,
@@ -5231,15 +5125,11 @@ impl UpdateComponentConfigurationInput {
     pub fn monitor(&self) -> std::option::Option<bool> {
         self.monitor
     }
-    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-    /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
     }
-    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-    /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-    /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-    /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+    /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
     pub fn component_configuration(&self) -> std::option::Option<&str> {
         self.component_configuration.as_deref()
     }
@@ -5309,20 +5199,13 @@ impl std::fmt::Debug for UpdateComponentInput {
 pub struct UpdateApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-    /// </p>
+    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub ops_center_enabled: std::option::Option<bool>,
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub cwe_monitor_enabled: std::option::Option<bool>,
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-    /// receive notifications for updates to the opsItem.</p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub remove_sns_topic: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     pub auto_config_enabled: std::option::Option<bool>,
@@ -5332,26 +5215,19 @@ impl UpdateApplicationInput {
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>
-    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-    /// </p>
+    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
         self.ops_center_enabled
     }
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-    /// receive notifications for updates to the opsItem.</p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
-    /// <p>
-    /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+    /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn remove_sns_topic(&self) -> std::option::Option<bool> {
         self.remove_sns_topic
     }
@@ -5379,11 +5255,8 @@ impl std::fmt::Debug for UpdateApplicationInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-    /// key, the action removes both that key and its associated tag value.</p>
-    /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-    /// parameter and argument for each additional tag to remove, separated by an ampersand.
-    /// </p>
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5391,11 +5264,8 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-    /// key, the action removes both that key and its associated tag value.</p>
-    /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-    /// parameter and argument for each additional tag to remove, separated by an ampersand.
-    /// </p>
+    /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+    /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5415,10 +5285,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags that to add to the application. A tag consists of a required
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5426,10 +5293,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tags that to add to the application. A tag consists of a required
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5447,13 +5311,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-    /// information for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-    /// information for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5472,14 +5334,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListProblemsInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>The time when the problem was detected, in epoch
-    /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+    /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-    /// past seven days are returned.</p>
+    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5491,18 +5350,15 @@ impl ListProblemsInput {
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The time when the problem was detected, in epoch
-    /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+    /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-    /// past seven days are returned.</p>
+    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5534,8 +5390,7 @@ impl std::fmt::Debug for ListProblemsInput {
 pub struct ListLogPatternSetsInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5545,8 +5400,7 @@ impl ListLogPatternSetsInput {
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5573,8 +5427,7 @@ pub struct ListLogPatternsInput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log pattern set.</p>
     pub pattern_set_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5588,8 +5441,7 @@ impl ListLogPatternsInput {
     pub fn pattern_set_name(&self) -> std::option::Option<&str> {
         self.pattern_set_name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5621,18 +5473,9 @@ pub struct ListConfigurationHistoryInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
-    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-    /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-    /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListConfigurationHistory</code> request with the returned
-    /// <code>NextToken</code> value. If this parameter is not used, then
-    /// <code>ListConfigurationHistory</code> returns all results. </p>
+    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-    /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationHistoryInput {
@@ -5652,20 +5495,11 @@ impl ListConfigurationHistoryInput {
     pub fn event_status(&self) -> std::option::Option<&crate::model::ConfigurationEventStatus> {
         self.event_status.as_ref()
     }
-    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-    /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-    /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListConfigurationHistory</code> request with the returned
-    /// <code>NextToken</code> value. If this parameter is not used, then
-    /// <code>ListConfigurationHistory</code> returns all results. </p>
+    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-    /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5689,8 +5523,7 @@ impl std::fmt::Debug for ListConfigurationHistoryInput {
 pub struct ListComponentsInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5700,8 +5533,7 @@ impl ListComponentsInput {
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5724,15 +5556,13 @@ impl std::fmt::Debug for ListComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5856,9 +5686,7 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
-    /// <p>The tier of the application component. Supported tiers include
-    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-    /// and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
     pub tier: std::option::Option<crate::model::Tier>,
 }
 impl DescribeComponentConfigurationRecommendationInput {
@@ -5870,9 +5698,7 @@ impl DescribeComponentConfigurationRecommendationInput {
     pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
-    /// <p>The tier of the application component. Supported tiers include
-    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-    /// and <code>DEFAULT</code>.</p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
     }
@@ -6060,9 +5886,7 @@ pub struct CreateLogPatternInput {
     pub pattern_name: std::option::Option<std::string::String>,
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub pattern: std::option::Option<std::string::String>,
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub rank: i32,
 }
 impl CreateLogPatternInput {
@@ -6082,9 +5906,7 @@ impl CreateLogPatternInput {
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
@@ -6142,23 +5964,13 @@ impl std::fmt::Debug for CreateComponentInput {
 pub struct CreateApplicationInput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-    /// </p>
+    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub ops_center_enabled: std::option::Option<bool>,
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub cwe_monitor_enabled: std::option::Option<bool>,
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-    /// receive notifications for updates to the opsItem.
-    /// </p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>List of tags to add to the application.
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     #[allow(missing_docs)] // documentation missing in model
     pub auto_config_enabled: std::option::Option<bool>,
@@ -6170,29 +5982,19 @@ impl CreateApplicationInput {
     pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
-    /// <p>
-    /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-    /// </p>
+    /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
     pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
         self.ops_center_enabled
     }
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-    /// receive notifications for updates to the opsItem.
-    /// </p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
     pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
-    /// <p>List of tags to add to the application.
-    /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-    /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-    /// characters.</p>
+    /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

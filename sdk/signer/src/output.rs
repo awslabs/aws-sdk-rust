@@ -421,17 +421,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningProfilesOutput {
-    /// <p>A list of profiles that are available in the AWS account. This includes profiles with
-    /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
-    /// to <code>true</code>.</p>
+    /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     pub profiles: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningProfilesOutput {
-    /// <p>A list of profiles that are available in the AWS account. This includes profiles with
-    /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
-    /// to <code>true</code>.</p>
+    /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     pub fn profiles(&self) -> std::option::Option<&[crate::model::SigningProfile]> {
         self.profiles.as_deref()
     }
@@ -462,18 +458,14 @@ pub mod list_signing_profiles_output {
         ///
         /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
         ///
-        /// <p>A list of profiles that are available in the AWS account. This includes profiles with
-        /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
-        /// to <code>true</code>.</p>
-        pub fn profiles(mut self, input: impl Into<crate::model::SigningProfile>) -> Self {
+        /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
+        pub fn profiles(mut self, input: crate::model::SigningProfile) -> Self {
             let mut v = self.profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.profiles = Some(v);
             self
         }
-        /// <p>A list of profiles that are available in the AWS account. This includes profiles with
-        /// the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set
-        /// to <code>true</code>.</p>
+        /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
         pub fn set_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningProfile>>,
@@ -549,9 +541,9 @@ pub mod list_signing_platforms_output {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>A list of all platforms that match the request parameters.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::SigningPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::SigningPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -631,9 +623,9 @@ pub mod list_signing_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of your signing jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::SigningJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::SigningJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -749,9 +741,9 @@ pub mod list_profile_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>List of permissions associated with the Signing Profile.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -807,16 +799,13 @@ pub struct GetSigningProfileOutput {
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The ID of the platform that is used by the target signing profile.</p>
     pub platform_id: std::option::Option<std::string::String>,
-    /// <p>A human-readable name for the signing platform associated with the signing
-    /// profile.</p>
+    /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The validity period for a signing job.</p>
     pub signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
-    /// <p>A list of overrides applied by the target signing profile for signing
-    /// operations.</p>
+    /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
-    /// <p>A map of key-value pairs for signing operations that is attached to the target signing
-    /// profile.</p>
+    /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the target signing profile.</p>
@@ -856,8 +845,7 @@ impl GetSigningProfileOutput {
     pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
-    /// <p>A human-readable name for the signing platform associated with the signing
-    /// profile.</p>
+    /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
     pub fn platform_display_name(&self) -> std::option::Option<&str> {
         self.platform_display_name.as_deref()
     }
@@ -867,13 +855,11 @@ impl GetSigningProfileOutput {
     ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
         self.signature_validity_period.as_ref()
     }
-    /// <p>A list of overrides applied by the target signing profile for signing
-    /// operations.</p>
+    /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
     pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
-    /// <p>A map of key-value pairs for signing operations that is attached to the target signing
-    /// profile.</p>
+    /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     pub fn signing_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1023,14 +1009,12 @@ pub mod get_signing_profile_output {
             self.platform_id = input;
             self
         }
-        /// <p>A human-readable name for the signing platform associated with the signing
-        /// profile.</p>
+        /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
         pub fn platform_display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_display_name = Some(input.into());
             self
         }
-        /// <p>A human-readable name for the signing platform associated with the signing
-        /// profile.</p>
+        /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
         pub fn set_platform_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1054,14 +1038,12 @@ pub mod get_signing_profile_output {
             self.signature_validity_period = input;
             self
         }
-        /// <p>A list of overrides applied by the target signing profile for signing
-        /// operations.</p>
+        /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
         pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
             self.overrides = Some(input);
             self
         }
-        /// <p>A list of overrides applied by the target signing profile for signing
-        /// operations.</p>
+        /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::SigningPlatformOverrides>,
@@ -1073,8 +1055,7 @@ pub mod get_signing_profile_output {
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
-        /// <p>A map of key-value pairs for signing operations that is attached to the target signing
-        /// profile.</p>
+        /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
         pub fn signing_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1085,8 +1066,7 @@ pub mod get_signing_profile_output {
             self.signing_parameters = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs for signing operations that is attached to the target signing
-        /// profile.</p>
+        /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
         pub fn set_signing_parameters(
             mut self,
             input: std::option::Option<
@@ -1203,11 +1183,9 @@ pub struct GetSigningPlatformOutput {
     pub signing_configuration: std::option::Option<crate::model::SigningConfiguration>,
     /// <p>The format of the target platform's signing image.</p>
     pub signing_image_format: std::option::Option<crate::model::SigningImageFormat>,
-    /// <p>The maximum size (in MB) of the payload that can be signed by the target
-    /// platform.</p>
+    /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
     pub max_size_in_mb: i32,
-    /// <p>A flag indicating whether signatures generated for the signing platform can be
-    /// revoked.</p>
+    /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     pub revocation_supported: bool,
 }
 impl GetSigningPlatformOutput {
@@ -1241,13 +1219,11 @@ impl GetSigningPlatformOutput {
     pub fn signing_image_format(&self) -> std::option::Option<&crate::model::SigningImageFormat> {
         self.signing_image_format.as_ref()
     }
-    /// <p>The maximum size (in MB) of the payload that can be signed by the target
-    /// platform.</p>
+    /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
     pub fn max_size_in_mb(&self) -> i32 {
         self.max_size_in_mb
     }
-    /// <p>A flag indicating whether signatures generated for the signing platform can be
-    /// revoked.</p>
+    /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     pub fn revocation_supported(&self) -> bool {
         self.revocation_supported
     }
@@ -1360,26 +1336,22 @@ pub mod get_signing_platform_output {
             self.signing_image_format = input;
             self
         }
-        /// <p>The maximum size (in MB) of the payload that can be signed by the target
-        /// platform.</p>
+        /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
         pub fn max_size_in_mb(mut self, input: i32) -> Self {
             self.max_size_in_mb = Some(input);
             self
         }
-        /// <p>The maximum size (in MB) of the payload that can be signed by the target
-        /// platform.</p>
+        /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
         pub fn set_max_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size_in_mb = input;
             self
         }
-        /// <p>A flag indicating whether signatures generated for the signing platform can be
-        /// revoked.</p>
+        /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
         pub fn revocation_supported(mut self, input: bool) -> Self {
             self.revocation_supported = Some(input);
             self
         }
-        /// <p>A flag indicating whether signatures generated for the signing platform can be
-        /// revoked.</p>
+        /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
         pub fn set_revocation_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.revocation_supported = input;
             self
@@ -1417,8 +1389,7 @@ pub struct DescribeSigningJobOutput {
     pub source: std::option::Option<crate::model::Source>,
     /// <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
-    /// <p>The microcontroller platform to which your signed code image will be
-    /// distributed.</p>
+    /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>A human-readable name for the signing platform associated with the signing job.</p>
     pub platform_display_name: std::option::Option<std::string::String>,
@@ -1428,8 +1399,7 @@ pub struct DescribeSigningJobOutput {
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>A list of any overrides that were applied to the signing operation.</p>
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any
-    /// information that you specified for use in your signing job. </p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Date and time that the signing job was created.</p>
@@ -1444,8 +1414,7 @@ pub struct DescribeSigningJobOutput {
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>String value that contains the status reason.</p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>A revocation record if the signature generated by the signing job has been revoked.
-    /// Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
     pub revocation_record: std::option::Option<crate::model::SigningJobRevocationRecord>,
     /// <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
     pub signed_object: std::option::Option<crate::model::SignedObject>,
@@ -1467,8 +1436,7 @@ impl DescribeSigningJobOutput {
     pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
         self.signing_material.as_ref()
     }
-    /// <p>The microcontroller platform to which your signed code image will be
-    /// distributed.</p>
+    /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
     pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
@@ -1488,8 +1456,7 @@ impl DescribeSigningJobOutput {
     pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
-    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any
-    /// information that you specified for use in your signing job. </p>
+    /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
     pub fn signing_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1520,8 +1487,7 @@ impl DescribeSigningJobOutput {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>A revocation record if the signature generated by the signing job has been revoked.
-    /// Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
     pub fn revocation_record(
         &self,
     ) -> std::option::Option<&crate::model::SigningJobRevocationRecord> {
@@ -1627,14 +1593,12 @@ pub mod describe_signing_job_output {
             self.signing_material = input;
             self
         }
-        /// <p>The microcontroller platform to which your signed code image will be
-        /// distributed.</p>
+        /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
         pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_id = Some(input.into());
             self
         }
-        /// <p>The microcontroller platform to which your signed code image will be
-        /// distributed.</p>
+        /// <p>The microcontroller platform to which your signed code image will be distributed.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -1692,8 +1656,7 @@ pub mod describe_signing_job_output {
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
-        /// <p>Map of user-assigned key-value pairs used during signing. These values contain any
-        /// information that you specified for use in your signing job. </p>
+        /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
         pub fn signing_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1704,8 +1667,7 @@ pub mod describe_signing_job_output {
             self.signing_parameters = Some(hash_map);
             self
         }
-        /// <p>Map of user-assigned key-value pairs used during signing. These values contain any
-        /// information that you specified for use in your signing job. </p>
+        /// <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
         pub fn set_signing_parameters(
             mut self,
             input: std::option::Option<
@@ -1790,8 +1752,7 @@ pub mod describe_signing_job_output {
             self.status_reason = input;
             self
         }
-        /// <p>A revocation record if the signature generated by the signing job has been revoked.
-        /// Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+        /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
         pub fn revocation_record(
             mut self,
             input: crate::model::SigningJobRevocationRecord,
@@ -1799,8 +1760,7 @@ pub mod describe_signing_job_output {
             self.revocation_record = Some(input);
             self
         }
-        /// <p>A revocation record if the signature generated by the signing job has been revoked.
-        /// Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+        /// <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
         pub fn set_revocation_record(
             mut self,
             input: std::option::Option<crate::model::SigningJobRevocationRecord>,

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Sagemaker Edge Manager
@@ -109,7 +109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceRegistration`.
     ///
     /// <p>Use to check if a device is registered with SageMaker Edge Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceRegistration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -154,10 +154,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceRegistrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -166,8 +166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
@@ -176,8 +176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
@@ -192,7 +192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendHeartbeat`.
     ///
     /// <p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -237,10 +237,10 @@ pub mod fluent_builders {
                 crate::input::SendHeartbeatInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -253,8 +253,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
         ///
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn agent_metrics(mut self, inp: impl Into<crate::model::EdgeMetric>) -> Self {
-            self.inner = self.inner.agent_metrics(inp);
+        pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
+            self.inner = self.inner.agent_metrics(input);
             self
         }
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
@@ -270,8 +270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn models(mut self, inp: impl Into<crate::model::Model>) -> Self {
-            self.inner = self.inner.models(inp);
+        pub fn models(mut self, input: crate::model::Model) -> Self {
+            self.inner = self.inner.models(input);
             self
         }
         /// <p>Returns a list of models deployed on the the device.</p>
@@ -283,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the version of the agent.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>Returns the version of the agent.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the device.</p>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The unique name of the device.</p>
@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(inp);
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
@@ -320,6 +320,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

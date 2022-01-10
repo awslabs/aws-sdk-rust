@@ -322,10 +322,10 @@ pub mod list_usage_for_license_configuration_output {
         /// <p>Information about the license configurations.</p>
         pub fn license_configuration_usage_list(
             mut self,
-            input: impl Into<crate::model::LicenseConfigurationUsage>,
+            input: crate::model::LicenseConfigurationUsage,
         ) -> Self {
             let mut v = self.license_configuration_usage_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_configuration_usage_list = Some(v);
             self
         }
@@ -405,9 +405,9 @@ pub mod list_tokens_output {
         /// To override the contents of this collection use [`set_tokens`](Self::set_tokens).
         ///
         /// <p>Received token details.</p>
-        pub fn tokens(mut self, input: impl Into<crate::model::TokenData>) -> Self {
+        pub fn tokens(mut self, input: crate::model::TokenData) -> Self {
             let mut v = self.tokens.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tokens = Some(v);
             self
         }
@@ -479,9 +479,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -552,12 +552,9 @@ pub mod list_resource_inventory_output {
         /// To override the contents of this collection use [`set_resource_inventory_list`](Self::set_resource_inventory_list).
         ///
         /// <p>Information about the resources.</p>
-        pub fn resource_inventory_list(
-            mut self,
-            input: impl Into<crate::model::ResourceInventory>,
-        ) -> Self {
+        pub fn resource_inventory_list(mut self, input: crate::model::ResourceInventory) -> Self {
             let mut v = self.resource_inventory_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_inventory_list = Some(v);
             self
         }
@@ -637,9 +634,9 @@ pub mod list_received_licenses_output {
         /// To override the contents of this collection use [`set_licenses`](Self::set_licenses).
         ///
         /// <p>Received license details.</p>
-        pub fn licenses(mut self, input: impl Into<crate::model::GrantedLicense>) -> Self {
+        pub fn licenses(mut self, input: crate::model::GrantedLicense) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.licenses = Some(v);
             self
         }
@@ -719,9 +716,9 @@ pub mod list_received_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>Received grant details.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -801,9 +798,9 @@ pub mod list_license_versions_output {
         /// To override the contents of this collection use [`set_licenses`](Self::set_licenses).
         ///
         /// <p>License details.</p>
-        pub fn licenses(mut self, input: impl Into<crate::model::License>) -> Self {
+        pub fn licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.licenses = Some(v);
             self
         }
@@ -887,12 +884,9 @@ pub mod list_license_specifications_for_resource_output {
         /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).
         ///
         /// <p>License configurations associated with a resource.</p>
-        pub fn license_specifications(
-            mut self,
-            input: impl Into<crate::model::LicenseSpecification>,
-        ) -> Self {
+        pub fn license_specifications(mut self, input: crate::model::LicenseSpecification) -> Self {
             let mut v = self.license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_specifications = Some(v);
             self
         }
@@ -972,9 +966,9 @@ pub mod list_licenses_output {
         /// To override the contents of this collection use [`set_licenses`](Self::set_licenses).
         ///
         /// <p>License details.</p>
-        pub fn licenses(mut self, input: impl Into<crate::model::License>) -> Self {
+        pub fn licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.licenses = Some(v);
             self
         }
@@ -1055,12 +1049,9 @@ pub mod list_license_manager_report_generators_output {
         /// To override the contents of this collection use [`set_report_generators`](Self::set_report_generators).
         ///
         /// <p>A report generator that creates periodic reports about your license configurations.</p>
-        pub fn report_generators(
-            mut self,
-            input: impl Into<crate::model::ReportGenerator>,
-        ) -> Self {
+        pub fn report_generators(mut self, input: crate::model::ReportGenerator) -> Self {
             let mut v = self.report_generators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_generators = Some(v);
             self
         }
@@ -1146,10 +1137,10 @@ pub mod list_license_conversion_tasks_output {
         /// <p>Information about the license configuration tasks for your account.</p>
         pub fn license_conversion_tasks(
             mut self,
-            input: impl Into<crate::model::LicenseConversionTask>,
+            input: crate::model::LicenseConversionTask,
         ) -> Self {
             let mut v = self.license_conversion_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_conversion_tasks = Some(v);
             self
         }
@@ -1233,12 +1224,9 @@ pub mod list_license_configurations_output {
         /// To override the contents of this collection use [`set_license_configurations`](Self::set_license_configurations).
         ///
         /// <p>Information about the license configurations.</p>
-        pub fn license_configurations(
-            mut self,
-            input: impl Into<crate::model::LicenseConfiguration>,
-        ) -> Self {
+        pub fn license_configurations(mut self, input: crate::model::LicenseConfiguration) -> Self {
             let mut v = self.license_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_configurations = Some(v);
             self
         }
@@ -1327,10 +1315,10 @@ pub mod list_failures_for_license_configuration_operations_output {
         /// <p>License configuration operations that failed.</p>
         pub fn license_operation_failure_list(
             mut self,
-            input: impl Into<crate::model::LicenseOperationFailure>,
+            input: crate::model::LicenseOperationFailure,
         ) -> Self {
             let mut v = self.license_operation_failure_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_operation_failure_list = Some(v);
             self
         }
@@ -1411,9 +1399,9 @@ pub mod list_distributed_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>Distributed grant details.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -1502,10 +1490,10 @@ pub mod list_associations_for_license_configuration_output {
         /// <p>Information about the associations for the license configuration.</p>
         pub fn license_configuration_associations(
             mut self,
-            input: impl Into<crate::model::LicenseConfigurationAssociation>,
+            input: crate::model::LicenseConfigurationAssociation,
         ) -> Self {
             let mut v = self.license_configuration_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_configuration_associations = Some(v);
             self
         }
@@ -1549,23 +1537,19 @@ impl ListAssociationsForLicenseConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingsOutput {
-    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-    /// and so on.</p>
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     pub s3_bucket_arn: std::option::Option<std::string::String>,
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether Organizations is integrated with License Manager for
-    /// cross-account discovery.</p>
+    /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     pub organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub enable_cross_accounts_discovery: std::option::Option<bool>,
-    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-    /// provides member accounts with access to this share.</p>
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub license_manager_resource_share_arn: std::option::Option<std::string::String>,
 }
 impl GetServiceSettingsOutput {
-    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-    /// and so on.</p>
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
     }
@@ -1573,8 +1557,7 @@ impl GetServiceSettingsOutput {
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>Indicates whether Organizations is integrated with License Manager for
-    /// cross-account discovery.</p>
+    /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     pub fn organization_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
@@ -1584,8 +1567,7 @@ impl GetServiceSettingsOutput {
     pub fn enable_cross_accounts_discovery(&self) -> std::option::Option<bool> {
         self.enable_cross_accounts_discovery
     }
-    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-    /// provides member accounts with access to this share.</p>
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub fn license_manager_resource_share_arn(&self) -> std::option::Option<&str> {
         self.license_manager_resource_share_arn.as_deref()
     }
@@ -1624,14 +1606,12 @@ pub mod get_service_settings_output {
         pub(crate) license_manager_resource_share_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-        /// and so on.</p>
+        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_arn = Some(input.into());
             self
         }
-        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data,
-        /// and so on.</p>
+        /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
         pub fn set_s3_bucket_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1652,8 +1632,7 @@ pub mod get_service_settings_output {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>Indicates whether Organizations is integrated with License Manager for
-        /// cross-account discovery.</p>
+        /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
         pub fn organization_configuration(
             mut self,
             input: crate::model::OrganizationConfiguration,
@@ -1661,8 +1640,7 @@ pub mod get_service_settings_output {
             self.organization_configuration = Some(input);
             self
         }
-        /// <p>Indicates whether Organizations is integrated with License Manager for
-        /// cross-account discovery.</p>
+        /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
         pub fn set_organization_configuration(
             mut self,
             input: std::option::Option<crate::model::OrganizationConfiguration>,
@@ -1683,8 +1661,7 @@ pub mod get_service_settings_output {
             self.enable_cross_accounts_discovery = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-        /// provides member accounts with access to this share.</p>
+        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
         pub fn license_manager_resource_share_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1692,8 +1669,7 @@ pub mod get_service_settings_output {
             self.license_manager_resource_share_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account
-        /// provides member accounts with access to this share.</p>
+        /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
         pub fn set_license_manager_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2405,10 +2381,10 @@ pub mod get_license_configuration_output {
         /// <p>Summaries of the licenses consumed by resources.</p>
         pub fn consumed_license_summary_list(
             mut self,
-            input: impl Into<crate::model::ConsumedLicenseSummary>,
+            input: crate::model::ConsumedLicenseSummary,
         ) -> Self {
             let mut v = self.consumed_license_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_license_summary_list = Some(v);
             self
         }
@@ -2427,10 +2403,10 @@ pub mod get_license_configuration_output {
         /// <p>Summaries of the managed resources.</p>
         pub fn managed_resource_summary_list(
             mut self,
-            input: impl Into<crate::model::ManagedResourceSummary>,
+            input: crate::model::ManagedResourceSummary,
         ) -> Self {
             let mut v = self.managed_resource_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_resource_summary_list = Some(v);
             self
         }
@@ -2447,9 +2423,9 @@ pub mod get_license_configuration_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for the license configuration.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2466,12 +2442,9 @@ pub mod get_license_configuration_output {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>Product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -3803,12 +3776,9 @@ pub mod checkout_license_output {
         /// To override the contents of this collection use [`set_entitlements_allowed`](Self::set_entitlements_allowed).
         ///
         /// <p>Allowed license entitlements.</p>
-        pub fn entitlements_allowed(
-            mut self,
-            input: impl Into<crate::model::EntitlementData>,
-        ) -> Self {
+        pub fn entitlements_allowed(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements_allowed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements_allowed = Some(v);
             self
         }
@@ -4006,12 +3976,9 @@ pub mod checkout_borrow_license_output {
         /// To override the contents of this collection use [`set_entitlements_allowed`](Self::set_entitlements_allowed).
         ///
         /// <p>Allowed license entitlements.</p>
-        pub fn entitlements_allowed(
-            mut self,
-            input: impl Into<crate::model::EntitlementData>,
-        ) -> Self {
+        pub fn entitlements_allowed(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements_allowed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements_allowed = Some(v);
             self
         }
@@ -4068,9 +4035,9 @@ pub mod checkout_borrow_license_output {
         /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).
         ///
         /// <p>Information about constraints.</p>
-        pub fn checkout_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.checkout_metadata = Some(v);
             self
         }

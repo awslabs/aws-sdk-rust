@@ -249,9 +249,9 @@ pub mod settings {
         /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
         ///
         /// <p> The designated default audit owners. </p>
-        pub fn default_process_owners(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn default_process_owners(mut self, input: crate::model::Role) -> Self {
             let mut v = self.default_process_owners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_process_owners = Some(v);
             self
         }
@@ -292,34 +292,24 @@ impl Settings {
     }
 }
 
-/// <p> The wrapper that contains the Audit Manager role information of the current
-/// user. This includes the role type and IAM Amazon Resource Name (ARN).
-/// </p>
+/// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Role {
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub role_type: std::option::Option<crate::model::RoleType>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl Role {
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
         self.role_type.as_ref()
@@ -347,27 +337,19 @@ pub mod role {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn role_type(mut self, input: crate::model::RoleType) -> Self {
             self.role_type = Some(input);
             self
         }
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn set_role_type(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role_type = input;
@@ -454,8 +436,7 @@ impl AsRef<str> for RoleType {
     }
 }
 
-/// <p> The location where Audit Manager saves assessment reports for the given
-/// assessment. </p>
+/// <p> The location where Audit Manager saves assessment reports for the given assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentReportsDestination {
@@ -602,15 +583,13 @@ pub struct Control {
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the control. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The steps that you should follow to determine if the control has been satisfied.
-    /// </p>
+    /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
     pub testing_information: std::option::Option<std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
     pub action_plan_title: std::option::Option<std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     pub action_plan_instructions: std::option::Option<std::string::String>,
-    /// <p> The data source that determines where Audit Manager collects evidence from for
-    /// the control. </p>
+    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p> The data mapping sources for the control. </p>
     pub control_mapping_sources:
@@ -648,8 +627,7 @@ impl Control {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The steps that you should follow to determine if the control has been satisfied.
-    /// </p>
+    /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
     pub fn testing_information(&self) -> std::option::Option<&str> {
         self.testing_information.as_deref()
     }
@@ -661,8 +639,7 @@ impl Control {
     pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
         self.action_plan_instructions.as_deref()
     }
-    /// <p> The data source that determines where Audit Manager collects evidence from for
-    /// the control. </p>
+    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     pub fn control_sources(&self) -> std::option::Option<&str> {
         self.control_sources.as_deref()
     }
@@ -793,14 +770,12 @@ pub mod control {
             self.description = input;
             self
         }
-        /// <p> The steps that you should follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
         pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.testing_information = Some(input.into());
             self
         }
-        /// <p> The steps that you should follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
         pub fn set_testing_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -834,14 +809,12 @@ pub mod control {
             self.action_plan_instructions = input;
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for
-        /// the control. </p>
+        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for
-        /// the control. </p>
+        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn set_control_sources(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -856,10 +829,10 @@ pub mod control {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            input: impl Into<crate::model::ControlMappingSource>,
+            input: crate::model::ControlMappingSource,
         ) -> Self {
             let mut v = self.control_mapping_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_mapping_sources = Some(v);
             self
         }
@@ -974,8 +947,7 @@ impl Control {
     }
 }
 
-/// <p> The data source that determines where Audit Manager collects evidence from for
-/// the control. </p>
+/// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlMappingSource {
@@ -985,13 +957,11 @@ pub struct ControlMappingSource {
     pub source_name: std::option::Option<std::string::String>,
     /// <p> The description of the source. </p>
     pub source_description: std::option::Option<std::string::String>,
-    /// <p> The setup option for the data source. This option reflects if the evidence collection
-    /// is automated or manual. </p>
+    /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
     pub source_set_up_option: std::option::Option<crate::model::SourceSetUpOption>,
     /// <p> Specifies one of the five types of data sources for evidence collection. </p>
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p> The keyword to search for in CloudTrail logs, Config rules,
-    /// Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
     pub source_keyword: std::option::Option<crate::model::SourceKeyword>,
     /// <p> The frequency of evidence collection for the control mapping source. </p>
     pub source_frequency: std::option::Option<crate::model::SourceFrequency>,
@@ -1011,8 +981,7 @@ impl ControlMappingSource {
     pub fn source_description(&self) -> std::option::Option<&str> {
         self.source_description.as_deref()
     }
-    /// <p> The setup option for the data source. This option reflects if the evidence collection
-    /// is automated or manual. </p>
+    /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
     pub fn source_set_up_option(&self) -> std::option::Option<&crate::model::SourceSetUpOption> {
         self.source_set_up_option.as_ref()
     }
@@ -1020,8 +989,7 @@ impl ControlMappingSource {
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p> The keyword to search for in CloudTrail logs, Config rules,
-    /// Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
     pub fn source_keyword(&self) -> std::option::Option<&crate::model::SourceKeyword> {
         self.source_keyword.as_ref()
     }
@@ -1097,14 +1065,12 @@ pub mod control_mapping_source {
             self.source_description = input;
             self
         }
-        /// <p> The setup option for the data source. This option reflects if the evidence collection
-        /// is automated or manual. </p>
+        /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
         pub fn source_set_up_option(mut self, input: crate::model::SourceSetUpOption) -> Self {
             self.source_set_up_option = Some(input);
             self
         }
-        /// <p> The setup option for the data source. This option reflects if the evidence collection
-        /// is automated or manual. </p>
+        /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
         pub fn set_source_set_up_option(
             mut self,
             input: std::option::Option<crate::model::SourceSetUpOption>,
@@ -1125,14 +1091,12 @@ pub mod control_mapping_source {
             self.source_type = input;
             self
         }
-        /// <p> The keyword to search for in CloudTrail logs, Config rules,
-        /// Security Hub checks, and Amazon Web Services API names. </p>
+        /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
         pub fn source_keyword(mut self, input: crate::model::SourceKeyword) -> Self {
             self.source_keyword = Some(input);
             self
         }
-        /// <p> The keyword to search for in CloudTrail logs, Config rules,
-        /// Security Hub checks, and Amazon Web Services API names. </p>
+        /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
         pub fn set_source_keyword(
             mut self,
             input: std::option::Option<crate::model::SourceKeyword>,
@@ -1247,15 +1211,13 @@ impl AsRef<str> for SourceFrequency {
     }
 }
 
-/// <p> The keyword to search for in CloudTrail logs, Config rules,
-/// Security Hub checks, and Amazon Web Services API names. </p>
+/// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceKeyword {
     /// <p> The method of input for the keyword. </p>
     pub keyword_input_type: std::option::Option<crate::model::KeywordInputType>,
-    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
-    /// when mapping a control data source. </p>
+    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
     pub keyword_value: std::option::Option<std::string::String>,
 }
 impl SourceKeyword {
@@ -1263,8 +1225,7 @@ impl SourceKeyword {
     pub fn keyword_input_type(&self) -> std::option::Option<&crate::model::KeywordInputType> {
         self.keyword_input_type.as_ref()
     }
-    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
-    /// when mapping a control data source. </p>
+    /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
     pub fn keyword_value(&self) -> std::option::Option<&str> {
         self.keyword_value.as_deref()
     }
@@ -1300,14 +1261,12 @@ pub mod source_keyword {
             self.keyword_input_type = input;
             self
         }
-        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
-        /// when mapping a control data source. </p>
+        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
         pub fn keyword_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.keyword_value = Some(input.into());
             self
         }
-        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names
-        /// when mapping a control data source. </p>
+        /// <p> The value of the keyword that's used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source. </p>
         pub fn set_keyword_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1565,9 +1524,7 @@ impl AsRef<str> for ControlType {
     }
 }
 
-/// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-/// An Audit Manager assessment is an implementation of an Audit Manager
-/// framework. </p>
+/// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Assessment {
@@ -1727,8 +1684,7 @@ impl Assessment {
     }
 }
 
-/// <p> The file used to structure and automate Audit Manager assessments for a given
-/// compliance standard. </p>
+/// <p> The file used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentFramework {
@@ -1820,12 +1776,9 @@ pub mod assessment_framework {
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
         /// <p> The control sets that are associated with the framework. </p>
-        pub fn control_sets(
-            mut self,
-            input: impl Into<crate::model::AssessmentControlSet>,
-        ) -> Self {
+        pub fn control_sets(mut self, input: crate::model::AssessmentControlSet) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -1859,8 +1812,7 @@ impl AssessmentFramework {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentControlSet {
-    /// <p> The identifier of the control set in the assessment. This is the control set name in a
-    /// plain string format. </p>
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p> The description for the control set. </p>
     pub description: std::option::Option<std::string::String>,
@@ -1872,16 +1824,13 @@ pub struct AssessmentControlSet {
     pub controls: std::option::Option<std::vec::Vec<crate::model::AssessmentControl>>,
     /// <p> The delegations that are associated with the control set. </p>
     pub delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
-    /// <p> The total number of evidence objects that are retrieved automatically for the control
-    /// set. </p>
+    /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub system_evidence_count: i32,
-    /// <p> The total number of evidence objects that are uploaded manually to the control set.
-    /// </p>
+    /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub manual_evidence_count: i32,
 }
 impl AssessmentControlSet {
-    /// <p> The identifier of the control set in the assessment. This is the control set name in a
-    /// plain string format. </p>
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -1905,13 +1854,11 @@ impl AssessmentControlSet {
     pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
         self.delegations.as_deref()
     }
-    /// <p> The total number of evidence objects that are retrieved automatically for the control
-    /// set. </p>
+    /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub fn system_evidence_count(&self) -> i32 {
         self.system_evidence_count
     }
-    /// <p> The total number of evidence objects that are uploaded manually to the control set.
-    /// </p>
+    /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub fn manual_evidence_count(&self) -> i32 {
         self.manual_evidence_count
     }
@@ -1946,14 +1893,12 @@ pub mod assessment_control_set {
         pub(crate) manual_evidence_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> The identifier of the control set in the assessment. This is the control set name in a
-        /// plain string format. </p>
+        /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The identifier of the control set in the assessment. This is the control set name in a
-        /// plain string format. </p>
+        /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1986,9 +1931,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the control set. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -2005,9 +1950,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls that's contained with the control set. </p>
-        pub fn controls(mut self, input: impl Into<crate::model::AssessmentControl>) -> Self {
+        pub fn controls(mut self, input: crate::model::AssessmentControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -2024,9 +1969,9 @@ pub mod assessment_control_set {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the control set. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -2038,26 +1983,22 @@ pub mod assessment_control_set {
             self.delegations = input;
             self
         }
-        /// <p> The total number of evidence objects that are retrieved automatically for the control
-        /// set. </p>
+        /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
         pub fn system_evidence_count(mut self, input: i32) -> Self {
             self.system_evidence_count = Some(input);
             self
         }
-        /// <p> The total number of evidence objects that are retrieved automatically for the control
-        /// set. </p>
+        /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
         pub fn set_system_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.system_evidence_count = input;
             self
         }
-        /// <p> The total number of evidence objects that are uploaded manually to the control set.
-        /// </p>
+        /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
         pub fn manual_evidence_count(mut self, input: i32) -> Self {
             self.manual_evidence_count = Some(input);
             self
         }
-        /// <p> The total number of evidence objects that are uploaded manually to the control set.
-        /// </p>
+        /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
         pub fn set_manual_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.manual_evidence_count = input;
             self
@@ -2098,14 +2039,10 @@ pub struct Delegation {
     pub status: std::option::Option<crate::model::DelegationStatus>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub role_type: std::option::Option<crate::model::RoleType>,
     /// <p> Specifies when the delegation was created. </p>
@@ -2140,14 +2077,10 @@ impl Delegation {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
         self.role_type.as_ref()
@@ -2268,27 +2201,19 @@ pub mod delegation {
             self.role_arn = input;
             self
         }
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn role_type(mut self, input: crate::model::RoleType) -> Self {
             self.role_type = Some(input);
             self
         }
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn set_role_type(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role_type = input;
@@ -2594,9 +2519,9 @@ pub mod assessment_control {
         /// To override the contents of this collection use [`set_comments`](Self::set_comments).
         ///
         /// <p> The list of comments that's attached to the control. </p>
-        pub fn comments(mut self, input: impl Into<crate::model::ControlComment>) -> Self {
+        pub fn comments(mut self, input: crate::model::ControlComment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments = Some(v);
             self
         }
@@ -2675,8 +2600,7 @@ impl AssessmentControl {
     }
 }
 
-/// <p> A comment that's posted by a user on a control. This includes the author's name, the
-/// comment text, and a timestamp. </p>
+/// <p> A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlComment {
@@ -2962,8 +2886,7 @@ pub struct FrameworkMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
     pub logo: std::option::Option<std::string::String>,
-    /// <p> The compliance standard that's associated with the framework. For example, this could
-    /// be PCI DSS or HIPAA. </p>
+    /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
 }
 impl FrameworkMetadata {
@@ -2979,8 +2902,7 @@ impl FrameworkMetadata {
     pub fn logo(&self) -> std::option::Option<&str> {
         self.logo.as_deref()
     }
-    /// <p> The compliance standard that's associated with the framework. For example, this could
-    /// be PCI DSS or HIPAA. </p>
+    /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -3037,14 +2959,12 @@ pub mod framework_metadata {
             self.logo = input;
             self
         }
-        /// <p> The compliance standard that's associated with the framework. For example, this could
-        /// be PCI DSS or HIPAA. </p>
+        /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The compliance standard that's associated with the framework. For example, this could
-        /// be PCI DSS or HIPAA. </p>
+        /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3080,16 +3000,14 @@ pub struct AssessmentMetadata {
     pub id: std::option::Option<std::string::String>,
     /// <p> The description of the assessment. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-    /// </p>
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The overall status of the assessment. </p>
     pub status: std::option::Option<crate::model::AssessmentStatus>,
     /// <p> The destination that evidence reports are stored in for the assessment. </p>
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
-    /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the
-    /// assessment. </p>
+    /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p> The roles that are associated with the assessment. </p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -3113,8 +3031,7 @@ impl AssessmentMetadata {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-    /// </p>
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -3128,8 +3045,7 @@ impl AssessmentMetadata {
     ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
-    /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the
-    /// assessment. </p>
+    /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
         self.scope.as_ref()
     }
@@ -3220,14 +3136,12 @@ pub mod assessment_metadata {
             self.description = input;
             self
         }
-        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-        /// </p>
+        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-        /// </p>
+        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3264,14 +3178,12 @@ pub mod assessment_metadata {
             self.assessment_reports_destination = input;
             self
         }
-        /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the
-        /// assessment. </p>
+        /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.scope = Some(input);
             self
         }
-        /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the
-        /// assessment. </p>
+        /// <p> The wrapper of Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3281,9 +3193,9 @@ pub mod assessment_metadata {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -3300,9 +3212,9 @@ pub mod assessment_metadata {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -3365,26 +3277,21 @@ impl AssessmentMetadata {
     }
 }
 
-/// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-/// scope for the assessment. </p>
+/// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scope {
-    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
-    /// </p>
+    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
     pub aws_accounts: std::option::Option<std::vec::Vec<crate::model::AwsAccount>>,
-    /// <p> The Amazon Web Services services that are included in the scope of the assessment.
-    /// </p>
+    /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
     pub aws_services: std::option::Option<std::vec::Vec<crate::model::AwsService>>,
 }
 impl Scope {
-    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
-    /// </p>
+    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
     pub fn aws_accounts(&self) -> std::option::Option<&[crate::model::AwsAccount]> {
         self.aws_accounts.as_deref()
     }
-    /// <p> The Amazon Web Services services that are included in the scope of the assessment.
-    /// </p>
+    /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
     pub fn aws_services(&self) -> std::option::Option<&[crate::model::AwsService]> {
         self.aws_services.as_deref()
     }
@@ -3411,16 +3318,14 @@ pub mod scope {
         ///
         /// To override the contents of this collection use [`set_aws_accounts`](Self::set_aws_accounts).
         ///
-        /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
-        /// </p>
-        pub fn aws_accounts(mut self, input: impl Into<crate::model::AwsAccount>) -> Self {
+        /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
+        pub fn aws_accounts(mut self, input: crate::model::AwsAccount) -> Self {
             let mut v = self.aws_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_accounts = Some(v);
             self
         }
-        /// <p> The Amazon Web Services accounts that are included in the scope of the assessment.
-        /// </p>
+        /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
         pub fn set_aws_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsAccount>>,
@@ -3432,16 +3337,14 @@ pub mod scope {
         ///
         /// To override the contents of this collection use [`set_aws_services`](Self::set_aws_services).
         ///
-        /// <p> The Amazon Web Services services that are included in the scope of the assessment.
-        /// </p>
-        pub fn aws_services(mut self, input: impl Into<crate::model::AwsService>) -> Self {
+        /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
+        pub fn aws_services(mut self, input: crate::model::AwsService) -> Self {
             let mut v = self.aws_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_services = Some(v);
             self
         }
-        /// <p> The Amazon Web Services services that are included in the scope of the assessment.
-        /// </p>
+        /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
         pub fn set_aws_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsService>>,
@@ -3465,8 +3368,7 @@ impl Scope {
     }
 }
 
-/// <p> An Amazon Web Service such as Amazon S3 or CloudTrail.
-/// </p>
+/// <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsService {
@@ -3520,8 +3422,7 @@ impl AwsService {
     }
 }
 
-/// <p> The wrapper of Amazon Web Services account details, such as account ID or email address.
-/// </p>
+/// <p> The wrapper of Amazon Web Services account details, such as account ID or email address. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAccount {
@@ -4223,8 +4124,7 @@ impl AsRef<str> for ShareRequestType {
     }
 }
 
-/// <p> The file that's used to structure and automate Audit Manager assessments for a
-/// given compliance standard. </p>
+/// <p> The file that's used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Framework {
@@ -4236,8 +4136,7 @@ pub struct Framework {
     pub name: std::option::Option<std::string::String>,
     /// <p> The framework type, such as a custom framework or a standard framework. </p>
     pub r#type: std::option::Option<crate::model::FrameworkType>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The description of the framework. </p>
     pub description: std::option::Option<std::string::String>,
@@ -4276,8 +4175,7 @@ impl Framework {
     pub fn r#type(&self) -> std::option::Option<&crate::model::FrameworkType> {
         self.r#type.as_ref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -4405,14 +4303,12 @@ pub mod framework {
             self.r#type = input;
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4458,9 +4354,9 @@ pub mod framework {
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
         /// <p> The control sets that are associated with the framework. </p>
-        pub fn control_sets(mut self, input: impl Into<crate::model::ControlSet>) -> Self {
+        pub fn control_sets(mut self, input: crate::model::ControlSet) -> Self {
             let mut v = self.control_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_sets = Some(v);
             self
         }
@@ -4578,8 +4474,7 @@ impl Framework {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlSet {
-    /// <p> The identifier of the control set in the assessment. This is the control set name in a
-    /// plain string format. </p>
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of the control set. </p>
     pub name: std::option::Option<std::string::String>,
@@ -4587,8 +4482,7 @@ pub struct ControlSet {
     pub controls: std::option::Option<std::vec::Vec<crate::model::Control>>,
 }
 impl ControlSet {
-    /// <p> The identifier of the control set in the assessment. This is the control set name in a
-    /// plain string format. </p>
+    /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4621,14 +4515,12 @@ pub mod control_set {
         pub(crate) controls: std::option::Option<std::vec::Vec<crate::model::Control>>,
     }
     impl Builder {
-        /// <p> The identifier of the control set in the assessment. This is the control set name in a
-        /// plain string format. </p>
+        /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The identifier of the control set in the assessment. This is the control set name in a
-        /// plain string format. </p>
+        /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4648,9 +4540,9 @@ pub mod control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls within the control set. </p>
-        pub fn controls(mut self, input: impl Into<crate::model::Control>) -> Self {
+        pub fn controls(mut self, input: crate::model::Control) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -4808,12 +4700,9 @@ pub mod update_assessment_framework_control_set {
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
         /// <p> The list of controls that are contained within the control set. </p>
-        pub fn controls(
-            mut self,
-            input: impl Into<crate::model::CreateAssessmentFrameworkControl>,
-        ) -> Self {
+        pub fn controls(mut self, input: crate::model::CreateAssessmentFrameworkControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
@@ -4844,8 +4733,7 @@ impl UpdateAssessmentFrameworkControlSet {
     }
 }
 
-/// <p> The control entity attributes that uniquely identify an existing control to be added to
-/// a framework in Audit Manager. </p>
+/// <p> The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentFrameworkControl {
@@ -4956,9 +4844,7 @@ impl AsRef<str> for AccountStatus {
     }
 }
 
-/// <p> The notification that informs a user of an update in Audit Manager. For
-/// example, this includes the notification that's sent when a control set is delegated for
-/// review. </p>
+/// <p> The notification that informs a user of an update in Audit Manager. For example, this includes the notification that's sent when a control set is delegated for review. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Notification {
@@ -5170,8 +5056,7 @@ pub struct ControlMetadata {
     pub id: std::option::Option<std::string::String>,
     /// <p> The name of the control. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p> The data source that determines where Audit Manager collects evidence from for
-    /// the control. </p>
+    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p> Specifies when the control was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -5191,8 +5076,7 @@ impl ControlMetadata {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The data source that determines where Audit Manager collects evidence from for
-    /// the control. </p>
+    /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
     pub fn control_sources(&self) -> std::option::Option<&str> {
         self.control_sources.as_deref()
     }
@@ -5261,14 +5145,12 @@ pub mod control_metadata {
             self.name = input;
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for
-        /// the control. </p>
+        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
             self
         }
-        /// <p> The data source that determines where Audit Manager collects evidence from for
-        /// the control. </p>
+        /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn set_control_sources(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5331,8 +5213,7 @@ pub struct ControlInsightsMetadataItem {
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the control. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-    /// control. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
     /// <p>The time when the control insights were last updated. </p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
@@ -5346,8 +5227,7 @@ impl ControlInsightsMetadataItem {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-    /// control. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
@@ -5398,14 +5278,12 @@ pub mod control_insights_metadata_item {
             self.id = input;
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-        /// control. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
         pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
             self.evidence_insights = Some(input);
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-        /// control. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
         pub fn set_evidence_insights(
             mut self,
             input: std::option::Option<crate::model::EvidenceInsights>,
@@ -5444,55 +5322,30 @@ impl ControlInsightsMetadataItem {
     }
 }
 
-/// <p>A breakdown of the latest compliance check status for the evidence in your Audit Manager
-/// assessments. </p>
+/// <p>A breakdown of the latest compliance check status for the evidence in your Audit Manager assessments. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvidenceInsights {
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Fail</i> ruling, or collected from Config with a
-    /// <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub noncompliant_evidence_count: std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
-    /// includes evidence that was collected from Security Hub with a
-    /// <i>Pass</i> ruling, or collected from Config with a
-    /// <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub compliant_evidence_count: std::option::Option<i32>,
-    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
-    /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
-    /// control uses a data source that doesn’t support compliance checks (for example, manual
-    /// evidence, API calls, or CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
-    /// console, it's classified as <i>inconclusive</i> in
-    /// <code>EvidenceInsights</code> data.</p>
+    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the console, it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
     /// </note>
     pub inconclusive_evidence_count: std::option::Option<i32>,
 }
 impl EvidenceInsights {
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Fail</i> ruling, or collected from Config with a
-    /// <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
         self.noncompliant_evidence_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
-    /// includes evidence that was collected from Security Hub with a
-    /// <i>Pass</i> ruling, or collected from Config with a
-    /// <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
         self.compliant_evidence_count
     }
-    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
-    /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
-    /// control uses a data source that doesn’t support compliance checks (for example, manual
-    /// evidence, API calls, or CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
-    /// console, it's classified as <i>inconclusive</i> in
-    /// <code>EvidenceInsights</code> data.</p>
+    /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i> in the console, it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
     /// </note>
     pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
         self.inconclusive_evidence_count
@@ -5524,59 +5377,35 @@ pub mod evidence_insights {
         pub(crate) inconclusive_evidence_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Fail</i> ruling, or collected from Config with a
-        /// <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
             self.noncompliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Fail</i> ruling, or collected from Config with a
-        /// <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.noncompliant_evidence_count = input;
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
-        /// includes evidence that was collected from Security Hub with a
-        /// <i>Pass</i> ruling, or collected from Config with a
-        /// <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn compliant_evidence_count(mut self, input: i32) -> Self {
             self.compliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This
-        /// includes evidence that was collected from Security Hub with a
-        /// <i>Pass</i> ruling, or collected from Config with a
-        /// <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.compliant_evidence_count = input;
             self
         }
-        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
-        /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
-        /// control uses a data source that doesn’t support compliance checks (for example, manual
-        /// evidence, API calls, or CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
-        /// console, it's classified as <i>inconclusive</i> in
-        /// <code>EvidenceInsights</code> data.</p>
+        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the console, it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
         /// </note>
         pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
             self.inconclusive_evidence_count = Some(input);
             self
         }
-        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is
-        /// inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a
-        /// control uses a data source that doesn’t support compliance checks (for example, manual
-        /// evidence, API calls, or CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the
-        /// console, it's classified as <i>inconclusive</i> in
-        /// <code>EvidenceInsights</code> data.</p>
+        /// <p>The number of evidence that a compliance check ruling isn't available for. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i> in the console, it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
         /// </note>
         pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inconclusive_evidence_count = input;
@@ -5608,13 +5437,11 @@ pub struct ControlDomainInsights {
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the control domain. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The number of controls in the control domain that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub controls_count_by_noncompliant_evidence: std::option::Option<i32>,
     /// <p>The total number of controls in the control domain. </p>
     pub total_controls_count: std::option::Option<i32>,
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
-    /// domain. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
     pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
     /// <p>The time when the control domain insights were last updated. </p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
@@ -5628,8 +5455,7 @@ impl ControlDomainInsights {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The number of controls in the control domain that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
         self.controls_count_by_noncompliant_evidence
     }
@@ -5637,8 +5463,7 @@ impl ControlDomainInsights {
     pub fn total_controls_count(&self) -> std::option::Option<i32> {
         self.total_controls_count
     }
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
-    /// domain. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
     pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
@@ -5696,14 +5521,12 @@ pub mod control_domain_insights {
             self.id = input;
             self
         }
-        /// <p>The number of controls in the control domain that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
             self.controls_count_by_noncompliant_evidence = Some(input);
             self
         }
-        /// <p>The number of controls in the control domain that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn set_controls_count_by_noncompliant_evidence(
             mut self,
             input: std::option::Option<i32>,
@@ -5721,14 +5544,12 @@ pub mod control_domain_insights {
             self.total_controls_count = input;
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
-        /// domain. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
         pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
             self.evidence_insights = Some(input);
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control
-        /// domain. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
         pub fn set_evidence_insights(
             mut self,
             input: std::option::Option<crate::model::EvidenceInsights>,
@@ -5770,8 +5591,7 @@ impl ControlDomainInsights {
     }
 }
 
-/// <p> A metadata object that's associated with an assessment in Audit Manager.
-/// </p>
+/// <p> A metadata object that's associated with an assessment in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentMetadataItem {
@@ -5779,8 +5599,7 @@ pub struct AssessmentMetadataItem {
     pub name: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-    /// </p>
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The current status of the assessment. </p>
     pub status: std::option::Option<crate::model::AssessmentStatus>,
@@ -5802,8 +5621,7 @@ impl AssessmentMetadataItem {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-    /// </p>
+    /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -5878,14 +5696,12 @@ pub mod assessment_metadata_item {
             self.id = input;
             self
         }
-        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-        /// </p>
+        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS.
-        /// </p>
+        /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5911,9 +5727,9 @@ pub mod assessment_metadata_item {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The roles that are associated with the assessment. </p>
-        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roles = Some(v);
             self
         }
@@ -5930,9 +5746,9 @@ pub mod assessment_metadata_item {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -6266,8 +6082,7 @@ pub struct AssessmentFrameworkMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
     pub logo: std::option::Option<std::string::String>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The number of controls that are associated with the framework. </p>
     pub controls_count: i32,
@@ -6303,8 +6118,7 @@ impl AssessmentFrameworkMetadata {
     pub fn logo(&self) -> std::option::Option<&str> {
         self.logo.as_deref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -6421,14 +6235,12 @@ pub mod assessment_framework_metadata {
             self.logo = input;
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6507,10 +6319,8 @@ impl AssessmentFrameworkMetadata {
     }
 }
 
-/// <p>A summary of the latest analytics data for a specific control in a specific active
-/// assessment.</p>
-/// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.
-/// </p>
+/// <p>A summary of the latest analytics data for a specific control in a specific active assessment.</p>
+/// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ControlInsightsMetadataByAssessmentItem {
@@ -6518,8 +6328,7 @@ pub struct ControlInsightsMetadataByAssessmentItem {
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the assessment control. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-    /// assessment control. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control. </p>
     pub evidence_insights: std::option::Option<crate::model::EvidenceInsights>,
     /// <p>The name of the control set that the assessment control belongs to. </p>
     pub control_set_name: std::option::Option<std::string::String>,
@@ -6535,8 +6344,7 @@ impl ControlInsightsMetadataByAssessmentItem {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-    /// assessment control. </p>
+    /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control. </p>
     pub fn evidence_insights(&self) -> std::option::Option<&crate::model::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
@@ -6593,14 +6401,12 @@ pub mod control_insights_metadata_by_assessment_item {
             self.id = input;
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-        /// assessment control. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control. </p>
         pub fn evidence_insights(mut self, input: crate::model::EvidenceInsights) -> Self {
             self.evidence_insights = Some(input);
             self
         }
-        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the
-        /// assessment control. </p>
+        /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control. </p>
         pub fn set_evidence_insights(
             mut self,
             input: std::option::Option<crate::model::EvidenceInsights>,
@@ -6740,8 +6546,7 @@ pub struct ServiceMetadata {
     pub display_name: std::option::Option<std::string::String>,
     /// <p> The description of the Amazon Web Service. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage,
-    /// or database. </p>
+    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
     pub category: std::option::Option<std::string::String>,
 }
 impl ServiceMetadata {
@@ -6757,8 +6562,7 @@ impl ServiceMetadata {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage,
-    /// or database. </p>
+    /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
@@ -6815,14 +6619,12 @@ pub mod service_metadata {
             self.description = input;
             self
         }
-        /// <p> The category that the Amazon Web Service belongs to, such as compute, storage,
-        /// or database. </p>
+        /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
             self
         }
-        /// <p> The category that the Amazon Web Service belongs to, such as compute, storage,
-        /// or database. </p>
+        /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
@@ -6845,58 +6647,27 @@ impl ServiceMetadata {
     }
 }
 
-/// <p>A summary of the latest analytics data for a specific active assessment.</p>   
-/// <p>This summary is a snapshot of the data that was collected on the <code>lastUpdated</code>
-/// date. It’s important to understand that the totals in <code>InsightsByAssessment</code> are
-/// daily counts based on this date — they aren’t a total sum to date. </p>
-/// <p>The <code>InsightsByAssessment</code> data is eventually consistent. This means that
-/// when you read data from <code>InsightsByAssessment</code>, the response might not instantly
-/// reflect the results of a recently completed write or update operation. If you repeat your
-/// read request after a few hours, the response returns the latest data.</p>
-/// <note>
-/// <p>If you delete an assessment or change its status to inactive,
-/// <code>InsightsByAssessment</code> includes data for that assessment as
-/// follows.</p>
+/// <p>A summary of the latest analytics data for a specific active assessment.</p>
+/// <p>This summary is a snapshot of the data that was collected on the <code>lastUpdated</code> date. It’s important to understand that the totals in <code>InsightsByAssessment</code> are daily counts based on this date — they aren’t a total sum to date. </p>
+/// <p>The <code>InsightsByAssessment</code> data is eventually consistent. This means that when you read data from <code>InsightsByAssessment</code>, the response might not instantly reflect the results of a recently completed write or update operation. If you repeat your read request after a few hours, the response returns the latest data.</p> <note>
+/// <p>If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code> includes data for that assessment as follows.</p>
 /// <ul>
-/// <li>   
-/// <p>
-/// <b>Inactive assessments</b> - If Audit Manager collected
-/// evidence for your assessment before you changed it inactive, that evidence is
-/// included in the <code>InsightsByAssessment</code> counts for that day.</p>
-/// </li>
-/// <li>      
-/// <p>
-/// <b>Deleted assessments</b> - If Audit Manager collected
-/// evidence for your assessment before you deleted it, that evidence isn't included
-/// in the <code>InsightsByAssessment</code> counts for that day.</p>
-/// </li>
+/// <li> <p> <b>Inactive assessments</b> - If Audit Manager collected evidence for your assessment before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code> counts for that day.</p> </li>
+/// <li> <p> <b>Deleted assessments</b> - If Audit Manager collected evidence for your assessment before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code> counts for that day.</p> </li>
 /// </ul>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightsByAssessment {
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Fail</i> ruling, or collected from Config with a
-    /// <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub noncompliant_evidence_count: std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Pass</i> ruling, or collected from Config with a
-    /// <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub compliant_evidence_count: std::option::Option<i32>,
-    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
-    /// associated control uses Security Hub or Config as a data source
-    /// and you didn't enable those services. This is also the case if a control uses a data source
-    /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
-    /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
-    /// data.</p>
+    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the associated control uses Security Hub or Config as a data source and you didn't enable those services. This is also the case if a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classified as <i>inconclusive</i> in <code>InsightsByAssessment</code> data.</p>
     /// </note>
     pub inconclusive_evidence_count: std::option::Option<i32>,
-    /// <p>The number of assessment controls that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
     /// <p>The total number of controls in the assessment. </p>
     pub total_assessment_controls_count: std::option::Option<i32>,
@@ -6904,34 +6675,21 @@ pub struct InsightsByAssessment {
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl InsightsByAssessment {
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Fail</i> ruling, or collected from Config with a
-    /// <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
         self.noncompliant_evidence_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
-    /// This includes evidence that was collected from Security Hub with a
-    /// <i>Pass</i> ruling, or collected from Config with a
-    /// <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
         self.compliant_evidence_count
     }
-    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
-    /// associated control uses Security Hub or Config as a data source
-    /// and you didn't enable those services. This is also the case if a control uses a data source
-    /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
-    /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
-    /// data.</p>
+    /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the associated control uses Security Hub or Config as a data source and you didn't enable those services. This is also the case if a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classified as <i>inconclusive</i> in <code>InsightsByAssessment</code> data.</p>
     /// </note>
     pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
         self.inconclusive_evidence_count
     }
-    /// <p>The number of assessment controls that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn assessment_controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
         self.assessment_controls_count_by_noncompliant_evidence
     }
@@ -6982,72 +6740,46 @@ pub mod insights_by_assessment {
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Fail</i> ruling, or collected from Config with a
-        /// <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
             self.noncompliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Fail</i> ruling, or collected from Config with a
-        /// <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.noncompliant_evidence_count = input;
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Pass</i> ruling, or collected from Config with a
-        /// <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn compliant_evidence_count(mut self, input: i32) -> Self {
             self.compliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant.
-        /// This includes evidence that was collected from Security Hub with a
-        /// <i>Pass</i> ruling, or collected from Config with a
-        /// <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.compliant_evidence_count = input;
             self
         }
-        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
-        /// associated control uses Security Hub or Config as a data source
-        /// and you didn't enable those services. This is also the case if a control uses a data source
-        /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
-        /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
-        /// data.</p>
+        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the associated control uses Security Hub or Config as a data source and you didn't enable those services. This is also the case if a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classified as <i>inconclusive</i> in <code>InsightsByAssessment</code> data.</p>
         /// </note>
         pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
             self.inconclusive_evidence_count = Some(input);
             self
         }
-        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the
-        /// associated control uses Security Hub or Config as a data source
-        /// and you didn't enable those services. This is also the case if a control uses a data source
-        /// that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's
-        /// classified as <i>inconclusive</i> in <code>InsightsByAssessment</code>
-        /// data.</p>
+        /// <p>The amount of evidence without a compliance check ruling. Evidence is inconclusive if the associated control uses Security Hub or Config as a data source and you didn't enable those services. This is also the case if a control uses a data source that doesn’t support compliance checks (for example, manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classified as <i>inconclusive</i> in <code>InsightsByAssessment</code> data.</p>
         /// </note>
         pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inconclusive_evidence_count = input;
             self
         }
-        /// <p>The number of assessment controls that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
             self.assessment_controls_count_by_noncompliant_evidence = Some(input);
             self
         }
-        /// <p>The number of assessment controls that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn set_assessment_controls_count_by_noncompliant_evidence(
             mut self,
             input: std::option::Option<i32>,
@@ -7102,31 +6834,13 @@ impl InsightsByAssessment {
     }
 }
 
-/// <p>A summary of the latest analytics data for all your active assessments. </p>   
-/// <p>This summary is a snapshot of the data that your active assessments collected on the
-/// <code>lastUpdated</code> date. It’s important to understand that the following totals
-/// are daily counts based on this date — they aren’t a total sum to date. </p>
-/// <p>The <code>Insights</code> data is eventually consistent. This means that, when you read
-/// data from <code>Insights</code>, the response might not instantly reflect the results of a
-/// recently completed write or update operation. If you repeat your read request after a few
-/// hours, the response should return the latest data.</p>
-/// <note>
-/// <p>If you delete an assessment or change its status to inactive,
-/// <code>InsightsByAssessment</code> includes data for that assessment as
-/// follows.</p>
+/// <p>A summary of the latest analytics data for all your active assessments. </p>
+/// <p>This summary is a snapshot of the data that your active assessments collected on the <code>lastUpdated</code> date. It’s important to understand that the following totals are daily counts based on this date — they aren’t a total sum to date. </p>
+/// <p>The <code>Insights</code> data is eventually consistent. This means that, when you read data from <code>Insights</code>, the response might not instantly reflect the results of a recently completed write or update operation. If you repeat your read request after a few hours, the response should return the latest data.</p> <note>
+/// <p>If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code> includes data for that assessment as follows.</p>
 /// <ul>
-/// <li>      
-/// <p>
-/// <b>Inactive assessments</b> - If Audit Manager collected
-/// evidence for your assessment before you changed it inactive, that evidence is
-/// included in the <code>InsightsByAssessment</code> counts for that day.</p>
-/// </li>
-/// <li>      
-/// <p>
-/// <b>Deleted assessments</b> - If Audit Manager collected
-/// evidence for your assessment before you deleted it, that evidence isn't included
-/// in the <code>InsightsByAssessment</code> counts for that day.</p>
-/// </li>
+/// <li> <p> <b>Inactive assessments</b> - If Audit Manager collected evidence for your assessment before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code> counts for that day.</p> </li>
+/// <li> <p> <b>Deleted assessments</b> - If Audit Manager collected evidence for your assessment before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code> counts for that day.</p> </li>
 /// </ul>
 /// </note>
 #[non_exhaustive]
@@ -7134,26 +6848,15 @@ impl InsightsByAssessment {
 pub struct Insights {
     /// <p>The number of active assessments in Audit Manager. </p>
     pub active_assessments_count: std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
-    /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-    /// Security Hub with a <i>Fail</i> ruling, or collected from
-    /// Config with a <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub noncompliant_evidence_count: std::option::Option<i32>,
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
-    /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub compliant_evidence_count: std::option::Option<i32>,
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
-    /// associated control uses Security Hub or Config as a data source
-    /// but you didn't enable those services. This is also the case when a control uses a data
-    /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
-    /// CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
-    /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub inconclusive_evidence_count: std::option::Option<i32>,
-    /// <p>The number of assessment controls that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub assessment_controls_count_by_noncompliant_evidence: std::option::Option<i32>,
     /// <p>The total number of controls across all active assessments. </p>
     pub total_assessment_controls_count: std::option::Option<i32>,
@@ -7165,32 +6868,21 @@ impl Insights {
     pub fn active_assessments_count(&self) -> std::option::Option<i32> {
         self.active_assessments_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
-    /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-    /// Security Hub with a <i>Fail</i> ruling, or collected from
-    /// Config with a <i>Non-compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub fn noncompliant_evidence_count(&self) -> std::option::Option<i32> {
         self.noncompliant_evidence_count
     }
-    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
-    /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub fn compliant_evidence_count(&self) -> std::option::Option<i32> {
         self.compliant_evidence_count
     }
-    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
-    /// associated control uses Security Hub or Config as a data source
-    /// but you didn't enable those services. This is also the case when a control uses a data
-    /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
-    /// CloudTrail). </p>
-    /// <note>
-    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
-    /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
     /// </note>
     pub fn inconclusive_evidence_count(&self) -> std::option::Option<i32> {
         self.inconclusive_evidence_count
     }
-    /// <p>The number of assessment controls that collected non-compliant evidence on the
-    /// <code>lastUpdated</code> date. </p>
+    /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn assessment_controls_count_by_noncompliant_evidence(&self) -> std::option::Option<i32> {
         self.assessment_controls_count_by_noncompliant_evidence
     }
@@ -7253,68 +6945,46 @@ pub mod insights {
             self.active_assessments_count = input;
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
-        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-        /// Security Hub with a <i>Fail</i> ruling, or collected from
-        /// Config with a <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
             self.noncompliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant
-        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-        /// Security Hub with a <i>Fail</i> ruling, or collected from
-        /// Config with a <i>Non-compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
         pub fn set_noncompliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.noncompliant_evidence_count = input;
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
-        /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn compliant_evidence_count(mut self, input: i32) -> Self {
             self.compliant_evidence_count = Some(input);
             self
         }
-        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on
-        /// the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+        /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
         pub fn set_compliant_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.compliant_evidence_count = input;
             self
         }
-        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
-        /// associated control uses Security Hub or Config as a data source
-        /// but you didn't enable those services. This is also the case when a control uses a data
-        /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
-        /// CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
-        /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
         /// </note>
         pub fn inconclusive_evidence_count(mut self, input: i32) -> Self {
             self.inconclusive_evidence_count = Some(input);
             self
         }
-        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the
-        /// associated control uses Security Hub or Config as a data source
-        /// but you didn't enable those services. This is also the case when a control uses a data
-        /// source that doesn’t support compliance checks (for example: manual evidence, API calls, or
-        /// CloudTrail). </p>
-        /// <note>
-        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed
-        /// as <i>inconclusive</i> in <code>Insights</code> data.</p>
+        /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
+        /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
         /// </note>
         pub fn set_inconclusive_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inconclusive_evidence_count = input;
             self
         }
-        /// <p>The number of assessment controls that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
             self.assessment_controls_count_by_noncompliant_evidence = Some(input);
             self
         }
-        /// <p>The number of assessment controls that collected non-compliant evidence on the
-        /// <code>lastUpdated</code> date. </p>
+        /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
         pub fn set_assessment_controls_count_by_noncompliant_evidence(
             mut self,
             input: std::option::Option<i32>,
@@ -7398,23 +7068,17 @@ pub struct AssessmentEvidenceFolder {
     pub control_name: std::option::Option<std::string::String>,
     /// <p> The amount of evidence that's included in the evidence folder. </p>
     pub evidence_resources_included_count: i32,
-    /// <p> The number of evidence that falls under the configuration data category. This
-    /// evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+    /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
     pub evidence_by_type_configuration_data_count: i32,
-    /// <p> The number of evidence that falls under the manual category. This evidence is imported
-    /// manually. </p>
+    /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
     pub evidence_by_type_manual_count: i32,
-    /// <p> The number of evidence that falls under the compliance check category. This evidence is
-    /// collected from Config or Security Hub. </p>
+    /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
     pub evidence_by_type_compliance_check_count: i32,
-    /// <p> The total number of issues that were reported directly from Security Hub,
-    /// Config, or both. </p>
+    /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
     pub evidence_by_type_compliance_check_issues_count: i32,
-    /// <p> The number of evidence that falls under the user activity category. This evidence is
-    /// collected from CloudTrail logs. </p>
+    /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
     pub evidence_by_type_user_activity_count: i32,
-    /// <p> The total number of Amazon Web Services resources that were assessed to generate the
-    /// evidence. </p>
+    /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
     pub evidence_aws_service_source_count: i32,
 }
 impl AssessmentEvidenceFolder {
@@ -7466,33 +7130,27 @@ impl AssessmentEvidenceFolder {
     pub fn evidence_resources_included_count(&self) -> i32 {
         self.evidence_resources_included_count
     }
-    /// <p> The number of evidence that falls under the configuration data category. This
-    /// evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+    /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
     pub fn evidence_by_type_configuration_data_count(&self) -> i32 {
         self.evidence_by_type_configuration_data_count
     }
-    /// <p> The number of evidence that falls under the manual category. This evidence is imported
-    /// manually. </p>
+    /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
     pub fn evidence_by_type_manual_count(&self) -> i32 {
         self.evidence_by_type_manual_count
     }
-    /// <p> The number of evidence that falls under the compliance check category. This evidence is
-    /// collected from Config or Security Hub. </p>
+    /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
     pub fn evidence_by_type_compliance_check_count(&self) -> i32 {
         self.evidence_by_type_compliance_check_count
     }
-    /// <p> The total number of issues that were reported directly from Security Hub,
-    /// Config, or both. </p>
+    /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
     pub fn evidence_by_type_compliance_check_issues_count(&self) -> i32 {
         self.evidence_by_type_compliance_check_issues_count
     }
-    /// <p> The number of evidence that falls under the user activity category. This evidence is
-    /// collected from CloudTrail logs. </p>
+    /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
     pub fn evidence_by_type_user_activity_count(&self) -> i32 {
         self.evidence_by_type_user_activity_count
     }
-    /// <p> The total number of Amazon Web Services resources that were assessed to generate the
-    /// evidence. </p>
+    /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
     pub fn evidence_aws_service_source_count(&self) -> i32 {
         self.evidence_aws_service_source_count
     }
@@ -7703,14 +7361,12 @@ pub mod assessment_evidence_folder {
             self.evidence_resources_included_count = input;
             self
         }
-        /// <p> The number of evidence that falls under the configuration data category. This
-        /// evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+        /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
         pub fn evidence_by_type_configuration_data_count(mut self, input: i32) -> Self {
             self.evidence_by_type_configuration_data_count = Some(input);
             self
         }
-        /// <p> The number of evidence that falls under the configuration data category. This
-        /// evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
+        /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM. </p>
         pub fn set_evidence_by_type_configuration_data_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7718,14 +7374,12 @@ pub mod assessment_evidence_folder {
             self.evidence_by_type_configuration_data_count = input;
             self
         }
-        /// <p> The number of evidence that falls under the manual category. This evidence is imported
-        /// manually. </p>
+        /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
         pub fn evidence_by_type_manual_count(mut self, input: i32) -> Self {
             self.evidence_by_type_manual_count = Some(input);
             self
         }
-        /// <p> The number of evidence that falls under the manual category. This evidence is imported
-        /// manually. </p>
+        /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
         pub fn set_evidence_by_type_manual_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7733,14 +7387,12 @@ pub mod assessment_evidence_folder {
             self.evidence_by_type_manual_count = input;
             self
         }
-        /// <p> The number of evidence that falls under the compliance check category. This evidence is
-        /// collected from Config or Security Hub. </p>
+        /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
         pub fn evidence_by_type_compliance_check_count(mut self, input: i32) -> Self {
             self.evidence_by_type_compliance_check_count = Some(input);
             self
         }
-        /// <p> The number of evidence that falls under the compliance check category. This evidence is
-        /// collected from Config or Security Hub. </p>
+        /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
         pub fn set_evidence_by_type_compliance_check_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7748,14 +7400,12 @@ pub mod assessment_evidence_folder {
             self.evidence_by_type_compliance_check_count = input;
             self
         }
-        /// <p> The total number of issues that were reported directly from Security Hub,
-        /// Config, or both. </p>
+        /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
         pub fn evidence_by_type_compliance_check_issues_count(mut self, input: i32) -> Self {
             self.evidence_by_type_compliance_check_issues_count = Some(input);
             self
         }
-        /// <p> The total number of issues that were reported directly from Security Hub,
-        /// Config, or both. </p>
+        /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
         pub fn set_evidence_by_type_compliance_check_issues_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7763,14 +7413,12 @@ pub mod assessment_evidence_folder {
             self.evidence_by_type_compliance_check_issues_count = input;
             self
         }
-        /// <p> The number of evidence that falls under the user activity category. This evidence is
-        /// collected from CloudTrail logs. </p>
+        /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
         pub fn evidence_by_type_user_activity_count(mut self, input: i32) -> Self {
             self.evidence_by_type_user_activity_count = Some(input);
             self
         }
-        /// <p> The number of evidence that falls under the user activity category. This evidence is
-        /// collected from CloudTrail logs. </p>
+        /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
         pub fn set_evidence_by_type_user_activity_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7778,14 +7426,12 @@ pub mod assessment_evidence_folder {
             self.evidence_by_type_user_activity_count = input;
             self
         }
-        /// <p> The total number of Amazon Web Services resources that were assessed to generate the
-        /// evidence. </p>
+        /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
         pub fn evidence_aws_service_source_count(mut self, input: i32) -> Self {
             self.evidence_aws_service_source_count = Some(input);
             self
         }
-        /// <p> The total number of Amazon Web Services resources that were assessed to generate the
-        /// evidence. </p>
+        /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
         pub fn set_evidence_aws_service_source_count(
             mut self,
             input: std::option::Option<i32>,
@@ -7841,9 +7487,7 @@ impl AssessmentEvidenceFolder {
     }
 }
 
-/// <p> A record that contains the information needed to demonstrate compliance with the
-/// requirements specified by a control. Examples of evidence include change activity triggered
-/// by a user, or a system configuration snapshot. </p>
+/// <p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity triggered by a user, or a system configuration snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Evidence {
@@ -7861,21 +7505,14 @@ pub struct Evidence {
     pub evidence_by_type: std::option::Option<std::string::String>,
     /// <p> The list of resources that are assessed to generate the evidence. </p>
     pub resources_included: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p> The names and values that are used by the evidence event. This includes an attribute
-    /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
-    /// or <code>false</code>). </p>
+    /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> The unique identifier for the IAM user or role that's associated with
-    /// the evidence. </p>
+    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
     pub iam_id: std::option::Option<std::string::String>,
-    /// <p> The evaluation status for evidence that falls under the compliance check category. For
-    /// evidence collected from Security Hub, a <i>Pass</i> or
-    /// <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i>
-    /// result is shown. </p>
+    /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
     pub compliance_check: std::option::Option<std::string::String>,
-    /// <p> The Amazon Web Services account that the evidence is collected from, and its
-    /// organization path. </p>
+    /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
     pub aws_organization: std::option::Option<std::string::String>,
     /// <p> The identifier for the Amazon Web Services account. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -7915,29 +7552,22 @@ impl Evidence {
     pub fn resources_included(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources_included.as_deref()
     }
-    /// <p> The names and values that are used by the evidence event. This includes an attribute
-    /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
-    /// or <code>false</code>). </p>
+    /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
     }
-    /// <p> The unique identifier for the IAM user or role that's associated with
-    /// the evidence. </p>
+    /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
     pub fn iam_id(&self) -> std::option::Option<&str> {
         self.iam_id.as_deref()
     }
-    /// <p> The evaluation status for evidence that falls under the compliance check category. For
-    /// evidence collected from Security Hub, a <i>Pass</i> or
-    /// <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i>
-    /// result is shown. </p>
+    /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
     pub fn compliance_check(&self) -> std::option::Option<&str> {
         self.compliance_check.as_deref()
     }
-    /// <p> The Amazon Web Services account that the evidence is collected from, and its
-    /// organization path. </p>
+    /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
     pub fn aws_organization(&self) -> std::option::Option<&str> {
         self.aws_organization.as_deref()
     }
@@ -8078,9 +7708,9 @@ pub mod evidence {
         /// To override the contents of this collection use [`set_resources_included`](Self::set_resources_included).
         ///
         /// <p> The list of resources that are assessed to generate the evidence. </p>
-        pub fn resources_included(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources_included(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources_included.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources_included = Some(v);
             self
         }
@@ -8096,9 +7726,7 @@ pub mod evidence {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p> The names and values that are used by the evidence event. This includes an attribute
-        /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
-        /// or <code>false</code>). </p>
+        /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -8109,9 +7737,7 @@ pub mod evidence {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p> The names and values that are used by the evidence event. This includes an attribute
-        /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
-        /// or <code>false</code>). </p>
+        /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -8121,30 +7747,22 @@ pub mod evidence {
             self.attributes = input;
             self
         }
-        /// <p> The unique identifier for the IAM user or role that's associated with
-        /// the evidence. </p>
+        /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
         pub fn iam_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_id = Some(input.into());
             self
         }
-        /// <p> The unique identifier for the IAM user or role that's associated with
-        /// the evidence. </p>
+        /// <p> The unique identifier for the IAM user or role that's associated with the evidence. </p>
         pub fn set_iam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_id = input;
             self
         }
-        /// <p> The evaluation status for evidence that falls under the compliance check category. For
-        /// evidence collected from Security Hub, a <i>Pass</i> or
-        /// <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i>
-        /// result is shown. </p>
+        /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
         pub fn compliance_check(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_check = Some(input.into());
             self
         }
-        /// <p> The evaluation status for evidence that falls under the compliance check category. For
-        /// evidence collected from Security Hub, a <i>Pass</i> or
-        /// <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i>
-        /// result is shown. </p>
+        /// <p> The evaluation status for evidence that falls under the compliance check category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
         pub fn set_compliance_check(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8152,14 +7770,12 @@ pub mod evidence {
             self.compliance_check = input;
             self
         }
-        /// <p> The Amazon Web Services account that the evidence is collected from, and its
-        /// organization path. </p>
+        /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
         pub fn aws_organization(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_organization = Some(input.into());
             self
         }
-        /// <p> The Amazon Web Services account that the evidence is collected from, and its
-        /// organization path. </p>
+        /// <p> The Amazon Web Services account that the evidence is collected from, and its organization path. </p>
         pub fn set_aws_organization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8504,15 +8120,13 @@ impl DelegationMetadata {
     }
 }
 
-/// <p> The record of a change within Audit Manager. For example, this could be the
-/// status change of an assessment or the delegation of a control set. </p>
+/// <p> The record of a change within Audit Manager. For example, this could be the status change of an assessment or the delegation of a control set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeLog {
     /// <p> The object that was changed, such as an assessment, control, or control set. </p>
     pub object_type: std::option::Option<crate::model::ObjectTypeEnum>,
-    /// <p> The name of the object that changed. This could be the name of an assessment, control,
-    /// or control set.</p>
+    /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
     pub object_name: std::option::Option<std::string::String>,
     /// <p> The action that was performed. </p>
     pub action: std::option::Option<crate::model::ActionEnum>,
@@ -8526,8 +8140,7 @@ impl ChangeLog {
     pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectTypeEnum> {
         self.object_type.as_ref()
     }
-    /// <p> The name of the object that changed. This could be the name of an assessment, control,
-    /// or control set.</p>
+    /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
     pub fn object_name(&self) -> std::option::Option<&str> {
         self.object_name.as_deref()
     }
@@ -8581,14 +8194,12 @@ pub mod change_log {
             self.object_type = input;
             self
         }
-        /// <p> The name of the object that changed. This could be the name of an assessment, control,
-        /// or control set.</p>
+        /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
         pub fn object_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_name = Some(input.into());
             self
         }
-        /// <p> The name of the object that changed. This could be the name of an assessment, control,
-        /// or control set.</p>
+        /// <p> The name of the object that changed. This could be the name of an assessment, control, or control set.</p>
         pub fn set_object_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object_name = input;
             self
@@ -8806,8 +8417,7 @@ impl AsRef<str> for ObjectTypeEnum {
     }
 }
 
-/// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
-/// resource on the internet. </p>
+/// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Url {
@@ -8883,23 +8493,19 @@ impl Url {
     }
 }
 
-/// <p> The control mapping fields that represent the source for evidence collection, along
-/// with related parameters and metadata. This doesn't contain <code>mappingID</code>. </p>
+/// <p> The control mapping fields that represent the source for evidence collection, along with related parameters and metadata. This doesn't contain <code>mappingID</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlMappingSource {
     /// <p> The name of the control mapping data source. </p>
     pub source_name: std::option::Option<std::string::String>,
-    /// <p> The description of the data source that determines where Audit Manager collects
-    /// evidence from for the control. </p>
+    /// <p> The description of the data source that determines where Audit Manager collects evidence from for the control. </p>
     pub source_description: std::option::Option<std::string::String>,
-    /// <p> The setup option for the data source, which reflects if the evidence collection is
-    /// automated or manual. </p>
+    /// <p> The setup option for the data source, which reflects if the evidence collection is automated or manual. </p>
     pub source_set_up_option: std::option::Option<crate::model::SourceSetUpOption>,
     /// <p> Specifies one of the five types of data sources for evidence collection. </p>
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p> The keyword to search for in CloudTrail logs, Config rules,
-    /// Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
     pub source_keyword: std::option::Option<crate::model::SourceKeyword>,
     /// <p> The frequency of evidence collection for the control mapping source. </p>
     pub source_frequency: std::option::Option<crate::model::SourceFrequency>,
@@ -8911,13 +8517,11 @@ impl CreateControlMappingSource {
     pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
     }
-    /// <p> The description of the data source that determines where Audit Manager collects
-    /// evidence from for the control. </p>
+    /// <p> The description of the data source that determines where Audit Manager collects evidence from for the control. </p>
     pub fn source_description(&self) -> std::option::Option<&str> {
         self.source_description.as_deref()
     }
-    /// <p> The setup option for the data source, which reflects if the evidence collection is
-    /// automated or manual. </p>
+    /// <p> The setup option for the data source, which reflects if the evidence collection is automated or manual. </p>
     pub fn source_set_up_option(&self) -> std::option::Option<&crate::model::SourceSetUpOption> {
         self.source_set_up_option.as_ref()
     }
@@ -8925,8 +8529,7 @@ impl CreateControlMappingSource {
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p> The keyword to search for in CloudTrail logs, Config rules,
-    /// Security Hub checks, and Amazon Web Services API names. </p>
+    /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
     pub fn source_keyword(&self) -> std::option::Option<&crate::model::SourceKeyword> {
         self.source_keyword.as_ref()
     }
@@ -8977,14 +8580,12 @@ pub mod create_control_mapping_source {
             self.source_name = input;
             self
         }
-        /// <p> The description of the data source that determines where Audit Manager collects
-        /// evidence from for the control. </p>
+        /// <p> The description of the data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn source_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_description = Some(input.into());
             self
         }
-        /// <p> The description of the data source that determines where Audit Manager collects
-        /// evidence from for the control. </p>
+        /// <p> The description of the data source that determines where Audit Manager collects evidence from for the control. </p>
         pub fn set_source_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8992,14 +8593,12 @@ pub mod create_control_mapping_source {
             self.source_description = input;
             self
         }
-        /// <p> The setup option for the data source, which reflects if the evidence collection is
-        /// automated or manual. </p>
+        /// <p> The setup option for the data source, which reflects if the evidence collection is automated or manual. </p>
         pub fn source_set_up_option(mut self, input: crate::model::SourceSetUpOption) -> Self {
             self.source_set_up_option = Some(input);
             self
         }
-        /// <p> The setup option for the data source, which reflects if the evidence collection is
-        /// automated or manual. </p>
+        /// <p> The setup option for the data source, which reflects if the evidence collection is automated or manual. </p>
         pub fn set_source_set_up_option(
             mut self,
             input: std::option::Option<crate::model::SourceSetUpOption>,
@@ -9020,14 +8619,12 @@ pub mod create_control_mapping_source {
             self.source_type = input;
             self
         }
-        /// <p> The keyword to search for in CloudTrail logs, Config rules,
-        /// Security Hub checks, and Amazon Web Services API names. </p>
+        /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
         pub fn source_keyword(mut self, input: crate::model::SourceKeyword) -> Self {
             self.source_keyword = Some(input);
             self
         }
-        /// <p> The keyword to search for in CloudTrail logs, Config rules,
-        /// Security Hub checks, and Amazon Web Services API names. </p>
+        /// <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. </p>
         pub fn set_source_keyword(
             mut self,
             input: std::option::Option<crate::model::SourceKeyword>,
@@ -9082,10 +8679,7 @@ impl CreateControlMappingSource {
     }
 }
 
-/// <p> A finalized document that's generated from an Audit Manager assessment. These
-/// reports summarize the relevant evidence that was collected for your audit, and link to the
-/// relevant evidence folders. These evidence folders are named and organized according to the
-/// controls that are specified in your assessment. </p>
+/// <p> A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentReport {
@@ -9312,8 +8906,7 @@ impl AssessmentReport {
 pub struct CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p> The list of controls within the control set. This doesn't contain the control set ID.
-    /// </p>
+    /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
     pub controls:
         std::option::Option<std::vec::Vec<crate::model::CreateAssessmentFrameworkControl>>,
 }
@@ -9322,8 +8915,7 @@ impl CreateAssessmentFrameworkControlSet {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The list of controls within the control set. This doesn't contain the control set ID.
-    /// </p>
+    /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
     pub fn controls(
         &self,
     ) -> std::option::Option<&[crate::model::CreateAssessmentFrameworkControl]> {
@@ -9363,19 +8955,14 @@ pub mod create_assessment_framework_control_set {
         ///
         /// To override the contents of this collection use [`set_controls`](Self::set_controls).
         ///
-        /// <p> The list of controls within the control set. This doesn't contain the control set ID.
-        /// </p>
-        pub fn controls(
-            mut self,
-            input: impl Into<crate::model::CreateAssessmentFrameworkControl>,
-        ) -> Self {
+        /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
+        pub fn controls(mut self, input: crate::model::CreateAssessmentFrameworkControl) -> Self {
             let mut v = self.controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.controls = Some(v);
             self
         }
-        /// <p> The list of controls within the control set. This doesn't contain the control set ID.
-        /// </p>
+        /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
         pub fn set_controls(
             mut self,
             input: std::option::Option<
@@ -9401,18 +8988,15 @@ impl CreateAssessmentFrameworkControlSet {
     }
 }
 
-/// <p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This
-/// is used to provide more meaningful errors than a simple string message. </p>
+/// <p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
     pub manual_evidence: std::option::Option<crate::model::ManualEvidence>,
-    /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchImportEvidenceToAssessmentControlError {
@@ -9420,13 +9004,11 @@ impl BatchImportEvidenceToAssessmentControlError {
     pub fn manual_evidence(&self) -> std::option::Option<&crate::model::ManualEvidence> {
         self.manual_evidence.as_ref()
     }
-    /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -9464,26 +9046,22 @@ pub mod batch_import_evidence_to_assessment_control_error {
             self.manual_evidence = input;
             self
         }
-        /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9565,8 +9143,7 @@ impl ManualEvidence {
     }
 }
 
-/// <p> An error entity for the <code>AssessmentReportEvidence</code> API. This is used to
-/// provide more meaningful errors than a simple string message. </p>
+/// <p> An error entity for the <code>AssessmentReportEvidence</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentReportEvidenceError {
@@ -9661,18 +9238,15 @@ impl AssessmentReportEvidenceError {
     }
 }
 
-/// <p> An error entity for the <code>BatchDeleteDelegationByAssessment</code> API. This is
-/// used to provide more meaningful errors than a simple string message. </p>
+/// <p> An error entity for the <code>BatchDeleteDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDelegationByAssessmentError {
     /// <p> The identifier for the delegation. </p>
     pub delegation_id: std::option::Option<std::string::String>,
-    /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchDeleteDelegationByAssessmentError {
@@ -9680,13 +9254,11 @@ impl BatchDeleteDelegationByAssessmentError {
     pub fn delegation_id(&self) -> std::option::Option<&str> {
         self.delegation_id.as_deref()
     }
-    /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -9724,26 +9296,22 @@ pub mod batch_delete_delegation_by_assessment_error {
             self.delegation_id = input;
             self
         }
-        /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9768,18 +9336,15 @@ impl BatchDeleteDelegationByAssessmentError {
     }
 }
 
-/// <p> An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is
-/// used to provide more meaningful errors than a simple string message. </p>
+/// <p> An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateDelegationByAssessmentError {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
     pub create_delegation_request: std::option::Option<crate::model::CreateDelegationRequest>,
-    /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentError {
@@ -9789,13 +9354,11 @@ impl BatchCreateDelegationByAssessmentError {
     ) -> std::option::Option<&crate::model::CreateDelegationRequest> {
         self.create_delegation_request.as_ref()
     }
-    /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -9837,26 +9400,22 @@ pub mod batch_create_delegation_by_assessment_error {
             self.create_delegation_request = input;
             self
         }
-        /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9881,8 +9440,7 @@ impl BatchCreateDelegationByAssessmentError {
     }
 }
 
-/// <p> A collection of attributes that's used to create a delegation for an assessment in
-/// Audit Manager. </p>
+/// <p> A collection of attributes that's used to create a delegation for an assessment in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDelegationRequest {
@@ -9892,14 +9450,10 @@ pub struct CreateDelegationRequest {
     pub control_set_id: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub role_type: std::option::Option<crate::model::RoleType>,
 }
@@ -9916,14 +9470,10 @@ impl CreateDelegationRequest {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p> The type of customer persona. </p>
-    /// <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-    /// <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-    /// <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note>
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub fn role_type(&self) -> std::option::Option<&crate::model::RoleType> {
         self.role_type.as_ref()
@@ -9984,27 +9534,19 @@ pub mod create_delegation_request {
             self.role_arn = input;
             self
         }
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn role_type(mut self, input: crate::model::RoleType) -> Self {
             self.role_type = Some(input);
             self
         }
-        /// <p> The type of customer persona. </p>
-        /// <note>
-        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>. </p>
-        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be
-        /// <code>PROCESS_OWNER</code>.</p>
-        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be
-        /// <code>RESOURCE_OWNER</code>.</p>
+        /// <p> The type of customer persona. </p> <note>
+        /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
+        /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
+        /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
         /// </note>
         pub fn set_role_type(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role_type = input;

@@ -144,6 +144,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainTransferabili
     }
 }
 
+/// Operation shape for `DeleteDomain`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_domain`](crate::client::Client::delete_domain).
+///
+/// See [`crate::client::fluent_builders::DeleteDomain`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDomain {
+    _private: (),
+}
+impl DeleteDomain {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput)
+    pub fn builder() -> crate::input::delete_domain_input::Builder {
+        crate::input::delete_domain_input::Builder::default()
+    }
+    /// Creates a new `DeleteDomain` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
+    type Output =
+        std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_domain_error(response)
+        } else {
+            crate::operation_deser::parse_delete_domain_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteTagsForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -510,6 +542,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
             crate::operation_deser::parse_list_operations_error(response)
         } else {
             crate::operation_deser::parse_list_operations_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListPrices`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_prices`](crate::client::Client::list_prices).
+///
+/// See [`crate::client::fluent_builders::ListPrices`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListPrices {
+    _private: (),
+}
+impl ListPrices {
+    /// Creates a new builder-style object to manufacture [`ListPricesInput`](crate::input::ListPricesInput)
+    pub fn builder() -> crate::input::list_prices_input::Builder {
+        crate::input::list_prices_input::Builder::default()
+    }
+    /// Creates a new `ListPrices` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListPrices {
+    type Output =
+        std::result::Result<crate::output::ListPricesOutput, crate::error::ListPricesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_prices_error(response)
+        } else {
+            crate::operation_deser::parse_list_prices_response(response)
         }
     }
 }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Kinesis Video Streams
@@ -145,6 +145,7 @@ where
     ///
     /// See [`ListSignalingChannels`](crate::client::fluent_builders::ListSignalingChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSignalingChannels::into_paginator).
     pub fn list_signaling_channels(&self) -> fluent_builders::ListSignalingChannels<C, M, R> {
         fluent_builders::ListSignalingChannels::new(self.handle.clone())
     }
@@ -152,6 +153,7 @@ where
     ///
     /// See [`ListStreams`](crate::client::fluent_builders::ListStreams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
     pub fn list_streams(&self) -> fluent_builders::ListStreams<C, M, R> {
         fluent_builders::ListStreams::new(self.handle.clone())
     }
@@ -230,9 +232,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSignalingChannel`.
     ///
     /// <p>Creates a signaling channel. </p>
-    /// <p>
-    /// <code>CreateSignalingChannel</code> is an asynchronous operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>CreateSignalingChannel</code> is an asynchronous operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -277,10 +278,10 @@ pub mod fluent_builders {
                 crate::input::CreateSignalingChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -288,26 +289,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-        /// account and AWS Region.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
-        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
-        /// account and AWS Region.</p>
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>A type of the signaling channel that you are creating. Currently,
-        /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-        pub fn channel_type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.channel_type(inp);
+        /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+        pub fn channel_type(mut self, input: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.channel_type(input);
             self
         }
-        /// <p>A type of the signaling channel that you are creating. Currently,
-        /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+        /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -315,17 +312,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_type(input);
             self
         }
-        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-        /// type. </p>
+        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
         pub fn single_master_configuration(
             mut self,
-            inp: crate::model::SingleMasterConfiguration,
+            input: crate::model::SingleMasterConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_configuration(inp);
+            self.inner = self.inner.single_master_configuration(input);
             self
         }
-        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
-        /// type. </p>
+        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -338,8 +333,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
@@ -354,15 +349,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStream`.
     ///
     /// <p>Creates a new Kinesis video stream. </p>
-    ///
-    /// <p>When you create a new stream, Kinesis Video Streams assigns it a version number.
-    /// When you change the stream's metadata, Kinesis Video Streams updates the version. </p>
-    /// <p>
-    /// <code>CreateStream</code> is an asynchronous operation.</p>
+    /// <p>When you create a new stream, Kinesis Video Streams assigns it a version number. When you change the stream's metadata, Kinesis Video Streams updates the version. </p>
+    /// <p> <code>CreateStream</code> is an asynchronous operation.</p>
     /// <p>For information about how the service works, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How it Works</a>. </p>
-    /// <p>You must have permissions for the <code>KinesisVideo:CreateStream</code>
-    /// action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You must have permissions for the <code>KinesisVideo:CreateStream</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,10 +398,10 @@ pub mod fluent_builders {
                 crate::input::CreateStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -418,98 +409,70 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p>In the current implementation, Kinesis Video Streams does not use this
-        /// name.</p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
         /// </note>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p>In the current implementation, Kinesis Video Streams does not use this
-        /// name.</p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
         /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_device_name(input);
             self
         }
         /// <p>A name for the stream that you are creating.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>A name for the stream that you are creating.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The media type of the stream. Consumers of the stream can use this information when
-        /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-        /// for guidelines.</p>
-        ///
+        /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-        /// JSON).</p>
-        pub fn media_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_type(inp);
+        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
+        pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_type(input.into());
             self
         }
-        /// <p>The media type of the stream. Consumers of the stream can use this information when
-        /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-        /// for guidelines.</p>
-        ///
+        /// <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
-        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
-        /// JSON).</p>
+        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_type(input);
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-        /// Streams to use to encrypt stream data.</p>
-        /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-        /// (<code>aws/kinesisvideo</code>) is used.</p>
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
-        /// Streams to use to encrypt stream data.</p>
-        /// <p>If no key ID is specified, the default, Kinesis Video-managed key
-        /// (<code>aws/kinesisvideo</code>) is used.</p>
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
+        /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-        /// Streams retains the data in a data store that is associated with the stream.</p>
+        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-        /// the fragments that remain in the service host buffer, which has a retention time limit
-        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-        /// buffer when either limit is reached.</p>
-        pub fn data_retention_in_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_retention_in_hours(inp);
+        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
+        pub fn data_retention_in_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.data_retention_in_hours(input);
             self
         }
-        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
-        /// Streams retains the data in a data store that is associated with the stream.</p>
+        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
-        /// the fragments that remain in the service host buffer, which has a retention time limit
-        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
-        /// buffer when either limit is reached.</p>
+        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_data_retention_in_hours(input);
             self
@@ -518,18 +481,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -542,10 +503,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSignalingChannel`.
     ///
-    /// <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an
-    /// asynchronous operation. If you don't specify the channel's current version, the most
-    /// recent version is deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an asynchronous operation. If you don't specify the channel's current version, the most recent version is deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -590,10 +549,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSignalingChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -601,28 +560,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// delete.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The current version of the signaling channel that you want to delete. You can obtain
-        /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-        /// <code>ListSignalingChannels</code> API operations.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
-        /// <p>The current version of the signaling channel that you want to delete. You can obtain
-        /// the current version by invoking the <code>DescribeSignalingChannel</code> or
-        /// <code>ListSignalingChannels</code> API operations.</p>
+        /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -634,16 +587,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStream`.
     ///
     /// <p>Deletes a Kinesis video stream and the data contained in the stream. </p>
-    /// <p>This method marks the stream for deletion, and makes the data in the stream
-    /// inaccessible immediately.</p>
+    /// <p>This method marks the stream for deletion, and makes the data in the stream inaccessible immediately.</p>
     /// <p> </p>
-    /// <p> To ensure that you have the latest version of the stream before deleting it, you
-    /// can specify the stream version. Kinesis Video Streams assigns a version to each stream.
-    /// When you update a stream, Kinesis Video Streams assigns a new version number. To get the
-    /// latest stream version, use the <code>DescribeStream</code> API. </p>
-    /// <p>This operation requires permission for the <code>KinesisVideo:DeleteStream</code>
-    /// action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> To ensure that you have the latest version of the stream before deleting it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the <code>DescribeStream</code> API. </p>
+    /// <p>This operation requires permission for the <code>KinesisVideo:DeleteStream</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -688,10 +636,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -700,8 +648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
@@ -710,19 +658,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional: The version of the stream that you want to delete. </p>
-        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-        /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-        /// stream.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>Optional: The version of the stream that you want to delete. </p>
-        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
-        /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
-        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
-        /// stream.</p>
+        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -733,10 +677,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSignalingChannel`.
     ///
-    /// <p>Returns the most current information about the signaling channel. You must specify
-    /// either the name or the Amazon Resource Name (ARN) of the channel that you want to
-    /// describe.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the most current information about the signaling channel. You must specify either the name or the Amazon Resource Name (ARN) of the channel that you want to describe.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -781,10 +723,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSignalingChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -793,8 +735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signaling channel that you want to describe.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the signaling channel that you want to describe.</p>
@@ -803,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the signaling channel that you want to describe.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the signaling channel that you want to describe.</p>
@@ -815,9 +757,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStream`.
     ///
-    /// <p>Returns the most current information about the specified stream. You must specify
-    /// either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the most current information about the specified stream. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -862,10 +803,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -874,8 +815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -884,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
@@ -896,19 +837,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDataEndpoint`.
     ///
-    /// <p>Gets an endpoint for a specified stream for either reading or writing. Use this
-    /// endpoint in your application to read from the specified stream (using the
-    /// <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or write
-    /// to it (using the <code>PutMedia</code> operation).
-    /// </p>
-    /// <note>
-    /// <p>The returned endpoint does not have the API name appended. The client needs to
-    /// add the API name to the returned endpoint.</p>
+    /// <p>Gets an endpoint for a specified stream for either reading or writing. Use this endpoint in your application to read from the specified stream (using the <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or write to it (using the <code>PutMedia</code> operation). </p> <note>
+    /// <p>The returned endpoint does not have the API name appended. The client needs to add the API name to the returned endpoint.</p>
     /// </note>
-    ///
-    /// <p>In the request, specify the stream either by <code>StreamName</code> or
-    /// <code>StreamARN</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>In the request, specify the stream either by <code>StreamName</code> or <code>StreamARN</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -953,10 +886,10 @@ pub mod fluent_builders {
                 crate::input::GetDataEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -964,35 +897,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the stream that you want to get the endpoint for. You must specify
-        /// either this parameter or a <code>StreamARN</code> in the request.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
-        /// <p>The name of the stream that you want to get the endpoint for. You must specify
-        /// either this parameter or a <code>StreamARN</code> in the request.</p>
+        /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-        /// You must specify either this parameter or a <code>StreamName</code> in the request.
-        /// </p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
-        /// You must specify either this parameter or a <code>StreamName</code> in the request.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name of the API action for which to get an endpoint.</p>
-        pub fn api_name(mut self, inp: crate::model::ApiName) -> Self {
-            self.inner = self.inner.api_name(inp);
+        pub fn api_name(mut self, input: crate::model::ApiName) -> Self {
+            self.inner = self.inner.api_name(input);
             self
         }
         /// <p>The name of the API action for which to get an endpoint.</p>
@@ -1003,21 +930,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSignalingChannelEndpoint`.
     ///
-    /// <p>Provides an endpoint for the specified signaling channel to send and receive messages.
-    /// This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter,
-    /// which consists of the <code>Protocols</code> and <code>Role</code> properties.</p>
-    /// <p>
-    /// <code>Protocols</code> is used to determine the communication mechanism. For example,
-    /// if you specify <code>WSS</code> as the protocol, this API produces a secure websocket
-    /// endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an HTTPS
-    /// endpoint. </p>
-    /// <p>
-    /// <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role
-    /// results in this API generating an endpoint that a client can use to communicate with any
-    /// of the viewers on the channel. A <code>VIEWER</code> role results in this API generating
-    /// an endpoint that a client can use to communicate only with a
-    /// <code>MASTER</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the <code>Protocols</code> and <code>Role</code> properties.</p>
+    /// <p> <code>Protocols</code> is used to determine the communication mechanism. For example, if you specify <code>WSS</code> as the protocol, this API produces a secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an HTTPS endpoint. </p>
+    /// <p> <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating an endpoint that a client can use to communicate with any of the viewers on the channel. A <code>VIEWER</code> role results in this API generating an endpoint that a client can use to communicate only with a <code>MASTER</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSignalingChannelEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1062,10 +978,10 @@ pub mod fluent_builders {
                 crate::input::GetSignalingChannelEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1073,29 +989,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-        /// endpoint.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
-        /// endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-        /// channel type.</p>
+        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
         pub fn single_master_channel_endpoint_configuration(
             mut self,
-            inp: crate::model::SingleMasterChannelEndpointConfiguration,
+            input: crate::model::SingleMasterChannelEndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_channel_endpoint_configuration(inp);
+            self.inner = self
+                .inner
+                .single_master_channel_endpoint_configuration(input);
             self
         }
-        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-        /// channel type.</p>
+        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
         pub fn set_single_master_channel_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterChannelEndpointConfiguration>,
@@ -1108,10 +1022,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSignalingChannels`.
     ///
-    /// <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a
-    /// signaling channel. To retrieve only those channels that satisfy a specific condition, you can
-    /// specify a <code>ChannelNameCondition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling channel. To retrieve only those channels that satisfy a specific condition, you can specify a <code>ChannelNameCondition</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSignalingChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1156,10 +1068,10 @@ pub mod fluent_builders {
                 crate::input::ListSignalingChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1167,9 +1079,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSignalingChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSignalingChannelsPaginator<C, M, R> {
+            crate::paginator::ListSignalingChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of channels to return in the response. The default is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels to return in the response. The default is 500.</p>
@@ -1177,23 +1095,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of channels, provide this token in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of channels, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-        pub fn channel_name_condition(mut self, inp: crate::model::ChannelNameCondition) -> Self {
-            self.inner = self.inner.channel_name_condition(inp);
+        pub fn channel_name_condition(mut self, input: crate::model::ChannelNameCondition) -> Self {
+            self.inner = self.inner.channel_name_condition(input);
             self
         }
         /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
@@ -1207,10 +1121,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreams`.
     ///
-    /// <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a
-    /// stream. To retrieve only streams that satisfy a specific condition, you can specify a
-    /// <code>StreamNameCondition</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a stream. To retrieve only streams that satisfy a specific condition, you can specify a <code>StreamNameCondition</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1255,10 +1167,10 @@ pub mod fluent_builders {
                 crate::input::ListStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1266,40 +1178,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of streams to return in the response. The default is
-        /// 10,000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamsPaginator<C, M, R> {
+            crate::paginator::ListStreamsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of streams to return in the response. The default is
-        /// 10,000.</p>
+        /// <p>The maximum number of streams to return in the response. The default is 10,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of streams, provide this token in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
-        /// get another batch of streams, provide this token in your next request.</p>
+        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-        /// can specify only the prefix of a stream name as a condition. </p>
-        pub fn stream_name_condition(mut self, inp: crate::model::StreamNameCondition) -> Self {
-            self.inner = self.inner.stream_name_condition(inp);
+        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
+        pub fn stream_name_condition(mut self, input: crate::model::StreamNameCondition) -> Self {
+            self.inner = self.inner.stream_name_condition(input);
             self
         }
-        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
-        /// can specify only the prefix of a stream name as a condition. </p>
+        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
         pub fn set_stream_name_condition(
             mut self,
             input: std::option::Option<crate::model::StreamNameCondition>,
@@ -1311,7 +1221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags associated with the specified signaling channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1356,10 +1266,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1367,28 +1277,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags. </p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-        /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1397,9 +1301,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForStream`.
     ///
     /// <p>Returns a list of tags associated with the specified stream.</p>
-    /// <p>In the request, you must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1444,10 +1347,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1455,35 +1358,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags.</p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-        /// for.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name of the stream that you want to list tags for.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream that you want to list tags for.</p>
@@ -1494,13 +1391,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a
-    /// key-value pair (the value is optional) that you can define and assign to AWS resources.
-    /// If you specify a tag that already exists, the tag value is replaced with the value that
-    /// you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-    /// Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,10 +1437,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1556,14 +1448,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-        /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1572,14 +1462,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-        /// key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
-        /// key-value pair.</p>
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1590,17 +1478,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagStream`.
     ///
-    /// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair
-    /// (the value is optional) that you can define and assign to AWS resources. If you specify
-    /// a tag that already exists, the tag value is replaced with the value that you specify in
-    /// the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-    /// Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
-    /// <p>You must provide either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
-    /// <p>This operation requires permission for the <code>KinesisVideo:TagStream</code>
-    /// action.</p>
+    /// <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
+    /// <p>You must provide either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    /// <p>This operation requires permission for the <code>KinesisVideo:TagStream</code> action.</p>
     /// <p>Kinesis video streams support up to 50 tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1645,10 +1527,10 @@ pub mod fluent_builders {
                 crate::input::TagStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1656,21 +1538,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-        /// to.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name of the stream that you want to add the tag or tags to.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream that you want to add the tag or tags to.</p>
@@ -1682,18 +1562,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).</p>
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1706,10 +1584,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from a signaling channel. In the request, specify only a tag
-    /// key or keys; don't specify the value. If you specify a tag key that does not exist, it's
-    /// ignored.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from a signaling channel. In the request, specify only a tag key or keys; don't specify the value. If you specify a tag key that does not exist, it's ignored.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1754,10 +1630,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1765,14 +1641,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-        /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1782,8 +1656,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -1797,12 +1671,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagStream`.
     ///
-    /// <p>Removes one or more tags from a stream. In the request, specify only a tag key or
-    /// keys; don't specify the value. If you specify a tag key that does not exist, it's
-    /// ignored.</p>
-    /// <p>In the request, you must provide the <code>StreamName</code> or
-    /// <code>StreamARN</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from a stream. In the request, specify only a tag key or keys; don't specify the value. If you specify a tag key that does not exist, it's ignored.</p>
+    /// <p>In the request, you must provide the <code>StreamName</code> or <code>StreamARN</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1847,10 +1718,10 @@ pub mod fluent_builders {
                 crate::input::UntagStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1858,21 +1729,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-        /// from.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name of the stream that you want to remove tags from.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream that you want to remove tags from.</p>
@@ -1885,8 +1754,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -1900,34 +1769,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataRetention`.
     ///
-    /// <p> Increases or decreases the stream's data retention period by the value that you
-    /// specify. To indicate whether you want to increase or decrease the data retention period,
-    /// specify the <code>Operation</code> parameter in the request body. In the request, you
-    /// must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    /// <note>
+    /// <p> Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p> <note>
     /// <p>The retention period that you specify replaces the current value.</p>
     /// </note>
-    ///
-    /// <p>This operation requires permission for the
-    /// <code>KinesisVideo:UpdateDataRetention</code> action.</p>
-    ///
-    /// <p>Changing the data retention period affects the data in the stream as
-    /// follows:</p>
+    /// <p>This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code> action.</p>
+    /// <p>Changing the data retention period affects the data in the stream as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the data retention period is increased, existing data is retained for
-    /// the new retention period. For example, if the data retention period is increased
-    /// from one hour to seven hours, all existing data is retained for seven
-    /// hours.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the data retention period is decreased, existing data is retained for
-    /// the new retention period. For example, if the data retention period is decreased
-    /// from seven hours to one hour, all existing data is retained for one hour, and
-    /// any data older than one hour is deleted immediately.</p>
-    /// </li>
+    /// <li> <p>If the data retention period is increased, existing data is retained for the new retention period. For example, if the data retention period is increased from one hour to seven hours, all existing data is retained for seven hours.</p> </li>
+    /// <li> <p>If the data retention period is decreased, existing data is retained for the new retention period. For example, if the data retention period is decreased from seven hours to one hour, all existing data is retained for one hour, and any data older than one hour is deleted immediately.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataRetention<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1972,10 +1823,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataRetentionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1984,8 +1835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream whose retention period you want to change.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream whose retention period you want to change.</p>
@@ -1993,28 +1844,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-        /// change.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
-        /// change.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_arn(input);
             self
         }
-        /// <p>The version of the stream whose retention period you want to change. To get the
-        /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-        /// API.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
-        /// <p>The version of the stream whose retention period you want to change. To get the
-        /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
-        /// API.</p>
+        /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2023,8 +1868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want to increase or decrease the retention period.</p>
-        pub fn operation(mut self, inp: crate::model::UpdateDataRetentionOperation) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, input: crate::model::UpdateDataRetentionOperation) -> Self {
+            self.inner = self.inner.operation(input);
             self
         }
         /// <p>Indicates whether you want to increase or decrease the retention period.</p>
@@ -2035,14 +1880,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_operation(input);
             self
         }
-        /// <p>The retention period, in hours. The value you specify replaces the current value.
-        /// The maximum value for this parameter is 87600 (ten years).</p>
-        pub fn data_retention_change_in_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_retention_change_in_hours(inp);
+        /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+        pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.data_retention_change_in_hours(input);
             self
         }
-        /// <p>The retention period, in hours. The value you specify replaces the current value.
-        /// The maximum value for this parameter is 87600 (ten years).</p>
+        /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
         pub fn set_data_retention_change_in_hours(
             mut self,
             input: std::option::Option<i32>,
@@ -2053,13 +1896,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSignalingChannel`.
     ///
-    /// <p>Updates the existing signaling channel. This is an asynchronous operation and takes
-    /// time to complete. </p>
-    /// <p>If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced),
-    /// it only applies to new messages sent via this channel after it's been updated. Existing
-    /// messages are still expired as per the previous <code>MessageTtlSeconds</code>
-    /// value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the existing signaling channel. This is an asynchronous operation and takes time to complete. </p>
+    /// <p>If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), it only applies to new messages sent via this channel after it's been updated. Existing messages are still expired as per the previous <code>MessageTtlSeconds</code> value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSignalingChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2104,10 +1943,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSignalingChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2115,21 +1954,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// update.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
         /// <p>The current version of the signaling channel that you want to update.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the signaling channel that you want to update.</p>
@@ -2140,17 +1977,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_version(input);
             self
         }
-        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-        /// the signaling channel that you want to update. </p>
+        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
         pub fn single_master_configuration(
             mut self,
-            inp: crate::model::SingleMasterConfiguration,
+            input: crate::model::SingleMasterConfiguration,
         ) -> Self {
-            self.inner = self.inner.single_master_configuration(inp);
+            self.inner = self.inner.single_master_configuration(input);
             self
         }
-        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
-        /// the signaling channel that you want to update. </p>
+        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -2162,16 +1997,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStream`.
     ///
     /// <p>Updates stream metadata, such as the device name and media type.</p>
-    /// <p>You must provide the stream name or the Amazon Resource Name (ARN) of the
-    /// stream.</p>
-    /// <p>To make sure that you have the latest version of the stream before updating it, you
-    /// can specify the stream version. Kinesis Video Streams assigns a version to each stream.
-    /// When you update a stream, Kinesis Video Streams assigns a new version number. To get the
-    /// latest stream version, use the <code>DescribeStream</code> API. </p>
-    /// <p>
-    /// <code>UpdateStream</code> is an asynchronous operation, and takes time to
-    /// complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You must provide the stream name or the Amazon Resource Name (ARN) of the stream.</p>
+    /// <p>To make sure that you have the latest version of the stream before updating it, you can specify the stream version. Kinesis Video Streams assigns a version to each stream. When you update a stream, Kinesis Video Streams assigns a new version number. To get the latest stream version, use the <code>DescribeStream</code> API. </p>
+    /// <p> <code>UpdateStream</code> is an asynchronous operation, and takes time to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,10 +2045,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2228,22 +2057,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream whose metadata you want to update.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream whose metadata you want to update.</p>
-        /// <p>The stream name is an identifier for the stream, and must be unique for each
-        /// account and region.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The ARN of the stream whose metadata you want to update.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the stream whose metadata you want to update.</p>
@@ -2252,8 +2079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the stream whose metadata you want to update.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of the stream whose metadata you want to update.</p>
@@ -2264,50 +2091,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_version(input);
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-        /// </p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
         /// </note>
-        pub fn device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(inp);
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
-        /// <p>The name of the device that is writing to the stream. </p>
-        /// <note>
-        /// <p> In the current implementation, Kinesis Video Streams does not use this name.
-        /// </p>
+        /// <p>The name of the device that is writing to the stream. </p> <note>
+        /// <p> In the current implementation, Kinesis Video Streams does not use this name. </p>
         /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_device_name(input);
             self
         }
-        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-        /// that the stream contains to the consumers of the stream. For more information about
-        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-        /// Requirements</a>.</p>
-        /// <p>To play video on the console, you must specify the correct video type. For example,
-        /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-        /// <code>MediaType</code>.</p>
-        pub fn media_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_type(inp);
+        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+        /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
+        pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_type(input.into());
             self
         }
-        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
-        /// that the stream contains to the consumers of the stream. For more information about
-        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
-        /// Requirements</a>.</p>
-        /// <p>To play video on the console, you must specify the correct video type. For example,
-        /// if the video in the stream is H.264, specify <code>video/h264</code> as the
-        /// <code>MediaType</code>.</p>
+        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
+        /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_type(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

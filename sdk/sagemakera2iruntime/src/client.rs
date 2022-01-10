@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Augmented AI Runtime
@@ -101,6 +101,7 @@ where
     ///
     /// See [`ListHumanLoops`](crate::client::fluent_builders::ListHumanLoops) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHumanLoops::into_paginator).
     pub fn list_human_loops(&self) -> fluent_builders::ListHumanLoops<C, M, R> {
         fluent_builders::ListHumanLoops::new(self.handle.clone())
     }
@@ -130,9 +131,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHumanLoop`.
     ///
     /// <p>Deletes the specified human loop for a flow definition.</p>
-    /// <p>If the human loop was deleted, this operation will return a
-    /// <code>ResourceNotFoundException</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -177,10 +177,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHumanLoopInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -189,8 +189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to delete.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want to delete.</p>
@@ -204,9 +204,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHumanLoop`.
     ///
-    /// <p>Returns information about the specified human loop. If the human loop was deleted, this
-    /// operation will return a <code>ResourceNotFoundException</code> error. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -251,10 +250,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHumanLoopInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -263,8 +262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want information about.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want information about.</p>
@@ -279,7 +278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHumanLoops`.
     ///
     /// <p>Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not be included.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHumanLoops<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -324,10 +323,10 @@ pub mod fluent_builders {
                 crate::input::ListHumanLoopsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -335,9 +334,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHumanLoopsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHumanLoopsPaginator<C, M, R> {
+            crate::paginator::ListHumanLoopsPaginator::new(self.handle, self.inner)
+        }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
@@ -349,8 +354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
@@ -362,8 +367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(inp);
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
@@ -374,14 +379,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_definition_arn(input);
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
-        /// <code>Descending</code>.</p>
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -390,8 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to display the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to display the next page of results.</p>
@@ -399,16 +402,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of available items is more than
-        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
-        /// the output. You can use this token to display the next page of results. </p>
+        /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -417,7 +416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartHumanLoop`.
     ///
     /// <p>Starts a human loop, provided that at least one activation condition is met.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -462,10 +461,10 @@ pub mod fluent_builders {
                 crate::input::StartHumanLoopInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -474,8 +473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop.</p>
@@ -486,14 +485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_human_loop_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
-        /// loop.</p>
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -502,8 +499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains information about the human loop.</p>
-        pub fn human_loop_input(mut self, inp: crate::model::HumanLoopInput) -> Self {
-            self.inner = self.inner.human_loop_input(inp);
+        pub fn human_loop_input(mut self, input: crate::model::HumanLoopInput) -> Self {
+            self.inner = self.inner.human_loop_input(input);
             self
         }
         /// <p>An object that contains information about the human loop.</p>
@@ -514,14 +511,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_human_loop_input(input);
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
-        pub fn data_attributes(mut self, inp: crate::model::HumanLoopDataAttributes) -> Self {
-            self.inner = self.inner.data_attributes(inp);
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
+        pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
+            self.inner = self.inner.data_attributes(input);
             self
         }
-        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
-        /// is free of personally identifiable information and/or free of adult content.</p>
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
         pub fn set_data_attributes(
             mut self,
             input: std::option::Option<crate::model::HumanLoopDataAttributes>,
@@ -533,7 +528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopHumanLoop`.
     ///
     /// <p>Stops the specified human loop.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopHumanLoop<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,10 +573,10 @@ pub mod fluent_builders {
                 crate::input::StopHumanLoopInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -590,8 +585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to stop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want to stop.</p>
@@ -604,6 +599,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

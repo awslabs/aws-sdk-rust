@@ -904,6 +904,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportComponent {
     }
 }
 
+/// Operation shape for `ImportVmImage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`import_vm_image`](crate::client::Client::import_vm_image).
+///
+/// See [`crate::client::fluent_builders::ImportVmImage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ImportVmImage {
+    _private: (),
+}
+impl ImportVmImage {
+    /// Creates a new builder-style object to manufacture [`ImportVmImageInput`](crate::input::ImportVmImageInput)
+    pub fn builder() -> crate::input::import_vm_image_input::Builder {
+        crate::input::import_vm_image_input::Builder::default()
+    }
+    /// Creates a new `ImportVmImage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ImportVmImage {
+    type Output =
+        std::result::Result<crate::output::ImportVmImageOutput, crate::error::ImportVmImageError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_import_vm_image_error(response)
+        } else {
+            crate::operation_deser::parse_import_vm_image_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListComponentBuildVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

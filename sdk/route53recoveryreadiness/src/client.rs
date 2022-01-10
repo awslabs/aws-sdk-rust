@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Route53 Recovery Readiness
@@ -177,6 +177,7 @@ where
     ///
     /// See [`GetCellReadinessSummary`](crate::client::fluent_builders::GetCellReadinessSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
     pub fn get_cell_readiness_summary(&self) -> fluent_builders::GetCellReadinessSummary<C, M, R> {
         fluent_builders::GetCellReadinessSummary::new(self.handle.clone())
     }
@@ -191,6 +192,7 @@ where
     ///
     /// See [`GetReadinessCheckResourceStatus`](crate::client::fluent_builders::GetReadinessCheckResourceStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
     pub fn get_readiness_check_resource_status(
         &self,
     ) -> fluent_builders::GetReadinessCheckResourceStatus<C, M, R> {
@@ -200,6 +202,7 @@ where
     ///
     /// See [`GetReadinessCheckStatus`](crate::client::fluent_builders::GetReadinessCheckStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
     pub fn get_readiness_check_status(&self) -> fluent_builders::GetReadinessCheckStatus<C, M, R> {
         fluent_builders::GetReadinessCheckStatus::new(self.handle.clone())
     }
@@ -214,6 +217,7 @@ where
     ///
     /// See [`GetRecoveryGroupReadinessSummary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
     pub fn get_recovery_group_readiness_summary(
         &self,
     ) -> fluent_builders::GetRecoveryGroupReadinessSummary<C, M, R> {
@@ -230,6 +234,7 @@ where
     ///
     /// See [`ListCells`](crate::client::fluent_builders::ListCells) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
     pub fn list_cells(&self) -> fluent_builders::ListCells<C, M, R> {
         fluent_builders::ListCells::new(self.handle.clone())
     }
@@ -237,6 +242,7 @@ where
     ///
     /// See [`ListCrossAccountAuthorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
     pub fn list_cross_account_authorizations(
         &self,
     ) -> fluent_builders::ListCrossAccountAuthorizations<C, M, R> {
@@ -246,6 +252,7 @@ where
     ///
     /// See [`ListReadinessChecks`](crate::client::fluent_builders::ListReadinessChecks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
     pub fn list_readiness_checks(&self) -> fluent_builders::ListReadinessChecks<C, M, R> {
         fluent_builders::ListReadinessChecks::new(self.handle.clone())
     }
@@ -253,6 +260,7 @@ where
     ///
     /// See [`ListRecoveryGroups`](crate::client::fluent_builders::ListRecoveryGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
     pub fn list_recovery_groups(&self) -> fluent_builders::ListRecoveryGroups<C, M, R> {
         fluent_builders::ListRecoveryGroups::new(self.handle.clone())
     }
@@ -260,6 +268,7 @@ where
     ///
     /// See [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
     pub fn list_resource_sets(&self) -> fluent_builders::ListResourceSets<C, M, R> {
         fluent_builders::ListResourceSets::new(self.handle.clone())
     }
@@ -267,6 +276,7 @@ where
     ///
     /// See [`ListRules`](crate::client::fluent_builders::ListRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
     pub fn list_rules(&self) -> fluent_builders::ListRules<C, M, R> {
         fluent_builders::ListRules::new(self.handle.clone())
     }
@@ -331,7 +341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCell`.
     ///
     /// Creates a new Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -376,10 +386,10 @@ pub mod fluent_builders {
                 crate::input::CreateCellInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -388,8 +398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the Cell to create
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(input.into());
             self
         }
         /// The name of the Cell to create
@@ -402,8 +412,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
@@ -424,7 +434,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -441,7 +451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCrossAccountAuthorization`.
     ///
     /// Create a new cross account readiness authorization.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -486,10 +496,10 @@ pub mod fluent_builders {
                 crate::input::CreateCrossAccountAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -498,8 +508,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The cross account authorization
-        pub fn cross_account_authorization(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cross_account_authorization(inp);
+        pub fn cross_account_authorization(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cross_account_authorization(input.into());
             self
         }
         /// The cross account authorization
@@ -514,7 +527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReadinessCheck`.
     ///
     /// Creates a new Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,10 +572,10 @@ pub mod fluent_builders {
                 crate::input::CreateReadinessCheckInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -571,8 +584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the ReadinessCheck to create
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The name of the ReadinessCheck to create
@@ -584,8 +597,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the ResourceSet to check
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The name of the ResourceSet to check
@@ -606,7 +619,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -623,7 +636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecoveryGroup`.
     ///
     /// Creates a new Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -668,10 +681,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecoveryGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -684,8 +697,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns
@@ -697,8 +710,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the RecoveryGroup to create
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// The name of the RecoveryGroup to create
@@ -719,7 +732,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -736,7 +749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceSet`.
     ///
     /// Creates a new Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -781,10 +794,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -793,8 +806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the ResourceSet to create
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The name of the ResourceSet to create
@@ -806,8 +819,8 @@ pub mod fluent_builders {
             self
         }
         /// AWS Resource type of the resources in the ResourceSet
-        pub fn resource_set_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_type(inp);
+        pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_type(input.into());
             self
         }
         /// AWS Resource type of the resources in the ResourceSet
@@ -823,8 +836,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.resources(inp);
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// A list of Resource objects
@@ -845,7 +858,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -862,7 +875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCell`.
     ///
     /// Deletes an existing Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -907,10 +920,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCellInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -919,8 +932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to delete
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(input.into());
             self
         }
         /// The Cell to delete
@@ -932,7 +945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCrossAccountAuthorization`.
     ///
     /// Delete cross account readiness authorization
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -977,10 +990,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCrossAccountAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -989,8 +1002,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The cross account authorization
-        pub fn cross_account_authorization(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cross_account_authorization(inp);
+        pub fn cross_account_authorization(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.cross_account_authorization(input.into());
             self
         }
         /// The cross account authorization
@@ -1005,7 +1021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReadinessCheck`.
     ///
     /// Deletes an existing Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1050,10 +1066,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReadinessCheckInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1062,8 +1078,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to delete
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The ReadinessCheck to delete
@@ -1078,7 +1094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecoveryGroup`.
     ///
     /// Deletes an existing Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1123,10 +1139,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecoveryGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1135,8 +1151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The RecoveryGroup to delete
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// The RecoveryGroup to delete
@@ -1151,7 +1167,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceSet`.
     ///
     /// Deletes an existing Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1196,10 +1212,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1208,8 +1224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to delete
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The ResourceSet to delete
@@ -1224,7 +1240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetArchitectureRecommendations`.
     ///
     /// Returns a collection of recommendations to improve resilliance and readiness check quality for a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArchitectureRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1269,10 +1285,10 @@ pub mod fluent_builders {
                 crate::input::GetArchitectureRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1281,8 +1297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1291,8 +1307,8 @@ pub mod fluent_builders {
             self
         }
         /// A token that can be used to resume pagination from the end of the collection.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token that can be used to resume pagination from the end of the collection.
@@ -1301,8 +1317,8 @@ pub mod fluent_builders {
             self
         }
         /// Name of RecoveryGroup (top level resource) to be analyzed.
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// Name of RecoveryGroup (top level resource) to be analyzed.
@@ -1317,7 +1333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCell`.
     ///
     /// Returns information about a Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1362,10 +1378,10 @@ pub mod fluent_builders {
                 crate::input::GetCellInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1374,8 +1390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to get
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(input.into());
             self
         }
         /// The Cell to get
@@ -1387,7 +1403,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCellReadinessSummary`.
     ///
     /// Returns information about readiness of a Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCellReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,10 +1448,10 @@ pub mod fluent_builders {
                 crate::input::GetCellReadinessSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1443,9 +1459,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCellReadinessSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCellReadinessSummaryPaginator<C, M, R> {
+            crate::paginator::GetCellReadinessSummaryPaginator::new(self.handle, self.inner)
+        }
         /// The name of the Cell
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(input.into());
             self
         }
         /// The name of the Cell
@@ -1454,8 +1476,8 @@ pub mod fluent_builders {
             self
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1464,8 +1486,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1477,7 +1499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheck`.
     ///
     /// Returns information about a ReadinessCheck.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1522,10 +1544,10 @@ pub mod fluent_builders {
                 crate::input::GetReadinessCheckInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1534,8 +1556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1550,7 +1572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheckResourceStatus`.
     ///
     /// Returns detailed information about the status of an individual resource within a Readiness Check's Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckResourceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1595,10 +1617,10 @@ pub mod fluent_builders {
                 crate::input::GetReadinessCheckResourceStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1606,9 +1628,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetReadinessCheckResourceStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetReadinessCheckResourceStatusPaginator<C, M, R> {
+            crate::paginator::GetReadinessCheckResourceStatusPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1617,8 +1647,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1627,8 +1657,8 @@ pub mod fluent_builders {
             self
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1640,8 +1670,8 @@ pub mod fluent_builders {
             self
         }
         /// The resource ARN or component Id to get
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
         /// The resource ARN or component Id to get
@@ -1656,7 +1686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReadinessCheckStatus`.
     ///
     /// Returns information about the status of a Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1701,10 +1731,10 @@ pub mod fluent_builders {
                 crate::input::GetReadinessCheckStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1712,9 +1742,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetReadinessCheckStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetReadinessCheckStatusPaginator<C, M, R> {
+            crate::paginator::GetReadinessCheckStatusPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1723,8 +1759,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1733,8 +1769,8 @@ pub mod fluent_builders {
             self
         }
         /// The ReadinessCheck to get
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The ReadinessCheck to get
@@ -1749,7 +1785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecoveryGroup`.
     ///
     /// Returns information about a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1794,10 +1830,10 @@ pub mod fluent_builders {
                 crate::input::GetRecoveryGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1806,8 +1842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The RecoveryGroup to get
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// The RecoveryGroup to get
@@ -1822,7 +1858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecoveryGroupReadinessSummary`.
     ///
     /// Returns information about a Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroupReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1867,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::GetRecoveryGroupReadinessSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1878,9 +1914,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetRecoveryGroupReadinessSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetRecoveryGroupReadinessSummaryPaginator<C, M, R> {
+            crate::paginator::GetRecoveryGroupReadinessSummaryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1889,8 +1936,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1899,8 +1946,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the RecoveryGroup
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// The name of the RecoveryGroup
@@ -1915,7 +1962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceSet`.
     ///
     /// Returns information about a Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1960,10 +2007,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1972,8 +2019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to get
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The ResourceSet to get
@@ -1988,7 +2035,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCells`.
     ///
     /// Returns a collection of Cells.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCells<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2033,10 +2080,10 @@ pub mod fluent_builders {
                 crate::input::ListCellsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2044,9 +2091,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCellsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCellsPaginator<C, M, R> {
+            crate::paginator::ListCellsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2055,8 +2108,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2068,7 +2121,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCrossAccountAuthorizations`.
     ///
     /// Returns a collection of cross account readiness authorizations.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrossAccountAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2113,10 +2166,10 @@ pub mod fluent_builders {
                 crate::input::ListCrossAccountAuthorizationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2124,9 +2177,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCrossAccountAuthorizationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCrossAccountAuthorizationsPaginator<C, M, R> {
+            crate::paginator::ListCrossAccountAuthorizationsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2135,8 +2196,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2148,7 +2209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReadinessChecks`.
     ///
     /// Returns a collection of Readiness Checks.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReadinessChecks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2193,10 +2254,10 @@ pub mod fluent_builders {
                 crate::input::ListReadinessChecksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2204,9 +2265,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReadinessChecksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReadinessChecksPaginator<C, M, R> {
+            crate::paginator::ListReadinessChecksPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2215,8 +2282,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2228,7 +2295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecoveryGroups`.
     ///
     /// Returns a collection of Recovery Groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2273,10 +2340,10 @@ pub mod fluent_builders {
                 crate::input::ListRecoveryGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2284,9 +2351,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecoveryGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecoveryGroupsPaginator<C, M, R> {
+            crate::paginator::ListRecoveryGroupsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2295,8 +2368,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2308,7 +2381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceSets`.
     ///
     /// Returns a collection of Resource Sets.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2353,10 +2426,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2364,9 +2437,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceSetsPaginator<C, M, R> {
+            crate::paginator::ListResourceSetsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2375,8 +2454,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2388,7 +2467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRules`.
     ///
     /// Returns a collection of rules that are applied as part of Readiness Checks.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2433,10 +2512,10 @@ pub mod fluent_builders {
                 crate::input::ListRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2444,9 +2523,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRulesPaginator<C, M, R> {
+            crate::paginator::ListRulesPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -2455,8 +2540,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -2465,8 +2550,8 @@ pub mod fluent_builders {
             self
         }
         /// Filter parameter which specifies the rules to return given a resource type.
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// Filter parameter which specifies the rules to return given a resource type.
@@ -2481,7 +2566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResources`.
     ///
     /// Returns a list of the tags assigned to the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2526,10 +2611,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2538,8 +2623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2551,7 +2636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to the specified resource. You can specify one or more tags to add.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2596,10 +2681,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2608,8 +2693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2627,7 +2712,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -2644,7 +2729,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Removes tags from the specified resource. You can specify one or more tags to remove.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2689,10 +2774,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2701,8 +2786,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -2715,8 +2800,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// A comma-separated list of the tag keys to remove from the resource.
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// A comma-separated list of the tag keys to remove from the resource.
@@ -2731,7 +2816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCell`.
     ///
     /// Updates an existing Cell.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCell<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2776,10 +2861,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCellInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2788,8 +2873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Cell to update
-        pub fn cell_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cell_name(inp);
+        pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cell_name(input.into());
             self
         }
         /// The Cell to update
@@ -2802,8 +2887,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns, completely replaces previous list
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns, completely replaces previous list
@@ -2818,7 +2903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReadinessCheck`.
     ///
     /// Updates an exisiting Readiness Check.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2863,10 +2948,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReadinessCheckInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2875,8 +2960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ReadinessCheck to update
-        pub fn readiness_check_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readiness_check_name(inp);
+        pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readiness_check_name(input.into());
             self
         }
         /// The ReadinessCheck to update
@@ -2888,8 +2973,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the ResourceSet to check
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The name of the ResourceSet to check
@@ -2904,7 +2989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecoveryGroup`.
     ///
     /// Updates an existing Recovery Group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2949,10 +3034,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRecoveryGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2965,8 +3050,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cell arns, completely replaces previous list
-        pub fn cells(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cells(inp);
+        pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cells(input.into());
             self
         }
         /// A list of Cell arns, completely replaces previous list
@@ -2978,8 +3063,8 @@ pub mod fluent_builders {
             self
         }
         /// The RecoveryGroup to update
-        pub fn recovery_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_group_name(inp);
+        pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_group_name(input.into());
             self
         }
         /// The RecoveryGroup to update
@@ -2994,7 +3079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceSet`.
     ///
     /// Updates an existing Resource Set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3039,10 +3124,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3051,8 +3136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ResourceSet to update
-        pub fn resource_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_name(inp);
+        pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_name(input.into());
             self
         }
         /// The ResourceSet to update
@@ -3064,8 +3149,8 @@ pub mod fluent_builders {
             self
         }
         /// AWS Resource Type of the resources in the ResourceSet
-        pub fn resource_set_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_set_type(inp);
+        pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_set_type(input.into());
             self
         }
         /// AWS Resource Type of the resources in the ResourceSet
@@ -3081,8 +3166,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.resources(inp);
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// A list of Resource objects
@@ -3095,6 +3180,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

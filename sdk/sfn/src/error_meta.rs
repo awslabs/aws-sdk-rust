@@ -5,23 +5,17 @@
 pub enum Error {
     /// <p>The specified activity does not exist.</p>
     ActivityDoesNotExist(crate::error::ActivityDoesNotExist),
-    /// <p>The maximum number of activities has been reached. Existing activities must be deleted
-    /// before a new activity can be created.</p>
+    /// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
     ActivityLimitExceeded(crate::error::ActivityLimitExceeded),
-    /// <p>The maximum number of workers concurrently polling for activity tasks has been
-    /// reached.</p>
+    /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
     ActivityWorkerLimitExceeded(crate::error::ActivityWorkerLimitExceeded),
-    /// <p>The execution has the same <code>name</code> as another execution (but a different
-    /// <code>input</code>).</p>
-    /// <note>
-    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered
-    /// idempotent.</p>
+    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
+    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
     /// </note>
     ExecutionAlreadyExists(crate::error::ExecutionAlreadyExists),
     /// <p>The specified execution does not exist.</p>
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
-    /// <p>The maximum number of running executions has been reached. Running executions must end or
-    /// be stopped before a new execution can be started.</p>
+    /// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
     ExecutionLimitExceeded(crate::error::ExecutionLimitExceeded),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
@@ -39,21 +33,17 @@ pub enum Error {
     InvalidToken(crate::error::InvalidToken),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::error::InvalidTracingConfiguration),
-    /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code>
-    /// and <code>roleArn</code> are not specified.</p>
+    /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::error::MissingRequiredParameter),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
-    /// supported.</p>
+    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// <p>A state machine with the same name but a different definition or role ARN already
-    /// exists.</p>
+    /// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
     StateMachineAlreadyExists(crate::error::StateMachineAlreadyExists),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// <p>The maximum number of state machines has been reached. Existing state machines must be
-    /// deleted before a new state machine can be created.</p>
+    /// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
     StateMachineLimitExceeded(crate::error::StateMachineLimitExceeded),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
@@ -61,8 +51,7 @@ pub enum Error {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
-    /// AWS Step Functions Developer Guide.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

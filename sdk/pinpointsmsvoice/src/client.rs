@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Pinpoint SMS and Voice Service
@@ -159,7 +159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfigurationSet`.
     ///
     /// Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -204,10 +204,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigurationSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -216,8 +216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name that you want to give the configuration set.
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// The name that you want to give the configuration set.
@@ -232,7 +232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfigurationSetEventDestination`.
     ///
     /// Create a new event destination in a configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -279,10 +279,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -291,8 +291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// ConfigurationSetName
@@ -304,8 +304,11 @@ pub mod fluent_builders {
             self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         /// An object that defines a single event destination.
@@ -317,8 +320,8 @@ pub mod fluent_builders {
             self
         }
         /// A name that identifies the event destination.
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// A name that identifies the event destination.
@@ -333,7 +336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSet`.
     ///
     /// Deletes an existing configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -378,10 +381,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -390,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// ConfigurationSetName
@@ -406,7 +409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSetEventDestination`.
     ///
     /// Deletes an event destination in a configuration set.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -453,10 +456,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -465,8 +468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// ConfigurationSetName
@@ -478,8 +481,8 @@ pub mod fluent_builders {
             self
         }
         /// EventDestinationName
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// EventDestinationName
@@ -494,7 +497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConfigurationSetEventDestinations`.
     ///
     /// Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -541,10 +544,10 @@ pub mod fluent_builders {
                 crate::input::GetConfigurationSetEventDestinationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -553,8 +556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// ConfigurationSetName
@@ -569,7 +572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurationSets`.
     ///
     /// List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -614,10 +617,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -626,8 +629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A token returned from a previous call to the API that indicates the position in the list of results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token returned from a previous call to the API that indicates the position in the list of results.
@@ -636,8 +639,8 @@ pub mod fluent_builders {
             self
         }
         /// Used to specify the number of items that should be returned in the response.
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// Used to specify the number of items that should be returned in the response.
@@ -649,7 +652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendVoiceMessage`.
     ///
     /// Create a new voice message and send it to a recipient's phone number.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendVoiceMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -694,10 +697,10 @@ pub mod fluent_builders {
                 crate::input::SendVoiceMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -706,8 +709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The phone number that appears on recipients' devices when they receive the message.
-        pub fn caller_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_id(inp);
+        pub fn caller_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_id(input.into());
             self
         }
         /// The phone number that appears on recipients' devices when they receive the message.
@@ -716,8 +719,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the configuration set that you want to use to send the message.
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// The name of the configuration set that you want to use to send the message.
@@ -729,8 +732,8 @@ pub mod fluent_builders {
             self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
-        pub fn content(mut self, inp: crate::model::VoiceMessageContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::VoiceMessageContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// An object that contains a voice message and information about the recipient that you want to send it to.
@@ -742,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// The phone number that you want to send the voice message to.
-        pub fn destination_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_phone_number(inp);
+        pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_phone_number(input.into());
             self
         }
         /// The phone number that you want to send the voice message to.
@@ -755,8 +758,8 @@ pub mod fluent_builders {
             self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-        pub fn origination_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origination_phone_number(inp);
+        pub fn origination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origination_phone_number(input.into());
             self
         }
         /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
@@ -771,7 +774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
     ///
     /// Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -818,10 +821,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -830,8 +833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// ConfigurationSetName
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// ConfigurationSetName
@@ -843,8 +846,11 @@ pub mod fluent_builders {
             self
         }
         /// An object that defines a single event destination.
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         /// An object that defines a single event destination.
@@ -856,8 +862,8 @@ pub mod fluent_builders {
             self
         }
         /// EventDestinationName
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// EventDestinationName
@@ -870,6 +876,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

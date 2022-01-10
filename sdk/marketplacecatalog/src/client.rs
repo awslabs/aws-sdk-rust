@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Marketplace Catalog Service
@@ -108,6 +108,7 @@ where
     ///
     /// See [`ListChangeSets`](crate::client::fluent_builders::ListChangeSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangeSets::into_paginator).
     pub fn list_change_sets(&self) -> fluent_builders::ListChangeSets<C, M, R> {
         fluent_builders::ListChangeSets::new(self.handle.clone())
     }
@@ -115,6 +116,7 @@ where
     ///
     /// See [`ListEntities`](crate::client::fluent_builders::ListEntities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
     pub fn list_entities(&self) -> fluent_builders::ListEntities<C, M, R> {
         fluent_builders::ListEntities::new(self.handle.clone())
     }
@@ -136,11 +138,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelChangeSet`.
     ///
-    /// <p>Used to cancel an open change request. Must be sent before the status of the request
-    /// changes to <code>APPLYING</code>, the final stage of completing your change request. You
-    /// can describe a change during the 60-day request history retention period for API
-    /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -185,10 +184,10 @@ pub mod fluent_builders {
                 crate::input::CancelChangeSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -196,26 +195,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(inp);
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_id(input.into());
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -227,7 +222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChangeSet`.
     ///
     /// <p>Provides information about a given change set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -272,10 +267,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChangeSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -283,28 +278,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
-        pub fn change_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(inp);
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_id(input.into());
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -316,7 +305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEntity`.
     ///
     /// <p>Returns the metadata and content of the entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -361,10 +350,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEntityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -372,23 +361,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
@@ -399,14 +384,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChangeSets`.
     ///
-    /// <p>Returns the list of change sets owned by the account being used to make the call. You
-    /// can filter this list by providing any combination of <code>entityId</code>,
-    /// <code>ChangeSetName</code>, and status. If you provide more than one filter, the API
-    /// operation applies a logical AND between the filters.</p>
-    ///
-    /// <p>You can describe a change during the 60-day request history retention period for API
-    /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.</p>
+    /// <p>You can describe a change during the 60-day request history retention period for API calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangeSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -451,10 +431,10 @@ pub mod fluent_builders {
                 crate::input::ListChangeSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -462,14 +442,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChangeSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChangeSetsPaginator<C, M, R> {
+            crate::paginator::ListChangeSetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -479,8 +463,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
         ///
         /// <p>An array of filter objects.</p>
-        pub fn filter_list(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filter_list(inp);
+        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filter_list(input);
             self
         }
         /// <p>An array of filter objects.</p>
@@ -491,40 +475,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_list(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
-        pub fn sort(mut self, inp: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(inp);
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+        pub fn sort(mut self, input: crate::model::Sort) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -533,7 +509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntities`.
     ///
     /// <p>Provides the list of entities of a given type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,10 +554,10 @@ pub mod fluent_builders {
                 crate::input::ListEntitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -589,21 +565,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEntitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEntitiesPaginator<C, M, R> {
+            crate::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
         /// <p>The type of entities to retrieve.</p>
-        pub fn entity_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_type(inp);
+        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_type(input.into());
             self
         }
         /// <p>The type of entities to retrieve.</p>
@@ -615,14 +595,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
         ///
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
-        pub fn filter_list(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filter_list(inp);
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
+        pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filter_list(input);
             self
         }
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn set_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -630,21 +608,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_list(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
-        pub fn sort(mut self, inp: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(inp);
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
+        pub fn sort(mut self, input: crate::model::Sort) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -652,14 +628,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -667,20 +641,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChangeSet`.
     ///
-    /// <p>This operation allows you to request changes for your entities. Within a single
-    /// ChangeSet, you cannot start the same change type against the same entity multiple times.
-    /// Additionally, when a ChangeSet is running, all the entities targeted by the different
-    /// changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If
-    /// you try to start a ChangeSet containing a change against an entity that is already
-    /// locked, you will receive a <code>ResourceInUseException</code>.</p>
-    ///
-    /// <p>For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic, because it contains two changes to execute the same change
-    /// type (<code>AddRevisions</code>) against the same entity
-    /// (<code>entity-id@1)</code>.</p>
-    ///
-    /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-    /// Working with change sets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code>.</p>
+    /// <p>For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic, because it contains two changes to execute the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.</p>
+    /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"> Working with change sets</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -725,10 +689,10 @@ pub mod fluent_builders {
                 crate::input::StartChangeSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -736,14 +700,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
-        pub fn catalog(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(inp);
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -753,8 +715,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
         ///
         /// <p>Array of <code>change</code> object.</p>
-        pub fn change_set(mut self, inp: impl Into<crate::model::Change>) -> Self {
-            self.inner = self.inner.change_set(inp);
+        pub fn change_set(mut self, input: crate::model::Change) -> Self {
+            self.inner = self.inner.change_set(input);
             self
         }
         /// <p>Array of <code>change</code> object.</p>
@@ -765,14 +727,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_set(input);
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input.into());
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -781,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>
@@ -795,6 +755,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

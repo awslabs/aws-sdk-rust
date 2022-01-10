@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodePipeline
@@ -203,6 +203,7 @@ where
     ///
     /// See [`ListActionExecutions`](crate::client::fluent_builders::ListActionExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActionExecutions::into_paginator).
     pub fn list_action_executions(&self) -> fluent_builders::ListActionExecutions<C, M, R> {
         fluent_builders::ListActionExecutions::new(self.handle.clone())
     }
@@ -210,6 +211,7 @@ where
     ///
     /// See [`ListActionTypes`](crate::client::fluent_builders::ListActionTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActionTypes::into_paginator).
     pub fn list_action_types(&self) -> fluent_builders::ListActionTypes<C, M, R> {
         fluent_builders::ListActionTypes::new(self.handle.clone())
     }
@@ -217,6 +219,7 @@ where
     ///
     /// See [`ListPipelineExecutions`](crate::client::fluent_builders::ListPipelineExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
     pub fn list_pipeline_executions(&self) -> fluent_builders::ListPipelineExecutions<C, M, R> {
         fluent_builders::ListPipelineExecutions::new(self.handle.clone())
     }
@@ -224,6 +227,7 @@ where
     ///
     /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
@@ -231,6 +235,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -238,6 +243,7 @@ where
     ///
     /// See [`ListWebhooks`](crate::client::fluent_builders::ListWebhooks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebhooks::into_paginator).
     pub fn list_webhooks(&self) -> fluent_builders::ListWebhooks<C, M, R> {
         fluent_builders::ListWebhooks::new(self.handle.clone())
     }
@@ -377,9 +383,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcknowledgeJob`.
     ///
-    /// <p>Returns information about a specified job and whether that job has been received by
-    /// the job worker. Used for custom actions only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about a specified job and whether that job has been received by the job worker. Used for custom actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcknowledgeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -424,10 +429,10 @@ pub mod fluent_builders {
                 crate::input::AcknowledgeJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -435,28 +440,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique system-generated ID of the job for which you want to confirm
-        /// receipt.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job for which you want to confirm
-        /// receipt.</p>
+        /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response of the
-        /// <a>PollForJobs</a> request that returned this job.</p>
-        pub fn nonce(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(inp);
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+        pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(input.into());
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response of the
-        /// <a>PollForJobs</a> request that returned this job.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_nonce(input);
             self
@@ -464,9 +463,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AcknowledgeThirdPartyJob`.
     ///
-    /// <p>Confirms a job worker has received the specified job. Used for partner actions
-    /// only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Confirms a job worker has received the specified job. Used for partner actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcknowledgeThirdPartyJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -511,10 +509,10 @@ pub mod fluent_builders {
                 crate::input::AcknowledgeThirdPartyJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -523,8 +521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID of the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID of the job.</p>
@@ -532,26 +530,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
-        pub fn nonce(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(inp);
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+        pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(input.into());
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_nonce(input);
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -559,9 +553,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomActionType`.
     ///
-    /// <p>Creates a new custom action that can be used in all pipelines associated with the
-    /// AWS account. Only used for custom actions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for custom actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomActionType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,10 +599,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomActionTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -617,14 +610,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The category of the custom action, such as a build action or a test
-        /// action.</p>
-        pub fn category(mut self, inp: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(inp);
+        /// <p>The category of the custom action, such as a build action or a test action.</p>
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
-        /// <p>The category of the custom action, such as a build action or a test
-        /// action.</p>
+        /// <p>The category of the custom action, such as a build action or a test action.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::ActionCategory>,
@@ -632,21 +623,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_category(input);
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_provider(input);
             self
         }
         /// <p>The version identifier of the custom action.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version identifier of the custom action.</p>
@@ -655,8 +644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>URLs that provide users information about this custom action.</p>
-        pub fn settings(mut self, inp: crate::model::ActionTypeSettings) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, input: crate::model::ActionTypeSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>URLs that provide users information about this custom action.</p>
@@ -671,28 +660,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
         ///
-        /// <p>The configuration properties for the custom action.</p>
-        /// <note>
-        /// <p>You can refer to a name in the configuration properties of the custom action
-        /// within the URL templates by following the format of {Config:name}, as long as the
-        /// configuration property is both required and not secret. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-        /// Custom Action for a Pipeline</a>.</p>
+        /// <p>The configuration properties for the custom action.</p> <note>
+        /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
         /// </note>
         pub fn configuration_properties(
             mut self,
-            inp: impl Into<crate::model::ActionConfigurationProperty>,
+            input: crate::model::ActionConfigurationProperty,
         ) -> Self {
-            self.inner = self.inner.configuration_properties(inp);
+            self.inner = self.inner.configuration_properties(input);
             self
         }
-        /// <p>The configuration properties for the custom action.</p>
-        /// <note>
-        /// <p>You can refer to a name in the configuration properties of the custom action
-        /// within the URL templates by following the format of {Config:name}, as long as the
-        /// configuration property is both required and not secret. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-        /// Custom Action for a Pipeline</a>.</p>
+        /// <p>The configuration properties for the custom action.</p> <note>
+        /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
         /// </note>
         pub fn set_configuration_properties(
             mut self,
@@ -702,8 +681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-        pub fn input_artifact_details(mut self, inp: crate::model::ArtifactDetails) -> Self {
-            self.inner = self.inner.input_artifact_details(inp);
+        pub fn input_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
+            self.inner = self.inner.input_artifact_details(input);
             self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -715,8 +694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-        pub fn output_artifact_details(mut self, inp: crate::model::ArtifactDetails) -> Self {
-            self.inner = self.inner.output_artifact_details(inp);
+        pub fn output_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
+            self.inner = self.inner.output_artifact_details(input);
             self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -732,8 +711,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the custom action.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the custom action.</p>
@@ -747,14 +726,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
-    /// <p>Creates a pipeline.</p>
-    /// <note>
-    /// <p>In the pipeline structure, you must include either <code>artifactStore</code>
-    /// or <code>artifactStores</code> in your pipeline, but you cannot use both. If you
-    /// create a cross-region action in your pipeline, you must use
-    /// <code>artifactStores</code>.</p>
+    /// <p>Creates a pipeline.</p> <note>
+    /// <p>In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -799,10 +774,10 @@ pub mod fluent_builders {
                 crate::input::CreatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -810,14 +785,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
-        pub fn pipeline(mut self, inp: crate::model::PipelineDeclaration) -> Self {
-            self.inner = self.inner.pipeline(inp);
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+        pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
+            self.inner = self.inner.pipeline(input);
             self
         }
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -830,8 +803,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the pipeline.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the pipeline.</p>
@@ -845,16 +818,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCustomActionType`.
     ///
-    /// <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom action
-    /// fails after the action is marked for deletion. Used for custom actions only.</p>
-    /// <important>
-    /// <p>To re-create a custom action after it has been deleted you must use a string in
-    /// the version field that has never been used before. This string can be an incremented
-    /// version number, for example. To restore a deleted custom action, use a JSON file
-    /// that is identical to the deleted action, including the original string in the
-    /// version field.</p>
+    /// <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked for deletion. Used for custom actions only.</p> <important>
+    /// <p>To re-create a custom action after it has been deleted you must use a string in the version field that has never been used before. This string can be an incremented version number, for example. To restore a deleted custom action, use a JSON file that is identical to the deleted action, including the original string in the version field.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomActionType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -899,10 +866,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomActionTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -910,14 +877,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The category of the custom action that you want to delete, such as source or
-        /// deploy.</p>
-        pub fn category(mut self, inp: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(inp);
+        /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
-        /// <p>The category of the custom action that you want to delete, such as source or
-        /// deploy.</p>
+        /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::ActionCategory>,
@@ -925,21 +890,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_category(input);
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_provider(input);
             self
         }
         /// <p>The version of the custom action to delete.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the custom action to delete.</p>
@@ -951,7 +914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
     /// <p>Deletes the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -996,10 +959,10 @@ pub mod fluent_builders {
                 crate::input::DeletePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1008,8 +971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline to be deleted.</p>
@@ -1020,12 +983,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWebhook`.
     ///
-    /// <p>Deletes a previously created webhook by name. Deleting the webhook stops AWS
-    /// CodePipeline from starting a pipeline every time an external event occurs. The API
-    /// returns successfully when trying to delete a webhook that is already deleted. If a
-    /// deleted webhook is re-created by calling PutWebhook with the same name, it will have a
-    /// different URL.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a pipeline every time an external event occurs. The API returns successfully when trying to delete a webhook that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a different URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1070,10 +1029,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1082,8 +1041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the webhook you want to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the webhook you want to delete.</p>
@@ -1094,10 +1053,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterWebhookWithThirdParty`.
     ///
-    /// <p>Removes the connection between the webhook that was created by CodePipeline and the
-    /// external tool with events to be detected. Currently supported only for webhooks that
-    /// target an action type of GitHub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the connection between the webhook that was created by CodePipeline and the external tool with events to be detected. Currently supported only for webhooks that target an action type of GitHub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterWebhookWithThirdParty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1142,10 +1099,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterWebhookWithThirdPartyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1154,8 +1111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the webhook you want to deregister.</p>
-        pub fn webhook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_name(inp);
+        pub fn webhook_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_name(input.into());
             self
         }
         /// <p>The name of the webhook you want to deregister.</p>
@@ -1166,9 +1123,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableStageTransition`.
     ///
-    /// <p>Prevents artifacts in a pipeline from transitioning to the next stage in the
-    /// pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableStageTransition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1213,10 +1169,10 @@ pub mod fluent_builders {
                 crate::input::DisableStageTransitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1224,14 +1180,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-        /// one stage to another.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
-        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-        /// one stage to another.</p>
+        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1239,30 +1193,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The name of the stage where you want to disable the inbound or outbound transition
-        /// of artifacts.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
-        /// <p>The name of the stage where you want to disable the inbound or outbound transition
-        /// of artifacts.</p>
+        /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stage_name(input);
             self
         }
-        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-        /// being processed by the actions in that stage (inbound), or prevented from transitioning
-        /// from the stage after they have been processed by the actions in that stage
-        /// (outbound).</p>
-        pub fn transition_type(mut self, inp: crate::model::StageTransitionType) -> Self {
-            self.inner = self.inner.transition_type(inp);
+        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
+        pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
+            self.inner = self.inner.transition_type(input);
             self
         }
-        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-        /// being processed by the actions in that stage (inbound), or prevented from transitioning
-        /// from the stage after they have been processed by the actions in that stage
-        /// (outbound).</p>
+        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
         pub fn set_transition_type(
             mut self,
             input: std::option::Option<crate::model::StageTransitionType>,
@@ -1270,16 +1216,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transition_type(input);
             self
         }
-        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-        /// approval or manual tests. This message is displayed in the pipeline console
-        /// UI.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
-        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-        /// approval or manual tests. This message is displayed in the pipeline console
-        /// UI.</p>
+        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
@@ -1288,7 +1230,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableStageTransition`.
     ///
     /// <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableStageTransition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1333,10 +1275,10 @@ pub mod fluent_builders {
                 crate::input::EnableStageTransitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1344,14 +1286,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-        /// stage to another.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
-        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-        /// stage to another.</p>
+        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1359,28 +1299,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The name of the stage where you want to enable the transition of artifacts, either
-        /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
-        /// <p>The name of the stage where you want to enable the transition of artifacts, either
-        /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+        /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stage_name(input);
             self
         }
-        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-        /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-        /// transition to the next stage (outbound).</p>
-        pub fn transition_type(mut self, inp: crate::model::StageTransitionType) -> Self {
-            self.inner = self.inner.transition_type(inp);
+        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+        pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
+            self.inner = self.inner.transition_type(input);
             self
         }
-        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-        /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-        /// transition to the next stage (outbound).</p>
+        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
         pub fn set_transition_type(
             mut self,
             input: std::option::Option<crate::model::StageTransitionType>,
@@ -1391,10 +1325,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetActionType`.
     ///
-    /// <p>Returns information about an action type created for an external provider, where the
-    /// action is to be used by customers of the external provider. The action can be created
-    /// with any supported integration model.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about an action type created for an external provider, where the action is to be used by customers of the external provider. The action can be created with any supported integration model.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetActionType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1439,10 +1371,10 @@ pub mod fluent_builders {
                 crate::input::GetActionTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1450,77 +1382,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-        /// values:</p>
+        /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Build</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Approval</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Invoke</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Source</code> </p> </li>
+        /// <li> <p> <code>Build</code> </p> </li>
+        /// <li> <p> <code>Test</code> </p> </li>
+        /// <li> <p> <code>Deploy</code> </p> </li>
+        /// <li> <p> <code>Approval</code> </p> </li>
+        /// <li> <p> <code>Invoke</code> </p> </li>
         /// </ul>
-        pub fn category(mut self, inp: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(inp);
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
-        /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-        /// values:</p>
+        /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Build</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Approval</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Invoke</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Source</code> </p> </li>
+        /// <li> <p> <code>Build</code> </p> </li>
+        /// <li> <p> <code>Test</code> </p> </li>
+        /// <li> <p> <code>Deploy</code> </p> </li>
+        /// <li> <p> <code>Approval</code> </p> </li>
+        /// <li> <p> <code>Invoke</code> </p> </li>
         /// </ul>
         pub fn set_category(
             mut self,
@@ -1529,33 +1411,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_category(input);
             self
         }
-        /// <p>The creator of an action type that was created with any supported integration model.
-        /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
-        /// <p>The creator of an action type that was created with any supported integration model.
-        /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+        /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>The provider of the action type being called. The provider name is specified when the
-        /// action type is created.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
-        /// <p>The provider of the action type being called. The provider name is specified when the
-        /// action type is created.</p>
+        /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_provider(input);
             self
         }
         /// <p>A string that describes the action type version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>A string that describes the action type version.</p>
@@ -1566,14 +1444,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetJobDetails`.
     ///
-    /// <p>Returns information about a job. Used for custom actions only.</p>
-    /// <important>
-    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the
-    /// S3 bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts. This API also returns any secret
-    /// values defined for the action.</p>
+    /// <p>Returns information about a job. Used for custom actions only.</p> <important>
+    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also returns any secret values defined for the action.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1618,10 +1492,10 @@ pub mod fluent_builders {
                 crate::input::GetJobDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1630,8 +1504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID for the job.</p>
@@ -1642,10 +1516,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPipeline`.
     ///
-    /// <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
-    /// return the entire structure of a pipeline in JSON format, which can then be modified and
-    /// used to update the pipeline structure with <a>UpdatePipeline</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be used to return the entire structure of a pipeline in JSON format, which can then be modified and used to update the pipeline structure with <code>UpdatePipeline</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1690,10 +1562,10 @@ pub mod fluent_builders {
                 crate::input::GetPipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1701,26 +1573,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-        /// be unique under an AWS user account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-        /// be unique under an AWS user account.</p>
+        /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-        /// the current version.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
-        /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-        /// the current version.</p>
+        /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1728,10 +1596,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPipelineExecution`.
     ///
-    /// <p>Returns information about an execution of a pipeline, including details about
-    /// artifacts, the pipeline execution ID, and the name, version, and status of the
-    /// pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about an execution of a pipeline, including details about artifacts, the pipeline execution ID, and the name, version, and status of the pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1776,10 +1642,10 @@ pub mod fluent_builders {
                 crate::input::GetPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1788,8 +1654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline about which you want to get execution details.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline about which you want to get execution details.</p>
@@ -1800,14 +1666,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The ID of the pipeline execution about which you want to get execution
-        /// details.</p>
-        pub fn pipeline_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(inp);
+        /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution about which you want to get execution
-        /// details.</p>
+        /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1818,14 +1682,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPipelineState`.
     ///
-    /// <p>Returns information about the state of a pipeline, including the stages and
-    /// actions.</p>
-    /// <note>
-    /// <p>Values returned in the <code>revisionId</code> and <code>revisionUrl</code>
-    /// fields indicate the source revision information, such as the commit ID, for the
-    /// current state.</p>
+    /// <p>Returns information about the state of a pipeline, including the stages and actions.</p> <note>
+    /// <p>Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields indicate the source revision information, such as the commit ID, for the current state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPipelineState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1870,10 +1730,10 @@ pub mod fluent_builders {
                 crate::input::GetPipelineStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1882,8 +1742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline about which you want to get information.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline about which you want to get information.</p>
@@ -1894,15 +1754,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetThirdPartyJobDetails`.
     ///
-    /// <p>Requests the details of a job for a third party action. Used for partner actions
-    /// only.</p>
-    /// <important>
-    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the
-    /// S3 bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts. This API also returns any secret
-    /// values defined for the action.</p>
+    /// <p>Requests the details of a job for a third party action. Used for partner actions only.</p> <important>
+    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also returns any secret values defined for the action.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThirdPartyJobDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1947,10 +1802,10 @@ pub mod fluent_builders {
                 crate::input::GetThirdPartyJobDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1959,8 +1814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID used for identifying the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID used for identifying the job.</p>
@@ -1968,14 +1823,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1984,7 +1837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListActionExecutions`.
     ///
     /// <p>Lists the action executions that have occurred in a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActionExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2029,10 +1882,10 @@ pub mod fluent_builders {
                 crate::input::ListActionExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2040,9 +1893,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListActionExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListActionExecutionsPaginator<C, M, R> {
+            crate::paginator::ListActionExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The name of the pipeline for which you want to list action execution history.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p> The name of the pipeline for which you want to list action execution history.</p>
@@ -2054,8 +1913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Input information used to filter action execution history.</p>
-        pub fn filter(mut self, inp: crate::model::ActionExecutionFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::ActionExecutionFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Input information used to filter action execution history.</p>
@@ -2066,38 +1925,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Action execution history
-        /// is retained for up to 12 months, based on action execution start times. Default value is
-        /// 100. </p>
-        /// <note>
-        /// <p>Detailed execution history is available for executions run on or after February
-        /// 21, 2019.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+        /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
         /// </note>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Action execution history
-        /// is retained for up to 12 months, based on action execution start times. Default value is
-        /// 100. </p>
-        /// <note>
-        /// <p>Detailed execution history is available for executions run on or after February
-        /// 21, 2019.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+        /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
         /// </note>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-        /// which can be used to return the next set of action executions in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-        /// which can be used to return the next set of action executions in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2105,9 +1952,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListActionTypes`.
     ///
-    /// <p>Gets a summary of all AWS CodePipeline action types associated with your
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActionTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,10 +1998,10 @@ pub mod fluent_builders {
                 crate::input::ListActionTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2163,9 +2009,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListActionTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListActionTypesPaginator<C, M, R> {
+            crate::paginator::ListActionTypesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filters the list of action types to those created by a specified entity.</p>
-        pub fn action_owner_filter(mut self, inp: crate::model::ActionOwner) -> Self {
-            self.inner = self.inner.action_owner_filter(inp);
+        pub fn action_owner_filter(mut self, input: crate::model::ActionOwner) -> Self {
+            self.inner = self.inner.action_owner_filter(input);
             self
         }
         /// <p>Filters the list of action types to those created by a specified entity.</p>
@@ -2176,21 +2028,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_owner_filter(input);
             self
         }
-        /// <p>An identifier that was returned from the previous list action types call, which can
-        /// be used to return the next set of action types in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous list action types call, which can
-        /// be used to return the next set of action types in the list.</p>
+        /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The Region to filter on for the list of action types.</p>
-        pub fn region_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_filter(inp);
+        pub fn region_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_filter(input.into());
             self
         }
         /// <p>The Region to filter on for the list of action types.</p>
@@ -2205,7 +2055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelineExecutions`.
     ///
     /// <p>Gets a summary of the most recent executions for a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelineExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2250,10 +2100,10 @@ pub mod fluent_builders {
                 crate::input::ListPipelineExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2261,14 +2111,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline for which you want to get execution summary
-        /// information.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelineExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelineExecutionsPaginator<C, M, R> {
+            crate::paginator::ListPipelineExecutionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the pipeline for which you want to get execution summary information.</p>
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
-        /// <p>The name of the pipeline for which you want to get execution summary
-        /// information.</p>
+        /// <p>The name of the pipeline for which you want to get execution summary information.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2276,32 +2130,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Pipeline history is
-        /// limited to the most recent 12 months, based on pipeline execution start times. Default
-        /// value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Pipeline history is
-        /// limited to the most recent 12 months, based on pipeline execution start times. Default
-        /// value is 100.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-        /// call, which can be used to return the next set of pipeline executions in the
-        /// list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-        /// call, which can be used to return the next set of pipeline executions in the
-        /// list.</p>
+        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2310,7 +2154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>Gets a summary of all of the pipelines associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2355,10 +2199,10 @@ pub mod fluent_builders {
                 crate::input::ListPipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2366,28 +2210,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous list pipelines call. It can be
-        /// used to return the next set of pipelines in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelinesPaginator<C, M, R> {
+            crate::paginator::ListPipelinesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous list pipelines call. It can be
-        /// used to return the next set of pipelines in the list.</p>
+        /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-        /// pipelines, make another call with the returned nextToken value. The minimum value you
-        /// can specify is 1. The maximum accepted value is 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-        /// pipelines, make another call with the returned nextToken value. The minimum value you
-        /// can specify is 1. The maximum accepted value is 1000.</p>
+        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2395,9 +2239,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets the set of key-value pairs (metadata) that are used to manage the
-    /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the set of key-value pairs (metadata) that are used to manage the resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2442,10 +2285,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2453,9 +2296,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
@@ -2463,23 +2312,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The token that was returned from the previous API call, which would be used to return
-        /// the next page of the list. The ListTagsforResource call lists all available tags in one
-        /// call and does not use pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous API call, which would be used to return
-        /// the next page of the list. The ListTagsforResource call lists all available tags in one
-        /// call and does not use pagination.</p>
+        /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -2490,10 +2335,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWebhooks`.
     ///
-    /// <p>Gets a listing of all the webhooks in this AWS Region for this account. The output
-    /// lists all webhooks and includes the webhook URL and ARN and the configuration for each
-    /// webhook.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebhooks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2538,10 +2381,10 @@ pub mod fluent_builders {
                 crate::input::ListWebhooksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2549,26 +2392,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-        /// to return the next set of webhooks in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWebhooksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWebhooksPaginator<C, M, R> {
+            crate::paginator::ListWebhooksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-        /// to return the next set of webhooks in the list.</p>
+        /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2576,17 +2421,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PollForJobs`.
     ///
-    /// <p>Returns information about any jobs for AWS CodePipeline to act on.
-    /// <code>PollForJobs</code> is valid only for action types with "Custom" in the owner
-    /// field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
-    /// <code>PollForJobs</code> action returns an error.</p>
-    /// <important>
-    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the
-    /// S3 bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts. This API also returns any secret
-    /// values defined for the action.</p>
+    /// <p>Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code> is valid only for action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action returns an error.</p> <important>
+    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also returns any secret values defined for the action.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2631,10 +2469,10 @@ pub mod fluent_builders {
                 crate::input::PollForJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2643,8 +2481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents information about an action type.</p>
-        pub fn action_type_id(mut self, inp: crate::model::ActionTypeId) -> Self {
-            self.inner = self.inner.action_type_id(inp);
+        pub fn action_type_id(mut self, input: crate::model::ActionTypeId) -> Self {
+            self.inner = self.inner.action_type_id(input);
             self
         }
         /// <p>Represents information about an action type.</p>
@@ -2656,8 +2494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-        pub fn max_batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_batch_size(inp);
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -2669,22 +2507,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_query_param`](Self::set_query_param).
         ///
-        /// <p>A map of property names and values. For an action type with no queryable
-        /// properties, this value must be null or an empty map. For an action type with a queryable
-        /// property, you must supply that property as a key in the map. Only jobs whose action
-        /// configuration matches the mapped value are returned.</p>
+        /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
         pub fn query_param(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.query_param(k, v);
+            self.inner = self.inner.query_param(k.into(), v.into());
             self
         }
-        /// <p>A map of property names and values. For an action type with no queryable
-        /// properties, this value must be null or an empty map. For an action type with a queryable
-        /// property, you must supply that property as a key in the map. Only jobs whose action
-        /// configuration matches the mapped value are returned.</p>
+        /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
         pub fn set_query_param(
             mut self,
             input: std::option::Option<
@@ -2697,14 +2529,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PollForThirdPartyJobs`.
     ///
-    /// <p>Determines whether there are any third party jobs for a job worker to act on. Used
-    /// for partner actions only.</p>
-    /// <important>
-    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the
-    /// S3 bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts.</p>
+    /// <p>Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.</p> <important>
+    /// <p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForThirdPartyJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2749,10 +2577,10 @@ pub mod fluent_builders {
                 crate::input::PollForThirdPartyJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2761,8 +2589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents information about an action type.</p>
-        pub fn action_type_id(mut self, inp: crate::model::ActionTypeId) -> Self {
-            self.inner = self.inner.action_type_id(inp);
+        pub fn action_type_id(mut self, input: crate::model::ActionTypeId) -> Self {
+            self.inner = self.inner.action_type_id(input);
             self
         }
         /// <p>Represents information about an action type.</p>
@@ -2774,8 +2602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-        pub fn max_batch_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_batch_size(inp);
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -2787,7 +2615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutActionRevision`.
     ///
     /// <p>Provides information to AWS CodePipeline about new revisions to a source.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutActionRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2832,10 +2660,10 @@ pub mod fluent_builders {
                 crate::input::PutActionRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2843,14 +2671,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline that starts processing the revision to the
-        /// source.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        /// <p>The name of the pipeline that starts processing the revision to the source.</p>
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
-        /// <p>The name of the pipeline that starts processing the revision to the
-        /// source.</p>
+        /// <p>The name of the pipeline that starts processing the revision to the source.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2859,8 +2685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage that contains the action that acts on the revision.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage that contains the action that acts on the revision.</p>
@@ -2869,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the action that processes the revision.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action that processes the revision.</p>
@@ -2879,8 +2705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
-        pub fn action_revision(mut self, inp: crate::model::ActionRevision) -> Self {
-            self.inner = self.inner.action_revision(inp);
+        pub fn action_revision(mut self, input: crate::model::ActionRevision) -> Self {
+            self.inner = self.inner.action_revision(input);
             self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
@@ -2894,9 +2720,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutApprovalResult`.
     ///
-    /// <p>Provides the response to a manual approval request to AWS CodePipeline. Valid
-    /// responses include Approved and Rejected.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and Rejected.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutApprovalResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,10 +2766,10 @@ pub mod fluent_builders {
                 crate::input::PutApprovalResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2953,8 +2778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline that contains the action. </p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline that contains the action. </p>
@@ -2966,8 +2791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage that contains the action.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage that contains the action.</p>
@@ -2976,8 +2801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the action for which approval is requested.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action for which approval is requested.</p>
@@ -2986,8 +2811,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about the result of the approval request.</p>
-        pub fn result(mut self, inp: crate::model::ApprovalResult) -> Self {
-            self.inner = self.inner.result(inp);
+        pub fn result(mut self, input: crate::model::ApprovalResult) -> Self {
+            self.inner = self.inner.result(input);
             self
         }
         /// <p>Represents information about the result of the approval request.</p>
@@ -2998,16 +2823,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result(input);
             self
         }
-        /// <p>The system-generated token used to identify a unique approval request. The token
-        /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-        /// request corresponding to this token is still valid.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
-        /// <p>The system-generated token used to identify a unique approval request. The token
-        /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-        /// request corresponding to this token is still valid.</p>
+        /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_token(input);
             self
@@ -3015,9 +2836,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutJobFailureResult`.
     ///
-    /// <p>Represents the failure of a job as returned to the pipeline by a job worker. Used
-    /// for custom actions only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Represents the failure of a job as returned to the pipeline by a job worker. Used for custom actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutJobFailureResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3062,10 +2882,10 @@ pub mod fluent_builders {
                 crate::input::PutJobFailureResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3073,21 +2893,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-        /// from <code>PollForJobs</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-        /// from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>The details about the failure of a job.</p>
-        pub fn failure_details(mut self, inp: crate::model::FailureDetails) -> Self {
-            self.inner = self.inner.failure_details(inp);
+        pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
+            self.inner = self.inner.failure_details(input);
             self
         }
         /// <p>The details about the failure of a job.</p>
@@ -3101,9 +2919,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutJobSuccessResult`.
     ///
-    /// <p>Represents the success of a job as returned to the pipeline by a job worker. Used
-    /// for custom actions only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Represents the success of a job as returned to the pipeline by a job worker. Used for custom actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutJobSuccessResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3148,10 +2965,10 @@ pub mod fluent_builders {
                 crate::input::PutJobSuccessResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3159,26 +2976,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-        /// returned from <code>PollForJobs</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-        /// returned from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The ID of the current revision of the artifact successfully worked on by the
-        /// job.</p>
-        pub fn current_revision(mut self, inp: crate::model::CurrentRevision) -> Self {
-            self.inner = self.inner.current_revision(inp);
+        /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
+        pub fn current_revision(mut self, input: crate::model::CurrentRevision) -> Self {
+            self.inner = self.inner.current_revision(input);
             self
         }
-        /// <p>The ID of the current revision of the artifact successfully worked on by the
-        /// job.</p>
+        /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
         pub fn set_current_revision(
             mut self,
             input: std::option::Option<crate::model::CurrentRevision>,
@@ -3186,20 +2999,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_revision(input);
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a custom action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the custom action. When the action is complete, no
-        /// continuation token should be supplied.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(input.into());
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a custom action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the custom action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3207,14 +3012,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_continuation_token(input);
             self
         }
-        /// <p>The execution details of the successful job, such as the actions taken by the job
-        /// worker.</p>
-        pub fn execution_details(mut self, inp: crate::model::ExecutionDetails) -> Self {
-            self.inner = self.inner.execution_details(inp);
+        /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
+        pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
+            self.inner = self.inner.execution_details(input);
             self
         }
-        /// <p>The execution details of the successful job, such as the actions taken by the job
-        /// worker.</p>
+        /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
         pub fn set_execution_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionDetails>,
@@ -3226,20 +3029,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
         ///
-        /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-        /// downstream action configuration. <code>outputVariables</code> can be included only when
-        /// there is no continuation token on the request.</p>
+        /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
         pub fn output_variables(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.output_variables(k, v);
+            self.inner = self.inner.output_variables(k.into(), v.into());
             self
         }
-        /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-        /// downstream action configuration. <code>outputVariables</code> can be included only when
-        /// there is no continuation token on the request.</p>
+        /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
         pub fn set_output_variables(
             mut self,
             input: std::option::Option<
@@ -3252,9 +3051,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutThirdPartyJobFailureResult`.
     ///
-    /// <p>Represents the failure of a third party job as returned to the pipeline by a job
-    /// worker. Used for partner actions only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Represents the failure of a third party job as returned to the pipeline by a job worker. Used for partner actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutThirdPartyJobFailureResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3299,10 +3097,10 @@ pub mod fluent_builders {
                 crate::input::PutThirdPartyJobFailureResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3310,33 +3108,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the job that failed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID of the job that failed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>Represents information about failure details.</p>
-        pub fn failure_details(mut self, inp: crate::model::FailureDetails) -> Self {
-            self.inner = self.inner.failure_details(inp);
+        pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
+            self.inner = self.inner.failure_details(input);
             self
         }
         /// <p>Represents information about failure details.</p>
@@ -3350,9 +3144,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutThirdPartyJobSuccessResult`.
     ///
-    /// <p>Represents the success of a third party job as returned to the pipeline by a job
-    /// worker. Used for partner actions only.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Represents the success of a third party job as returned to the pipeline by a job worker. Used for partner actions only.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutThirdPartyJobSuccessResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3397,10 +3190,10 @@ pub mod fluent_builders {
                 crate::input::PutThirdPartyJobSuccessResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3408,33 +3201,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the job that successfully completed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID of the job that successfully completed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>Represents information about a current revision.</p>
-        pub fn current_revision(mut self, inp: crate::model::CurrentRevision) -> Self {
-            self.inner = self.inner.current_revision(inp);
+        pub fn current_revision(mut self, input: crate::model::CurrentRevision) -> Self {
+            self.inner = self.inner.current_revision(input);
             self
         }
         /// <p>Represents information about a current revision.</p>
@@ -3445,20 +3234,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_revision(input);
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a partner action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the partner action. When the action is complete, no
-        /// continuation token should be supplied.</p>
-        pub fn continuation_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(inp);
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(input.into());
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a partner action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the partner action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3466,14 +3247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_continuation_token(input);
             self
         }
-        /// <p>The details of the actions taken and results produced on an artifact as it passes
-        /// through stages in the pipeline. </p>
-        pub fn execution_details(mut self, inp: crate::model::ExecutionDetails) -> Self {
-            self.inner = self.inner.execution_details(inp);
+        /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
+        pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
+            self.inner = self.inner.execution_details(input);
             self
         }
-        /// <p>The details of the actions taken and results produced on an artifact as it passes
-        /// through stages in the pipeline. </p>
+        /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
         pub fn set_execution_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionDetails>,
@@ -3484,14 +3263,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutWebhook`.
     ///
-    /// <p>Defines a webhook and returns a unique webhook URL generated by CodePipeline. This
-    /// URL can be supplied to third party source hosting providers to call every time there's a
-    /// code change. When CodePipeline receives a POST request on this URL, the pipeline defined
-    /// in the webhook is started as long as the POST request satisfied the authentication and
-    /// filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
-    /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure
-    /// supported third parties to call the generated webhook URL.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Defines a webhook and returns a unique webhook URL generated by CodePipeline. This URL can be supplied to third party source hosting providers to call every time there's a code change. When CodePipeline receives a POST request on this URL, the pipeline defined in the webhook is started as long as the POST request satisfied the authentication and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported third parties to call the generated webhook URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3536,10 +3309,10 @@ pub mod fluent_builders {
                 crate::input::PutWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3547,18 +3320,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The detail provided in an input file to create the webhook, such as the webhook
-        /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-        /// you identify it. You might name the webhook after the pipeline and action it targets so
-        /// that you can easily recognize what it's used for later.</p>
-        pub fn webhook(mut self, inp: crate::model::WebhookDefinition) -> Self {
-            self.inner = self.inner.webhook(inp);
+        /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+        pub fn webhook(mut self, input: crate::model::WebhookDefinition) -> Self {
+            self.inner = self.inner.webhook(input);
             self
         }
-        /// <p>The detail provided in an input file to create the webhook, such as the webhook
-        /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-        /// you identify it. You might name the webhook after the pipeline and action it targets so
-        /// that you can easily recognize what it's used for later.</p>
+        /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
         pub fn set_webhook(
             mut self,
             input: std::option::Option<crate::model::WebhookDefinition>,
@@ -3571,8 +3338,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the webhook.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the webhook.</p>
@@ -3586,9 +3353,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterWebhookWithThirdParty`.
     ///
-    /// <p>Configures a connection between the webhook that was created and the external tool
-    /// with events to be detected.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Configures a connection between the webhook that was created and the external tool with events to be detected.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterWebhookWithThirdParty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3633,10 +3399,10 @@ pub mod fluent_builders {
                 crate::input::RegisterWebhookWithThirdPartyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3644,14 +3410,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an existing webhook created with PutWebhook to register with a
-        /// supported third party. </p>
-        pub fn webhook_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_name(inp);
+        /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+        pub fn webhook_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_name(input.into());
             self
         }
-        /// <p>The name of an existing webhook created with PutWebhook to register with a
-        /// supported third party. </p>
+        /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
         pub fn set_webhook_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_webhook_name(input);
             self
@@ -3659,11 +3423,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RetryStageExecution`.
     ///
-    /// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You
-    /// can retry a stage immediately if any of the actions in the stage fail. When you retry,
-    /// all actions that are still in progress continue working, and failed actions are
-    /// triggered again.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working, and failed actions are triggered again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryStageExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3708,10 +3469,10 @@ pub mod fluent_builders {
                 crate::input::RetryStageExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3720,8 +3481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline that contains the failed stage.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline that contains the failed stage.</p>
@@ -3733,8 +3494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the failed stage to be retried.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the failed stage to be retried.</p>
@@ -3742,14 +3503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stage_name(input);
             self
         }
-        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-        /// the failed stage</p>
-        pub fn pipeline_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(inp);
+        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-        /// the failed stage</p>
+        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3757,14 +3516,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_id(input);
             self
         }
-        /// <p>The scope of the retry attempt. Currently, the only supported value is
-        /// FAILED_ACTIONS.</p>
-        pub fn retry_mode(mut self, inp: crate::model::StageRetryMode) -> Self {
-            self.inner = self.inner.retry_mode(inp);
+        /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+        pub fn retry_mode(mut self, input: crate::model::StageRetryMode) -> Self {
+            self.inner = self.inner.retry_mode(input);
             self
         }
-        /// <p>The scope of the retry attempt. Currently, the only supported value is
-        /// FAILED_ACTIONS.</p>
+        /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
         pub fn set_retry_mode(
             mut self,
             input: std::option::Option<crate::model::StageRetryMode>,
@@ -3775,9 +3532,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartPipelineExecution`.
     ///
-    /// <p>Starts the specified pipeline. Specifically, it begins processing the latest commit
-    /// to the source location specified as part of the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location specified as part of the pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3822,10 +3578,10 @@ pub mod fluent_builders {
                 crate::input::StartPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3834,8 +3590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to start.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline to start.</p>
@@ -3843,14 +3599,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The system-generated unique ID used to identify a unique execution
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>The system-generated unique ID used to identify a unique execution request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>The system-generated unique ID used to identify a unique execution
-        /// request.</p>
+        /// <p>The system-generated unique ID used to identify a unique execution request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3861,13 +3615,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopPipelineExecution`.
     ///
-    /// <p>Stops the specified pipeline execution. You choose to either stop the pipeline
-    /// execution by completing in-progress actions without starting subsequent actions, or by
-    /// abandoning in-progress actions. While completing or abandoning in-progress actions, the
-    /// pipeline execution is in a <code>Stopping</code> state. After all in-progress actions
-    /// are completed or abandoned, the pipeline execution is in a <code>Stopped</code>
-    /// state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing or abandoning in-progress actions, the pipeline execution is in a <code>Stopping</code> state. After all in-progress actions are completed or abandoned, the pipeline execution is in a <code>Stopped</code> state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3912,10 +3661,10 @@ pub mod fluent_builders {
                 crate::input::StopPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3924,8 +3673,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to stop.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to stop.</p>
@@ -3936,16 +3685,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-        /// <code>GetPipelineState</code> action to retrieve the current
-        /// pipelineExecutionId.</p>
-        pub fn pipeline_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(inp);
+        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-        /// <code>GetPipelineState</code> action to retrieve the current
-        /// pipelineExecutionId.</p>
+        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3953,18 +3698,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_id(input);
             self
         }
-        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-        /// in-progress actions.</p>
-        /// <note>
+        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
         /// <p>This option can lead to failed or out-of-sequence tasks.</p>
         /// </note>
-        pub fn abandon(mut self, inp: bool) -> Self {
-            self.inner = self.inner.abandon(inp);
+        pub fn abandon(mut self, input: bool) -> Self {
+            self.inner = self.inner.abandon(input);
             self
         }
-        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-        /// in-progress actions.</p>
-        /// <note>
+        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
         /// <p>This option can lead to failed or out-of-sequence tasks.</p>
         /// </note>
         pub fn set_abandon(mut self, input: std::option::Option<bool>) -> Self {
@@ -3972,8 +3713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
@@ -3984,9 +3725,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used
-    /// to manage a resource. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4031,10 +3771,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4043,8 +3783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
@@ -4057,8 +3797,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
@@ -4073,7 +3813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from an AWS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4118,10 +3858,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4130,8 +3870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
@@ -4144,8 +3884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of keys for the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of keys for the tags to be removed from the resource.</p>
@@ -4159,11 +3899,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateActionType`.
     ///
-    /// <p>Updates an action type that was created with any supported integration model, where
-    /// the action type is to be used by customers of the action type provider. Use a JSON file
-    /// with the action definition and <code>UpdateActionType</code> to provide the full
-    /// structure.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an action type that was created with any supported integration model, where the action type is to be used by customers of the action type provider. Use a JSON file with the action definition and <code>UpdateActionType</code> to provide the full structure.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateActionType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4208,10 +3945,10 @@ pub mod fluent_builders {
                 crate::input::UpdateActionTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4220,8 +3957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action type definition for the action type to be updated.</p>
-        pub fn action_type(mut self, inp: crate::model::ActionTypeDeclaration) -> Self {
-            self.inner = self.inner.action_type(inp);
+        pub fn action_type(mut self, input: crate::model::ActionTypeDeclaration) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
         /// <p>The action type definition for the action type to be updated.</p>
@@ -4235,11 +3972,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePipeline`.
     ///
-    /// <p>Updates a specified pipeline with edits or changes to its structure. Use a JSON
-    /// file with the pipeline structure and <code>UpdatePipeline</code> to provide the full
-    /// structure of the pipeline. Updating the pipeline increases the version number of the
-    /// pipeline by 1.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4284,10 +4018,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4296,8 +4030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to be updated.</p>
-        pub fn pipeline(mut self, inp: crate::model::PipelineDeclaration) -> Self {
-            self.inner = self.inner.pipeline(inp);
+        pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
+            self.inner = self.inner.pipeline(input);
             self
         }
         /// <p>The name of the pipeline to be updated.</p>
@@ -4310,6 +4044,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

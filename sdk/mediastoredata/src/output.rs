@@ -7,8 +7,7 @@ pub struct PutObjectOutput {
     pub content_sha256: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the object in the container.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>The storage class where the object was persisted. The class should be
-    /// “Temporal”.</p>
+    /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
 }
 impl PutObjectOutput {
@@ -20,8 +19,7 @@ impl PutObjectOutput {
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>The storage class where the object was persisted. The class should be
-    /// “Temporal”.</p>
+    /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
@@ -69,14 +67,12 @@ pub mod put_object_output {
             self.e_tag = input;
             self
         }
-        /// <p>The storage class where the object was persisted. The class should be
-        /// “Temporal”.</p>
+        /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>The storage class where the object was persisted. The class should be
-        /// “Temporal”.</p>
+        /// <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -107,11 +103,7 @@ impl PutObjectOutput {
 pub struct ListItemsOutput {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Item>>,
-    /// <p>The token that can be used in a request to view the next set of results. For example,
-    /// you submit a <code>ListItems</code> request that matches 2,000 items with
-    /// <code>MaxResults</code> set at 500. The service returns the first batch of results (up
-    /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
-    /// results.</p>
+    /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListItemsOutput {
@@ -119,11 +111,7 @@ impl ListItemsOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::Item]> {
         self.items.as_deref()
     }
-    /// <p>The token that can be used in a request to view the next set of results. For example,
-    /// you submit a <code>ListItems</code> request that matches 2,000 items with
-    /// <code>MaxResults</code> set at 500. The service returns the first batch of results (up
-    /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
-    /// results.</p>
+    /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -151,9 +139,9 @@ pub mod list_items_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The metadata entries for the folders and objects at the requested path.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -165,20 +153,12 @@ pub mod list_items_output {
             self.items = input;
             self
         }
-        /// <p>The token that can be used in a request to view the next set of results. For example,
-        /// you submit a <code>ListItems</code> request that matches 2,000 items with
-        /// <code>MaxResults</code> set at 500. The service returns the first batch of results (up
-        /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
-        /// results.</p>
+        /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that can be used in a request to view the next set of results. For example,
-        /// you submit a <code>ListItems</code> request that matches 2,000 items with
-        /// <code>MaxResults</code> set at 500. The service returns the first batch of results (up
-        /// to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of
-        /// results.</p>
+        /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -204,8 +184,7 @@ impl ListItemsOutput {
 pub struct GetObjectOutput {
     /// <p>The bytes of the object. </p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-    /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The range of bytes to retrieve.</p>
@@ -218,8 +197,7 @@ pub struct GetObjectOutput {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
-    /// success. All other status codes indicate the type of error that occurred.</p>
+    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     pub status_code: i32,
 }
 impl GetObjectOutput {
@@ -227,8 +205,7 @@ impl GetObjectOutput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-    /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn cache_control(&self) -> std::option::Option<&str> {
         self.cache_control.as_deref()
@@ -253,8 +230,7 @@ impl GetObjectOutput {
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
-    /// success. All other status codes indicate the type of error that occurred.</p>
+    /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
@@ -302,15 +278,13 @@ pub mod get_object_output {
             self.body = input;
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.cache_control = Some(input.into());
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn set_cache_control(
             mut self,
@@ -375,14 +349,12 @@ pub mod get_object_output {
             self.last_modified = input;
             self
         }
-        /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
-        /// success. All other status codes indicate the type of error that occurred.</p>
+        /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
         pub fn status_code(mut self, input: i32) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate
-        /// success. All other status codes indicate the type of error that occurred.</p>
+        /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -419,8 +391,7 @@ pub struct DescribeObjectOutput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The length of the object in bytes.</p>
     pub content_length: std::option::Option<i64>,
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-    /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
@@ -439,8 +410,7 @@ impl DescribeObjectOutput {
     pub fn content_length(&self) -> std::option::Option<i64> {
         self.content_length
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-    /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn cache_control(&self) -> std::option::Option<&str> {
         self.cache_control.as_deref()
@@ -504,15 +474,13 @@ pub mod describe_object_output {
             self.content_length = input;
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.cache_control = Some(input.into());
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn set_cache_control(
             mut self,

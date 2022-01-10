@@ -3,39 +3,29 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPattern {
-    /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
-    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub pattern_set_name: std::option::Option<std::string::String>,
-    /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
-    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub pattern_name: std::option::Option<std::string::String>,
-    /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
-    /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub pattern: std::option::Option<std::string::String>,
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub rank: i32,
 }
 impl LogPattern {
-    /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
-    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn pattern_set_name(&self) -> std::option::Option<&str> {
         self.pattern_set_name.as_deref()
     }
-    /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
-    /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+    /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     pub fn pattern_name(&self) -> std::option::Option<&str> {
         self.pattern_name.as_deref()
     }
-    /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
-    /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+    /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
-    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-    /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-    /// </p>
+    /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
@@ -62,14 +52,12 @@ pub mod log_pattern {
         pub(crate) rank: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
-        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
-        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn set_pattern_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -77,40 +65,32 @@ pub mod log_pattern {
             self.pattern_set_name = input;
             self
         }
-        /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
-        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern_name = Some(input.into());
             self
         }
-        /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
-        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn set_pattern_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern_name = input;
             self
         }
-        /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
-        /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+        /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
-        /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
+        /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -269,29 +249,16 @@ pub struct ApplicationInfo {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The lifecycle of the application. </p>
     pub life_cycle: std::option::Option<std::string::String>,
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
-    /// for opsItem updates.
-    /// </p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
     pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// Indicates whether Application Insights will create opsItems for any problem detected by Application
-    /// Insights for an application.
-    /// </p>
+    /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
     pub ops_center_enabled: std::option::Option<bool>,
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub cwe_monitor_enabled: std::option::Option<bool>,
-    /// <p>The issues on the user side that block Application Insights from successfully monitoring
-    /// an application. Example remarks include:</p>
+    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li>
-    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
-    /// </li>
-    /// <li>
-    /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
-    /// </li>
+    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
+    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
     pub remarks: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -308,35 +275,22 @@ impl ApplicationInfo {
     pub fn life_cycle(&self) -> std::option::Option<&str> {
         self.life_cycle.as_deref()
     }
-    /// <p>
-    /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
-    /// for opsItem updates.
-    /// </p>
+    /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
     pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
-    /// <p>
-    /// Indicates whether Application Insights will create opsItems for any problem detected by Application
-    /// Insights for an application.
-    /// </p>
+    /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
     pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
         self.ops_center_enabled
     }
-    /// <p>
-    /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-    /// </p>
+    /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p>The issues on the user side that block Application Insights from successfully monitoring
-    /// an application. Example remarks include:</p>
+    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li>
-    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
-    /// </li>
-    /// <li>
-    /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
-    /// </li>
+    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
+    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
     pub fn remarks(&self) -> std::option::Option<&str> {
         self.remarks.as_deref()
@@ -403,18 +357,12 @@ pub mod application_info {
             self.life_cycle = input;
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
-        /// for opsItem updates.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ops_item_sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
-        /// for opsItem updates.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -422,59 +370,39 @@ pub mod application_info {
             self.ops_item_sns_topic_arn = input;
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights will create opsItems for any problem detected by Application
-        /// Insights for an application.
-        /// </p>
+        /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
             self.ops_center_enabled = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights will create opsItems for any problem detected by Application
-        /// Insights for an application.
-        /// </p>
+        /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.ops_center_enabled = input;
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
             self.cwe_monitor_enabled = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cwe_monitor_enabled = input;
             self
         }
-        /// <p>The issues on the user side that block Application Insights from successfully monitoring
-        /// an application. Example remarks include:</p>
+        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
         /// <ul>
-        /// <li>
-        /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
-        /// </li>
-        /// <li>
-        /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
-        /// </li>
+        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
+        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
         /// </ul>
         pub fn remarks(mut self, input: impl Into<std::string::String>) -> Self {
             self.remarks = Some(input.into());
             self
         }
-        /// <p>The issues on the user side that block Application Insights from successfully monitoring
-        /// an application. Example remarks include:</p>
+        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
         /// <ul>
-        /// <li>
-        /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
-        /// </li>
-        /// <li>
-        /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
-        /// </li>
+        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
+        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
         /// </ul>
         pub fn set_remarks(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.remarks = input;
@@ -580,51 +508,27 @@ impl AsRef<str> for DiscoveryType {
     }
 }
 
-/// <p>An object that defines the tags associated with an application.
-/// A <i>tag</i> is a label that you optionally define and associate with
-/// an application. Tags can help you categorize and manage resources in different ways, such as
-/// by purpose, owner, environment, or other criteria.</p>
-/// <p>Each tag consists of a required <i>tag key</i> and an
-/// associated <i>tag value</i>, both of which you define. A tag key is a
-/// general label that acts as a category for a more specific tag value. A tag value acts as
-/// a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag
-/// value can contain as many as 256 characters. The characters can be Unicode letters,
-/// digits, white space, or one of the following symbols: _ . : / = + -. The following
-/// additional restrictions apply to tags:</p>
+/// <p>An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria.</p>
+/// <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p>
 /// <ul>
-/// <li>
-/// <p>Tag keys and values are case sensitive.</p>
-/// </li>
-/// <li>
-/// <p>For each associated resource, each tag key must be unique and it can have only
-/// one value.</p>
-/// </li>
-/// <li>
-/// <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in
-/// any tag keys or values that you define. In addition, you can't edit or remove
-/// tag keys or values that use this prefix. </p>
-/// </li>
+/// <li> <p>Tag keys and values are case sensitive.</p> </li>
+/// <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li>
+/// <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
-    /// 128 characters. The minimum length is 1 character.</p>
+    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
-    /// value is 256 characters. The minimum length is 0 characters. If you don't want an
-    /// application to have a specific tag value, don't specify a value for this parameter.</p>
+    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
-    /// 128 characters. The minimum length is 1 character.</p>
+    /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
-    /// value is 256 characters. The minimum length is 0 characters. If you don't want an
-    /// application to have a specific tag value, don't specify a value for this parameter.</p>
+    /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -647,28 +551,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
-        /// 128 characters. The minimum length is 1 character.</p>
+        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
-        /// 128 characters. The minimum length is 1 character.</p>
+        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
-        /// value is 256 characters. The minimum length is 0 characters. If you don't want an
-        /// application to have a specific tag value, don't specify a value for this parameter.</p>
+        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
-        /// value is 256 characters. The minimum length is 0 characters. If you don't want an
-        /// application to have a specific tag value, don't specify a value for this parameter.</p>
+        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -926,11 +824,11 @@ pub mod problem {
         /// <p>Feedback provided by the user about the problem.</p>
         pub fn feedback(
             mut self,
-            k: impl Into<crate::model::FeedbackKey>,
-            v: impl Into<crate::model::FeedbackValue>,
+            k: crate::model::FeedbackKey,
+            v: crate::model::FeedbackValue,
         ) -> Self {
             let mut hash_map = self.feedback.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.feedback = Some(hash_map);
             self
         }
@@ -1225,73 +1123,47 @@ impl AsRef<str> for Status {
     }
 }
 
-/// <p>
-/// The event information.
-/// </p>
+/// <p> The event information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationEvent {
-    /// <p>
-    /// The resource monitored by Application Insights.
-    /// </p>
+    /// <p> The resource monitored by Application Insights. </p>
     pub monitored_resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
-    /// </p>
+    /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
     pub event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
-    /// <p>
-    /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
-    /// </p>
+    /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
     pub event_resource_type: std::option::Option<crate::model::ConfigurationEventResourceType>,
-    /// <p>
-    /// The timestamp of the event.
-    /// </p>
+    /// <p> The timestamp of the event. </p>
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The details of the event in plain text.
-    /// </p>
+    /// <p> The details of the event in plain text. </p>
     pub event_detail: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the resource Application Insights attempted to configure.
-    /// </p>
+    /// <p> The name of the resource Application Insights attempted to configure. </p>
     pub event_resource_name: std::option::Option<std::string::String>,
 }
 impl ConfigurationEvent {
-    /// <p>
-    /// The resource monitored by Application Insights.
-    /// </p>
+    /// <p> The resource monitored by Application Insights. </p>
     pub fn monitored_resource_arn(&self) -> std::option::Option<&str> {
         self.monitored_resource_arn.as_deref()
     }
-    /// <p>
-    /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
-    /// </p>
+    /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
     pub fn event_status(&self) -> std::option::Option<&crate::model::ConfigurationEventStatus> {
         self.event_status.as_ref()
     }
-    /// <p>
-    /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
-    /// </p>
+    /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
     pub fn event_resource_type(
         &self,
     ) -> std::option::Option<&crate::model::ConfigurationEventResourceType> {
         self.event_resource_type.as_ref()
     }
-    /// <p>
-    /// The timestamp of the event.
-    /// </p>
+    /// <p> The timestamp of the event. </p>
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>
-    /// The details of the event in plain text.
-    /// </p>
+    /// <p> The details of the event in plain text. </p>
     pub fn event_detail(&self) -> std::option::Option<&str> {
         self.event_detail.as_deref()
     }
-    /// <p>
-    /// The name of the resource Application Insights attempted to configure.
-    /// </p>
+    /// <p> The name of the resource Application Insights attempted to configure. </p>
     pub fn event_resource_name(&self) -> std::option::Option<&str> {
         self.event_resource_name.as_deref()
     }
@@ -1323,16 +1195,12 @@ pub mod configuration_event {
         pub(crate) event_resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The resource monitored by Application Insights.
-        /// </p>
+        /// <p> The resource monitored by Application Insights. </p>
         pub fn monitored_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitored_resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The resource monitored by Application Insights.
-        /// </p>
+        /// <p> The resource monitored by Application Insights. </p>
         pub fn set_monitored_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1340,16 +1208,12 @@ pub mod configuration_event {
             self.monitored_resource_arn = input;
             self
         }
-        /// <p>
-        /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
-        /// </p>
+        /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
         pub fn event_status(mut self, input: crate::model::ConfigurationEventStatus) -> Self {
             self.event_status = Some(input);
             self
         }
-        /// <p>
-        /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
-        /// </p>
+        /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
         pub fn set_event_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationEventStatus>,
@@ -1357,9 +1221,7 @@ pub mod configuration_event {
             self.event_status = input;
             self
         }
-        /// <p>
-        /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
-        /// </p>
+        /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
         pub fn event_resource_type(
             mut self,
             input: crate::model::ConfigurationEventResourceType,
@@ -1367,9 +1229,7 @@ pub mod configuration_event {
             self.event_resource_type = Some(input);
             self
         }
-        /// <p>
-        /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
-        /// </p>
+        /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
         pub fn set_event_resource_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationEventResourceType>,
@@ -1377,16 +1237,12 @@ pub mod configuration_event {
             self.event_resource_type = input;
             self
         }
-        /// <p>
-        /// The timestamp of the event.
-        /// </p>
+        /// <p> The timestamp of the event. </p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_time = Some(input);
             self
         }
-        /// <p>
-        /// The timestamp of the event.
-        /// </p>
+        /// <p> The timestamp of the event. </p>
         pub fn set_event_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1394,30 +1250,22 @@ pub mod configuration_event {
             self.event_time = input;
             self
         }
-        /// <p>
-        /// The details of the event in plain text.
-        /// </p>
+        /// <p> The details of the event in plain text. </p>
         pub fn event_detail(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_detail = Some(input.into());
             self
         }
-        /// <p>
-        /// The details of the event in plain text.
-        /// </p>
+        /// <p> The details of the event in plain text. </p>
         pub fn set_event_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_detail = input;
             self
         }
-        /// <p>
-        /// The name of the resource Application Insights attempted to configure.
-        /// </p>
+        /// <p> The name of the resource Application Insights attempted to configure. </p>
         pub fn event_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_resource_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the resource Application Insights attempted to configure.
-        /// </p>
+        /// <p> The name of the resource Application Insights attempted to configure. </p>
         pub fn set_event_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1572,30 +1420,23 @@ impl AsRef<str> for ConfigurationEventStatus {
     }
 }
 
-/// <p>Describes a standalone resource or similarly grouped resources that the application is made
-/// up of.</p>
+/// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationComponent {
     /// <p>The name of the component.</p>
     pub component_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
-    /// </p>
+    /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
     pub component_remarks: std::option::Option<std::string::String>,
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>
-    /// The operating system of the component.
-    /// </p>
+    /// <p> The operating system of the component. </p>
     pub os_type: std::option::Option<crate::model::OsType>,
     /// <p>The stack tier of the application component.</p>
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>Indicates whether the application component is monitored. </p>
     pub monitor: std::option::Option<bool>,
-    /// <p>
-    /// Workloads detected in the application component.
-    /// </p>
+    /// <p> Workloads detected in the application component. </p>
     pub detected_workload: std::option::Option<
         std::collections::HashMap<
             crate::model::Tier,
@@ -1608,9 +1449,7 @@ impl ApplicationComponent {
     pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
-    /// <p>
-    /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
-    /// </p>
+    /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
     pub fn component_remarks(&self) -> std::option::Option<&str> {
         self.component_remarks.as_deref()
     }
@@ -1618,9 +1457,7 @@ impl ApplicationComponent {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>
-    /// The operating system of the component.
-    /// </p>
+    /// <p> The operating system of the component. </p>
     pub fn os_type(&self) -> std::option::Option<&crate::model::OsType> {
         self.os_type.as_ref()
     }
@@ -1632,9 +1469,7 @@ impl ApplicationComponent {
     pub fn monitor(&self) -> std::option::Option<bool> {
         self.monitor
     }
-    /// <p>
-    /// Workloads detected in the application component.
-    /// </p>
+    /// <p> Workloads detected in the application component. </p>
     pub fn detected_workload(
         &self,
     ) -> std::option::Option<
@@ -1692,16 +1527,12 @@ pub mod application_component {
             self.component_name = input;
             self
         }
-        /// <p>
-        /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
-        /// </p>
+        /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
         pub fn component_remarks(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_remarks = Some(input.into());
             self
         }
-        /// <p>
-        /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
-        /// </p>
+        /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
         pub fn set_component_remarks(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1722,16 +1553,12 @@ pub mod application_component {
             self.resource_type = input;
             self
         }
-        /// <p>
-        /// The operating system of the component.
-        /// </p>
+        /// <p> The operating system of the component. </p>
         pub fn os_type(mut self, input: crate::model::OsType) -> Self {
             self.os_type = Some(input);
             self
         }
-        /// <p>
-        /// The operating system of the component.
-        /// </p>
+        /// <p> The operating system of the component. </p>
         pub fn set_os_type(mut self, input: std::option::Option<crate::model::OsType>) -> Self {
             self.os_type = input;
             self
@@ -1760,22 +1587,18 @@ pub mod application_component {
         ///
         /// To override the contents of this collection use [`set_detected_workload`](Self::set_detected_workload).
         ///
-        /// <p>
-        /// Workloads detected in the application component.
-        /// </p>
+        /// <p> Workloads detected in the application component. </p>
         pub fn detected_workload(
             mut self,
-            k: impl Into<crate::model::Tier>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            k: crate::model::Tier,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.detected_workload.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.detected_workload = Some(hash_map);
             self
         }
-        /// <p>
-        /// Workloads detected in the application component.
-        /// </p>
+        /// <p> Workloads detected in the application component. </p>
         pub fn set_detected_workload(
             mut self,
             input: std::option::Option<
@@ -1898,9 +1721,9 @@ pub mod related_observations {
         /// To override the contents of this collection use [`set_observation_list`](Self::set_observation_list).
         ///
         /// <p>The list of observations related to the problem.</p>
-        pub fn observation_list(mut self, input: impl Into<crate::model::Observation>) -> Self {
+        pub fn observation_list(mut self, input: crate::model::Observation) -> Self {
             let mut v = self.observation_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.observation_list = Some(v);
             self
         }
@@ -1933,7 +1756,7 @@ impl RelatedObservations {
 pub struct Observation {
     /// <p>The ID of the observation type.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+    /// <p>The time when the observation was first detected, in epoch seconds.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time when the observation ended, in epoch seconds.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1961,15 +1784,13 @@ pub struct Observation {
     pub cloud_watch_event_id: std::option::Option<std::string::String>,
     /// <p> The source of the CloudWatch Event. </p>
     pub cloud_watch_event_source: std::option::Option<crate::model::CloudWatchEventSource>,
-    /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
-    /// Instance State-change Notification</code>. </p>
+    /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
     pub cloud_watch_event_detail_type: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
     pub health_event_arn: std::option::Option<std::string::String>,
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
     pub health_service: std::option::Option<std::string::String>,
-    /// <p> The type of the AWS Health event, for example,
-    /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+    /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
     pub health_event_type_code: std::option::Option<std::string::String>,
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
     pub health_event_type_category: std::option::Option<std::string::String>,
@@ -1977,96 +1798,51 @@ pub struct Observation {
     pub health_event_description: std::option::Option<std::string::String>,
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
     pub code_deploy_deployment_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The deployment group to which the CodeDeploy deployment belongs.
-    /// </p>
+    /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
     pub code_deploy_deployment_group: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
-    /// </p>
+    /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
     pub code_deploy_state: std::option::Option<std::string::String>,
-    /// <p>
-    /// The CodeDeploy application to which the deployment belongs.
-    /// </p>
+    /// <p> The CodeDeploy application to which the deployment belongs. </p>
     pub code_deploy_application: std::option::Option<std::string::String>,
-    /// <p>
-    /// The instance group to which the CodeDeploy instance belongs.
-    /// </p>
+    /// <p> The instance group to which the CodeDeploy instance belongs. </p>
     pub code_deploy_instance_group_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
-    /// </p>
+    /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
     pub ec2_state: std::option::Option<std::string::String>,
-    /// <p>
-    /// The category of an RDS event.
-    /// </p>
+    /// <p> The category of an RDS event. </p>
     pub rds_event_categories: std::option::Option<std::string::String>,
-    /// <p>
-    /// The message of an RDS event.
-    /// </p>
+    /// <p> The message of an RDS event. </p>
     pub rds_event_message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the S3 CloudWatch Event-based observation.
-    /// </p>
+    /// <p> The name of the S3 CloudWatch Event-based observation. </p>
     pub s3_event_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the step function execution-based observation.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
     pub states_execution_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN)  of the step function-based observation.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
     pub states_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of the step function-related observation.
-    /// </p>
+    /// <p> The status of the step function-related observation. </p>
     pub states_status: std::option::Option<std::string::String>,
-    /// <p>
-    /// The input to the step function-based observation.
-    /// </p>
+    /// <p> The input to the step function-based observation. </p>
     pub states_input: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
-    /// </p>
+    /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
     pub ebs_event: std::option::Option<std::string::String>,
-    /// <p>
-    /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
-    /// </p>
+    /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
     pub ebs_result: std::option::Option<std::string::String>,
-    /// <p>
-    /// The cause of an EBS CloudWatch event.
-    /// </p>
+    /// <p> The cause of an EBS CloudWatch event. </p>
     pub ebs_cause: std::option::Option<std::string::String>,
-    /// <p>
-    /// The request ID of an EBS CloudWatch event.
-    /// </p>
+    /// <p> The request ID of an EBS CloudWatch event. </p>
     pub ebs_request_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The X-Ray request fault percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request fault percentage for this node. </p>
     pub x_ray_fault_percent: std::option::Option<i32>,
-    /// <p>
-    /// The X-Ray request throttle percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request throttle percentage for this node. </p>
     pub x_ray_throttle_percent: std::option::Option<i32>,
-    /// <p>
-    /// The X-Ray request error percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request error percentage for this node. </p>
     pub x_ray_error_percent: std::option::Option<i32>,
-    /// <p>
-    /// The X-Ray request count for this node.
-    /// </p>
+    /// <p> The X-Ray request count for this node. </p>
     pub x_ray_request_count: std::option::Option<i32>,
-    /// <p>
-    /// The X-Ray node request average latency for this node.
-    /// </p>
+    /// <p> The X-Ray node request average latency for this node. </p>
     pub x_ray_request_average_latency: std::option::Option<i64>,
-    /// <p>
-    /// The name of the X-Ray node.
-    /// </p>
+    /// <p> The name of the X-Ray node. </p>
     pub x_ray_node_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the  X-Ray node.      </p>
+    /// <p> The type of the X-Ray node. </p>
     pub x_ray_node_type: std::option::Option<std::string::String>,
 }
 impl Observation {
@@ -2074,7 +1850,7 @@ impl Observation {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+    /// <p>The time when the observation was first detected, in epoch seconds.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -2132,8 +1908,7 @@ impl Observation {
     ) -> std::option::Option<&crate::model::CloudWatchEventSource> {
         self.cloud_watch_event_source.as_ref()
     }
-    /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
-    /// Instance State-change Notification</code>. </p>
+    /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
     pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<&str> {
         self.cloud_watch_event_detail_type.as_deref()
     }
@@ -2145,8 +1920,7 @@ impl Observation {
     pub fn health_service(&self) -> std::option::Option<&str> {
         self.health_service.as_deref()
     }
-    /// <p> The type of the AWS Health event, for example,
-    /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+    /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
     pub fn health_event_type_code(&self) -> std::option::Option<&str> {
         self.health_event_type_code.as_deref()
     }
@@ -2162,140 +1936,95 @@ impl Observation {
     pub fn code_deploy_deployment_id(&self) -> std::option::Option<&str> {
         self.code_deploy_deployment_id.as_deref()
     }
-    /// <p>
-    /// The deployment group to which the CodeDeploy deployment belongs.
-    /// </p>
+    /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
     pub fn code_deploy_deployment_group(&self) -> std::option::Option<&str> {
         self.code_deploy_deployment_group.as_deref()
     }
-    /// <p>
-    /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
-    /// </p>
+    /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
     pub fn code_deploy_state(&self) -> std::option::Option<&str> {
         self.code_deploy_state.as_deref()
     }
-    /// <p>
-    /// The CodeDeploy application to which the deployment belongs.
-    /// </p>
+    /// <p> The CodeDeploy application to which the deployment belongs. </p>
     pub fn code_deploy_application(&self) -> std::option::Option<&str> {
         self.code_deploy_application.as_deref()
     }
-    /// <p>
-    /// The instance group to which the CodeDeploy instance belongs.
-    /// </p>
+    /// <p> The instance group to which the CodeDeploy instance belongs. </p>
     pub fn code_deploy_instance_group_id(&self) -> std::option::Option<&str> {
         self.code_deploy_instance_group_id.as_deref()
     }
-    /// <p>
-    /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
-    /// </p>
+    /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
     pub fn ec2_state(&self) -> std::option::Option<&str> {
         self.ec2_state.as_deref()
     }
-    /// <p>
-    /// The category of an RDS event.
-    /// </p>
+    /// <p> The category of an RDS event. </p>
     pub fn rds_event_categories(&self) -> std::option::Option<&str> {
         self.rds_event_categories.as_deref()
     }
-    /// <p>
-    /// The message of an RDS event.
-    /// </p>
+    /// <p> The message of an RDS event. </p>
     pub fn rds_event_message(&self) -> std::option::Option<&str> {
         self.rds_event_message.as_deref()
     }
-    /// <p>
-    /// The name of the S3 CloudWatch Event-based observation.
-    /// </p>
+    /// <p> The name of the S3 CloudWatch Event-based observation. </p>
     pub fn s3_event_name(&self) -> std::option::Option<&str> {
         self.s3_event_name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the step function execution-based observation.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
     pub fn states_execution_arn(&self) -> std::option::Option<&str> {
         self.states_execution_arn.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN)  of the step function-based observation.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
     pub fn states_arn(&self) -> std::option::Option<&str> {
         self.states_arn.as_deref()
     }
-    /// <p>
-    /// The status of the step function-related observation.
-    /// </p>
+    /// <p> The status of the step function-related observation. </p>
     pub fn states_status(&self) -> std::option::Option<&str> {
         self.states_status.as_deref()
     }
-    /// <p>
-    /// The input to the step function-based observation.
-    /// </p>
+    /// <p> The input to the step function-based observation. </p>
     pub fn states_input(&self) -> std::option::Option<&str> {
         self.states_input.as_deref()
     }
-    /// <p>
-    /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
-    /// </p>
+    /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
     pub fn ebs_event(&self) -> std::option::Option<&str> {
         self.ebs_event.as_deref()
     }
-    /// <p>
-    /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
-    /// </p>
+    /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
     pub fn ebs_result(&self) -> std::option::Option<&str> {
         self.ebs_result.as_deref()
     }
-    /// <p>
-    /// The cause of an EBS CloudWatch event.
-    /// </p>
+    /// <p> The cause of an EBS CloudWatch event. </p>
     pub fn ebs_cause(&self) -> std::option::Option<&str> {
         self.ebs_cause.as_deref()
     }
-    /// <p>
-    /// The request ID of an EBS CloudWatch event.
-    /// </p>
+    /// <p> The request ID of an EBS CloudWatch event. </p>
     pub fn ebs_request_id(&self) -> std::option::Option<&str> {
         self.ebs_request_id.as_deref()
     }
-    /// <p>
-    /// The X-Ray request fault percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request fault percentage for this node. </p>
     pub fn x_ray_fault_percent(&self) -> std::option::Option<i32> {
         self.x_ray_fault_percent
     }
-    /// <p>
-    /// The X-Ray request throttle percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request throttle percentage for this node. </p>
     pub fn x_ray_throttle_percent(&self) -> std::option::Option<i32> {
         self.x_ray_throttle_percent
     }
-    /// <p>
-    /// The X-Ray request error percentage for this node.
-    /// </p>
+    /// <p> The X-Ray request error percentage for this node. </p>
     pub fn x_ray_error_percent(&self) -> std::option::Option<i32> {
         self.x_ray_error_percent
     }
-    /// <p>
-    /// The X-Ray request count for this node.
-    /// </p>
+    /// <p> The X-Ray request count for this node. </p>
     pub fn x_ray_request_count(&self) -> std::option::Option<i32> {
         self.x_ray_request_count
     }
-    /// <p>
-    /// The X-Ray node request average latency for this node.
-    /// </p>
+    /// <p> The X-Ray node request average latency for this node. </p>
     pub fn x_ray_request_average_latency(&self) -> std::option::Option<i64> {
         self.x_ray_request_average_latency
     }
-    /// <p>
-    /// The name of the X-Ray node.
-    /// </p>
+    /// <p> The name of the X-Ray node. </p>
     pub fn x_ray_node_name(&self) -> std::option::Option<&str> {
         self.x_ray_node_name.as_deref()
     }
-    /// <p>
-    /// The type of the  X-Ray node.      </p>
+    /// <p> The type of the X-Ray node. </p>
     pub fn x_ray_node_type(&self) -> std::option::Option<&str> {
         self.x_ray_node_type.as_deref()
     }
@@ -2430,12 +2159,12 @@ pub mod observation {
             self.id = input;
             self
         }
-        /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+        /// <p>The time when the observation was first detected, in epoch seconds.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+        /// <p>The time when the observation was first detected, in epoch seconds.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2594,8 +2323,7 @@ pub mod observation {
             self.cloud_watch_event_source = input;
             self
         }
-        /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
-        /// Instance State-change Notification</code>. </p>
+        /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
         pub fn cloud_watch_event_detail_type(
             mut self,
             input: impl Into<std::string::String>,
@@ -2603,8 +2331,7 @@ pub mod observation {
             self.cloud_watch_event_detail_type = Some(input.into());
             self
         }
-        /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
-        /// Instance State-change Notification</code>. </p>
+        /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
         pub fn set_cloud_watch_event_detail_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2638,14 +2365,12 @@ pub mod observation {
             self.health_service = input;
             self
         }
-        /// <p> The type of the AWS Health event, for example,
-        /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+        /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
         pub fn health_event_type_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_event_type_code = Some(input.into());
             self
         }
-        /// <p> The type of the AWS Health event, for example,
-        /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
+        /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
         pub fn set_health_event_type_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2692,9 +2417,7 @@ pub mod observation {
             self.code_deploy_deployment_id = input;
             self
         }
-        /// <p>
-        /// The deployment group to which the CodeDeploy deployment belongs.
-        /// </p>
+        /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
         pub fn code_deploy_deployment_group(
             mut self,
             input: impl Into<std::string::String>,
@@ -2702,9 +2425,7 @@ pub mod observation {
             self.code_deploy_deployment_group = Some(input.into());
             self
         }
-        /// <p>
-        /// The deployment group to which the CodeDeploy deployment belongs.
-        /// </p>
+        /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
         pub fn set_code_deploy_deployment_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2712,16 +2433,12 @@ pub mod observation {
             self.code_deploy_deployment_group = input;
             self
         }
-        /// <p>
-        /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
-        /// </p>
+        /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
         pub fn code_deploy_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_deploy_state = Some(input.into());
             self
         }
-        /// <p>
-        /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
-        /// </p>
+        /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
         pub fn set_code_deploy_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2729,16 +2446,12 @@ pub mod observation {
             self.code_deploy_state = input;
             self
         }
-        /// <p>
-        /// The CodeDeploy application to which the deployment belongs.
-        /// </p>
+        /// <p> The CodeDeploy application to which the deployment belongs. </p>
         pub fn code_deploy_application(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_deploy_application = Some(input.into());
             self
         }
-        /// <p>
-        /// The CodeDeploy application to which the deployment belongs.
-        /// </p>
+        /// <p> The CodeDeploy application to which the deployment belongs. </p>
         pub fn set_code_deploy_application(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2746,9 +2459,7 @@ pub mod observation {
             self.code_deploy_application = input;
             self
         }
-        /// <p>
-        /// The instance group to which the CodeDeploy instance belongs.
-        /// </p>
+        /// <p> The instance group to which the CodeDeploy instance belongs. </p>
         pub fn code_deploy_instance_group_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2756,9 +2467,7 @@ pub mod observation {
             self.code_deploy_instance_group_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The instance group to which the CodeDeploy instance belongs.
-        /// </p>
+        /// <p> The instance group to which the CodeDeploy instance belongs. </p>
         pub fn set_code_deploy_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2766,30 +2475,22 @@ pub mod observation {
             self.code_deploy_instance_group_id = input;
             self
         }
-        /// <p>
-        /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
-        /// </p>
+        /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
         pub fn ec2_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_state = Some(input.into());
             self
         }
-        /// <p>
-        /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
-        /// </p>
+        /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
         pub fn set_ec2_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_state = input;
             self
         }
-        /// <p>
-        /// The category of an RDS event.
-        /// </p>
+        /// <p> The category of an RDS event. </p>
         pub fn rds_event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             self.rds_event_categories = Some(input.into());
             self
         }
-        /// <p>
-        /// The category of an RDS event.
-        /// </p>
+        /// <p> The category of an RDS event. </p>
         pub fn set_rds_event_categories(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2797,16 +2498,12 @@ pub mod observation {
             self.rds_event_categories = input;
             self
         }
-        /// <p>
-        /// The message of an RDS event.
-        /// </p>
+        /// <p> The message of an RDS event. </p>
         pub fn rds_event_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.rds_event_message = Some(input.into());
             self
         }
-        /// <p>
-        /// The message of an RDS event.
-        /// </p>
+        /// <p> The message of an RDS event. </p>
         pub fn set_rds_event_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2814,16 +2511,12 @@ pub mod observation {
             self.rds_event_message = input;
             self
         }
-        /// <p>
-        /// The name of the S3 CloudWatch Event-based observation.
-        /// </p>
+        /// <p> The name of the S3 CloudWatch Event-based observation. </p>
         pub fn s3_event_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_event_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the S3 CloudWatch Event-based observation.
-        /// </p>
+        /// <p> The name of the S3 CloudWatch Event-based observation. </p>
         pub fn set_s3_event_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2831,16 +2524,12 @@ pub mod observation {
             self.s3_event_name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the step function execution-based observation.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
         pub fn states_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.states_execution_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the step function execution-based observation.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
         pub fn set_states_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2848,30 +2537,22 @@ pub mod observation {
             self.states_execution_arn = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN)  of the step function-based observation.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
         pub fn states_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.states_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN)  of the step function-based observation.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
         pub fn set_states_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.states_arn = input;
             self
         }
-        /// <p>
-        /// The status of the step function-related observation.
-        /// </p>
+        /// <p> The status of the step function-related observation. </p>
         pub fn states_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.states_status = Some(input.into());
             self
         }
-        /// <p>
-        /// The status of the step function-related observation.
-        /// </p>
+        /// <p> The status of the step function-related observation. </p>
         pub fn set_states_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2879,72 +2560,52 @@ pub mod observation {
             self.states_status = input;
             self
         }
-        /// <p>
-        /// The input to the step function-based observation.
-        /// </p>
+        /// <p> The input to the step function-based observation. </p>
         pub fn states_input(mut self, input: impl Into<std::string::String>) -> Self {
             self.states_input = Some(input.into());
             self
         }
-        /// <p>
-        /// The input to the step function-based observation.
-        /// </p>
+        /// <p> The input to the step function-based observation. </p>
         pub fn set_states_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.states_input = input;
             self
         }
-        /// <p>
-        /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
-        /// </p>
+        /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
         pub fn ebs_event(mut self, input: impl Into<std::string::String>) -> Self {
             self.ebs_event = Some(input.into());
             self
         }
-        /// <p>
-        /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
-        /// </p>
+        /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
         pub fn set_ebs_event(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_event = input;
             self
         }
-        /// <p>
-        /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
-        /// </p>
+        /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
         pub fn ebs_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.ebs_result = Some(input.into());
             self
         }
-        /// <p>
-        /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
-        /// </p>
+        /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
         pub fn set_ebs_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_result = input;
             self
         }
-        /// <p>
-        /// The cause of an EBS CloudWatch event.
-        /// </p>
+        /// <p> The cause of an EBS CloudWatch event. </p>
         pub fn ebs_cause(mut self, input: impl Into<std::string::String>) -> Self {
             self.ebs_cause = Some(input.into());
             self
         }
-        /// <p>
-        /// The cause of an EBS CloudWatch event.
-        /// </p>
+        /// <p> The cause of an EBS CloudWatch event. </p>
         pub fn set_ebs_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_cause = input;
             self
         }
-        /// <p>
-        /// The request ID of an EBS CloudWatch event.
-        /// </p>
+        /// <p> The request ID of an EBS CloudWatch event. </p>
         pub fn ebs_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ebs_request_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The request ID of an EBS CloudWatch event.
-        /// </p>
+        /// <p> The request ID of an EBS CloudWatch event. </p>
         pub fn set_ebs_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2952,72 +2613,52 @@ pub mod observation {
             self.ebs_request_id = input;
             self
         }
-        /// <p>
-        /// The X-Ray request fault percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request fault percentage for this node. </p>
         pub fn x_ray_fault_percent(mut self, input: i32) -> Self {
             self.x_ray_fault_percent = Some(input);
             self
         }
-        /// <p>
-        /// The X-Ray request fault percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request fault percentage for this node. </p>
         pub fn set_x_ray_fault_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_fault_percent = input;
             self
         }
-        /// <p>
-        /// The X-Ray request throttle percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request throttle percentage for this node. </p>
         pub fn x_ray_throttle_percent(mut self, input: i32) -> Self {
             self.x_ray_throttle_percent = Some(input);
             self
         }
-        /// <p>
-        /// The X-Ray request throttle percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request throttle percentage for this node. </p>
         pub fn set_x_ray_throttle_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_throttle_percent = input;
             self
         }
-        /// <p>
-        /// The X-Ray request error percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request error percentage for this node. </p>
         pub fn x_ray_error_percent(mut self, input: i32) -> Self {
             self.x_ray_error_percent = Some(input);
             self
         }
-        /// <p>
-        /// The X-Ray request error percentage for this node.
-        /// </p>
+        /// <p> The X-Ray request error percentage for this node. </p>
         pub fn set_x_ray_error_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_error_percent = input;
             self
         }
-        /// <p>
-        /// The X-Ray request count for this node.
-        /// </p>
+        /// <p> The X-Ray request count for this node. </p>
         pub fn x_ray_request_count(mut self, input: i32) -> Self {
             self.x_ray_request_count = Some(input);
             self
         }
-        /// <p>
-        /// The X-Ray request count for this node.
-        /// </p>
+        /// <p> The X-Ray request count for this node. </p>
         pub fn set_x_ray_request_count(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_request_count = input;
             self
         }
-        /// <p>
-        /// The X-Ray node request average latency for this node.
-        /// </p>
+        /// <p> The X-Ray node request average latency for this node. </p>
         pub fn x_ray_request_average_latency(mut self, input: i64) -> Self {
             self.x_ray_request_average_latency = Some(input);
             self
         }
-        /// <p>
-        /// The X-Ray node request average latency for this node.
-        /// </p>
+        /// <p> The X-Ray node request average latency for this node. </p>
         pub fn set_x_ray_request_average_latency(
             mut self,
             input: std::option::Option<i64>,
@@ -3025,16 +2666,12 @@ pub mod observation {
             self.x_ray_request_average_latency = input;
             self
         }
-        /// <p>
-        /// The name of the X-Ray node.
-        /// </p>
+        /// <p> The name of the X-Ray node. </p>
         pub fn x_ray_node_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.x_ray_node_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the X-Ray node.
-        /// </p>
+        /// <p> The name of the X-Ray node. </p>
         pub fn set_x_ray_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3042,14 +2679,12 @@ pub mod observation {
             self.x_ray_node_name = input;
             self
         }
-        /// <p>
-        /// The type of the  X-Ray node.      </p>
+        /// <p> The type of the X-Ray node. </p>
         pub fn x_ray_node_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.x_ray_node_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The type of the  X-Ray node.      </p>
+        /// <p> The type of the X-Ray node. </p>
         pub fn set_x_ray_node_type(
             mut self,
             input: std::option::Option<std::string::String>,

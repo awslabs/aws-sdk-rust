@@ -120,9 +120,9 @@ pub mod event_destination_definition {
         /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
         ///
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_event_types = Some(v);
             self
         }
@@ -933,9 +933,9 @@ pub mod event_destination {
         /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
         ///
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_event_types = Some(v);
             self
         }

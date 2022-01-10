@@ -317,10 +317,10 @@ pub mod update_replication_configuration_output {
         /// <p>The configuration of the disks of the Source Server to be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -429,9 +429,9 @@ pub mod update_replication_configuration_output {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -1231,10 +1231,10 @@ pub mod get_replication_configuration_output {
         /// <p>The configuration of the disks of the Source Server to be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -1343,9 +1343,9 @@ pub mod get_replication_configuration_output {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -1869,9 +1869,9 @@ pub mod describe_recovery_snapshots_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Recovery Snapshots.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RecoverySnapshot>) -> Self {
+        pub fn items(mut self, input: crate::model::RecoverySnapshot) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2003,9 +2003,9 @@ pub mod describe_source_servers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Source Servers.</p>
-        pub fn items(mut self, input: impl Into<crate::model::SourceServer>) -> Self {
+        pub fn items(mut self, input: crate::model::SourceServer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2116,12 +2116,9 @@ pub mod describe_replication_configuration_templates_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Replication Configuration Templates.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ReplicationConfigurationTemplate>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ReplicationConfigurationTemplate) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2600,9 +2597,9 @@ pub mod create_replication_configuration_template_output {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -3113,9 +3110,9 @@ pub mod update_replication_configuration_template_output {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -3548,9 +3545,9 @@ pub mod describe_recovery_instances_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Recovery Instances.</p>
-        pub fn items(mut self, input: impl Into<crate::model::RecoveryInstance>) -> Self {
+        pub fn items(mut self, input: crate::model::RecoveryInstance) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3620,9 +3617,9 @@ pub mod describe_job_log_items_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Job log items.</p>
-        pub fn items(mut self, input: impl Into<crate::model::JobLog>) -> Self {
+        pub fn items(mut self, input: crate::model::JobLog) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3702,9 +3699,9 @@ pub mod describe_jobs_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of Jobs.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn items(mut self, input: crate::model::Job) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }

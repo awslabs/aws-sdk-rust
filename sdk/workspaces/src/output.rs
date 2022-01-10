@@ -159,10 +159,10 @@ pub mod terminate_workspaces_output {
         /// <p>Information about the WorkSpaces that could not be terminated.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedWorkspaceChangeRequest>,
+            input: crate::model::FailedWorkspaceChangeRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -229,10 +229,10 @@ pub mod stop_workspaces_output {
         /// <p>Information about the WorkSpaces that could not be stopped.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedWorkspaceChangeRequest>,
+            input: crate::model::FailedWorkspaceChangeRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -299,10 +299,10 @@ pub mod start_workspaces_output {
         /// <p>Information about the WorkSpaces that could not be started.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedWorkspaceChangeRequest>,
+            input: crate::model::FailedWorkspaceChangeRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -459,10 +459,10 @@ pub mod rebuild_workspaces_output {
         /// <p>Information about the WorkSpace that could not be rebuilt.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedWorkspaceChangeRequest>,
+            input: crate::model::FailedWorkspaceChangeRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -529,10 +529,10 @@ pub mod reboot_workspaces_output {
         /// <p>Information about the WorkSpaces that could not be rebooted.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedWorkspaceChangeRequest>,
+            input: crate::model::FailedWorkspaceChangeRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -775,8 +775,7 @@ impl ModifyAccountOutput {
 pub struct MigrateWorkspaceOutput {
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
     pub source_workspace_id: std::option::Option<std::string::String>,
-    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed,
-    /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     pub target_workspace_id: std::option::Option<std::string::String>,
 }
 impl MigrateWorkspaceOutput {
@@ -784,8 +783,7 @@ impl MigrateWorkspaceOutput {
     pub fn source_workspace_id(&self) -> std::option::Option<&str> {
         self.source_workspace_id.as_deref()
     }
-    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed,
-    /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     pub fn target_workspace_id(&self) -> std::option::Option<&str> {
         self.target_workspace_id.as_deref()
     }
@@ -821,14 +819,12 @@ pub mod migrate_workspace_output {
             self.source_workspace_id = input;
             self
         }
-        /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed,
-        /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+        /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
         pub fn target_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_workspace_id = Some(input.into());
             self
         }
-        /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed,
-        /// the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+        /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
         pub fn set_target_workspace_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1052,21 +1048,17 @@ impl DisassociateConnectionAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceSnapshotsOutput {
-    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include
-    /// the user volume.</p>
+    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
     pub rebuild_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots
-    /// include both the root volume and the user volume.</p>
+    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
     pub restore_snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeWorkspaceSnapshotsOutput {
-    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include
-    /// the user volume.</p>
+    /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
     pub fn rebuild_snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.rebuild_snapshots.as_deref()
     }
-    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots
-    /// include both the root volume and the user volume.</p>
+    /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
     pub fn restore_snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.restore_snapshots.as_deref()
     }
@@ -1093,16 +1085,14 @@ pub mod describe_workspace_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_rebuild_snapshots`](Self::set_rebuild_snapshots).
         ///
-        /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include
-        /// the user volume.</p>
-        pub fn rebuild_snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
+        pub fn rebuild_snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.rebuild_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rebuild_snapshots = Some(v);
             self
         }
-        /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include
-        /// the user volume.</p>
+        /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
         pub fn set_rebuild_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -1114,16 +1104,14 @@ pub mod describe_workspace_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_restore_snapshots`](Self::set_restore_snapshots).
         ///
-        /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots
-        /// include both the root volume and the user volume.</p>
-        pub fn restore_snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
+        pub fn restore_snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.restore_snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.restore_snapshots = Some(v);
             self
         }
-        /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots
-        /// include both the root volume and the user volume.</p>
+        /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
         pub fn set_restore_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -1198,10 +1186,10 @@ pub mod describe_workspaces_connection_status_output {
         /// <p>Information about the connection status of the WorkSpace.</p>
         pub fn workspaces_connection_status(
             mut self,
-            input: impl Into<crate::model::WorkspaceConnectionStatus>,
+            input: crate::model::WorkspaceConnectionStatus,
         ) -> Self {
             let mut v = self.workspaces_connection_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces_connection_status = Some(v);
             self
         }
@@ -1244,16 +1232,14 @@ impl DescribeWorkspacesConnectionStatusOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspacesOutput {
     /// <p>Information about the WorkSpaces.</p>
-    /// <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the
-    /// returned information could be incomplete.</p>
+    /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
     pub workspaces: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesOutput {
     /// <p>Information about the WorkSpaces.</p>
-    /// <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the
-    /// returned information could be incomplete.</p>
+    /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
     pub fn workspaces(&self) -> std::option::Option<&[crate::model::Workspace]> {
         self.workspaces.as_deref()
     }
@@ -1285,17 +1271,15 @@ pub mod describe_workspaces_output {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>Information about the WorkSpaces.</p>
-        /// <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the
-        /// returned information could be incomplete.</p>
-        pub fn workspaces(mut self, input: impl Into<crate::model::Workspace>) -> Self {
+        /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
+        pub fn workspaces(mut self, input: crate::model::Workspace) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
         /// <p>Information about the WorkSpaces.</p>
-        /// <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the
-        /// returned information could be incomplete.</p>
+        /// <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
         pub fn set_workspaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
@@ -1371,9 +1355,9 @@ pub mod describe_workspace_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>Information about the images.</p>
-        pub fn images(mut self, input: impl Into<crate::model::WorkspaceImage>) -> Self {
+        pub fn images(mut self, input: crate::model::WorkspaceImage) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -1472,12 +1456,9 @@ pub mod describe_workspace_image_permissions_output {
         /// To override the contents of this collection use [`set_image_permissions`](Self::set_image_permissions).
         ///
         /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-        pub fn image_permissions(
-            mut self,
-            input: impl Into<crate::model::ImagePermission>,
-        ) -> Self {
+        pub fn image_permissions(mut self, input: crate::model::ImagePermission) -> Self {
             let mut v = self.image_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_permissions = Some(v);
             self
         }
@@ -1559,9 +1540,9 @@ pub mod describe_workspace_directories_output {
         /// To override the contents of this collection use [`set_directories`](Self::set_directories).
         ///
         /// <p>Information about the directories.</p>
-        pub fn directories(mut self, input: impl Into<crate::model::WorkspaceDirectory>) -> Self {
+        pub fn directories(mut self, input: crate::model::WorkspaceDirectory) -> Self {
             let mut v = self.directories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directories = Some(v);
             self
         }
@@ -1605,9 +1586,7 @@ impl DescribeWorkspaceDirectoriesOutput {
 pub struct DescribeWorkspaceBundlesOutput {
     /// <p>Information about the bundles.</p>
     pub bundles: std::option::Option<std::vec::Vec<crate::model::WorkspaceBundle>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return. This token is valid for one day and must be used within that time
-    /// frame.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceBundlesOutput {
@@ -1615,9 +1594,7 @@ impl DescribeWorkspaceBundlesOutput {
     pub fn bundles(&self) -> std::option::Option<&[crate::model::WorkspaceBundle]> {
         self.bundles.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return. This token is valid for one day and must be used within that time
-    /// frame.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1645,9 +1622,9 @@ pub mod describe_workspace_bundles_output {
         /// To override the contents of this collection use [`set_bundles`](Self::set_bundles).
         ///
         /// <p>Information about the bundles.</p>
-        pub fn bundles(mut self, input: impl Into<crate::model::WorkspaceBundle>) -> Self {
+        pub fn bundles(mut self, input: crate::model::WorkspaceBundle) -> Self {
             let mut v = self.bundles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundles = Some(v);
             self
         }
@@ -1659,16 +1636,12 @@ pub mod describe_workspace_bundles_output {
             self.bundles = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return. This token is valid for one day and must be used within that time
-        /// frame.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return. This token is valid for one day and must be used within that time
-        /// frame.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1723,9 +1696,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -1794,9 +1767,9 @@ pub mod describe_ip_groups_output {
         /// To override the contents of this collection use [`set_result`](Self::set_result).
         ///
         /// <p>Information about the IP access control groups.</p>
-        pub fn result(mut self, input: impl Into<crate::model::WorkspacesIpGroup>) -> Self {
+        pub fn result(mut self, input: crate::model::WorkspacesIpGroup) -> Self {
             let mut v = self.result.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result = Some(v);
             self
         }
@@ -1903,10 +1876,10 @@ pub mod describe_connection_alias_permissions_output {
         /// <p>The permissions associated with a connection alias.</p>
         pub fn connection_alias_permissions(
             mut self,
-            input: impl Into<crate::model::ConnectionAliasPermission>,
+            input: crate::model::ConnectionAliasPermission,
         ) -> Self {
             let mut v = self.connection_alias_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_alias_permissions = Some(v);
             self
         }
@@ -1988,12 +1961,9 @@ pub mod describe_connection_aliases_output {
         /// To override the contents of this collection use [`set_connection_aliases`](Self::set_connection_aliases).
         ///
         /// <p>Information about the specified connection aliases.</p>
-        pub fn connection_aliases(
-            mut self,
-            input: impl Into<crate::model::ConnectionAlias>,
-        ) -> Self {
+        pub fn connection_aliases(mut self, input: crate::model::ConnectionAlias) -> Self {
             let mut v = self.connection_aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_aliases = Some(v);
             self
         }
@@ -2071,10 +2041,10 @@ pub mod describe_client_properties_output {
         /// <p>Information about the specified Amazon WorkSpaces clients.</p>
         pub fn client_properties_list(
             mut self,
-            input: impl Into<crate::model::ClientPropertiesResult>,
+            input: crate::model::ClientPropertiesResult,
         ) -> Self {
             let mut v = self.client_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_properties_list = Some(v);
             self
         }
@@ -2108,8 +2078,7 @@ pub struct DescribeAccountModificationsOutput {
     /// <p>The list of modifications to the configuration of BYOL.</p>
     pub account_modifications:
         std::option::Option<std::vec::Vec<crate::model::AccountModification>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountModificationsOutput {
@@ -2119,8 +2088,7 @@ impl DescribeAccountModificationsOutput {
     ) -> std::option::Option<&[crate::model::AccountModification]> {
         self.account_modifications.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there
-    /// are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2149,12 +2117,9 @@ pub mod describe_account_modifications_output {
         /// To override the contents of this collection use [`set_account_modifications`](Self::set_account_modifications).
         ///
         /// <p>The list of modifications to the configuration of BYOL.</p>
-        pub fn account_modifications(
-            mut self,
-            input: impl Into<crate::model::AccountModification>,
-        ) -> Self {
+        pub fn account_modifications(mut self, input: crate::model::AccountModification) -> Self {
             let mut v = self.account_modifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_modifications = Some(v);
             self
         }
@@ -2166,14 +2131,12 @@ pub mod describe_account_modifications_output {
             self.account_modifications = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return. </p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return. </p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2201,11 +2164,8 @@ pub struct DescribeAccountOutput {
     /// <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
     pub dedicated_tenancy_support:
         std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
-    /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network
-    /// interface.</p>
-    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
-    /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-    /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
+    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
 impl DescribeAccountOutput {
@@ -2215,11 +2175,8 @@ impl DescribeAccountOutput {
     ) -> std::option::Option<&crate::model::DedicatedTenancySupportResultEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
-    /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network
-    /// interface.</p>
-    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
-    /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-    /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
+    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
     pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
@@ -2263,11 +2220,8 @@ pub mod describe_account_output {
             self.dedicated_tenancy_support = input;
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network
-        /// interface.</p>
-        /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
-        /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-        /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
+        /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
             input: impl Into<std::string::String>,
@@ -2275,11 +2229,8 @@ pub mod describe_account_output {
             self.dedicated_tenancy_management_cidr_range = Some(input.into());
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network
-        /// interface.</p>
-        /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
-        /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-        /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>
+        /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2492,9 +2443,7 @@ pub struct CreateWorkspacesOutput {
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateWorkspaceRequest>>,
     /// <p>Information about the WorkSpaces that were created.</p>
-    /// <p>Because this operation is asynchronous, the identifier returned is not immediately
-    /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a> before the WorkSpace is created, the information returned
-    /// can be incomplete.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
 }
 impl CreateWorkspacesOutput {
@@ -2505,9 +2454,7 @@ impl CreateWorkspacesOutput {
         self.failed_requests.as_deref()
     }
     /// <p>Information about the WorkSpaces that were created.</p>
-    /// <p>Because this operation is asynchronous, the identifier returned is not immediately
-    /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a> before the WorkSpace is created, the information returned
-    /// can be incomplete.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
     pub fn pending_requests(&self) -> std::option::Option<&[crate::model::Workspace]> {
         self.pending_requests.as_deref()
     }
@@ -2538,10 +2485,10 @@ pub mod create_workspaces_output {
         /// <p>Information about the WorkSpaces that could not be created.</p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedCreateWorkspaceRequest>,
+            input: crate::model::FailedCreateWorkspaceRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
@@ -2558,19 +2505,15 @@ pub mod create_workspaces_output {
         /// To override the contents of this collection use [`set_pending_requests`](Self::set_pending_requests).
         ///
         /// <p>Information about the WorkSpaces that were created.</p>
-        /// <p>Because this operation is asynchronous, the identifier returned is not immediately
-        /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a> before the WorkSpace is created, the information returned
-        /// can be incomplete.</p>
-        pub fn pending_requests(mut self, input: impl Into<crate::model::Workspace>) -> Self {
+        /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
+        pub fn pending_requests(mut self, input: crate::model::Workspace) -> Self {
             let mut v = self.pending_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_requests = Some(v);
             self
         }
         /// <p>Information about the WorkSpaces that were created.</p>
-        /// <p>Because this operation is asynchronous, the identifier returned is not immediately
-        /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a> before the WorkSpace is created, the information returned
-        /// can be incomplete.</p>
+        /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
         pub fn set_pending_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Workspace>>,
@@ -2961,13 +2904,11 @@ impl AssociateIpGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateConnectionAliasOutput {
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-    /// you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
     pub connection_identifier: std::option::Option<std::string::String>,
 }
 impl AssociateConnectionAliasOutput {
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-    /// you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
     pub fn connection_identifier(&self) -> std::option::Option<&str> {
         self.connection_identifier.as_deref()
     }
@@ -2988,14 +2929,12 @@ pub mod associate_connection_alias_output {
         pub(crate) connection_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-        /// you're configuring your DNS routing policies. </p>
+        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
         pub fn connection_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-        /// you're configuring your DNS routing policies. </p>
+        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
         pub fn set_connection_identifier(
             mut self,
             input: std::option::Option<std::string::String>,

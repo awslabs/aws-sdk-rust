@@ -658,9 +658,9 @@ pub mod update_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>List of ColumnStatisticsErrors.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnStatisticsError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnStatisticsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -721,9 +721,9 @@ pub mod update_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Error occurred during updating column statistics data.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnStatisticsError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnStatisticsError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1576,9 +1576,9 @@ pub mod search_tables_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::Table>) -> Self {
+        pub fn table_list(mut self, input: crate::model::Table) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -2100,10 +2100,10 @@ pub mod query_schema_version_metadata_output {
         pub fn metadata_info_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MetadataInfo>,
+            v: crate::model::MetadataInfo,
         ) -> Self {
             let mut hash_map = self.metadata_info_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.metadata_info_map = Some(hash_map);
             self
         }
@@ -2387,15 +2387,11 @@ impl PutSchemaVersionMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyOutput {
-    /// <p>A hash of the policy that has just been set. This must
-    /// be included in a subsequent call that overwrites or updates
-    /// this policy.</p>
+    /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
     pub policy_hash: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
-    /// <p>A hash of the policy that has just been set. This must
-    /// be included in a subsequent call that overwrites or updates
-    /// this policy.</p>
+    /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
     pub fn policy_hash(&self) -> std::option::Option<&str> {
         self.policy_hash.as_deref()
     }
@@ -2416,16 +2412,12 @@ pub mod put_resource_policy_output {
         pub(crate) policy_hash: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A hash of the policy that has just been set. This must
-        /// be included in a subsequent call that overwrites or updates
-        /// this policy.</p>
+        /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
         pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_hash = Some(input.into());
             self
         }
-        /// <p>A hash of the policy that has just been set. This must
-        /// be included in a subsequent call that overwrites or updates
-        /// this policy.</p>
+        /// <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
         pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_hash = input;
             self
@@ -2563,8 +2555,7 @@ impl ListWorkflowsOutput {
 pub struct ListTriggersOutput {
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
     pub trigger_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTriggersOutput {
@@ -2572,8 +2563,7 @@ impl ListTriggersOutput {
     pub fn trigger_names(&self) -> std::option::Option<&[std::string::String]> {
         self.trigger_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2615,14 +2605,12 @@ pub mod list_triggers_output {
             self.trigger_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2685,9 +2673,9 @@ pub mod list_schema_versions_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SchemaVersionListItem>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SchemaVersionListItem) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -2767,9 +2755,9 @@ pub mod list_schemas_output {
         /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
         ///
         /// <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
-        pub fn schemas(mut self, input: impl Into<crate::model::SchemaListItem>) -> Self {
+        pub fn schemas(mut self, input: crate::model::SchemaListItem) -> Self {
             let mut v = self.schemas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schemas = Some(v);
             self
         }
@@ -2849,9 +2837,9 @@ pub mod list_registries_output {
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
         /// <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
-        pub fn registries(mut self, input: impl Into<crate::model::RegistryListItem>) -> Self {
+        pub fn registries(mut self, input: crate::model::RegistryListItem) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registries = Some(v);
             self
         }
@@ -2893,21 +2881,17 @@ impl ListRegistriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMlTransformsOutput {
-    /// <p>The identifiers of all the machine learning transforms in the account, or the
-    /// machine learning transforms with the specified tags.</p>
+    /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     pub transform_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMlTransformsOutput {
-    /// <p>The identifiers of all the machine learning transforms in the account, or the
-    /// machine learning transforms with the specified tags.</p>
+    /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     pub fn transform_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.transform_ids.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2934,16 +2918,14 @@ pub mod list_ml_transforms_output {
         ///
         /// To override the contents of this collection use [`set_transform_ids`](Self::set_transform_ids).
         ///
-        /// <p>The identifiers of all the machine learning transforms in the account, or the
-        /// machine learning transforms with the specified tags.</p>
+        /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
         pub fn transform_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.transform_ids.unwrap_or_default();
             v.push(input.into());
             self.transform_ids = Some(v);
             self
         }
-        /// <p>The identifiers of all the machine learning transforms in the account, or the
-        /// machine learning transforms with the specified tags.</p>
+        /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
         pub fn set_transform_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2951,14 +2933,12 @@ pub mod list_ml_transforms_output {
             self.transform_ids = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2985,8 +2965,7 @@ impl ListMlTransformsOutput {
 pub struct ListJobsOutput {
     /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -2994,8 +2973,7 @@ impl ListJobsOutput {
     pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
         self.job_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3037,14 +3015,12 @@ pub mod list_jobs_output {
             self.job_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3069,21 +3045,17 @@ impl ListJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevEndpointsOutput {
-    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-    /// <code>DevEndpoint</code>s with the specified tags.</p>
+    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevEndpointsOutput {
-    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-    /// <code>DevEndpoint</code>s with the specified tags.</p>
+    /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
         self.dev_endpoint_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3110,16 +3082,14 @@ pub mod list_dev_endpoints_output {
         ///
         /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
         ///
-        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-        /// <code>DevEndpoint</code>s with the specified tags.</p>
+        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
         pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dev_endpoint_names.unwrap_or_default();
             v.push(input.into());
             self.dev_endpoint_names = Some(v);
             self
         }
-        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the
-        /// <code>DevEndpoint</code>s with the specified tags.</p>
+        /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
         pub fn set_dev_endpoint_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3127,14 +3097,12 @@ pub mod list_dev_endpoints_output {
             self.dev_endpoint_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3161,8 +3129,7 @@ impl ListDevEndpointsOutput {
 pub struct ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrawlersOutput {
@@ -3170,8 +3137,7 @@ impl ListCrawlersOutput {
     pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
         self.crawler_names.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3213,14 +3179,12 @@ pub mod list_crawlers_output {
             self.crawler_names = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3395,9 +3359,9 @@ pub mod get_workflow_runs_output {
         /// To override the contents of this collection use [`set_runs`](Self::set_runs).
         ///
         /// <p>A list of workflow run metadata objects.</p>
-        pub fn runs(mut self, input: impl Into<crate::model::WorkflowRun>) -> Self {
+        pub fn runs(mut self, input: crate::model::WorkflowRun) -> Self {
             let mut v = self.runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runs = Some(v);
             self
         }
@@ -3623,8 +3587,7 @@ pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
     pub user_defined_functions:
         std::option::Option<std::vec::Vec<crate::model::UserDefinedFunction>>,
-    /// <p>A continuation token, if the list of functions returned does
-    /// not include the last requested function.</p>
+    /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUserDefinedFunctionsOutput {
@@ -3634,8 +3597,7 @@ impl GetUserDefinedFunctionsOutput {
     ) -> std::option::Option<&[crate::model::UserDefinedFunction]> {
         self.user_defined_functions.as_deref()
     }
-    /// <p>A continuation token, if the list of functions returned does
-    /// not include the last requested function.</p>
+    /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3664,12 +3626,9 @@ pub mod get_user_defined_functions_output {
         /// To override the contents of this collection use [`set_user_defined_functions`](Self::set_user_defined_functions).
         ///
         /// <p>A list of requested function definitions.</p>
-        pub fn user_defined_functions(
-            mut self,
-            input: impl Into<crate::model::UserDefinedFunction>,
-        ) -> Self {
+        pub fn user_defined_functions(mut self, input: crate::model::UserDefinedFunction) -> Self {
             let mut v = self.user_defined_functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_defined_functions = Some(v);
             self
         }
@@ -3681,14 +3640,12 @@ pub mod get_user_defined_functions_output {
             self.user_defined_functions = input;
             self
         }
-        /// <p>A continuation token, if the list of functions returned does
-        /// not include the last requested function.</p>
+        /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of functions returned does
-        /// not include the last requested function.</p>
+        /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3769,11 +3726,341 @@ impl GetUserDefinedFunctionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredTableMetadataOutput {
+    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    pub table: std::option::Option<crate::model::Table>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub is_registered_with_lake_formation: bool,
+    #[allow(missing_docs)] // documentation missing in model
+    pub cell_filters: std::option::Option<std::vec::Vec<crate::model::ColumnRowFilter>>,
+}
+impl GetUnfilteredTableMetadataOutput {
+    /// <p>Represents a collection of related data organized in columns and rows.</p>
+    pub fn table(&self) -> std::option::Option<&crate::model::Table> {
+        self.table.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorized_columns.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn is_registered_with_lake_formation(&self) -> bool {
+        self.is_registered_with_lake_formation
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn cell_filters(&self) -> std::option::Option<&[crate::model::ColumnRowFilter]> {
+        self.cell_filters.as_deref()
+    }
+}
+impl std::fmt::Debug for GetUnfilteredTableMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredTableMetadataOutput");
+        formatter.field("table", &self.table);
+        formatter.field("authorized_columns", &self.authorized_columns);
+        formatter.field(
+            "is_registered_with_lake_formation",
+            &self.is_registered_with_lake_formation,
+        );
+        formatter.field("cell_filters", &self.cell_filters);
+        formatter.finish()
+    }
+}
+/// See [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput)
+pub mod get_unfiltered_table_metadata_output {
+    /// A builder for [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) table: std::option::Option<crate::model::Table>,
+        pub(crate) authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) is_registered_with_lake_formation: std::option::Option<bool>,
+        pub(crate) cell_filters: std::option::Option<std::vec::Vec<crate::model::ColumnRowFilter>>,
+    }
+    impl Builder {
+        /// <p>Represents a collection of related data organized in columns and rows.</p>
+        pub fn table(mut self, input: crate::model::Table) -> Self {
+            self.table = Some(input);
+            self
+        }
+        /// <p>Represents a collection of related data organized in columns and rows.</p>
+        pub fn set_table(mut self, input: std::option::Option<crate::model::Table>) -> Self {
+            self.table = input;
+            self
+        }
+        /// Appends an item to `authorized_columns`.
+        ///
+        /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
+        ///
+        pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.authorized_columns.unwrap_or_default();
+            v.push(input.into());
+            self.authorized_columns = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_authorized_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.authorized_columns = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
+            self.is_registered_with_lake_formation = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_is_registered_with_lake_formation(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.is_registered_with_lake_formation = input;
+            self
+        }
+        /// Appends an item to `cell_filters`.
+        ///
+        /// To override the contents of this collection use [`set_cell_filters`](Self::set_cell_filters).
+        ///
+        pub fn cell_filters(mut self, input: crate::model::ColumnRowFilter) -> Self {
+            let mut v = self.cell_filters.unwrap_or_default();
+            v.push(input);
+            self.cell_filters = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_cell_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnRowFilter>>,
+        ) -> Self {
+            self.cell_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput)
+        pub fn build(self) -> crate::output::GetUnfilteredTableMetadataOutput {
+            crate::output::GetUnfilteredTableMetadataOutput {
+                table: self.table,
+                authorized_columns: self.authorized_columns,
+                is_registered_with_lake_formation: self
+                    .is_registered_with_lake_formation
+                    .unwrap_or_default(),
+                cell_filters: self.cell_filters,
+            }
+        }
+    }
+}
+impl GetUnfilteredTableMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput)
+    pub fn builder() -> crate::output::get_unfiltered_table_metadata_output::Builder {
+        crate::output::get_unfiltered_table_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredPartitionsMetadataOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub unfiltered_partitions:
+        std::option::Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetUnfilteredPartitionsMetadataOutput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn unfiltered_partitions(
+        &self,
+    ) -> std::option::Option<&[crate::model::UnfilteredPartition]> {
+        self.unfiltered_partitions.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetUnfilteredPartitionsMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredPartitionsMetadataOutput");
+        formatter.field("unfiltered_partitions", &self.unfiltered_partitions);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetUnfilteredPartitionsMetadataOutput`](crate::output::GetUnfilteredPartitionsMetadataOutput)
+pub mod get_unfiltered_partitions_metadata_output {
+    /// A builder for [`GetUnfilteredPartitionsMetadataOutput`](crate::output::GetUnfilteredPartitionsMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) unfiltered_partitions:
+            std::option::Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `unfiltered_partitions`.
+        ///
+        /// To override the contents of this collection use [`set_unfiltered_partitions`](Self::set_unfiltered_partitions).
+        ///
+        pub fn unfiltered_partitions(mut self, input: crate::model::UnfilteredPartition) -> Self {
+            let mut v = self.unfiltered_partitions.unwrap_or_default();
+            v.push(input);
+            self.unfiltered_partitions = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_unfiltered_partitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
+        ) -> Self {
+            self.unfiltered_partitions = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredPartitionsMetadataOutput`](crate::output::GetUnfilteredPartitionsMetadataOutput)
+        pub fn build(self) -> crate::output::GetUnfilteredPartitionsMetadataOutput {
+            crate::output::GetUnfilteredPartitionsMetadataOutput {
+                unfiltered_partitions: self.unfiltered_partitions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetUnfilteredPartitionsMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataOutput`](crate::output::GetUnfilteredPartitionsMetadataOutput)
+    pub fn builder() -> crate::output::get_unfiltered_partitions_metadata_output::Builder {
+        crate::output::get_unfiltered_partitions_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredPartitionMetadataOutput {
+    /// <p>Represents a slice of table data.</p>
+    pub partition: std::option::Option<crate::model::Partition>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub is_registered_with_lake_formation: bool,
+}
+impl GetUnfilteredPartitionMetadataOutput {
+    /// <p>Represents a slice of table data.</p>
+    pub fn partition(&self) -> std::option::Option<&crate::model::Partition> {
+        self.partition.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorized_columns.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn is_registered_with_lake_formation(&self) -> bool {
+        self.is_registered_with_lake_formation
+    }
+}
+impl std::fmt::Debug for GetUnfilteredPartitionMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredPartitionMetadataOutput");
+        formatter.field("partition", &self.partition);
+        formatter.field("authorized_columns", &self.authorized_columns);
+        formatter.field(
+            "is_registered_with_lake_formation",
+            &self.is_registered_with_lake_formation,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput)
+pub mod get_unfiltered_partition_metadata_output {
+    /// A builder for [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) partition: std::option::Option<crate::model::Partition>,
+        pub(crate) authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) is_registered_with_lake_formation: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Represents a slice of table data.</p>
+        pub fn partition(mut self, input: crate::model::Partition) -> Self {
+            self.partition = Some(input);
+            self
+        }
+        /// <p>Represents a slice of table data.</p>
+        pub fn set_partition(
+            mut self,
+            input: std::option::Option<crate::model::Partition>,
+        ) -> Self {
+            self.partition = input;
+            self
+        }
+        /// Appends an item to `authorized_columns`.
+        ///
+        /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
+        ///
+        pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.authorized_columns.unwrap_or_default();
+            v.push(input.into());
+            self.authorized_columns = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_authorized_columns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.authorized_columns = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
+            self.is_registered_with_lake_formation = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_is_registered_with_lake_formation(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.is_registered_with_lake_formation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput)
+        pub fn build(self) -> crate::output::GetUnfilteredPartitionMetadataOutput {
+            crate::output::GetUnfilteredPartitionMetadataOutput {
+                partition: self.partition,
+                authorized_columns: self.authorized_columns,
+                is_registered_with_lake_formation: self
+                    .is_registered_with_lake_formation
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GetUnfilteredPartitionMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput)
+    pub fn builder() -> crate::output::get_unfiltered_partition_metadata_output::Builder {
+        crate::output::get_unfiltered_partition_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggersOutput {
     /// <p>A list of triggers for the specified job.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::Trigger>>,
-    /// <p>A continuation token, if not all the requested triggers
-    /// have yet been returned.</p>
+    /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTriggersOutput {
@@ -3781,8 +4068,7 @@ impl GetTriggersOutput {
     pub fn triggers(&self) -> std::option::Option<&[crate::model::Trigger]> {
         self.triggers.as_deref()
     }
-    /// <p>A continuation token, if not all the requested triggers
-    /// have yet been returned.</p>
+    /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3810,9 +4096,9 @@ pub mod get_triggers_output {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>A list of triggers for the specified job.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::Trigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -3824,14 +4110,12 @@ pub mod get_triggers_output {
             self.triggers = input;
             self
         }
-        /// <p>A continuation token, if not all the requested triggers
-        /// have yet been returned.</p>
+        /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if not all the requested triggers
-        /// have yet been returned.</p>
+        /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3983,21 +4267,17 @@ impl GetTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionsOutput {
-    /// <p>A list of strings identifying available versions of the
-    /// specified table.</p>
+    /// <p>A list of strings identifying available versions of the specified table.</p>
     pub table_versions: std::option::Option<std::vec::Vec<crate::model::TableVersion>>,
-    /// <p>A continuation token, if the list of available versions does
-    /// not include the last one.</p>
+    /// <p>A continuation token, if the list of available versions does not include the last one.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTableVersionsOutput {
-    /// <p>A list of strings identifying available versions of the
-    /// specified table.</p>
+    /// <p>A list of strings identifying available versions of the specified table.</p>
     pub fn table_versions(&self) -> std::option::Option<&[crate::model::TableVersion]> {
         self.table_versions.as_deref()
     }
-    /// <p>A continuation token, if the list of available versions does
-    /// not include the last one.</p>
+    /// <p>A continuation token, if the list of available versions does not include the last one.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4024,16 +4304,14 @@ pub mod get_table_versions_output {
         ///
         /// To override the contents of this collection use [`set_table_versions`](Self::set_table_versions).
         ///
-        /// <p>A list of strings identifying available versions of the
-        /// specified table.</p>
-        pub fn table_versions(mut self, input: impl Into<crate::model::TableVersion>) -> Self {
+        /// <p>A list of strings identifying available versions of the specified table.</p>
+        pub fn table_versions(mut self, input: crate::model::TableVersion) -> Self {
             let mut v = self.table_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_versions = Some(v);
             self
         }
-        /// <p>A list of strings identifying available versions of the
-        /// specified table.</p>
+        /// <p>A list of strings identifying available versions of the specified table.</p>
         pub fn set_table_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TableVersion>>,
@@ -4041,14 +4319,12 @@ pub mod get_table_versions_output {
             self.table_versions = input;
             self
         }
-        /// <p>A continuation token, if the list of available versions does
-        /// not include the last one.</p>
+        /// <p>A continuation token, if the list of available versions does not include the last one.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of available versions does
-        /// not include the last one.</p>
+        /// <p>A continuation token, if the list of available versions does not include the last one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4132,8 +4408,7 @@ impl GetTableVersionOutput {
 pub struct GetTablesOutput {
     /// <p>A list of the requested <code>Table</code> objects.</p>
     pub table_list: std::option::Option<std::vec::Vec<crate::model::Table>>,
-    /// <p>A continuation token, present if the current list segment is
-    /// not the last.</p>
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTablesOutput {
@@ -4141,8 +4416,7 @@ impl GetTablesOutput {
     pub fn table_list(&self) -> std::option::Option<&[crate::model::Table]> {
         self.table_list.as_deref()
     }
-    /// <p>A continuation token, present if the current list segment is
-    /// not the last.</p>
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4170,9 +4444,9 @@ pub mod get_tables_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of the requested <code>Table</code> objects.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::Table>) -> Self {
+        pub fn table_list(mut self, input: crate::model::Table) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -4184,14 +4458,12 @@ pub mod get_tables_output {
             self.table_list = input;
             self
         }
-        /// <p>A continuation token, present if the current list segment is
-        /// not the last.</p>
+        /// <p>A continuation token, present if the current list segment is not the last.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, present if the current list segment is
-        /// not the last.</p>
+        /// <p>A continuation token, present if the current list segment is not the last.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4271,8 +4543,7 @@ pub struct GetSecurityConfigurationsOutput {
     /// <p>A list of security configurations.</p>
     pub security_configurations:
         std::option::Option<std::vec::Vec<crate::model::SecurityConfiguration>>,
-    /// <p>A continuation token, if there are more security
-    /// configurations to return.</p>
+    /// <p>A continuation token, if there are more security configurations to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationsOutput {
@@ -4282,8 +4553,7 @@ impl GetSecurityConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::SecurityConfiguration]> {
         self.security_configurations.as_deref()
     }
-    /// <p>A continuation token, if there are more security
-    /// configurations to return.</p>
+    /// <p>A continuation token, if there are more security configurations to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4314,10 +4584,10 @@ pub mod get_security_configurations_output {
         /// <p>A list of security configurations.</p>
         pub fn security_configurations(
             mut self,
-            input: impl Into<crate::model::SecurityConfiguration>,
+            input: crate::model::SecurityConfiguration,
         ) -> Self {
             let mut v = self.security_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_configurations = Some(v);
             self
         }
@@ -4329,14 +4599,12 @@ pub mod get_security_configurations_output {
             self.security_configurations = input;
             self
         }
-        /// <p>A continuation token, if there are more security
-        /// configurations to return.</p>
+        /// <p>A continuation token, if there are more security configurations to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if there are more security
-        /// configurations to return.</p>
+        /// <p>A continuation token, if there are more security configurations to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5255,10 +5523,10 @@ pub mod get_resource_policies_output {
         /// <p>A list of the individual resource policies and the account-level resource policy.</p>
         pub fn get_resource_policies_response_list(
             mut self,
-            input: impl Into<crate::model::GluePolicy>,
+            input: crate::model::GluePolicy,
         ) -> Self {
             let mut v = self.get_resource_policies_response_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.get_resource_policies_response_list = Some(v);
             self
         }
@@ -5533,8 +5801,7 @@ impl GetPlanOutput {
 pub struct GetPartitionsOutput {
     /// <p>A list of requested partitions.</p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
-    /// <p>A continuation token, if the returned list of partitions does not include the last
-    /// one.</p>
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPartitionsOutput {
@@ -5542,8 +5809,7 @@ impl GetPartitionsOutput {
     pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
         self.partitions.as_deref()
     }
-    /// <p>A continuation token, if the returned list of partitions does not include the last
-    /// one.</p>
+    /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5571,9 +5837,9 @@ pub mod get_partitions_output {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p>A list of requested partitions.</p>
-        pub fn partitions(mut self, input: impl Into<crate::model::Partition>) -> Self {
+        pub fn partitions(mut self, input: crate::model::Partition) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }
@@ -5585,14 +5851,12 @@ pub mod get_partitions_output {
             self.partitions = input;
             self
         }
-        /// <p>A continuation token, if the returned list of partitions does not include the last
-        /// one.</p>
+        /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list of partitions does not include the last
-        /// one.</p>
+        /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5664,10 +5928,10 @@ pub mod get_partition_indexes_output {
         /// <p>A list of index descriptors.</p>
         pub fn partition_index_descriptor_list(
             mut self,
-            input: impl Into<crate::model::PartitionIndexDescriptor>,
+            input: crate::model::PartitionIndexDescriptor,
         ) -> Self {
             let mut v = self.partition_index_descriptor_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_index_descriptor_list = Some(v);
             self
         }
@@ -5709,13 +5973,11 @@ impl GetPartitionIndexesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionOutput {
-    /// <p>The requested information, in the form of a <code>Partition</code>
-    /// object.</p>
+    /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
     pub partition: std::option::Option<crate::model::Partition>,
 }
 impl GetPartitionOutput {
-    /// <p>The requested information, in the form of a <code>Partition</code>
-    /// object.</p>
+    /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
     pub fn partition(&self) -> std::option::Option<&crate::model::Partition> {
         self.partition.as_ref()
     }
@@ -5736,14 +5998,12 @@ pub mod get_partition_output {
         pub(crate) partition: std::option::Option<crate::model::Partition>,
     }
     impl Builder {
-        /// <p>The requested information, in the form of a <code>Partition</code>
-        /// object.</p>
+        /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
         pub fn partition(mut self, input: crate::model::Partition) -> Self {
             self.partition = Some(input);
             self
         }
-        /// <p>The requested information, in the form of a <code>Partition</code>
-        /// object.</p>
+        /// <p>The requested information, in the form of a <code>Partition</code> object.</p>
         pub fn set_partition(
             mut self,
             input: std::option::Option<crate::model::Partition>,
@@ -5808,9 +6068,9 @@ pub mod get_ml_transforms_output {
         /// To override the contents of this collection use [`set_transforms`](Self::set_transforms).
         ///
         /// <p>A list of machine learning transforms.</p>
-        pub fn transforms(mut self, input: impl Into<crate::model::MlTransform>) -> Self {
+        pub fn transforms(mut self, input: crate::model::MlTransform) -> Self {
             let mut v = self.transforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transforms = Some(v);
             self
         }
@@ -5852,8 +6112,7 @@ impl GetMlTransformsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformOutput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub transform_id: std::option::Option<std::string::String>,
     /// <p>The unique name given to the transform when it was created.</p>
     pub name: std::option::Option<std::string::String>,
@@ -5873,32 +6132,21 @@ pub struct GetMlTransformOutput {
     pub evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
     /// <p>The number of labels available for this transform.</p>
     pub label_count: i32,
-    /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-    /// transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map
+    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -5911,8 +6159,7 @@ pub struct GetMlTransformOutput {
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl GetMlTransformOutput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
@@ -5952,40 +6199,29 @@ impl GetMlTransformOutput {
     pub fn label_count(&self) -> i32 {
         self.label_count
     }
-    /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-    /// transform accepts. Has an upper bound of 100 columns.</p>
+    /// <p>The <code>Map
+    /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
         self.schema.as_deref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
@@ -6059,14 +6295,12 @@ pub mod get_ml_transform_output {
         pub(crate) transform_encryption: std::option::Option<crate::model::TransformEncryption>,
     }
     impl Builder {
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transform_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
@@ -6135,9 +6369,9 @@ pub mod get_ml_transform_output {
         /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
         ///
         /// <p>A list of Glue table definitions used by the transform.</p>
-        pub fn input_record_tables(mut self, input: impl Into<crate::model::GlueTable>) -> Self {
+        pub fn input_record_tables(mut self, input: crate::model::GlueTable) -> Self {
             let mut v = self.input_record_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_record_tables = Some(v);
             self
         }
@@ -6189,16 +6423,16 @@ pub mod get_ml_transform_output {
         ///
         /// To override the contents of this collection use [`set_schema`](Self::set_schema).
         ///
-        /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-        /// transform accepts. Has an upper bound of 100 columns.</p>
-        pub fn schema(mut self, input: impl Into<crate::model::SchemaColumn>) -> Self {
+        /// <p>The <code>Map
+        /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+        pub fn schema(mut self, input: crate::model::SchemaColumn) -> Self {
             let mut v = self.schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema = Some(v);
             self
         }
-        /// <p>The <code>Map<Column, Type></code> object that represents the schema that this
-        /// transform accepts. Has an upper bound of 100 columns.</p>
+        /// <p>The <code>Map
+        /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -6206,43 +6440,33 @@ pub mod get_ml_transform_output {
             self.schema = input;
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -6250,15 +6474,9 @@ pub mod get_ml_transform_output {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -6266,15 +6484,9 @@ pub mod get_ml_transform_output {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -6401,9 +6613,9 @@ pub mod get_ml_task_runs_output {
         /// To override the contents of this collection use [`set_task_runs`](Self::set_task_runs).
         ///
         /// <p>A list of task runs that are associated with the transform.</p>
-        pub fn task_runs(mut self, input: impl Into<crate::model::TaskRun>) -> Self {
+        pub fn task_runs(mut self, input: crate::model::TaskRun) -> Self {
             let mut v = self.task_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_runs = Some(v);
             self
         }
@@ -6718,9 +6930,9 @@ pub mod get_mapping_output {
         /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
         ///
         /// <p>A list of mappings to the specified targets.</p>
-        pub fn mapping(mut self, input: impl Into<crate::model::MappingEntry>) -> Self {
+        pub fn mapping(mut self, input: crate::model::MappingEntry) -> Self {
             let mut v = self.mapping.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mapping = Some(v);
             self
         }
@@ -6789,9 +7001,9 @@ pub mod get_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of job definitions.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -6871,9 +7083,9 @@ pub mod get_job_runs_output {
         /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
         ///
         /// <p>A list of job-run metadata objects.</p>
-        pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
+        pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_runs = Some(v);
             self
         }
@@ -7080,8 +7292,7 @@ impl GetJobOutput {
 pub struct GetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::model::DevEndpoint>>,
-    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-    /// returned.</p>
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevEndpointsOutput {
@@ -7089,8 +7300,7 @@ impl GetDevEndpointsOutput {
     pub fn dev_endpoints(&self) -> std::option::Option<&[crate::model::DevEndpoint]> {
         self.dev_endpoints.as_deref()
     }
-    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-    /// returned.</p>
+    /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7118,9 +7328,9 @@ pub mod get_dev_endpoints_output {
         /// To override the contents of this collection use [`set_dev_endpoints`](Self::set_dev_endpoints).
         ///
         /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-        pub fn dev_endpoints(mut self, input: impl Into<crate::model::DevEndpoint>) -> Self {
+        pub fn dev_endpoints(mut self, input: crate::model::DevEndpoint) -> Self {
             let mut v = self.dev_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dev_endpoints = Some(v);
             self
         }
@@ -7132,14 +7342,12 @@ pub mod get_dev_endpoints_output {
             self.dev_endpoints = input;
             self
         }
-        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-        /// returned.</p>
+        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been
-        /// returned.</p>
+        /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7259,9 +7467,9 @@ pub mod get_dataflow_graph_output {
         /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
         ///
         /// <p>A list of the nodes in the resulting DAG.</p>
-        pub fn dag_nodes(mut self, input: impl Into<crate::model::CodeGenNode>) -> Self {
+        pub fn dag_nodes(mut self, input: crate::model::CodeGenNode) -> Self {
             let mut v = self.dag_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_nodes = Some(v);
             self
         }
@@ -7278,9 +7486,9 @@ pub mod get_dataflow_graph_output {
         /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
         ///
         /// <p>A list of the edges in the resulting DAG.</p>
-        pub fn dag_edges(mut self, input: impl Into<crate::model::CodeGenEdge>) -> Self {
+        pub fn dag_edges(mut self, input: crate::model::CodeGenEdge) -> Self {
             let mut v = self.dag_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_edges = Some(v);
             self
         }
@@ -7381,8 +7589,7 @@ impl GetDataCatalogEncryptionSettingsOutput {
 pub struct GetDatabasesOutput {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
     pub database_list: std::option::Option<std::vec::Vec<crate::model::Database>>,
-    /// <p>A continuation token for paginating the returned list of tokens,
-    /// returned if the current segment of the list is not the last.</p>
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDatabasesOutput {
@@ -7390,8 +7597,7 @@ impl GetDatabasesOutput {
     pub fn database_list(&self) -> std::option::Option<&[crate::model::Database]> {
         self.database_list.as_deref()
     }
-    /// <p>A continuation token for paginating the returned list of tokens,
-    /// returned if the current segment of the list is not the last.</p>
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7419,9 +7625,9 @@ pub mod get_databases_output {
         /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
         ///
         /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-        pub fn database_list(mut self, input: impl Into<crate::model::Database>) -> Self {
+        pub fn database_list(mut self, input: crate::model::Database) -> Self {
             let mut v = self.database_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_list = Some(v);
             self
         }
@@ -7433,14 +7639,12 @@ pub mod get_databases_output {
             self.database_list = input;
             self
         }
-        /// <p>A continuation token for paginating the returned list of tokens,
-        /// returned if the current segment of the list is not the last.</p>
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token for paginating the returned list of tokens,
-        /// returned if the current segment of the list is not the last.</p>
+        /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7521,8 +7725,7 @@ impl GetDatabaseOutput {
 pub struct GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
     pub crawlers: std::option::Option<std::vec::Vec<crate::model::Crawler>>,
-    /// <p>A continuation token, if the returned list has not reached the end
-    /// of those defined in this customer account.</p>
+    /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlersOutput {
@@ -7530,8 +7733,7 @@ impl GetCrawlersOutput {
     pub fn crawlers(&self) -> std::option::Option<&[crate::model::Crawler]> {
         self.crawlers.as_deref()
     }
-    /// <p>A continuation token, if the returned list has not reached the end
-    /// of those defined in this customer account.</p>
+    /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7559,9 +7761,9 @@ pub mod get_crawlers_output {
         /// To override the contents of this collection use [`set_crawlers`](Self::set_crawlers).
         ///
         /// <p>A list of crawler metadata.</p>
-        pub fn crawlers(mut self, input: impl Into<crate::model::Crawler>) -> Self {
+        pub fn crawlers(mut self, input: crate::model::Crawler) -> Self {
             let mut v = self.crawlers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawlers = Some(v);
             self
         }
@@ -7573,14 +7775,12 @@ pub mod get_crawlers_output {
             self.crawlers = input;
             self
         }
-        /// <p>A continuation token, if the returned list has not reached the end
-        /// of those defined in this customer account.</p>
+        /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list has not reached the end
-        /// of those defined in this customer account.</p>
+        /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7607,8 +7807,7 @@ impl GetCrawlersOutput {
 pub struct GetCrawlerMetricsOutput {
     /// <p>A list of metrics for the specified crawler.</p>
     pub crawler_metrics_list: std::option::Option<std::vec::Vec<crate::model::CrawlerMetrics>>,
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCrawlerMetricsOutput {
@@ -7616,8 +7815,7 @@ impl GetCrawlerMetricsOutput {
     pub fn crawler_metrics_list(&self) -> std::option::Option<&[crate::model::CrawlerMetrics]> {
         self.crawler_metrics_list.as_deref()
     }
-    /// <p>A continuation token, if the returned list does not contain the
-    /// last metric available.</p>
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7646,12 +7844,9 @@ pub mod get_crawler_metrics_output {
         /// To override the contents of this collection use [`set_crawler_metrics_list`](Self::set_crawler_metrics_list).
         ///
         /// <p>A list of metrics for the specified crawler.</p>
-        pub fn crawler_metrics_list(
-            mut self,
-            input: impl Into<crate::model::CrawlerMetrics>,
-        ) -> Self {
+        pub fn crawler_metrics_list(mut self, input: crate::model::CrawlerMetrics) -> Self {
             let mut v = self.crawler_metrics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawler_metrics_list = Some(v);
             self
         }
@@ -7663,14 +7858,12 @@ pub mod get_crawler_metrics_output {
             self.crawler_metrics_list = input;
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the returned list does not contain the
-        /// last metric available.</p>
+        /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7751,8 +7944,7 @@ impl GetCrawlerOutput {
 pub struct GetConnectionsOutput {
     /// <p>A list of requested connection definitions.</p>
     pub connection_list: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-    /// <p>A continuation token, if the list of connections returned does not
-    /// include the last of the filtered connections.</p>
+    /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectionsOutput {
@@ -7760,8 +7952,7 @@ impl GetConnectionsOutput {
     pub fn connection_list(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connection_list.as_deref()
     }
-    /// <p>A continuation token, if the list of connections returned does not
-    /// include the last of the filtered connections.</p>
+    /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7789,9 +7980,9 @@ pub mod get_connections_output {
         /// To override the contents of this collection use [`set_connection_list`](Self::set_connection_list).
         ///
         /// <p>A list of requested connection definitions.</p>
-        pub fn connection_list(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connection_list(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connection_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_list = Some(v);
             self
         }
@@ -7803,14 +7994,12 @@ pub mod get_connections_output {
             self.connection_list = input;
             self
         }
-        /// <p>A continuation token, if the list of connections returned does not
-        /// include the last of the filtered connections.</p>
+        /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if the list of connections returned does not
-        /// include the last of the filtered connections.</p>
+        /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7931,12 +8120,9 @@ pub mod get_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -7953,9 +8139,9 @@ pub mod get_column_statistics_for_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -8026,12 +8212,9 @@ pub mod get_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -8048,9 +8231,9 @@ pub mod get_column_statistics_for_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Error occurred during retrieving column statistics data.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::ColumnError>) -> Self {
+        pub fn errors(mut self, input: crate::model::ColumnError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -8082,15 +8265,13 @@ impl GetColumnStatisticsForPartitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClassifiersOutput {
-    /// <p>The requested list of classifier
-    /// objects.</p>
+    /// <p>The requested list of classifier objects.</p>
     pub classifiers: std::option::Option<std::vec::Vec<crate::model::Classifier>>,
     /// <p>A continuation token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetClassifiersOutput {
-    /// <p>The requested list of classifier
-    /// objects.</p>
+    /// <p>The requested list of classifier objects.</p>
     pub fn classifiers(&self) -> std::option::Option<&[crate::model::Classifier]> {
         self.classifiers.as_deref()
     }
@@ -8121,16 +8302,14 @@ pub mod get_classifiers_output {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>The requested list of classifier
-        /// objects.</p>
-        pub fn classifiers(mut self, input: impl Into<crate::model::Classifier>) -> Self {
+        /// <p>The requested list of classifier objects.</p>
+        pub fn classifiers(mut self, input: crate::model::Classifier) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.classifiers = Some(v);
             self
         }
-        /// <p>The requested list of classifier
-        /// objects.</p>
+        /// <p>The requested list of classifier objects.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Classifier>>,
@@ -8320,9 +8499,9 @@ pub mod get_blueprint_runs_output {
         /// To override the contents of this collection use [`set_blueprint_runs`](Self::set_blueprint_runs).
         ///
         /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-        pub fn blueprint_runs(mut self, input: impl Into<crate::model::BlueprintRun>) -> Self {
+        pub fn blueprint_runs(mut self, input: crate::model::BlueprintRun) -> Self {
             let mut v = self.blueprint_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprint_runs = Some(v);
             self
         }
@@ -8738,10 +8917,10 @@ pub mod delete_schema_versions_output {
         /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
         pub fn schema_version_errors(
             mut self,
-            input: impl Into<crate::model::SchemaVersionErrorItem>,
+            input: crate::model::SchemaVersionErrorItem,
         ) -> Self {
             let mut v = self.schema_version_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_version_errors = Some(v);
             self
         }
@@ -10390,8 +10569,7 @@ pub struct CreateDevEndpointOutput {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
     pub yarn_endpoint_address: std::option::Option<std::string::String>,
@@ -10402,7 +10580,6 @@ pub struct CreateDevEndpointOutput {
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
@@ -10411,30 +10588,21 @@ pub struct CreateDevEndpointOutput {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-    /// your <code>DevEndpoint</code>.</p>
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-    ///
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -10456,8 +10624,7 @@ impl CreateDevEndpointOutput {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10478,7 +10645,6 @@ impl CreateDevEndpointOutput {
         self.worker_type.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -10495,13 +10661,11 @@ impl CreateDevEndpointOutput {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-    /// your <code>DevEndpoint</code>.</p>
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
         self.extra_jars_s3_path.as_deref()
     }
@@ -10509,8 +10673,7 @@ impl CreateDevEndpointOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -10519,16 +10682,10 @@ impl CreateDevEndpointOutput {
         self.created_timestamp.as_ref()
     }
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-    ///
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(
         &self,
@@ -10646,14 +10803,12 @@ pub mod create_dev_endpoint_output {
             self.subnet_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10708,14 +10863,12 @@ pub mod create_dev_endpoint_output {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
@@ -10754,14 +10907,12 @@ pub mod create_dev_endpoint_output {
             self.vpc_id = input;
             self
         }
-        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_python_libs_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10769,14 +10920,12 @@ pub mod create_dev_endpoint_output {
             self.extra_python_libs_s3_path = input;
             self
         }
-        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-        /// your <code>DevEndpoint</code>.</p>
+        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
-        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in
-        /// your <code>DevEndpoint</code>.</p>
+        /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10797,14 +10946,12 @@ pub mod create_dev_endpoint_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10830,16 +10977,10 @@ pub mod create_dev_endpoint_output {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-        ///
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn arguments(
             mut self,
@@ -10852,16 +10993,10 @@ pub mod create_dev_endpoint_output {
             self
         }
         /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
-        ///
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_arguments(
             mut self,
@@ -11282,12 +11417,9 @@ pub mod batch_update_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchUpdatePartitionFailureEntry>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchUpdatePartitionFailureEntry) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11323,9 +11455,7 @@ pub struct BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     pub successful_submissions:
         std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunSuccessfulSubmission>>,
-    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-    /// including the <code>JobRunId</code> for which each error was encountered and details about the
-    /// error.</p>
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
 }
 impl BatchStopJobRunOutput {
@@ -11335,9 +11465,7 @@ impl BatchStopJobRunOutput {
     ) -> std::option::Option<&[crate::model::BatchStopJobRunSuccessfulSubmission]> {
         self.successful_submissions.as_deref()
     }
-    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-    /// including the <code>JobRunId</code> for which each error was encountered and details about the
-    /// error.</p>
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchStopJobRunError]> {
         self.errors.as_deref()
     }
@@ -11368,10 +11496,10 @@ pub mod batch_stop_job_run_output {
         /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
         pub fn successful_submissions(
             mut self,
-            input: impl Into<crate::model::BatchStopJobRunSuccessfulSubmission>,
+            input: crate::model::BatchStopJobRunSuccessfulSubmission,
         ) -> Self {
             let mut v = self.successful_submissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_submissions = Some(v);
             self
         }
@@ -11389,18 +11517,14 @@ pub mod batch_stop_job_run_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-        /// including the <code>JobRunId</code> for which each error was encountered and details about the
-        /// error.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchStopJobRunError>) -> Self {
+        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
+        pub fn errors(mut self, input: crate::model::BatchStopJobRunError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>,
-        /// including the <code>JobRunId</code> for which each error was encountered and details about the
-        /// error.</p>
+        /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchStopJobRunError>>,
@@ -11466,9 +11590,9 @@ pub mod batch_get_workflows_output {
         /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
         ///
         /// <p>A list of workflow resource metadata.</p>
-        pub fn workflows(mut self, input: impl Into<crate::model::Workflow>) -> Self {
+        pub fn workflows(mut self, input: crate::model::Workflow) -> Self {
             let mut v = self.workflows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workflows = Some(v);
             self
         }
@@ -11557,9 +11681,9 @@ pub mod batch_get_triggers_output {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>A list of trigger definitions.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::Trigger>) -> Self {
+        pub fn triggers(mut self, input: crate::model::Trigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
@@ -11612,8 +11736,7 @@ impl BatchGetTriggersOutput {
 pub struct BatchGetPartitionOutput {
     /// <p>A list of the requested partitions.</p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::Partition>>,
-    /// <p>A list of the partition values in the request for which partitions were not
-    /// returned.</p>
+    /// <p>A list of the partition values in the request for which partitions were not returned.</p>
     pub unprocessed_keys: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchGetPartitionOutput {
@@ -11621,8 +11744,7 @@ impl BatchGetPartitionOutput {
     pub fn partitions(&self) -> std::option::Option<&[crate::model::Partition]> {
         self.partitions.as_deref()
     }
-    /// <p>A list of the partition values in the request for which partitions were not
-    /// returned.</p>
+    /// <p>A list of the partition values in the request for which partitions were not returned.</p>
     pub fn unprocessed_keys(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
         self.unprocessed_keys.as_deref()
     }
@@ -11651,9 +11773,9 @@ pub mod batch_get_partition_output {
         /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
         ///
         /// <p>A list of the requested partitions.</p>
-        pub fn partitions(mut self, input: impl Into<crate::model::Partition>) -> Self {
+        pub fn partitions(mut self, input: crate::model::Partition) -> Self {
             let mut v = self.partitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions = Some(v);
             self
         }
@@ -11669,19 +11791,14 @@ pub mod batch_get_partition_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_keys`](Self::set_unprocessed_keys).
         ///
-        /// <p>A list of the partition values in the request for which partitions were not
-        /// returned.</p>
-        pub fn unprocessed_keys(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        /// <p>A list of the partition values in the request for which partitions were not returned.</p>
+        pub fn unprocessed_keys(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.unprocessed_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_keys = Some(v);
             self
         }
-        /// <p>A list of the partition values in the request for which partitions were not
-        /// returned.</p>
+        /// <p>A list of the partition values in the request for which partitions were not returned.</p>
         pub fn set_unprocessed_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -11747,9 +11864,9 @@ pub mod batch_get_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of job definitions.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -11838,9 +11955,9 @@ pub mod batch_get_dev_endpoints_output {
         /// To override the contents of this collection use [`set_dev_endpoints`](Self::set_dev_endpoints).
         ///
         /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-        pub fn dev_endpoints(mut self, input: impl Into<crate::model::DevEndpoint>) -> Self {
+        pub fn dev_endpoints(mut self, input: crate::model::DevEndpoint) -> Self {
             let mut v = self.dev_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dev_endpoints = Some(v);
             self
         }
@@ -11929,9 +12046,9 @@ pub mod batch_get_crawlers_output {
         /// To override the contents of this collection use [`set_crawlers`](Self::set_crawlers).
         ///
         /// <p>A list of crawler definitions.</p>
-        pub fn crawlers(mut self, input: impl Into<crate::model::Crawler>) -> Self {
+        pub fn crawlers(mut self, input: crate::model::Crawler) -> Self {
             let mut v = self.crawlers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.crawlers = Some(v);
             self
         }
@@ -12020,9 +12137,9 @@ pub mod batch_get_blueprints_output {
         /// To override the contents of this collection use [`set_blueprints`](Self::set_blueprints).
         ///
         /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-        pub fn blueprints(mut self, input: impl Into<crate::model::Blueprint>) -> Self {
+        pub fn blueprints(mut self, input: crate::model::Blueprint) -> Self {
             let mut v = self.blueprints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blueprints = Some(v);
             self
         }
@@ -12073,13 +12190,11 @@ impl BatchGetBlueprintsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableVersionOutput {
-    /// <p>A list of errors encountered while trying to delete
-    /// the specified table versions.</p>
+    /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
 }
 impl BatchDeleteTableVersionOutput {
-    /// <p>A list of errors encountered while trying to delete
-    /// the specified table versions.</p>
+    /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::TableVersionError]> {
         self.errors.as_deref()
     }
@@ -12104,16 +12219,14 @@ pub mod batch_delete_table_version_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of errors encountered while trying to delete
-        /// the specified table versions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::TableVersionError>) -> Self {
+        /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
+        pub fn errors(mut self, input: crate::model::TableVersionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of errors encountered while trying to delete
-        /// the specified table versions.</p>
+        /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TableVersionError>>,
@@ -12170,9 +12283,9 @@ pub mod batch_delete_table_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of errors encountered in attempting to delete the specified tables.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::TableError>) -> Self {
+        pub fn errors(mut self, input: crate::model::TableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -12233,9 +12346,9 @@ pub mod batch_delete_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to delete the requested partitions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::PartitionError>) -> Self {
+        pub fn errors(mut self, input: crate::model::PartitionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -12266,23 +12379,19 @@ impl BatchDeletePartitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteConnectionOutput {
-    /// <p>A list of names of the connection definitions that were
-    /// successfully deleted.</p>
+    /// <p>A list of names of the connection definitions that were successfully deleted.</p>
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A map of the names of connections that were not successfully
-    /// deleted to error details.</p>
+    /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     pub errors: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ErrorDetail>,
     >,
 }
 impl BatchDeleteConnectionOutput {
-    /// <p>A list of names of the connection definitions that were
-    /// successfully deleted.</p>
+    /// <p>A list of names of the connection definitions that were successfully deleted.</p>
     pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
         self.succeeded.as_deref()
     }
-    /// <p>A map of the names of connections that were not successfully
-    /// deleted to error details.</p>
+    /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     pub fn errors(
         &self,
     ) -> std::option::Option<
@@ -12315,16 +12424,14 @@ pub mod batch_delete_connection_output {
         ///
         /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
         ///
-        /// <p>A list of names of the connection definitions that were
-        /// successfully deleted.</p>
+        /// <p>A list of names of the connection definitions that were successfully deleted.</p>
         pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded.unwrap_or_default();
             v.push(input.into());
             self.succeeded = Some(v);
             self
         }
-        /// <p>A list of names of the connection definitions that were
-        /// successfully deleted.</p>
+        /// <p>A list of names of the connection definitions that were successfully deleted.</p>
         pub fn set_succeeded(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12336,20 +12443,18 @@ pub mod batch_delete_connection_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A map of the names of connections that were not successfully
-        /// deleted to error details.</p>
+        /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
         pub fn errors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ErrorDetail>,
+            v: crate::model::ErrorDetail,
         ) -> Self {
             let mut hash_map = self.errors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.errors = Some(hash_map);
             self
         }
-        /// <p>A map of the names of connections that were not successfully
-        /// deleted to error details.</p>
+        /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -12409,9 +12514,9 @@ pub mod batch_create_partition_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors encountered when trying to create the requested partitions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::PartitionError>) -> Self {
+        pub fn errors(mut self, input: crate::model::PartitionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

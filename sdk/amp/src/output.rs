@@ -41,9 +41,9 @@ pub mod list_workspaces_output {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// The list of existing workspaces, including those undergoing creation or deletion.
-        pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceSummary>) -> Self {
+        pub fn workspaces(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
@@ -381,10 +381,10 @@ pub mod list_rule_groups_namespaces_output {
         /// The list of the selected rule groups namespaces.
         pub fn rule_groups_namespaces(
             mut self,
-            input: impl Into<crate::model::RuleGroupsNamespaceSummary>,
+            input: crate::model::RuleGroupsNamespaceSummary,
         ) -> Self {
             let mut v = self.rule_groups_namespaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups_namespaces = Some(v);
             self
         }

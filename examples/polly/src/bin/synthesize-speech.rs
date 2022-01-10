@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 use aws_config::meta::region::RegionProviderChain;
-use polly::model::{OutputFormat, VoiceId};
-use polly::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_polly::model::{OutputFormat, VoiceId};
+use aws_sdk_polly::{Client, Error, Region, PKG_VERSION};
 use std::fs;
 use structopt::StructOpt;
 use tokio::io::AsyncWriteExt;

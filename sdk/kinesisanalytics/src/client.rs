@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Kinesis Analytics
@@ -249,11 +249,8 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Adds a CloudWatch log stream to monitor application configuration errors. For more
-    /// information about using CloudWatch log streams with Amazon Kinesis Analytics
-    /// applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-    /// CloudWatch Logs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a CloudWatch log stream to monitor application configuration errors. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -300,10 +297,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationCloudWatchLoggingOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -312,8 +309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -325,8 +322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -337,19 +334,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-        /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-        /// the <code>PutLogEvents</code> policy action enabled.</p>
+        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
         pub fn cloud_watch_logging_option(
             mut self,
-            inp: crate::model::CloudWatchLoggingOption,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option(inp);
+            self.inner = self.inner.cloud_watch_logging_option(input);
             self
         }
-        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-        /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-        /// the <code>PutLogEvents</code> policy action enabled.</p>
+        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
         pub fn set_cloud_watch_logging_option(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLoggingOption>,
@@ -363,21 +356,11 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>
-    /// Adds a streaming source to your Amazon Kinesis application.
-    /// For conceptual information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
-    /// </p>
-    /// <p>You can add a streaming source either when you create an application or you can use
-    /// this operation to add a streaming source after you create an application. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html">CreateApplication</a>.</p>
-    /// <p>Any configuration update, including adding a streaming source using this operation,  
-    /// results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation  
-    /// to find the current application version.
-    /// </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>kinesisanalytics:AddApplicationInput</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Adds a streaming source to your Amazon Kinesis application. For conceptual information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. </p>
+    /// <p>You can add a streaming source either when you create an application or you can use this operation to add a streaming source after you create an application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html">CreateApplication</a>.</p>
+    /// <p>Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version. </p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -422,10 +405,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -434,8 +417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
@@ -446,14 +429,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-        /// to find the current application version.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-        /// to find the current application version.</p>
+        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -462,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
-        pub fn input(mut self, inp: crate::model::Input) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
@@ -477,10 +458,8 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Adds an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the input stream
-    /// before the application's SQL code executes. Currently, the only input processor available is
-    /// <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the input stream before the application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,10 +506,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationInputProcessingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -539,8 +518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to which you want to add the input processing configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application to which you want to add the input processing configuration.</p>
@@ -551,16 +530,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-        /// operation to get the current application version.  If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-        /// operation to get the current application version.  If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -568,14 +543,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_id(input);
             self
@@ -583,9 +556,9 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
@@ -603,23 +576,12 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Adds an external destination to your Amazon Kinesis Analytics application.</p>
-    /// <p>If you want Amazon Kinesis Analytics to deliver data from an in-application stream
-    /// within your application to an external destination (such as an Amazon Kinesis stream, an
-    /// Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), you add the
-    /// relevant configuration to your application using this operation. You can configure one
-    /// or more outputs for your application. Each output configuration maps an in-application
-    /// stream and an external destination.</p>
-    /// <p> You can use one of the output configurations to deliver data from your
-    /// in-application error stream to an external destination so that you can analyze the
-    /// errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
-    /// Output (Destination)</a>. </p>
-    /// <p> Any configuration update, including adding a streaming source using this
-    /// operation, results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application
-    /// version.</p>
-    /// <p>For the limits on the number of application inputs and outputs
-    /// you can configure, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
+    /// <p>If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), you add the relevant configuration to your application using this operation. You can configure one or more outputs for your application. Each output configuration maps an in-application stream and an external destination.</p>
+    /// <p> You can use one of the output configurations to deliver data from your in-application error stream to an external destination so that you can analyze the errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application Output (Destination)</a>. </p>
+    /// <p> Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
+    /// <p>For the limits on the number of application inputs and outputs you can configure, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
     /// <p>This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -664,10 +626,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationOutputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -676,8 +638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to which you want to add the output configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application to which you want to add the output configuration.</p>
@@ -688,18 +650,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Version of the application to which you want to add the output configuration. You
-        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-        /// application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Version of the application to which you want to add the output configuration. You
-        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-        /// application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -707,18 +663,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is,
-        /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-        /// function), and record the formation to use when writing to the destination.</p>
-        pub fn output(mut self, inp: crate::model::Output) -> Self {
-            self.inner = self.inner.output(inp);
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
+        pub fn output(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.output(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is,
-        /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-        /// function), and record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
             self.inner = self.inner.set_output(input);
             self
@@ -731,16 +681,9 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Adds a reference data source to an existing application.</p>
     /// <p>Amazon Kinesis Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name), name of the in-application table to create, and the necessary mapping information that describes how data in Amazon S3 object maps to columns in the resulting in-application table.</p>
-    /// <p>
-    /// For conceptual information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
-    /// For the limits on data sources you can add to your application, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
-    /// </p>
-    /// <p>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> For conceptual information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. For the limits on data sources you can add to your application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p>
+    /// <p> This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,10 +728,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationReferenceDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -797,8 +740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of an existing application.</p>
@@ -809,18 +752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Version of the application for which you are adding the reference data source.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Version of the application for which you are adding the reference data source.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -829,8 +766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
-        pub fn reference_data_source(mut self, inp: crate::model::ReferenceDataSource) -> Self {
-            self.inner = self.inner.reference_data_source(inp);
+        pub fn reference_data_source(mut self, input: crate::model::ReferenceDataSource) -> Self {
+            self.inner = self.inner.reference_data_source(input);
             self
         }
         /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
@@ -847,31 +784,13 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    ///
-    /// <p>
-    /// Creates an Amazon Kinesis Analytics application.
-    /// You can configure each application with one streaming source as input,
-    /// application code to process the input, and up to
-    /// three destinations where
-    /// you want Amazon Kinesis Analytics to write the output data from your application.
-    /// For an overview, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
-    /// </p>
-    /// <p>In the input configuration, you map the streaming source to an in-application stream, which you can think of as a constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each data column in the in-application stream to a
-    /// data element in the streaming source.</p>
-    ///
+    /// <p> Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as input, application code to process the input, and up to three destinations where you want Amazon Kinesis Analytics to write the output data from your application. For an overview, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>. </p>
+    /// <p>In the input configuration, you map the streaming source to an in-application stream, which you can think of as a constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each data column in the in-application stream to a data element in the streaming source.</p>
     /// <p>Your application code is one or more SQL statements that read input data, transform it, and generate output. Your application code can create one or more SQL artifacts like SQL streams or pumps.</p>
     /// <p>In the output configuration, you can configure the application to write data from in-application streams created in your applications to up to three destinations.</p>
-    /// <p>
-    /// To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics
-    /// needs your permissions. You grant these permissions by creating IAM roles. This operation requires permissions to perform the
-    /// <code>kinesisanalytics:CreateApplication</code> action.
-    /// </p>
-    /// <p>
-    /// For introductory exercises to create an Amazon Kinesis Analytics application, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting Started</a>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your permissions. You grant these permissions by creating IAM roles. This operation requires permissions to perform the <code>kinesisanalytics:CreateApplication</code> action. </p>
+    /// <p> For introductory exercises to create an Amazon Kinesis Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting Started</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -916,10 +835,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -928,8 +847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
@@ -941,8 +860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Summary description of the application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>Summary description of the application.</p>
@@ -959,19 +878,15 @@ pub mod fluent_builders {
         ///
         /// <p>Use this parameter to configure the application input.</p>
         /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-        /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-        /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
         /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
-        pub fn inputs(mut self, inp: impl Into<crate::model::Input>) -> Self {
-            self.inner = self.inner.inputs(inp);
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.inputs(input);
             self
         }
         /// <p>Use this parameter to configure the application input.</p>
         /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-        /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-        /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
         /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
         pub fn set_inputs(
             mut self,
@@ -985,25 +900,17 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-        /// streams, AWS Lambda destinations, or any combination of the three.</p>
-        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-        /// destination stream or Lambda function on your behalf.</p>
-        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-        /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-        /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-        /// streams, AWS Lambda destinations, or any combination of the three.</p>
-        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-        /// destination stream or Lambda function on your behalf.</p>
-        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-        /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-        /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -1015,19 +922,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
         ///
-        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-        /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-        /// CloudWatch Logs</a>.</p>
+        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
         pub fn cloud_watch_logging_options(
             mut self,
-            inp: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_options(inp);
+            self.inner = self.inner.cloud_watch_logging_options(input);
             self
         }
-        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-        /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-        /// CloudWatch Logs</a>.</p>
+        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
         pub fn set_cloud_watch_logging_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
@@ -1035,44 +938,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logging_options(input);
             self
         }
-        /// <p>One or more SQL statements that read input data, transform it, and generate output.
-        /// For example, you can write a SQL statement that reads data from one in-application
-        /// stream, generates a running average of the number of advertisement clicks by vendor, and
-        /// insert resulting rows in another in-application stream using pumps. For more information
-        /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-        /// Code</a>. </p>
-        ///
-        /// <p>You can provide such series of SQL statements,
-        /// where output of one statement can be
-        /// used as the input for the next statement. You store
-        /// intermediate results by creating in-application streams and pumps.</p>
-        ///
-        /// <p>Note that the application code must create the streams with names
-        /// specified in the <code>Outputs</code>. For example,
-        /// if your <code>Outputs</code> defines output streams named
-        /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-        /// then your application code must create these streams. </p>
-        pub fn application_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_code(inp);
+        /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+        /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+        /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
+        pub fn application_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_code(input.into());
             self
         }
-        /// <p>One or more SQL statements that read input data, transform it, and generate output.
-        /// For example, you can write a SQL statement that reads data from one in-application
-        /// stream, generates a running average of the number of advertisement clicks by vendor, and
-        /// insert resulting rows in another in-application stream using pumps. For more information
-        /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-        /// Code</a>. </p>
-        ///
-        /// <p>You can provide such series of SQL statements,
-        /// where output of one statement can be
-        /// used as the input for the next statement. You store
-        /// intermediate results by creating in-application streams and pumps.</p>
-        ///
-        /// <p>Note that the application code must create the streams with names
-        /// specified in the <code>Outputs</code>. For example,
-        /// if your <code>Outputs</code> defines output streams named
-        /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-        /// then your application code must create these streams. </p>
+        /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+        /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+        /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
         pub fn set_application_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1084,14 +959,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1106,9 +979,8 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Deletes the specified application. Amazon Kinesis Analytics halts application execution and deletes the application, including any application artifacts (such as in-application streams, reference table, and application code).</p>
-    ///
     /// <p>This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplication</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,10 +1025,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1165,8 +1037,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
@@ -1177,16 +1049,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>
-        /// You can use the <code>DescribeApplication</code> operation to get this value.
-        /// </p>
-        pub fn create_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.create_timestamp(inp);
+        /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.create_timestamp(input);
             self
         }
-        /// <p>
-        /// You can use the <code>DescribeApplication</code> operation to get this value.
-        /// </p>
+        /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
         pub fn set_create_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1200,10 +1068,8 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Deletes a CloudWatch log stream from an application. For more information about
-    /// using CloudWatch log streams with Amazon Kinesis Analytics applications, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1250,10 +1116,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationCloudWatchLoggingOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1262,8 +1128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -1275,8 +1141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -1287,17 +1153,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_id(inp);
+            self.inner = self.inner.cloud_watch_logging_option_id(input.into());
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1312,7 +1176,7 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Deletes an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> from an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1350,10 +1214,10 @@ pub mod fluent_builders {
                                     crate::error::DeleteApplicationInputProcessingConfigurationError,
                                     crate::input::DeleteApplicationInputProcessingConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1362,8 +1226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -1375,8 +1239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -1387,14 +1251,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_id(input);
             self
@@ -1406,9 +1268,8 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Deletes output destination configuration from your application configuration. Amazon Kinesis Analytics will no longer write data from the corresponding in-application stream to the external output destination.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1453,10 +1314,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationOutputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1465,8 +1326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Amazon Kinesis Analytics application name.</p>
@@ -1477,20 +1338,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Amazon Kinesis Analytics application version.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Amazon Kinesis Analytics application version.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1498,26 +1351,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the configuration to delete.
-        /// Each output configuration that is added to the application, either when the application is
-        /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-        /// You need to provide the ID to uniquely identify the output configuration that you want to
-        /// delete from the application configuration.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-        /// <code>OutputId</code>.
-        /// </p>
-        pub fn output_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_id(inp);
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
+        pub fn output_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_id(input.into());
             self
         }
-        /// <p>The ID of the configuration to delete.
-        /// Each output configuration that is added to the application, either when the application is
-        /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-        /// You need to provide the ID to uniquely identify the output configuration that you want to
-        /// delete from the application configuration.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-        /// <code>OutputId</code>.
-        /// </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_output_id(input);
             self
@@ -1529,12 +1368,9 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Deletes a reference data source configuration from the specified application configuration.</p>
-    /// <p>If the application is running, Amazon Kinesis Analytics immediately removes the in-application table
-    /// that you created using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.  </p>
-    ///
-    /// <p>This operation requires permissions to perform the <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code>
-    /// action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the application is running, Amazon Kinesis Analytics immediately removes the in-application table that you created using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation. </p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1581,10 +1417,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationReferenceDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1593,8 +1429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of an existing application.</p>
@@ -1605,18 +1441,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Version of the application.  
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>Version of the application.  
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1624,20 +1454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>ID of the reference data source. When you add a reference data source to your
-        /// application using the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-        /// </p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
+        pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(input.into());
             self
         }
-        /// <p>ID of the reference data source. When you add a reference data source to your
-        /// application using the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-        /// </p>
+        /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reference_id(input);
             self
@@ -1649,13 +1471,9 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Returns information about a specific Amazon Kinesis Analytics application.</p>
-    /// <p>If you want to retrieve a list of all applications in your account,
-    /// use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a> operation.</p>
-    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code>
-    /// action. You can use <code>DescribeApplication</code> to get the current application versionId, which you need to call other
-    /// operations such as <code>Update</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you want to retrieve a list of all applications in your account, use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a> operation.</p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code> action. You can use <code>DescribeApplication</code> to get the current application versionId, which you need to call other operations such as <code>Update</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1700,10 +1518,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1712,8 +1530,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application.</p>
@@ -1731,18 +1549,9 @@ pub mod fluent_builders {
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
     /// <p>Infers a schema by evaluating sample records on the specified streaming source (Amazon Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.</p>
-    /// <p>
-    /// You can use the inferred schema when configuring a streaming source
-    /// for your application. For conceptual information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.
-    /// Note that when you create an application using the Amazon Kinesis Analytics console,
-    /// the console uses this operation to infer a schema and show it in the console user interface.
-    /// </p>
-    /// <p>
-    /// This operation requires permissions to perform the
-    /// <code>kinesisanalytics:DiscoverInputSchema</code> action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> You can use the inferred schema when configuring a streaming source for your application. For conceptual information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. Note that when you create an application using the Amazon Kinesis Analytics console, the console uses this operation to infer a schema and show it in the console user interface. </p>
+    /// <p> This operation requires permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code> action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverInputSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1787,10 +1596,10 @@ pub mod fluent_builders {
                 crate::input::DiscoverInputSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1799,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
@@ -1809,8 +1618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
@@ -1821,9 +1630,9 @@ pub mod fluent_builders {
         /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn input_starting_position_configuration(
             mut self,
-            inp: crate::model::InputStartingPositionConfiguration,
+            input: crate::model::InputStartingPositionConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_starting_position_configuration(inp);
+            self.inner = self.inner.input_starting_position_configuration(input);
             self
         }
         /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
@@ -1834,14 +1643,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_starting_position_configuration(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
-        pub fn s3_configuration(mut self, inp: crate::model::S3Configuration) -> Self {
-            self.inner = self.inner.s3_configuration(inp);
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+        pub fn s3_configuration(mut self, input: crate::model::S3Configuration) -> Self {
+            self.inner = self.inner.s3_configuration(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn set_s3_configuration(
             mut self,
             input: std::option::Option<crate::model::S3Configuration>,
@@ -1852,9 +1659,9 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
@@ -1871,21 +1678,10 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Returns a list of Amazon Kinesis Analytics applications in your account.
-    /// For each application, the response includes the application name,
-    /// Amazon Resource Name (ARN), and status.
-    ///
-    /// If the response returns the <code>HasMoreApplications</code> value as true,  
-    /// you can send another request by adding the
-    /// <code>ExclusiveStartApplicationName</code> in the request body, and
-    /// set the value of this to the last application name from
-    /// the previous response.
-    /// </p>
-    /// <p>If you want detailed information about a specific application, use
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>kinesisanalytics:ListApplications</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of Amazon Kinesis Analytics applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status. If the response returns the <code>HasMoreApplications</code> value as true, you can send another request by adding the <code>ExclusiveStartApplicationName</code> in the request body, and set the value of this to the last application name from the previous response. </p>
+    /// <p>If you want detailed information about a specific application, use <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>.</p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:ListApplications</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1930,10 +1726,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1942,8 +1738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of applications to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Maximum number of applications to list.</p>
@@ -1954,9 +1750,9 @@ pub mod fluent_builders {
         /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
         pub fn exclusive_start_application_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_application_name(inp);
+            self.inner = self.inner.exclusive_start_application_name(input.into());
             self
         }
         /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
@@ -1971,7 +1767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of key-value tags assigned to the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2016,10 +1812,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2028,8 +1824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
@@ -2045,14 +1841,10 @@ pub mod fluent_builders {
     /// </note>
     /// <p>Starts the specified Amazon Kinesis Analytics application. After creating an application, you must exclusively call this operation to start your application.</p>
     /// <p>After the application starts, it begins consuming the input data, processes it, and writes the output to the configured destination.</p>
-    /// <p>
-    /// The application status must be <code>READY</code> for you to start an application. You can
-    /// get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    /// <p>After you start the application, you can stop the application from processing
-    /// the input by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html">StopApplication</a> operation.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>kinesisanalytics:StartApplication</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The application status must be <code>READY</code> for you to start an application. You can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>After you start the application, you can stop the application from processing the input by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html">StopApplication</a> operation.</p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:StartApplication</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2097,10 +1889,10 @@ pub mod fluent_builders {
                 crate::input::StartApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2109,8 +1901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application.</p>
@@ -2126,11 +1918,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
         ///
         /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
-        pub fn input_configurations(
-            mut self,
-            inp: impl Into<crate::model::InputConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.input_configurations(inp);
+        pub fn input_configurations(mut self, input: crate::model::InputConfiguration) -> Self {
+            self.inner = self.inner.input_configurations(input);
             self
         }
         /// <p>Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.</p>
@@ -2147,15 +1936,9 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Stops the application from processing input data. You can stop
-    /// an application only if it is in the running state.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the application state.
-    /// After the application is stopped,
-    /// Amazon Kinesis Analytics stops reading data from the input, the
-    /// application stops processing data, and there is no output written to the destination. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>kinesisanalytics:StopApplication</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops the application from processing input data. You can stop an application only if it is in the running state. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the application state. After the application is stopped, Amazon Kinesis Analytics stops reading data from the input, the application stops processing data, and there is no output written to the destination. </p>
+    /// <p>This operation requires permissions to perform the <code>kinesisanalytics:StopApplication</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2200,10 +1983,10 @@ pub mod fluent_builders {
                 crate::input::StopApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2212,8 +1995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the running application to stop.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the running application to stop.</p>
@@ -2227,9 +2010,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2274,10 +2056,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2286,8 +2068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application to assign the tags.</p>
@@ -2300,8 +2082,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value tags to assign to the application.</p>
@@ -2316,7 +2098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a Kinesis Analytics application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2361,10 +2143,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2373,8 +2155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis Analytics application from which to remove the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis Analytics application from which to remove the tags.</p>
@@ -2387,8 +2169,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of keys of tags to remove from the specified application.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys of tags to remove from the specified application.</p>
@@ -2405,14 +2187,10 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p>
     /// </note>
-    /// <p>Updates an existing Amazon Kinesis Analytics application. Using this API,
-    /// you can update application code, input configuration, and
-    /// output configuration. </p>
-    /// <p>Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code>
-    /// each time you update your application. </p>
-    /// <p>This operation requires permission for the
-    /// <code>kinesisanalytics:UpdateApplication</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input configuration, and output configuration. </p>
+    /// <p>Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your application. </p>
+    /// <p>This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2457,10 +2235,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2469,8 +2247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
@@ -2481,14 +2259,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current application version ID. You can use the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current application version ID. You can use the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+        /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2497,8 +2273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes application updates.</p>
-        pub fn application_update(mut self, inp: crate::model::ApplicationUpdate) -> Self {
-            self.inner = self.inner.application_update(inp);
+        pub fn application_update(mut self, input: crate::model::ApplicationUpdate) -> Self {
+            self.inner = self.inner.application_update(input);
             self
         }
         /// <p>Describes application updates.</p>
@@ -2511,6 +2287,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

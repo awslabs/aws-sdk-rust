@@ -30,6 +30,61 @@ pub fn parse_add_tags_error(
                 tmp
             }),
         },
+        "ConflictException" => {
+            crate::error::AddTagsError {
+                meta: generic,
+                kind: crate::error::AddTagsErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "EventDataStoreNotFoundException" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::AddTagsError {
+            meta: generic,
+            kind: crate::error::AddTagsErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTagParameterException" => crate::error::AddTagsError {
             meta: generic,
             kind: crate::error::AddTagsErrorKind::InvalidTagParameterException({
@@ -189,6 +244,408 @@ pub fn parse_add_tags_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_cancel_query_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CancelQueryOutput, crate::error::CancelQueryError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CancelQueryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CancelQueryError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => {
+            crate::error::CancelQueryError {
+                meta: generic,
+                kind: crate::error::CancelQueryErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "EventDataStoreARNInvalidException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveQueryException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::InactiveQueryException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::inactive_query_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_query_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "QueryIdNotFoundException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::QueryIdNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_id_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_query_id_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::CancelQueryError {
+            meta: generic,
+            kind: crate::error::CancelQueryErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CancelQueryError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_cancel_query_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CancelQueryOutput, crate::error::CancelQueryError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::cancel_query_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_cancel_query(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CancelQueryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_event_data_store_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEventDataStoreOutput,
+    crate::error::CreateEventDataStoreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateEventDataStoreError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CloudTrailAccessNotEnabledException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ConflictException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::ConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreAlreadyExistsException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreMaxLimitExceededException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_max_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidTagParameterException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::InvalidTagParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_tag_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationMasterAccountException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotInAllFeaturesModeException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationsNotInUseException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::OrganizationsNotInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::CreateEventDataStoreError { meta: generic, kind: crate::error::CreateEventDataStoreErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateEventDataStoreError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_event_data_store_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateEventDataStoreOutput,
+    crate::error::CreateEventDataStoreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_event_data_store_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_event_data_store(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateEventDataStoreError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTrailOutput, crate::error::CreateTrailError> {
@@ -235,6 +692,20 @@ pub fn parse_create_trail_error(
                     #[allow(unused_mut)]let mut output = crate::error::cloud_watch_logs_delivery_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_watch_logs_delivery_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ConflictException" => crate::error::CreateTrailError { meta: generic, kind: crate::error::CreateTrailErrorKind::ConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTrailError::unhandled)?;
                     output.build()
                 }
             ;
@@ -615,6 +1086,153 @@ pub fn parse_create_trail_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_event_data_store_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEventDataStoreOutput,
+    crate::error::DeleteEventDataStoreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteEventDataStoreError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreNotFoundException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreTerminationProtectedException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_termination_protected_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_termination_protected_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationMasterAccountException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::DeleteEventDataStoreError { meta: generic, kind: crate::error::DeleteEventDataStoreErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteEventDataStoreError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_event_data_store_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEventDataStoreOutput,
+    crate::error::DeleteEventDataStoreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_event_data_store_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTrailOutput, crate::error::DeleteTrailError> {
@@ -756,6 +1374,164 @@ pub fn parse_delete_trail_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_query_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeQueryOutput, crate::error::DescribeQueryError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeQueryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeQueryError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "QueryIdNotFoundException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::QueryIdNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_id_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_query_id_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::DescribeQueryError {
+            meta: generic,
+            kind: crate::error::DescribeQueryErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeQueryError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_query_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeQueryOutput, crate::error::DescribeQueryError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_query_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_query(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeQueryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_trails_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTrailsOutput, crate::error::DescribeTrailsError> {
@@ -838,6 +1614,131 @@ pub fn parse_describe_trails_response(
             output,
         )
         .map_err(crate::error::DescribeTrailsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_event_data_store_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetEventDataStoreOutput, crate::error::GetEventDataStoreError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetEventDataStoreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetEventDataStoreError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::GetEventDataStoreError {
+            meta: generic,
+            kind: crate::error::GetEventDataStoreErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventDataStoreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetEventDataStoreError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_event_data_store_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetEventDataStoreOutput, crate::error::GetEventDataStoreError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_event_data_store_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_event_data_store(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetEventDataStoreError::unhandled)?;
         output.build()
     })
 }
@@ -1077,6 +1978,199 @@ pub fn parse_get_insight_selectors_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_query_results_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetQueryResultsOutput, crate::error::GetQueryResultsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetQueryResultsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetQueryResultsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidMaxResultsException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::InvalidMaxResultsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_max_results_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "QueryIdNotFoundException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::QueryIdNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::query_id_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_query_id_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::GetQueryResultsError {
+            meta: generic,
+            kind: crate::error::GetQueryResultsErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQueryResultsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetQueryResultsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_query_results_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetQueryResultsOutput, crate::error::GetQueryResultsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_query_results_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_query_results(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetQueryResultsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTrailOutput, crate::error::GetTrailError> {
@@ -1285,6 +2379,117 @@ pub fn parse_get_trail_status_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_event_data_stores_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEventDataStoresOutput,
+    crate::error::ListEventDataStoresError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListEventDataStoresError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListEventDataStoresError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidMaxResultsException" => crate::error::ListEventDataStoresError {
+            meta: generic,
+            kind: crate::error::ListEventDataStoresErrorKind::InvalidMaxResultsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_max_results_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListEventDataStoresError {
+            meta: generic,
+            kind: crate::error::ListEventDataStoresErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::ListEventDataStoresError {
+            meta: generic,
+            kind: crate::error::ListEventDataStoresErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::ListEventDataStoresError {
+            meta: generic,
+            kind: crate::error::ListEventDataStoresErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventDataStoresError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListEventDataStoresError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_event_data_stores_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListEventDataStoresOutput,
+    crate::error::ListEventDataStoresError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_event_data_stores_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_event_data_stores(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListEventDataStoresError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_public_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPublicKeysOutput, crate::error::ListPublicKeysError> {
@@ -1389,6 +2594,217 @@ pub fn parse_list_public_keys_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_queries_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListQueriesOutput, crate::error::ListQueriesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListQueriesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListQueriesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDateRangeException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InvalidDateRangeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_date_range_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_date_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidMaxResultsException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InvalidMaxResultsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_max_results_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_max_results_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidNextTokenException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidQueryStatusException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::InvalidQueryStatusException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_query_status_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_query_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::ListQueriesError {
+            meta: generic,
+            kind: crate::error::ListQueriesErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueriesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListQueriesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_queries_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListQueriesOutput, crate::error::ListQueriesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_queries_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_queries(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListQueriesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
@@ -1411,6 +2827,42 @@ pub fn parse_list_tags_error(
                         crate::error::cloud_trail_arn_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_trail_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::ListTagsError {
+            meta: generic,
+            kind: crate::error::ListTagsErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::ListTagsError {
+            meta: generic,
+            kind: crate::error::ListTagsErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2194,6 +3646,42 @@ pub fn parse_remove_tags_error(
                 tmp
             }),
         },
+        "EventDataStoreNotFoundException" => crate::error::RemoveTagsError {
+            meta: generic,
+            kind: crate::error::RemoveTagsErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::RemoveTagsError {
+            meta: generic,
+            kind: crate::error::RemoveTagsErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidTagParameterException" => crate::error::RemoveTagsError {
             meta: generic,
             kind: crate::error::RemoveTagsErrorKind::InvalidTagParameterException({
@@ -2335,6 +3823,214 @@ pub fn parse_remove_tags_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_event_data_store_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreEventDataStoreOutput,
+    crate::error::RestoreEventDataStoreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RestoreEventDataStoreError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CloudTrailAccessNotEnabledException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreARNInvalidException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreMaxLimitExceededException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_max_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_max_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreNotFoundException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidEventDataStoreStatusException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_event_data_store_status_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_event_data_store_status_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationMasterAccountException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotInAllFeaturesModeException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationsNotInUseException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::OrganizationsNotInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::RestoreEventDataStoreError { meta: generic, kind: crate::error::RestoreEventDataStoreErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::RestoreEventDataStoreError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_restore_event_data_store_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::RestoreEventDataStoreOutput,
+    crate::error::RestoreEventDataStoreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::restore_event_data_store_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_restore_event_data_store(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::RestoreEventDataStoreError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartLoggingOutput, crate::error::StartLoggingError> {
@@ -2462,6 +4158,183 @@ pub fn parse_start_logging_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_query_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartQueryOutput, crate::error::StartQueryError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartQueryError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StartQueryError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EventDataStoreARNInvalidException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EventDataStoreNotFoundException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::EventDataStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InactiveEventDataStoreException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InactiveEventDataStoreException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidQueryStatementException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::InvalidQueryStatementException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_query_statement_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_query_statement_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MaxConcurrentQueriesException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::MaxConcurrentQueriesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::max_concurrent_queries_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_max_concurrent_queries_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationNotPermittedException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedOperationException" => crate::error::StartQueryError {
+            meta: generic,
+            kind: crate::error::StartQueryErrorKind::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartQueryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartQueryError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_query_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartQueryOutput, crate::error::StartQueryError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_query_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_query(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartQueryError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopLoggingOutput, crate::error::StopLoggingError> {
@@ -2584,6 +4457,200 @@ pub fn parse_stop_logging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::stop_logging_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_event_data_store_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateEventDataStoreOutput,
+    crate::error::UpdateEventDataStoreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateEventDataStoreError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CloudTrailAccessNotEnabledException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::cloud_trail_access_not_enabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_trail_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreARNInvalidException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_arn_invalid_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_arn_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "EventDataStoreNotFoundException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::event_data_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_event_data_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InactiveEventDataStoreException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InactiveEventDataStoreException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::inactive_event_data_store_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_inactive_event_data_store_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InsufficientDependencyServiceAccessPermissionException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::insufficient_dependency_service_access_permission_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_insufficient_dependency_service_access_permission_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "NotOrganizationMasterAccountException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_organization_master_account_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_organization_master_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationNotPermittedException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OperationNotPermittedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_not_permitted_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotInAllFeaturesModeException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationsNotInUseException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::OrganizationsNotInUseException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organizations_not_in_use_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organizations_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::UpdateEventDataStoreError { meta: generic, kind: crate::error::UpdateEventDataStoreErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateEventDataStoreError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_event_data_store_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateEventDataStoreOutput,
+    crate::error::UpdateEventDataStoreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_event_data_store_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_event_data_store(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateEventDataStoreError::unhandled)?;
         output.build()
     })
 }

@@ -60,6 +60,7 @@
 //!     .build();
 //! # }
 //! ```
+
 use aws_sdk_sts::Region;
 use aws_types::os_shim_internal::{Env, Fs};
 

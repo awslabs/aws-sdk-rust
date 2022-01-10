@@ -16,8 +16,7 @@ use aws_smithy_client::SdkError;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Env;
 use aws_types::{credentials, Credentials};
-
-use tokio::sync::OnceCell;
+use std::borrow::Cow;
 
 /// IMDSv2 Credentials Provider
 ///
@@ -26,7 +25,7 @@ use tokio::sync::OnceCell;
 pub struct ImdsCredentialsProvider {
     client: LazyClient,
     env: Env,
-    profile: OnceCell<String>,
+    profile: Option<String>,
 }
 
 /// Builder for [`ImdsCredentialsProvider`]
@@ -48,7 +47,7 @@ impl Builder {
     ///
     /// When retrieving IMDS credentials, a call must first be made to
     /// `<IMDS_BASE_URL>/latest/meta-data/iam/security-credentials`. This returns the instance
-    /// profile used. By setting this parameter, the initial call to retrieve the profile is skipped
+    /// profile used. By setting this parameter, retrieving the profile is skipped
     /// and the provided value is used instead.
     ///
     /// [instance-profile]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#ec2-instance-profile
@@ -83,11 +82,10 @@ impl Builder {
                     .configure(&provider_config)
                     .build_lazy()
             });
-        let profile = OnceCell::new_with(self.profile_override);
         ImdsCredentialsProvider {
             client,
             env,
-            profile,
+            profile: self.profile_override,
         }
     }
 }
@@ -126,8 +124,7 @@ impl ImdsCredentialsProvider {
         })
     }
 
-    /// Retrieve the instance profile directly. This method should only be used as an argument to
-    /// `OnceCell::get_or_try_init`
+    /// Retrieve the instance profile from IMDS
     async fn get_profile_uncached(&self) -> Result<String, CredentialsError> {
         match self
             .client()
@@ -158,8 +155,10 @@ impl ImdsCredentialsProvider {
             ));
         }
         tracing::debug!("loading credentials from IMDS");
-        let get_profile = self.get_profile_uncached();
-        let profile = self.profile.get_or_try_init(|| get_profile).await?;
+        let profile: Cow<str> = match &self.profile {
+            Some(profile) => profile.into(),
+            None => self.get_profile_uncached().await?.into(),
+        };
         tracing::debug!(profile = %profile, "loaded profile");
         let credentials = self
             .client()
@@ -202,5 +201,51 @@ impl ImdsCredentialsProvider {
             // got bad data from IMDS, should not occur during normal operation:
             Err(invalid) => Err(CredentialsError::unhandled(invalid)),
         }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use crate::imds::client::test::{
+        imds_request, imds_response, make_client, token_request, token_response,
+    };
+    use crate::imds::credentials::ImdsCredentialsProvider;
+    use aws_smithy_client::test_connection::TestConnection;
+    use aws_types::credentials::ProvideCredentials;
+
+    const TOKEN_A: &str = "token_a";
+
+    #[tokio::test]
+    async fn profile_is_not_cached() {
+        let connection = TestConnection::new(vec![
+                (
+                    token_request("http://169.254.169.254", 21600),
+                    token_response(21600, TOKEN_A),
+                ),
+                (
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials", TOKEN_A),
+                    imds_response(r#"profile-name"#),
+                ),
+                (
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials/profile-name", TOKEN_A),
+                    imds_response("{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2021-09-20T21:42:26Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"ASIARTEST\",\n  \"SecretAccessKey\" : \"testsecret\",\n  \"Token\" : \"testtoken\",\n  \"Expiration\" : \"2021-09-21T04:16:53Z\"\n}"),
+                ),
+                (
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials", TOKEN_A),
+                    imds_response(r#"different-profile"#),
+                ),
+                (
+                    imds_request("http://169.254.169.254/latest/meta-data/iam/security-credentials/different-profile", TOKEN_A),
+                    imds_response("{\n  \"Code\" : \"Success\",\n  \"LastUpdated\" : \"2021-09-20T21:42:26Z\",\n  \"Type\" : \"AWS-HMAC\",\n  \"AccessKeyId\" : \"ASIARTEST2\",\n  \"SecretAccessKey\" : \"testsecret\",\n  \"Token\" : \"testtoken\",\n  \"Expiration\" : \"2021-09-21T04:16:53Z\"\n}"),
+                ),
+            ]);
+        let client = ImdsCredentialsProvider::builder()
+            .imds_client(make_client(&connection).await)
+            .build();
+        let creds1 = client.provide_credentials().await.expect("valid creds");
+        let creds2 = client.provide_credentials().await.expect("valid creds");
+        assert_eq!(creds1.access_key_id(), "ASIARTEST");
+        assert_eq!(creds2.access_key_id(), "ASIARTEST2");
+        connection.assert_requests_match(&[]);
     }
 }

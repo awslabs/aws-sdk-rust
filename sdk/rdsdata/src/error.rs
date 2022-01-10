@@ -18,8 +18,7 @@ pub enum BatchExecuteStatementErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -68,8 +67,6 @@ impl BatchExecuteStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -158,8 +155,7 @@ pub enum BeginTransactionErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -208,8 +204,6 @@ impl BeginTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -297,8 +291,7 @@ pub enum CommitTransactionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -348,8 +341,6 @@ impl CommitTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -443,8 +434,7 @@ pub enum ExecuteSqlErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -490,8 +480,6 @@ impl ExecuteSqlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -563,8 +551,7 @@ pub enum ExecuteStatementErrorKind {
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -613,8 +600,6 @@ impl ExecuteStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -702,8 +687,7 @@ pub enum RollbackTransactionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
@@ -753,8 +737,6 @@ impl RollbackTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -917,8 +899,7 @@ impl StatementTimeoutException {
     }
 }
 
-/// <p>The service specified by the <code>resourceArn</code> parameter is not
-/// available.</p>
+/// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {

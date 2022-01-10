@@ -5,13 +5,11 @@
 pub struct VpceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-    /// easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub vpce_service_name: std::option::Option<std::string::String>,
-    /// <p>The DNS name that maps to the private IP address of the service you want to
-    /// access.</p>
+    /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: std::option::Option<std::string::String>,
@@ -21,8 +19,7 @@ impl VpceConfiguration {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-    /// easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
         self.vpce_configuration_name.as_deref()
     }
@@ -30,8 +27,7 @@ impl VpceConfiguration {
     pub fn vpce_service_name(&self) -> std::option::Option<&str> {
         self.vpce_service_name.as_deref()
     }
-    /// <p>The DNS name that maps to the private IP address of the service you want to
-    /// access.</p>
+    /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
     pub fn service_dns_name(&self) -> std::option::Option<&str> {
         self.service_dns_name.as_deref()
     }
@@ -77,14 +73,12 @@ pub mod vpce_configuration {
             self.arn = input;
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpce_configuration_name = Some(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -105,14 +99,12 @@ pub mod vpce_configuration {
             self.vpce_service_name = input;
             self
         }
-        /// <p>The DNS name that maps to the private IP address of the service you want to
-        /// access.</p>
+        /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
         pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_dns_name = Some(input.into());
             self
         }
-        /// <p>The DNS name that maps to the private IP address of the service you want to
-        /// access.</p>
+        /// <p>The DNS name that maps to the private IP address of the service you want to access.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -155,8 +147,7 @@ impl VpceConfiguration {
     }
 }
 
-/// <p>An app or a set of one or more tests to upload or that have been
-/// uploaded.</p>
+/// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Upload {
@@ -169,126 +160,52 @@ pub struct Upload {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::UploadType>,
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>INITIALIZED</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SUCCEEDED</p>
-    /// </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>INITIALIZED</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::UploadStatus>,
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The upload's metadata. For example, for Android, this contains information that is
-    /// parsed from the manifest and is displayed in the AWS Device Farm console after the
-    /// associated app is uploaded.</p>
+    /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
     pub metadata: std::option::Option<std::string::String>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub content_type: std::option::Option<std::string::String>,
@@ -296,12 +213,8 @@ pub struct Upload {
     pub message: std::option::Option<std::string::String>,
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: An upload managed by AWS Device Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p>
-    /// </li>
+    /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
     pub category: std::option::Option<crate::model::UploadCategory>,
 }
@@ -321,102 +234,38 @@ impl Upload {
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UploadType> {
         self.r#type.as_ref()
@@ -424,18 +273,10 @@ impl Upload {
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>INITIALIZED</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SUCCEEDED</p>
-    /// </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>INITIALIZED</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::UploadStatus> {
         self.status.as_ref()
@@ -444,9 +285,7 @@ impl Upload {
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The upload's metadata. For example, for Android, this contains information that is
-    /// parsed from the manifest and is displayed in the AWS Device Farm console after the
-    /// associated app is uploaded.</p>
+    /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
@@ -460,12 +299,8 @@ impl Upload {
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: An upload managed by AWS Device Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p>
-    /// </li>
+    /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
     pub fn category(&self) -> std::option::Option<&crate::model::UploadCategory> {
         self.category.as_ref()
@@ -541,102 +376,38 @@ pub mod upload {
         /// <p>The upload's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
             self.r#type = Some(input);
@@ -645,102 +416,38 @@ pub mod upload {
         /// <p>The upload's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.r#type = input;
@@ -749,18 +456,10 @@ pub mod upload {
         /// <p>The upload's status.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>INITIALIZED</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SUCCEEDED</p>
-        /// </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>INITIALIZED</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SUCCEEDED</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::UploadStatus) -> Self {
             self.status = Some(input);
@@ -769,18 +468,10 @@ pub mod upload {
         /// <p>The upload's status.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>INITIALIZED</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SUCCEEDED</p>
-        /// </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>INITIALIZED</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SUCCEEDED</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -799,16 +490,12 @@ pub mod upload {
             self.url = input;
             self
         }
-        /// <p>The upload's metadata. For example, for Android, this contains information that is
-        /// parsed from the manifest and is displayed in the AWS Device Farm console after the
-        /// associated app is uploaded.</p>
+        /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.metadata = Some(input.into());
             self
         }
-        /// <p>The upload's metadata. For example, for Android, this contains information that is
-        /// parsed from the manifest and is displayed in the AWS Device Farm console after the
-        /// associated app is uploaded.</p>
+        /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
@@ -835,12 +522,8 @@ pub mod upload {
         }
         /// <p>The upload's category. Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: An upload managed by AWS Device Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p>
-        /// </li>
+        /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
         /// </ul>
         pub fn category(mut self, input: crate::model::UploadCategory) -> Self {
             self.category = Some(input);
@@ -848,12 +531,8 @@ pub mod upload {
         }
         /// <p>The upload's category. Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: An upload managed by AWS Device Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p>
-        /// </li>
+        /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
         /// </ul>
         pub fn set_category(
             mut self,
@@ -1458,8 +1137,7 @@ impl TestGridVpcConfig {
     }
 }
 
-/// <p>Represents an operating-system neutral workspace for running and managing
-/// tests.</p>
+/// <p>Represents an operating-system neutral workspace for running and managing tests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Project {
@@ -1467,8 +1145,7 @@ pub struct Project {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The project's name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The default number of minutes (at the project level) a test run executes before it times out. The
-    /// default value is 150 minutes.</p>
+    /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When the project was created.</p>
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -1482,8 +1159,7 @@ impl Project {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The default number of minutes (at the project level) a test run executes before it times out. The
-    /// default value is 150 minutes.</p>
+    /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
         self.default_job_timeout_minutes
     }
@@ -1537,14 +1213,12 @@ pub mod project {
             self.name = input;
             self
         }
-        /// <p>The default number of minutes (at the project level) a test run executes before it times out. The
-        /// default value is 150 minutes.</p>
+        /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
         pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
             self.default_job_timeout_minutes = Some(input);
             self
         }
-        /// <p>The default number of minutes (at the project level) a test run executes before it times out. The
-        /// default value is 150 minutes.</p>
+        /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.default_job_timeout_minutes = input;
             self
@@ -1592,26 +1266,19 @@ pub struct NetworkProfile {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile. Valid values are listed here.</p>
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub uplink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub downlink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_delay_ms: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_delay_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_jitter_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_jitter_ms: std::option::Option<i64>,
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
@@ -1633,38 +1300,31 @@ impl NetworkProfile {
     pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
         self.r#type.as_ref()
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.uplink_bandwidth_bits
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.downlink_bandwidth_bits
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
         self.uplink_delay_ms
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
         self.downlink_delay_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
         self.uplink_jitter_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
         self.downlink_jitter_ms
     }
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(&self) -> i32 {
         self.uplink_loss_percent
     }
@@ -1754,86 +1414,72 @@ pub mod network_profile {
             self.r#type = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
             self.uplink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_bandwidth_bits = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
             self.downlink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_bandwidth_bits = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_delay_ms(mut self, input: i64) -> Self {
             self.uplink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_delay_ms = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_delay_ms(mut self, input: i64) -> Self {
             self.downlink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_delay_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
             self.uplink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_jitter_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
             self.downlink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_jitter_ms = input;
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn uplink_loss_percent(mut self, input: i32) -> Self {
             self.uplink_loss_percent = Some(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.uplink_loss_percent = input;
             self
@@ -1935,16 +1581,12 @@ impl AsRef<str> for NetworkProfileType {
 pub struct InstanceProfile {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-    /// <code>false</code> for private devices.</p>
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
     pub package_cleanup: std::option::Option<bool>,
-    /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
-    /// after a test run completes.</p>
-    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-    /// <code>true</code>.</p>
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     pub reboot_after_use: std::option::Option<bool>,
     /// <p>The name of the instance profile.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1956,20 +1598,16 @@ impl InstanceProfile {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-    /// <code>false</code> for private devices.</p>
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(&self) -> std::option::Option<bool> {
         self.package_cleanup
     }
-    /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
-    /// after a test run completes.</p>
-    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_app_packages_from_cleanup.as_deref()
     }
-    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-    /// <code>true</code>.</p>
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(&self) -> std::option::Option<bool> {
         self.reboot_after_use
     }
@@ -2022,14 +1660,12 @@ pub mod instance_profile {
             self.arn = input;
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn package_cleanup(mut self, input: bool) -> Self {
             self.package_cleanup = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.package_cleanup = input;
             self
@@ -2038,10 +1674,8 @@ pub mod instance_profile {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
-        /// after a test run completes.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -2051,10 +1685,8 @@ pub mod instance_profile {
             self.exclude_app_packages_from_cleanup = Some(v);
             self
         }
-        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
-        /// after a test run completes.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device after a test run completes.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2062,14 +1694,12 @@ pub mod instance_profile {
             self.exclude_app_packages_from_cleanup = input;
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn reboot_after_use(mut self, input: bool) -> Self {
             self.reboot_after_use = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.reboot_after_use = input;
             self
@@ -2127,24 +1757,14 @@ pub struct DevicePool {
     /// <p>The device pool's type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device
-    /// Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool
-    /// developer.</p>
-    /// </li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DevicePoolType>,
     /// <p>Information about the device pool's rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-    /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-    /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-    /// parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub max_devices: std::option::Option<i32>,
 }
 impl DevicePool {
@@ -2163,14 +1783,8 @@ impl DevicePool {
     /// <p>The device pool's type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device
-    /// Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool
-    /// developer.</p>
-    /// </li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DevicePoolType> {
         self.r#type.as_ref()
@@ -2179,12 +1793,8 @@ impl DevicePool {
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-    /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-    /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-    /// parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
     }
@@ -2248,14 +1858,8 @@ pub mod device_pool {
         /// <p>The device pool's type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DevicePoolType) -> Self {
             self.r#type = Some(input);
@@ -2264,14 +1868,8 @@ pub mod device_pool {
         /// <p>The device pool's type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -2285,9 +1883,9 @@ pub mod device_pool {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the device pool's rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2299,22 +1897,14 @@ pub mod device_pool {
             self.rules = input;
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.max_devices = Some(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -2343,219 +1933,209 @@ impl DevicePool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
-    /// <p>The rule's stringified attribute. For example, specify the value as
-    /// <code>"\"abc\""</code>.</p>
-    /// <p>The supported operators for each attribute are provided in the following
-    /// list.</p>
+    /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
+    /// <p>The supported operators for each attribute are provided in the following list.</p>
     /// <dl>
-    /// <dt>APPIUM_VERSION</dt>
+    /// <dt>
+    /// APPIUM_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The Appium version for the test.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>ARN</dt>
+    /// <dt>
+    /// ARN
+    /// </dt>
     /// <dd>
-    /// <p>The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>AVAILABILITY</dt>
+    /// <dt>
+    /// AVAILABILITY
+    /// </dt>
     /// <dd>
-    /// <p>The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FLEET_TYPE</dt>
+    /// <dt>
+    /// FLEET_TYPE
+    /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FORM_FACTOR</dt>
+    /// <dt>
+    /// FORM_FACTOR
+    /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_ARN</dt>
+    /// <dt>
+    /// INSTANCE_ARN
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_LABELS</dt>
+    /// <dt>
+    /// INSTANCE_LABELS
+    /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>MANUFACTURER</dt>
+    /// <dt>
+    /// MANUFACTURER
+    /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>MODEL</dt>
+    /// <dt>
+    /// MODEL
+    /// </dt>
     /// <dd>
     /// <p>The device model, such as Apple iPad Air 2 or Google Pixel.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>,
-    /// <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>OS_VERSION</dt>
+    /// <dt>
+    /// OS_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
-    /// <code>IN</code>, <code>LESS_THAN</code>,
-    /// <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>PLATFORM</dt>
+    /// <dt>
+    /// PLATFORM
+    /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>REMOTE_ACCESS_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_ACCESS_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote access. Valid values are TRUE
-    /// or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>REMOTE_DEBUG_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_DEBUG_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote debugging. Valid values are
-    /// TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
-    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-    /// supported</a>, this filter is ignored.</p>
+    /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
+    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
     pub attribute: std::option::Option<crate::model::DeviceAttribute>,
-    /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the
-    /// operators that are supported by each attribute, see the attribute
-    /// descriptions.</p>
+    /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
     pub operator: std::option::Option<crate::model::RuleOperator>,
     /// <p>The rule's value.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Rule {
-    /// <p>The rule's stringified attribute. For example, specify the value as
-    /// <code>"\"abc\""</code>.</p>
-    /// <p>The supported operators for each attribute are provided in the following
-    /// list.</p>
+    /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
+    /// <p>The supported operators for each attribute are provided in the following list.</p>
     /// <dl>
-    /// <dt>APPIUM_VERSION</dt>
+    /// <dt>
+    /// APPIUM_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The Appium version for the test.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>ARN</dt>
+    /// <dt>
+    /// ARN
+    /// </dt>
     /// <dd>
-    /// <p>The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>AVAILABILITY</dt>
+    /// <dt>
+    /// AVAILABILITY
+    /// </dt>
     /// <dd>
-    /// <p>The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FLEET_TYPE</dt>
+    /// <dt>
+    /// FLEET_TYPE
+    /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FORM_FACTOR</dt>
+    /// <dt>
+    /// FORM_FACTOR
+    /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_ARN</dt>
+    /// <dt>
+    /// INSTANCE_ARN
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_LABELS</dt>
+    /// <dt>
+    /// INSTANCE_LABELS
+    /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>MANUFACTURER</dt>
+    /// <dt>
+    /// MANUFACTURER
+    /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>MODEL</dt>
+    /// <dt>
+    /// MODEL
+    /// </dt>
     /// <dd>
     /// <p>The device model, such as Apple iPad Air 2 or Google Pixel.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>,
-    /// <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>OS_VERSION</dt>
+    /// <dt>
+    /// OS_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
-    /// <code>IN</code>, <code>LESS_THAN</code>,
-    /// <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>PLATFORM</dt>
+    /// <dt>
+    /// PLATFORM
+    /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>REMOTE_ACCESS_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_ACCESS_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote access. Valid values are TRUE
-    /// or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>REMOTE_DEBUG_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_DEBUG_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote debugging. Valid values are
-    /// TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
-    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-    /// supported</a>, this filter is ignored.</p>
+    /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
+    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
     pub fn attribute(&self) -> std::option::Option<&crate::model::DeviceAttribute> {
         self.attribute.as_ref()
     }
-    /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the
-    /// operators that are supported by each attribute, see the attribute
-    /// descriptions.</p>
+    /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::RuleOperator> {
         self.operator.as_ref()
     }
@@ -2584,206 +2164,200 @@ pub mod rule {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The rule's stringified attribute. For example, specify the value as
-        /// <code>"\"abc\""</code>.</p>
-        /// <p>The supported operators for each attribute are provided in the following
-        /// list.</p>
+        /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
+        /// <p>The supported operators for each attribute are provided in the following list.</p>
         /// <dl>
-        /// <dt>APPIUM_VERSION</dt>
+        /// <dt>
+        /// APPIUM_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The Appium version for the test.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>ARN</dt>
+        /// <dt>
+        /// ARN
+        /// </dt>
         /// <dd>
-        /// <p>The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>AVAILABILITY</dt>
+        /// <dt>
+        /// AVAILABILITY
+        /// </dt>
         /// <dd>
-        /// <p>The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FLEET_TYPE</dt>
+        /// <dt>
+        /// FLEET_TYPE
+        /// </dt>
         /// <dd>
         /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FORM_FACTOR</dt>
+        /// <dt>
+        /// FORM_FACTOR
+        /// </dt>
         /// <dd>
         /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_ARN</dt>
+        /// <dt>
+        /// INSTANCE_ARN
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        /// <p>Supported operators: <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_LABELS</dt>
+        /// <dt>
+        /// INSTANCE_LABELS
+        /// </dt>
         /// <dd>
         /// <p>The label of the device instance.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>MANUFACTURER</dt>
+        /// <dt>
+        /// MANUFACTURER
+        /// </dt>
         /// <dd>
         /// <p>The device manufacturer (for example, Apple).</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>MODEL</dt>
+        /// <dt>
+        /// MODEL
+        /// </dt>
         /// <dd>
         /// <p>The device model, such as Apple iPad Air 2 or Google Pixel.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>,
-        /// <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>OS_VERSION</dt>
+        /// <dt>
+        /// OS_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The operating system version (for example, 10.3.2).</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
-        /// <code>IN</code>, <code>LESS_THAN</code>,
-        /// <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>PLATFORM</dt>
+        /// <dt>
+        /// PLATFORM
+        /// </dt>
         /// <dd>
         /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_ACCESS_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote access. Valid values are TRUE
-        /// or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_DEBUG_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote debugging. Valid values are
-        /// TRUE or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
-        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-        /// supported</a>, this filter is ignored.</p>
+        /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
         /// </dd>
         /// </dl>
         pub fn attribute(mut self, input: crate::model::DeviceAttribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>The rule's stringified attribute. For example, specify the value as
-        /// <code>"\"abc\""</code>.</p>
-        /// <p>The supported operators for each attribute are provided in the following
-        /// list.</p>
+        /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
+        /// <p>The supported operators for each attribute are provided in the following list.</p>
         /// <dl>
-        /// <dt>APPIUM_VERSION</dt>
+        /// <dt>
+        /// APPIUM_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The Appium version for the test.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>ARN</dt>
+        /// <dt>
+        /// ARN
+        /// </dt>
         /// <dd>
-        /// <p>The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>AVAILABILITY</dt>
+        /// <dt>
+        /// AVAILABILITY
+        /// </dt>
         /// <dd>
-        /// <p>The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FLEET_TYPE</dt>
+        /// <dt>
+        /// FLEET_TYPE
+        /// </dt>
         /// <dd>
         /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FORM_FACTOR</dt>
+        /// <dt>
+        /// FORM_FACTOR
+        /// </dt>
         /// <dd>
         /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_ARN</dt>
+        /// <dt>
+        /// INSTANCE_ARN
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        /// <p>Supported operators: <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_LABELS</dt>
+        /// <dt>
+        /// INSTANCE_LABELS
+        /// </dt>
         /// <dd>
         /// <p>The label of the device instance.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>MANUFACTURER</dt>
+        /// <dt>
+        /// MANUFACTURER
+        /// </dt>
         /// <dd>
         /// <p>The device manufacturer (for example, Apple).</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>MODEL</dt>
+        /// <dt>
+        /// MODEL
+        /// </dt>
         /// <dd>
         /// <p>The device model, such as Apple iPad Air 2 or Google Pixel.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>,
-        /// <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>OS_VERSION</dt>
+        /// <dt>
+        /// OS_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The operating system version (for example, 10.3.2).</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
-        /// <code>IN</code>, <code>LESS_THAN</code>,
-        /// <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>PLATFORM</dt>
+        /// <dt>
+        /// PLATFORM
+        /// </dt>
         /// <dd>
         /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-        /// <p>Supported operators: <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_ACCESS_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote access. Valid values are TRUE
-        /// or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_DEBUG_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote debugging. Valid values are
-        /// TRUE or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
-        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-        /// supported</a>, this filter is ignored.</p>
+        /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
         /// </dd>
         /// </dl>
         pub fn set_attribute(
@@ -2793,16 +2367,12 @@ pub mod rule {
             self.attribute = input;
             self
         }
-        /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the
-        /// operators that are supported by each attribute, see the attribute
-        /// descriptions.</p>
+        /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
         pub fn operator(mut self, input: crate::model::RuleOperator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the
-        /// operators that are supported by each attribute, see the attribute
-        /// descriptions.</p>
+        /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::RuleOperator>,
@@ -3320,27 +2890,21 @@ impl AsRef<str> for InstanceStatus {
     }
 }
 
-/// <p>The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a
-/// key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
-/// characters. Tag values can have a maximum length of 256 characters. </p>
+/// <p>The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a
-    /// category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a
-    /// tag category (key).</p>
+    /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a
-    /// category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a
-    /// tag category (key).</p>
+    /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -3363,26 +2927,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a
-        /// category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a
-        /// category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a
-        /// tag category (key).</p>
+        /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a
-        /// tag category (key).</p>
+        /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3403,8 +2963,7 @@ impl Tag {
     }
 }
 
-/// <p>Represents a test run on a set of devices with a given app package, test parameters, and so
-/// on.</p>
+/// <p>Represents a test run on a set of devices with a given app package, test parameters, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Run {
@@ -3415,75 +2974,33 @@ pub struct Run {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER</p>
-    /// <note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-    /// screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER</p> <note>
+    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS</p>
-    /// </li>
+    /// <li> <p>ANDROID</p> </li>
+    /// <li> <p>IOS</p> </li>
     /// </ul>
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>When the run was created.</p>
@@ -3491,59 +3008,27 @@ pub struct Run {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The run's start time.</p>
@@ -3558,32 +3043,23 @@ pub struct Run {
     pub total_jobs: std::option::Option<i32>,
     /// <p>The total number of completed jobs.</p>
     pub completed_jobs: std::option::Option<i32>,
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or
-    /// <code>unmetered</code>. If the parameter is not specified, the default value is
-    /// <code>metered</code>.</p>
-    /// <note>
-    /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them.
-    /// Otherwise, the run is counted toward metered device minutes.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
     /// <p>The network profile being used for a test run.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
-    /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package.
-    /// If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
-    /// to.</p>
+    /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub parsing_result_url: std::option::Option<std::string::String>,
-    /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
-    /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
+    /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
     pub result_code: std::option::Option<crate::model::ExecutionResultCode>,
-    /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same
-    /// seed value between tests ensures identical event sequences.</p>
+    /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
     pub seed: std::option::Option<i32>,
     /// <p>An app to upload or that has been uploaded.</p>
     pub app_upload: std::option::Option<std::string::String>,
-    /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
-    /// test should perform.</p>
+    /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
     pub event_count: std::option::Option<i32>,
     /// <p>The number of minutes the job executes before it times out.</p>
     pub job_timeout_minutes: std::option::Option<i32>,
@@ -3599,10 +3075,8 @@ pub struct Run {
     pub customer_artifact_paths: std::option::Option<crate::model::CustomerArtifactPaths>,
     /// <p>The Device Farm console URL for the recording of the run.</p>
     pub web_url: std::option::Option<std::string::String>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub skip_app_resign: std::option::Option<bool>,
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
     pub test_spec_arn: std::option::Option<std::string::String>,
@@ -3621,64 +3095,26 @@ impl Run {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER</p>
-    /// <note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-    /// screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER</p> <note>
+    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
         self.r#type.as_ref()
@@ -3686,12 +3122,8 @@ impl Run {
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS</p>
-    /// </li>
+    /// <li> <p>ANDROID</p> </li>
+    /// <li> <p>IOS</p> </li>
     /// </ul>
     pub fn platform(&self) -> std::option::Option<&crate::model::DevicePlatform> {
         self.platform.as_ref()
@@ -3703,33 +3135,15 @@ impl Run {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
@@ -3737,27 +3151,13 @@ impl Run {
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -3786,12 +3186,8 @@ impl Run {
     pub fn completed_jobs(&self) -> std::option::Option<i32> {
         self.completed_jobs
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or
-    /// <code>unmetered</code>. If the parameter is not specified, the default value is
-    /// <code>metered</code>.</p>
-    /// <note>
-    /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them.
-    /// Otherwise, the run is counted toward metered device minutes.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn billing_method(&self) -> std::option::Option<&crate::model::BillingMethod> {
         self.billing_method.as_ref()
@@ -3804,19 +3200,15 @@ impl Run {
     pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
         self.network_profile.as_ref()
     }
-    /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package.
-    /// If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
-    /// to.</p>
+    /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub fn parsing_result_url(&self) -> std::option::Option<&str> {
         self.parsing_result_url.as_deref()
     }
-    /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
-    /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
+    /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
     pub fn result_code(&self) -> std::option::Option<&crate::model::ExecutionResultCode> {
         self.result_code.as_ref()
     }
-    /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same
-    /// seed value between tests ensures identical event sequences.</p>
+    /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
     pub fn seed(&self) -> std::option::Option<i32> {
         self.seed
     }
@@ -3824,8 +3216,7 @@ impl Run {
     pub fn app_upload(&self) -> std::option::Option<&str> {
         self.app_upload.as_deref()
     }
-    /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
-    /// test should perform.</p>
+    /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
     pub fn event_count(&self) -> std::option::Option<i32> {
         self.event_count
     }
@@ -3859,10 +3250,8 @@ impl Run {
     pub fn web_url(&self) -> std::option::Option<&str> {
         self.web_url.as_deref()
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -3978,64 +3367,26 @@ pub mod run {
         /// <p>The run's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER</p>
-        /// <note>
-        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-        /// screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER</p> <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
             self.r#type = Some(input);
@@ -4044,64 +3395,26 @@ pub mod run {
         /// <p>The run's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER</p>
-        /// <note>
-        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-        /// screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER</p> <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
@@ -4110,12 +3423,8 @@ pub mod run {
         /// <p>The run's platform.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS</p>
-        /// </li>
+        /// <li> <p>ANDROID</p> </li>
+        /// <li> <p>IOS</p> </li>
         /// </ul>
         pub fn platform(mut self, input: crate::model::DevicePlatform) -> Self {
             self.platform = Some(input);
@@ -4124,12 +3433,8 @@ pub mod run {
         /// <p>The run's platform.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS</p>
-        /// </li>
+        /// <li> <p>ANDROID</p> </li>
+        /// <li> <p>IOS</p> </li>
         /// </ul>
         pub fn set_platform(
             mut self,
@@ -4154,33 +3459,15 @@ pub mod run {
         /// <p>The run's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status = Some(input);
@@ -4189,33 +3476,15 @@ pub mod run {
         /// <p>The run's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -4227,27 +3496,13 @@ pub mod run {
         /// <p>The run's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -4256,27 +3511,13 @@ pub mod run {
         /// <p>The run's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -4351,23 +3592,15 @@ pub mod run {
             self.completed_jobs = input;
             self
         }
-        /// <p>Specifies the billing method for a test run: <code>metered</code> or
-        /// <code>unmetered</code>. If the parameter is not specified, the default value is
-        /// <code>metered</code>.</p>
-        /// <note>
-        /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them.
-        /// Otherwise, the run is counted toward metered device minutes.</p>
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+        /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
         /// </note>
         pub fn billing_method(mut self, input: crate::model::BillingMethod) -> Self {
             self.billing_method = Some(input);
             self
         }
-        /// <p>Specifies the billing method for a test run: <code>metered</code> or
-        /// <code>unmetered</code>. If the parameter is not specified, the default value is
-        /// <code>metered</code>.</p>
-        /// <note>
-        /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them.
-        /// Otherwise, the run is counted toward metered device minutes.</p>
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+        /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
         /// </note>
         pub fn set_billing_method(
             mut self,
@@ -4402,16 +3635,12 @@ pub mod run {
             self.network_profile = input;
             self
         }
-        /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package.
-        /// If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
-        /// to.</p>
+        /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
         pub fn parsing_result_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.parsing_result_url = Some(input.into());
             self
         }
-        /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package.
-        /// If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
-        /// to.</p>
+        /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
         pub fn set_parsing_result_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4419,14 +3648,12 @@ pub mod run {
             self.parsing_result_url = input;
             self
         }
-        /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
-        /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
+        /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
         pub fn result_code(mut self, input: crate::model::ExecutionResultCode) -> Self {
             self.result_code = Some(input);
             self
         }
-        /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
-        /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
+        /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
         pub fn set_result_code(
             mut self,
             input: std::option::Option<crate::model::ExecutionResultCode>,
@@ -4434,14 +3661,12 @@ pub mod run {
             self.result_code = input;
             self
         }
-        /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same
-        /// seed value between tests ensures identical event sequences.</p>
+        /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
         pub fn seed(mut self, input: i32) -> Self {
             self.seed = Some(input);
             self
         }
-        /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same
-        /// seed value between tests ensures identical event sequences.</p>
+        /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
         pub fn set_seed(mut self, input: std::option::Option<i32>) -> Self {
             self.seed = input;
             self
@@ -4456,14 +3681,12 @@ pub mod run {
             self.app_upload = input;
             self
         }
-        /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
-        /// test should perform.</p>
+        /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
         pub fn event_count(mut self, input: i32) -> Self {
             self.event_count = Some(input);
             self
         }
-        /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
-        /// test should perform.</p>
+        /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
         pub fn set_event_count(mut self, input: std::option::Option<i32>) -> Self {
             self.event_count = input;
             self
@@ -4547,18 +3770,14 @@ pub mod run {
             self.web_url = input;
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -4637,8 +3856,7 @@ impl Run {
     }
 }
 
-/// <p>Contains the run results requested by the device selection configuration and how many devices were
-/// returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.</p>
+/// <p>Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSelectionResult {
@@ -4646,8 +3864,7 @@ pub struct DeviceSelectionResult {
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
     /// <p>The number of devices that matched the device filter selection criteria.</p>
     pub matched_devices_count: std::option::Option<i32>,
-    /// <p>The maximum number of devices to be selected by a device filter and included in a test
-    /// run.</p>
+    /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub max_devices: std::option::Option<i32>,
 }
 impl DeviceSelectionResult {
@@ -4659,8 +3876,7 @@ impl DeviceSelectionResult {
     pub fn matched_devices_count(&self) -> std::option::Option<i32> {
         self.matched_devices_count
     }
-    /// <p>The maximum number of devices to be selected by a device filter and included in a test
-    /// run.</p>
+    /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
     }
@@ -4690,9 +3906,9 @@ pub mod device_selection_result {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters in a device selection result.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4714,14 +3930,12 @@ pub mod device_selection_result {
             self.matched_devices_count = input;
             self
         }
-        /// <p>The maximum number of devices to be selected by a device filter and included in a test
-        /// run.</p>
+        /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.max_devices = Some(input);
             self
         }
-        /// <p>The maximum number of devices to be selected by a device filter and included in a test
-        /// run.</p>
+        /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -4743,267 +3957,227 @@ impl DeviceSelectionResult {
     }
 }
 
-/// <p>Represents a device filter used to select a set of devices to be included in a test
-/// run. This data structure is passed in as the <code>deviceSelectionConfiguration</code>
-/// parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see
-/// <a>ScheduleRun</a>.</p>
-/// <p>It is also passed in as the <code>filters</code> parameter to
-/// <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.</p>
+/// <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
+/// <p>It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <code>ListDevices</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceFilter {
-    /// <p>The aspect of a device such as platform or model used as the selection criteria in a
-    /// device filter.</p>
+    /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
     /// <dl>
-    /// <dt>ARN</dt>
+    /// <dt>
+    /// ARN
+    /// </dt>
     /// <dd>
-    /// <p>The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>PLATFORM</dt>
+    /// <dt>
+    /// PLATFORM
+    /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>OS_VERSION</dt>
+    /// <dt>
+    /// OS_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>,
-    /// <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
-    /// <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>MODEL</dt>
+    /// <dt>
+    /// MODEL
+    /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>AVAILABILITY</dt>
+    /// <dt>
+    /// AVAILABILITY
+    /// </dt>
     /// <dd>
-    /// <p>The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FORM_FACTOR</dt>
+    /// <dt>
+    /// FORM_FACTOR
+    /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>MANUFACTURER</dt>
+    /// <dt>
+    /// MANUFACTURER
+    /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>REMOTE_ACCESS_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_ACCESS_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or
-    /// FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>REMOTE_DEBUG_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_DEBUG_ENABLED
+    /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
-    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-    /// supported</a>, this filter is ignored.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
+    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
-    /// <dt>INSTANCE_ARN</dt>
+    /// <dt>
+    /// INSTANCE_ARN
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_LABELS</dt>
+    /// <dt>
+    /// INSTANCE_LABELS
+    /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>FLEET_TYPE</dt>
+    /// <dt>
+    /// FLEET_TYPE
+    /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub attribute: std::option::Option<crate::model::DeviceFilterAttribute>,
-    /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute
-    /// descriptions.</p>
+    /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
     pub operator: std::option::Option<crate::model::RuleOperator>,
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title">
-    /// <b>Operator Values</b>
-    /// </p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one
-    /// element.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attribute Values</b>
-    /// </p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-    /// </li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeviceFilter {
-    /// <p>The aspect of a device such as platform or model used as the selection criteria in a
-    /// device filter.</p>
+    /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
     /// <dl>
-    /// <dt>ARN</dt>
+    /// <dt>
+    /// ARN
+    /// </dt>
     /// <dd>
-    /// <p>The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>PLATFORM</dt>
+    /// <dt>
+    /// PLATFORM
+    /// </dt>
     /// <dd>
     /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>OS_VERSION</dt>
+    /// <dt>
+    /// OS_VERSION
+    /// </dt>
     /// <dd>
     /// <p>The operating system version (for example, 10.3.2).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>,
-    /// <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
-    /// <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>MODEL</dt>
+    /// <dt>
+    /// MODEL
+    /// </dt>
     /// <dd>
     /// <p>The device model (for example, iPad 5th Gen).</p>
-    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>,
-    /// <code>IN</code>, <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>AVAILABILITY</dt>
+    /// <dt>
+    /// AVAILABILITY
+    /// </dt>
     /// <dd>
-    /// <p>The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>FORM_FACTOR</dt>
+    /// <dt>
+    /// FORM_FACTOR
+    /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>MANUFACTURER</dt>
+    /// <dt>
+    /// MANUFACTURER
+    /// </dt>
     /// <dd>
     /// <p>The device manufacturer (for example, Apple).</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>REMOTE_ACCESS_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_ACCESS_ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or
-    /// FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
-    /// <dt>REMOTE_DEBUG_ENABLED</dt>
+    /// <dt>
+    /// REMOTE_DEBUG_ENABLED
+    /// </dt>
     /// <dd>
     /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
-    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-    /// supported</a>, this filter is ignored.</p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
+    /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
-    /// <dt>INSTANCE_ARN</dt>
+    /// <dt>
+    /// INSTANCE_ARN
+    /// </dt>
     /// <dd>
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-    /// <code>NOT_IN</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
     /// </dd>
-    /// <dt>INSTANCE_LABELS</dt>
+    /// <dt>
+    /// INSTANCE_LABELS
+    /// </dt>
     /// <dd>
     /// <p>The label of the device instance.</p>
-    /// <p>Supported operators: <code>CONTAINS</code>
-    /// </p>
+    /// <p>Supported operators: <code>CONTAINS</code> </p>
     /// </dd>
-    /// <dt>FLEET_TYPE</dt>
+    /// <dt>
+    /// FLEET_TYPE
+    /// </dt>
     /// <dd>
     /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// <p>Supported operators: <code>EQUALS</code>
-    /// </p>
+    /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
     pub fn attribute(&self) -> std::option::Option<&crate::model::DeviceFilterAttribute> {
         self.attribute.as_ref()
     }
-    /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute
-    /// descriptions.</p>
+    /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::RuleOperator> {
         self.operator.as_ref()
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
-    /// <p class="title">
-    /// <b>Operator Values</b>
-    /// </p>
+    /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than one
-    /// element.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
     /// </ul>
-    /// <p class="title">
-    /// <b>Attribute Values</b>
-    /// </p>
+    /// <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-    /// </li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -5029,184 +4203,186 @@ pub mod device_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The aspect of a device such as platform or model used as the selection criteria in a
-        /// device filter.</p>
+        /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
         /// <p>The supported operators for each attribute are provided in the following list.</p>
         /// <dl>
-        /// <dt>ARN</dt>
+        /// <dt>
+        /// ARN
+        /// </dt>
         /// <dd>
-        /// <p>The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>PLATFORM</dt>
+        /// <dt>
+        /// PLATFORM
+        /// </dt>
         /// <dd>
         /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>OS_VERSION</dt>
+        /// <dt>
+        /// OS_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The operating system version (for example, 10.3.2).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>,
-        /// <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
-        /// <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>MODEL</dt>
+        /// <dt>
+        /// MODEL
+        /// </dt>
         /// <dd>
         /// <p>The device model (for example, iPad 5th Gen).</p>
-        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>AVAILABILITY</dt>
+        /// <dt>
+        /// AVAILABILITY
+        /// </dt>
         /// <dd>
-        /// <p>The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FORM_FACTOR</dt>
+        /// <dt>
+        /// FORM_FACTOR
+        /// </dt>
         /// <dd>
         /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>MANUFACTURER</dt>
+        /// <dt>
+        /// MANUFACTURER
+        /// </dt>
         /// <dd>
         /// <p>The device manufacturer (for example, Apple).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_ACCESS_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or
-        /// FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_DEBUG_ENABLED
+        /// </dt>
         /// <dd>
         /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
-        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-        /// supported</a>, this filter is ignored.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
         /// </dd>
-        /// <dt>INSTANCE_ARN</dt>
+        /// <dt>
+        /// INSTANCE_ARN
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_LABELS</dt>
+        /// <dt>
+        /// INSTANCE_LABELS
+        /// </dt>
         /// <dd>
         /// <p>The label of the device instance.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>FLEET_TYPE</dt>
+        /// <dt>
+        /// FLEET_TYPE
+        /// </dt>
         /// <dd>
         /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
         /// </dl>
         pub fn attribute(mut self, input: crate::model::DeviceFilterAttribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>The aspect of a device such as platform or model used as the selection criteria in a
-        /// device filter.</p>
+        /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
         /// <p>The supported operators for each attribute are provided in the following list.</p>
         /// <dl>
-        /// <dt>ARN</dt>
+        /// <dt>
+        /// ARN
+        /// </dt>
         /// <dd>
-        /// <p>The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>PLATFORM</dt>
+        /// <dt>
+        /// PLATFORM
+        /// </dt>
         /// <dd>
         /// <p>The device platform. Valid values are ANDROID or IOS.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>OS_VERSION</dt>
+        /// <dt>
+        /// OS_VERSION
+        /// </dt>
         /// <dd>
         /// <p>The operating system version (for example, 10.3.2).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>,
-        /// <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
-        /// <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>MODEL</dt>
+        /// <dt>
+        /// MODEL
+        /// </dt>
         /// <dd>
         /// <p>The device model (for example, iPad 5th Gen).</p>
-        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>,
-        /// <code>IN</code>, <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>AVAILABILITY</dt>
+        /// <dt>
+        /// AVAILABILITY
+        /// </dt>
         /// <dd>
-        /// <p>The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>FORM_FACTOR</dt>
+        /// <dt>
+        /// FORM_FACTOR
+        /// </dt>
         /// <dd>
         /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>MANUFACTURER</dt>
+        /// <dt>
+        /// MANUFACTURER
+        /// </dt>
         /// <dd>
         /// <p>The device manufacturer (for example, Apple).</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_ACCESS_ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or
-        /// FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
-        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dt>
+        /// REMOTE_DEBUG_ENABLED
+        /// </dt>
         /// <dd>
         /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
-        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-        /// supported</a>, this filter is ignored.</p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
         /// </dd>
-        /// <dt>INSTANCE_ARN</dt>
+        /// <dt>
+        /// INSTANCE_ARN
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
-        /// <code>NOT_IN</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
         /// </dd>
-        /// <dt>INSTANCE_LABELS</dt>
+        /// <dt>
+        /// INSTANCE_LABELS
+        /// </dt>
         /// <dd>
         /// <p>The label of the device instance.</p>
-        /// <p>Supported operators: <code>CONTAINS</code>
-        /// </p>
+        /// <p>Supported operators: <code>CONTAINS</code> </p>
         /// </dd>
-        /// <dt>FLEET_TYPE</dt>
+        /// <dt>
+        /// FLEET_TYPE
+        /// </dt>
         /// <dd>
         /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// <p>Supported operators: <code>EQUALS</code>
-        /// </p>
+        /// <p>Supported operators: <code>EQUALS</code> </p>
         /// </dd>
         /// </dl>
         pub fn set_attribute(
@@ -5216,14 +4392,12 @@ pub mod device_filter {
             self.attribute = input;
             self
         }
-        /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute
-        /// descriptions.</p>
+        /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
         pub fn operator(mut self, input: crate::model::RuleOperator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute
-        /// descriptions.</p>
+        /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::RuleOperator>,
@@ -5236,35 +4410,17 @@ pub mod device_filter {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>An array of one or more filter values used in a device filter.</p>
-        /// <p class="title">
-        /// <b>Operator Values</b>
-        /// </p>
+        /// <p class="title"> <b>Operator Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators can take a values array that has more than one
-        /// element.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attribute Values</b>
-        /// </p>
+        /// <p class="title"> <b>Attribute Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-        /// </li>
+        /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+        /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+        /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
         /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -5273,35 +4429,17 @@ pub mod device_filter {
             self
         }
         /// <p>An array of one or more filter values used in a device filter.</p>
-        /// <p class="title">
-        /// <b>Operator Values</b>
-        /// </p>
+        /// <p class="title"> <b>Operator Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators can take a values array that has more than one
-        /// element.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
         /// </ul>
-        /// <p class="title">
-        /// <b>Attribute Values</b>
-        /// </p>
+        /// <p class="title"> <b>Attribute Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-        /// </li>
+        /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+        /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+        /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
         /// </ul>
         pub fn set_values(
             mut self,
@@ -5435,38 +4573,29 @@ impl AsRef<str> for DeviceFilterAttribute {
     }
 }
 
-/// <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the
-/// device or in the test environment, are pulled from.</p>
-/// <p>Specify <code>deviceHostPaths</code> and optionally specify either
-/// <code>iosPaths</code> or <code>androidPaths</code>.</p>
-/// <p>For web app tests, you can specify both <code>iosPaths</code> and
-/// <code>androidPaths</code>.</p>
+/// <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p>
+/// <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p>
+/// <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerArtifactPaths {
-    /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
-    /// are pulled from.</p>
+    /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
     pub ios_paths: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
-    /// tests are pulled from.</p>
+    /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's tests are pulled from.</p>
     pub android_paths: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
-    /// customer's tests are pulled from.</p>
+    /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
     pub device_host_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CustomerArtifactPaths {
-    /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
-    /// are pulled from.</p>
+    /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
     pub fn ios_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.ios_paths.as_deref()
     }
-    /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
-    /// tests are pulled from.</p>
+    /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's tests are pulled from.</p>
     pub fn android_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.android_paths.as_deref()
     }
-    /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
-    /// customer's tests are pulled from.</p>
+    /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
     pub fn device_host_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.device_host_paths.as_deref()
     }
@@ -5495,16 +4624,14 @@ pub mod customer_artifact_paths {
         ///
         /// To override the contents of this collection use [`set_ios_paths`](Self::set_ios_paths).
         ///
-        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
-        /// are pulled from.</p>
+        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn ios_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ios_paths.unwrap_or_default();
             v.push(input.into());
             self.ios_paths = Some(v);
             self
         }
-        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
-        /// are pulled from.</p>
+        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn set_ios_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5516,16 +4643,14 @@ pub mod customer_artifact_paths {
         ///
         /// To override the contents of this collection use [`set_android_paths`](Self::set_android_paths).
         ///
-        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
-        /// tests are pulled from.</p>
+        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn android_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.android_paths.unwrap_or_default();
             v.push(input.into());
             self.android_paths = Some(v);
             self
         }
-        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
-        /// tests are pulled from.</p>
+        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn set_android_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5537,16 +4662,14 @@ pub mod customer_artifact_paths {
         ///
         /// To override the contents of this collection use [`set_device_host_paths`](Self::set_device_host_paths).
         ///
-        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
-        /// customer's tests are pulled from.</p>
+        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn device_host_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_host_paths.unwrap_or_default();
             v.push(input.into());
             self.device_host_paths = Some(v);
             self
         }
-        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
-        /// customer's tests are pulled from.</p>
+        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the customer's tests are pulled from.</p>
         pub fn set_device_host_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5571,8 +4694,7 @@ impl CustomerArtifactPaths {
     }
 }
 
-/// <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for
-/// example, 47.6204, -122.3491).</p>
+/// <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p>
 /// <p>Elevation is currently not supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5646,8 +4768,7 @@ impl Location {
     }
 }
 
-/// <p>Represents the set of radios and their states on a device. Examples of radios
-/// include Wi-Fi, GPS, Bluetooth, and NFC.</p>
+/// <p>Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Radios {
@@ -5813,34 +4934,27 @@ impl AsRef<str> for ExecutionResultCode {
     }
 }
 
-/// <p>Represents the total (metered or unmetered) minutes used by the resource to run
-/// tests. Contains the sum of minutes consumed by all children.</p>
+/// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceMinutes {
-    /// <p>When specified, represents the total minutes used by the resource to run
-    /// tests.</p>
+    /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub total: std::option::Option<f64>,
-    /// <p>When specified, represents only the sum of metered minutes used by the resource to
-    /// run tests.</p>
+    /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub metered: std::option::Option<f64>,
-    /// <p>When specified, represents only the sum of unmetered minutes used by the resource
-    /// to run tests.</p>
+    /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub unmetered: std::option::Option<f64>,
 }
 impl DeviceMinutes {
-    /// <p>When specified, represents the total minutes used by the resource to run
-    /// tests.</p>
+    /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn total(&self) -> std::option::Option<f64> {
         self.total
     }
-    /// <p>When specified, represents only the sum of metered minutes used by the resource to
-    /// run tests.</p>
+    /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn metered(&self) -> std::option::Option<f64> {
         self.metered
     }
-    /// <p>When specified, represents only the sum of unmetered minutes used by the resource
-    /// to run tests.</p>
+    /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn unmetered(&self) -> std::option::Option<f64> {
         self.unmetered
     }
@@ -5865,38 +4979,32 @@ pub mod device_minutes {
         pub(crate) unmetered: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>When specified, represents the total minutes used by the resource to run
-        /// tests.</p>
+        /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
         pub fn total(mut self, input: f64) -> Self {
             self.total = Some(input);
             self
         }
-        /// <p>When specified, represents the total minutes used by the resource to run
-        /// tests.</p>
+        /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
             self.total = input;
             self
         }
-        /// <p>When specified, represents only the sum of metered minutes used by the resource to
-        /// run tests.</p>
+        /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
         pub fn metered(mut self, input: f64) -> Self {
             self.metered = Some(input);
             self
         }
-        /// <p>When specified, represents only the sum of metered minutes used by the resource to
-        /// run tests.</p>
+        /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
         pub fn set_metered(mut self, input: std::option::Option<f64>) -> Self {
             self.metered = input;
             self
         }
-        /// <p>When specified, represents only the sum of unmetered minutes used by the resource
-        /// to run tests.</p>
+        /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
         pub fn unmetered(mut self, input: f64) -> Self {
             self.unmetered = Some(input);
             self
         }
-        /// <p>When specified, represents only the sum of unmetered minutes used by the resource
-        /// to run tests.</p>
+        /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
         pub fn set_unmetered(mut self, input: std::option::Option<f64>) -> Self {
             self.unmetered = input;
             self
@@ -6531,58 +5639,26 @@ pub struct RemoteAccessSession {
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING.</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING.</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING.</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED.</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING.</p>
-    /// </li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED.</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED.</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED.</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED.</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED.</p>
-    /// </li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>A message about the remote access session.</p>
@@ -6595,62 +5671,37 @@ pub struct RemoteAccessSession {
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The ARN of the instance.</p>
     pub instance_arn: std::option::Option<std::string::String>,
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote
-    /// access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub remote_debug_enabled: std::option::Option<bool>,
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote
-    /// access session.</p>
+    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
     pub remote_record_enabled: std::option::Option<bool>,
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
     pub remote_record_app_arn: std::option::Option<std::string::String>,
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices.
-    /// Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub host_address: std::option::Option<std::string::String>,
-    /// <p>Unique identifier of your client for the remote access session. Only returned if
-    /// remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or
-    /// <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm
-    /// terminology</a>.</p>
+    /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
-    /// <p>The number of minutes a device is used in a remote access session (including setup
-    /// and teardown minutes).</p>
+    /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
     /// <p>The endpoint for the remote access sesssion.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging
-    /// is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub device_udid: std::option::Option<std::string::String>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-    /// rotating the screen. You cannot run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-    /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-    /// framework-based tests and watch the screen in this mode.</p>
-    /// </li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl RemoteAccessSession {
@@ -6668,60 +5719,28 @@ impl RemoteAccessSession {
     }
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY.</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE.</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING.</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING.</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING.</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED.</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING.</p>
-    /// </li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+    /// <li> <p>PENDING_DEVICE.</p> </li>
+    /// <li> <p>PROCESSING.</p> </li>
+    /// <li> <p>SCHEDULING.</p> </li>
+    /// <li> <p>PREPARING.</p> </li>
+    /// <li> <p>RUNNING.</p> </li>
+    /// <li> <p>COMPLETED.</p> </li>
+    /// <li> <p>STOPPING.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING.</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED.</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED.</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED.</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED.</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED.</p>
-    /// </li>
+    /// <li> <p>PENDING.</p> </li>
+    /// <li> <p>PASSED.</p> </li>
+    /// <li> <p>WARNED.</p> </li>
+    /// <li> <p>FAILED.</p> </li>
+    /// <li> <p>SKIPPED.</p> </li>
+    /// <li> <p>ERRORED.</p> </li>
+    /// <li> <p>STOPPED.</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -6746,15 +5765,12 @@ impl RemoteAccessSession {
     pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote
-    /// access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn remote_debug_enabled(&self) -> std::option::Option<bool> {
         self.remote_debug_enabled
     }
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote
-    /// access session.</p>
+    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
     pub fn remote_record_enabled(&self) -> std::option::Option<bool> {
         self.remote_record_enabled
     }
@@ -6762,28 +5778,21 @@ impl RemoteAccessSession {
     pub fn remote_record_app_arn(&self) -> std::option::Option<&str> {
         self.remote_record_app_arn.as_deref()
     }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices.
-    /// Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn host_address(&self) -> std::option::Option<&str> {
         self.host_address.as_deref()
     }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if
-    /// remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or
-    /// <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm
-    /// terminology</a>.</p>
+    /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub fn billing_method(&self) -> std::option::Option<&crate::model::BillingMethod> {
         self.billing_method.as_ref()
     }
-    /// <p>The number of minutes a device is used in a remote access session (including setup
-    /// and teardown minutes).</p>
+    /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
     pub fn device_minutes(&self) -> std::option::Option<&crate::model::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
@@ -6791,37 +5800,22 @@ impl RemoteAccessSession {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Unique device identifier for the remote device. Only returned if remote debugging
-    /// is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn device_udid(&self) -> std::option::Option<&str> {
         self.device_udid.as_deref()
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-    /// rotating the screen. You cannot run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-    /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-    /// framework-based tests and watch the screen in this mode.</p>
-    /// </li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn interaction_mode(&self) -> std::option::Option<&crate::model::InteractionMode> {
         self.interaction_mode.as_ref()
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -6917,33 +5911,15 @@ pub mod remote_access_session {
         }
         /// <p>The status of the remote access session. Can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY.</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE.</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING.</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING.</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED.</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING.</p>
-        /// </li>
+        /// <li> <p>PENDING.</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+        /// <li> <p>PENDING_DEVICE.</p> </li>
+        /// <li> <p>PROCESSING.</p> </li>
+        /// <li> <p>SCHEDULING.</p> </li>
+        /// <li> <p>PREPARING.</p> </li>
+        /// <li> <p>RUNNING.</p> </li>
+        /// <li> <p>COMPLETED.</p> </li>
+        /// <li> <p>STOPPING.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status = Some(input);
@@ -6951,33 +5927,15 @@ pub mod remote_access_session {
         }
         /// <p>The status of the remote access session. Can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY.</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE.</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING.</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING.</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED.</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING.</p>
-        /// </li>
+        /// <li> <p>PENDING.</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY.</p> </li>
+        /// <li> <p>PENDING_DEVICE.</p> </li>
+        /// <li> <p>PROCESSING.</p> </li>
+        /// <li> <p>SCHEDULING.</p> </li>
+        /// <li> <p>PREPARING.</p> </li>
+        /// <li> <p>RUNNING.</p> </li>
+        /// <li> <p>COMPLETED.</p> </li>
+        /// <li> <p>STOPPING.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -6988,27 +5946,13 @@ pub mod remote_access_session {
         }
         /// <p>The result of the remote access session. Can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED.</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED.</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED.</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED.</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED.</p>
-        /// </li>
+        /// <li> <p>PENDING.</p> </li>
+        /// <li> <p>PASSED.</p> </li>
+        /// <li> <p>WARNED.</p> </li>
+        /// <li> <p>FAILED.</p> </li>
+        /// <li> <p>SKIPPED.</p> </li>
+        /// <li> <p>ERRORED.</p> </li>
+        /// <li> <p>STOPPED.</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -7016,27 +5960,13 @@ pub mod remote_access_session {
         }
         /// <p>The result of the remote access session. Can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING.</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED.</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED.</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED.</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED.</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED.</p>
-        /// </li>
+        /// <li> <p>PENDING.</p> </li>
+        /// <li> <p>PASSED.</p> </li>
+        /// <li> <p>WARNED.</p> </li>
+        /// <li> <p>FAILED.</p> </li>
+        /// <li> <p>SKIPPED.</p> </li>
+        /// <li> <p>ERRORED.</p> </li>
+        /// <li> <p>STOPPED.</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -7101,30 +6031,24 @@ pub mod remote_access_session {
             self.instance_arn = input;
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote
-        /// access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn remote_debug_enabled(mut self, input: bool) -> Self {
             self.remote_debug_enabled = Some(input);
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote
-        /// access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_debug_enabled = input;
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote
-        /// access session.</p>
+        /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
         pub fn remote_record_enabled(mut self, input: bool) -> Self {
             self.remote_record_enabled = Some(input);
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote
-        /// access session.</p>
+        /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
         pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_record_enabled = input;
             self
@@ -7142,48 +6066,36 @@ pub mod remote_access_session {
             self.remote_record_app_arn = input;
             self
         }
-        /// <p>IP address of the EC2 host where you need to connect to remotely debug devices.
-        /// Only returned if remote debugging is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn host_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_address = Some(input.into());
             self
         }
-        /// <p>IP address of the EC2 host where you need to connect to remotely debug devices.
-        /// Only returned if remote debugging is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_address = input;
             self
         }
-        /// <p>Unique identifier of your client for the remote access session. Only returned if
-        /// remote debugging is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>Unique identifier of your client for the remote access session. Only returned if
-        /// remote debugging is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or
-        /// <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm
-        /// terminology</a>.</p>
+        /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
         pub fn billing_method(mut self, input: crate::model::BillingMethod) -> Self {
             self.billing_method = Some(input);
             self
         }
-        /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or
-        /// <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm
-        /// terminology</a>.</p>
+        /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
         pub fn set_billing_method(
             mut self,
             input: std::option::Option<crate::model::BillingMethod>,
@@ -7191,14 +6103,12 @@ pub mod remote_access_session {
             self.billing_method = input;
             self
         }
-        /// <p>The number of minutes a device is used in a remote access session (including setup
-        /// and teardown minutes).</p>
+        /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
         pub fn device_minutes(mut self, input: crate::model::DeviceMinutes) -> Self {
             self.device_minutes = Some(input);
             self
         }
-        /// <p>The number of minutes a device is used in a remote access session (including setup
-        /// and teardown minutes).</p>
+        /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -7216,38 +6126,23 @@ pub mod remote_access_session {
             self.endpoint = input;
             self
         }
-        /// <p>Unique device identifier for the remote device. Only returned if remote debugging
-        /// is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn device_udid(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_udid = Some(input.into());
             self
         }
-        /// <p>Unique device identifier for the remote device. Only returned if remote debugging
-        /// is enabled for the remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_device_udid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_udid = input;
             self
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn interaction_mode(mut self, input: crate::model::InteractionMode) -> Self {
             self.interaction_mode = Some(input);
@@ -7255,20 +6150,9 @@ pub mod remote_access_session {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn set_interaction_mode(
             mut self,
@@ -7277,18 +6161,14 @@ pub mod remote_access_session {
             self.interaction_mode = input;
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -7404,23 +6284,15 @@ pub struct Device {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE</p>
-    /// </li>
-    /// <li>
-    /// <p>TABLET</p>
-    /// </li>
+    /// <li> <p>PHONE</p> </li>
+    /// <li> <p>TABLET</p> </li>
     /// </ul>
     pub form_factor: std::option::Option<crate::model::DeviceFormFactor>,
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS</p>
-    /// </li>
+    /// <li> <p>ANDROID</p> </li>
+    /// <li> <p>IOS</p> </li>
     /// </ul>
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>The device's operating system type.</p>
@@ -7439,13 +6311,10 @@ pub struct Device {
     pub carrier: std::option::Option<std::string::String>,
     /// <p>The device's radio.</p>
     pub radio: std::option::Option<std::string::String>,
-    /// <p>Specifies whether remote access has been enabled for the specified
-    /// device.</p>
+    /// <p>Specifies whether remote access has been enabled for the specified device.</p>
     pub remote_access_enabled: std::option::Option<bool>,
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-    /// device.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub remote_debug_enabled: std::option::Option<bool>,
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
     pub fleet_type: std::option::Option<std::string::String>,
@@ -7453,7 +6322,7 @@ pub struct Device {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The instances that belong to this device.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::DeviceInstance>>,
-    /// <p>Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and GetDevice API methods.</p>
+    /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub availability: std::option::Option<crate::model::DeviceAvailability>,
 }
 impl Device {
@@ -7480,12 +6349,8 @@ impl Device {
     /// <p>The device's form factor.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PHONE</p>
-    /// </li>
-    /// <li>
-    /// <p>TABLET</p>
-    /// </li>
+    /// <li> <p>PHONE</p> </li>
+    /// <li> <p>TABLET</p> </li>
     /// </ul>
     pub fn form_factor(&self) -> std::option::Option<&crate::model::DeviceFormFactor> {
         self.form_factor.as_ref()
@@ -7493,12 +6358,8 @@ impl Device {
     /// <p>The device's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS</p>
-    /// </li>
+    /// <li> <p>ANDROID</p> </li>
+    /// <li> <p>IOS</p> </li>
     /// </ul>
     pub fn platform(&self) -> std::option::Option<&crate::model::DevicePlatform> {
         self.platform.as_ref()
@@ -7535,15 +6396,12 @@ impl Device {
     pub fn radio(&self) -> std::option::Option<&str> {
         self.radio.as_deref()
     }
-    /// <p>Specifies whether remote access has been enabled for the specified
-    /// device.</p>
+    /// <p>Specifies whether remote access has been enabled for the specified device.</p>
     pub fn remote_access_enabled(&self) -> std::option::Option<bool> {
         self.remote_access_enabled
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-    /// device.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn remote_debug_enabled(&self) -> std::option::Option<bool> {
         self.remote_debug_enabled
     }
@@ -7559,7 +6417,7 @@ impl Device {
     pub fn instances(&self) -> std::option::Option<&[crate::model::DeviceInstance]> {
         self.instances.as_deref()
     }
-    /// <p>Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and GetDevice API methods.</p>
+    /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
     pub fn availability(&self) -> std::option::Option<&crate::model::DeviceAvailability> {
         self.availability.as_ref()
     }
@@ -7673,12 +6531,8 @@ pub mod device {
         /// <p>The device's form factor.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PHONE</p>
-        /// </li>
-        /// <li>
-        /// <p>TABLET</p>
-        /// </li>
+        /// <li> <p>PHONE</p> </li>
+        /// <li> <p>TABLET</p> </li>
         /// </ul>
         pub fn form_factor(mut self, input: crate::model::DeviceFormFactor) -> Self {
             self.form_factor = Some(input);
@@ -7687,12 +6541,8 @@ pub mod device {
         /// <p>The device's form factor.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PHONE</p>
-        /// </li>
-        /// <li>
-        /// <p>TABLET</p>
-        /// </li>
+        /// <li> <p>PHONE</p> </li>
+        /// <li> <p>TABLET</p> </li>
         /// </ul>
         pub fn set_form_factor(
             mut self,
@@ -7704,12 +6554,8 @@ pub mod device {
         /// <p>The device's platform.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS</p>
-        /// </li>
+        /// <li> <p>ANDROID</p> </li>
+        /// <li> <p>IOS</p> </li>
         /// </ul>
         pub fn platform(mut self, input: crate::model::DevicePlatform) -> Self {
             self.platform = Some(input);
@@ -7718,12 +6564,8 @@ pub mod device {
         /// <p>The device's platform.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS</p>
-        /// </li>
+        /// <li> <p>ANDROID</p> </li>
+        /// <li> <p>IOS</p> </li>
         /// </ul>
         pub fn set_platform(
             mut self,
@@ -7815,30 +6657,24 @@ pub mod device {
             self.radio = input;
             self
         }
-        /// <p>Specifies whether remote access has been enabled for the specified
-        /// device.</p>
+        /// <p>Specifies whether remote access has been enabled for the specified device.</p>
         pub fn remote_access_enabled(mut self, input: bool) -> Self {
             self.remote_access_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether remote access has been enabled for the specified
-        /// device.</p>
+        /// <p>Specifies whether remote access has been enabled for the specified device.</p>
         pub fn set_remote_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_enabled = input;
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-        /// device.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn remote_debug_enabled(mut self, input: bool) -> Self {
             self.remote_debug_enabled = Some(input);
             self
         }
-        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-        /// device.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_debug_enabled = input;
             self
@@ -7868,9 +6704,9 @@ pub mod device {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The instances that belong to this device.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::DeviceInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::DeviceInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -7882,12 +6718,12 @@ pub mod device {
             self.instances = input;
             self
         }
-        /// <p>Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and GetDevice API methods.</p>
+        /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
         pub fn availability(mut self, input: crate::model::DeviceAvailability) -> Self {
             self.availability = Some(input);
             self
         }
-        /// <p>Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and GetDevice API methods.</p>
+        /// <p>Indicates how likely a device is available for a test run. Currently available in the <code>ListDevices</code> and GetDevice API methods.</p>
         pub fn set_availability(
             mut self,
             input: std::option::Option<crate::model::DeviceAvailability>,
@@ -7998,8 +6834,7 @@ impl AsRef<str> for DeviceAvailability {
     }
 }
 
-/// <p>Represents the screen resolution of a device in height and width, expressed in
-/// pixels.</p>
+/// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resolution {
@@ -8072,8 +6907,7 @@ impl Resolution {
     }
 }
 
-/// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide
-/// CPU usage.</p>
+/// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cpu {
@@ -8081,8 +6915,7 @@ pub struct Cpu {
     pub frequency: std::option::Option<std::string::String>,
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
     pub architecture: std::option::Option<std::string::String>,
-    /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2
-    /// GHz CPU is expressed as 1200000000.</p>
+    /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub clock: std::option::Option<f64>,
 }
 impl Cpu {
@@ -8094,8 +6927,7 @@ impl Cpu {
     pub fn architecture(&self) -> std::option::Option<&str> {
         self.architecture.as_deref()
     }
-    /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2
-    /// GHz CPU is expressed as 1200000000.</p>
+    /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub fn clock(&self) -> std::option::Option<f64> {
         self.clock
     }
@@ -8140,14 +6972,12 @@ pub mod cpu {
             self.architecture = input;
             self
         }
-        /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2
-        /// GHz CPU is expressed as 1200000000.</p>
+        /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
         pub fn clock(mut self, input: f64) -> Self {
             self.clock = Some(input);
             self
         }
-        /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2
-        /// GHz CPU is expressed as 1200000000.</p>
+        /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
         pub fn set_clock(mut self, input: std::option::Option<f64>) -> Self {
             self.clock = input;
             self
@@ -8235,61 +7065,24 @@ pub struct Job {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-    /// it and capturing screenshots at the same time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the job was created.</p>
@@ -8297,59 +7090,27 @@ pub struct Job {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The job's start time.</p>
@@ -8383,61 +7144,24 @@ impl Job {
     /// <p>The job's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-    /// it and capturing screenshots at the same time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
         self.r#type.as_ref()
@@ -8449,33 +7173,15 @@ impl Job {
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
@@ -8483,27 +7189,13 @@ impl Job {
     /// <p>The job's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -8612,61 +7304,24 @@ pub mod job {
         /// <p>The job's type.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
             self.r#type = Some(input);
@@ -8675,61 +7330,24 @@ pub mod job {
         /// <p>The job's type.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
@@ -8751,33 +7369,15 @@ pub mod job {
         /// <p>The job's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status = Some(input);
@@ -8786,33 +7386,15 @@ pub mod job {
         /// <p>The job's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -8824,27 +7406,13 @@ pub mod job {
         /// <p>The job's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -8853,27 +7421,13 @@ pub mod job {
         /// <p>The job's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -9013,8 +7567,7 @@ impl Job {
     }
 }
 
-/// <p>Represents configuration information about a test run, such as the execution
-/// timeout (in minutes).</p>
+/// <p>Represents configuration information about a test run, such as the execution timeout (in minutes).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionConfiguration {
@@ -9026,10 +7579,8 @@ pub struct ExecutionConfiguration {
     pub app_packages_cleanup: std::option::Option<bool>,
     /// <p>Set to true to enable video capture. Otherwise, set to false. The default is true.</p>
     pub video_capture: std::option::Option<bool>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl ExecutionConfiguration {
@@ -9049,10 +7600,8 @@ impl ExecutionConfiguration {
     pub fn video_capture(&self) -> std::option::Option<bool> {
         self.video_capture
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -9121,18 +7670,14 @@ pub mod execution_configuration {
             self.video_capture = input;
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -9156,13 +7701,11 @@ impl ExecutionConfiguration {
     }
 }
 
-/// <p>Represents the settings for a run. Includes things like location, radio states,
-/// auxiliary apps, and network profiles.</p>
+/// <p>Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleRunConfiguration {
-    /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
-    /// external data for Android or the app's sandbox for iOS.</p>
+    /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     pub extra_data_package_arn: std::option::Option<std::string::String>,
     /// <p>Reserved for internal use.</p>
     pub network_profile_arn: std::option::Option<std::string::String>,
@@ -9172,25 +7715,19 @@ pub struct ScheduleRunConfiguration {
     pub location: std::option::Option<crate::model::Location>,
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
     pub vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
-    /// configuration.</p>
+    /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub customer_artifact_paths: std::option::Option<crate::model::CustomerArtifactPaths>,
     /// <p>Information about the radio states for the run.</p>
     pub radios: std::option::Option<crate::model::Radios>,
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     pub auxiliary_apps: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or
-    /// <code>unmetered</code>. If the parameter is not specified, the default value is
-    /// <code>metered</code>.</p>
-    /// <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
-    /// make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub billing_method: std::option::Option<crate::model::BillingMethod>,
 }
 impl ScheduleRunConfiguration {
-    /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
-    /// external data for Android or the app's sandbox for iOS.</p>
+    /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     pub fn extra_data_package_arn(&self) -> std::option::Option<&str> {
         self.extra_data_package_arn.as_deref()
     }
@@ -9210,8 +7747,7 @@ impl ScheduleRunConfiguration {
     pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.vpce_configuration_arns.as_deref()
     }
-    /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
-    /// configuration.</p>
+    /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(
         &self,
     ) -> std::option::Option<&crate::model::CustomerArtifactPaths> {
@@ -9225,12 +7761,8 @@ impl ScheduleRunConfiguration {
     pub fn auxiliary_apps(&self) -> std::option::Option<&[std::string::String]> {
         self.auxiliary_apps.as_deref()
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or
-    /// <code>unmetered</code>. If the parameter is not specified, the default value is
-    /// <code>metered</code>.</p>
-    /// <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
-    /// make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn billing_method(&self) -> std::option::Option<&crate::model::BillingMethod> {
         self.billing_method.as_ref()
@@ -9269,14 +7801,12 @@ pub mod schedule_run_configuration {
         pub(crate) billing_method: std::option::Option<crate::model::BillingMethod>,
     }
     impl Builder {
-        /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
-        /// external data for Android or the app's sandbox for iOS.</p>
+        /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
         pub fn extra_data_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_data_package_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
-        /// external data for Android or the app's sandbox for iOS.</p>
+        /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
         pub fn set_extra_data_package_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9336,8 +7866,7 @@ pub mod schedule_run_configuration {
             self.vpce_configuration_arns = input;
             self
         }
-        /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
-        /// configuration.</p>
+        /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
         pub fn customer_artifact_paths(
             mut self,
             input: crate::model::CustomerArtifactPaths,
@@ -9345,8 +7874,7 @@ pub mod schedule_run_configuration {
             self.customer_artifact_paths = Some(input);
             self
         }
-        /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
-        /// configuration.</p>
+        /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
         pub fn set_customer_artifact_paths(
             mut self,
             input: std::option::Option<crate::model::CustomerArtifactPaths>,
@@ -9383,23 +7911,15 @@ pub mod schedule_run_configuration {
             self.auxiliary_apps = input;
             self
         }
-        /// <p>Specifies the billing method for a test run: <code>metered</code> or
-        /// <code>unmetered</code>. If the parameter is not specified, the default value is
-        /// <code>metered</code>.</p>
-        /// <note>
-        /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
-        /// make use of them. Otherwise, your run counts against your metered time.</p>
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+        /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
         /// </note>
         pub fn billing_method(mut self, input: crate::model::BillingMethod) -> Self {
             self.billing_method = Some(input);
             self
         }
-        /// <p>Specifies the billing method for a test run: <code>metered</code> or
-        /// <code>unmetered</code>. If the parameter is not specified, the default value is
-        /// <code>metered</code>.</p>
-        /// <note>
-        /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
-        /// make use of them. Otherwise, your run counts against your metered time.</p>
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+        /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
         /// </note>
         pub fn set_billing_method(
             mut self,
@@ -9431,70 +7951,31 @@ impl ScheduleRunConfiguration {
     }
 }
 
-/// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an
-/// example of the JSON request syntax, see <a>ScheduleRun</a>.</p>
+/// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleRunTest {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an
-    /// Android app, interacting with it and capturing screenshots at the same
-    /// time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>The ARN of the uploaded test to be run.</p>
@@ -9503,140 +7984,63 @@ pub struct ScheduleRunTest {
     pub test_spec_arn: std::option::Option<std::string::String>,
     /// <p>The test's filter.</p>
     pub filter: std::option::Option<std::string::String>,
-    /// <p>The test's parameters, such as test framework parameters and fixture settings.
-    /// Parameters are represented by name-value pairs of strings.</p>
+    /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
-    /// Set this parameter to false to disable it.</p>
-    /// </li>
+    /// <li> <p> <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p> </li>
     /// </ul>
     /// <p>For Calabash tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't
-    /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
-    /// </li>
+    /// <li> <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p> </li>
+    /// <li> <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p> </li>
     /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
-    /// <li>
-    /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
-    /// (and later), latest, and default.</p>
+    /// <li> <p>appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.</p>
     /// <ul>
-    /// <li>
-    ///
-    /// <p>latest runs the latest Appium version supported by Device
-    /// Farm (1.9.1).</p>
-    /// </li>
-    /// <li>
-    /// <p>For default, Device Farm selects a compatible version of
-    /// Appium for the device. The current behavior is to run 1.7.2 on Android
-    /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
-    /// </li>
-    /// <li>
-    /// <p>This behavior is subject to change.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>latest runs the latest Appium version supported by Device Farm (1.9.1).</p> </li>
+    /// <li> <p>For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p> </li>
+    /// <li> <p>This behavior is subject to change.</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For fuzz tests (Android only):</p>
     /// <ul>
-    /// <li>
-    /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
-    /// test should perform.</p>
-    /// </li>
-    /// <li>
-    /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
-    /// wait between events.</p>
-    /// </li>
-    /// <li>
-    /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
-    /// value between tests ensures identical event sequences.</p>
-    /// </li>
+    /// <li> <p>event_count: The number of events, between 1 and 10000, that the UI fuzz test should perform.</p> </li>
+    /// <li> <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p> </li>
+    /// <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p> </li>
     /// </ul>
     /// <p>For Explorer tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
-    /// name is inserted.</p>
-    /// </li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
-    /// password is inserted.</p>
-    /// </li>
+    /// <li> <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p> </li>
+    /// <li> <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p> </li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+    /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For XCTest and XCTestUI:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test class: <code>LoginTests</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>LoginTests/testValid</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test class: <code>LoginTests</code> </p> </li>
+    /// <li> <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code> </p> </li>
+    /// <li> <p>Running a single test: <code>LoginTests/testValid</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For UIAutomator:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+    /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -9645,62 +8049,24 @@ impl ScheduleRunTest {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an
-    /// Android app, interacting with it and capturing screenshots at the same
-    /// time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
         self.r#type.as_ref()
@@ -9717,140 +8083,63 @@ impl ScheduleRunTest {
     pub fn filter(&self) -> std::option::Option<&str> {
         self.filter.as_deref()
     }
-    /// <p>The test's parameters, such as test framework parameters and fixture settings.
-    /// Parameters are represented by name-value pairs of strings.</p>
+    /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
-    /// Set this parameter to false to disable it.</p>
-    /// </li>
+    /// <li> <p> <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p> </li>
     /// </ul>
     /// <p>For Calabash tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>tags: You can limit execution to features or scenarios that have (or don't
-    /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
-    /// </li>
+    /// <li> <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p> </li>
+    /// <li> <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p> </li>
     /// </ul>
     /// <p>For Appium tests (all types):</p>
     /// <ul>
-    /// <li>
-    /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
-    /// (and later), latest, and default.</p>
+    /// <li> <p>appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.</p>
     /// <ul>
-    /// <li>
-    ///
-    /// <p>latest runs the latest Appium version supported by Device
-    /// Farm (1.9.1).</p>
-    /// </li>
-    /// <li>
-    /// <p>For default, Device Farm selects a compatible version of
-    /// Appium for the device. The current behavior is to run 1.7.2 on Android
-    /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
-    /// </li>
-    /// <li>
-    /// <p>This behavior is subject to change.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>latest runs the latest Appium version supported by Device Farm (1.9.1).</p> </li>
+    /// <li> <p>For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p> </li>
+    /// <li> <p>This behavior is subject to change.</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For fuzz tests (Android only):</p>
     /// <ul>
-    /// <li>
-    /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
-    /// test should perform.</p>
-    /// </li>
-    /// <li>
-    /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
-    /// wait between events.</p>
-    /// </li>
-    /// <li>
-    /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
-    /// value between tests ensures identical event sequences.</p>
-    /// </li>
+    /// <li> <p>event_count: The number of events, between 1 and 10000, that the UI fuzz test should perform.</p> </li>
+    /// <li> <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p> </li>
+    /// <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p> </li>
     /// </ul>
     /// <p>For Explorer tests:</p>
     /// <ul>
-    /// <li>
-    /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
-    /// name is inserted.</p>
-    /// </li>
-    /// <li>
-    /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
-    /// password is inserted.</p>
-    /// </li>
+    /// <li> <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p> </li>
+    /// <li> <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p> </li>
     /// </ul>
     /// <p>For Instrumentation:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+    /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For XCTest and XCTestUI:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test class: <code>LoginTests</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>LoginTests/testValid</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test class: <code>LoginTests</code> </p> </li>
+    /// <li> <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code> </p> </li>
+    /// <li> <p>Running a single test: <code>LoginTests/testValid</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p>For UIAutomator:</p>
     /// <ul>
-    /// <li>
-    /// <p>filter: A test filter string. Examples:</p>
+    /// <li> <p>filter: A test filter string. Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Running multiple tests:
-    /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+    /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+    /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn parameters(
         &self,
@@ -9888,62 +8177,24 @@ pub mod schedule_run_test {
         /// <p>The test's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an
-        /// Android app, interacting with it and capturing screenshots at the same
-        /// time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
             self.r#type = Some(input);
@@ -9952,62 +8203,24 @@ pub mod schedule_run_test {
         /// <p>The test's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an
-        /// Android app, interacting with it and capturing screenshots at the same
-        /// time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
@@ -10053,140 +8266,63 @@ pub mod schedule_run_test {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>The test's parameters, such as test framework parameters and fixture settings.
-        /// Parameters are represented by name-value pairs of strings.</p>
+        /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
         /// <p>For all tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
-        /// Set this parameter to false to disable it.</p>
-        /// </li>
+        /// <li> <p> <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p> </li>
         /// </ul>
         /// <p>For Calabash tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>tags: You can limit execution to features or scenarios that have (or don't
-        /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
-        /// </li>
+        /// <li> <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p> </li>
+        /// <li> <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p> </li>
         /// </ul>
         /// <p>For Appium tests (all types):</p>
         /// <ul>
-        /// <li>
-        /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
-        /// (and later), latest, and default.</p>
+        /// <li> <p>appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.</p>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>latest runs the latest Appium version supported by Device
-        /// Farm (1.9.1).</p>
-        /// </li>
-        /// <li>
-        /// <p>For default, Device Farm selects a compatible version of
-        /// Appium for the device. The current behavior is to run 1.7.2 on Android
-        /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
-        /// </li>
-        /// <li>
-        /// <p>This behavior is subject to change.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>latest runs the latest Appium version supported by Device Farm (1.9.1).</p> </li>
+        /// <li> <p>For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p> </li>
+        /// <li> <p>This behavior is subject to change.</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For fuzz tests (Android only):</p>
         /// <ul>
-        /// <li>
-        /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
-        /// test should perform.</p>
-        /// </li>
-        /// <li>
-        /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
-        /// wait between events.</p>
-        /// </li>
-        /// <li>
-        /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
-        /// value between tests ensures identical event sequences.</p>
-        /// </li>
+        /// <li> <p>event_count: The number of events, between 1 and 10000, that the UI fuzz test should perform.</p> </li>
+        /// <li> <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p> </li>
+        /// <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p> </li>
         /// </ul>
         /// <p>For Explorer tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
-        /// name is inserted.</p>
-        /// </li>
-        /// <li>
-        /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
-        /// password is inserted.</p>
-        /// </li>
+        /// <li> <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p> </li>
+        /// <li> <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p> </li>
         /// </ul>
         /// <p>For Instrumentation:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+        /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For XCTest and XCTestUI:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test class: <code>LoginTests</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>LoginTests/testValid</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test class: <code>LoginTests</code> </p> </li>
+        /// <li> <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code> </p> </li>
+        /// <li> <p>Running a single test: <code>LoginTests/testValid</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For UIAutomator:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+        /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -10198,140 +8334,63 @@ pub mod schedule_run_test {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>The test's parameters, such as test framework parameters and fixture settings.
-        /// Parameters are represented by name-value pairs of strings.</p>
+        /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
         /// <p>For all tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
-        /// Set this parameter to false to disable it.</p>
-        /// </li>
+        /// <li> <p> <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to false to disable it.</p> </li>
         /// </ul>
         /// <p>For Calabash tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>tags: You can limit execution to features or scenarios that have (or don't
-        /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
-        /// </li>
+        /// <li> <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p> </li>
+        /// <li> <p>tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke or @smoke,~@wip).</p> </li>
         /// </ul>
         /// <p>For Appium tests (all types):</p>
         /// <ul>
-        /// <li>
-        /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
-        /// (and later), latest, and default.</p>
+        /// <li> <p>appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.</p>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>latest runs the latest Appium version supported by Device
-        /// Farm (1.9.1).</p>
-        /// </li>
-        /// <li>
-        /// <p>For default, Device Farm selects a compatible version of
-        /// Appium for the device. The current behavior is to run 1.7.2 on Android
-        /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
-        /// </li>
-        /// <li>
-        /// <p>This behavior is subject to change.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>latest runs the latest Appium version supported by Device Farm (1.9.1).</p> </li>
+        /// <li> <p>For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p> </li>
+        /// <li> <p>This behavior is subject to change.</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For fuzz tests (Android only):</p>
         /// <ul>
-        /// <li>
-        /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
-        /// test should perform.</p>
-        /// </li>
-        /// <li>
-        /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
-        /// wait between events.</p>
-        /// </li>
-        /// <li>
-        /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
-        /// value between tests ensures identical event sequences.</p>
-        /// </li>
+        /// <li> <p>event_count: The number of events, between 1 and 10000, that the UI fuzz test should perform.</p> </li>
+        /// <li> <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between events.</p> </li>
+        /// <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p> </li>
         /// </ul>
         /// <p>For Explorer tests:</p>
         /// <ul>
-        /// <li>
-        /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
-        /// name is inserted.</p>
-        /// </li>
-        /// <li>
-        /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
-        /// password is inserted.</p>
-        /// </li>
+        /// <li> <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.</p> </li>
+        /// <li> <p>password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.</p> </li>
         /// </ul>
         /// <p>For Instrumentation:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+        /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For XCTest and XCTestUI:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test class: <code>LoginTests</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>LoginTests/testValid</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test class: <code>LoginTests</code> </p> </li>
+        /// <li> <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code> </p> </li>
+        /// <li> <p>Running a single test: <code>LoginTests/testValid</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p>For UIAutomator:</p>
         /// <ul>
-        /// <li>
-        /// <p>filter: A test filter string. Examples:</p>
+        /// <li> <p>filter: A test filter string. Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Running multiple tests:
-        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>Running a single test case: <code>com.android.abc.Test1</code> </p> </li>
+        /// <li> <p>Running a single test: <code>com.android.abc.Test1#smoke</code> </p> </li>
+        /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -10361,259 +8420,86 @@ impl ScheduleRunTest {
     }
 }
 
-/// <p>Represents the device filters used in a test run and the maximum number of devices to be included in the
-/// run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.</p>
+/// <p>Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceSelectionConfiguration {
-    /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
-    /// attribute, an operator, and one or more values.</p>
+    /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Attribute</b>
-    /// </p>
-    /// <p>The aspect of a device such as platform or model used as the selection
-    /// criteria in a device filter.</p>
-    /// <p>Allowed values include:</p>
+    /// <li> <p> <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM: The device platform. Valid values are ANDROID or
-    /// IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>OS_VERSION: The operating system version (for example,
-    /// 10.3.2).</p>
-    /// </li>
-    /// <li>
-    /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-    /// </li>
-    /// <li>
-    /// <p>AVAILABILITY: The current availability of the device. Valid values
-    /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
-    /// TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER: The device manufacturer (for example,
-    /// Apple).</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-    /// access. Valid values are TRUE or FALSE.</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-    /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>, this filter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-    /// instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Operator</b>
-    /// </p>
-    /// <p>The filter operator.</p>
+    /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+    /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+    /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+    /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+    /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+    /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+    /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p> </li>
+    /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+    /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+    /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Operator</b> </p> <p>The filter operator.</p>
     /// <ul>
-    /// <li>
-    /// <p>The EQUALS operator is available for every attribute except
-    /// INSTANCE_LABELS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-    /// attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-    /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-    /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-    /// attribute.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Values</b>
-    /// </p>
-    /// <p>An array of one or more filter values.</p>
-    /// <p class="title">
-    /// <b>Operator Values</b>
-    /// </p>
+    /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+    /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+    /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+    /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than
-    /// one element.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
-    /// </ul>
-    /// <p class="title">
-    /// <b>Attribute Values</b>
-    /// </p>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
+    /// </ul> <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub max_devices: std::option::Option<i32>,
 }
 impl DeviceSelectionConfiguration {
-    /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
-    /// attribute, an operator, and one or more values.</p>
+    /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Attribute</b>
-    /// </p>
-    /// <p>The aspect of a device such as platform or model used as the selection
-    /// criteria in a device filter.</p>
-    /// <p>Allowed values include:</p>
+    /// <li> <p> <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM: The device platform. Valid values are ANDROID or
-    /// IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>OS_VERSION: The operating system version (for example,
-    /// 10.3.2).</p>
-    /// </li>
-    /// <li>
-    /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-    /// </li>
-    /// <li>
-    /// <p>AVAILABILITY: The current availability of the device. Valid values
-    /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
-    /// TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER: The device manufacturer (for example,
-    /// Apple).</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-    /// access. Valid values are TRUE or FALSE.</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-    /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>, this filter is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-    /// instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Operator</b>
-    /// </p>
-    /// <p>The filter operator.</p>
+    /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+    /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+    /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+    /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+    /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+    /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+    /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p> </li>
+    /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+    /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+    /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Operator</b> </p> <p>The filter operator.</p>
     /// <ul>
-    /// <li>
-    /// <p>The EQUALS operator is available for every attribute except
-    /// INSTANCE_LABELS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-    /// attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-    /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-    /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-    /// attribute.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Values</b>
-    /// </p>
-    /// <p>An array of one or more filter values.</p>
-    /// <p class="title">
-    /// <b>Operator Values</b>
-    /// </p>
+    /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+    /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+    /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+    /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators can take a values array that has more than
-    /// one element.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
-    /// </ul>
-    /// <p class="title">
-    /// <b>Attribute Values</b>
-    /// </p>
+    /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
+    /// </ul> <p class="title"> <b>Attribute Values</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-    /// TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+    /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+    /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::DeviceFilter]> {
         self.filters.as_deref()
@@ -10645,255 +8531,83 @@ pub mod device_selection_configuration {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
-        /// attribute, an operator, and one or more values.</p>
+        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Attribute</b>
-        /// </p>
-        /// <p>The aspect of a device such as platform or model used as the selection
-        /// criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p> <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or
-        /// IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example,
-        /// 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values
-        /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
-        /// TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example,
-        /// Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-        /// access. Valid values are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this filter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Operator</b>
-        /// </p>
-        /// <p>The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Operator</b> </p> <p>The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Values</b>
-        /// </p>
-        /// <p>An array of one or more filter values.</p>
-        /// <p class="title">
-        /// <b>Operator Values</b>
-        /// </p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p class="title"> <b>Operator Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators can take a values array that has more than
-        /// one element.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// </ul>
-        /// <p class="title">
-        /// <b>Attribute Values</b>
-        /// </p>
+        /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// </ul> <p class="title"> <b>Attribute Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-        /// </li>
+        /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+        /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+        /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
-        /// attribute, an operator, and one or more values.</p>
+        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Attribute</b>
-        /// </p>
-        /// <p>The aspect of a device such as platform or model used as the selection
-        /// criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p> <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or
-        /// IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example,
-        /// 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values
-        /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
-        /// TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example,
-        /// Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-        /// access. Valid values are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this filter is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Operator</b>
-        /// </p>
-        /// <p>The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Operator</b> </p> <p>The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Values</b>
-        /// </p>
-        /// <p>An array of one or more filter values.</p>
-        /// <p class="title">
-        /// <b>Operator Values</b>
-        /// </p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p class="title"> <b>Operator Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators can take a values array that has more than
-        /// one element.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// </ul>
-        /// <p class="title">
-        /// <b>Attribute Values</b>
-        /// </p>
+        /// <li> <p>The IN and NOT_IN operators can take a values array that has more than one element.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// </ul> <p class="title"> <b>Attribute Values</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
-        /// TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The PLATFORM attribute can be set to ANDROID or IOS.</p> </li>
+        /// <li> <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
+        /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -11427,12 +9141,9 @@ pub mod offering {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>Specifies whether there are recurring charges for the offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -11755,9 +9466,9 @@ pub mod unique_problem {
         /// To override the contents of this collection use [`set_problems`](Self::set_problems).
         ///
         /// <p>Information about the problems.</p>
-        pub fn problems(mut self, input: impl Into<crate::model::Problem>) -> Self {
+        pub fn problems(mut self, input: crate::model::Problem) -> Self {
             let mut v = self.problems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.problems = Some(v);
             self
         }
@@ -11802,27 +9513,13 @@ pub struct Problem {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>A message about the problem's result.</p>
@@ -11852,27 +9549,13 @@ impl Problem {
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -11966,27 +9649,13 @@ pub mod problem {
         /// <p>The problem's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -11995,27 +9664,13 @@ pub mod problem {
         /// <p>The problem's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -12139,64 +9794,26 @@ pub struct Test {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER</p>
-    /// <note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-    /// screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER</p> <note>
+    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the test was created.</p>
@@ -12204,59 +9821,27 @@ pub struct Test {
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The test's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The test's start time.</p>
@@ -12282,64 +9867,26 @@ impl Test {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER</p>
-    /// <note>
-    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-    /// screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER</p> <note>
+    /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
         self.r#type.as_ref()
@@ -12351,33 +9898,15 @@ impl Test {
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
@@ -12385,27 +9914,13 @@ impl Test {
     /// <p>The test's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -12490,64 +10005,26 @@ pub mod test {
         /// <p>The test's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER</p>
-        /// <note>
-        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-        /// screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER</p> <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
             self.r#type = Some(input);
@@ -12556,64 +10033,26 @@ pub mod test {
         /// <p>The test's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER</p>
-        /// <note>
-        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
-        /// screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER</p> <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
@@ -12635,33 +10074,15 @@ pub mod test {
         /// <p>The test's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status = Some(input);
@@ -12670,33 +10091,15 @@ pub mod test {
         /// <p>The test's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -12708,27 +10111,13 @@ pub mod test {
         /// <p>The test's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -12737,27 +10126,13 @@ pub mod test {
         /// <p>The test's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -12850,8 +10225,7 @@ impl Test {
     }
 }
 
-/// <p>A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a
-/// call to <a>CreateTestGridUrl</a>.</p>
+/// <p>A <code>TestGridSession</code> is a single instance of a browser launched from the URL provided by a call to <code>CreateTestGridUrl</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridSession {
@@ -13068,9 +10442,7 @@ impl AsRef<str> for TestGridSessionStatus {
     }
 }
 
-/// <p>Artifacts are video and other files that are produced in the process of running a browser in an automated
-/// context. </p>
-/// <note>
+/// <p>Artifacts are video and other files that are produced in the process of running a browser in an automated context. </p> <note>
 /// <p>Video elements might be broken up into multiple artifacts as they grow in size during creation. </p>
 /// </note>
 #[non_exhaustive]
@@ -13281,7 +10653,7 @@ impl AsRef<str> for TestGridSessionArtifactCategory {
     }
 }
 
-/// <p>An action taken by a <a>TestGridSession</a> browser instance.</p>
+/// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestGridSessionAction {
@@ -13428,64 +10800,26 @@ pub struct Suite {
     /// <p>The suite's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER </p>
-    /// <note>
-    /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it
-    /// and capturing screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER </p> <note>
+    /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the suite was created.</p>
@@ -13493,59 +10827,27 @@ pub struct Suite {
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The suite's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The suite's start time.</p>
@@ -13556,8 +10858,7 @@ pub struct Suite {
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the suite's result.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>Represents the total (metered or unmetered) minutes used by the test
-    /// suite.</p>
+    /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub device_minutes: std::option::Option<crate::model::DeviceMinutes>,
 }
 impl Suite {
@@ -13572,64 +10873,26 @@ impl Suite {
     /// <p>The suite's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER </p>
-    /// <note>
-    /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it
-    /// and capturing screenshots at the same time.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER </p> <note>
+    /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+    /// </note> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_PYTHON</p> </li>
+    /// <li> <p>APPIUM_NODE</p> </li>
+    /// <li> <p>APPIUM_RUBY</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+    /// <li> <p>CALABASH</p> </li>
+    /// <li> <p>INSTRUMENTATION</p> </li>
+    /// <li> <p>UIAUTOMATION</p> </li>
+    /// <li> <p>UIAUTOMATOR</p> </li>
+    /// <li> <p>XCTEST</p> </li>
+    /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TestType> {
         self.r#type.as_ref()
@@ -13641,33 +10904,15 @@ impl Suite {
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_CONCURRENCY</p>
-    /// </li>
-    /// <li>
-    /// <p>PENDING_DEVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>PROCESSING</p>
-    /// </li>
-    /// <li>
-    /// <p>SCHEDULING</p>
-    /// </li>
-    /// <li>
-    /// <p>PREPARING</p>
-    /// </li>
-    /// <li>
-    /// <p>RUNNING</p>
-    /// </li>
-    /// <li>
-    /// <p>COMPLETED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPING</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PENDING_CONCURRENCY</p> </li>
+    /// <li> <p>PENDING_DEVICE</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SCHEDULING</p> </li>
+    /// <li> <p>PREPARING</p> </li>
+    /// <li> <p>RUNNING</p> </li>
+    /// <li> <p>COMPLETED</p> </li>
+    /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status.as_ref()
@@ -13675,27 +10920,13 @@ impl Suite {
     /// <p>The suite's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(&self) -> std::option::Option<&crate::model::ExecutionResult> {
         self.result.as_ref()
@@ -13716,8 +10947,7 @@ impl Suite {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Represents the total (metered or unmetered) minutes used by the test
-    /// suite.</p>
+    /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub fn device_minutes(&self) -> std::option::Option<&crate::model::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
@@ -13781,64 +11011,26 @@ pub mod suite {
         /// <p>The suite's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER </p>
-        /// <note>
-        /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it
-        /// and capturing screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER </p> <note>
+        /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::TestType) -> Self {
             self.r#type = Some(input);
@@ -13847,64 +11039,26 @@ pub mod suite {
         /// <p>The suite's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER </p>
-        /// <note>
-        /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it
-        /// and capturing screenshots at the same time.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER </p> <note>
+        /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
+        /// </note> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_PYTHON</p> </li>
+        /// <li> <p>APPIUM_NODE</p> </li>
+        /// <li> <p>APPIUM_RUBY</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY</p> </li>
+        /// <li> <p>CALABASH</p> </li>
+        /// <li> <p>INSTRUMENTATION</p> </li>
+        /// <li> <p>UIAUTOMATION</p> </li>
+        /// <li> <p>UIAUTOMATOR</p> </li>
+        /// <li> <p>XCTEST</p> </li>
+        /// <li> <p>XCTEST_UI</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
@@ -13926,33 +11080,15 @@ pub mod suite {
         /// <p>The suite's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status = Some(input);
@@ -13961,33 +11097,15 @@ pub mod suite {
         /// <p>The suite's status.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_CONCURRENCY</p>
-        /// </li>
-        /// <li>
-        /// <p>PENDING_DEVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>PROCESSING</p>
-        /// </li>
-        /// <li>
-        /// <p>SCHEDULING</p>
-        /// </li>
-        /// <li>
-        /// <p>PREPARING</p>
-        /// </li>
-        /// <li>
-        /// <p>RUNNING</p>
-        /// </li>
-        /// <li>
-        /// <p>COMPLETED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPING</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PENDING_CONCURRENCY</p> </li>
+        /// <li> <p>PENDING_DEVICE</p> </li>
+        /// <li> <p>PROCESSING</p> </li>
+        /// <li> <p>SCHEDULING</p> </li>
+        /// <li> <p>PREPARING</p> </li>
+        /// <li> <p>RUNNING</p> </li>
+        /// <li> <p>COMPLETED</p> </li>
+        /// <li> <p>STOPPING</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -13999,27 +11117,13 @@ pub mod suite {
         /// <p>The suite's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn result(mut self, input: crate::model::ExecutionResult) -> Self {
             self.result = Some(input);
@@ -14028,27 +11132,13 @@ pub mod suite {
         /// <p>The suite's result.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_result(
             mut self,
@@ -14103,14 +11193,12 @@ pub mod suite {
             self.message = input;
             self
         }
-        /// <p>Represents the total (metered or unmetered) minutes used by the test
-        /// suite.</p>
+        /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
         pub fn device_minutes(mut self, input: crate::model::DeviceMinutes) -> Self {
             self.device_minutes = Some(input);
             self
         }
-        /// <p>Represents the total (metered or unmetered) minutes used by the test
-        /// suite.</p>
+        /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -14152,66 +11240,26 @@ pub struct Sample {
     /// <p>The sample's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CPU: A CPU sample type. This is expressed as the app processing CPU time
-    /// (including child processes) as reported by process, as a percentage.</p>
-    /// </li>
-    /// <li>
-    /// <p>MEMORY: A memory usage sample type. This is expressed as the total
-    /// proportional set size of an app process, in kilobytes.</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_AVG_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_FPS</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_FRAMES</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_MAX_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_MIN_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_AVG_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_FPS</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_FRAMES</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_MAX_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_MIN_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>RX</p>
-    /// </li>
-    /// <li>
-    /// <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent,
-    /// by app process.</p>
-    /// </li>
-    /// <li>
-    /// <p>THREADS: A threads sample type. This is expressed as the total number of
-    /// threads per app process.</p>
-    /// </li>
-    /// <li>
-    /// <p>TX</p>
-    /// </li>
-    /// <li>
-    /// <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are
-    /// received, by app process.</p>
-    /// </li>
+    /// <li> <p>CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported by process, as a percentage.</p> </li>
+    /// <li> <p>MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in kilobytes.</p> </li>
+    /// <li> <p>NATIVE_AVG_DRAWTIME</p> </li>
+    /// <li> <p>NATIVE_FPS</p> </li>
+    /// <li> <p>NATIVE_FRAMES</p> </li>
+    /// <li> <p>NATIVE_MAX_DRAWTIME</p> </li>
+    /// <li> <p>NATIVE_MIN_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_AVG_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_FPS</p> </li>
+    /// <li> <p>OPENGL_FRAMES</p> </li>
+    /// <li> <p>OPENGL_MAX_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_MIN_DRAWTIME</p> </li>
+    /// <li> <p>RX</p> </li>
+    /// <li> <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.</p> </li>
+    /// <li> <p>THREADS: A threads sample type. This is expressed as the total number of threads per app process.</p> </li>
+    /// <li> <p>TX</p> </li>
+    /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::SampleType>,
-    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's
-    /// file.</p>
+    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl Sample {
@@ -14222,68 +11270,28 @@ impl Sample {
     /// <p>The sample's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>CPU: A CPU sample type. This is expressed as the app processing CPU time
-    /// (including child processes) as reported by process, as a percentage.</p>
-    /// </li>
-    /// <li>
-    /// <p>MEMORY: A memory usage sample type. This is expressed as the total
-    /// proportional set size of an app process, in kilobytes.</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_AVG_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_FPS</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_FRAMES</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_MAX_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>NATIVE_MIN_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_AVG_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_FPS</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_FRAMES</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_MAX_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>OPENGL_MIN_DRAWTIME</p>
-    /// </li>
-    /// <li>
-    /// <p>RX</p>
-    /// </li>
-    /// <li>
-    /// <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent,
-    /// by app process.</p>
-    /// </li>
-    /// <li>
-    /// <p>THREADS: A threads sample type. This is expressed as the total number of
-    /// threads per app process.</p>
-    /// </li>
-    /// <li>
-    /// <p>TX</p>
-    /// </li>
-    /// <li>
-    /// <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are
-    /// received, by app process.</p>
-    /// </li>
+    /// <li> <p>CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported by process, as a percentage.</p> </li>
+    /// <li> <p>MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in kilobytes.</p> </li>
+    /// <li> <p>NATIVE_AVG_DRAWTIME</p> </li>
+    /// <li> <p>NATIVE_FPS</p> </li>
+    /// <li> <p>NATIVE_FRAMES</p> </li>
+    /// <li> <p>NATIVE_MAX_DRAWTIME</p> </li>
+    /// <li> <p>NATIVE_MIN_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_AVG_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_FPS</p> </li>
+    /// <li> <p>OPENGL_FRAMES</p> </li>
+    /// <li> <p>OPENGL_MAX_DRAWTIME</p> </li>
+    /// <li> <p>OPENGL_MIN_DRAWTIME</p> </li>
+    /// <li> <p>RX</p> </li>
+    /// <li> <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.</p> </li>
+    /// <li> <p>THREADS: A threads sample type. This is expressed as the total number of threads per app process.</p> </li>
+    /// <li> <p>TX</p> </li>
+    /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::SampleType> {
         self.r#type.as_ref()
     }
-    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's
-    /// file.</p>
+    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -14321,62 +11329,23 @@ pub mod sample {
         /// <p>The sample's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CPU: A CPU sample type. This is expressed as the app processing CPU time
-        /// (including child processes) as reported by process, as a percentage.</p>
-        /// </li>
-        /// <li>
-        /// <p>MEMORY: A memory usage sample type. This is expressed as the total
-        /// proportional set size of an app process, in kilobytes.</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_AVG_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_FPS</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_FRAMES</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_MAX_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_MIN_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_AVG_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_FPS</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_FRAMES</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_MAX_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_MIN_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>RX</p>
-        /// </li>
-        /// <li>
-        /// <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent,
-        /// by app process.</p>
-        /// </li>
-        /// <li>
-        /// <p>THREADS: A threads sample type. This is expressed as the total number of
-        /// threads per app process.</p>
-        /// </li>
-        /// <li>
-        /// <p>TX</p>
-        /// </li>
-        /// <li>
-        /// <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are
-        /// received, by app process.</p>
-        /// </li>
+        /// <li> <p>CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported by process, as a percentage.</p> </li>
+        /// <li> <p>MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in kilobytes.</p> </li>
+        /// <li> <p>NATIVE_AVG_DRAWTIME</p> </li>
+        /// <li> <p>NATIVE_FPS</p> </li>
+        /// <li> <p>NATIVE_FRAMES</p> </li>
+        /// <li> <p>NATIVE_MAX_DRAWTIME</p> </li>
+        /// <li> <p>NATIVE_MIN_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_AVG_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_FPS</p> </li>
+        /// <li> <p>OPENGL_FRAMES</p> </li>
+        /// <li> <p>OPENGL_MAX_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_MIN_DRAWTIME</p> </li>
+        /// <li> <p>RX</p> </li>
+        /// <li> <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.</p> </li>
+        /// <li> <p>THREADS: A threads sample type. This is expressed as the total number of threads per app process.</p> </li>
+        /// <li> <p>TX</p> </li>
+        /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::SampleType) -> Self {
             self.r#type = Some(input);
@@ -14385,75 +11354,34 @@ pub mod sample {
         /// <p>The sample's type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>CPU: A CPU sample type. This is expressed as the app processing CPU time
-        /// (including child processes) as reported by process, as a percentage.</p>
-        /// </li>
-        /// <li>
-        /// <p>MEMORY: A memory usage sample type. This is expressed as the total
-        /// proportional set size of an app process, in kilobytes.</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_AVG_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_FPS</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_FRAMES</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_MAX_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>NATIVE_MIN_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_AVG_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_FPS</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_FRAMES</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_MAX_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>OPENGL_MIN_DRAWTIME</p>
-        /// </li>
-        /// <li>
-        /// <p>RX</p>
-        /// </li>
-        /// <li>
-        /// <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent,
-        /// by app process.</p>
-        /// </li>
-        /// <li>
-        /// <p>THREADS: A threads sample type. This is expressed as the total number of
-        /// threads per app process.</p>
-        /// </li>
-        /// <li>
-        /// <p>TX</p>
-        /// </li>
-        /// <li>
-        /// <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are
-        /// received, by app process.</p>
-        /// </li>
+        /// <li> <p>CPU: A CPU sample type. This is expressed as the app processing CPU time (including child processes) as reported by process, as a percentage.</p> </li>
+        /// <li> <p>MEMORY: A memory usage sample type. This is expressed as the total proportional set size of an app process, in kilobytes.</p> </li>
+        /// <li> <p>NATIVE_AVG_DRAWTIME</p> </li>
+        /// <li> <p>NATIVE_FPS</p> </li>
+        /// <li> <p>NATIVE_FRAMES</p> </li>
+        /// <li> <p>NATIVE_MAX_DRAWTIME</p> </li>
+        /// <li> <p>NATIVE_MIN_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_AVG_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_FPS</p> </li>
+        /// <li> <p>OPENGL_FRAMES</p> </li>
+        /// <li> <p>OPENGL_MAX_DRAWTIME</p> </li>
+        /// <li> <p>OPENGL_MIN_DRAWTIME</p> </li>
+        /// <li> <p>RX</p> </li>
+        /// <li> <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app process.</p> </li>
+        /// <li> <p>THREADS: A threads sample type. This is expressed as the total number of threads per app process.</p> </li>
+        /// <li> <p>TX</p> </li>
+        /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SampleType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's
-        /// file.</p>
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's
-        /// file.</p>
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -14681,8 +11609,7 @@ impl OfferingPromotion {
     }
 }
 
-/// <p>Represents the output of a test. Examples of artifacts include logs and
-/// screenshots.</p>
+/// <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Artifact {
@@ -14693,96 +11620,39 @@ pub struct Artifact {
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>UNKNOWN</p>
-    /// </li>
-    /// <li>
-    /// <p>SCREENSHOT</p>
-    /// </li>
-    /// <li>
-    /// <p>DEVICE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>MESSAGE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>RESULT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>SERVICE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>WEBKIT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_JSON_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_PRETTY_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_STANDARD_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_JAVA_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>AUTOMATION_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_SERVER_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>EXPLORER_EVENT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>EXPLORER_SUMMARY_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPLICATION_CRASH_REPORT</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO</p>
-    /// </li>
-    /// <li>
-    /// <p>CUSTOMER_ARTIFACT</p>
-    /// </li>
-    /// <li>
-    /// <p>CUSTOMER_ARTIFACT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>TESTSPEC_OUTPUT</p>
-    /// </li>
+    /// <li> <p>UNKNOWN</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li> <p>DEVICE_LOG</p> </li>
+    /// <li> <p>MESSAGE_LOG</p> </li>
+    /// <li> <p>VIDEO_LOG</p> </li>
+    /// <li> <p>RESULT_LOG</p> </li>
+    /// <li> <p>SERVICE_LOG</p> </li>
+    /// <li> <p>WEBKIT_LOG</p> </li>
+    /// <li> <p>INSTRUMENTATION_OUTPUT</p> </li>
+    /// <li> <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p> </li>
+    /// <li> <p>CALABASH_JSON_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_PRETTY_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_STANDARD_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_JAVA_XML_OUTPUT</p> </li>
+    /// <li> <p>AUTOMATION_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_SERVER_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_JAVA_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_JAVA_XML_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_PYTHON_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_PYTHON_XML_OUTPUT</p> </li>
+    /// <li> <p>EXPLORER_EVENT_LOG</p> </li>
+    /// <li> <p>EXPLORER_SUMMARY_LOG</p> </li>
+    /// <li> <p>APPLICATION_CRASH_REPORT</p> </li>
+    /// <li> <p>XCTEST_LOG</p> </li>
+    /// <li> <p>VIDEO</p> </li>
+    /// <li> <p>CUSTOMER_ARTIFACT</p> </li>
+    /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
+    /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ArtifactType>,
     /// <p>The artifact's file extension.</p>
     pub extension: std::option::Option<std::string::String>,
-    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's
-    /// file.</p>
+    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl Artifact {
@@ -14797,90 +11667,34 @@ impl Artifact {
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>UNKNOWN</p>
-    /// </li>
-    /// <li>
-    /// <p>SCREENSHOT</p>
-    /// </li>
-    /// <li>
-    /// <p>DEVICE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>MESSAGE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>RESULT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>SERVICE_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>WEBKIT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_JSON_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_PRETTY_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_STANDARD_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_JAVA_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>AUTOMATION_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_SERVER_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_XML_OUTPUT</p>
-    /// </li>
-    /// <li>
-    /// <p>EXPLORER_EVENT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>EXPLORER_SUMMARY_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>APPLICATION_CRASH_REPORT</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO</p>
-    /// </li>
-    /// <li>
-    /// <p>CUSTOMER_ARTIFACT</p>
-    /// </li>
-    /// <li>
-    /// <p>CUSTOMER_ARTIFACT_LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>TESTSPEC_OUTPUT</p>
-    /// </li>
+    /// <li> <p>UNKNOWN</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li> <p>DEVICE_LOG</p> </li>
+    /// <li> <p>MESSAGE_LOG</p> </li>
+    /// <li> <p>VIDEO_LOG</p> </li>
+    /// <li> <p>RESULT_LOG</p> </li>
+    /// <li> <p>SERVICE_LOG</p> </li>
+    /// <li> <p>WEBKIT_LOG</p> </li>
+    /// <li> <p>INSTRUMENTATION_OUTPUT</p> </li>
+    /// <li> <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p> </li>
+    /// <li> <p>CALABASH_JSON_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_PRETTY_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_STANDARD_OUTPUT</p> </li>
+    /// <li> <p>CALABASH_JAVA_XML_OUTPUT</p> </li>
+    /// <li> <p>AUTOMATION_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_SERVER_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_JAVA_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_JAVA_XML_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_PYTHON_OUTPUT</p> </li>
+    /// <li> <p>APPIUM_PYTHON_XML_OUTPUT</p> </li>
+    /// <li> <p>EXPLORER_EVENT_LOG</p> </li>
+    /// <li> <p>EXPLORER_SUMMARY_LOG</p> </li>
+    /// <li> <p>APPLICATION_CRASH_REPORT</p> </li>
+    /// <li> <p>XCTEST_LOG</p> </li>
+    /// <li> <p>VIDEO</p> </li>
+    /// <li> <p>CUSTOMER_ARTIFACT</p> </li>
+    /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
+    /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactType> {
         self.r#type.as_ref()
@@ -14889,8 +11703,7 @@ impl Artifact {
     pub fn extension(&self) -> std::option::Option<&str> {
         self.extension.as_deref()
     }
-    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's
-    /// file.</p>
+    /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -14942,90 +11755,34 @@ pub mod artifact {
         /// <p>The artifact's type.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>UNKNOWN</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
-        /// <li>
-        /// <p>DEVICE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>MESSAGE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>RESULT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>WEBKIT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_JSON_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_PRETTY_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_STANDARD_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_JAVA_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>AUTOMATION_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_SERVER_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>EXPLORER_EVENT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>EXPLORER_SUMMARY_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPLICATION_CRASH_REPORT</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO</p>
-        /// </li>
-        /// <li>
-        /// <p>CUSTOMER_ARTIFACT</p>
-        /// </li>
-        /// <li>
-        /// <p>CUSTOMER_ARTIFACT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>TESTSPEC_OUTPUT</p>
-        /// </li>
+        /// <li> <p>UNKNOWN</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
+        /// <li> <p>DEVICE_LOG</p> </li>
+        /// <li> <p>MESSAGE_LOG</p> </li>
+        /// <li> <p>VIDEO_LOG</p> </li>
+        /// <li> <p>RESULT_LOG</p> </li>
+        /// <li> <p>SERVICE_LOG</p> </li>
+        /// <li> <p>WEBKIT_LOG</p> </li>
+        /// <li> <p>INSTRUMENTATION_OUTPUT</p> </li>
+        /// <li> <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p> </li>
+        /// <li> <p>CALABASH_JSON_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_PRETTY_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_STANDARD_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_JAVA_XML_OUTPUT</p> </li>
+        /// <li> <p>AUTOMATION_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_SERVER_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_JAVA_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_JAVA_XML_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_PYTHON_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_PYTHON_XML_OUTPUT</p> </li>
+        /// <li> <p>EXPLORER_EVENT_LOG</p> </li>
+        /// <li> <p>EXPLORER_SUMMARY_LOG</p> </li>
+        /// <li> <p>APPLICATION_CRASH_REPORT</p> </li>
+        /// <li> <p>XCTEST_LOG</p> </li>
+        /// <li> <p>VIDEO</p> </li>
+        /// <li> <p>CUSTOMER_ARTIFACT</p> </li>
+        /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
+        /// <li> <p>TESTSPEC_OUTPUT</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ArtifactType) -> Self {
             self.r#type = Some(input);
@@ -15034,90 +11791,34 @@ pub mod artifact {
         /// <p>The artifact's type.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>UNKNOWN</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
-        /// <li>
-        /// <p>DEVICE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>MESSAGE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>RESULT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>WEBKIT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_JSON_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_PRETTY_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_STANDARD_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_JAVA_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>AUTOMATION_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_SERVER_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_XML_OUTPUT</p>
-        /// </li>
-        /// <li>
-        /// <p>EXPLORER_EVENT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>EXPLORER_SUMMARY_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>APPLICATION_CRASH_REPORT</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO</p>
-        /// </li>
-        /// <li>
-        /// <p>CUSTOMER_ARTIFACT</p>
-        /// </li>
-        /// <li>
-        /// <p>CUSTOMER_ARTIFACT_LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>TESTSPEC_OUTPUT</p>
-        /// </li>
+        /// <li> <p>UNKNOWN</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
+        /// <li> <p>DEVICE_LOG</p> </li>
+        /// <li> <p>MESSAGE_LOG</p> </li>
+        /// <li> <p>VIDEO_LOG</p> </li>
+        /// <li> <p>RESULT_LOG</p> </li>
+        /// <li> <p>SERVICE_LOG</p> </li>
+        /// <li> <p>WEBKIT_LOG</p> </li>
+        /// <li> <p>INSTRUMENTATION_OUTPUT</p> </li>
+        /// <li> <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p> </li>
+        /// <li> <p>CALABASH_JSON_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_PRETTY_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_STANDARD_OUTPUT</p> </li>
+        /// <li> <p>CALABASH_JAVA_XML_OUTPUT</p> </li>
+        /// <li> <p>AUTOMATION_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_SERVER_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_JAVA_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_JAVA_XML_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_PYTHON_OUTPUT</p> </li>
+        /// <li> <p>APPIUM_PYTHON_XML_OUTPUT</p> </li>
+        /// <li> <p>EXPLORER_EVENT_LOG</p> </li>
+        /// <li> <p>EXPLORER_SUMMARY_LOG</p> </li>
+        /// <li> <p>APPLICATION_CRASH_REPORT</p> </li>
+        /// <li> <p>XCTEST_LOG</p> </li>
+        /// <li> <p>VIDEO</p> </li>
+        /// <li> <p>CUSTOMER_ARTIFACT</p> </li>
+        /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
+        /// <li> <p>TESTSPEC_OUTPUT</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactType>) -> Self {
             self.r#type = input;
@@ -15133,14 +11834,12 @@ pub mod artifact {
             self.extension = input;
             self
         }
-        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's
-        /// file.</p>
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's
-        /// file.</p>
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -15487,10 +12186,10 @@ pub mod device_pool_compatibility_result {
         /// <p>Information about the compatibility.</p>
         pub fn incompatibility_messages(
             mut self,
-            input: impl Into<crate::model::IncompatibilityMessage>,
+            input: crate::model::IncompatibilityMessage,
         ) -> Self {
             let mut v = self.incompatibility_messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incompatibility_messages = Some(v);
             self
         }
@@ -15528,24 +12227,12 @@ pub struct IncompatibilityMessage {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p>
-    /// </li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DeviceAttribute>,
 }
@@ -15557,24 +12244,12 @@ impl IncompatibilityMessage {
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR (for example, phone or tablet)</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM (for example, Android or iOS)</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_VERSION</p>
-    /// </li>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DeviceAttribute> {
         self.r#type.as_ref()
@@ -15611,24 +12286,12 @@ pub mod incompatibility_message {
         /// <p>The type of incompatibility.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR (for example, phone or tablet)</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM (for example, Android or iOS)</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_VERSION</p>
-        /// </li>
+        /// <li> <p>ARN</p> </li>
+        /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+        /// <li> <p>MANUFACTURER</p> </li>
+        /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+        /// <li> <p>APPIUM_VERSION</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DeviceAttribute) -> Self {
             self.r#type = Some(input);
@@ -15637,24 +12300,12 @@ pub mod incompatibility_message {
         /// <p>The type of incompatibility.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR (for example, phone or tablet)</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM (for example, Android or iOS)</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_VERSION</p>
-        /// </li>
+        /// <li> <p>ARN</p> </li>
+        /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+        /// <li> <p>MANUFACTURER</p> </li>
+        /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+        /// <li> <p>APPIUM_VERSION</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -15683,37 +12334,28 @@ impl IncompatibilityMessage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSettings {
-    /// <p>The AWS account number specified in the <code>AccountSettings</code>
-    /// container.</p>
+    /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
     pub aws_account_number: std::option::Option<std::string::String>,
     /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
     pub unmetered_devices:
         std::option::Option<std::collections::HashMap<crate::model::DevicePlatform, i32>>,
-    /// <p>Returns the unmetered remote access devices you have purchased or want to
-    /// purchase.</p>
+    /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
     pub unmetered_remote_access_devices:
         std::option::Option<std::collections::HashMap<crate::model::DevicePlatform, i32>>,
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
     pub max_job_timeout_minutes: std::option::Option<i32>,
     /// <p>Information about an AWS account's usage of free trial device minutes.</p>
     pub trial_minutes: std::option::Option<crate::model::TrialMinutes>,
-    /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
-    /// is expressed as an <code>offering-id:number</code> pair, where the
-    /// <code>offering-id</code> represents one of the IDs returned by the
-    /// <code>ListOfferings</code> command.</p>
+    /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
     pub max_slots: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
-    /// <p>The default number of minutes (at the account level) a test run executes before it times out. The
-    /// default value is 150 minutes.</p>
+    /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl AccountSettings {
-    /// <p>The AWS account number specified in the <code>AccountSettings</code>
-    /// container.</p>
+    /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
     pub fn aws_account_number(&self) -> std::option::Option<&str> {
         self.aws_account_number.as_deref()
     }
@@ -15723,8 +12365,7 @@ impl AccountSettings {
     ) -> std::option::Option<&std::collections::HashMap<crate::model::DevicePlatform, i32>> {
         self.unmetered_devices.as_ref()
     }
-    /// <p>Returns the unmetered remote access devices you have purchased or want to
-    /// purchase.</p>
+    /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
     pub fn unmetered_remote_access_devices(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::DevicePlatform, i32>> {
@@ -15738,24 +12379,18 @@ impl AccountSettings {
     pub fn trial_minutes(&self) -> std::option::Option<&crate::model::TrialMinutes> {
         self.trial_minutes.as_ref()
     }
-    /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
-    /// is expressed as an <code>offering-id:number</code> pair, where the
-    /// <code>offering-id</code> represents one of the IDs returned by the
-    /// <code>ListOfferings</code> command.</p>
+    /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
     pub fn max_slots(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.max_slots.as_ref()
     }
-    /// <p>The default number of minutes (at the account level) a test run executes before it times out. The
-    /// default value is 150 minutes.</p>
+    /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
         self.default_job_timeout_minutes
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-    /// Farm FAQs</i>.</p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -15799,14 +12434,12 @@ pub mod account_settings {
         pub(crate) skip_app_resign: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account number specified in the <code>AccountSettings</code>
-        /// container.</p>
+        /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
         pub fn aws_account_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_number = Some(input.into());
             self
         }
-        /// <p>The AWS account number specified in the <code>AccountSettings</code>
-        /// container.</p>
+        /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
         pub fn set_aws_account_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15819,13 +12452,9 @@ pub mod account_settings {
         /// To override the contents of this collection use [`set_unmetered_devices`](Self::set_unmetered_devices).
         ///
         /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
-        pub fn unmetered_devices(
-            mut self,
-            k: impl Into<crate::model::DevicePlatform>,
-            v: impl Into<i32>,
-        ) -> Self {
+        pub fn unmetered_devices(mut self, k: crate::model::DevicePlatform, v: i32) -> Self {
             let mut hash_map = self.unmetered_devices.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unmetered_devices = Some(hash_map);
             self
         }
@@ -15843,20 +12472,18 @@ pub mod account_settings {
         ///
         /// To override the contents of this collection use [`set_unmetered_remote_access_devices`](Self::set_unmetered_remote_access_devices).
         ///
-        /// <p>Returns the unmetered remote access devices you have purchased or want to
-        /// purchase.</p>
+        /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
         pub fn unmetered_remote_access_devices(
             mut self,
-            k: impl Into<crate::model::DevicePlatform>,
-            v: impl Into<i32>,
+            k: crate::model::DevicePlatform,
+            v: i32,
         ) -> Self {
             let mut hash_map = self.unmetered_remote_access_devices.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unmetered_remote_access_devices = Some(hash_map);
             self
         }
-        /// <p>Returns the unmetered remote access devices you have purchased or want to
-        /// purchase.</p>
+        /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
         pub fn set_unmetered_remote_access_devices(
             mut self,
             input: std::option::Option<
@@ -15893,20 +12520,14 @@ pub mod account_settings {
         ///
         /// To override the contents of this collection use [`set_max_slots`](Self::set_max_slots).
         ///
-        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
-        /// is expressed as an <code>offering-id:number</code> pair, where the
-        /// <code>offering-id</code> represents one of the IDs returned by the
-        /// <code>ListOfferings</code> command.</p>
-        pub fn max_slots(mut self, k: impl Into<std::string::String>, v: impl Into<i32>) -> Self {
+        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
+        pub fn max_slots(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
             let mut hash_map = self.max_slots.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.max_slots = Some(hash_map);
             self
         }
-        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
-        /// is expressed as an <code>offering-id:number</code> pair, where the
-        /// <code>offering-id</code> represents one of the IDs returned by the
-        /// <code>ListOfferings</code> command.</p>
+        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
         pub fn set_max_slots(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -15914,30 +12535,24 @@ pub mod account_settings {
             self.max_slots = input;
             self
         }
-        /// <p>The default number of minutes (at the account level) a test run executes before it times out. The
-        /// default value is 150 minutes.</p>
+        /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
         pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
             self.default_job_timeout_minutes = Some(input);
             self
         }
-        /// <p>The default number of minutes (at the account level) a test run executes before it times out. The
-        /// default value is 150 minutes.</p>
+        /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.default_job_timeout_minutes = input;
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
-        /// Farm FAQs</i>.</p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -15964,8 +12579,7 @@ impl AccountSettings {
     }
 }
 
-/// <p>Represents information about free trial device minutes for an AWS
-/// account.</p>
+/// <p>Represents information about free trial device minutes for an AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrialMinutes {
@@ -16038,8 +12652,7 @@ impl TrialMinutes {
     }
 }
 
-/// <p>Configuration settings for a remote access session, including billing
-/// method.</p>
+/// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionConfiguration {

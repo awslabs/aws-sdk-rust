@@ -1396,6 +1396,40 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
     }
 }
 
+/// Operation shape for `SearchPlaceIndexForSuggestions`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_place_index_for_suggestions`](crate::client::Client::search_place_index_for_suggestions).
+///
+/// See [`crate::client::fluent_builders::SearchPlaceIndexForSuggestions`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchPlaceIndexForSuggestions {
+    _private: (),
+}
+impl SearchPlaceIndexForSuggestions {
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsInput`](crate::input::SearchPlaceIndexForSuggestionsInput)
+    pub fn builder() -> crate::input::search_place_index_for_suggestions_input::Builder {
+        crate::input::search_place_index_for_suggestions_input::Builder::default()
+    }
+    /// Creates a new `SearchPlaceIndexForSuggestions` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSuggestions {
+    type Output = std::result::Result<
+        crate::output::SearchPlaceIndexForSuggestionsOutput,
+        crate::error::SearchPlaceIndexForSuggestionsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_place_index_for_suggestions_error(response)
+        } else {
+            crate::operation_deser::parse_search_place_index_for_suggestions_response(response)
+        }
+    }
+}
+
 /// Operation shape for `SearchPlaceIndexForText`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

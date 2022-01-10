@@ -4,7 +4,7 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use kms::{Blob, Client, Error, Region, PKG_VERSION};
+use aws_sdk_kms::{Blob, Client, Error, Region, PKG_VERSION};
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -103,6 +103,7 @@ async fn main() -> Result<(), Error> {
 
     let mut ofile = File::create(o).expect("unable to create file");
     ofile.write_all(s.as_bytes()).expect("unable to write");
+    ofile.flush().expect("failed to flush");
 
     if verbose {
         println!("Wrote the following to {}:", output_file);

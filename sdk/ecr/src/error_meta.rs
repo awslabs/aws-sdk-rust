@@ -5,62 +5,47 @@
 pub enum Error {
     /// <p>The specified layer upload does not contain any layer parts.</p>
     EmptyUploadException(crate::error::EmptyUploadException),
-    /// <p>The specified image has already been pushed, and there were no changes to the manifest
-    /// or image tag after the last push.</p>
+    /// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
     ImageAlreadyExistsException(crate::error::ImageAlreadyExistsException),
-    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-    /// image.</p>
+    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
     ImageDigestDoesNotMatchException(crate::error::ImageDigestDoesNotMatchException),
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified image is tagged with a tag that already exists. The repository is
-    /// configured for tag immutability.</p>
+    /// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
     ImageTagAlreadyExistsException(crate::error::ImageTagAlreadyExistsException),
-    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does
-    /// not match the digest specified.</p>
+    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
     InvalidLayerException(crate::error::InvalidLayerException),
-    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to
-    /// the last byte of a previous layer part upload.</p>
+    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
     InvalidLayerPartException(crate::error::InvalidLayerPartException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>The operation failed due to a KMS exception.</p>
     KmsException(crate::error::KmsException),
     /// <p>The image layer already exists in the associated repository.</p>
     LayerAlreadyExistsException(crate::error::LayerAlreadyExistsException),
-    /// <p>The specified layer is not available because it is not associated with an image.
-    /// Unassociated image layers may be cleaned up at any time.</p>
+    /// <p>The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.</p>
     LayerInaccessibleException(crate::error::LayerInaccessibleException),
     /// <p>Layer parts must be at least 5 MiB in size.</p>
     LayerPartTooSmallException(crate::error::LayerPartTooSmallException),
-    /// <p>The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.</p>
+    /// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
     LayersNotFoundException(crate::error::LayersNotFoundException),
-    /// <p>The lifecycle policy could not be found, and no policy is set to the
-    /// repository.</p>
+    /// <p>The lifecycle policy could not be found, and no policy is set to the repository.</p>
     LifecyclePolicyNotFoundException(crate::error::LifecyclePolicyNotFoundException),
-    /// <p>The previous lifecycle policy preview request has not completed. Wait and try
-    /// again.</p>
+    /// <p>The previous lifecycle policy preview request has not completed. Wait and try again.</p>
     LifecyclePolicyPreviewInProgressException(
         crate::error::LifecyclePolicyPreviewInProgressException,
     ),
     /// <p>There is no dry run for this repository.</p>
     LifecyclePolicyPreviewNotFoundException(crate::error::LifecyclePolicyPreviewNotFoundException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in
-    /// the Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A pull through cache rule with these settings already exists for the private
-    /// registry.</p>
+    /// <p>A pull through cache rule with these settings already exists for the private registry.</p>
     PullThroughCacheRuleAlreadyExistsException(
         crate::error::PullThroughCacheRuleAlreadyExistsException,
     ),
-    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and
-    /// try again.</p>
+    /// <p>The pull through cache rule was not found. Specify a valid pull through cache rule and try again.</p>
     PullThroughCacheRuleNotFoundException(crate::error::PullThroughCacheRuleNotFoundException),
     /// <p>The manifest list is referencing an image that does not exist.</p>
     ReferencedImagesNotFoundException(crate::error::ReferencedImagesNotFoundException),
@@ -68,29 +53,23 @@ pub enum Error {
     RegistryPolicyNotFoundException(crate::error::RegistryPolicyNotFoundException),
     /// <p>The specified repository already exists in the specified registry.</p>
     RepositoryAlreadyExistsException(crate::error::RepositoryAlreadyExistsException),
-    /// <p>The specified repository contains images. To delete a repository that contains images,
-    /// you must force the deletion with the <code>force</code> parameter.</p>
+    /// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
     RepositoryNotEmptyException(crate::error::RepositoryNotEmptyException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated
-    /// repository policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
-    /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on
-    /// the repository and try again.</p>
+    /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on the repository and try again.</p>
     ScanNotFoundException(crate::error::ScanNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::error::UnsupportedImageTypeException),
     /// <p>The specified upstream registry isn't supported.</p>
     UnsupportedUpstreamRegistryException(crate::error::UnsupportedUpstreamRegistryException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::error::ValidationException),

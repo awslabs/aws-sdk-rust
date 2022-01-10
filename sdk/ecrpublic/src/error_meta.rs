@@ -5,25 +5,19 @@
 pub enum Error {
     /// <p>The specified layer upload does not contain any layer parts.</p>
     EmptyUploadException(crate::error::EmptyUploadException),
-    /// <p>The specified image has already been pushed, and there were no changes to the manifest
-    /// or image tag after the last push.</p>
+    /// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
     ImageAlreadyExistsException(crate::error::ImageAlreadyExistsException),
-    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-    /// image.</p>
+    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
     ImageDigestDoesNotMatchException(crate::error::ImageDigestDoesNotMatchException),
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified image is tagged with a tag that already exists. The repository is
-    /// configured for tag immutability.</p>
+    /// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
     ImageTagAlreadyExistsException(crate::error::ImageTagAlreadyExistsException),
-    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not
-    /// match the digest specified.</p>
+    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
     InvalidLayerException(crate::error::InvalidLayerException),
-    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the
-    /// last byte of a previous layer part upload.</p>
+    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
     InvalidLayerPartException(crate::error::InvalidLayerPartException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
@@ -31,12 +25,9 @@ pub enum Error {
     LayerAlreadyExistsException(crate::error::LayerAlreadyExistsException),
     /// <p>Layer parts must be at least 5 MiB in size.</p>
     LayerPartTooSmallException(crate::error::LayerPartTooSmallException),
-    /// <p>The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.</p>
+    /// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
     LayersNotFoundException(crate::error::LayersNotFoundException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the
-    /// Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The manifest list is referencing an image that does not exist.</p>
     ReferencedImagesNotFoundException(crate::error::ReferencedImagesNotFoundException),
@@ -44,24 +35,19 @@ pub enum Error {
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
     /// <p>The specified repository already exists in the specified registry.</p>
     RepositoryAlreadyExistsException(crate::error::RepositoryAlreadyExistsException),
-    /// <p>The specified repository contains images. To delete a repository that contains images,
-    /// you must force the deletion with the <code>force</code> parameter.</p>
+    /// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
     RepositoryNotEmptyException(crate::error::RepositoryNotEmptyException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated repository
-    /// policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The action is not supported in this Region.</p>
     UnsupportedCommandException(crate::error::UnsupportedCommandException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

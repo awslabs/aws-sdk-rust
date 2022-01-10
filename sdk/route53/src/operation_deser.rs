@@ -6483,6 +6483,23 @@ pub fn parse_update_hosted_zone_comment_error(
                 }),
             }
         }
+        "PriorRequestNotComplete" => crate::error::UpdateHostedZoneCommentError {
+            meta: generic,
+            kind: crate::error::UpdateHostedZoneCommentErrorKind::PriorRequestNotComplete({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::prior_request_not_complete::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_prior_request_not_complete_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateHostedZoneCommentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::UpdateHostedZoneCommentError::generic(generic),
     })
 }

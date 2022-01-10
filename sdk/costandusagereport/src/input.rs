@@ -35,7 +35,7 @@ pub mod delete_report_definition_input {
 #[doc(hidden)]
 pub type DeleteReportDefinitionInputOperationOutputAlias = crate::operation::DeleteReportDefinition;
 #[doc(hidden)]
-pub type DeleteReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReportDefinition`](crate::operation::DeleteReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl DeleteReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -133,7 +133,7 @@ impl DeleteReportDefinitionInput {
             "DeleteReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -204,7 +204,7 @@ pub mod describe_report_definitions_input {
 pub type DescribeReportDefinitionsInputOperationOutputAlias =
     crate::operation::DescribeReportDefinitions;
 #[doc(hidden)]
-pub type DescribeReportDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReportDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReportDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportDefinitions`](crate::operation::DescribeReportDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -215,7 +215,7 @@ impl DescribeReportDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -302,7 +302,7 @@ impl DescribeReportDefinitionsInput {
             "DescribeReportDefinitions",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -335,30 +335,22 @@ pub mod modify_report_definition_input {
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
     }
     impl Builder {
-        /// <p>The name of the report that you want to create. The name must be unique,
-        /// is case sensitive, and can't include spaces. </p>
+        /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
         pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_name = Some(input.into());
             self
         }
-        /// <p>The name of the report that you want to create. The name must be unique,
-        /// is case sensitive, and can't include spaces. </p>
+        /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_name = input;
             self
         }
-        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-        /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-        /// elements in the definition.
-        /// </p>
+        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
         pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
             self.report_definition = Some(input);
             self
         }
-        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-        /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-        /// elements in the definition.
-        /// </p>
+        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
         pub fn set_report_definition(
             mut self,
             input: std::option::Option<crate::model::ReportDefinition>,
@@ -383,7 +375,7 @@ pub mod modify_report_definition_input {
 #[doc(hidden)]
 pub type ModifyReportDefinitionInputOperationOutputAlias = crate::operation::ModifyReportDefinition;
 #[doc(hidden)]
-pub type ModifyReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReportDefinition`](crate::operation::ModifyReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -394,7 +386,7 @@ impl ModifyReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +473,7 @@ impl ModifyReportDefinitionInput {
             "ModifyReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -513,14 +505,12 @@ pub mod put_report_definition_input {
         pub(crate) report_definition: std::option::Option<crate::model::ReportDefinition>,
     }
     impl Builder {
-        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-        /// metadata and data file information. </p>
+        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
         pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
             self.report_definition = Some(input);
             self
         }
-        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-        /// metadata and data file information. </p>
+        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
         pub fn set_report_definition(
             mut self,
             input: std::option::Option<crate::model::ReportDefinition>,
@@ -544,7 +534,7 @@ pub mod put_report_definition_input {
 #[doc(hidden)]
 pub type PutReportDefinitionInputOperationOutputAlias = crate::operation::PutReportDefinition;
 #[doc(hidden)]
-pub type PutReportDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutReportDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutReportDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutReportDefinition`](crate::operation::PutReportDefinition)>
     #[allow(clippy::let_and_return)]
@@ -555,7 +545,7 @@ impl PutReportDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutReportDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -640,7 +630,7 @@ impl PutReportDefinitionInput {
             "PutReportDefinition",
             "costandusagereportservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -667,13 +657,11 @@ impl PutReportDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionInput {
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-    /// metadata and data file information. </p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
 impl PutReportDefinitionInput {
-    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-    /// metadata and data file information. </p>
+    /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     pub fn report_definition(&self) -> std::option::Option<&crate::model::ReportDefinition> {
         self.report_definition.as_ref()
     }
@@ -690,25 +678,17 @@ impl std::fmt::Debug for PutReportDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReportDefinitionInput {
-    /// <p>The name of the report that you want to create. The name must be unique,
-    /// is case sensitive, and can't include spaces. </p>
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     pub report_name: std::option::Option<std::string::String>,
-    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-    /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-    /// elements in the definition.
-    /// </p>
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub report_definition: std::option::Option<crate::model::ReportDefinition>,
 }
 impl ModifyReportDefinitionInput {
-    /// <p>The name of the report that you want to create. The name must be unique,
-    /// is case sensitive, and can't include spaces. </p>
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     pub fn report_name(&self) -> std::option::Option<&str> {
         self.report_name.as_deref()
     }
-    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-    /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-    /// elements in the definition.
-    /// </p>
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn report_definition(&self) -> std::option::Option<&crate::model::ReportDefinition> {
         self.report_definition.as_ref()
     }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Simple Workflow Service
@@ -174,6 +174,7 @@ where
     ///
     /// See [`GetWorkflowExecutionHistory`](crate::client::fluent_builders::GetWorkflowExecutionHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetWorkflowExecutionHistory::into_paginator).
     pub fn get_workflow_execution_history(
         &self,
     ) -> fluent_builders::GetWorkflowExecutionHistory<C, M, R> {
@@ -183,6 +184,7 @@ where
     ///
     /// See [`ListActivityTypes`](crate::client::fluent_builders::ListActivityTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActivityTypes::into_paginator).
     pub fn list_activity_types(&self) -> fluent_builders::ListActivityTypes<C, M, R> {
         fluent_builders::ListActivityTypes::new(self.handle.clone())
     }
@@ -190,6 +192,7 @@ where
     ///
     /// See [`ListClosedWorkflowExecutions`](crate::client::fluent_builders::ListClosedWorkflowExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClosedWorkflowExecutions::into_paginator).
     pub fn list_closed_workflow_executions(
         &self,
     ) -> fluent_builders::ListClosedWorkflowExecutions<C, M, R> {
@@ -199,6 +202,7 @@ where
     ///
     /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -206,6 +210,7 @@ where
     ///
     /// See [`ListOpenWorkflowExecutions`](crate::client::fluent_builders::ListOpenWorkflowExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOpenWorkflowExecutions::into_paginator).
     pub fn list_open_workflow_executions(
         &self,
     ) -> fluent_builders::ListOpenWorkflowExecutions<C, M, R> {
@@ -222,6 +227,7 @@ where
     ///
     /// See [`ListWorkflowTypes`](crate::client::fluent_builders::ListWorkflowTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkflowTypes::into_paginator).
     pub fn list_workflow_types(&self) -> fluent_builders::ListWorkflowTypes<C, M, R> {
         fluent_builders::ListWorkflowTypes::new(self.handle.clone())
     }
@@ -236,6 +242,7 @@ where
     ///
     /// See [`PollForDecisionTask`](crate::client::fluent_builders::PollForDecisionTask) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::PollForDecisionTask::into_paginator).
     pub fn poll_for_decision_task(&self) -> fluent_builders::PollForDecisionTask<C, M, R> {
         fluent_builders::PollForDecisionTask::new(self.handle.clone())
     }
@@ -383,54 +390,23 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CountClosedWorkflowExecutions`.
     ///
-    /// <p>Returns the number of closed workflow executions within the given domain that meet the
-    /// specified filtering criteria.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>tagFilter.tag</code>: String constraint. The key is
-    /// <code>swf:tagFilter.tag</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.name</code>: String constraint. The key is
-    /// <code>swf:typeFilter.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.version</code>: String constraint. The key is
-    /// <code>swf:typeFilter.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountClosedWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -475,10 +451,10 @@ pub mod fluent_builders {
                 crate::input::CountClosedWorkflowExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -487,8 +463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -496,23 +472,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn start_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(inp);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_start_time_filter(
             mut self,
@@ -521,23 +489,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn close_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.close_time_filter(inp);
+        pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.close_time_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_close_time_filter(
             mut self,
@@ -546,25 +506,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_close_time_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(mut self, inp: crate::model::WorkflowExecutionFilter) -> Self {
-            self.inner = self.inner.execution_filter(inp);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -573,23 +523,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_filter(input);
             self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, inp: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(inp);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -598,25 +540,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_filter(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, inp: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(inp);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -625,27 +557,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This
-        /// filter has an affect only if <code>executionStatus</code> is specified as
-        /// <code>CLOSED</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn close_status_filter(mut self, inp: crate::model::CloseStatusFilter) -> Self {
-            self.inner = self.inner.close_status_filter(inp);
+        pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
+            self.inner = self.inner.close_status_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This
-        /// filter has an affect only if <code>executionStatus</code> is specified as
-        /// <code>CLOSED</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_close_status_filter(
             mut self,
@@ -657,54 +577,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CountOpenWorkflowExecutions`.
     ///
-    /// <p>Returns the number of open workflow executions within the given domain that meet the
-    /// specified filtering criteria.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>tagFilter.tag</code>: String constraint. The key is
-    /// <code>swf:tagFilter.tag</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.name</code>: String constraint. The key is
-    /// <code>swf:typeFilter.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.version</code>: String constraint. The key is
-    /// <code>swf:typeFilter.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountOpenWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -749,10 +638,10 @@ pub mod fluent_builders {
                 crate::input::CountOpenWorkflowExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -761,8 +650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -770,14 +659,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-        /// counted.</p>
-        pub fn start_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(inp);
+        /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
-        /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-        /// counted.</p>
+        /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -785,21 +672,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_filter(input);
             self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, inp: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(inp);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -808,23 +689,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_filter(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, inp: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(inp);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -833,23 +706,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(mut self, inp: crate::model::WorkflowExecutionFilter) -> Self {
-            self.inner = self.inner.execution_filter(inp);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -861,35 +726,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CountPendingActivityTasks`.
     ///
-    /// <p>Returns the estimated number of activity tasks in the specified task list. The count
-    /// returned is an approximation and isn't guaranteed to be exact. If you specify a task list that
-    /// no activity task was ever scheduled in then <code>0</code> is returned.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then <code>0</code> is returned.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the <code>taskList.name</code> parameter by using a
-    /// <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the
-    /// action to access only certain task lists.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountPendingActivityTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -934,10 +780,10 @@ pub mod fluent_builders {
                 crate::input::CountPendingActivityTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -946,8 +792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -956,8 +802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task list.</p>
-        pub fn task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(inp);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>The name of the task list.</p>
@@ -968,35 +814,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CountPendingDecisionTasks`.
     ///
-    /// <p>Returns the estimated number of decision tasks in the specified task list. The count
-    /// returned is an approximation and isn't guaranteed to be exact. If you specify a task list that
-    /// no decision task was ever scheduled in then <code>0</code> is returned.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no decision task was ever scheduled in then <code>0</code> is returned.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the <code>taskList.name</code> parameter by using a
-    /// <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the
-    /// action to access only certain task lists.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CountPendingDecisionTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1041,10 +868,10 @@ pub mod fluent_builders {
                 crate::input::CountPendingDecisionTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1053,8 +880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -1063,8 +890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task list.</p>
-        pub fn task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(inp);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>The name of the task list.</p>
@@ -1075,50 +902,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeprecateActivityType`.
     ///
-    /// <p>Deprecates the specified <i>activity type</i>. After an activity type has
-    /// been deprecated, you cannot create new tasks of that activity type. Tasks of this type that
-    /// were scheduled before the type was deprecated continue to run.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Deprecates the specified <i>activity type</i>. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated continue to run.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>activityType.name</code>: String constraint. The key is
-    /// <code>swf:activityType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>activityType.version</code>: String constraint. The key is
-    /// <code>swf:activityType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</p> </li>
+    /// <li> <p> <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1163,10 +962,10 @@ pub mod fluent_builders {
                 crate::input::DeprecateActivityTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1175,8 +974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1185,8 +984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The activity type to deprecate.</p>
-        pub fn activity_type(mut self, inp: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(inp);
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
         /// <p>The activity type to deprecate.</p>
@@ -1200,39 +999,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeprecateDomain`.
     ///
-    /// <p>Deprecates the specified domain. After a domain has been deprecated it cannot be used
-    /// to create new workflow executions or register new types. However, you can still use visibility
-    /// actions on this domain. Deprecating a domain also deprecates all activity and workflow types
-    /// registered in the domain. Executions that were started before the domain was deprecated
-    /// continues to run.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register new types. However, you can still use visibility actions on this domain. Deprecating a domain also deprecates all activity and workflow types registered in the domain. Executions that were started before the domain was deprecated continues to run.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1277,10 +1055,10 @@ pub mod fluent_builders {
                 crate::input::DeprecateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1289,8 +1067,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to deprecate.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain to deprecate.</p>
@@ -1301,51 +1079,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeprecateWorkflowType`.
     ///
-    /// <p>Deprecates the specified <i>workflow type</i>. After a workflow type has
-    /// been deprecated, you cannot create new executions of that type. Executions that were started
-    /// before the type was deprecated continues to run. A deprecated workflow type may still be used
-    /// when calling visibility actions.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated, you cannot create new executions of that type. Executions that were started before the type was deprecated continues to run. A deprecated workflow type may still be used when calling visibility actions.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.name</code>: String constraint. The key is
-    /// <code>swf:workflowType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.version</code>: String constraint. The key is
-    /// <code>swf:workflowType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</p> </li>
+    /// <li> <p> <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1390,10 +1139,10 @@ pub mod fluent_builders {
                 crate::input::DeprecateWorkflowTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1402,8 +1151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
@@ -1412,8 +1161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow type to deprecate.</p>
-        pub fn workflow_type(mut self, inp: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(inp);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The workflow type to deprecate.</p>
@@ -1427,46 +1176,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeActivityType`.
     ///
-    /// <p>Returns information about the specified activity type. This includes configuration
-    /// settings provided when the type was registered and other general information about the
-    /// type.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>activityType.name</code>: String constraint. The key is
-    /// <code>swf:activityType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>activityType.version</code>: String constraint. The key is
-    /// <code>swf:activityType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</p> </li>
+    /// <li> <p> <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1511,10 +1234,10 @@ pub mod fluent_builders {
                 crate::input::DescribeActivityTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1523,8 +1246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1532,16 +1255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The activity type to get information about. Activity types are identified by the
-        /// <code>name</code> and <code>version</code> that were supplied when the activity was
-        /// registered.</p>
-        pub fn activity_type(mut self, inp: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(inp);
+        /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
-        /// <p>The activity type to get information about. Activity types are identified by the
-        /// <code>name</code> and <code>version</code> that were supplied when the activity was
-        /// registered.</p>
+        /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -1552,32 +1271,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
-    /// <p>Returns information about the specified domain, including description and
-    /// status.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns information about the specified domain, including description and status.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,10 +1325,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1634,8 +1337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to describe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain to describe.</p>
@@ -1646,36 +1349,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkflowExecution`.
     ///
-    /// <p>Returns information about the specified workflow execution including its type and some
-    /// statistics.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns information about the specified workflow execution including its type and some statistics.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1720,10 +1405,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkflowExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1732,8 +1417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -1742,8 +1427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow execution to describe.</p>
-        pub fn execution(mut self, inp: crate::model::WorkflowExecution) -> Self {
-            self.inner = self.inner.execution(inp);
+        pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
+            self.inner = self.inner.execution(input);
             self
         }
         /// <p>The workflow execution to describe.</p>
@@ -1757,46 +1442,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkflowType`.
     ///
-    /// <p>Returns information about the specified <i>workflow type</i>. This
-    /// includes configuration settings specified when the type was registered and other information
-    /// such as creation date, current status, etc.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns information about the specified <i>workflow type</i>. This includes configuration settings specified when the type was registered and other information such as creation date, current status, etc.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.name</code>: String constraint. The key is
-    /// <code>swf:workflowType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.version</code>: String constraint. The key is
-    /// <code>swf:workflowType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</p> </li>
+    /// <li> <p> <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1841,10 +1500,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkflowTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1853,8 +1512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
@@ -1863,8 +1522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow type to describe.</p>
-        pub fn workflow_type(mut self, inp: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(inp);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The workflow type to describe.</p>
@@ -1878,37 +1537,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetWorkflowExecutionHistory`.
     ///
-    /// <p>Returns the history of the specified workflow execution. The results may be split into
-    /// multiple pages. To retrieve subsequent pages, make the call again using the
-    /// <code>nextPageToken</code> returned by the initial call.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowExecutionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1953,10 +1593,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkflowExecutionHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1964,9 +1604,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetWorkflowExecutionHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetWorkflowExecutionHistoryPaginator<C, M, R> {
+            crate::paginator::GetWorkflowExecutionHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain containing the workflow execution.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -1975,8 +1623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
-        pub fn execution(mut self, inp: crate::model::WorkflowExecution) -> Self {
-            self.inner = self.inner.execution(inp);
+        pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
+            self.inner = self.inner.execution(input);
             self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
@@ -1987,26 +1635,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2014,28 +1650,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-        /// events.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -2043,35 +1673,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListActivityTypes`.
     ///
-    /// <p>Returns information about all activities registered in the specified domain that match
-    /// the specified name and registration status. The result includes information like creation
-    /// date, current status of the activity, etc. The results may be split into multiple pages. To
-    /// retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned
-    /// by the initial call.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActivityTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2116,10 +1727,10 @@ pub mod fluent_builders {
                 crate::input::ListActivityTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2127,9 +1738,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListActivityTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListActivityTypesPaginator<C, M, R> {
+            crate::paginator::ListActivityTypesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain in which the activity types have been registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity types have been registered.</p>
@@ -2138,8 +1755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
@@ -2148,8 +1765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
-        pub fn registration_status(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(inp);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
@@ -2160,26 +1777,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registration_status(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2187,28 +1792,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-        /// types.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -2216,55 +1815,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListClosedWorkflowExecutions`.
     ///
-    /// <p>Returns a list of closed workflow executions in the specified domain that meet the
-    /// filtering criteria. The results may be split into multiple pages. To retrieve subsequent
-    /// pages, make the call again using the nextPageToken returned by the initial call.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>tagFilter.tag</code>: String constraint. The key is
-    /// <code>swf:tagFilter.tag</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.name</code>: String constraint. The key is
-    /// <code>swf:typeFilter.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.version</code>: String constraint. The key is
-    /// <code>swf:typeFilter.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClosedWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2309,10 +1876,10 @@ pub mod fluent_builders {
                 crate::input::ListClosedWorkflowExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2320,9 +1887,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClosedWorkflowExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListClosedWorkflowExecutionsPaginator<C, M, R> {
+            crate::paginator::ListClosedWorkflowExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2330,25 +1905,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their start times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their start times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn start_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(inp);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their start times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their start times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_start_time_filter(
             mut self,
@@ -2357,25 +1922,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_filter(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their close times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their close times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn close_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.close_time_filter(inp);
+        pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.close_time_filter(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their close times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their close times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_close_time_filter(
             mut self,
@@ -2384,25 +1939,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_close_time_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(mut self, inp: crate::model::WorkflowExecutionFilter) -> Self {
-            self.inner = self.inner.execution_filter(inp);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -2411,27 +1956,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this <i>close
-        /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-        /// workflow executions are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn close_status_filter(mut self, inp: crate::model::CloseStatusFilter) -> Self {
-            self.inner = self.inner.close_status_filter(inp);
+        pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
+            self.inner = self.inner.close_status_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this <i>close
-        /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-        /// workflow executions are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_close_status_filter(
             mut self,
@@ -2440,25 +1973,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_close_status_filter(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, inp: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(inp);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -2467,23 +1990,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_filter(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, inp: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(inp);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -2492,26 +2007,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filter(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2519,28 +2022,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start or the close time of the
-        /// executions.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start or the close time of the
-        /// executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -2548,39 +2045,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomains`.
     ///
-    /// <p>Returns the list of domains registered in the account. The results may be split into
-    /// multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken
-    /// returned by the initial call.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains. The element must be set to
-    /// <code>arn:aws:swf::AccountID:domain/*</code>, where <i>AccountID</i> is
-    /// the account ID, with no dashes.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>, where <i>AccountID</i> is the account ID, with no dashes.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2625,10 +2101,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2636,26 +2112,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
+        /// Create a paginator for this request
         ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator<C, M, R> {
+            crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2664,8 +2134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
-        pub fn registration_status(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(inp);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
@@ -2676,28 +2146,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registration_status(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the
-        /// domains.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the
-        /// domains.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -2705,55 +2169,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOpenWorkflowExecutions`.
     ///
-    /// <p>Returns a list of open workflow executions in the specified domain that meet the
-    /// filtering criteria. The results may be split into multiple pages. To retrieve subsequent
-    /// pages, make the call again using the nextPageToken returned by the initial call.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>tagFilter.tag</code>: String constraint. The key is
-    /// <code>swf:tagFilter.tag</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.name</code>: String constraint. The key is
-    /// <code>swf:typeFilter.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>typeFilter.version</code>: String constraint. The key is
-    /// <code>swf:typeFilter.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.</p> </li>
+    /// <li> <p> <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpenWorkflowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2798,10 +2230,10 @@ pub mod fluent_builders {
                 crate::input::ListOpenWorkflowExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2809,9 +2241,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOpenWorkflowExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOpenWorkflowExecutionsPaginator<C, M, R> {
+            crate::paginator::ListOpenWorkflowExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2819,14 +2259,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>Workflow executions are included in the returned results based on whether their start
-        /// times are within the range specified by this filter.</p>
-        pub fn start_time_filter(mut self, inp: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(inp);
+        /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
-        /// <p>Workflow executions are included in the returned results based on whether their start
-        /// times are within the range specified by this filter.</p>
+        /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2834,23 +2272,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_filter(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, inp: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(inp);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -2859,21 +2289,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_filter(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, inp: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(inp);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -2882,26 +2306,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filter(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2909,47 +2321,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start time of the executions.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start time of the executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(mut self, inp: crate::model::WorkflowExecutionFilter) -> Self {
-            self.inner = self.inner.execution_filter(inp);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -2962,7 +2362,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags for a given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3007,10 +2407,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3019,8 +2419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -3031,32 +2431,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWorkflowTypes`.
     ///
-    /// <p>Returns information about workflow types in the specified domain. The results may be
-    /// split into multiple pages that can be retrieved by making the call repeatedly.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkflowTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3101,10 +2485,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkflowTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3112,9 +2496,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkflowTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkflowTypesPaginator<C, M, R> {
+            crate::paginator::ListWorkflowTypesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
@@ -3123,8 +2513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, lists the workflow type with this name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>If specified, lists the workflow type with this name.</p>
@@ -3133,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
-        pub fn registration_status(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(inp);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
@@ -3145,26 +2535,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registration_status(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3172,28 +2550,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-        /// types.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -3201,43 +2573,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PollForActivityTask`.
     ///
-    /// <p>Used by workers to get an <a>ActivityTask</a> from the specified activity
-    /// <code>taskList</code>. This initiates a long poll, where the service holds the HTTP
-    /// connection open and responds as soon as a task becomes available. The maximum time the service
-    /// holds on to the request before responding is 60 seconds. If no task is available within 60
-    /// seconds, the poll returns an empty result. An empty result, in this context, means that an
-    /// ActivityTask is returned, but that the value of taskToken is an empty string. If a task is
-    /// returned, the worker should use its type to identify and process it correctly.</p>
-    /// <important>
-    /// <p>Workers should set their client side socket timeout to at least 70 seconds (10
-    /// seconds higher than the maximum time service may hold the poll request).</p>
+    /// <p>Used by workers to get an <code>ActivityTask</code> from the specified activity <code>taskList</code>. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the worker should use its type to identify and process it correctly.</p> <important>
+    /// <p>Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold the poll request).</p>
     /// </important>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the <code>taskList.name</code> parameter by using a
-    /// <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the
-    /// action to access only certain task lists.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForActivityTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3282,10 +2629,10 @@ pub mod fluent_builders {
                 crate::input::PollForActivityTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3294,8 +2641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
@@ -3304,35 +2651,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.inner = self.inner.set_task_list(input);
             self
         }
-        /// <p>Identity of the worker making the request, recorded in the
-        /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-        /// tracing when problems arise. The form of this identity is user defined.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+        pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(input.into());
             self
         }
-        /// <p>Identity of the worker making the request, recorded in the
-        /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-        /// tracing when problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity(input);
             self
@@ -3340,55 +2675,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PollForDecisionTask`.
     ///
-    /// <p>Used by deciders to get a <a>DecisionTask</a> from the specified decision
-    /// <code>taskList</code>. A decision task may be returned for any open workflow execution that
-    /// is using the specified task list. The task includes a paginated view of the history of the
-    /// workflow execution. The decider should use the workflow type and the history to determine how
-    /// to properly handle the task.</p>
-    /// <p>This action initiates a long poll, where the service holds the HTTP connection open and
-    /// responds as soon a task becomes available. If no decision task is available in the specified
-    /// task list before the timeout of 60 seconds expires, an empty result is returned. An empty
-    /// result, in this context, means that a DecisionTask is returned, but that the value of
-    /// taskToken is an empty string.</p>
-    /// <important>
-    /// <p>Deciders should set their client side socket timeout to at least 70 seconds (10
-    /// seconds higher than the timeout).</p>
+    /// <p>Used by deciders to get a <code>DecisionTask</code> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>
+    /// <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p> <important>
+    /// <p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p>
+    /// </important> <important>
+    /// <p>Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the <code>nextPageToken</code> returned by the initial call. Note that you do <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code> again.</p>
     /// </important>
-    /// <important>
-    /// <p>Because the number of workflow history events for a single workflow execution might
-    /// be very large, the result returned might be split up across a number of pages. To retrieve
-    /// subsequent pages, make additional calls to <code>PollForDecisionTask</code> using the
-    /// <code>nextPageToken</code> returned by the initial call. Note that you do
-    /// <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this
-    /// <code>nextPageToken</code>. Instead, call <code>PollForDecisionTask</code>
-    /// again.</p>
-    /// </important>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the <code>taskList.name</code> parameter by using a
-    /// <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the
-    /// action to access only certain task lists.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForDecisionTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3433,10 +2734,10 @@ pub mod fluent_builders {
                 crate::input::PollForDecisionTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3444,9 +2745,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::PollForDecisionTaskPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::PollForDecisionTaskPaginator<C, M, R> {
+            crate::paginator::PollForDecisionTaskPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain containing the task lists to poll.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the task lists to poll.</p>
@@ -3455,68 +2762,38 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.inner = self.inner.set_task_list(input);
             self
         }
-        /// <p>Identity of the decider making the request, which is recorded in the
-        /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-        /// problems arise. The form of this identity is user defined.</p>
-        pub fn identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(inp);
+        /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+        pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(input.into());
             self
         }
-        /// <p>Identity of the decider making the request, which is recorded in the
-        /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-        /// problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity(input);
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        /// <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-        /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-        /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
         /// </note>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        /// <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-        /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-        /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
         /// </note>
         pub fn set_next_page_token(
             mut self,
@@ -3525,34 +2802,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-        /// <p>This
-        /// is an upper limit only; the actual number of results returned per call may be fewer than the
-        /// specified maximum.</p>
-        pub fn maximum_page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(inp);
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-        /// <p>This
-        /// is an upper limit only; the actual number of results returned per call may be fewer than the
-        /// specified maximum.</p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_page_size(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-        /// events.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -3560,55 +2827,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RecordActivityTaskHeartbeat`.
     ///
-    /// <p>Used by activity workers to report to the service that the <a>ActivityTask</a> represented by the specified <code>taskToken</code> is still making progress. The worker
-    /// can also specify details of the progress, for example percent complete, using the
-    /// <code>details</code> parameter. This action can also be used by the worker as a mechanism to
-    /// check if cancellation is being requested for the activity task. If a cancellation is being
-    /// attempted for the specified task, then the boolean <code>cancelRequested</code> flag returned
-    /// by the service is set to <code>true</code>.</p>
-    /// <p>This action resets the <code>taskHeartbeatTimeout</code> clock. The
-    /// <code>taskHeartbeatTimeout</code> is specified in <a>RegisterActivityType</a>.</p>
-    /// <p>This action doesn't in itself create an event in the workflow execution history.
-    /// However, if the task times out, the workflow execution history contains a
-    /// <code>ActivityTaskTimedOut</code> event that contains the information from the last
-    /// heartbeat generated by the activity worker.</p>
-    /// <note>
-    /// <p>The <code>taskStartToCloseTimeout</code> of an activity type is the maximum duration
-    /// of an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a> requests received. The <code>taskStartToCloseTimeout</code> is also specified in <a>RegisterActivityType</a>.</p>
-    /// </note>
-    /// <note>
-    /// <p>This operation is only useful for long-lived activities to report liveliness of the
-    /// task and to determine if a cancellation is being attempted.</p>
-    /// </note>
-    /// <important>
-    /// <p>If the <code>cancelRequested</code> flag returns <code>true</code>, a cancellation is
-    /// being attempted. If the worker can cancel the activity, it should respond with <a>RespondActivityTaskCanceled</a>. Otherwise, it should ignore the cancellation
-    /// request.</p>
+    /// <p>Used by activity workers to report to the service that the <code>ActivityTask</code> represented by the specified <code>taskToken</code> is still making progress. The worker can also specify details of the progress, for example percent complete, using the <code>details</code> parameter. This action can also be used by the worker as a mechanism to check if cancellation is being requested for the activity task. If a cancellation is being attempted for the specified task, then the boolean <code>cancelRequested</code> flag returned by the service is set to <code>true</code>.</p>
+    /// <p>This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code> is specified in <code>RegisterActivityType</code>.</p>
+    /// <p>This action doesn't in itself create an event in the workflow execution history. However, if the task times out, the workflow execution history contains a <code>ActivityTaskTimedOut</code> event that contains the information from the last heartbeat generated by the activity worker.</p> <note>
+    /// <p>The <code>taskStartToCloseTimeout</code> of an activity type is the maximum duration of an activity task, regardless of the number of <code>RecordActivityTaskHeartbeat</code> requests received. The <code>taskStartToCloseTimeout</code> is also specified in <code>RegisterActivityType</code>.</p>
+    /// </note> <note>
+    /// <p>This operation is only useful for long-lived activities to report liveliness of the task and to determine if a cancellation is being attempted.</p>
+    /// </note> <important>
+    /// <p>If the <code>cancelRequested</code> flag returns <code>true</code>, a cancellation is being attempted. If the worker can cancel the activity, it should respond with <code>RespondActivityTaskCanceled</code>. Otherwise, it should ignore the cancellation request.</p>
     /// </important>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecordActivityTaskHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3653,10 +2889,10 @@ pub mod fluent_builders {
                 crate::input::RecordActivityTaskHeartbeatInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3664,31 +2900,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
         /// </important>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
         /// <p>If specified, contains details about the progress of the task.</p>
-        pub fn details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(inp);
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p>If specified, contains details about the progress of the task.</p>
@@ -3699,54 +2927,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterActivityType`.
     ///
-    /// <p>Registers a new <i>activity type</i> along with its configuration
-    /// settings in the specified domain.</p>
-    /// <important>
-    /// <p>A <code>TypeAlreadyExists</code> fault is returned if the type already exists in the
-    /// domain. You cannot change any configuration settings of the type after its registration, and
-    /// it must be registered as a new version.</p>
+    /// <p>Registers a new <i>activity type</i> along with its configuration settings in the specified domain.</p> <important>
+    /// <p>A <code>TypeAlreadyExists</code> fault is returned if the type already exists in the domain. You cannot change any configuration settings of the type after its registration, and it must be registered as a new version.</p>
     /// </important>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>defaultTaskList.name</code>: String constraint. The key is
-    /// <code>swf:defaultTaskList.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>: String constraint. The key is <code>swf:name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>: String constraint. The key is
-    /// <code>swf:version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</p> </li>
+    /// <li> <p> <code>name</code>: String constraint. The key is <code>swf:name</code>.</p> </li>
+    /// <li> <p> <code>version</code>: String constraint. The key is <code>swf:version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3791,10 +2988,10 @@ pub mod fluent_builders {
                 crate::input::RegisterActivityTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3803,8 +3000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
@@ -3813,56 +3010,36 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the activity type within the domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the activity type within the domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the activity type.</p>
-        /// <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be
-        /// unique within the domain.</p>
+        /// <p>The version of the activity type.</p> <note>
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the activity type.</p>
-        /// <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be
-        /// unique within the domain.</p>
+        /// <p>The version of the activity type.</p> <note>
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
         }
         /// <p>A textual description of the activity type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A textual description of the activity type.</p>
@@ -3870,25 +3047,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-        /// of this activity type. This default can be overridden when scheduling an activity task using
-        /// the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_start_to_close_timeout(inp);
+            self.inner = self.inner.default_task_start_to_close_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-        /// of this activity type. This default can be overridden when scheduling an activity task using
-        /// the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3896,33 +3065,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_start_to_close_timeout(input);
             self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of
-        /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-        /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-        /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-        /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-        /// clean up the activity task.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_heartbeat_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_heartbeat_timeout(inp);
+            self.inner = self.inner.default_task_heartbeat_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of
-        /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-        /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-        /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-        /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-        /// clean up the activity task.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3930,18 +3083,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_heartbeat_timeout(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-        /// type. This default task list is used if a task list isn't provided when a task is scheduled
-        /// through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        pub fn default_task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.default_task_list(inp);
+        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.default_task_list(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-        /// type. This default task list is used if a task list isn't provided when a task is scheduled
-        /// through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -3949,24 +3096,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_list(input);
             self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>in the
-        /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
-        pub fn default_task_priority(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_task_priority(inp);
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
+        pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_task_priority(input.into());
             self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>in the
-        /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3974,25 +3111,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_priority(input);
             self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can
-        /// wait before being assigned to a worker. This default can be overridden when scheduling an
-        /// activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_start_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_schedule_to_start_timeout(inp);
+            self.inner = self
+                .inner
+                .default_task_schedule_to_start_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can
-        /// wait before being assigned to a worker. This default can be overridden when scheduling an
-        /// activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4000,25 +3131,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_schedule_to_start_timeout(input);
             self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-        /// default can be overridden when scheduling an activity task using the
-        /// <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_close_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_schedule_to_close_timeout(inp);
+            self.inner = self
+                .inner
+                .default_task_schedule_to_close_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-        /// default can be overridden when scheduling an activity task using the
-        /// <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4030,30 +3155,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterDomain`.
     ///
     /// <p>Registers a new domain.</p>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>You cannot use an IAM policy to control domain access for this action. The name of
-    /// the domain being registered is available as the resource of this action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of this action.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4098,10 +3208,10 @@ pub mod fluent_builders {
                 crate::input::RegisterDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4109,31 +3219,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain
-        /// is registered in.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain
-        /// is registered in.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A text description of the domain.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A text description of the domain.</p>
@@ -4141,31 +3241,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain
-        /// should be kept by the service. After the retention period, the workflow execution isn't
-        /// available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-        /// execution history isn't retained. As soon as the workflow execution completes, the execution
-        /// record and its history are deleted.</p>
-        /// <p>The maximum workflow execution retention period is 90 days. For more information about
-        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn workflow_execution_retention_period_in_days(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.workflow_execution_retention_period_in_days(inp);
+            self.inner = self
+                .inner
+                .workflow_execution_retention_period_in_days(input.into());
             self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain
-        /// should be kept by the service. After the retention period, the workflow execution isn't
-        /// available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-        /// execution history isn't retained. As soon as the workflow execution completes, the execution
-        /// record and its history are deleted.</p>
-        /// <p>The maximum workflow execution retention period is 90 days. For more information about
-        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_workflow_execution_retention_period_in_days(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4181,8 +3271,8 @@ pub mod fluent_builders {
         ///
         /// <p>Tags to be added when registering a domain.</p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::ResourceTag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags to be added when registering a domain.</p>
@@ -4197,55 +3287,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterWorkflowType`.
     ///
-    /// <p>Registers a new <i>workflow type</i> and its configuration settings in
-    /// the specified domain.</p>
-    /// <p>The retention period for the workflow history is set by the <a>RegisterDomain</a> action.</p>
-    /// <important>
-    /// <p>If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned.
-    /// You cannot change the configuration settings of a workflow type once it is registered and it
-    /// must be registered as a new version.</p>
+    /// <p>Registers a new <i>workflow type</i> and its configuration settings in the specified domain.</p>
+    /// <p>The retention period for the workflow history is set by the <code>RegisterDomain</code> action.</p> <important>
+    /// <p>If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned. You cannot change the configuration settings of a workflow type once it is registered and it must be registered as a new version.</p>
     /// </important>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>defaultTaskList.name</code>: String constraint. The key is
-    /// <code>swf:defaultTaskList.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>: String constraint. The key is <code>swf:name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>: String constraint. The key is
-    /// <code>swf:version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</p> </li>
+    /// <li> <p> <code>name</code>: String constraint. The key is <code>swf:name</code>.</p> </li>
+    /// <li> <p> <code>version</code>: String constraint. The key is <code>swf:version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4290,10 +3349,10 @@ pub mod fluent_builders {
                 crate::input::RegisterWorkflowTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4302,8 +3361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
@@ -4312,58 +3371,36 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workflow type.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow type.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the workflow type.</p>
-        /// <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be
-        /// unique within the domain. To get a list of all currently registered workflow types, use the
-        /// <a>ListWorkflowTypes</a> action.</p>
+        /// <p>The version of the workflow type.</p> <note>
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the workflow type.</p>
-        /// <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be
-        /// unique within the domain. To get a list of all currently registered workflow types, use the
-        /// <a>ListWorkflowTypes</a> action.</p>
+        /// <p>The version of the workflow type.</p> <note>
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
         }
         /// <p>Textual description of the workflow type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Textual description of the workflow type.</p>
@@ -4371,23 +3408,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-        /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_start_to_close_timeout(inp);
+            self.inner = self.inner.default_task_start_to_close_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-        /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4395,31 +3426,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_start_to_close_timeout(input);
             self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-        /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-        /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-        /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-        /// to time out.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
         pub fn default_execution_start_to_close_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_execution_start_to_close_timeout(inp);
+            self.inner = self
+                .inner
+                .default_execution_start_to_close_timeout(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-        /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-        /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-        /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-        /// to time out.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
         pub fn set_default_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4429,20 +3448,12 @@ pub mod fluent_builders {
                 .set_default_execution_start_to_close_timeout(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-        /// executions of this workflow type. This default is used only if a task list isn't provided when
-        /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-        /// <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        pub fn default_task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.default_task_list(inp);
+        /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.default_task_list(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-        /// executions of this workflow type. This default is used only if a task list isn't provided when
-        /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-        /// <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -4450,22 +3461,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_list(input);
             self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn default_task_priority(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_task_priority(inp);
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_task_priority(input.into());
             self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4473,55 +3476,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_task_priority(input);
             self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a
-        /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-        /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
         /// </ul>
-        pub fn default_child_policy(mut self, inp: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.default_child_policy(inp);
+        pub fn default_child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.default_child_policy(input);
             self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a
-        /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-        /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
         /// </ul>
         pub fn set_default_child_policy(
             mut self,
@@ -4530,23 +3501,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_child_policy(input);
             self
         }
-        /// <p>The default IAM role attached to this workflow type.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
-        pub fn default_lambda_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_lambda_role(inp);
+        pub fn default_lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_lambda_role(input.into());
             self
         }
-        /// <p>The default IAM role attached to this workflow type.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn set_default_lambda_role(
             mut self,
@@ -4558,46 +3521,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RequestCancelWorkflowExecution`.
     ///
-    /// <p>Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running
-    /// workflow execution identified by the given domain, workflowId, and runId. This logically
-    /// requests the cancellation of the workflow execution as a whole. It is up to the decider to
-    /// take appropriate actions when it receives an execution history with this event.</p>
-    ///
-    /// <note>
-    /// <p>If the runId isn't specified, the <code>WorkflowExecutionCancelRequested</code> event
-    /// is recorded in the history of the current open workflow execution with the specified
-    /// workflowId in the domain.</p>
+    /// <p>Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> <note>
+    /// <p>If the runId isn't specified, the <code>WorkflowExecutionCancelRequested</code> event is recorded in the history of the current open workflow execution with the specified workflowId in the domain.</p>
+    /// </note> <note>
+    /// <p>Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of <code>TerminateWorkflowExecution</code> when possible.</p>
     /// </note>
-    ///
-    /// <note>
-    /// <p>Because this action allows the workflow to properly clean up and gracefully close, it
-    /// should be used instead of <a>TerminateWorkflowExecution</a> when
-    /// possible.</p>
-    /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestCancelWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4642,10 +3579,10 @@ pub mod fluent_builders {
                 crate::input::RequestCancelWorkflowExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4654,8 +3591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
@@ -4664,8 +3601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
-        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(inp);
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
@@ -4674,8 +3611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to cancel.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to cancel.</p>
@@ -4686,49 +3623,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RespondActivityTaskCanceled`.
     ///
-    /// <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
-    /// by the <code>taskToken</code> was successfully canceled. Additional <code>details</code> can
-    /// be provided using the <code>details</code> argument.</p>
-    ///
-    /// <p>These <code>details</code> (if provided) appear in the
-    /// <code>ActivityTaskCanceled</code> event added to the workflow history.</p>
-    ///
-    /// <important>
-    /// <p>Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a> request returns <code>true</code> and if the
-    /// activity can be safely undone or abandoned.</p>
+    /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> was successfully canceled. Additional <code>details</code> can be provided using the <code>details</code> argument.</p>
+    /// <p>These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code> event added to the workflow history.</p> <important>
+    /// <p>Only use this operation if the <code>canceled</code> flag of a <code>RecordActivityTaskHeartbeat</code> request returns <code>true</code> and if the activity can be safely undone or abandoned.</p>
     /// </important>
-    ///
-    /// <p>A task is considered open from the time that it is scheduled until it is closed.
-    /// Therefore a task is reported as open while a worker is processing it. A task is closed after
-    /// it has been specified in a call to <a>RespondActivityTaskCompleted</a>,
-    /// RespondActivityTaskCanceled, <a>RespondActivityTaskFailed</a>, or the task has
-    /// <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-    /// out</a>.</p>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to <code>RespondActivityTaskCompleted</code>, RespondActivityTaskCanceled, <code>RespondActivityTaskFailed</code>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskCanceled<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4773,10 +3681,10 @@ pub mod fluent_builders {
                 crate::input::RespondActivityTaskCanceledInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4784,31 +3692,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
         /// <p> Information about the cancellation.</p>
-        pub fn details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(inp);
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Information about the cancellation.</p>
@@ -4819,47 +3719,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RespondActivityTaskCompleted`.
     ///
-    /// <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
-    /// by the <code>taskToken</code> completed successfully with a <code>result</code> (if provided).
-    /// The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the
-    /// workflow history.</p>
-    ///
-    /// <important>
-    /// <p>If the requested task doesn't complete successfully, use <a>RespondActivityTaskFailed</a> instead. If the worker finds that the task is
-    /// canceled through the <code>canceled</code> flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean up and then call
-    /// <a>RespondActivityTaskCanceled</a>.</p>
+    /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> completed successfully with a <code>result</code> (if provided). The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.</p> <important>
+    /// <p>If the requested task doesn't complete successfully, use <code>RespondActivityTaskFailed</code> instead. If the worker finds that the task is canceled through the <code>canceled</code> flag returned by <code>RecordActivityTaskHeartbeat</code>, it should cancel the task, clean up and then call <code>RespondActivityTaskCanceled</code>.</p>
     /// </important>
-    ///
-    /// <p>A task is considered open from the time that it is scheduled until it is closed.
-    /// Therefore a task is reported as open while a worker is processing it. A task is closed after
-    /// it has been specified in a call to RespondActivityTaskCompleted, <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the
-    /// task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-    /// out</a>.</p>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, <code>RespondActivityTaskCanceled</code>, <code>RespondActivityTaskFailed</code>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskCompleted<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4904,10 +3776,10 @@ pub mod fluent_builders {
                 crate::input::RespondActivityTaskCompletedInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4915,36 +3787,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
-        /// <p>The result of the activity task. It is a free form string that is implementation
-        /// specific.</p>
-        pub fn result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result(inp);
+        /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
+        pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result(input.into());
             self
         }
-        /// <p>The result of the activity task. It is a free form string that is implementation
-        /// specific.</p>
+        /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_result(input);
             self
@@ -4952,40 +3814,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RespondActivityTaskFailed`.
     ///
-    /// <p>Used by workers to tell the service that the <a>ActivityTask</a> identified
-    /// by the <code>taskToken</code> has failed with <code>reason</code> (if specified). The
-    /// <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code>
-    /// event added to the workflow history.</p>
-    ///
-    /// <p>A task is considered open from the time that it is scheduled until it is closed.
-    /// Therefore a task is reported as open while a worker is processing it. A task is closed after
-    /// it has been specified in a call to <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>, RespondActivityTaskFailed, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
-    /// out</a>.</p>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added to the workflow history.</p>
+    /// <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to <code>RespondActivityTaskCompleted</code>, <code>RespondActivityTaskCanceled</code>, RespondActivityTaskFailed, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondActivityTaskFailed<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5030,10 +3869,10 @@ pub mod fluent_builders {
                 crate::input::RespondActivityTaskFailedInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5041,33 +3880,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        ///
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        ///
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
@@ -5076,8 +3905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Detailed information about the failure.</p>
-        pub fn details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(inp);
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Detailed information about the failure.</p>
@@ -5088,27 +3917,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RespondDecisionTaskCompleted`.
     ///
-    /// <p>Used by deciders to tell the service that the <a>DecisionTask</a> identified
-    /// by the <code>taskToken</code> has successfully completed. The <code>decisions</code> argument
-    /// specifies the list of decisions made while processing the task.</p>
-    ///
-    /// <p>A <code>DecisionTaskCompleted</code> event is added to the workflow history. The
-    /// <code>executionContext</code> specified is attached to the event in the workflow execution
-    /// history.</p>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    ///
-    /// <p>If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>, it
-    /// can express permissions for the list of decisions in the <code>decisions</code> parameter.
-    /// Each of the decisions has one or more parameters, much like a regular API call. To allow for
-    /// policies to be as readable as possible, you can express permissions on decisions as if they
-    /// were actual API calls, including applying conditions to some parameters. For more information,
-    /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-    /// IAM to Manage Access to Amazon SWF Workflows</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used by deciders to tell the service that the <code>DecisionTask</code> identified by the <code>taskToken</code> has successfully completed. The <code>decisions</code> argument specifies the list of decisions made while processing the task.</p>
+    /// <p>A <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached to the event in the workflow execution history.</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>, it can express permissions for the list of decisions in the <code>decisions</code> parameter. Each of the decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RespondDecisionTaskCompleted<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5153,10 +3966,10 @@ pub mod fluent_builders {
                 crate::input::RespondDecisionTaskCompletedInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5164,23 +3977,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
@@ -5190,16 +3995,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_decisions`](Self::set_decisions).
         ///
-        /// <p>The list of decisions (possibly empty) made by the decider while processing this
-        /// decision task. See the docs for the <a>Decision</a> structure for
-        /// details.</p>
-        pub fn decisions(mut self, inp: impl Into<crate::model::Decision>) -> Self {
-            self.inner = self.inner.decisions(inp);
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
+        pub fn decisions(mut self, input: crate::model::Decision) -> Self {
+            self.inner = self.inner.decisions(input);
             self
         }
-        /// <p>The list of decisions (possibly empty) made by the decider while processing this
-        /// decision task. See the docs for the <a>Decision</a> structure for
-        /// details.</p>
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
         pub fn set_decisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Decision>>,
@@ -5208,8 +4009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User defined context to add to workflow execution.</p>
-        pub fn execution_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_context(inp);
+        pub fn execution_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_context(input.into());
             self
         }
         /// <p>User defined context to add to workflow execution.</p>
@@ -5223,46 +4024,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SignalWorkflowExecution`.
     ///
-    /// <p>Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution
-    /// history and creates a decision task for the workflow execution identified by the given domain,
-    /// workflowId and runId. The event is recorded with the specified user defined signalName and
-    /// input (if provided).</p>
-    ///
-    /// <note>
-    /// <p>If a runId isn't specified, then the <code>WorkflowExecutionSignaled</code> event is
-    /// recorded in the history of the current open workflow with the matching workflowId in the
-    /// domain.</p>
+    /// <p>Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).</p> <note>
+    /// <p>If a runId isn't specified, then the <code>WorkflowExecutionSignaled</code> event is recorded in the history of the current open workflow with the matching workflowId in the domain.</p>
+    /// </note> <note>
+    /// <p>If the specified workflow execution isn't open, this method fails with <code>UnknownResource</code>.</p>
     /// </note>
-    ///
-    /// <note>
-    /// <p>If the specified workflow execution isn't open, this method fails with
-    /// <code>UnknownResource</code>.</p>
-    /// </note>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignalWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5307,10 +4082,10 @@ pub mod fluent_builders {
                 crate::input::SignalWorkflowExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5319,8 +4094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
@@ -5329,8 +4104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
-        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(inp);
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
@@ -5339,8 +4114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to signal.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to signal.</p>
@@ -5349,8 +4124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-        pub fn signal_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signal_name(inp);
+        pub fn signal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signal_name(input.into());
             self
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
@@ -5358,14 +4133,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signal_name(input);
             self
         }
-        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history.</p>
-        pub fn input(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
-        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history.</p>
+        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input(input);
             self
@@ -5373,73 +4146,27 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartWorkflowExecution`.
     ///
-    /// <p>Starts an execution of the workflow type in the specified domain using the provided
-    /// <code>workflowId</code> and input data.</p>
-    ///
+    /// <p>Starts an execution of the workflow type in the specified domain using the provided <code>workflowId</code> and input data.</p>
     /// <p>This action returns the newly started workflow execution.</p>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>taskList</code>: String constraint. The key is
-    /// <code>swf:taskList.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.name</code>: String constraint. The key is
-    /// <code>swf:workflowType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.version</code>: String constraint. The key is
-    /// <code>swf:workflowType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.</p> </li>
+    /// <li> <p> <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.</p> </li>
+    /// <li> <p> <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.</p> </li>
+    /// <li> <p> <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.</p> </li>
+    /// <li> <p> <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.</p> </li>
+    /// <li> <p> <code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</p> </li>
+    /// <li> <p> <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</p> </li>
+    /// <li> <p> <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5484,10 +4211,10 @@ pub mod fluent_builders {
                 crate::input::StartWorkflowExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5496,8 +4223,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
@@ -5505,37 +4232,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to
-        /// associate a custom identifier with the workflow execution. You may specify the same identifier
-        /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-        /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-        /// time within the same domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(inp);
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to
-        /// associate a custom identifier with the workflow execution. You may specify the same identifier
-        /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-        /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-        /// time within the same domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workflow_id(input);
             self
         }
         /// <p>The type of the workflow to start.</p>
-        pub fn workflow_type(mut self, inp: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(inp);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The type of the workflow to start.</p>
@@ -5546,58 +4257,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workflow_type(input);
             self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-        /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-        /// type.</p>
-        /// <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the
-        /// workflow type or through this parameter. If neither this parameter is set nor a default task
-        /// list was specified at registration time then a fault is returned.</p>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, inp: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(inp);
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-        /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-        /// type.</p>
-        /// <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the
-        /// workflow type or through this parameter. If neither this parameter is set nor a default task
-        /// list was specified at registration time then a fault is returned.</p>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.inner = self.inner.set_task_list(input);
             self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default
-        /// priority that was assigned when the workflow type was registered. If not set, then the default
-        /// task priority for the workflow type is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn task_priority(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_priority(inp);
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        pub fn task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_priority(input.into());
             self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default
-        /// priority that was assigned when the workflow type was registered. If not set, then the default
-        /// task priority for the workflow type is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5605,54 +4288,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_priority(input);
             self
         }
-        /// <p>The input for the workflow execution. This is a free form string which should be
-        /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
-        pub fn input(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
-        /// <p>The input for the workflow execution. This is a free form string which should be
-        /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+        /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input(input);
             self
         }
-        /// <p>The total duration for this workflow execution. This overrides the
-        /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to
-        /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-        /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-        /// timeout; there is a one-year max limit on the time that a workflow execution can
-        /// run.</p>
-        ///
-        /// <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter
-        /// or as a default when the workflow type is registered. If neither this parameter nor a
-        /// default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
         /// </note>
         pub fn execution_start_to_close_timeout(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.execution_start_to_close_timeout(inp);
+            self.inner = self.inner.execution_start_to_close_timeout(input.into());
             self
         }
-        /// <p>The total duration for this workflow execution. This overrides the
-        /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to
-        /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-        /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-        /// timeout; there is a one-year max limit on the time that a workflow execution can
-        /// run.</p>
-        ///
-        /// <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter
-        /// or as a default when the workflow type is registered. If neither this parameter nor a
-        /// default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
         /// </note>
         pub fn set_execution_start_to_close_timeout(
             mut self,
@@ -5665,16 +4324,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-        /// specifying a <a>TagFilter</a>.</p>
-        pub fn tag_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+        pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_list(input.into());
             self
         }
-        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-        /// specifying a <a>TagFilter</a>.</p>
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5682,31 +4337,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_list(input);
             self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-        /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        /// <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-        /// a default for the workflow type or through this parameter. If neither this parameter is set
-        /// nor a default task start-to-close timeout was specified at registration time then a fault is
-        /// returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
         /// </note>
-        pub fn task_start_to_close_timeout(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_start_to_close_timeout(inp);
+        pub fn task_start_to_close_timeout(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.task_start_to_close_timeout(input.into());
             self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-        /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        /// <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-        /// a default for the workflow type or through this parameter. If neither this parameter is set
-        /// nor a default task start-to-close timeout was specified at registration time then a fault is
-        /// returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_task_start_to_close_timeout(
             mut self,
@@ -5715,65 +4359,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_start_to_close_timeout(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-        /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-        /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-        /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
-        pub fn child_policy(mut self, inp: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.child_policy(inp);
+        pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.child_policy(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-        /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-        /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-        /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_child_policy(
             mut self,
@@ -5782,23 +4388,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_child_policy(input);
             self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-        /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
-        pub fn lambda_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lambda_role(inp);
+        pub fn lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lambda_role(input.into());
             self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-        /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lambda_role(input);
@@ -5807,11 +4405,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add a tag to a Amazon SWF domain.</p>
-    /// <note>
+    /// <p>Add a tag to a Amazon SWF domain.</p> <note>
     /// <p>Amazon SWF supports a maximum of 50 tags per resource.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5856,10 +4453,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5868,8 +4465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -5883,8 +4480,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of tags to add to a domain. </p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::ResourceTag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to add to a domain. </p>
@@ -5899,51 +4496,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TerminateWorkflowExecution`.
     ///
-    /// <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
-    /// workflow execution identified by the given domain, runId, and workflowId. The child policy,
-    /// registered with the workflow type or specified when starting this execution, is applied to any
-    /// open child workflow executions of this workflow execution.</p>
-    ///
-    /// <important>
-    /// <p>If the identified workflow execution was in progress, it is terminated
-    /// immediately.</p>
-    /// </important>
-    ///
-    /// <note>
-    /// <p>If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event
-    /// is recorded in the history of the current open workflow with the matching workflowId in the
-    /// domain.</p>
+    /// <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.</p> <important>
+    /// <p>If the identified workflow execution was in progress, it is terminated immediately.</p>
+    /// </important> <note>
+    /// <p>If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event is recorded in the history of the current open workflow with the matching workflowId in the domain.</p>
+    /// </note> <note>
+    /// <p>You should consider using <code>RequestCancelWorkflowExecution</code> action instead because it allows the workflow to gracefully close while <code>TerminateWorkflowExecution</code> doesn't.</p>
     /// </note>
-    ///
-    /// <note>
-    /// <p>You should consider using <a>RequestCancelWorkflowExecution</a> action
-    /// instead because it allows the workflow to gracefully close while <a>TerminateWorkflowExecution</a> doesn't.</p>
-    /// </note>
-    ///
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateWorkflowExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5988,10 +4556,10 @@ pub mod fluent_builders {
                 crate::input::TerminateWorkflowExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6000,8 +4568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain of the workflow execution to terminate.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain of the workflow execution to terminate.</p>
@@ -6010,8 +4578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
-        pub fn workflow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(inp);
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
@@ -6020,8 +4588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to terminate.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to terminate.</p>
@@ -6030,8 +4598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
@@ -6040,8 +4608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Details for terminating the workflow execution.</p>
-        pub fn details(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(inp);
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Details for terminating the workflow execution.</p>
@@ -6049,63 +4617,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_details(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-        /// execution being terminated. This policy overrides the child policy specified for the workflow
-        /// execution at registration time or when starting the execution.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
-        pub fn child_policy(mut self, inp: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.child_policy(inp);
+        pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.child_policy(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-        /// execution being terminated. This policy overrides the child policy specified for the workflow
-        /// execution at registration time or when starting the execution.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_child_policy(
             mut self,
@@ -6117,49 +4649,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UndeprecateActivityType`.
     ///
-    /// <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity type has
-    /// been undeprecated, you can create new tasks of that activity type.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity type has been undeprecated, you can create new tasks of that activity type.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>activityType.name</code>: String constraint. The key is
-    /// <code>swf:activityType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>activityType.version</code>: String constraint. The key is
-    /// <code>swf:activityType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</p> </li>
+    /// <li> <p> <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateActivityType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6204,10 +4709,10 @@ pub mod fluent_builders {
                 crate::input::UndeprecateActivityTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6216,8 +4721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
@@ -6226,8 +4731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The activity type to undeprecate.</p>
-        pub fn activity_type(mut self, inp: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(inp);
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
         /// <p>The activity type to undeprecate.</p>
@@ -6241,36 +4746,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UndeprecateDomain`.
     ///
-    /// <p>Undeprecates a previously deprecated domain. After a domain has been undeprecated it can be used
-    /// to create new workflow executions or register new types.</p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Undeprecates a previously deprecated domain. After a domain has been undeprecated it can be used to create new workflow executions or register new types.</p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use an IAM policy to constrain this action's parameters.</p>
-    /// </li>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
     /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6315,10 +4802,10 @@ pub mod fluent_builders {
                 crate::input::UndeprecateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6327,8 +4814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6339,49 +4826,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UndeprecateWorkflowType`.
     ///
-    /// <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow type has
-    /// been undeprecated, you can create new executions of that type. </p>
-    /// <note>
-    /// <p>This operation is eventually consistent. The results are best effort and may not
-    /// exactly reflect recent updates and changes.</p>
+    /// <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow type has been undeprecated, you can create new executions of that type. </p> <note>
+    /// <p>This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.</p>
     /// </note>
-    /// <p>
-    /// <b>Access Control</b>
-    /// </p>
-    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as
-    /// follows:</p>
+    /// <p> <b>Access Control</b> </p>
+    /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Use a <code>Resource</code> element with the domain name to limit the action to
-    /// only specified domains.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use an <code>Action</code> element to allow or deny permission to call this
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.</p>
+    /// <li> <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p> </li>
+    /// <li> <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p> </li>
+    /// <li> <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.name</code>: String constraint. The key is
-    /// <code>swf:workflowType.name</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>workflowType.version</code>: String constraint. The key is
-    /// <code>swf:workflowType.version</code>.</p>
-    /// </li>
+    /// <li> <p> <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.</p> </li>
+    /// <li> <p> <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the
-    /// parameter values fall outside the specified constraints, the action fails. The associated
-    /// event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
-    /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeprecateWorkflowType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6426,10 +4886,10 @@ pub mod fluent_builders {
                 crate::input::UndeprecateWorkflowTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6438,8 +4898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6448,8 +4908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn workflow_type(mut self, inp: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(inp);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6464,7 +4924,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a Amazon SWF domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6509,10 +4969,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6521,8 +4981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -6535,8 +4995,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tags to remove from the Amazon SWF domain.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tags to remove from the Amazon SWF domain.</p>
@@ -6549,6 +5009,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

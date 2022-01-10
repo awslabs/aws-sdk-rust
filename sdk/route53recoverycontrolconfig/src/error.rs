@@ -12,19 +12,19 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>402 response</p>
+    /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -73,8 +73,6 @@ impl CreateClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -161,19 +159,19 @@ pub struct CreateControlPanelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateControlPanelErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>402 response</p>
+    /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -222,8 +220,6 @@ impl CreateControlPanelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -322,19 +318,19 @@ pub struct CreateRoutingControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRoutingControlErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>402 response</p>
+    /// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -383,8 +379,6 @@ impl CreateRoutingControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -485,7 +479,7 @@ pub struct CreateSafetyRuleError {
 pub enum CreateSafetyRuleErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -529,8 +523,6 @@ impl CreateSafetyRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -589,17 +581,17 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -647,8 +639,6 @@ impl DeleteClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -727,17 +717,17 @@ pub struct DeleteControlPanelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteControlPanelErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -785,8 +775,6 @@ impl DeleteControlPanelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -877,17 +865,17 @@ pub struct DeleteRoutingControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRoutingControlErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -935,8 +923,6 @@ impl DeleteRoutingControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1029,9 +1015,9 @@ pub struct DeleteSafetyRuleError {
 pub enum DeleteSafetyRuleErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1076,8 +1062,6 @@ impl DeleteSafetyRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1144,17 +1128,17 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1202,8 +1186,6 @@ impl DescribeClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1285,17 +1267,17 @@ pub struct DescribeControlPanelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeControlPanelErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1343,8 +1325,6 @@ impl DescribeControlPanelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1435,17 +1415,17 @@ pub struct DescribeRoutingControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRoutingControlErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1493,8 +1473,6 @@ impl DescribeRoutingControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1585,9 +1563,9 @@ pub struct DescribeSafetyRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSafetyRuleErrorKind {
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1631,8 +1609,6 @@ impl DescribeSafetyRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1693,9 +1669,9 @@ pub struct ListAssociatedRoute53HealthChecksError {
 pub enum ListAssociatedRoute53HealthChecksErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1749,8 +1725,6 @@ impl ListAssociatedRoute53HealthChecksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1821,15 +1795,15 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1876,8 +1850,6 @@ impl ListClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1951,15 +1923,15 @@ pub struct ListControlPanelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlPanelsErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2006,8 +1978,6 @@ impl ListControlPanelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2090,15 +2060,15 @@ pub struct ListRoutingControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRoutingControlsErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2145,8 +2115,6 @@ impl ListRoutingControlsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2229,15 +2197,15 @@ pub struct ListSafetyRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSafetyRulesErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2284,8 +2252,6 @@ impl ListSafetyRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2349,6 +2315,342 @@ impl std::error::Error for ListSafetyRulesError {
     }
 }
 
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::InternalServerException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateControlPanel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2362,17 +2664,17 @@ pub struct UpdateControlPanelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateControlPanelErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2420,8 +2722,6 @@ impl UpdateControlPanelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2512,17 +2812,17 @@ pub struct UpdateRoutingControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRoutingControlErrorKind {
-    /// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+    /// <p>403 response - You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>409 response - ConflictException.</p>
+    /// <p>409 response - ConflictException. You might be using a predefined variable.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>429 response - ThrottlingException.</p>
+    /// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2570,8 +2870,6 @@ impl UpdateRoutingControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2664,9 +2962,9 @@ pub struct UpdateSafetyRuleError {
 pub enum UpdateSafetyRuleErrorKind {
     /// <p>500 response - InternalServiceError. Temporary service error. Retry the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>404 response - The query string contains a syntax error or resource not found.</p>
+    /// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+    /// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2711,8 +3009,6 @@ impl UpdateSafetyRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2766,7 +3062,7 @@ impl std::error::Error for UpdateSafetyRuleError {
     }
 }
 
-/// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you used parameters together incorrectly.</p>
+/// <p>400 response - Multiple causes. For example, you might have a malformed query string and input parameter might be out of range, or you might have used parameters together incorrectly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -2830,7 +3126,7 @@ impl ValidationException {
     }
 }
 
-/// <p>404 response - The query string contains a syntax error or resource not found.</p>
+/// <p>404 response - MalformedQueryString. The query string contains a syntax error or resource not found..</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2958,7 +3254,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>429 response - ThrottlingException.</p>
+/// <p>429 response - LimitExceededException or TooManyRequestsException.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -3022,7 +3318,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>409 response - ConflictException.</p>
+/// <p>409 response - ConflictException. You might be using a predefined variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3086,7 +3382,7 @@ impl ConflictException {
     }
 }
 
-/// <p>403 response - AccessDeniedException. You do not have sufficient access to perform this action.</p>
+/// <p>403 response - You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3150,7 +3446,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>402 response</p>
+/// <p>402 response - You attempted to create more resources than the service allows based on service quotas.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

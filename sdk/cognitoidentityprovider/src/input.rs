@@ -26,12 +26,9 @@ pub mod add_custom_attributes_input {
         /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
         ///
         /// <p>An array of custom attributes, such as Mutable and Name.</p>
-        pub fn custom_attributes(
-            mut self,
-            input: impl Into<crate::model::SchemaAttributeType>,
-        ) -> Self {
+        pub fn custom_attributes(mut self, input: crate::model::SchemaAttributeType) -> Self {
             let mut v = self.custom_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_attributes = Some(v);
             self
         }
@@ -60,7 +57,7 @@ pub mod add_custom_attributes_input {
 #[doc(hidden)]
 pub type AddCustomAttributesInputOperationOutputAlias = crate::operation::AddCustomAttributes;
 #[doc(hidden)]
-pub type AddCustomAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddCustomAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCustomAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AddCustomAttributes`](crate::operation::AddCustomAttributes)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +68,7 @@ impl AddCustomAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddCustomAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -156,7 +153,7 @@ impl AddCustomAttributesInput {
             "AddCustomAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -238,7 +235,7 @@ pub mod admin_add_user_to_group_input {
 #[doc(hidden)]
 pub type AdminAddUserToGroupInputOperationOutputAlias = crate::operation::AdminAddUserToGroup;
 #[doc(hidden)]
-pub type AdminAddUserToGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminAddUserToGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminAddUserToGroupInput {
     /// Consumes the builder and constructs an Operation<[`AdminAddUserToGroup`](crate::operation::AdminAddUserToGroup)>
     #[allow(clippy::let_and_return)]
@@ -249,7 +246,7 @@ impl AdminAddUserToGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminAddUserToGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -336,7 +333,7 @@ impl AdminAddUserToGroupInput {
             "AdminAddUserToGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -396,35 +393,14 @@ pub mod admin_confirm_sign_up_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
-        /// invokes the Lambda function that is specified for the <i>post
-        /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
-        /// passes a JSON payload, which the function receives as input. In this payload, the
-        /// <code>clientMetadata</code> attribute provides the data that you assigned to the
-        /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
-        /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
-        /// specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action invokes the Lambda function that is specified for the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. In this payload, the <code>clientMetadata</code> attribute provides the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in Lambda, you can process the ClientMetadata value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -437,35 +413,14 @@ pub mod admin_confirm_sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
-        /// invokes the Lambda function that is specified for the <i>post
-        /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
-        /// passes a JSON payload, which the function receives as input. In this payload, the
-        /// <code>clientMetadata</code> attribute provides the data that you assigned to the
-        /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
-        /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
-        /// specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action invokes the Lambda function that is specified for the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. In this payload, the <code>clientMetadata</code> attribute provides the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in Lambda, you can process the ClientMetadata value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -495,7 +450,7 @@ pub mod admin_confirm_sign_up_input {
 #[doc(hidden)]
 pub type AdminConfirmSignUpInputOperationOutputAlias = crate::operation::AdminConfirmSignUp;
 #[doc(hidden)]
-pub type AdminConfirmSignUpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminConfirmSignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminConfirmSignUpInput {
     /// Consumes the builder and constructs an Operation<[`AdminConfirmSignUp`](crate::operation::AdminConfirmSignUp)>
     #[allow(clippy::let_and_return)]
@@ -506,7 +461,7 @@ impl AdminConfirmSignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminConfirmSignUp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -591,7 +546,7 @@ impl AdminConfirmSignUpInput {
             "AdminConfirmSignUp",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -644,16 +599,12 @@ pub mod admin_create_user_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
-        /// between 1 and 128 characters. After the user is created, the username cannot be
-        /// changed.</p>
+        /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
-        /// between 1 and 128 characters. After the user is created, the username cannot be
-        /// changed.</p>
+        /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -662,81 +613,27 @@ pub mod admin_create_user_input {
         ///
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
-        /// <p>An array of name-value pairs that contain user attributes and attribute values to be
-        /// set for the user to be created. You can create a user without specifying any attributes
-        /// other than <code>Username</code>. However, any attributes that you specify as required
-        /// (when creating a user pool or in the <b>Attributes</b> tab of
-        /// the console) must be supplied either by you (in your call to
-        /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
-        /// your welcome message).</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
-        /// <p>To send a message inviting the user to sign up, you must specify the user's email
-        /// address or phone number. This can be done in your call to AdminCreateUser or in the
-        /// <b>Users</b> tab of the Amazon Cognito console for
-        /// managing your user pools.</p>
-        /// <p>In your call to <code>AdminCreateUser</code>, you can set the
-        /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
-        /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
-        /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+        /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+        /// <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>email</b>: The email address of the user to whom
-        /// the message that contains the code and username will be sent. Required if the
-        /// <code>email_verified</code> attribute is set to <code>True</code>, or if
-        /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
-        /// parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>phone_number</b>: The phone number of the user to
-        /// whom the message that contains the code and username will be sent. Required if
-        /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
-        /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
+        /// <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
         /// </ul>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
-        /// <p>An array of name-value pairs that contain user attributes and attribute values to be
-        /// set for the user to be created. You can create a user without specifying any attributes
-        /// other than <code>Username</code>. However, any attributes that you specify as required
-        /// (when creating a user pool or in the <b>Attributes</b> tab of
-        /// the console) must be supplied either by you (in your call to
-        /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
-        /// your welcome message).</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
-        /// <p>To send a message inviting the user to sign up, you must specify the user's email
-        /// address or phone number. This can be done in your call to AdminCreateUser or in the
-        /// <b>Users</b> tab of the Amazon Cognito console for
-        /// managing your user pools.</p>
-        /// <p>In your call to <code>AdminCreateUser</code>, you can set the
-        /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
-        /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
-        /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+        /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        /// <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+        /// <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>email</b>: The email address of the user to whom
-        /// the message that contains the code and username will be sent. Required if the
-        /// <code>email_verified</code> attribute is set to <code>True</code>, or if
-        /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
-        /// parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>phone_number</b>: The phone number of the user to
-        /// whom the message that contains the code and username will be sent. Required if
-        /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
-        /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
+        /// <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
         /// </ul>
         pub fn set_user_attributes(
             mut self,
@@ -749,27 +646,17 @@ pub mod admin_create_user_input {
         ///
         /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
         ///
-        /// <p>The user's validation data. This is an array of name-value pairs that contain user
-        /// attributes and attribute values that you can use for custom validation, such as
-        /// restricting the types of user accounts that can be registered. For example, you might
-        /// choose to allow or disallow user sign-up based on the user's domain.</p>
-        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
-        /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
-        /// receives the validation data and uses it in the validation process.</p>
+        /// <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>
+        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>
         /// <p>The user's validation data is not persisted.</p>
-        pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn validation_data(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_data = Some(v);
             self
         }
-        /// <p>The user's validation data. This is an array of name-value pairs that contain user
-        /// attributes and attribute values that you can use for custom validation, such as
-        /// restricting the types of user accounts that can be registered. For example, you might
-        /// choose to allow or disallow user sign-up based on the user's domain.</p>
-        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
-        /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
-        /// receives the validation data and uses it in the validation process.</p>
+        /// <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>
+        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>
         /// <p>The user's validation data is not persisted.</p>
         pub fn set_validation_data(
             mut self,
@@ -778,32 +665,18 @@ pub mod admin_create_user_input {
             self.validation_data = input;
             self
         }
-        /// <p>The user's temporary password. This password must conform to the password policy that
-        /// you specified when you created the user pool.</p>
-        /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
-        /// user must enter the temporary password in the sign-in page along with a new password to
-        /// be used in all future sign-ins.</p>
-        /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
-        /// generates one for you.</p>
-        /// <p>The temporary password can only be used until the user account expiration limit that
-        /// you specified when you created the user pool. To reset the account after that time
-        /// limit, you must call <code>AdminCreateUser</code> again, specifying
-        /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+        /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
+        /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p>
+        /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p>
+        /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
         pub fn temporary_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.temporary_password = Some(input.into());
             self
         }
-        /// <p>The user's temporary password. This password must conform to the password policy that
-        /// you specified when you created the user pool.</p>
-        /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
-        /// user must enter the temporary password in the sign-in page along with a new password to
-        /// be used in all future sign-ins.</p>
-        /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
-        /// generates one for you.</p>
-        /// <p>The temporary password can only be used until the user account expiration limit that
-        /// you specified when you created the user pool. To reset the account after that time
-        /// limit, you must call <code>AdminCreateUser</code> again, specifying
-        /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+        /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
+        /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p>
+        /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p>
+        /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
         pub fn set_temporary_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -811,46 +684,26 @@ pub mod admin_create_user_input {
             self.temporary_password = input;
             self
         }
-        /// <p>This parameter is only used if the <code>phone_number_verified</code> or
-        /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
-        /// ignored.</p>
-        /// <p>If this parameter is set to <code>True</code> and the phone number or email address
-        /// specified in the UserAttributes parameter already exists as an alias with a different
-        /// user, the API call will migrate the alias from the previous user to the newly created
-        /// user. The previous user will no longer be able to log in using that alias.</p>
-        /// <p>If this parameter is set to <code>False</code>, the API throws an
-        /// <code>AliasExistsException</code> error if the alias already exists. The default
-        /// value is <code>False</code>.</p>
+        /// <p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
+        /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
+        /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
         pub fn force_alias_creation(mut self, input: bool) -> Self {
             self.force_alias_creation = Some(input);
             self
         }
-        /// <p>This parameter is only used if the <code>phone_number_verified</code> or
-        /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
-        /// ignored.</p>
-        /// <p>If this parameter is set to <code>True</code> and the phone number or email address
-        /// specified in the UserAttributes parameter already exists as an alias with a different
-        /// user, the API call will migrate the alias from the previous user to the newly created
-        /// user. The previous user will no longer be able to log in using that alias.</p>
-        /// <p>If this parameter is set to <code>False</code>, the API throws an
-        /// <code>AliasExistsException</code> error if the alias already exists. The default
-        /// value is <code>False</code>.</p>
+        /// <p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
+        /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
+        /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
         pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.force_alias_creation = input;
             self
         }
-        /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
-        /// exists and reset the expiration limit on the user's account. Set to
-        /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
-        /// specified.</p>
+        /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be specified.</p>
         pub fn message_action(mut self, input: crate::model::MessageActionType) -> Self {
             self.message_action = Some(input);
             self
         }
-        /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
-        /// exists and reset the expiration limit on the user's account. Set to
-        /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
-        /// specified.</p>
+        /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be specified.</p>
         pub fn set_message_action(
             mut self,
             input: std::option::Option<crate::model::MessageActionType>,
@@ -862,21 +715,14 @@ pub mod admin_create_user_input {
         ///
         /// To override the contents of this collection use [`set_desired_delivery_mediums`](Self::set_desired_delivery_mediums).
         ///
-        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
-        /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
-        /// <code>"SMS"</code>. More than one value can be specified.</p>
-        pub fn desired_delivery_mediums(
-            mut self,
-            input: impl Into<crate::model::DeliveryMediumType>,
-        ) -> Self {
+        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.</p>
+        pub fn desired_delivery_mediums(mut self, input: crate::model::DeliveryMediumType) -> Self {
             let mut v = self.desired_delivery_mediums.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.desired_delivery_mediums = Some(v);
             self
         }
-        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
-        /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
-        /// <code>"SMS"</code>. More than one value can be specified.</p>
+        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.</p>
         pub fn set_desired_delivery_mediums(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeliveryMediumType>>,
@@ -888,35 +734,14 @@ pub mod admin_create_user_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
-        /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
-        /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
-        /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -929,35 +754,14 @@ pub mod admin_create_user_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
-        /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
-        /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
-        /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -993,7 +797,7 @@ pub mod admin_create_user_input {
 #[doc(hidden)]
 pub type AdminCreateUserInputOperationOutputAlias = crate::operation::AdminCreateUser;
 #[doc(hidden)]
-pub type AdminCreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminCreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminCreateUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminCreateUser`](crate::operation::AdminCreateUser)>
     #[allow(clippy::let_and_return)]
@@ -1004,7 +808,7 @@ impl AdminCreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminCreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1089,7 +893,7 @@ impl AdminCreateUserInput {
             "AdminCreateUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1159,7 +963,7 @@ pub mod admin_delete_user_input {
 #[doc(hidden)]
 pub type AdminDeleteUserInputOperationOutputAlias = crate::operation::AdminDeleteUser;
 #[doc(hidden)]
-pub type AdminDeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminDeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDeleteUser`](crate::operation::AdminDeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -1170,7 +974,7 @@ impl AdminDeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1255,7 +1059,7 @@ impl AdminDeleteUserInput {
             "AdminDeleteUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1314,8 +1118,7 @@ pub mod admin_delete_user_attributes_input {
         /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
         ///
         /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn user_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_attribute_names.unwrap_or_default();
             v.push(input.into());
@@ -1323,8 +1126,7 @@ pub mod admin_delete_user_attributes_input {
             self
         }
         /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn set_user_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1351,7 +1153,7 @@ pub mod admin_delete_user_attributes_input {
 pub type AdminDeleteUserAttributesInputOperationOutputAlias =
     crate::operation::AdminDeleteUserAttributes;
 #[doc(hidden)]
-pub type AdminDeleteUserAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminDeleteUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDeleteUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AdminDeleteUserAttributes`](crate::operation::AdminDeleteUserAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1362,7 +1164,7 @@ impl AdminDeleteUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUserAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1449,7 +1251,7 @@ impl AdminDeleteUserAttributesInput {
             "AdminDeleteUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1523,7 +1325,7 @@ pub mod admin_disable_provider_for_user_input {
 pub type AdminDisableProviderForUserInputOperationOutputAlias =
     crate::operation::AdminDisableProviderForUser;
 #[doc(hidden)]
-pub type AdminDisableProviderForUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminDisableProviderForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDisableProviderForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDisableProviderForUser`](crate::operation::AdminDisableProviderForUser)>
     #[allow(clippy::let_and_return)]
@@ -1534,7 +1336,7 @@ impl AdminDisableProviderForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableProviderForUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1620,7 +1422,7 @@ impl AdminDisableProviderForUserInput {
             "AdminDisableProviderForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1690,7 +1492,7 @@ pub mod admin_disable_user_input {
 #[doc(hidden)]
 pub type AdminDisableUserInputOperationOutputAlias = crate::operation::AdminDisableUser;
 #[doc(hidden)]
-pub type AdminDisableUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminDisableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminDisableUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminDisableUser`](crate::operation::AdminDisableUser)>
     #[allow(clippy::let_and_return)]
@@ -1701,7 +1503,7 @@ impl AdminDisableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1786,7 +1588,7 @@ impl AdminDisableUserInput {
             "AdminDisableUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1856,7 +1658,7 @@ pub mod admin_enable_user_input {
 #[doc(hidden)]
 pub type AdminEnableUserInputOperationOutputAlias = crate::operation::AdminEnableUser;
 #[doc(hidden)]
-pub type AdminEnableUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminEnableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminEnableUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminEnableUser`](crate::operation::AdminEnableUser)>
     #[allow(clippy::let_and_return)]
@@ -1867,7 +1669,7 @@ impl AdminEnableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminEnableUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1952,7 +1754,7 @@ impl AdminEnableUserInput {
             "AdminEnableUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2034,7 +1836,7 @@ pub mod admin_forget_device_input {
 #[doc(hidden)]
 pub type AdminForgetDeviceInputOperationOutputAlias = crate::operation::AdminForgetDevice;
 #[doc(hidden)]
-pub type AdminForgetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminForgetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminForgetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`AdminForgetDevice`](crate::operation::AdminForgetDevice)>
     #[allow(clippy::let_and_return)]
@@ -2045,7 +1847,7 @@ impl AdminForgetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminForgetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2130,7 +1932,7 @@ impl AdminForgetDeviceInput {
             "AdminForgetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2212,7 +2014,7 @@ pub mod admin_get_device_input {
 #[doc(hidden)]
 pub type AdminGetDeviceInputOperationOutputAlias = crate::operation::AdminGetDevice;
 #[doc(hidden)]
-pub type AdminGetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminGetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminGetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`AdminGetDevice`](crate::operation::AdminGetDevice)>
     #[allow(clippy::let_and_return)]
@@ -2223,7 +2025,7 @@ impl AdminGetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminGetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2308,7 +2110,7 @@ impl AdminGetDeviceInput {
             "AdminGetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2341,14 +2143,12 @@ pub mod admin_get_user_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user pool ID for the user pool where you want to get information about the
-        /// user.</p>
+        /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
         pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_pool_id = Some(input.into());
             self
         }
-        /// <p>The user pool ID for the user pool where you want to get information about the
-        /// user.</p>
+        /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2380,7 +2180,7 @@ pub mod admin_get_user_input {
 #[doc(hidden)]
 pub type AdminGetUserInputOperationOutputAlias = crate::operation::AdminGetUser;
 #[doc(hidden)]
-pub type AdminGetUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminGetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminGetUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminGetUser`](crate::operation::AdminGetUser)>
     #[allow(clippy::let_and_return)]
@@ -2391,7 +2191,7 @@ impl AdminGetUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminGetUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2475,7 +2275,7 @@ impl AdminGetUserInput {
             "AdminGetUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2537,125 +2337,39 @@ pub mod admin_initiate_auth_input {
             self.client_id = input;
             self
         }
-        /// <p>The authentication flow for this call to execute. The API action will depend on this
-        /// value. For example:</p>
+        /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-        /// new tokens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>SRP_A</code> and return the SRP variables to be used for next
-        /// challenge execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-        /// </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
         /// </ul>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-        /// (SRP) protocol.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-        /// flow for refreshing the access token and ID token by supplying a valid refresh
-        /// token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
-        /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
-        /// client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-        /// user pool. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-        /// flow. In this flow, Cognito receives the password in the request instead of
-        /// using the SRP process to verify passwords.</p>
-        /// </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+        /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+        /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
         /// </ul>
         pub fn auth_flow(mut self, input: crate::model::AuthFlowType) -> Self {
             self.auth_flow = Some(input);
             self
         }
-        /// <p>The authentication flow for this call to execute. The API action will depend on this
-        /// value. For example:</p>
+        /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-        /// new tokens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>SRP_A</code> and return the SRP variables to be used for next
-        /// challenge execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-        /// </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
         /// </ul>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-        /// (SRP) protocol.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-        /// flow for refreshing the access token and ID token by supplying a valid refresh
-        /// token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
-        /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
-        /// client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-        /// user pool. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-        /// flow. In this flow, Cognito receives the password in the request instead of
-        /// using the SRP process to verify passwords.</p>
-        /// </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+        /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+        /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
         /// </ul>
         pub fn set_auth_flow(
             mut self,
@@ -2668,32 +2382,12 @@ pub mod admin_initiate_auth_input {
         ///
         /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
         ///
-        /// <p>The authentication parameters. These are inputs corresponding to the
-        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-        /// of <code>AuthFlow</code>:</p>
+        /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-        /// with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-        /// SRP_A Value)</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
         /// </ul>
         pub fn auth_parameters(
             mut self,
@@ -2705,32 +2399,12 @@ pub mod admin_initiate_auth_input {
             self.auth_parameters = Some(hash_map);
             self
         }
-        /// <p>The authentication parameters. These are inputs corresponding to the
-        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-        /// of <code>AuthFlow</code>:</p>
+        /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-        /// with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-        /// SRP_A Value)</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
         /// </ul>
         pub fn set_auth_parameters(
             mut self,
@@ -2745,71 +2419,29 @@ pub mod admin_initiate_auth_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-        /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
-        /// functions that are specified for various triggers. The ClientMetadata value is passed as
-        /// input to the functions for only the following triggers:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pre signup</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>User migration</p>
-        /// </li>
+        /// <li> <p>Pre signup</p> </li>
+        /// <li> <p>Pre authentication</p> </li>
+        /// <li> <p>User migration</p> </li>
         /// </ul>
-        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-        /// payload, which the function receives as input. This payload contains a
-        /// <code>validationData</code> attribute, which provides the data that you assigned to
-        /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
-        /// Lambda, you can process the <code>validationData</code> value to enhance your
-        /// workflow for your specific needs.</p>
-        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
-        /// functions for the following triggers, but it does not provide the ClientMetadata value
-        /// as input:</p>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
         /// <ul>
-        /// <li>
-        /// <p>Post authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>Custom message</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre token generation</p>
-        /// </li>
-        /// <li>
-        /// <p>Create auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Define auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Verify auth challenge</p>
-        /// </li>
+        /// <li> <p>Post authentication</p> </li>
+        /// <li> <p>Custom message</p> </li>
+        /// <li> <p>Pre token generation</p> </li>
+        /// <li> <p>Create auth challenge</p> </li>
+        /// <li> <p>Define auth challenge</p> </li>
+        /// <li> <p>Verify auth challenge</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -2822,71 +2454,29 @@ pub mod admin_initiate_auth_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-        /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
-        /// functions that are specified for various triggers. The ClientMetadata value is passed as
-        /// input to the functions for only the following triggers:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pre signup</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>User migration</p>
-        /// </li>
+        /// <li> <p>Pre signup</p> </li>
+        /// <li> <p>Pre authentication</p> </li>
+        /// <li> <p>User migration</p> </li>
         /// </ul>
-        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-        /// payload, which the function receives as input. This payload contains a
-        /// <code>validationData</code> attribute, which provides the data that you assigned to
-        /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
-        /// Lambda, you can process the <code>validationData</code> value to enhance your
-        /// workflow for your specific needs.</p>
-        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
-        /// functions for the following triggers, but it does not provide the ClientMetadata value
-        /// as input:</p>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
         /// <ul>
-        /// <li>
-        /// <p>Post authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>Custom message</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre token generation</p>
-        /// </li>
-        /// <li>
-        /// <p>Create auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Define auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Verify auth challenge</p>
-        /// </li>
+        /// <li> <p>Post authentication</p> </li>
+        /// <li> <p>Custom message</p> </li>
+        /// <li> <p>Pre token generation</p> </li>
+        /// <li> <p>Create auth challenge</p> </li>
+        /// <li> <p>Define auth challenge</p> </li>
+        /// <li> <p>Verify auth challenge</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -2898,14 +2488,12 @@ pub mod admin_initiate_auth_input {
             self.client_metadata = input;
             self
         }
-        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-        /// <code>AdminInitiateAuth</code> calls.</p>
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-        /// <code>AdminInitiateAuth</code> calls.</p>
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -2913,16 +2501,12 @@ pub mod admin_initiate_auth_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
             self.context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -2952,7 +2536,7 @@ pub mod admin_initiate_auth_input {
 #[doc(hidden)]
 pub type AdminInitiateAuthInputOperationOutputAlias = crate::operation::AdminInitiateAuth;
 #[doc(hidden)]
-pub type AdminInitiateAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminInitiateAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminInitiateAuthInput {
     /// Consumes the builder and constructs an Operation<[`AdminInitiateAuth`](crate::operation::AdminInitiateAuth)>
     #[allow(clippy::let_and_return)]
@@ -2963,7 +2547,7 @@ impl AdminInitiateAuthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminInitiateAuth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3048,7 +2632,7 @@ impl AdminInitiateAuthInput {
             "AdminInitiateAuth",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3092,34 +2676,18 @@ pub mod admin_link_provider_for_user_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The existing user in the user pool to be linked to the external identity provider user
-        /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
-        /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
-        /// thrown. This is the user that is returned when the new user (with the linked identity
-        /// provider attribute) signs in.</p>
-        /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
-        /// <code>DestinationUser</code> should be the username in the user pool. For a
-        /// federated user, it should be the provider-specific <code>user_id</code>.</p>
-        /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
-        /// ignored.</p>
-        /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
-        /// Cognito user pools.</p>
+        /// <p>The existing user in the user pool to be linked to the external identity provider user account. Can be a native (Username + Password) Cognito User Pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new user (with the linked identity provider attribute) signs in.</p>
+        /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
+        /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
+        /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
         pub fn destination_user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
             self.destination_user = Some(input);
             self
         }
-        /// <p>The existing user in the user pool to be linked to the external identity provider user
-        /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
-        /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
-        /// thrown. This is the user that is returned when the new user (with the linked identity
-        /// provider attribute) signs in.</p>
-        /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
-        /// <code>DestinationUser</code> should be the username in the user pool. For a
-        /// federated user, it should be the provider-specific <code>user_id</code>.</p>
-        /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
-        /// ignored.</p>
-        /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
-        /// Cognito user pools.</p>
+        /// <p>The existing user in the user pool to be linked to the external identity provider user account. Can be a native (Username + Password) Cognito User Pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new user (with the linked identity provider attribute) signs in.</p>
+        /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
+        /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
+        /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
         pub fn set_destination_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -3127,50 +2695,18 @@ pub mod admin_link_provider_for_user_input {
             self.destination_user = input;
             self
         }
-        /// <p>An external identity provider account for a user who does not currently exist yet in
-        /// the user pool. This user must be a federated user (for example, a SAML or Facebook
-        /// user), not another native user.</p>
-        /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
-        /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
-        /// <code>Cognito_Subject</code>. For social identity providers, the
-        /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-        /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
-        /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-        /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
-        /// user must be the same value as the <code>id</code>, <code>sub</code>, or
-        /// <code>user_id</code> value found in the social identity provider token.</p>
+        /// <p>An external identity provider account for a user who does not currently exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+        /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook, Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
         /// <p></p>
-        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
-        /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
-        /// assertion, you should map the subject to a claim through the SAML identity provider and
-        /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
-        /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
-        /// automatically parse the default unique identifier found in the subject from the SAML
-        /// token.</p>
+        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you wish to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
         pub fn source_user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
             self.source_user = Some(input);
             self
         }
-        /// <p>An external identity provider account for a user who does not currently exist yet in
-        /// the user pool. This user must be a federated user (for example, a SAML or Facebook
-        /// user), not another native user.</p>
-        /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
-        /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
-        /// <code>Cognito_Subject</code>. For social identity providers, the
-        /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-        /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
-        /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-        /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
-        /// user must be the same value as the <code>id</code>, <code>sub</code>, or
-        /// <code>user_id</code> value found in the social identity provider token.</p>
+        /// <p>An external identity provider account for a user who does not currently exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+        /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook, Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
         /// <p></p>
-        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
-        /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
-        /// assertion, you should map the subject to a claim through the SAML identity provider and
-        /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
-        /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
-        /// automatically parse the default unique identifier found in the subject from the SAML
-        /// token.</p>
+        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you wish to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
         pub fn set_source_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -3197,7 +2733,7 @@ pub mod admin_link_provider_for_user_input {
 pub type AdminLinkProviderForUserInputOperationOutputAlias =
     crate::operation::AdminLinkProviderForUser;
 #[doc(hidden)]
-pub type AdminLinkProviderForUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminLinkProviderForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminLinkProviderForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminLinkProviderForUser`](crate::operation::AdminLinkProviderForUser)>
     #[allow(clippy::let_and_return)]
@@ -3208,7 +2744,7 @@ impl AdminLinkProviderForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminLinkProviderForUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3295,7 +2831,7 @@ impl AdminLinkProviderForUserInput {
             "AdminLinkProviderForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3392,7 +2928,7 @@ pub mod admin_list_devices_input {
 #[doc(hidden)]
 pub type AdminListDevicesInputOperationOutputAlias = crate::operation::AdminListDevices;
 #[doc(hidden)]
-pub type AdminListDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`AdminListDevices`](crate::operation::AdminListDevices)>
     #[allow(clippy::let_and_return)]
@@ -3403,7 +2939,7 @@ impl AdminListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3488,7 +3024,7 @@ impl AdminListDevicesInput {
             "AdminListDevices",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3553,14 +3089,12 @@ pub mod admin_list_groups_for_user_input {
             self.limit = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3584,7 +3118,7 @@ pub mod admin_list_groups_for_user_input {
 #[doc(hidden)]
 pub type AdminListGroupsForUserInputOperationOutputAlias = crate::operation::AdminListGroupsForUser;
 #[doc(hidden)]
-pub type AdminListGroupsForUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminListGroupsForUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListGroupsForUserInput {
     /// Consumes the builder and constructs an Operation<[`AdminListGroupsForUser`](crate::operation::AdminListGroupsForUser)>
     #[allow(clippy::let_and_return)]
@@ -3595,7 +3129,7 @@ impl AdminListGroupsForUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListGroupsForUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3682,7 +3216,7 @@ impl AdminListGroupsForUserInput {
             "AdminListGroupsForUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3777,7 +3311,7 @@ pub mod admin_list_user_auth_events_input {
 pub type AdminListUserAuthEventsInputOperationOutputAlias =
     crate::operation::AdminListUserAuthEvents;
 #[doc(hidden)]
-pub type AdminListUserAuthEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminListUserAuthEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminListUserAuthEventsInput {
     /// Consumes the builder and constructs an Operation<[`AdminListUserAuthEvents`](crate::operation::AdminListUserAuthEvents)>
     #[allow(clippy::let_and_return)]
@@ -3788,7 +3322,7 @@ impl AdminListUserAuthEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminListUserAuthEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3875,7 +3409,7 @@ impl AdminListUserAuthEventsInput {
             "AdminListUserAuthEvents",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3958,7 +3492,7 @@ pub mod admin_remove_user_from_group_input {
 pub type AdminRemoveUserFromGroupInputOperationOutputAlias =
     crate::operation::AdminRemoveUserFromGroup;
 #[doc(hidden)]
-pub type AdminRemoveUserFromGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminRemoveUserFromGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminRemoveUserFromGroupInput {
     /// Consumes the builder and constructs an Operation<[`AdminRemoveUserFromGroup`](crate::operation::AdminRemoveUserFromGroup)>
     #[allow(clippy::let_and_return)]
@@ -3969,7 +3503,7 @@ impl AdminRemoveUserFromGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminRemoveUserFromGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4056,7 +3590,7 @@ impl AdminRemoveUserFromGroupInput {
             "AdminRemoveUserFromGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4116,36 +3650,14 @@ pub mod admin_reset_user_password_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -4158,36 +3670,14 @@ pub mod admin_reset_user_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -4217,7 +3707,7 @@ pub mod admin_reset_user_password_input {
 #[doc(hidden)]
 pub type AdminResetUserPasswordInputOperationOutputAlias = crate::operation::AdminResetUserPassword;
 #[doc(hidden)]
-pub type AdminResetUserPasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminResetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminResetUserPasswordInput {
     /// Consumes the builder and constructs an Operation<[`AdminResetUserPassword`](crate::operation::AdminResetUserPassword)>
     #[allow(clippy::let_and_return)]
@@ -4228,7 +3718,7 @@ impl AdminResetUserPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminResetUserPassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4315,7 +3805,7 @@ impl AdminResetUserPasswordInput {
             "AdminResetUserPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4395,46 +3885,15 @@ pub mod admin_respond_to_auth_challenge_input {
         ///
         /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
         ///
-        /// <p>The challenge responses. These are inputs corresponding to the value of
-        /// <code>ChallengeName</code>, for example:</p>
+        /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
-        /// <code>SECRET_HASH</code> (if app client is configured with client
-        /// secret).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-        /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-        /// with client secret).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-        /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
-        /// client is configured with client secret). </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-        /// the session value returned by <code>VerifySoftwareToken</code> in the
-        /// <code>Session</code> parameter.</p>
-        /// </li>
+        /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+        /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
-        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
-        /// not an alias (such as email address or phone number). To make this easier, the
-        /// <code>AdminInitiateAuth</code> response includes the actual username value in the
-        /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
-        /// your call to <code>AdminInitiateAuth</code>.</p>
+        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
         pub fn challenge_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -4445,46 +3904,15 @@ pub mod admin_respond_to_auth_challenge_input {
             self.challenge_responses = Some(hash_map);
             self
         }
-        /// <p>The challenge responses. These are inputs corresponding to the value of
-        /// <code>ChallengeName</code>, for example:</p>
+        /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
-        /// <code>SECRET_HASH</code> (if app client is configured with client
-        /// secret).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-        /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-        /// with client secret).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-        /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
-        /// client is configured with client secret). </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-        /// the session value returned by <code>VerifySoftwareToken</code> in the
-        /// <code>Session</code> parameter.</p>
-        /// </li>
+        /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+        /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+        /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+        /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
-        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
-        /// not an alias (such as email address or phone number). To make this easier, the
-        /// <code>AdminInitiateAuth</code> response includes the actual username value in the
-        /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
-        /// your call to <code>AdminInitiateAuth</code>.</p>
+        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
         pub fn set_challenge_responses(
             mut self,
             input: std::option::Option<
@@ -4494,32 +3922,22 @@ pub mod admin_respond_to_auth_challenge_input {
             self.challenge_responses = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-        /// determines that the caller needs to go through another challenge, they return a session
-        /// with other challenge parameters. This session should be passed as it is to the next
-        /// <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-        /// determines that the caller needs to go through another challenge, they return a session
-        /// with other challenge parameters. This session should be passed as it is to the next
-        /// <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
-        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-        /// <code>AdminRespondToAuthChallenge</code> calls.</p>
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-        /// <code>AdminRespondToAuthChallenge</code> calls.</p>
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -4527,16 +3945,12 @@ pub mod admin_respond_to_auth_challenge_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
             self.context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -4548,40 +3962,14 @@ pub mod admin_respond_to_auth_challenge_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
-        /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
-        /// <i>custom message</i>, <i>post authentication</i>,
-        /// <i>user migration</i>, <i>pre token generation</i>,
-        /// <i>define auth challenge</i>, <i>create auth
-        /// challenge</i>, and <i>verify auth challenge response</i>. When
-        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-        /// function receives as input. This payload contains a <code>clientMetadata</code>
-        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
-        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -4594,40 +3982,14 @@ pub mod admin_respond_to_auth_challenge_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
-        /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
-        /// <i>custom message</i>, <i>post authentication</i>,
-        /// <i>user migration</i>, <i>pre token generation</i>,
-        /// <i>define auth challenge</i>, <i>create auth
-        /// challenge</i>, and <i>verify auth challenge response</i>. When
-        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-        /// function receives as input. This payload contains a <code>clientMetadata</code>
-        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
-        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -4663,7 +4025,7 @@ pub mod admin_respond_to_auth_challenge_input {
 pub type AdminRespondToAuthChallengeInputOperationOutputAlias =
     crate::operation::AdminRespondToAuthChallenge;
 #[doc(hidden)]
-pub type AdminRespondToAuthChallengeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminRespondToAuthChallengeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminRespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`AdminRespondToAuthChallenge`](crate::operation::AdminRespondToAuthChallenge)>
     #[allow(clippy::let_and_return)]
@@ -4674,7 +4036,7 @@ impl AdminRespondToAuthChallengeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminRespondToAuthChallenge,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4760,7 +4122,7 @@ impl AdminRespondToAuthChallengeInput {
             "AdminRespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4865,7 +4227,7 @@ pub mod admin_set_user_mfa_preference_input {
 pub type AdminSetUserMfaPreferenceInputOperationOutputAlias =
     crate::operation::AdminSetUserMFAPreference;
 #[doc(hidden)]
-pub type AdminSetUserMfaPreferenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminSetUserMfaPreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserMfaPreferenceInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserMFAPreference`](crate::operation::AdminSetUserMFAPreference)>
     #[allow(clippy::let_and_return)]
@@ -4876,7 +4238,7 @@ impl AdminSetUserMfaPreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserMFAPreference,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4962,7 +4324,7 @@ impl AdminSetUserMfaPreferenceInput {
             "AdminSetUserMFAPreference",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5027,16 +4389,12 @@ pub mod admin_set_user_password_input {
             self.password = input;
             self
         }
-        /// <p>
-        /// <code>True</code> if the password is permanent, <code>False</code> if it is
-        /// temporary.</p>
+        /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
         pub fn permanent(mut self, input: bool) -> Self {
             self.permanent = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the password is permanent, <code>False</code> if it is
-        /// temporary.</p>
+        /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
         pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
             self.permanent = input;
             self
@@ -5060,7 +4418,7 @@ pub mod admin_set_user_password_input {
 #[doc(hidden)]
 pub type AdminSetUserPasswordInputOperationOutputAlias = crate::operation::AdminSetUserPassword;
 #[doc(hidden)]
-pub type AdminSetUserPasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminSetUserPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserPasswordInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserPassword`](crate::operation::AdminSetUserPassword)>
     #[allow(clippy::let_and_return)]
@@ -5071,7 +4429,7 @@ impl AdminSetUserPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserPassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5158,7 +4516,7 @@ impl AdminSetUserPasswordInput {
             "AdminSetUserPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5192,14 +4550,12 @@ pub mod admin_set_user_settings_input {
         pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
     }
     impl Builder {
-        /// <p>The ID of the user pool that contains the user that you are setting options
-        /// for.</p>
+        /// <p>The ID of the user pool that contains the user that you are setting options for.</p>
         pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_pool_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user pool that contains the user that you are setting options
-        /// for.</p>
+        /// <p>The ID of the user pool that contains the user that you are setting options for.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -5218,16 +4574,14 @@ pub mod admin_set_user_settings_input {
         ///
         /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
         ///
-        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-        /// delivery.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
-        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-        /// delivery.</p>
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -5253,7 +4607,7 @@ pub mod admin_set_user_settings_input {
 #[doc(hidden)]
 pub type AdminSetUserSettingsInputOperationOutputAlias = crate::operation::AdminSetUserSettings;
 #[doc(hidden)]
-pub type AdminSetUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminSetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminSetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AdminSetUserSettings`](crate::operation::AdminSetUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -5264,7 +4618,7 @@ impl AdminSetUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5351,7 +4705,7 @@ impl AdminSetUserSettingsInput {
             "AdminSetUserSettings",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5449,7 +4803,8 @@ pub mod admin_update_auth_event_feedback_input {
 pub type AdminUpdateAuthEventFeedbackInputOperationOutputAlias =
     crate::operation::AdminUpdateAuthEventFeedback;
 #[doc(hidden)]
-pub type AdminUpdateAuthEventFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminUpdateAuthEventFeedbackInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateAuthEventFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateAuthEventFeedback`](crate::operation::AdminUpdateAuthEventFeedback)>
     #[allow(clippy::let_and_return)]
@@ -5460,7 +4815,7 @@ impl AdminUpdateAuthEventFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateAuthEventFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5546,7 +4901,7 @@ impl AdminUpdateAuthEventFeedbackInput {
             "AdminUpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5648,7 +5003,7 @@ pub mod admin_update_device_status_input {
 pub type AdminUpdateDeviceStatusInputOperationOutputAlias =
     crate::operation::AdminUpdateDeviceStatus;
 #[doc(hidden)]
-pub type AdminUpdateDeviceStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminUpdateDeviceStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateDeviceStatusInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateDeviceStatus`](crate::operation::AdminUpdateDeviceStatus)>
     #[allow(clippy::let_and_return)]
@@ -5659,7 +5014,7 @@ impl AdminUpdateDeviceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateDeviceStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5746,7 +5101,7 @@ impl AdminUpdateDeviceStatusInput {
             "AdminUpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5808,17 +5163,15 @@ pub mod admin_update_user_attributes_input {
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -5830,36 +5183,14 @@ pub mod admin_update_user_attributes_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
-        /// function that is assigned to the <i>custom message</i> trigger. When
-        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-        /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
-        /// the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -5872,36 +5203,14 @@ pub mod admin_update_user_attributes_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
-        /// function that is assigned to the <i>custom message</i> trigger. When
-        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-        /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
-        /// the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -5933,7 +5242,7 @@ pub mod admin_update_user_attributes_input {
 pub type AdminUpdateUserAttributesInputOperationOutputAlias =
     crate::operation::AdminUpdateUserAttributes;
 #[doc(hidden)]
-pub type AdminUpdateUserAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminUpdateUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUpdateUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`AdminUpdateUserAttributes`](crate::operation::AdminUpdateUserAttributes)>
     #[allow(clippy::let_and_return)]
@@ -5944,7 +5253,7 @@ impl AdminUpdateUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateUserAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6031,7 +5340,7 @@ impl AdminUpdateUserAttributesInput {
             "AdminUpdateUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6101,7 +5410,7 @@ pub mod admin_user_global_sign_out_input {
 #[doc(hidden)]
 pub type AdminUserGlobalSignOutInputOperationOutputAlias = crate::operation::AdminUserGlobalSignOut;
 #[doc(hidden)]
-pub type AdminUserGlobalSignOutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AdminUserGlobalSignOutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AdminUserGlobalSignOutInput {
     /// Consumes the builder and constructs an Operation<[`AdminUserGlobalSignOut`](crate::operation::AdminUserGlobalSignOut)>
     #[allow(clippy::let_and_return)]
@@ -6112,7 +5421,7 @@ impl AdminUserGlobalSignOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AdminUserGlobalSignOut,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6199,7 +5508,7 @@ impl AdminUserGlobalSignOutInput {
             "AdminUserGlobalSignOut",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6242,14 +5551,12 @@ pub mod associate_software_token_input {
             self.access_token = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. This allows authentication of the user as part of the MFA setup process.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. This allows authentication of the user as part of the MFA setup process.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -6271,7 +5578,7 @@ pub mod associate_software_token_input {
 #[doc(hidden)]
 pub type AssociateSoftwareTokenInputOperationOutputAlias = crate::operation::AssociateSoftwareToken;
 #[doc(hidden)]
-pub type AssociateSoftwareTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateSoftwareTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSoftwareTokenInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSoftwareToken`](crate::operation::AssociateSoftwareToken)>
     #[allow(clippy::let_and_return)]
@@ -6282,7 +5589,7 @@ impl AssociateSoftwareTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateSoftwareToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6369,7 +5676,7 @@ impl AssociateSoftwareTokenInput {
             "AssociateSoftwareToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6457,7 +5764,7 @@ pub mod change_password_input {
 #[doc(hidden)]
 pub type ChangePasswordInputOperationOutputAlias = crate::operation::ChangePassword;
 #[doc(hidden)]
-pub type ChangePasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ChangePasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ChangePasswordInput {
     /// Consumes the builder and constructs an Operation<[`ChangePassword`](crate::operation::ChangePassword)>
     #[allow(clippy::let_and_return)]
@@ -6468,7 +5775,7 @@ impl ChangePasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChangePassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6554,7 +5861,7 @@ impl ChangePasswordInput {
             "ChangePassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6655,7 +5962,7 @@ pub mod confirm_device_input {
 #[doc(hidden)]
 pub type ConfirmDeviceInputOperationOutputAlias = crate::operation::ConfirmDevice;
 #[doc(hidden)]
-pub type ConfirmDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmDevice`](crate::operation::ConfirmDevice)>
     #[allow(clippy::let_and_return)]
@@ -6666,7 +5973,7 @@ impl ConfirmDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6750,7 +6057,7 @@ impl ConfirmDeviceInput {
             "ConfirmDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6801,38 +6108,32 @@ pub mod confirm_forgot_password_input {
             self.client_id = input;
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_hash = Some(input.into());
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
         }
-        /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
-        /// password.</p>
+        /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
-        /// password.</p>
+        /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
-        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
         pub fn confirmation_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.confirmation_code = Some(input.into());
             self
         }
-        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
         pub fn set_confirmation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6850,14 +6151,12 @@ pub mod confirm_forgot_password_input {
             self.password = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ConfirmForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ConfirmForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -6865,16 +6164,12 @@ pub mod confirm_forgot_password_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -6886,36 +6181,14 @@ pub mod confirm_forgot_password_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
-        /// Cognito invokes this function, it passes a JSON payload, which the function receives as
-        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-        /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -6928,36 +6201,14 @@ pub mod confirm_forgot_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
-        /// Cognito invokes this function, it passes a JSON payload, which the function receives as
-        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-        /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -6992,7 +6243,7 @@ pub mod confirm_forgot_password_input {
 #[doc(hidden)]
 pub type ConfirmForgotPasswordInputOperationOutputAlias = crate::operation::ConfirmForgotPassword;
 #[doc(hidden)]
-pub type ConfirmForgotPasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmForgotPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmForgotPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmForgotPassword`](crate::operation::ConfirmForgotPassword)>
     #[allow(clippy::let_and_return)]
@@ -7003,7 +6254,7 @@ impl ConfirmForgotPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmForgotPassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7091,7 +6342,7 @@ impl ConfirmForgotPasswordInput {
             "ConfirmForgotPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7142,14 +6393,12 @@ pub mod confirm_sign_up_input {
             self.client_id = input;
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_hash = Some(input.into());
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -7177,34 +6426,22 @@ pub mod confirm_sign_up_input {
             self.confirmation_code = input;
             self
         }
-        /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
-        /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
-        /// phone number/email used for sign up confirmation already exists as an alias with a
-        /// different user, the API call will migrate the alias from the previous user to the newly
-        /// created user being confirmed. If set to <code>False</code>, the API will throw an
-        /// <b>AliasExistsException</b> error.</p>
+        /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
         pub fn force_alias_creation(mut self, input: bool) -> Self {
             self.force_alias_creation = Some(input);
             self
         }
-        /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
-        /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
-        /// phone number/email used for sign up confirmation already exists as an alias with a
-        /// different user, the API call will migrate the alias from the previous user to the newly
-        /// created user being confirmed. If set to <code>False</code>, the API will throw an
-        /// <b>AliasExistsException</b> error.</p>
+        /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
         pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.force_alias_creation = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ConfirmSignUp</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ConfirmSignUp</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -7212,16 +6449,12 @@ pub mod confirm_sign_up_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -7233,35 +6466,14 @@ pub mod confirm_sign_up_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
-        /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -7274,35 +6486,14 @@ pub mod confirm_sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
-        /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -7337,7 +6528,7 @@ pub mod confirm_sign_up_input {
 #[doc(hidden)]
 pub type ConfirmSignUpInputOperationOutputAlias = crate::operation::ConfirmSignUp;
 #[doc(hidden)]
-pub type ConfirmSignUpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmSignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmSignUpInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmSignUp`](crate::operation::ConfirmSignUp)>
     #[allow(clippy::let_and_return)]
@@ -7348,7 +6539,7 @@ impl ConfirmSignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmSignUp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7434,7 +6625,7 @@ impl ConfirmSignUpInput {
             "ConfirmSignUp",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7510,37 +6701,15 @@ pub mod create_group_input {
             self.role_arn = input;
             self
         }
-        /// <p>A nonnegative integer value that specifies the precedence of this group relative to
-        /// the other groups that a user can belong to in the user pool. Zero is the highest
-        /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
-        /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
-        /// more groups, it is the group with the lowest precedence value whose role ARN will be
-        /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
-        /// the user's tokens.</p>
-        /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
-        /// group takes precedence over the other. If two groups with the same
-        /// <code>Precedence</code> have the same role ARN, that role is used in the
-        /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
-        /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
-        /// not set in users' tokens.</p>
+        /// <p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p>
+        /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p>
         /// <p>The default <code>Precedence</code> value is null.</p>
         pub fn precedence(mut self, input: i32) -> Self {
             self.precedence = Some(input);
             self
         }
-        /// <p>A nonnegative integer value that specifies the precedence of this group relative to
-        /// the other groups that a user can belong to in the user pool. Zero is the highest
-        /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
-        /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
-        /// more groups, it is the group with the lowest precedence value whose role ARN will be
-        /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
-        /// the user's tokens.</p>
-        /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
-        /// group takes precedence over the other. If two groups with the same
-        /// <code>Precedence</code> have the same role ARN, that role is used in the
-        /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
-        /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
-        /// not set in users' tokens.</p>
+        /// <p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p>
+        /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p>
         /// <p>The default <code>Precedence</code> value is null.</p>
         pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
             self.precedence = input;
@@ -7566,7 +6735,7 @@ pub mod create_group_input {
 #[doc(hidden)]
 pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
 #[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(clippy::let_and_return)]
@@ -7577,7 +6746,7 @@ impl CreateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7661,7 +6830,7 @@ impl CreateGroupInput {
             "CreateGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7742,112 +6911,46 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys
-        /// for each identity provider type.</p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// <li>
-        /// <p>api_version</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// <li> <p>api_version</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>team_id</p>
-        /// </li>
-        /// <li>
-        /// <p>key_id</p>
-        /// </li>
-        /// <li>
-        /// <p>private_key</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>team_id</p> </li>
+        /// <li> <p>key_id</p> </li>
+        /// <li> <p>private_key</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>attributes_request_method</p>
-        /// </li>
-        /// <li>
-        /// <p>oidc_issuer</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_url <i>if not available from discovery URL specified
-        /// by oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>token_url <i>if not available from discovery URL specified by
-        /// oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>attributes_url <i>if not available from discovery URL specified
-        /// by oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>jwks_uri <i>if not available from discovery URL specified by
-        /// oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>attributes_request_method</p> </li>
+        /// <li> <p>oidc_issuer</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>MetadataFile OR MetadataURL</p>
-        /// </li>
-        /// <li>
-        /// <p>IDPSignout <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>MetadataFile OR MetadataURL</p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn provider_details(
             mut self,
@@ -7859,112 +6962,46 @@ pub mod create_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys
-        /// for each identity provider type.</p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// <li>
-        /// <p>api_version</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// <li> <p>api_version</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>team_id</p>
-        /// </li>
-        /// <li>
-        /// <p>key_id</p>
-        /// </li>
-        /// <li>
-        /// <p>private_key</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>team_id</p> </li>
+        /// <li> <p>key_id</p> </li>
+        /// <li> <p>private_key</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>client_id</p>
-        /// </li>
-        /// <li>
-        /// <p>client_secret</p>
-        /// </li>
-        /// <li>
-        /// <p>attributes_request_method</p>
-        /// </li>
-        /// <li>
-        /// <p>oidc_issuer</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_scopes</p>
-        /// </li>
-        /// <li>
-        /// <p>authorize_url <i>if not available from discovery URL specified
-        /// by oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>token_url <i>if not available from discovery URL specified by
-        /// oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>attributes_url <i>if not available from discovery URL specified
-        /// by oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>jwks_uri <i>if not available from discovery URL specified by
-        /// oidc_issuer key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>
+        /// <li> <p>client_id</p> </li>
+        /// <li> <p>client_secret</p> </li>
+        /// <li> <p>attributes_request_method</p> </li>
+        /// <li> <p>oidc_issuer</p> </li>
+        /// <li> <p>authorize_scopes</p> </li>
+        /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>MetadataFile OR MetadataURL</p>
-        /// </li>
-        /// <li>
-        /// <p>IDPSignout <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>MetadataFile OR MetadataURL</p> </li>
+        /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_provider_details(
             mut self,
@@ -7979,8 +7016,7 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
         ///
-        /// <p>A mapping of identity provider attributes to standard and custom user pool
-        /// attributes.</p>
+        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -7991,8 +7027,7 @@ pub mod create_identity_provider_input {
             self.attribute_mapping = Some(hash_map);
             self
         }
-        /// <p>A mapping of identity provider attributes to standard and custom user pool
-        /// attributes.</p>
+        /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -8042,7 +7077,7 @@ pub mod create_identity_provider_input {
 #[doc(hidden)]
 pub type CreateIdentityProviderInputOperationOutputAlias = crate::operation::CreateIdentityProvider;
 #[doc(hidden)]
-pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityProvider`](crate::operation::CreateIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -8053,7 +7088,7 @@ impl CreateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8140,7 +7175,7 @@ impl CreateIdentityProviderInput {
             "CreateIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8186,16 +7221,12 @@ pub mod create_resource_server_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
-        /// endpoint where the resource server is located. For example,
-        /// <code>https://my-weather-api.example.com</code>.</p>
+        /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.</p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
-        /// endpoint where the resource server is located. For example,
-        /// <code>https://my-weather-api.example.com</code>.</p>
+        /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -8214,16 +7245,14 @@ pub mod create_resource_server_input {
         ///
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
-        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-        /// <code>description</code>.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
+        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.</p>
+        pub fn scopes(mut self, input: crate::model::ResourceServerScopeType) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
-        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-        /// <code>description</code>.</p>
+        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
@@ -8250,7 +7279,7 @@ pub mod create_resource_server_input {
 #[doc(hidden)]
 pub type CreateResourceServerInputOperationOutputAlias = crate::operation::CreateResourceServer;
 #[doc(hidden)]
-pub type CreateResourceServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceServer`](crate::operation::CreateResourceServer)>
     #[allow(clippy::let_and_return)]
@@ -8261,7 +7290,7 @@ impl CreateResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8348,7 +7377,7 @@ impl CreateResourceServerInput {
             "CreateResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8433,7 +7462,7 @@ pub mod create_user_import_job_input {
 #[doc(hidden)]
 pub type CreateUserImportJobInputOperationOutputAlias = crate::operation::CreateUserImportJob;
 #[doc(hidden)]
-pub type CreateUserImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserImportJob`](crate::operation::CreateUserImportJob)>
     #[allow(clippy::let_and_return)]
@@ -8444,7 +7473,7 @@ impl CreateUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8531,7 +7560,7 @@ impl CreateUserImportJobInput {
             "CreateUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8615,31 +7644,21 @@ pub mod create_user_pool_input {
             self.policies = input;
             self
         }
-        /// <p>The Lambda trigger configuration information for the new user pool.</p>
-        /// <note>
-        /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
-        /// permission to invoke a function. So you will need to make an extra call to add
-        /// permission for these event sources to invoke your Lambda function.</p>
+        /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
+        /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.</p>
         /// <p></p>
-        /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-        /// AddPermission </a>. </p>
-        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
-        /// </a>.</p>
+        /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
+        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
         /// </note>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.lambda_config = Some(input);
             self
         }
-        /// <p>The Lambda trigger configuration information for the new user pool.</p>
-        /// <note>
-        /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
-        /// permission to invoke a function. So you will need to make an extra call to add
-        /// permission for these event sources to invoke your Lambda function.</p>
+        /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
+        /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.</p>
         /// <p></p>
-        /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-        /// AddPermission </a>. </p>
-        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
-        /// </a>.</p>
+        /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
+        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
         /// </note>
         pub fn set_lambda_config(
             mut self,
@@ -8655,10 +7674,10 @@ pub mod create_user_pool_input {
         /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
         pub fn auto_verified_attributes(
             mut self,
-            input: impl Into<crate::model::VerifiedAttributeType>,
+            input: crate::model::VerifiedAttributeType,
         ) -> Self {
             let mut v = self.auto_verified_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_verified_attributes = Some(v);
             self
         }
@@ -8674,19 +7693,14 @@ pub mod create_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_alias_attributes`](Self::set_alias_attributes).
         ///
-        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
-        /// <b>preferred_username</b>.</p>
-        pub fn alias_attributes(
-            mut self,
-            input: impl Into<crate::model::AliasAttributeType>,
-        ) -> Self {
+        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
+        pub fn alias_attributes(mut self, input: crate::model::AliasAttributeType) -> Self {
             let mut v = self.alias_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alias_attributes = Some(v);
             self
         }
-        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
-        /// <b>preferred_username</b>.</p>
+        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
         pub fn set_alias_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AliasAttributeType>>,
@@ -8698,19 +7712,14 @@ pub mod create_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_username_attributes`](Self::set_username_attributes).
         ///
-        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
-        /// a user signs up.</p>
-        pub fn username_attributes(
-            mut self,
-            input: impl Into<crate::model::UsernameAttributeType>,
-        ) -> Self {
+        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
+        pub fn username_attributes(mut self, input: crate::model::UsernameAttributeType) -> Self {
             let mut v = self.username_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.username_attributes = Some(v);
             self
         }
-        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
-        /// a user signs up.</p>
+        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
         pub fn set_username_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
@@ -8731,14 +7740,12 @@ pub mod create_user_pool_input {
             self.sms_verification_message = input;
             self
         }
-        /// <p>A string representing the email verification message. EmailVerificationMessage is
-        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_message = Some(input.into());
             self
         }
-        /// <p>A string representing the email verification message. EmailVerificationMessage is
-        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8746,14 +7753,12 @@ pub mod create_user_pool_input {
             self.email_verification_message = input;
             self
         }
-        /// <p>A string representing the email verification subject. EmailVerificationSubject is
-        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_verification_subject = Some(input.into());
             self
         }
-        /// <p>A string representing the email verification subject. EmailVerificationSubject is
-        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8761,8 +7766,7 @@ pub mod create_user_pool_input {
             self.email_verification_subject = input;
             self
         }
-        /// <p>The template for the verification message that the user sees when the app requests
-        /// permission to access the user's information.</p>
+        /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
         pub fn verification_message_template(
             mut self,
             input: crate::model::VerificationMessageTemplateType,
@@ -8770,8 +7774,7 @@ pub mod create_user_pool_input {
             self.verification_message_template = Some(input);
             self
         }
-        /// <p>The template for the verification message that the user sees when the app requests
-        /// permission to access the user's information.</p>
+        /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
         pub fn set_verification_message_template(
             mut self,
             input: std::option::Option<crate::model::VerificationMessageTemplateType>,
@@ -8851,9 +7854,7 @@ pub mod create_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
         ///
-        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-        /// to categorize and manage user pools in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn user_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8864,9 +7865,7 @@ pub mod create_user_pool_input {
             self.user_pool_tags = Some(hash_map);
             self
         }
-        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-        /// to categorize and manage user pools in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_user_pool_tags(
             mut self,
             input: std::option::Option<
@@ -8896,16 +7895,14 @@ pub mod create_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_schema`](Self::set_schema).
         ///
-        /// <p>An array of schema attributes for the new user pool. These attributes can be standard
-        /// or custom attributes.</p>
-        pub fn schema(mut self, input: impl Into<crate::model::SchemaAttributeType>) -> Self {
+        /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
+        pub fn schema(mut self, input: crate::model::SchemaAttributeType) -> Self {
             let mut v = self.schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema = Some(v);
             self
         }
-        /// <p>An array of schema attributes for the new user pool. These attributes can be standard
-        /// or custom attributes.</p>
+        /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaAttributeType>>,
@@ -8913,14 +7910,12 @@ pub mod create_user_pool_input {
             self.schema = input;
             self
         }
-        /// <p>Used to enable advanced security risk detection. Set the key
-        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+        /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn user_pool_add_ons(mut self, input: crate::model::UserPoolAddOnsType) -> Self {
             self.user_pool_add_ons = Some(input);
             self
         }
-        /// <p>Used to enable advanced security risk detection. Set the key
-        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+        /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn set_user_pool_add_ons(
             mut self,
             input: std::option::Option<crate::model::UserPoolAddOnsType>,
@@ -8928,10 +7923,7 @@ pub mod create_user_pool_input {
             self.user_pool_add_ons = input;
             self
         }
-        /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
-        /// option. For example, when this is set to <code>False</code>, users will be able to sign
-        /// in using either "username" or "Username". This configuration is immutable once it has
-        /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+        /// <p>You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
         pub fn username_configuration(
             mut self,
             input: crate::model::UsernameConfigurationType,
@@ -8939,10 +7931,7 @@ pub mod create_user_pool_input {
             self.username_configuration = Some(input);
             self
         }
-        /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
-        /// option. For example, when this is set to <code>False</code>, users will be able to sign
-        /// in using either "username" or "Username". This configuration is immutable once it has
-        /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+        /// <p>You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
         pub fn set_username_configuration(
             mut self,
             input: std::option::Option<crate::model::UsernameConfigurationType>,
@@ -8950,12 +7939,7 @@ pub mod create_user_pool_input {
             self.username_configuration = input;
             self
         }
-        /// <p>Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-        /// preferred method when a user has more than one method available. With this setting, SMS
-        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-        /// the recovery method where SMS is preferred over email.</p>
+        /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
         pub fn account_recovery_setting(
             mut self,
             input: crate::model::AccountRecoverySettingType,
@@ -8963,12 +7947,7 @@ pub mod create_user_pool_input {
             self.account_recovery_setting = Some(input);
             self
         }
-        /// <p>Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-        /// preferred method when a user has more than one method available. With this setting, SMS
-        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-        /// the recovery method where SMS is preferred over email.</p>
+        /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
         pub fn set_account_recovery_setting(
             mut self,
             input: std::option::Option<crate::model::AccountRecoverySettingType>,
@@ -9012,7 +7991,7 @@ pub mod create_user_pool_input {
 #[doc(hidden)]
 pub type CreateUserPoolInputOperationOutputAlias = crate::operation::CreateUserPool;
 #[doc(hidden)]
-pub type CreateUserPoolInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPool`](crate::operation::CreateUserPool)>
     #[allow(clippy::let_and_return)]
@@ -9023,7 +8002,7 @@ impl CreateUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPool,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9108,7 +8087,7 @@ impl CreateUserPoolInput {
             "CreateUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9184,66 +8163,52 @@ pub mod create_user_pool_client_input {
             self.client_name = input;
             self
         }
-        /// <p>Boolean to specify whether you want to generate a secret for the user pool client
-        /// being created.</p>
+        /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
         pub fn generate_secret(mut self, input: bool) -> Self {
             self.generate_secret = Some(input);
             self
         }
-        /// <p>Boolean to specify whether you want to generate a secret for the user pool client
-        /// being created.</p>
+        /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
         pub fn set_generate_secret(mut self, input: std::option::Option<bool>) -> Self {
             self.generate_secret = input;
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-        /// be used.</p>
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.refresh_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-        /// be used.</p>
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value in
-        /// TokenValidityUnits.</p>
+        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.access_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value in
-        /// TokenValidityUnits.</p>
+        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value in
-        /// TokenValidityUnits.</p>
+        /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
         pub fn id_token_validity(mut self, input: i32) -> Self {
             self.id_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value in
-        /// TokenValidityUnits.</p>
+        /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
         }
-        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-        /// days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
             self.token_validity_units = Some(input);
             self
         }
-        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-        /// days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -9275,13 +8240,7 @@ pub mod create_user_pool_client_input {
         /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
         ///
         /// <p>The user pool attributes that the app client can write to.</p>
-        /// <p>If your app client allows users to sign in through an identity provider, this array
-        /// must include all attributes that are mapped to identity provider attributes. Amazon
-        /// Cognito updates mapped attributes when users sign in to your application through an
-        /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
-        /// Cognito throws an error when it attempts to update the attribute. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
-        /// Pool</a>.</p>
+        /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
         pub fn write_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.write_attributes.unwrap_or_default();
             v.push(input.into());
@@ -9289,13 +8248,7 @@ pub mod create_user_pool_client_input {
             self
         }
         /// <p>The user pool attributes that the app client can write to.</p>
-        /// <p>If your app client allows users to sign in through an identity provider, this array
-        /// must include all attributes that are mapped to identity provider attributes. Amazon
-        /// Cognito updates mapped attributes when users sign in to your application through an
-        /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
-        /// Cognito throws an error when it attempts to update the attribute. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
-        /// Pool</a>.</p>
+        /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
         pub fn set_write_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9307,84 +8260,29 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
         ///
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names
-        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-        /// Cognito receives the password in the request instead of using the SRP (Secure
-        /// Remote Password protocol) protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-        /// authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-        /// authentication. In this flow, Cognito receives the password in the request
-        /// instead of using the SRP protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-        /// tokens.</p>
-        /// </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
-        pub fn explicit_auth_flows(
-            mut self,
-            input: impl Into<crate::model::ExplicitAuthFlowsType>,
-        ) -> Self {
+        pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explicit_auth_flows = Some(v);
             self
         }
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names
-        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-        /// Cognito receives the password in the request instead of using the SRP (Secure
-        /// Remote Password protocol) protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-        /// authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-        /// authentication. In this flow, Cognito receives the password in the request
-        /// instead of using the SRP protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-        /// tokens.</p>
-        /// </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
         pub fn set_explicit_auth_flows(
             mut self,
@@ -9397,9 +8295,7 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the identity providers that are supported on this client.
-        /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-        /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+        /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -9409,9 +8305,7 @@ pub mod create_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the identity providers that are supported on this client.
-        /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-        /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+        /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9426,20 +8320,12 @@ pub mod create_user_pool_client_input {
         /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn callback_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.callback_ur_ls.unwrap_or_default();
@@ -9450,20 +8336,12 @@ pub mod create_user_pool_client_input {
         /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_callback_ur_ls(
             mut self,
@@ -9494,20 +8372,12 @@ pub mod create_user_pool_client_input {
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn default_redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_redirect_uri = Some(input.into());
@@ -9516,20 +8386,12 @@ pub mod create_user_pool_client_input {
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_default_redirect_uri(
             mut self,
@@ -9543,32 +8405,19 @@ pub mod create_user_pool_client_input {
         /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
         ///
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-        /// authorization code as the response. This code can be exchanged for access tokens with
-        /// the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-        /// a combination of client and client_secret.</p>
-        pub fn allowed_o_auth_flows(
-            mut self,
-            input: impl Into<crate::model::OAuthFlowType>,
-        ) -> Self {
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_o_auth_flows = Some(v);
             self
         }
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-        /// authorization code as the response. This code can be exchanged for access tokens with
-        /// the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-        /// a combination of client and client_secret.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -9580,20 +8429,14 @@ pub mod create_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
         ///
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-        /// in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-        /// in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9601,14 +8444,12 @@ pub mod create_user_pool_client_input {
             self.allowed_o_auth_scopes = input;
             self
         }
-        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.</p>
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
         pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
             self.allowed_o_auth_flows_user_pool_client = Some(input);
             self
         }
-        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.</p>
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
         pub fn set_allowed_o_auth_flows_user_pool_client(
             mut self,
             input: std::option::Option<bool>,
@@ -9616,13 +8457,8 @@ pub mod create_user_pool_client_input {
             self.allowed_o_auth_flows_user_pool_client = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-        /// pool.</p>
-        /// <note>
-        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-        /// projects within that same region. </p>
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
         /// </note>
         pub fn analytics_configuration(
             mut self,
@@ -9631,13 +8467,8 @@ pub mod create_user_pool_client_input {
             self.analytics_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-        /// pool.</p>
-        /// <note>
-        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-        /// projects within that same region. </p>
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
         /// </note>
         pub fn set_analytics_configuration(
             mut self,
@@ -9646,32 +8477,13 @@ pub mod create_user_pool_client_input {
             self.analytics_configuration = input;
             self
         }
-        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password was
-        /// incorrect, and account confirmation and password recovery return a response indicating a
-        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-        /// the user pool.</p>
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-        /// existence related errors are not prevented.</p>
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <note>
-        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-        /// is provided.</p>
+        /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+        /// </ul> <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
         /// </note>
         pub fn prevent_user_existence_errors(
             mut self,
@@ -9680,32 +8492,13 @@ pub mod create_user_pool_client_input {
             self.prevent_user_existence_errors = Some(input);
             self
         }
-        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password was
-        /// incorrect, and account confirmation and password recovery return a response indicating a
-        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-        /// the user pool.</p>
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-        /// existence related errors are not prevented.</p>
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <note>
-        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-        /// is provided.</p>
+        /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+        /// </ul> <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
         /// </note>
         pub fn set_prevent_user_existence_errors(
             mut self,
@@ -9714,15 +8507,13 @@ pub mod create_user_pool_client_input {
             self.prevent_user_existence_errors = input;
             self
         }
-        /// <p>Enables or disables token revocation. For more information
-        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+        /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
         pub fn enable_token_revocation(mut self, input: bool) -> Self {
             self.enable_token_revocation = Some(input);
             self
         }
-        /// <p>Enables or disables token revocation. For more information
-        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+        /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
         pub fn set_enable_token_revocation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_token_revocation = input;
@@ -9765,7 +8556,7 @@ pub mod create_user_pool_client_input {
 #[doc(hidden)]
 pub type CreateUserPoolClientInputOperationOutputAlias = crate::operation::CreateUserPoolClient;
 #[doc(hidden)]
-pub type CreateUserPoolClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPoolClient`](crate::operation::CreateUserPoolClient)>
     #[allow(clippy::let_and_return)]
@@ -9776,7 +8567,7 @@ impl CreateUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9863,7 +8654,7 @@ impl CreateUserPoolClientInput {
             "CreateUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9917,21 +8708,15 @@ pub mod create_user_pool_domain_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
-        /// your application.</p>
-        /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
-        /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
-        /// instead.</p>
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+        /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
         /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
         pub fn custom_domain_config(mut self, input: crate::model::CustomDomainConfigType) -> Self {
             self.custom_domain_config = Some(input);
             self
         }
-        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
-        /// your application.</p>
-        /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
-        /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
-        /// instead.</p>
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+        /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
         /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
         pub fn set_custom_domain_config(
             mut self,
@@ -9958,7 +8743,7 @@ pub mod create_user_pool_domain_input {
 #[doc(hidden)]
 pub type CreateUserPoolDomainInputOperationOutputAlias = crate::operation::CreateUserPoolDomain;
 #[doc(hidden)]
-pub type CreateUserPoolDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserPoolDomain`](crate::operation::CreateUserPoolDomain)>
     #[allow(clippy::let_and_return)]
@@ -9969,7 +8754,7 @@ impl CreateUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10056,7 +8841,7 @@ impl CreateUserPoolDomainInput {
             "CreateUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10126,7 +8911,7 @@ pub mod delete_group_input {
 #[doc(hidden)]
 pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
 #[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(clippy::let_and_return)]
@@ -10137,7 +8922,7 @@ impl DeleteGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10221,7 +9006,7 @@ impl DeleteGroupInput {
             "DeleteGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10294,7 +9079,7 @@ pub mod delete_identity_provider_input {
 #[doc(hidden)]
 pub type DeleteIdentityProviderInputOperationOutputAlias = crate::operation::DeleteIdentityProvider;
 #[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityProvider`](crate::operation::DeleteIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -10305,7 +9090,7 @@ impl DeleteIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10392,7 +9177,7 @@ impl DeleteIdentityProviderInput {
             "DeleteIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10462,7 +9247,7 @@ pub mod delete_resource_server_input {
 #[doc(hidden)]
 pub type DeleteResourceServerInputOperationOutputAlias = crate::operation::DeleteResourceServer;
 #[doc(hidden)]
-pub type DeleteResourceServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceServer`](crate::operation::DeleteResourceServer)>
     #[allow(clippy::let_and_return)]
@@ -10473,7 +9258,7 @@ impl DeleteResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10560,7 +9345,7 @@ impl DeleteResourceServerInput {
             "DeleteResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10618,7 +9403,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -10629,7 +9414,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10714,7 +9499,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10752,8 +9537,7 @@ pub mod delete_user_attributes_input {
         /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
         ///
         /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn user_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_attribute_names.unwrap_or_default();
             v.push(input.into());
@@ -10761,8 +9545,7 @@ pub mod delete_user_attributes_input {
             self
         }
         /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn set_user_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10797,7 +9580,7 @@ pub mod delete_user_attributes_input {
 #[doc(hidden)]
 pub type DeleteUserAttributesInputOperationOutputAlias = crate::operation::DeleteUserAttributes;
 #[doc(hidden)]
-pub type DeleteUserAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserAttributes`](crate::operation::DeleteUserAttributes)>
     #[allow(clippy::let_and_return)]
@@ -10808,7 +9591,7 @@ impl DeleteUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10896,7 +9679,7 @@ impl DeleteUserAttributesInput {
             "DeleteUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10954,7 +9737,7 @@ pub mod delete_user_pool_input {
 #[doc(hidden)]
 pub type DeleteUserPoolInputOperationOutputAlias = crate::operation::DeleteUserPool;
 #[doc(hidden)]
-pub type DeleteUserPoolInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPool`](crate::operation::DeleteUserPool)>
     #[allow(clippy::let_and_return)]
@@ -10965,7 +9748,7 @@ impl DeleteUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPool,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11050,7 +9833,7 @@ impl DeleteUserPoolInput {
             "DeleteUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11120,7 +9903,7 @@ pub mod delete_user_pool_client_input {
 #[doc(hidden)]
 pub type DeleteUserPoolClientInputOperationOutputAlias = crate::operation::DeleteUserPoolClient;
 #[doc(hidden)]
-pub type DeleteUserPoolClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPoolClient`](crate::operation::DeleteUserPoolClient)>
     #[allow(clippy::let_and_return)]
@@ -11131,7 +9914,7 @@ impl DeleteUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11218,7 +10001,7 @@ impl DeleteUserPoolClientInput {
             "DeleteUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11288,7 +10071,7 @@ pub mod delete_user_pool_domain_input {
 #[doc(hidden)]
 pub type DeleteUserPoolDomainInputOperationOutputAlias = crate::operation::DeleteUserPoolDomain;
 #[doc(hidden)]
-pub type DeleteUserPoolDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserPoolDomain`](crate::operation::DeleteUserPoolDomain)>
     #[allow(clippy::let_and_return)]
@@ -11299,7 +10082,7 @@ impl DeleteUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11386,7 +10169,7 @@ impl DeleteUserPoolDomainInput {
             "DeleteUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11460,7 +10243,7 @@ pub mod describe_identity_provider_input {
 pub type DescribeIdentityProviderInputOperationOutputAlias =
     crate::operation::DescribeIdentityProvider;
 #[doc(hidden)]
-pub type DescribeIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityProvider`](crate::operation::DescribeIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -11471,7 +10254,7 @@ impl DescribeIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11558,7 +10341,7 @@ impl DescribeIdentityProviderInput {
             "DescribeIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11628,7 +10411,7 @@ pub mod describe_resource_server_input {
 #[doc(hidden)]
 pub type DescribeResourceServerInputOperationOutputAlias = crate::operation::DescribeResourceServer;
 #[doc(hidden)]
-pub type DescribeResourceServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceServer`](crate::operation::DescribeResourceServer)>
     #[allow(clippy::let_and_return)]
@@ -11639,7 +10422,7 @@ impl DescribeResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourceServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11726,7 +10509,7 @@ impl DescribeResourceServerInput {
             "DescribeResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11797,7 +10580,7 @@ pub mod describe_risk_configuration_input {
 pub type DescribeRiskConfigurationInputOperationOutputAlias =
     crate::operation::DescribeRiskConfiguration;
 #[doc(hidden)]
-pub type DescribeRiskConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRiskConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRiskConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRiskConfiguration`](crate::operation::DescribeRiskConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11808,7 +10591,7 @@ impl DescribeRiskConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRiskConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11895,7 +10678,7 @@ impl DescribeRiskConfigurationInput {
             "DescribeRiskConfiguration",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11965,7 +10748,7 @@ pub mod describe_user_import_job_input {
 #[doc(hidden)]
 pub type DescribeUserImportJobInputOperationOutputAlias = crate::operation::DescribeUserImportJob;
 #[doc(hidden)]
-pub type DescribeUserImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserImportJob`](crate::operation::DescribeUserImportJob)>
     #[allow(clippy::let_and_return)]
@@ -11976,7 +10759,7 @@ impl DescribeUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12063,7 +10846,7 @@ impl DescribeUserImportJobInput {
             "DescribeUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12121,7 +10904,7 @@ pub mod describe_user_pool_input {
 #[doc(hidden)]
 pub type DescribeUserPoolInputOperationOutputAlias = crate::operation::DescribeUserPool;
 #[doc(hidden)]
-pub type DescribeUserPoolInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPool`](crate::operation::DescribeUserPool)>
     #[allow(clippy::let_and_return)]
@@ -12132,7 +10915,7 @@ impl DescribeUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPool,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12217,7 +11000,7 @@ impl DescribeUserPoolInput {
             "DescribeUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12287,7 +11070,7 @@ pub mod describe_user_pool_client_input {
 #[doc(hidden)]
 pub type DescribeUserPoolClientInputOperationOutputAlias = crate::operation::DescribeUserPoolClient;
 #[doc(hidden)]
-pub type DescribeUserPoolClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPoolClient`](crate::operation::DescribeUserPoolClient)>
     #[allow(clippy::let_and_return)]
@@ -12298,7 +11081,7 @@ impl DescribeUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12385,7 +11168,7 @@ impl DescribeUserPoolClientInput {
             "DescribeUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12443,7 +11226,7 @@ pub mod describe_user_pool_domain_input {
 #[doc(hidden)]
 pub type DescribeUserPoolDomainInputOperationOutputAlias = crate::operation::DescribeUserPoolDomain;
 #[doc(hidden)]
-pub type DescribeUserPoolDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserPoolDomain`](crate::operation::DescribeUserPoolDomain)>
     #[allow(clippy::let_and_return)]
@@ -12454,7 +11237,7 @@ impl DescribeUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12541,7 +11324,7 @@ impl DescribeUserPoolDomainInput {
             "DescribeUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12611,7 +11394,7 @@ pub mod forget_device_input {
 #[doc(hidden)]
 pub type ForgetDeviceInputOperationOutputAlias = crate::operation::ForgetDevice;
 #[doc(hidden)]
-pub type ForgetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ForgetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ForgetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ForgetDevice`](crate::operation::ForgetDevice)>
     #[allow(clippy::let_and_return)]
@@ -12622,7 +11405,7 @@ impl ForgetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ForgetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12706,7 +11489,7 @@ impl ForgetDeviceInput {
             "ForgetDevice",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12755,28 +11538,22 @@ pub mod forgot_password_input {
             self.client_id = input;
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_hash = Some(input.into());
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -12784,26 +11561,22 @@ pub mod forgot_password_input {
             self.user_context_data = input;
             self
         }
-        /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
-        /// password.</p>
+        /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
-        /// password.</p>
+        /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ForgotPassword</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -12815,37 +11588,14 @@ pub mod forgot_password_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
-        /// are assigned to the following triggers: <i>pre sign-up</i>,
-        /// <i>custom message</i>, and <i>user migration</i>. When
-        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-        /// function receives as input. This payload contains a <code>clientMetadata</code>
-        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your ForgotPassword request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -12858,37 +11608,14 @@ pub mod forgot_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
-        /// are assigned to the following triggers: <i>pre sign-up</i>,
-        /// <i>custom message</i>, and <i>user migration</i>. When
-        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-        /// function receives as input. This payload contains a <code>clientMetadata</code>
-        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-        /// your ForgotPassword request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -12921,7 +11648,7 @@ pub mod forgot_password_input {
 #[doc(hidden)]
 pub type ForgotPasswordInputOperationOutputAlias = crate::operation::ForgotPassword;
 #[doc(hidden)]
-pub type ForgotPasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ForgotPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ForgotPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ForgotPassword`](crate::operation::ForgotPassword)>
     #[allow(clippy::let_and_return)]
@@ -12932,7 +11659,7 @@ impl ForgotPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ForgotPassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13018,7 +11745,7 @@ impl ForgotPasswordInput {
             "ForgotPassword",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13076,7 +11803,7 @@ pub mod get_csv_header_input {
 #[doc(hidden)]
 pub type GetCsvHeaderInputOperationOutputAlias = crate::operation::GetCSVHeader;
 #[doc(hidden)]
-pub type GetCsvHeaderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCsvHeaderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCsvHeaderInput {
     /// Consumes the builder and constructs an Operation<[`GetCSVHeader`](crate::operation::GetCSVHeader)>
     #[allow(clippy::let_and_return)]
@@ -13087,7 +11814,7 @@ impl GetCsvHeaderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCSVHeader,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13171,7 +11898,7 @@ impl GetCsvHeaderInput {
             "GetCSVHeader",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13239,7 +11966,7 @@ pub mod get_device_input {
 #[doc(hidden)]
 pub type GetDeviceInputOperationOutputAlias = crate::operation::GetDevice;
 #[doc(hidden)]
-pub type GetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetDevice`](crate::operation::GetDevice)>
     #[allow(clippy::let_and_return)]
@@ -13250,7 +11977,7 @@ impl GetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13332,7 +12059,7 @@ impl GetDeviceInput {
                     "GetDevice",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13400,7 +12127,7 @@ pub mod get_group_input {
 #[doc(hidden)]
 pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
 #[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(clippy::let_and_return)]
@@ -13411,7 +12138,7 @@ impl GetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13493,7 +12220,7 @@ impl GetGroupInput {
                     "GetGroup",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13567,7 +12294,8 @@ pub mod get_identity_provider_by_identifier_input {
 pub type GetIdentityProviderByIdentifierInputOperationOutputAlias =
     crate::operation::GetIdentityProviderByIdentifier;
 #[doc(hidden)]
-pub type GetIdentityProviderByIdentifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityProviderByIdentifierInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityProviderByIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityProviderByIdentifier`](crate::operation::GetIdentityProviderByIdentifier)>
     #[allow(clippy::let_and_return)]
@@ -13578,7 +12306,7 @@ impl GetIdentityProviderByIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityProviderByIdentifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13664,7 +12392,7 @@ impl GetIdentityProviderByIdentifierInput {
             "GetIdentityProviderByIdentifier",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13722,7 +12450,7 @@ pub mod get_signing_certificate_input {
 #[doc(hidden)]
 pub type GetSigningCertificateInputOperationOutputAlias = crate::operation::GetSigningCertificate;
 #[doc(hidden)]
-pub type GetSigningCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSigningCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningCertificate`](crate::operation::GetSigningCertificate)>
     #[allow(clippy::let_and_return)]
@@ -13733,7 +12461,7 @@ impl GetSigningCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13820,7 +12548,7 @@ impl GetSigningCertificateInput {
             "GetSigningCertificate",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13890,7 +12618,7 @@ pub mod get_ui_customization_input {
 #[doc(hidden)]
 pub type GetUiCustomizationInputOperationOutputAlias = crate::operation::GetUICustomization;
 #[doc(hidden)]
-pub type GetUiCustomizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUiCustomizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUiCustomizationInput {
     /// Consumes the builder and constructs an Operation<[`GetUICustomization`](crate::operation::GetUICustomization)>
     #[allow(clippy::let_and_return)]
@@ -13901,7 +12629,7 @@ impl GetUiCustomizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUICustomization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13986,7 +12714,7 @@ impl GetUiCustomizationInput {
             "GetUICustomization",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14018,14 +12746,12 @@ pub mod get_user_input {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The access token returned by the server response to get information about the
-        /// user.</p>
+        /// <p>The access token returned by the server response to get information about the user.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token returned by the server response to get information about the
-        /// user.</p>
+        /// <p>The access token returned by the server response to get information about the user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -14044,7 +12770,7 @@ pub mod get_user_input {
 #[doc(hidden)]
 pub type GetUserInputOperationOutputAlias = crate::operation::GetUser;
 #[doc(hidden)]
-pub type GetUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserInput {
     /// Consumes the builder and constructs an Operation<[`GetUser`](crate::operation::GetUser)>
     #[allow(clippy::let_and_return)]
@@ -14055,7 +12781,7 @@ impl GetUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14138,7 +12864,7 @@ impl GetUserInput {
                     "GetUser",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14174,26 +12900,22 @@ pub mod get_user_attribute_verification_code_input {
         >,
     }
     impl Builder {
-        /// <p>The access token returned by the server response to get the user attribute
-        /// verification code.</p>
+        /// <p>The access token returned by the server response to get the user attribute verification code.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The access token returned by the server response to get the user attribute
-        /// verification code.</p>
+        /// <p>The access token returned by the server response to get the user attribute verification code.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
         }
-        /// <p>The attribute name returned by the server response to get the user attribute
-        /// verification code.</p>
+        /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The attribute name returned by the server response to get the user attribute
-        /// verification code.</p>
+        /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14205,36 +12927,14 @@ pub mod get_user_attribute_verification_code_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
-        /// function that is assigned to the <i>custom message</i> trigger. When
-        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-        /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
-        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -14247,36 +12947,14 @@ pub mod get_user_attribute_verification_code_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
-        /// function that is assigned to the <i>custom message</i> trigger. When
-        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-        /// provides the data that you assigned to the ClientMetadata parameter in your
-        /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
-        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -14307,7 +12985,8 @@ pub mod get_user_attribute_verification_code_input {
 pub type GetUserAttributeVerificationCodeInputOperationOutputAlias =
     crate::operation::GetUserAttributeVerificationCode;
 #[doc(hidden)]
-pub type GetUserAttributeVerificationCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserAttributeVerificationCodeInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserAttributeVerificationCodeInput {
     /// Consumes the builder and constructs an Operation<[`GetUserAttributeVerificationCode`](crate::operation::GetUserAttributeVerificationCode)>
     #[allow(clippy::let_and_return)]
@@ -14318,7 +12997,7 @@ impl GetUserAttributeVerificationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserAttributeVerificationCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14405,7 +13084,7 @@ impl GetUserAttributeVerificationCodeInput {
             "GetUserAttributeVerificationCode",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14463,7 +13142,7 @@ pub mod get_user_pool_mfa_config_input {
 #[doc(hidden)]
 pub type GetUserPoolMfaConfigInputOperationOutputAlias = crate::operation::GetUserPoolMfaConfig;
 #[doc(hidden)]
-pub type GetUserPoolMfaConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserPoolMfaConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserPoolMfaConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetUserPoolMfaConfig`](crate::operation::GetUserPoolMfaConfig)>
     #[allow(clippy::let_and_return)]
@@ -14474,7 +13153,7 @@ impl GetUserPoolMfaConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserPoolMfaConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14561,7 +13240,7 @@ impl GetUserPoolMfaConfigInput {
             "GetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14619,7 +13298,7 @@ pub mod global_sign_out_input {
 #[doc(hidden)]
 pub type GlobalSignOutInputOperationOutputAlias = crate::operation::GlobalSignOut;
 #[doc(hidden)]
-pub type GlobalSignOutInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GlobalSignOutInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GlobalSignOutInput {
     /// Consumes the builder and constructs an Operation<[`GlobalSignOut`](crate::operation::GlobalSignOut)>
     #[allow(clippy::let_and_return)]
@@ -14630,7 +13309,7 @@ impl GlobalSignOutInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GlobalSignOut,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14715,7 +13394,7 @@ impl GlobalSignOutInput {
             "GlobalSignOut",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14756,118 +13435,40 @@ pub mod initiate_auth_input {
         pub(crate) user_context_data: std::option::Option<crate::model::UserContextDataType>,
     }
     impl Builder {
-        /// <p>The authentication flow for this call to execute. The API action will depend on this
-        /// value. For example: </p>
+        /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-        /// new tokens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>SRP_A</code> and return the SRP variables to be used for next
-        /// challenge execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-        /// </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
         /// </ul>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-        /// (SRP) protocol.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-        /// flow for refreshing the access token and ID token by supplying a valid refresh
-        /// token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-        /// user pool. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-        /// flow. In this flow, Cognito receives the password in the request instead of
-        /// using the SRP process to verify passwords.</p>
-        /// </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+        /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+        /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+        /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn auth_flow(mut self, input: crate::model::AuthFlowType) -> Self {
             self.auth_flow = Some(input);
             self
         }
-        /// <p>The authentication flow for this call to execute. The API action will depend on this
-        /// value. For example: </p>
+        /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-        /// new tokens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>SRP_A</code> and return the SRP variables to be used for next
-        /// challenge execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-        /// </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
         /// </ul>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-        /// (SRP) protocol.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-        /// flow for refreshing the access token and ID token by supplying a valid refresh
-        /// token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-        /// user pool. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-        /// flow. In this flow, Cognito receives the password in the request instead of
-        /// using the SRP process to verify passwords.</p>
-        /// </li>
+        /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+        /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+        /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+        /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+        /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+        /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn set_auth_flow(
             mut self,
             input: std::option::Option<crate::model::AuthFlowType>,
@@ -14879,27 +13480,11 @@ pub mod initiate_auth_input {
         ///
         /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
         ///
-        /// <p>The authentication parameters. These are inputs corresponding to the
-        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-        /// of <code>AuthFlow</code>:</p>
+        /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-        /// with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-        /// SRP_A Value)</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
         /// </ul>
         pub fn auth_parameters(
             mut self,
@@ -14911,27 +13496,11 @@ pub mod initiate_auth_input {
             self.auth_parameters = Some(hash_map);
             self
         }
-        /// <p>The authentication parameters. These are inputs corresponding to the
-        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-        /// of <code>AuthFlow</code>:</p>
+        /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-        /// with a client secret), <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-        /// SRP_A Value)</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
         /// </ul>
         pub fn set_auth_parameters(
             mut self,
@@ -14946,70 +13515,29 @@ pub mod initiate_auth_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-        /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
-        /// functions that are specified for various triggers. The ClientMetadata value is passed as
-        /// input to the functions for only the following triggers:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pre signup</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>User migration</p>
-        /// </li>
+        /// <li> <p>Pre signup</p> </li>
+        /// <li> <p>Pre authentication</p> </li>
+        /// <li> <p>User migration</p> </li>
         /// </ul>
-        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-        /// payload, which the function receives as input. This payload contains a
-        /// <code>validationData</code> attribute, which provides the data that you assigned to
-        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
-        /// for your specific needs.</p>
-        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
-        /// for the following triggers, but it does not provide the ClientMetadata value as
-        /// input:</p>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
         /// <ul>
-        /// <li>
-        /// <p>Post authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>Custom message</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre token generation</p>
-        /// </li>
-        /// <li>
-        /// <p>Create auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Define auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Verify auth challenge</p>
-        /// </li>
+        /// <li> <p>Post authentication</p> </li>
+        /// <li> <p>Custom message</p> </li>
+        /// <li> <p>Pre token generation</p> </li>
+        /// <li> <p>Create auth challenge</p> </li>
+        /// <li> <p>Define auth challenge</p> </li>
+        /// <li> <p>Verify auth challenge</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -15022,70 +13550,29 @@ pub mod initiate_auth_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-        /// workflows that this action triggers.</p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
-        /// functions that are specified for various triggers. The ClientMetadata value is passed as
-        /// input to the functions for only the following triggers:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pre signup</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>User migration</p>
-        /// </li>
+        /// <li> <p>Pre signup</p> </li>
+        /// <li> <p>Pre authentication</p> </li>
+        /// <li> <p>User migration</p> </li>
         /// </ul>
-        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-        /// payload, which the function receives as input. This payload contains a
-        /// <code>validationData</code> attribute, which provides the data that you assigned to
-        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
-        /// for your specific needs.</p>
-        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
-        /// for the following triggers, but it does not provide the ClientMetadata value as
-        /// input:</p>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
         /// <ul>
-        /// <li>
-        /// <p>Post authentication</p>
-        /// </li>
-        /// <li>
-        /// <p>Custom message</p>
-        /// </li>
-        /// <li>
-        /// <p>Pre token generation</p>
-        /// </li>
-        /// <li>
-        /// <p>Create auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Define auth challenge</p>
-        /// </li>
-        /// <li>
-        /// <p>Verify auth challenge</p>
-        /// </li>
+        /// <li> <p>Post authentication</p> </li>
+        /// <li> <p>Custom message</p> </li>
+        /// <li> <p>Pre token generation</p> </li>
+        /// <li> <p>Create auth challenge</p> </li>
+        /// <li> <p>Define auth challenge</p> </li>
+        /// <li> <p>Verify auth challenge</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -15107,14 +13594,12 @@ pub mod initiate_auth_input {
             self.client_id = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>InitiateAuth</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>InitiateAuth</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -15122,16 +13607,12 @@ pub mod initiate_auth_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -15160,7 +13641,7 @@ pub mod initiate_auth_input {
 #[doc(hidden)]
 pub type InitiateAuthInputOperationOutputAlias = crate::operation::InitiateAuth;
 #[doc(hidden)]
-pub type InitiateAuthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InitiateAuthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateAuthInput {
     /// Consumes the builder and constructs an Operation<[`InitiateAuth`](crate::operation::InitiateAuth)>
     #[allow(clippy::let_and_return)]
@@ -15171,7 +13652,7 @@ impl InitiateAuthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateAuth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15256,7 +13737,7 @@ impl InitiateAuthInput {
             "InitiateAuth",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15341,7 +13822,7 @@ pub mod list_devices_input {
 #[doc(hidden)]
 pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
 #[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(clippy::let_and_return)]
@@ -15352,7 +13833,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15436,7 +13917,7 @@ impl ListDevicesInput {
             "ListDevices",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15490,14 +13971,12 @@ pub mod list_groups_input {
             self.limit = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15520,7 +13999,7 @@ pub mod list_groups_input {
 #[doc(hidden)]
 pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
 #[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(clippy::let_and_return)]
@@ -15531,7 +14010,7 @@ impl ListGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15615,7 +14094,7 @@ impl ListGroupsInput {
             "ListGroups",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15697,7 +14176,7 @@ pub mod list_identity_providers_input {
 #[doc(hidden)]
 pub type ListIdentityProvidersInputOperationOutputAlias = crate::operation::ListIdentityProviders;
 #[doc(hidden)]
-pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityProviders`](crate::operation::ListIdentityProviders)>
     #[allow(clippy::let_and_return)]
@@ -15708,7 +14187,7 @@ impl ListIdentityProvidersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityProviders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15795,7 +14274,7 @@ impl ListIdentityProvidersInput {
             "ListIdentityProviders",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15877,7 +14356,7 @@ pub mod list_resource_servers_input {
 #[doc(hidden)]
 pub type ListResourceServersInputOperationOutputAlias = crate::operation::ListResourceServers;
 #[doc(hidden)]
-pub type ListResourceServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceServersInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceServers`](crate::operation::ListResourceServers)>
     #[allow(clippy::let_and_return)]
@@ -15888,7 +14367,7 @@ impl ListResourceServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15973,7 +14452,7 @@ impl ListResourceServersInput {
             "ListResourceServers",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16031,7 +14510,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -16042,7 +14521,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16129,7 +14608,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16183,16 +14662,12 @@ pub mod list_user_import_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to
-        /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
-        /// jobs in the list.</p>
+        /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to
-        /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
-        /// jobs in the list.</p>
+        /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16218,7 +14693,7 @@ pub mod list_user_import_jobs_input {
 #[doc(hidden)]
 pub type ListUserImportJobsInputOperationOutputAlias = crate::operation::ListUserImportJobs;
 #[doc(hidden)]
-pub type ListUserImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUserImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserImportJobs`](crate::operation::ListUserImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -16229,7 +14704,7 @@ impl ListUserImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16314,7 +14789,7 @@ impl ListUserImportJobsInput {
             "ListUserImportJobs",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16358,26 +14833,22 @@ pub mod list_user_pool_clients_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The maximum number of results you want the request to return when listing the user
-        /// pool clients.</p>
+        /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results you want the request to return when listing the user
-        /// pool clients.</p>
+        /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16400,7 +14871,7 @@ pub mod list_user_pool_clients_input {
 #[doc(hidden)]
 pub type ListUserPoolClientsInputOperationOutputAlias = crate::operation::ListUserPoolClients;
 #[doc(hidden)]
-pub type ListUserPoolClientsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUserPoolClientsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserPoolClientsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserPoolClients`](crate::operation::ListUserPoolClients)>
     #[allow(clippy::let_and_return)]
@@ -16411,7 +14882,7 @@ impl ListUserPoolClientsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserPoolClients,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16498,7 +14969,7 @@ impl ListUserPoolClientsInput {
             "ListUserPoolClients",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16531,26 +15002,22 @@ pub mod list_user_pools_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results you want the request to return when listing the user
-        /// pools.</p>
+        /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results you want the request to return when listing the user
-        /// pools.</p>
+        /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -16572,7 +15039,7 @@ pub mod list_user_pools_input {
 #[doc(hidden)]
 pub type ListUserPoolsInputOperationOutputAlias = crate::operation::ListUserPools;
 #[doc(hidden)]
-pub type ListUserPoolsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUserPoolsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserPoolsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserPools`](crate::operation::ListUserPools)>
     #[allow(clippy::let_and_return)]
@@ -16583,7 +15050,7 @@ impl ListUserPoolsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserPools,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16668,7 +15135,7 @@ impl ListUserPoolsInput {
             "ListUserPools",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16718,18 +15185,14 @@ pub mod list_users_input {
         ///
         /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
         ///
-        /// <p>An array of strings, where each string is the name of a user attribute to be returned
-        /// for each user in the search results. If the array is null, all attributes are
-        /// returned.</p>
+        /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
-        /// <p>An array of strings, where each string is the name of a user attribute to be returned
-        /// for each user in the search results. If the array is null, all attributes are
-        /// returned.</p>
+        /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16747,14 +15210,12 @@ pub mod list_users_input {
             self.limit = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16762,168 +15223,54 @@ pub mod list_users_input {
             self.pagination_token = input;
             self
         }
-        /// <p>A filter string of the form "<i>AttributeName</i>
-        /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-        /// within the filter string must be escaped using the backslash (\) character. For example,
-        /// "<code>family_name</code> = \"Reddy\"".</p>
+        /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>AttributeName</i>: The name of the attribute to search for.
-        /// You can only search for one attribute at a time.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Filter-Type</i>: For an exact match, use =, for example,
-        /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
-        /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>AttributeValue</i>: The attribute value that must be matched
-        /// for each user.</p>
-        /// </li>
+        /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
+        /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
+        /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
         /// </ul>
-        /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
-        /// pool.</p>
+        /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
         /// <p>You can only search for the following standard attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>username</code> (case-sensitive)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>phone_number</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>given_name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>family_name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>preferred_username</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status (called <b>Enabled</b> in the Console)
-        /// (case-sensitive)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sub</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
+        /// <li> <p> <code>email</code> </p> </li>
+        /// <li> <p> <code>phone_number</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>given_name</code> </p> </li>
+        /// <li> <p> <code>family_name</code> </p> </li>
+        /// <li> <p> <code>preferred_username</code> </p> </li>
+        /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
+        /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
+        /// <li> <p> <code>sub</code> </p> </li>
         /// </ul>
         /// <p>Custom attributes are not searchable.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter = Some(input.into());
             self
         }
-        /// <p>A filter string of the form "<i>AttributeName</i>
-        /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-        /// within the filter string must be escaped using the backslash (\) character. For example,
-        /// "<code>family_name</code> = \"Reddy\"".</p>
+        /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>AttributeName</i>: The name of the attribute to search for.
-        /// You can only search for one attribute at a time.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Filter-Type</i>: For an exact match, use =, for example,
-        /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
-        /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>AttributeValue</i>: The attribute value that must be matched
-        /// for each user.</p>
-        /// </li>
+        /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
+        /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
+        /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
         /// </ul>
-        /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
-        /// pool.</p>
+        /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
         /// <p>You can only search for the following standard attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>username</code> (case-sensitive)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>phone_number</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>given_name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>family_name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>preferred_username</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status (called <b>Enabled</b> in the Console)
-        /// (case-sensitive)</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sub</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
+        /// <li> <p> <code>email</code> </p> </li>
+        /// <li> <p> <code>phone_number</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>given_name</code> </p> </li>
+        /// <li> <p> <code>family_name</code> </p> </li>
+        /// <li> <p> <code>preferred_username</code> </p> </li>
+        /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
+        /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
+        /// <li> <p> <code>sub</code> </p> </li>
         /// </ul>
         /// <p>Custom attributes are not searchable.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
@@ -16946,7 +15293,7 @@ pub mod list_users_input {
 #[doc(hidden)]
 pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
 #[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(clippy::let_and_return)]
@@ -16957,7 +15304,7 @@ impl ListUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17039,7 +15386,7 @@ impl ListUsersInput {
                     "ListUsers",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17104,14 +15451,12 @@ pub mod list_users_in_group_input {
             self.limit = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17135,7 +15480,7 @@ pub mod list_users_in_group_input {
 #[doc(hidden)]
 pub type ListUsersInGroupInputOperationOutputAlias = crate::operation::ListUsersInGroup;
 #[doc(hidden)]
-pub type ListUsersInGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsersInGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListUsersInGroup`](crate::operation::ListUsersInGroup)>
     #[allow(clippy::let_and_return)]
@@ -17146,7 +15491,7 @@ impl ListUsersInGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsersInGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17231,7 +15576,7 @@ impl ListUsersInGroupInput {
             "ListUsersInGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17280,28 +15625,22 @@ pub mod resend_confirmation_code_input {
             self.client_id = input;
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_hash = Some(input.into());
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -17319,14 +15658,12 @@ pub mod resend_confirmation_code_input {
             self.username = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ResendConfirmationCode</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>ResendConfirmationCode</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -17338,36 +15675,14 @@ pub mod resend_confirmation_code_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -17380,36 +15695,14 @@ pub mod resend_confirmation_code_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
-        /// request. In your function code in Lambda, you can process the
-        /// <code>clientMetadata</code> value to enhance your workflow for your specific
-        /// needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -17442,7 +15735,7 @@ pub mod resend_confirmation_code_input {
 #[doc(hidden)]
 pub type ResendConfirmationCodeInputOperationOutputAlias = crate::operation::ResendConfirmationCode;
 #[doc(hidden)]
-pub type ResendConfirmationCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResendConfirmationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResendConfirmationCodeInput {
     /// Consumes the builder and constructs an Operation<[`ResendConfirmationCode`](crate::operation::ResendConfirmationCode)>
     #[allow(clippy::let_and_return)]
@@ -17453,7 +15746,7 @@ impl ResendConfirmationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResendConfirmationCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17541,7 +15834,7 @@ impl ResendConfirmationCodeInput {
             "ResendConfirmationCode",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17594,15 +15887,13 @@ pub mod respond_to_auth_challenge_input {
             self
         }
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+        /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
             self.challenge_name = Some(input);
             self
         }
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-        /// <p>
-        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+        /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -17610,20 +15901,12 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_name = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-        /// determines that the caller needs to go through another challenge, they return a session
-        /// with other challenge parameters. This session should be passed as it is to the next
-        /// <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-        /// determines that the caller needs to go through another challenge, they return a session
-        /// with other challenge parameters. This session should be passed as it is to the next
-        /// <code>RespondToAuthChallenge</code> API call.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -17632,51 +15915,17 @@ pub mod respond_to_auth_challenge_input {
         ///
         /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
         ///
-        /// <p>The challenge responses. These are inputs corresponding to the value of
-        /// <code>ChallengeName</code>, for example:</p>
-        /// <note>
-        /// <p>
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
-        /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+        /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
+        /// <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
         /// </note>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-        /// <code>USERNAME</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-        /// required attributes, <code>USERNAME</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
-        /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
-        /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
-        /// <code>SECRET_HASH</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
-        /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-        /// the session value returned by <code>VerifySoftwareToken</code> in the
-        /// <code>Session</code> parameter.</p>
-        /// </li>
+        /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
+        /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+        /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
+        /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
         pub fn challenge_responses(
             mut self,
@@ -17688,51 +15937,17 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_responses = Some(hash_map);
             self
         }
-        /// <p>The challenge responses. These are inputs corresponding to the value of
-        /// <code>ChallengeName</code>, for example:</p>
-        /// <note>
-        /// <p>
-        /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
-        /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+        /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
+        /// <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
         /// </note>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-        /// <code>USERNAME</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-        /// required attributes, <code>USERNAME</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
-        /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
-        /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
-        /// <code>SECRET_HASH</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
-        /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-        /// the session value returned by <code>VerifySoftwareToken</code> in the
-        /// <code>Session</code> parameter.</p>
-        /// </li>
+        /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
+        /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li>
+        /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+        /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
+        /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
+        /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+        /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
         /// </ul>
         pub fn set_challenge_responses(
             mut self,
@@ -17743,14 +15958,12 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_responses = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>RespondToAuthChallenge</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-        /// <code>RespondToAuthChallenge</code> calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -17758,16 +15971,12 @@ pub mod respond_to_auth_challenge_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -17779,38 +15988,14 @@ pub mod respond_to_auth_challenge_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
-        /// that are assigned to the following triggers: <i>post authentication</i>,
-        /// <i>pre token generation</i>, <i>define auth
-        /// challenge</i>, <i>create auth challenge</i>, and
-        /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
-        /// functions, it passes a JSON payload, which the function receives as input. This payload
-        /// contains a <code>clientMetadata</code> attribute, which provides the data that you
-        /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -17823,38 +16008,14 @@ pub mod respond_to_auth_challenge_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
-        /// that are assigned to the following triggers: <i>post authentication</i>,
-        /// <i>pre token generation</i>, <i>define auth
-        /// challenge</i>, <i>create auth challenge</i>, and
-        /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
-        /// functions, it passes a JSON payload, which the function receives as input. This payload
-        /// contains a <code>clientMetadata</code> attribute, which provides the data that you
-        /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -17888,7 +16049,7 @@ pub mod respond_to_auth_challenge_input {
 #[doc(hidden)]
 pub type RespondToAuthChallengeInputOperationOutputAlias = crate::operation::RespondToAuthChallenge;
 #[doc(hidden)]
-pub type RespondToAuthChallengeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondToAuthChallengeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondToAuthChallengeInput {
     /// Consumes the builder and constructs an Operation<[`RespondToAuthChallenge`](crate::operation::RespondToAuthChallenge)>
     #[allow(clippy::let_and_return)]
@@ -17899,7 +16060,7 @@ impl RespondToAuthChallengeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondToAuthChallenge,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17987,7 +16148,7 @@ impl RespondToAuthChallengeInput {
             "RespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18072,7 +16233,7 @@ pub mod revoke_token_input {
 #[doc(hidden)]
 pub type RevokeTokenInputOperationOutputAlias = crate::operation::RevokeToken;
 #[doc(hidden)]
-pub type RevokeTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeTokenInput {
     /// Consumes the builder and constructs an Operation<[`RevokeToken`](crate::operation::RevokeToken)>
     #[allow(clippy::let_and_return)]
@@ -18083,7 +16244,7 @@ impl RevokeTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18167,7 +16328,7 @@ impl RevokeTokenInput {
             "RevokeToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18216,22 +16377,14 @@ pub mod set_risk_configuration_input {
             self.user_pool_id = input;
             self
         }
-        /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
-        /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
-        /// configuration is applied to all the clients in the userPool.</p>
-        /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
-        /// null, the user pool configuration is overridden and the risk configuration for the
-        /// client is used instead.</p>
+        /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+        /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
-        /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
-        /// configuration is applied to all the clients in the userPool.</p>
-        /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
-        /// null, the user pool configuration is overridden and the risk configuration for the
-        /// client is used instead.</p>
+        /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+        /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -18305,7 +16458,7 @@ pub mod set_risk_configuration_input {
 #[doc(hidden)]
 pub type SetRiskConfigurationInputOperationOutputAlias = crate::operation::SetRiskConfiguration;
 #[doc(hidden)]
-pub type SetRiskConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetRiskConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRiskConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetRiskConfiguration`](crate::operation::SetRiskConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -18316,7 +16469,7 @@ impl SetRiskConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetRiskConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18403,7 +16556,7 @@ impl SetRiskConfigurationInput {
             "SetRiskConfiguration",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18500,7 +16653,7 @@ pub mod set_ui_customization_input {
 #[doc(hidden)]
 pub type SetUiCustomizationInputOperationOutputAlias = crate::operation::SetUICustomization;
 #[doc(hidden)]
-pub type SetUiCustomizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetUiCustomizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUiCustomizationInput {
     /// Consumes the builder and constructs an Operation<[`SetUICustomization`](crate::operation::SetUICustomization)>
     #[allow(clippy::let_and_return)]
@@ -18511,7 +16664,7 @@ impl SetUiCustomizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUICustomization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18596,7 +16749,7 @@ impl SetUiCustomizationInput {
             "SetUICustomization",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18688,7 +16841,7 @@ pub mod set_user_mfa_preference_input {
 #[doc(hidden)]
 pub type SetUserMfaPreferenceInputOperationOutputAlias = crate::operation::SetUserMFAPreference;
 #[doc(hidden)]
-pub type SetUserMfaPreferenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetUserMfaPreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserMfaPreferenceInput {
     /// Consumes the builder and constructs an Operation<[`SetUserMFAPreference`](crate::operation::SetUserMFAPreference)>
     #[allow(clippy::let_and_return)]
@@ -18699,7 +16852,7 @@ impl SetUserMfaPreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserMFAPreference,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18786,7 +16939,7 @@ impl SetUserMfaPreferenceInput {
             "SetUserMFAPreference",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18861,47 +17014,21 @@ pub mod set_user_pool_mfa_config_input {
             self.software_token_mfa_configuration = input;
             self
         }
-        /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
-        /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
-        /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
-        /// include:</p>
+        /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OFF</code> MFA will not be used for any users.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON</code> MFA is required for all users to sign in.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIONAL</code> MFA will be required only for individual users who have
-        /// an MFA factor enabled.</p>
-        /// </li>
+        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
         /// </ul>
         pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
             self.mfa_configuration = Some(input);
             self
         }
-        /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
-        /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
-        /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
-        /// include:</p>
+        /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OFF</code> MFA will not be used for any users.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON</code> MFA is required for all users to sign in.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIONAL</code> MFA will be required only for individual users who have
-        /// an MFA factor enabled.</p>
-        /// </li>
+        /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+        /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+        /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
         /// </ul>
         pub fn set_mfa_configuration(
             mut self,
@@ -18929,7 +17056,7 @@ pub mod set_user_pool_mfa_config_input {
 #[doc(hidden)]
 pub type SetUserPoolMfaConfigInputOperationOutputAlias = crate::operation::SetUserPoolMfaConfig;
 #[doc(hidden)]
-pub type SetUserPoolMfaConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetUserPoolMfaConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserPoolMfaConfigInput {
     /// Consumes the builder and constructs an Operation<[`SetUserPoolMfaConfig`](crate::operation::SetUserPoolMfaConfig)>
     #[allow(clippy::let_and_return)]
@@ -18940,7 +17067,7 @@ impl SetUserPoolMfaConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserPoolMfaConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19027,7 +17154,7 @@ impl SetUserPoolMfaConfigInput {
             "SetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19074,16 +17201,14 @@ pub mod set_user_settings_input {
         ///
         /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
         ///
-        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-        /// delivery.</p>
-        pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+        pub fn mfa_options(mut self, input: crate::model::MfaOptionType) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_options = Some(v);
             self
         }
-        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-        /// delivery.</p>
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -19108,7 +17233,7 @@ pub mod set_user_settings_input {
 #[doc(hidden)]
 pub type SetUserSettingsInputOperationOutputAlias = crate::operation::SetUserSettings;
 #[doc(hidden)]
-pub type SetUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`SetUserSettings`](crate::operation::SetUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -19119,7 +17244,7 @@ impl SetUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19205,7 +17330,7 @@ impl SetUserSettingsInput {
             "SetUserSettings",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19257,14 +17382,12 @@ pub mod sign_up_input {
             self.client_id = input;
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_hash = Some(input.into());
             self
         }
-        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-        /// user pool client and username plus the client ID in the message.</p>
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -19294,17 +17417,15 @@ pub mod sign_up_input {
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -19317,9 +17438,9 @@ pub mod sign_up_input {
         /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
         ///
         /// <p>The validation data in the request to register a user.</p>
-        pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        pub fn validation_data(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_data = Some(v);
             self
         }
@@ -19331,14 +17452,12 @@ pub mod sign_up_input {
             self.validation_data = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
-        /// calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
         pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
             self.analytics_metadata = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
-        /// calls.</p>
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -19346,16 +17465,12 @@ pub mod sign_up_input {
             self.analytics_metadata = input;
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
             self.user_context_data = Some(input);
             self
         }
-        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-        /// security.</p>
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -19367,36 +17482,14 @@ pub mod sign_up_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
-        /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
-        /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
-        /// invokes any of these functions, it passes a JSON payload, which the function receives as
-        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-        /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -19409,36 +17502,14 @@ pub mod sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
-        /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
-        /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
-        /// invokes any of these functions, it passes a JSON payload, which the function receives as
-        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-        /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
-        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-        /// enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -19472,7 +17543,7 @@ pub mod sign_up_input {
 #[doc(hidden)]
 pub type SignUpInputOperationOutputAlias = crate::operation::SignUp;
 #[doc(hidden)]
-pub type SignUpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SignUpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignUpInput {
     /// Consumes the builder and constructs an Operation<[`SignUp`](crate::operation::SignUp)>
     #[allow(clippy::let_and_return)]
@@ -19483,7 +17554,7 @@ impl SignUpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignUp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19566,7 +17637,7 @@ impl SignUpInput {
                     "SignUp",
                     "cognitoidentityprovider",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19636,7 +17707,7 @@ pub mod start_user_import_job_input {
 #[doc(hidden)]
 pub type StartUserImportJobInputOperationOutputAlias = crate::operation::StartUserImportJob;
 #[doc(hidden)]
-pub type StartUserImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartUserImportJob`](crate::operation::StartUserImportJob)>
     #[allow(clippy::let_and_return)]
@@ -19647,7 +17718,7 @@ impl StartUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartUserImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19732,7 +17803,7 @@ impl StartUserImportJobInput {
             "StartUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19802,7 +17873,7 @@ pub mod stop_user_import_job_input {
 #[doc(hidden)]
 pub type StopUserImportJobInputOperationOutputAlias = crate::operation::StopUserImportJob;
 #[doc(hidden)]
-pub type StopUserImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopUserImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopUserImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StopUserImportJob`](crate::operation::StopUserImportJob)>
     #[allow(clippy::let_and_return)]
@@ -19813,7 +17884,7 @@ impl StopUserImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopUserImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19898,7 +17969,7 @@ impl StopUserImportJobInput {
             "StopUserImportJob",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19985,7 +18056,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -19996,7 +18067,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20080,7 +18151,7 @@ impl TagResourceInput {
             "TagResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20159,7 +18230,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -20170,7 +18241,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20254,7 +18325,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20367,7 +18438,7 @@ pub mod update_auth_event_feedback_input {
 pub type UpdateAuthEventFeedbackInputOperationOutputAlias =
     crate::operation::UpdateAuthEventFeedback;
 #[doc(hidden)]
-pub type UpdateAuthEventFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAuthEventFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuthEventFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuthEventFeedback`](crate::operation::UpdateAuthEventFeedback)>
     #[allow(clippy::let_and_return)]
@@ -20378,7 +18449,7 @@ impl UpdateAuthEventFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthEventFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20465,7 +18536,7 @@ impl UpdateAuthEventFeedbackInput {
             "UpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20554,7 +18625,7 @@ pub mod update_device_status_input {
 #[doc(hidden)]
 pub type UpdateDeviceStatusInputOperationOutputAlias = crate::operation::UpdateDeviceStatus;
 #[doc(hidden)]
-pub type UpdateDeviceStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDeviceStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceStatus`](crate::operation::UpdateDeviceStatus)>
     #[allow(clippy::let_and_return)]
@@ -20565,7 +18636,7 @@ impl UpdateDeviceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20650,7 +18721,7 @@ impl UpdateDeviceStatusInput {
             "UpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20716,28 +18787,22 @@ pub mod update_group_input {
             self.description = input;
             self
         }
-        /// <p>The new role ARN for the group. This is used for setting the
-        /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
-        /// token.</p>
+        /// <p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The new role ARN for the group. This is used for setting the
-        /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
-        /// token.</p>
+        /// <p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The new precedence value for the group. For more information about this parameter, see
-        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+        /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
         pub fn precedence(mut self, input: i32) -> Self {
             self.precedence = Some(input);
             self
         }
-        /// <p>The new precedence value for the group. For more information about this parameter, see
-        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+        /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
         pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
             self.precedence = input;
             self
@@ -20762,7 +18827,7 @@ pub mod update_group_input {
 #[doc(hidden)]
 pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
 #[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(clippy::let_and_return)]
@@ -20773,7 +18838,7 @@ impl UpdateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20857,7 +18922,7 @@ impl UpdateGroupInput {
             "UpdateGroup",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20924,8 +18989,7 @@ pub mod update_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
         ///
-        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
-        /// <code>MetadataFile</code>.</p>
+        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
         pub fn provider_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -20936,8 +19000,7 @@ pub mod update_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
-        /// <code>MetadataFile</code>.</p>
+        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
         pub fn set_provider_details(
             mut self,
             input: std::option::Option<
@@ -21011,7 +19074,7 @@ pub mod update_identity_provider_input {
 #[doc(hidden)]
 pub type UpdateIdentityProviderInputOperationOutputAlias = crate::operation::UpdateIdentityProvider;
 #[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityProvider`](crate::operation::UpdateIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -21022,7 +19085,7 @@ impl UpdateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21109,7 +19172,7 @@ impl UpdateIdentityProviderInput {
             "UpdateIdentityProvider",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21180,9 +19243,9 @@ pub mod update_resource_server_input {
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
         /// <p>The scope values to be set for the resource server.</p>
-        pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
+        pub fn scopes(mut self, input: crate::model::ResourceServerScopeType) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scopes = Some(v);
             self
         }
@@ -21213,7 +19276,7 @@ pub mod update_resource_server_input {
 #[doc(hidden)]
 pub type UpdateResourceServerInputOperationOutputAlias = crate::operation::UpdateResourceServer;
 #[doc(hidden)]
-pub type UpdateResourceServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceServer`](crate::operation::UpdateResourceServer)>
     #[allow(clippy::let_and_return)]
@@ -21224,7 +19287,7 @@ impl UpdateResourceServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21311,7 +19374,7 @@ impl UpdateResourceServerInput {
             "UpdateResourceServer",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21352,17 +19415,15 @@ pub mod update_user_attributes_input {
         /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
         ///
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
-        pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+        pub fn user_attributes(mut self, input: crate::model::AttributeType) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes = Some(v);
             self
         }
         /// <p>An array of name-value pairs representing user attributes.</p>
-        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-        /// attribute name.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -21384,35 +19445,14 @@ pub mod update_user_attributes_input {
         ///
         /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
         ///
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
-        /// In your function code in Lambda, you can process the <code>clientMetadata</code>
-        /// value to enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn client_metadata(
@@ -21425,35 +19465,14 @@ pub mod update_user_attributes_input {
             self.client_metadata = Some(hash_map);
             self
         }
-        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-        /// that this action triggers. </p>
-        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-        /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
-        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-        /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
-        /// In your function code in Lambda, you can process the <code>clientMetadata</code>
-        /// value to enhance your workflow for your specific needs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-        /// <i>Amazon Cognito Developer Guide</i>.</p>
-        /// <note>
-        /// <p>Take the following limitations into consideration when you use the ClientMetadata
-        /// parameter:</p>
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-        /// available only to Lambda triggers that are assigned to a user pool to
-        /// support custom workflows. If your user pool configuration does not include
-        /// triggers, the ClientMetadata parameter serves no purpose.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-        /// it to provide sensitive information.</p>
-        /// </li>
+        /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+        /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+        /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_client_metadata(
@@ -21483,7 +19502,7 @@ pub mod update_user_attributes_input {
 #[doc(hidden)]
 pub type UpdateUserAttributesInputOperationOutputAlias = crate::operation::UpdateUserAttributes;
 #[doc(hidden)]
-pub type UpdateUserAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserAttributes`](crate::operation::UpdateUserAttributes)>
     #[allow(clippy::let_and_return)]
@@ -21494,7 +19513,7 @@ impl UpdateUserAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21582,7 +19601,7 @@ impl UpdateUserAttributesInput {
             "UpdateUserAttributes",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21659,14 +19678,12 @@ pub mod update_user_pool_input {
             self.policies = input;
             self
         }
-        /// <p>The Lambda configuration information from the request to update the user
-        /// pool.</p>
+        /// <p>The Lambda configuration information from the request to update the user pool.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
             self.lambda_config = Some(input);
             self
         }
-        /// <p>The Lambda configuration information from the request to update the user
-        /// pool.</p>
+        /// <p>The Lambda configuration information from the request to update the user pool.</p>
         pub fn set_lambda_config(
             mut self,
             input: std::option::Option<crate::model::LambdaConfigType>,
@@ -21678,19 +19695,17 @@ pub mod update_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_auto_verified_attributes`](Self::set_auto_verified_attributes).
         ///
-        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
-        /// request to update user pools.</p>
+        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</p>
         pub fn auto_verified_attributes(
             mut self,
-            input: impl Into<crate::model::VerifiedAttributeType>,
+            input: crate::model::VerifiedAttributeType,
         ) -> Self {
             let mut v = self.auto_verified_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auto_verified_attributes = Some(v);
             self
         }
-        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
-        /// request to update user pools.</p>
+        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</p>
         pub fn set_auto_verified_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
@@ -21768,23 +19783,9 @@ pub mod update_user_pool_input {
         }
         /// <p>Can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
-        /// user registration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON</code> - MFA tokens are required for all user registrations. You can
-        /// only specify ON when you are initially creating a user pool. You can use the
-        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
-        /// user pools. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
-        /// token.</p>
-        /// </li>
+        /// <li> <p> <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</p> </li>
+        /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+        /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
         /// </ul>
         pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
             self.mfa_configuration = Some(input);
@@ -21792,23 +19793,9 @@ pub mod update_user_pool_input {
         }
         /// <p>Can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
-        /// user registration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON</code> - MFA tokens are required for all user registrations. You can
-        /// only specify ON when you are initially creating a user pool. You can use the
-        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
-        /// user pools. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
-        /// token.</p>
-        /// </li>
+        /// <li> <p> <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</p> </li>
+        /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+        /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
         /// </ul>
         pub fn set_mfa_configuration(
             mut self,
@@ -21863,9 +19850,7 @@ pub mod update_user_pool_input {
         ///
         /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
         ///
-        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-        /// to categorize and manage user pools in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn user_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -21876,9 +19861,7 @@ pub mod update_user_pool_input {
             self.user_pool_tags = Some(hash_map);
             self
         }
-        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-        /// to categorize and manage user pools in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_user_pool_tags(
             mut self,
             input: std::option::Option<
@@ -21904,14 +19887,12 @@ pub mod update_user_pool_input {
             self.admin_create_user_config = input;
             self
         }
-        /// <p>Used to enable advanced security risk detection. Set the key
-        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+        /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn user_pool_add_ons(mut self, input: crate::model::UserPoolAddOnsType) -> Self {
             self.user_pool_add_ons = Some(input);
             self
         }
-        /// <p>Used to enable advanced security risk detection. Set the key
-        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+        /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn set_user_pool_add_ons(
             mut self,
             input: std::option::Option<crate::model::UserPoolAddOnsType>,
@@ -21919,12 +19900,7 @@ pub mod update_user_pool_input {
             self.user_pool_add_ons = input;
             self
         }
-        /// <p>Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-        /// preferred method when a user has more than one method available. With this setting, SMS
-        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-        /// the recovery method where SMS is preferred over email.</p>
+        /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
         pub fn account_recovery_setting(
             mut self,
             input: crate::model::AccountRecoverySettingType,
@@ -21932,12 +19908,7 @@ pub mod update_user_pool_input {
             self.account_recovery_setting = Some(input);
             self
         }
-        /// <p>Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-        /// preferred method when a user has more than one method available. With this setting, SMS
-        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-        /// the recovery method where SMS is preferred over email.</p>
+        /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
         pub fn set_account_recovery_setting(
             mut self,
             input: std::option::Option<crate::model::AccountRecoverySettingType>,
@@ -21977,7 +19948,7 @@ pub mod update_user_pool_input {
 #[doc(hidden)]
 pub type UpdateUserPoolInputOperationOutputAlias = crate::operation::UpdateUserPool;
 #[doc(hidden)]
-pub type UpdateUserPoolInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserPoolInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPool`](crate::operation::UpdateUserPool)>
     #[allow(clippy::let_and_return)]
@@ -21988,7 +19959,7 @@ impl UpdateUserPoolInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPool,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22073,7 +20044,7 @@ impl UpdateUserPoolInput {
             "UpdateUserPool",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22129,14 +20100,12 @@ pub mod update_user_pool_client_input {
         pub(crate) enable_token_revocation: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The user pool ID for the user pool where you want to update the user pool
-        /// client.</p>
+        /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
         pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_pool_id = Some(input.into());
             self
         }
-        /// <p>The user pool ID for the user pool where you want to update the user pool
-        /// client.</p>
+        /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -22161,26 +20130,22 @@ pub mod update_user_pool_client_input {
             self.client_name = input;
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-        /// be used.</p>
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
         pub fn refresh_token_validity(mut self, input: i32) -> Self {
             self.refresh_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-        /// be used.</p>
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
         }
-        /// <p>The time limit, after which the access token is no longer valid and cannot be
-        /// used.</p>
+        /// <p>The time limit, after which the access token is no longer valid and cannot be used.</p>
         pub fn access_token_validity(mut self, input: i32) -> Self {
             self.access_token_validity = Some(input);
             self
         }
-        /// <p>The time limit, after which the access token is no longer valid and cannot be
-        /// used.</p>
+        /// <p>The time limit, after which the access token is no longer valid and cannot be used.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
@@ -22195,14 +20160,12 @@ pub mod update_user_pool_client_input {
             self.id_token_validity = input;
             self
         }
-        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-        /// days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
             self.token_validity_units = Some(input);
             self
         }
-        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-        /// days, and default for ID and access tokens are hours.</p>
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -22252,84 +20215,29 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
         ///
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names
-        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-        /// Cognito receives the password in the request instead of using the SRP (Secure
-        /// Remote Password protocol) protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-        /// authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-        /// authentication. In this flow, Cognito receives the password in the request
-        /// instead of using the SRP protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-        /// tokens.</p>
-        /// </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
-        pub fn explicit_auth_flows(
-            mut self,
-            input: impl Into<crate::model::ExplicitAuthFlowsType>,
-        ) -> Self {
+        pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             let mut v = self.explicit_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.explicit_auth_flows = Some(v);
             self
         }
-        /// <p>The authentication flows that are supported by the user pool clients. Flow names
-        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-        /// Cognito receives the password in the request instead of using the SRP (Secure
-        /// Remote Password protocol) protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-        /// authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-        /// authentication. In this flow, Cognito receives the password in the request
-        /// instead of using the SRP protocol to verify passwords.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-        /// tokens.</p>
-        /// </li>
+        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
         /// </ul>
         pub fn set_explicit_auth_flows(
             mut self,
@@ -22342,8 +20250,7 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the identity providers that are supported on this
-        /// client.</p>
+        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -22353,8 +20260,7 @@ pub mod update_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the identity providers that are supported on this
-        /// client.</p>
+        /// <p>A list of provider names for the identity providers that are supported on this client.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22369,20 +20275,12 @@ pub mod update_user_pool_client_input {
         /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn callback_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.callback_ur_ls.unwrap_or_default();
@@ -22393,20 +20291,12 @@ pub mod update_user_pool_client_input {
         /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_callback_ur_ls(
             mut self,
@@ -22437,20 +20327,12 @@ pub mod update_user_pool_client_input {
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn default_redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_redirect_uri = Some(input.into());
@@ -22459,20 +20341,12 @@ pub mod update_user_pool_client_input {
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
         /// <p>A redirect URI must:</p>
         /// <ul>
-        /// <li>
-        /// <p>Be an absolute URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>Be registered with the authorization server.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not include a fragment component.</p>
-        /// </li>
+        /// <li> <p>Be an absolute URI.</p> </li>
+        /// <li> <p>Be registered with the authorization server.</p> </li>
+        /// <li> <p>Not include a fragment component.</p> </li>
         /// </ul>
-        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-        /// Redirection Endpoint</a>.</p>
-        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-        /// purposes only.</p>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_default_redirect_uri(
             mut self,
@@ -22486,32 +20360,19 @@ pub mod update_user_pool_client_input {
         /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
         ///
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-        /// authorization code as the response. This code can be exchanged for access tokens with
-        /// the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-        /// a combination of client and client_secret.</p>
-        pub fn allowed_o_auth_flows(
-            mut self,
-            input: impl Into<crate::model::OAuthFlowType>,
-        ) -> Self {
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+        pub fn allowed_o_auth_flows(mut self, input: crate::model::OAuthFlowType) -> Self {
             let mut v = self.allowed_o_auth_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_o_auth_flows = Some(v);
             self
         }
         /// <p>The allowed OAuth flows.</p>
-        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-        /// authorization code as the response. This code can be exchanged for access tokens with
-        /// the token endpoint.</p>
-        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.</p>
-        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-        /// a combination of client and client_secret.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -22523,20 +20384,14 @@ pub mod update_user_pool_client_input {
         ///
         /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
         ///
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-        /// in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
-        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-        /// in Resource Servers are also supported.</p>
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22544,14 +20399,12 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_scopes = input;
             self
         }
-        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.</p>
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
         pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
             self.allowed_o_auth_flows_user_pool_client = Some(input);
             self
         }
-        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.</p>
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
         pub fn set_allowed_o_auth_flows_user_pool_client(
             mut self,
             input: std::option::Option<bool>,
@@ -22559,13 +20412,8 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_flows_user_pool_client = input;
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-        /// pool.</p>
-        /// <note>
-        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-        /// projects within that same region. </p>
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
         /// </note>
         pub fn analytics_configuration(
             mut self,
@@ -22574,13 +20422,8 @@ pub mod update_user_pool_client_input {
             self.analytics_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-        /// pool.</p>
-        /// <note>
-        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-        /// projects within that same region. </p>
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
         /// </note>
         pub fn set_analytics_configuration(
             mut self,
@@ -22589,32 +20432,13 @@ pub mod update_user_pool_client_input {
             self.analytics_configuration = input;
             self
         }
-        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password was
-        /// incorrect, and account confirmation and password recovery return a response indicating a
-        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-        /// the user pool.</p>
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-        /// existence related errors are not prevented.</p>
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <note>
-        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-        /// is provided.</p>
+        /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+        /// </ul> <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
         /// </note>
         pub fn prevent_user_existence_errors(
             mut self,
@@ -22623,32 +20447,13 @@ pub mod update_user_pool_client_input {
             self.prevent_user_existence_errors = Some(input);
             self
         }
-        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password was
-        /// incorrect, and account confirmation and password recovery return a response indicating a
-        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-        /// the user pool.</p>
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-        /// existence related errors are not prevented.</p>
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <note>
-        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-        /// is provided.</p>
+        /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+        /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+        /// </ul> <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
         /// </note>
         pub fn set_prevent_user_existence_errors(
             mut self,
@@ -22657,14 +20462,12 @@ pub mod update_user_pool_client_input {
             self.prevent_user_existence_errors = input;
             self
         }
-        /// <p>Enables or disables token revocation. For more information
-        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+        /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         pub fn enable_token_revocation(mut self, input: bool) -> Self {
             self.enable_token_revocation = Some(input);
             self
         }
-        /// <p>Enables or disables token revocation. For more information
-        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+        /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         pub fn set_enable_token_revocation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_token_revocation = input;
             self
@@ -22706,7 +20509,7 @@ pub mod update_user_pool_client_input {
 #[doc(hidden)]
 pub type UpdateUserPoolClientInputOperationOutputAlias = crate::operation::UpdateUserPoolClient;
 #[doc(hidden)]
-pub type UpdateUserPoolClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserPoolClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolClientInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPoolClient`](crate::operation::UpdateUserPoolClient)>
     #[allow(clippy::let_and_return)]
@@ -22717,7 +20520,7 @@ impl UpdateUserPoolClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22804,7 +20607,7 @@ impl UpdateUserPoolClientInput {
             "UpdateUserPoolClient",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22838,44 +20641,34 @@ pub mod update_user_pool_domain_input {
         pub(crate) custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
     }
     impl Builder {
-        /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
-        /// your application. For example: <code>auth.example.com</code>. </p>
-        /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
-        /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
+        /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>. </p>
+        /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
         }
-        /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
-        /// your application. For example: <code>auth.example.com</code>. </p>
-        /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
-        /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
+        /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>. </p>
+        /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
-        /// <p>The ID of the user pool that is associated with the custom domain that you are
-        /// updating the certificate for.</p>
+        /// <p>The ID of the user pool that is associated with the custom domain that you are updating the certificate for.</p>
         pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_pool_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user pool that is associated with the custom domain that you are
-        /// updating the certificate for.</p>
+        /// <p>The ID of the user pool that is associated with the custom domain that you are updating the certificate for.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
         }
-        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
-        /// your application. Use this object to specify an SSL certificate that is managed by
-        /// ACM.</p>
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
         pub fn custom_domain_config(mut self, input: crate::model::CustomDomainConfigType) -> Self {
             self.custom_domain_config = Some(input);
             self
         }
-        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
-        /// your application. Use this object to specify an SSL certificate that is managed by
-        /// ACM.</p>
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
         pub fn set_custom_domain_config(
             mut self,
             input: std::option::Option<crate::model::CustomDomainConfigType>,
@@ -22901,7 +20694,7 @@ pub mod update_user_pool_domain_input {
 #[doc(hidden)]
 pub type UpdateUserPoolDomainInputOperationOutputAlias = crate::operation::UpdateUserPoolDomain;
 #[doc(hidden)]
-pub type UpdateUserPoolDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserPoolDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserPoolDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserPoolDomain`](crate::operation::UpdateUserPoolDomain)>
     #[allow(clippy::let_and_return)]
@@ -22912,7 +20705,7 @@ impl UpdateUserPoolDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22999,7 +20792,7 @@ impl UpdateUserPoolDomainInput {
             "UpdateUserPoolDomain",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23044,14 +20837,12 @@ pub mod verify_software_token_input {
             self.access_token = input;
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
         pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
             self.session = Some(input.into());
             self
         }
-        /// <p>The session which should be passed both ways in challenge-response calls to the
-        /// service.</p>
+        /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -23098,7 +20889,7 @@ pub mod verify_software_token_input {
 #[doc(hidden)]
 pub type VerifySoftwareTokenInputOperationOutputAlias = crate::operation::VerifySoftwareToken;
 #[doc(hidden)]
-pub type VerifySoftwareTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifySoftwareTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifySoftwareTokenInput {
     /// Consumes the builder and constructs an Operation<[`VerifySoftwareToken`](crate::operation::VerifySoftwareToken)>
     #[allow(clippy::let_and_return)]
@@ -23109,7 +20900,7 @@ impl VerifySoftwareTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifySoftwareToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23194,7 +20985,7 @@ impl VerifySoftwareTokenInput {
             "VerifySoftwareToken",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23279,7 +21070,7 @@ pub mod verify_user_attribute_input {
 #[doc(hidden)]
 pub type VerifyUserAttributeInputOperationOutputAlias = crate::operation::VerifyUserAttribute;
 #[doc(hidden)]
-pub type VerifyUserAttributeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyUserAttributeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyUserAttributeInput {
     /// Consumes the builder and constructs an Operation<[`VerifyUserAttribute`](crate::operation::VerifyUserAttribute)>
     #[allow(clippy::let_and_return)]
@@ -23290,7 +21081,7 @@ impl VerifyUserAttributeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyUserAttribute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23376,7 +21167,7 @@ impl VerifyUserAttributeInput {
             "VerifyUserAttribute",
             "cognitoidentityprovider",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23440,8 +21231,7 @@ impl std::fmt::Debug for VerifyUserAttributeInput {
 pub struct VerifySoftwareTokenInput {
     /// <p>The access token.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
     pub session: std::option::Option<std::string::String>,
     /// <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
     pub user_code: std::option::Option<std::string::String>,
@@ -23453,8 +21243,7 @@ impl VerifySoftwareTokenInput {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -23482,35 +21271,25 @@ impl std::fmt::Debug for VerifySoftwareTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPoolDomainInput {
-    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
-    /// your application. For example: <code>auth.example.com</code>. </p>
-    /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
-    /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>. </p>
+    /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The ID of the user pool that is associated with the custom domain that you are
-    /// updating the certificate for.</p>
+    /// <p>The ID of the user pool that is associated with the custom domain that you are updating the certificate for.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
-    /// your application. Use this object to specify an SSL certificate that is managed by
-    /// ACM.</p>
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
     pub custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
 }
 impl UpdateUserPoolDomainInput {
-    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
-    /// your application. For example: <code>auth.example.com</code>. </p>
-    /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
-    /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>. </p>
+    /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The ID of the user pool that is associated with the custom domain that you are
-    /// updating the certificate for.</p>
+    /// <p>The ID of the user pool that is associated with the custom domain that you are updating the certificate for.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
-    /// your application. Use this object to specify an SSL certificate that is managed by
-    /// ACM.</p>
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
     pub fn custom_domain_config(
         &self,
     ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
@@ -23531,85 +21310,46 @@ impl std::fmt::Debug for UpdateUserPoolDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to update the user pool
-    /// client.</p>
+    /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The ID of the client associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The client name from the update user pool client request.</p>
     pub client_name: std::option::Option<std::string::String>,
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-    /// be used.</p>
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
     pub refresh_token_validity: i32,
-    /// <p>The time limit, after which the access token is no longer valid and cannot be
-    /// used.</p>
+    /// <p>The time limit, after which the access token is no longer valid and cannot be used.</p>
     pub access_token_validity: std::option::Option<i32>,
     /// <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
     pub id_token_validity: std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-    /// days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub token_validity_units: std::option::Option<crate::model::TokenValidityUnitsType>,
     /// <p>The read-only attributes of the user pool.</p>
     pub read_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The writeable attributes of the user pool.</p>
     pub write_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The authentication flows that are supported by the user pool clients. Flow names
-    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-    /// Cognito receives the password in the request instead of using the SRP (Secure
-    /// Remote Password protocol) protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-    /// authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-    /// authentication. In this flow, Cognito receives the password in the request
-    /// instead of using the SRP protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-    /// tokens.</p>
-    /// </li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the identity providers that are supported on this
-    /// client.</p>
+    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of allowed logout URLs for the identity providers.</p>
@@ -23617,85 +21357,42 @@ pub struct UpdateUserPoolClientInput {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: std::option::Option<std::string::String>,
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-    /// authorization code as the response. This code can be exchanged for access tokens with
-    /// the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-    /// (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-    /// a combination of client and client_secret.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-    /// in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-    /// with Cognito user pools.</p>
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: bool,
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-    /// pool.</p>
-    /// <note>
-    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-    /// projects within that same region. </p>
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
     /// </note>
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfigurationType>,
-    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-    /// during authentication, account confirmation, and password recovery when the user does
-    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-    /// exist, authentication returns an error indicating either the username or password was
-    /// incorrect, and account confirmation and password recovery return a response indicating a
-    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-    /// the user pool.</p>
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-    /// existence related errors are not prevented.</p>
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <note>
-    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-    /// is provided.</p>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+    /// </ul> <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
     /// </note>
     pub prevent_user_existence_errors:
         std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
-    /// <p>Enables or disables token revocation. For more information
-    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub enable_token_revocation: std::option::Option<bool>,
 }
 impl UpdateUserPoolClientInput {
-    /// <p>The user pool ID for the user pool where you want to update the user pool
-    /// client.</p>
+    /// <p>The user pool ID for the user pool where you want to update the user pool client.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -23707,13 +21404,11 @@ impl UpdateUserPoolClientInput {
     pub fn client_name(&self) -> std::option::Option<&str> {
         self.client_name.as_deref()
     }
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-    /// be used.</p>
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
     pub fn refresh_token_validity(&self) -> i32 {
         self.refresh_token_validity
     }
-    /// <p>The time limit, after which the access token is no longer valid and cannot be
-    /// used.</p>
+    /// <p>The time limit, after which the access token is no longer valid and cannot be used.</p>
     pub fn access_token_validity(&self) -> std::option::Option<i32> {
         self.access_token_validity
     }
@@ -23721,8 +21416,7 @@ impl UpdateUserPoolClientInput {
     pub fn id_token_validity(&self) -> std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-    /// days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub fn token_validity_units(
         &self,
     ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
@@ -23736,68 +21430,33 @@ impl UpdateUserPoolClientInput {
     pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.write_attributes.as_deref()
     }
-    /// <p>The authentication flows that are supported by the user pool clients. Flow names
-    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-    /// Cognito receives the password in the request instead of using the SRP (Secure
-    /// Remote Password protocol) protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-    /// authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-    /// authentication. In this flow, Cognito receives the password in the request
-    /// instead of using the SRP protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-    /// tokens.</p>
-    /// </li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     pub fn explicit_auth_flows(
         &self,
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the identity providers that are supported on this
-    /// client.</p>
+    /// <p>A list of provider names for the identity providers that are supported on this client.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
     /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.callback_ur_ls.as_deref()
@@ -23809,95 +21468,53 @@ impl UpdateUserPoolClientInput {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(&self) -> std::option::Option<&str> {
         self.default_redirect_uri.as_deref()
     }
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-    /// authorization code as the response. This code can be exchanged for access tokens with
-    /// the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-    /// (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-    /// a combination of client and client_secret.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
     pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
         self.allowed_o_auth_flows.as_deref()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-    /// in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-    /// with Cognito user pools.</p>
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
         self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-    /// pool.</p>
-    /// <note>
-    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-    /// projects within that same region. </p>
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
     /// </note>
     pub fn analytics_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AnalyticsConfigurationType> {
         self.analytics_configuration.as_ref()
     }
-    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-    /// during authentication, account confirmation, and password recovery when the user does
-    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-    /// exist, authentication returns an error indicating either the username or password was
-    /// incorrect, and account confirmation and password recovery return a response indicating a
-    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-    /// the user pool.</p>
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-    /// existence related errors are not prevented.</p>
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <note>
-    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-    /// is provided.</p>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+    /// </ul> <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
     /// </note>
     pub fn prevent_user_existence_errors(
         &self,
     ) -> std::option::Option<&crate::model::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
     }
-    /// <p>Enables or disables token revocation. For more information
-    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
         self.enable_token_revocation
     }
@@ -23946,11 +21563,9 @@ pub struct UpdateUserPoolInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>A container with the policies you wish to update in a user pool.</p>
     pub policies: std::option::Option<crate::model::UserPoolPolicyType>,
-    /// <p>The Lambda configuration information from the request to update the user
-    /// pool.</p>
+    /// <p>The Lambda configuration information from the request to update the user pool.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaConfigType>,
-    /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
-    /// request to update user pools.</p>
+    /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</p>
     pub auto_verified_attributes:
         std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
     /// <p>A container with information about the SMS verification message.</p>
@@ -23966,23 +21581,9 @@ pub struct UpdateUserPoolInput {
     pub sms_authentication_message: std::option::Option<std::string::String>,
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
-    /// user registration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON</code> - MFA tokens are required for all user registrations. You can
-    /// only specify ON when you are initially creating a user pool. You can use the
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
-    /// user pools. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
-    /// token.</p>
-    /// </li>
+    /// <li> <p> <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</p> </li>
+    /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+    /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
     /// <p>Device configuration.</p>
@@ -23991,22 +21592,14 @@ pub struct UpdateUserPoolInput {
     pub email_configuration: std::option::Option<crate::model::EmailConfigurationType>,
     /// <p>SMS configuration.</p>
     pub sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
-    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-    /// to categorize and manage user pools in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub user_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
     pub admin_create_user_config: std::option::Option<crate::model::AdminCreateUserConfigType>,
-    /// <p>Used to enable advanced security risk detection. Set the key
-    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
     pub user_pool_add_ons: std::option::Option<crate::model::UserPoolAddOnsType>,
-    /// <p>Use this setting to define which verified available method a user can use to recover
-    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-    /// preferred method when a user has more than one method available. With this setting, SMS
-    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-    /// the recovery method where SMS is preferred over email.</p>
+    /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
     pub account_recovery_setting: std::option::Option<crate::model::AccountRecoverySettingType>,
 }
 impl UpdateUserPoolInput {
@@ -24018,13 +21611,11 @@ impl UpdateUserPoolInput {
     pub fn policies(&self) -> std::option::Option<&crate::model::UserPoolPolicyType> {
         self.policies.as_ref()
     }
-    /// <p>The Lambda configuration information from the request to update the user
-    /// pool.</p>
+    /// <p>The Lambda configuration information from the request to update the user pool.</p>
     pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
         self.lambda_config.as_ref()
     }
-    /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
-    /// request to update user pools.</p>
+    /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</p>
     pub fn auto_verified_attributes(
         &self,
     ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
@@ -24054,23 +21645,9 @@ impl UpdateUserPoolInput {
     }
     /// <p>Can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
-    /// user registration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON</code> - MFA tokens are required for all user registrations. You can
-    /// only specify ON when you are initially creating a user pool. You can use the
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
-    /// user pools. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
-    /// token.</p>
-    /// </li>
+    /// <li> <p> <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</p> </li>
+    /// <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>
+    /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
@@ -24091,9 +21668,7 @@ impl UpdateUserPoolInput {
     pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
         self.sms_configuration.as_ref()
     }
-    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-    /// to categorize and manage user pools in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn user_pool_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -24106,17 +21681,11 @@ impl UpdateUserPoolInput {
     ) -> std::option::Option<&crate::model::AdminCreateUserConfigType> {
         self.admin_create_user_config.as_ref()
     }
-    /// <p>Used to enable advanced security risk detection. Set the key
-    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
     pub fn user_pool_add_ons(&self) -> std::option::Option<&crate::model::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
-    /// <p>Use this setting to define which verified available method a user can use to recover
-    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-    /// preferred method when a user has more than one method available. With this setting, SMS
-    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-    /// the recovery method where SMS is preferred over email.</p>
+    /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
     pub fn account_recovery_setting(
         &self,
     ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
@@ -24164,40 +21733,18 @@ impl std::fmt::Debug for UpdateUserPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The access token for the request to update user attributes.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
-    /// In your function code in Lambda, you can process the <code>clientMetadata</code>
-    /// value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -24205,8 +21752,7 @@ pub struct UpdateUserAttributesInput {
 }
 impl UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
@@ -24214,35 +21760,14 @@ impl UpdateUserAttributesInput {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
-    /// In your function code in Lambda, you can process the <code>clientMetadata</code>
-    /// value to enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -24312,8 +21837,7 @@ pub struct UpdateIdentityProviderInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The identity provider name.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
-    /// <code>MetadataFile</code>.</p>
+    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
     pub provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The identity provider attribute mapping to be changed.</p>
@@ -24331,8 +21855,7 @@ impl UpdateIdentityProviderInput {
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
-    /// <code>MetadataFile</code>.</p>
+    /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
     pub fn provider_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -24373,12 +21896,9 @@ pub struct UpdateGroupInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>A string containing the new description of the group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The new role ARN for the group. This is used for setting the
-    /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
-    /// token.</p>
+    /// <p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The new precedence value for the group. For more information about this parameter, see
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+    /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub precedence: std::option::Option<i32>,
 }
 impl UpdateGroupInput {
@@ -24394,14 +21914,11 @@ impl UpdateGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The new role ARN for the group. This is used for setting the
-    /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
-    /// token.</p>
+    /// <p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The new precedence value for the group. For more information about this parameter, see
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+    /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
     }
@@ -24626,56 +22143,29 @@ impl std::fmt::Debug for StartUserImportJobInput {
 pub struct SignUpInput {
     /// <p>The ID of the client associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
     /// <p>The user name of the user you wish to register.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>The password of the user you wish to register.</p>
     pub password: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The validation data in the request to register a user.</p>
     pub validation_data: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
-    /// calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
-    /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
-    /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
-    /// invokes any of these functions, it passes a JSON payload, which the function receives as
-    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-    /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -24686,8 +22176,7 @@ impl SignUpInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
@@ -24700,8 +22189,7 @@ impl SignUpInput {
         self.password.as_deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
@@ -24709,47 +22197,22 @@ impl SignUpInput {
     pub fn validation_data(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.validation_data.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
-    /// calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
-    /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
-    /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
-    /// invokes any of these functions, it passes a JSON payload, which the function receives as
-    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-    /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -24781,8 +22244,7 @@ impl std::fmt::Debug for SignUpInput {
 pub struct SetUserSettingsInput {
     /// <p>The access token for the set user settings request.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-    /// delivery.</p>
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
 }
 impl SetUserSettingsInput {
@@ -24790,8 +22252,7 @@ impl SetUserSettingsInput {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-    /// delivery.</p>
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
@@ -24816,24 +22277,11 @@ pub struct SetUserPoolMfaConfigInput {
     /// <p>The software token MFA configuration.</p>
     pub software_token_mfa_configuration:
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
-    /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
-    /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
-    /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
-    /// include:</p>
+    /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OFF</code> MFA will not be used for any users.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON</code> MFA is required for all users to sign in.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIONAL</code> MFA will be required only for individual users who have
-    /// an MFA factor enabled.</p>
-    /// </li>
+    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
@@ -24852,24 +22300,11 @@ impl SetUserPoolMfaConfigInput {
     ) -> std::option::Option<&crate::model::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
-    /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
-    /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
-    /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
-    /// include:</p>
+    /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OFF</code> MFA will not be used for any users.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON</code> MFA is required for all users to sign in.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIONAL</code> MFA will be required only for individual users who have
-    /// an MFA factor enabled.</p>
-    /// </li>
+    /// <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>
+    /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
+    /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>
     /// </ul>
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
@@ -24978,12 +22413,8 @@ impl std::fmt::Debug for SetUiCustomizationInput {
 pub struct SetRiskConfigurationInput {
     /// <p>The user pool ID. </p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
-    /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
-    /// configuration is applied to all the clients in the userPool.</p>
-    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
-    /// null, the user pool configuration is overridden and the risk configuration for the
-    /// client is used instead.</p>
+    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The compromised credentials risk configuration.</p>
     pub compromised_credentials_risk_configuration:
@@ -25000,12 +22431,8 @@ impl SetRiskConfigurationInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
-    /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
-    /// configuration is applied to all the clients in the userPool.</p>
-    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
-    /// null, the user pool configuration is overridden and the risk configuration for the
-    /// client is used instead.</p>
+    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -25091,102 +22518,36 @@ pub struct RespondToAuthChallengeInput {
     /// <p>The app client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-    /// determines that the caller needs to go through another challenge, they return a session
-    /// with other challenge parameters. This session should be passed as it is to the next
-    /// <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
-    /// <p>The challenge responses. These are inputs corresponding to the value of
-    /// <code>ChallengeName</code>, for example:</p>
-    /// <note>
-    /// <p>
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
-    /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+    /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
+    /// <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-    /// <code>USERNAME</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-    /// required attributes, <code>USERNAME</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
-    /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
-    /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
-    /// <code>SECRET_HASH</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
-    /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-    /// the session value returned by <code>VerifySoftwareToken</code> in the
-    /// <code>Session</code> parameter.</p>
-    /// </li>
+    /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
+    /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+    /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
+    /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     pub challenge_responses:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>RespondToAuthChallenge</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
-    /// that are assigned to the following triggers: <i>post authentication</i>,
-    /// <i>pre token generation</i>, <i>define auth
-    /// challenge</i>, <i>create auth challenge</i>, and
-    /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
-    /// functions, it passes a JSON payload, which the function receives as input. This payload
-    /// contains a <code>clientMetadata</code> attribute, which provides the data that you
-    /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -25198,64 +22559,25 @@ impl RespondToAuthChallengeInput {
         self.client_id.as_deref()
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-    /// determines that the caller needs to go through another challenge, they return a session
-    /// with other challenge parameters. This session should be passed as it is to the next
-    /// <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The challenge responses. These are inputs corresponding to the value of
-    /// <code>ChallengeName</code>, for example:</p>
-    /// <note>
-    /// <p>
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
-    /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+    /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
+    /// <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-    /// <code>USERNAME</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-    /// required attributes, <code>USERNAME</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
-    /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
-    /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
-    /// <code>SECRET_HASH</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
-    /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-    /// the session value returned by <code>VerifySoftwareToken</code> in the
-    /// <code>Session</code> parameter.</p>
-    /// </li>
+    /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>
+    /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>
+    /// <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>
+    /// <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>
+    /// <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     pub fn challenge_responses(
         &self,
@@ -25263,49 +22585,22 @@ impl RespondToAuthChallengeInput {
     {
         self.challenge_responses.as_ref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>RespondToAuthChallenge</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
-    /// that are assigned to the following triggers: <i>post authentication</i>,
-    /// <i>pre token generation</i>, <i>define auth
-    /// challenge</i>, <i>create auth challenge</i>, and
-    /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
-    /// functions, it passes a JSON payload, which the function receives as input. This payload
-    /// contains a <code>clientMetadata</code> attribute, which provides the data that you
-    /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -25335,48 +22630,22 @@ impl std::fmt::Debug for RespondToAuthChallengeInput {
 pub struct ResendConfirmationCodeInput {
     /// <p>The ID of the client associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
     /// <p>The user name of the user to whom you wish to resend a confirmation code.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ResendConfirmationCode</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -25387,14 +22656,11 @@ impl ResendConfirmationCodeInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -25402,41 +22668,18 @@ impl ResendConfirmationCodeInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ResendConfirmationCode</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -25469,8 +22712,7 @@ pub struct ListUsersInGroupInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The limit of the request to list users.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersInGroupInput {
@@ -25486,8 +22728,7 @@ impl ListUsersInGroupInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -25509,94 +22750,34 @@ impl std::fmt::Debug for ListUsersInGroupInput {
 pub struct ListUsersInput {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>An array of strings, where each string is the name of a user attribute to be returned
-    /// for each user in the search results. If the array is null, all attributes are
-    /// returned.</p>
+    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of users to be returned.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>A filter string of the form "<i>AttributeName</i>
-    /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-    /// within the filter string must be escaped using the backslash (\) character. For example,
-    /// "<code>family_name</code> = \"Reddy\"".</p>
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>AttributeName</i>: The name of the attribute to search for.
-    /// You can only search for one attribute at a time.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Filter-Type</i>: For an exact match, use =, for example,
-    /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
-    /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>AttributeValue</i>: The attribute value that must be matched
-    /// for each user.</p>
-    /// </li>
+    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
+    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
+    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
     /// </ul>
-    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
-    /// pool.</p>
+    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
     /// <p>You can only search for the following standard attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>username</code> (case-sensitive)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>email</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>phone_number</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>given_name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>family_name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>preferred_username</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status (called <b>Enabled</b> in the Console)
-    /// (case-sensitive)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sub</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
+    /// <li> <p> <code>email</code> </p> </li>
+    /// <li> <p> <code>phone_number</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>given_name</code> </p> </li>
+    /// <li> <p> <code>family_name</code> </p> </li>
+    /// <li> <p> <code>preferred_username</code> </p> </li>
+    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
+    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
+    /// <li> <p> <code>sub</code> </p> </li>
     /// </ul>
     /// <p>Custom attributes are not searchable.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
-    /// Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub filter: std::option::Option<std::string::String>,
 }
 impl ListUsersInput {
@@ -25604,9 +22785,7 @@ impl ListUsersInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>An array of strings, where each string is the name of a user attribute to be returned
-    /// for each user in the search results. If the array is null, all attributes are
-    /// returned.</p>
+    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
     pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes_to_get.as_deref()
     }
@@ -25614,90 +22793,32 @@ impl ListUsersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A filter string of the form "<i>AttributeName</i>
-    /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-    /// within the filter string must be escaped using the backslash (\) character. For example,
-    /// "<code>family_name</code> = \"Reddy\"".</p>
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>AttributeName</i>: The name of the attribute to search for.
-    /// You can only search for one attribute at a time.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Filter-Type</i>: For an exact match, use =, for example,
-    /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
-    /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>AttributeValue</i>: The attribute value that must be matched
-    /// for each user.</p>
-    /// </li>
+    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
+    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
+    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
     /// </ul>
-    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
-    /// pool.</p>
+    /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
     /// <p>You can only search for the following standard attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>username</code> (case-sensitive)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>email</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>phone_number</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>given_name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>family_name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>preferred_username</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status (called <b>Enabled</b> in the Console)
-    /// (case-sensitive)</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sub</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
+    /// <li> <p> <code>email</code> </p> </li>
+    /// <li> <p> <code>phone_number</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>given_name</code> </p> </li>
+    /// <li> <p> <code>family_name</code> </p> </li>
+    /// <li> <p> <code>preferred_username</code> </p> </li>
+    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
+    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
+    /// <li> <p> <code>sub</code> </p> </li>
     /// </ul>
     /// <p>Custom attributes are not searchable.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
-    /// Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&str> {
         self.filter.as_deref()
     }
@@ -25718,21 +22839,17 @@ impl std::fmt::Debug for ListUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserPoolsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results you want the request to return when listing the user
-    /// pools.</p>
+    /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
     pub max_results: i32,
 }
 impl ListUserPoolsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results you want the request to return when listing the user
-    /// pools.</p>
+    /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -25752,11 +22869,9 @@ impl std::fmt::Debug for ListUserPoolsInput {
 pub struct ListUserPoolClientsInput {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results you want the request to return when listing the user
-    /// pool clients.</p>
+    /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     pub max_results: i32,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserPoolClientsInput {
@@ -25764,13 +22879,11 @@ impl ListUserPoolClientsInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The maximum number of results you want the request to return when listing the user
-    /// pool clients.</p>
+    /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -25793,9 +22906,7 @@ pub struct ListUserImportJobsInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub max_results: i32,
-    /// <p>An identifier that was returned from the previous call to
-    /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
-    /// jobs in the list.</p>
+    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl ListUserImportJobsInput {
@@ -25807,9 +22918,7 @@ impl ListUserImportJobsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to
-    /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
-    /// jobs in the list.</p>
+    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -25923,8 +23032,7 @@ pub struct ListGroupsInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The limit of the request to list groups.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsInput {
@@ -25936,8 +23044,7 @@ impl ListGroupsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -25991,242 +23098,88 @@ impl std::fmt::Debug for ListDevicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateAuthInput {
-    /// <p>The authentication flow for this call to execute. The API action will depend on this
-    /// value. For example: </p>
+    /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-    /// new tokens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>SRP_A</code> and return the SRP variables to be used for next
-    /// challenge execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-    /// </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
     /// </ul>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-    /// (SRP) protocol.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-    /// flow for refreshing the access token and ID token by supplying a valid refresh
-    /// token.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-    /// user pool. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-    /// flow. In this flow, Cognito receives the password in the request instead of
-    /// using the SRP process to verify passwords.</p>
-    /// </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+    /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+    /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
     pub auth_flow: std::option::Option<crate::model::AuthFlowType>,
-    /// <p>The authentication parameters. These are inputs corresponding to the
-    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-    /// of <code>AuthFlow</code>:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-    /// with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-    /// SRP_A Value)</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     pub auth_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-    /// workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
-    /// functions that are specified for various triggers. The ClientMetadata value is passed as
-    /// input to the functions for only the following triggers:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pre signup</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>User migration</p>
-    /// </li>
+    /// <li> <p>Pre signup</p> </li>
+    /// <li> <p>Pre authentication</p> </li>
+    /// <li> <p>User migration</p> </li>
     /// </ul>
-    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-    /// payload, which the function receives as input. This payload contains a
-    /// <code>validationData</code> attribute, which provides the data that you assigned to
-    /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
-    /// for your specific needs.</p>
-    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
-    /// for the following triggers, but it does not provide the ClientMetadata value as
-    /// input:</p>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
     /// <ul>
-    /// <li>
-    /// <p>Post authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>Custom message</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre token generation</p>
-    /// </li>
-    /// <li>
-    /// <p>Create auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Define auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Verify auth challenge</p>
-    /// </li>
+    /// <li> <p>Post authentication</p> </li>
+    /// <li> <p>Custom message</p> </li>
+    /// <li> <p>Pre token generation</p> </li>
+    /// <li> <p>Create auth challenge</p> </li>
+    /// <li> <p>Define auth challenge</p> </li>
+    /// <li> <p>Verify auth challenge</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The app client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>InitiateAuth</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
 }
 impl InitiateAuthInput {
-    /// <p>The authentication flow for this call to execute. The API action will depend on this
-    /// value. For example: </p>
+    /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-    /// new tokens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>SRP_A</code> and return the SRP variables to be used for next
-    /// challenge execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-    /// </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
     /// </ul>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-    /// (SRP) protocol.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-    /// flow for refreshing the access token and ID token by supplying a valid refresh
-    /// token.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-    /// user pool. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-    /// flow. In this flow, Cognito receives the password in the request instead of
-    /// using the SRP process to verify passwords.</p>
-    /// </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+    /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+    /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    /// <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
     pub fn auth_flow(&self) -> std::option::Option<&crate::model::AuthFlowType> {
         self.auth_flow.as_ref()
     }
-    /// <p>The authentication parameters. These are inputs corresponding to the
-    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-    /// of <code>AuthFlow</code>:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-    /// with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-    /// SRP_A Value)</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     pub fn auth_parameters(
         &self,
@@ -26234,70 +23187,29 @@ impl InitiateAuthInput {
     {
         self.auth_parameters.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-    /// workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
-    /// functions that are specified for various triggers. The ClientMetadata value is passed as
-    /// input to the functions for only the following triggers:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pre signup</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>User migration</p>
-    /// </li>
+    /// <li> <p>Pre signup</p> </li>
+    /// <li> <p>Pre authentication</p> </li>
+    /// <li> <p>User migration</p> </li>
     /// </ul>
-    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-    /// payload, which the function receives as input. This payload contains a
-    /// <code>validationData</code> attribute, which provides the data that you assigned to
-    /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
-    /// for your specific needs.</p>
-    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
-    /// for the following triggers, but it does not provide the ClientMetadata value as
-    /// input:</p>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
     /// <ul>
-    /// <li>
-    /// <p>Post authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>Custom message</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre token generation</p>
-    /// </li>
-    /// <li>
-    /// <p>Create auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Define auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Verify auth challenge</p>
-    /// </li>
+    /// <li> <p>Post authentication</p> </li>
+    /// <li> <p>Custom message</p> </li>
+    /// <li> <p>Pre token generation</p> </li>
+    /// <li> <p>Create auth challenge</p> </li>
+    /// <li> <p>Define auth challenge</p> </li>
+    /// <li> <p>Verify auth challenge</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -26310,14 +23222,11 @@ impl InitiateAuthInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>InitiateAuth</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
@@ -26381,88 +23290,40 @@ impl std::fmt::Debug for GetUserPoolMfaConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserAttributeVerificationCodeInput {
-    /// <p>The access token returned by the server response to get the user attribute
-    /// verification code.</p>
+    /// <p>The access token returned by the server response to get the user attribute verification code.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>The attribute name returned by the server response to get the user attribute
-    /// verification code.</p>
+    /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
-    /// function that is assigned to the <i>custom message</i> trigger. When
-    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-    /// provides the data that you assigned to the ClientMetadata parameter in your
-    /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
-    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetUserAttributeVerificationCodeInput {
-    /// <p>The access token returned by the server response to get the user attribute
-    /// verification code.</p>
+    /// <p>The access token returned by the server response to get the user attribute verification code.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The attribute name returned by the server response to get the user attribute
-    /// verification code.</p>
+    /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
-    /// function that is assigned to the <i>custom message</i> trigger. When
-    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-    /// provides the data that you assigned to the ClientMetadata parameter in your
-    /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
-    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -26486,13 +23347,11 @@ impl std::fmt::Debug for GetUserAttributeVerificationCodeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserInput {
-    /// <p>The access token returned by the server response to get information about the
-    /// user.</p>
+    /// <p>The access token returned by the server response to get information about the user.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetUserInput {
-    /// <p>The access token returned by the server response to get information about the
-    /// user.</p>
+    /// <p>The access token returned by the server response to get information about the user.</p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -26638,8 +23497,7 @@ impl std::fmt::Debug for GetDeviceInput {
     }
 }
 
-/// <p>Represents the request to get the header information for the .csv file for the user
-/// import job.</p>
+/// <p>Represents the request to get the header information for the .csv file for the user import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCsvHeaderInput {
@@ -26666,50 +23524,22 @@ impl std::fmt::Debug for GetCsvHeaderInput {
 pub struct ForgotPasswordInput {
     /// <p>The ID of the client associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
-    /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
-    /// password.</p>
+    /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
-    /// are assigned to the following triggers: <i>pre sign-up</i>,
-    /// <i>custom message</i>, and <i>user migration</i>. When
-    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-    /// function receives as input. This payload contains a <code>clientMetadata</code>
-    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-    /// your ForgotPassword request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -26720,58 +23550,30 @@ impl ForgotPasswordInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
-    /// password.</p>
+    /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
-    /// are assigned to the following triggers: <i>pre sign-up</i>,
-    /// <i>custom message</i>, and <i>user migration</i>. When
-    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-    /// function receives as input. This payload contains a <code>clientMetadata</code>
-    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-    /// your ForgotPassword request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -27086,16 +23888,14 @@ impl std::fmt::Debug for DeleteUserPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The access token used in the request to delete user attributes.</p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.user_attribute_names.as_deref()
     }
@@ -27226,11 +24026,8 @@ pub struct CreateUserPoolDomainInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
-    /// your application.</p>
-    /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
-    /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
-    /// instead.</p>
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+    /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
     pub custom_domain_config: std::option::Option<crate::model::CustomDomainConfigType>,
 }
@@ -27243,11 +24040,8 @@ impl CreateUserPoolDomainInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
-    /// your application.</p>
-    /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
-    /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
-    /// instead.</p>
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+    /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
     pub fn custom_domain_config(
         &self,
@@ -27273,92 +24067,43 @@ pub struct CreateUserPoolClientInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The client name for the user pool client you would like to create.</p>
     pub client_name: std::option::Option<std::string::String>,
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client
-    /// being created.</p>
+    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
     pub generate_secret: bool,
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-    /// be used.</p>
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
     pub refresh_token_validity: i32,
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
-    /// valid and cannot be used. This value will be overridden if you have entered a value in
-    /// TokenValidityUnits.</p>
+    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
     pub access_token_validity: std::option::Option<i32>,
-    /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
-    /// valid and cannot be used. This value will be overridden if you have entered a value in
-    /// TokenValidityUnits.</p>
+    /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
     pub id_token_validity: std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-    /// days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub token_validity_units: std::option::Option<crate::model::TokenValidityUnitsType>,
     /// <p>The read attributes.</p>
     pub read_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user pool attributes that the app client can write to.</p>
-    /// <p>If your app client allows users to sign in through an identity provider, this array
-    /// must include all attributes that are mapped to identity provider attributes. Amazon
-    /// Cognito updates mapped attributes when users sign in to your application through an
-    /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
-    /// Cognito throws an error when it attempts to update the attribute. For more information,
-    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
-    /// Pool</a>.</p>
+    /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub write_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The authentication flows that are supported by the user pool clients. Flow names
-    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-    /// Cognito receives the password in the request instead of using the SRP (Secure
-    /// Remote Password protocol) protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-    /// authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-    /// authentication. In this flow, Cognito receives the password in the request
-    /// instead of using the SRP protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-    /// tokens.</p>
-    /// </li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the identity providers that are supported on this client.
-    /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-    /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of allowed logout URLs for the identity providers.</p>
@@ -27366,80 +24111,38 @@ pub struct CreateUserPoolClientInput {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: std::option::Option<std::string::String>,
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-    /// authorization code as the response. This code can be exchanged for access tokens with
-    /// the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-    /// (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-    /// a combination of client and client_secret.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
     pub allowed_o_auth_flows: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-    /// in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-    /// with Cognito user pools.</p>
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
     pub allowed_o_auth_flows_user_pool_client: bool,
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-    /// pool.</p>
-    /// <note>
-    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-    /// projects within that same region. </p>
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
     /// </note>
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfigurationType>,
-    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-    /// during authentication, account confirmation, and password recovery when the user does
-    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-    /// exist, authentication returns an error indicating either the username or password was
-    /// incorrect, and account confirmation and password recovery return a response indicating a
-    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-    /// the user pool.</p>
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-    /// existence related errors are not prevented.</p>
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <note>
-    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-    /// is provided.</p>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+    /// </ul> <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
     /// </note>
     pub prevent_user_existence_errors:
         std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
-    /// <p>Enables or disables token revocation. For more information
-    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
     pub enable_token_revocation: std::option::Option<bool>,
 }
@@ -27452,30 +24155,23 @@ impl CreateUserPoolClientInput {
     pub fn client_name(&self) -> std::option::Option<&str> {
         self.client_name.as_deref()
     }
-    /// <p>Boolean to specify whether you want to generate a secret for the user pool client
-    /// being created.</p>
+    /// <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
     pub fn generate_secret(&self) -> bool {
         self.generate_secret
     }
-    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
-    /// be used.</p>
+    /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
     pub fn refresh_token_validity(&self) -> i32 {
         self.refresh_token_validity
     }
-    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
-    /// valid and cannot be used. This value will be overridden if you have entered a value in
-    /// TokenValidityUnits.</p>
+    /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
     pub fn access_token_validity(&self) -> std::option::Option<i32> {
         self.access_token_validity
     }
-    /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
-    /// valid and cannot be used. This value will be overridden if you have entered a value in
-    /// TokenValidityUnits.</p>
+    /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
     pub fn id_token_validity(&self) -> std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented in. Default for RefreshToken is
-    /// days, and default for ID and access tokens are hours.</p>
+    /// <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
     pub fn token_validity_units(
         &self,
     ) -> std::option::Option<&crate::model::TokenValidityUnitsType> {
@@ -27486,79 +24182,37 @@ impl CreateUserPoolClientInput {
         self.read_attributes.as_deref()
     }
     /// <p>The user pool attributes that the app client can write to.</p>
-    /// <p>If your app client allows users to sign in through an identity provider, this array
-    /// must include all attributes that are mapped to identity provider attributes. Amazon
-    /// Cognito updates mapped attributes when users sign in to your application through an
-    /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
-    /// Cognito throws an error when it attempts to update the attribute. For more information,
-    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
-    /// Pool</a>.</p>
+    /// <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
     pub fn write_attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.write_attributes.as_deref()
     }
-    /// <p>The authentication flows that are supported by the user pool clients. Flow names
-    /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
-    /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
-    /// be used along with values without <code>ALLOW_</code> prefix.</p>
+    /// <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-    /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-    /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-    /// Cognito receives the password in the request instead of using the SRP (Secure
-    /// Remote Password protocol) protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
-    /// authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
-    /// authentication. In this flow, Cognito receives the password in the request
-    /// instead of using the SRP protocol to verify passwords.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-    /// tokens.</p>
-    /// </li>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     pub fn explicit_auth_flows(
         &self,
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the identity providers that are supported on this client.
-    /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-    /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    /// <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
     /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn callback_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
         self.callback_ur_ls.as_deref()
@@ -27570,95 +24224,53 @@ impl CreateUserPoolClientInput {
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
-    /// <li>
-    /// <p>Be an absolute URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>Be registered with the authorization server.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not include a fragment component.</p>
-    /// </li>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
-    /// Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
-    /// purposes only.</p>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(&self) -> std::option::Option<&str> {
         self.default_redirect_uri.as_deref()
     }
     /// <p>The allowed OAuth flows.</p>
-    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-    /// authorization code as the response. This code can be exchanged for access tokens with
-    /// the token endpoint.</p>
-    /// <p>Set to <code>implicit</code> to specify that the client should get the access token
-    /// (and, optionally, ID token, based on scopes) directly.</p>
-    /// <p>Set to <code>client_credentials</code> to specify that the client should get the
-    /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
-    /// a combination of client and client_secret.</p>
+    /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>
+    /// <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>
+    /// <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
     pub fn allowed_o_auth_flows(&self) -> std::option::Option<&[crate::model::OAuthFlowType]> {
         self.allowed_o_auth_flows.as_deref()
     }
-    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
-    /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-    /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
-    /// in Resource Servers are also supported.</p>
+    /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub fn allowed_o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
-    /// with Cognito user pools.</p>
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> bool {
         self.allowed_o_auth_flows_user_pool_client
     }
-    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
-    /// pool.</p>
-    /// <note>
-    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
-    /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
-    /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
-    /// projects within that same region. </p>
+    /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
+    /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>
     /// </note>
     pub fn analytics_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AnalyticsConfigurationType> {
         self.analytics_configuration.as_ref()
     }
-    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
-    /// during authentication, account confirmation, and password recovery when the user does
-    /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-    /// exist, authentication returns an error indicating either the username or password was
-    /// incorrect, and account confirmation and password recovery return a response indicating a
-    /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
-    /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
-    /// the user pool.</p>
+    /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
-    /// existence related errors are not prevented.</p>
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <note>
-    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
-    /// will default to <code>ENABLED</code> for newly created user pool clients if no value
-    /// is provided.</p>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>
+    /// </ul> <note>
+    /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>
     /// </note>
     pub fn prevent_user_existence_errors(
         &self,
     ) -> std::option::Option<&crate::model::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
     }
-    /// <p>Enables or disables token revocation. For more information
-    /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
     pub fn enable_token_revocation(&self) -> std::option::Option<bool> {
         self.enable_token_revocation
@@ -27708,38 +24320,28 @@ pub struct CreateUserPoolInput {
     pub pool_name: std::option::Option<std::string::String>,
     /// <p>The policies associated with the new user pool.</p>
     pub policies: std::option::Option<crate::model::UserPoolPolicyType>,
-    /// <p>The Lambda trigger configuration information for the new user pool.</p>
-    /// <note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
-    /// permission to invoke a function. So you will need to make an extra call to add
-    /// permission for these event sources to invoke your Lambda function.</p>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
+    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-    /// AddPermission </a>. </p>
-    /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
-    /// </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
+    /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub lambda_config: std::option::Option<crate::model::LambdaConfigType>,
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
     pub auto_verified_attributes:
         std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
-    /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
-    /// <b>preferred_username</b>.</p>
+    /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
     pub alias_attributes: std::option::Option<std::vec::Vec<crate::model::AliasAttributeType>>,
-    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
-    /// a user signs up.</p>
+    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
     pub username_attributes:
         std::option::Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
     /// <p>A string representing the SMS verification message.</p>
     pub sms_verification_message: std::option::Option<std::string::String>,
-    /// <p>A string representing the email verification message. EmailVerificationMessage is
-    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub email_verification_message: std::option::Option<std::string::String>,
-    /// <p>A string representing the email verification subject. EmailVerificationSubject is
-    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub email_verification_subject: std::option::Option<std::string::String>,
-    /// <p>The template for the verification message that the user sees when the app requests
-    /// permission to access the user's information.</p>
+    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
     pub verification_message_template:
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>A string representing the SMS authentication message.</p>
@@ -27752,30 +24354,18 @@ pub struct CreateUserPoolInput {
     pub email_configuration: std::option::Option<crate::model::EmailConfigurationType>,
     /// <p>The SMS configuration.</p>
     pub sms_configuration: std::option::Option<crate::model::SmsConfigurationType>,
-    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-    /// to categorize and manage user pools in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub user_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
     pub admin_create_user_config: std::option::Option<crate::model::AdminCreateUserConfigType>,
-    /// <p>An array of schema attributes for the new user pool. These attributes can be standard
-    /// or custom attributes.</p>
+    /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaAttributeType>>,
-    /// <p>Used to enable advanced security risk detection. Set the key
-    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
     pub user_pool_add_ons: std::option::Option<crate::model::UserPoolAddOnsType>,
-    /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
-    /// option. For example, when this is set to <code>False</code>, users will be able to sign
-    /// in using either "username" or "Username". This configuration is immutable once it has
-    /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+    /// <p>You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
     pub username_configuration: std::option::Option<crate::model::UsernameConfigurationType>,
-    /// <p>Use this setting to define which verified available method a user can use to recover
-    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-    /// preferred method when a user has more than one method available. With this setting, SMS
-    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-    /// the recovery method where SMS is preferred over email.</p>
+    /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
     pub account_recovery_setting: std::option::Option<crate::model::AccountRecoverySettingType>,
 }
 impl CreateUserPoolInput {
@@ -27787,16 +24377,11 @@ impl CreateUserPoolInput {
     pub fn policies(&self) -> std::option::Option<&crate::model::UserPoolPolicyType> {
         self.policies.as_ref()
     }
-    /// <p>The Lambda trigger configuration information for the new user pool.</p>
-    /// <note>
-    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
-    /// permission to invoke a function. So you will need to make an extra call to add
-    /// permission for these event sources to invoke your Lambda function.</p>
+    /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
+    /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.</p>
     /// <p></p>
-    /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-    /// AddPermission </a>. </p>
-    /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
-    /// </a>.</p>
+    /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
+    /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
     pub fn lambda_config(&self) -> std::option::Option<&crate::model::LambdaConfigType> {
         self.lambda_config.as_ref()
@@ -27807,13 +24392,11 @@ impl CreateUserPoolInput {
     ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
         self.auto_verified_attributes.as_deref()
     }
-    /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
-    /// <b>preferred_username</b>.</p>
+    /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
     pub fn alias_attributes(&self) -> std::option::Option<&[crate::model::AliasAttributeType]> {
         self.alias_attributes.as_deref()
     }
-    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
-    /// a user signs up.</p>
+    /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
     pub fn username_attributes(
         &self,
     ) -> std::option::Option<&[crate::model::UsernameAttributeType]> {
@@ -27823,18 +24406,15 @@ impl CreateUserPoolInput {
     pub fn sms_verification_message(&self) -> std::option::Option<&str> {
         self.sms_verification_message.as_deref()
     }
-    /// <p>A string representing the email verification message. EmailVerificationMessage is
-    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub fn email_verification_message(&self) -> std::option::Option<&str> {
         self.email_verification_message.as_deref()
     }
-    /// <p>A string representing the email verification subject. EmailVerificationSubject is
-    /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub fn email_verification_subject(&self) -> std::option::Option<&str> {
         self.email_verification_subject.as_deref()
     }
-    /// <p>The template for the verification message that the user sees when the app requests
-    /// permission to access the user's information.</p>
+    /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
     pub fn verification_message_template(
         &self,
     ) -> std::option::Option<&crate::model::VerificationMessageTemplateType> {
@@ -27864,9 +24444,7 @@ impl CreateUserPoolInput {
     pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
         self.sms_configuration.as_ref()
     }
-    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
-    /// to categorize and manage user pools in different ways, such as by purpose, owner,
-    /// environment, or other criteria.</p>
+    /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn user_pool_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -27879,31 +24457,21 @@ impl CreateUserPoolInput {
     ) -> std::option::Option<&crate::model::AdminCreateUserConfigType> {
         self.admin_create_user_config.as_ref()
     }
-    /// <p>An array of schema attributes for the new user pool. These attributes can be standard
-    /// or custom attributes.</p>
+    /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaAttributeType]> {
         self.schema.as_deref()
     }
-    /// <p>Used to enable advanced security risk detection. Set the key
-    /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
     pub fn user_pool_add_ons(&self) -> std::option::Option<&crate::model::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
-    /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
-    /// option. For example, when this is set to <code>False</code>, users will be able to sign
-    /// in using either "username" or "Username". This configuration is immutable once it has
-    /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+    /// <p>You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
     pub fn username_configuration(
         &self,
     ) -> std::option::Option<&crate::model::UsernameConfigurationType> {
         self.username_configuration.as_ref()
     }
-    /// <p>Use this setting to define which verified available method a user can use to recover
-    /// their password when they call <code>ForgotPassword</code>. It allows you to define a
-    /// preferred method when a user has more than one method available. With this setting, SMS
-    /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
-    /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
-    /// the recovery method where SMS is preferred over email.</p>
+    /// <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
     pub fn account_recovery_setting(
         &self,
     ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
@@ -27991,14 +24559,11 @@ impl std::fmt::Debug for CreateUserImportJobInput {
 pub struct CreateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
-    /// endpoint where the resource server is located. For example,
-    /// <code>https://my-weather-api.example.com</code>.</p>
+    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.</p>
     pub identifier: std::option::Option<std::string::String>,
     /// <p>A friendly name for the resource server.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-    /// <code>description</code>.</p>
+    /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.</p>
     pub scopes: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
 }
 impl CreateResourceServerInput {
@@ -28006,9 +24571,7 @@ impl CreateResourceServerInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
-    /// endpoint where the resource server is located. For example,
-    /// <code>https://my-weather-api.example.com</code>.</p>
+    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -28016,8 +24579,7 @@ impl CreateResourceServerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-    /// <code>description</code>.</p>
+    /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.</p>
     pub fn scopes(&self) -> std::option::Option<&[crate::model::ResourceServerScopeType]> {
         self.scopes.as_deref()
     }
@@ -28043,117 +24605,50 @@ pub struct CreateIdentityProviderInput {
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The identity provider type.</p>
     pub provider_type: std::option::Option<crate::model::IdentityProviderTypeType>,
-    /// <p>The identity provider details. The following list describes the provider detail keys
-    /// for each identity provider type.</p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// <li>
-    /// <p>api_version</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>team_id</p>
-    /// </li>
-    /// <li>
-    /// <p>key_id</p>
-    /// </li>
-    /// <li>
-    /// <p>private_key</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>attributes_request_method</p>
-    /// </li>
-    /// <li>
-    /// <p>oidc_issuer</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_url <i>if not available from discovery URL specified
-    /// by oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>token_url <i>if not available from discovery URL specified by
-    /// oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>attributes_url <i>if not available from discovery URL specified
-    /// by oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>jwks_uri <i>if not available from discovery URL specified by
-    /// oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>MetadataFile OR MetadataURL</p>
-    /// </li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>MetadataFile OR MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A mapping of identity provider attributes to standard and custom user pool
-    /// attributes.</p>
+    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
     pub attribute_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of identity provider identifiers.</p>
@@ -28172,112 +24667,46 @@ impl CreateIdentityProviderInput {
     pub fn provider_type(&self) -> std::option::Option<&crate::model::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
-    /// <p>The identity provider details. The following list describes the provider detail keys
-    /// for each identity provider type.</p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// <li>
-    /// <p>api_version</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>team_id</p>
-    /// </li>
-    /// <li>
-    /// <p>key_id</p>
-    /// </li>
-    /// <li>
-    /// <p>private_key</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>client_id</p>
-    /// </li>
-    /// <li>
-    /// <p>client_secret</p>
-    /// </li>
-    /// <li>
-    /// <p>attributes_request_method</p>
-    /// </li>
-    /// <li>
-    /// <p>oidc_issuer</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_scopes</p>
-    /// </li>
-    /// <li>
-    /// <p>authorize_url <i>if not available from discovery URL specified
-    /// by oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>token_url <i>if not available from discovery URL specified by
-    /// oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>attributes_url <i>if not available from discovery URL specified
-    /// by oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>jwks_uri <i>if not available from discovery URL specified by
-    /// oidc_issuer key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>MetadataFile OR MetadataURL</p>
-    /// </li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>MetadataFile OR MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn provider_details(
         &self,
@@ -28285,8 +24714,7 @@ impl CreateIdentityProviderInput {
     {
         self.provider_details.as_ref()
     }
-    /// <p>A mapping of identity provider attributes to standard and custom user pool
-    /// attributes.</p>
+    /// <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
     pub fn attribute_mapping(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -28323,19 +24751,8 @@ pub struct CreateGroupInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The role ARN for the group.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A nonnegative integer value that specifies the precedence of this group relative to
-    /// the other groups that a user can belong to in the user pool. Zero is the highest
-    /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
-    /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
-    /// more groups, it is the group with the lowest precedence value whose role ARN will be
-    /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
-    /// the user's tokens.</p>
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
-    /// group takes precedence over the other. If two groups with the same
-    /// <code>Precedence</code> have the same role ARN, that role is used in the
-    /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
-    /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
-    /// not set in users' tokens.</p>
+    /// <p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub precedence: std::option::Option<i32>,
 }
@@ -28356,19 +24773,8 @@ impl CreateGroupInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A nonnegative integer value that specifies the precedence of this group relative to
-    /// the other groups that a user can belong to in the user pool. Zero is the highest
-    /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
-    /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
-    /// more groups, it is the group with the lowest precedence value whose role ARN will be
-    /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
-    /// the user's tokens.</p>
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
-    /// group takes precedence over the other. If two groups with the same
-    /// <code>Precedence</code> have the same role ARN, that role is used in the
-    /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
-    /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
-    /// not set in users' tokens.</p>
+    /// <p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
@@ -28392,56 +24798,26 @@ impl std::fmt::Debug for CreateGroupInput {
 pub struct ConfirmSignUpInput {
     /// <p>The ID of the app client associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
     /// <p>The user name of the user whose registration you wish to confirm.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>The confirmation code sent by a user's request to confirm registration.</p>
     pub confirmation_code: std::option::Option<std::string::String>,
-    /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
-    /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
-    /// phone number/email used for sign up confirmation already exists as an alias with a
-    /// different user, the API call will migrate the alias from the previous user to the newly
-    /// created user being confirmed. If set to <code>False</code>, the API will throw an
-    /// <b>AliasExistsException</b> error.</p>
+    /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
     pub force_alias_creation: bool,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ConfirmSignUp</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
-    /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -28452,8 +24828,7 @@ impl ConfirmSignUpInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
@@ -28465,55 +24840,26 @@ impl ConfirmSignUpInput {
     pub fn confirmation_code(&self) -> std::option::Option<&str> {
         self.confirmation_code.as_deref()
     }
-    /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
-    /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
-    /// phone number/email used for sign up confirmation already exists as an alias with a
-    /// different user, the API call will migrate the alias from the previous user to the newly
-    /// created user being confirmed. If set to <code>False</code>, the API will throw an
-    /// <b>AliasExistsException</b> error.</p>
+    /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
     pub fn force_alias_creation(&self) -> bool {
         self.force_alias_creation
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ConfirmSignUp</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
-    /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -28544,54 +24890,26 @@ impl std::fmt::Debug for ConfirmSignUpInput {
 pub struct ConfirmForgotPasswordInput {
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: std::option::Option<std::string::String>,
-    /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
-    /// password.</p>
+    /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
-    /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
     pub confirmation_code: std::option::Option<std::string::String>,
     /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ConfirmForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub user_context_data: std::option::Option<crate::model::UserContextDataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
-    /// Cognito invokes this function, it passes a JSON payload, which the function receives as
-    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-    /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -28602,18 +24920,15 @@ impl ConfirmForgotPasswordInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
-    /// user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub fn secret_hash(&self) -> std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
-    /// password.</p>
+    /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
-    /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
     pub fn confirmation_code(&self) -> std::option::Option<&str> {
         self.confirmation_code.as_deref()
     }
@@ -28621,47 +24936,22 @@ impl ConfirmForgotPasswordInput {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
-    /// <code>ConfirmForgotPassword</code> calls.</p>
+    /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn user_context_data(&self) -> std::option::Option<&crate::model::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
-    /// Cognito invokes this function, it passes a JSON payload, which the function receives as
-    /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
-    /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -28775,8 +25065,7 @@ impl std::fmt::Debug for ChangePasswordInput {
 pub struct AssociateSoftwareTokenInput {
     /// <p>The access token.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
 }
 impl AssociateSoftwareTokenInput {
@@ -28784,8 +25073,7 @@ impl AssociateSoftwareTokenInput {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -28836,39 +25124,16 @@ pub struct AdminUpdateUserAttributesInput {
     /// <p>The user name of the user for whom you want to update user attributes.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
-    /// function that is assigned to the <i>custom message</i> trigger. When
-    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-    /// provides the data that you assigned to the ClientMetadata parameter in your
-    /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
-    /// the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -28884,41 +25149,18 @@ impl AdminUpdateUserAttributesInput {
         self.username.as_deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
-    /// function that is assigned to the <i>custom message</i> trigger. When
-    /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
-    /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
-    /// provides the data that you assigned to the ClientMetadata parameter in your
-    /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
-    /// the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -29025,23 +25267,19 @@ impl std::fmt::Debug for AdminUpdateAuthEventFeedbackInput {
     }
 }
 
-/// <p>You can use this parameter to set an MFA configuration that uses the SMS delivery
-/// medium.</p>
+/// <p>You can use this parameter to set an MFA configuration that uses the SMS delivery medium.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminSetUserSettingsInput {
-    /// <p>The ID of the user pool that contains the user that you are setting options
-    /// for.</p>
+    /// <p>The ID of the user pool that contains the user that you are setting options for.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user that you are setting options for.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-    /// delivery.</p>
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
 }
 impl AdminSetUserSettingsInput {
-    /// <p>The ID of the user pool that contains the user that you are setting options
-    /// for.</p>
+    /// <p>The ID of the user pool that contains the user that you are setting options for.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -29049,8 +25287,7 @@ impl AdminSetUserSettingsInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
-    /// delivery.</p>
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub fn mfa_options(&self) -> std::option::Option<&[crate::model::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
@@ -29075,9 +25312,7 @@ pub struct AdminSetUserPasswordInput {
     pub username: std::option::Option<std::string::String>,
     /// <p>The password for the user.</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>True</code> if the password is permanent, <code>False</code> if it is
-    /// temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub permanent: bool,
 }
 impl AdminSetUserPasswordInput {
@@ -29093,9 +25328,7 @@ impl AdminSetUserPasswordInput {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>
-    /// <code>True</code> if the password is permanent, <code>False</code> if it is
-    /// temporary.</p>
+    /// <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
     pub fn permanent(&self) -> bool {
         self.permanent
     }
@@ -29169,95 +25402,31 @@ pub struct AdminRespondToAuthChallengeInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub challenge_name: std::option::Option<crate::model::ChallengeNameType>,
-    /// <p>The challenge responses. These are inputs corresponding to the value of
-    /// <code>ChallengeName</code>, for example:</p>
+    /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
-    /// <code>SECRET_HASH</code> (if app client is configured with client
-    /// secret).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-    /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-    /// with client secret).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-    /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
-    /// client is configured with client secret). </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-    /// the session value returned by <code>VerifySoftwareToken</code> in the
-    /// <code>Session</code> parameter.</p>
-    /// </li>
+    /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+    /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
-    /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
-    /// not an alias (such as email address or phone number). To make this easier, the
-    /// <code>AdminInitiateAuth</code> response includes the actual username value in the
-    /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
-    /// your call to <code>AdminInitiateAuth</code>.</p>
+    /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
     pub challenge_responses:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-    /// determines that the caller needs to go through another challenge, they return a session
-    /// with other challenge parameters. This session should be passed as it is to the next
-    /// <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub session: std::option::Option<std::string::String>,
-    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-    /// <code>AdminRespondToAuthChallenge</code> calls.</p>
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub context_data: std::option::Option<crate::model::ContextDataType>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
-    /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
-    /// <i>custom message</i>, <i>post authentication</i>,
-    /// <i>user migration</i>, <i>pre token generation</i>,
-    /// <i>define auth challenge</i>, <i>create auth
-    /// challenge</i>, and <i>verify auth challenge response</i>. When
-    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-    /// function receives as input. This payload contains a <code>clientMetadata</code>
-    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-    /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
-    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -29276,105 +25445,41 @@ impl AdminRespondToAuthChallengeInput {
     pub fn challenge_name(&self) -> std::option::Option<&crate::model::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The challenge responses. These are inputs corresponding to the value of
-    /// <code>ChallengeName</code>, for example:</p>
+    /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
-    /// <code>SECRET_HASH</code> (if app client is configured with client
-    /// secret).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-    /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-    /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-    /// with client secret).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
-    /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
-    /// client is configured with client secret). </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
-    /// the session value returned by <code>VerifySoftwareToken</code> in the
-    /// <code>Session</code> parameter.</p>
-    /// </li>
+    /// <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+    /// <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>
+    /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
-    /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
-    /// not an alias (such as email address or phone number). To make this easier, the
-    /// <code>AdminInitiateAuth</code> response includes the actual username value in the
-    /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
-    /// your call to <code>AdminInitiateAuth</code>.</p>
+    /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
     pub fn challenge_responses(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.challenge_responses.as_ref()
     }
-    /// <p>The session which should be passed both ways in challenge-response calls to the
-    /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
-    /// determines that the caller needs to go through another challenge, they return a session
-    /// with other challenge parameters. This session should be passed as it is to the next
-    /// <code>RespondToAuthChallenge</code> API call.</p>
+    /// <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     pub fn session(&self) -> std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-    /// <code>AdminRespondToAuthChallenge</code> calls.</p>
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
         self.context_data.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
-    /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
-    /// <i>custom message</i>, <i>post authentication</i>,
-    /// <i>user migration</i>, <i>pre token generation</i>,
-    /// <i>define auth challenge</i>, <i>create auth
-    /// challenge</i>, and <i>verify auth challenge response</i>. When
-    /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
-    /// function receives as input. This payload contains a <code>clientMetadata</code>
-    /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
-    /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
-    /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -29407,36 +25512,14 @@ pub struct AdminResetUserPasswordInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user whose password you wish to reset.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -29451,36 +25534,14 @@ impl AdminResetUserPasswordInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
-    /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
-    /// invokes this function, it passes a JSON payload, which the function receives as input.
-    /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
-    /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
-    /// request. In your function code in Lambda, you can process the
-    /// <code>clientMetadata</code> value to enhance your workflow for your specific
-    /// needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -29587,8 +25648,7 @@ pub struct AdminListGroupsForUserInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The limit of the request to list groups.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl AdminListGroupsForUserInput {
@@ -29604,8 +25664,7 @@ impl AdminListGroupsForUserInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -29669,39 +25728,15 @@ impl std::fmt::Debug for AdminListDevicesInput {
 pub struct AdminLinkProviderForUserInput {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The existing user in the user pool to be linked to the external identity provider user
-    /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
-    /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
-    /// thrown. This is the user that is returned when the new user (with the linked identity
-    /// provider attribute) signs in.</p>
-    /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
-    /// <code>DestinationUser</code> should be the username in the user pool. For a
-    /// federated user, it should be the provider-specific <code>user_id</code>.</p>
-    /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
-    /// ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
-    /// Cognito user pools.</p>
+    /// <p>The existing user in the user pool to be linked to the external identity provider user account. Can be a native (Username + Password) Cognito User Pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new user (with the linked identity provider attribute) signs in.</p>
+    /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
+    /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub destination_user: std::option::Option<crate::model::ProviderUserIdentifierType>,
-    /// <p>An external identity provider account for a user who does not currently exist yet in
-    /// the user pool. This user must be a federated user (for example, a SAML or Facebook
-    /// user), not another native user.</p>
-    /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
-    /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
-    /// <code>Cognito_Subject</code>. For social identity providers, the
-    /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-    /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
-    /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-    /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
-    /// user must be the same value as the <code>id</code>, <code>sub</code>, or
-    /// <code>user_id</code> value found in the social identity provider token.</p>
+    /// <p>An external identity provider account for a user who does not currently exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+    /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook, Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
-    /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
-    /// assertion, you should map the subject to a claim through the SAML identity provider and
-    /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
-    /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
-    /// automatically parse the default unique identifier found in the subject from the SAML
-    /// token.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you wish to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
     pub source_user: std::option::Option<crate::model::ProviderUserIdentifierType>,
 }
 impl AdminLinkProviderForUserInput {
@@ -29709,43 +25744,19 @@ impl AdminLinkProviderForUserInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The existing user in the user pool to be linked to the external identity provider user
-    /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
-    /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
-    /// thrown. This is the user that is returned when the new user (with the linked identity
-    /// provider attribute) signs in.</p>
-    /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
-    /// <code>DestinationUser</code> should be the username in the user pool. For a
-    /// federated user, it should be the provider-specific <code>user_id</code>.</p>
-    /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
-    /// ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
-    /// Cognito user pools.</p>
+    /// <p>The existing user in the user pool to be linked to the external identity provider user account. Can be a native (Username + Password) Cognito User Pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new user (with the linked identity provider attribute) signs in.</p>
+    /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
+    /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub fn destination_user(
         &self,
     ) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.destination_user.as_ref()
     }
-    /// <p>An external identity provider account for a user who does not currently exist yet in
-    /// the user pool. This user must be a federated user (for example, a SAML or Facebook
-    /// user), not another native user.</p>
-    /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
-    /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
-    /// <code>Cognito_Subject</code>. For social identity providers, the
-    /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
-    /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
-    /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
-    /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
-    /// user must be the same value as the <code>id</code>, <code>sub</code>, or
-    /// <code>user_id</code> value found in the social identity provider token.</p>
+    /// <p>An external identity provider account for a user who does not currently exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
+    /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook, Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
-    /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
-    /// assertion, you should map the subject to a claim through the SAML identity provider and
-    /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
-    /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
-    /// automatically parse the default unique identifier found in the subject from the SAML
-    /// token.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you wish to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
     pub fn source_user(&self) -> std::option::Option<&crate::model::ProviderUserIdentifierType> {
         self.source_user.as_ref()
     }
@@ -29768,169 +25779,61 @@ pub struct AdminInitiateAuthInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The app client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The authentication flow for this call to execute. The API action will depend on this
-    /// value. For example:</p>
+    /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-    /// new tokens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>SRP_A</code> and return the SRP variables to be used for next
-    /// challenge execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-    /// </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
     /// </ul>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-    /// (SRP) protocol.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-    /// flow for refreshing the access token and ID token by supplying a valid refresh
-    /// token.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
-    /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
-    /// client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-    /// user pool. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-    /// flow. In this flow, Cognito receives the password in the request instead of
-    /// using the SRP process to verify passwords.</p>
-    /// </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+    /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+    /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
     pub auth_flow: std::option::Option<crate::model::AuthFlowType>,
-    /// <p>The authentication parameters. These are inputs corresponding to the
-    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-    /// of <code>AuthFlow</code>:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-    /// with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-    /// SRP_A Value)</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     pub auth_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-    /// workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
-    /// functions that are specified for various triggers. The ClientMetadata value is passed as
-    /// input to the functions for only the following triggers:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pre signup</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>User migration</p>
-    /// </li>
+    /// <li> <p>Pre signup</p> </li>
+    /// <li> <p>Pre authentication</p> </li>
+    /// <li> <p>User migration</p> </li>
     /// </ul>
-    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-    /// payload, which the function receives as input. This payload contains a
-    /// <code>validationData</code> attribute, which provides the data that you assigned to
-    /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
-    /// Lambda, you can process the <code>validationData</code> value to enhance your
-    /// workflow for your specific needs.</p>
-    /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
-    /// functions for the following triggers, but it does not provide the ClientMetadata value
-    /// as input:</p>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
     /// <ul>
-    /// <li>
-    /// <p>Post authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>Custom message</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre token generation</p>
-    /// </li>
-    /// <li>
-    /// <p>Create auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Define auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Verify auth challenge</p>
-    /// </li>
+    /// <li> <p>Post authentication</p> </li>
+    /// <li> <p>Custom message</p> </li>
+    /// <li> <p>Pre token generation</p> </li>
+    /// <li> <p>Create auth challenge</p> </li>
+    /// <li> <p>Define auth challenge</p> </li>
+    /// <li> <p>Verify auth challenge</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-    /// <code>AdminInitiateAuth</code> calls.</p>
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
     pub analytics_metadata: std::option::Option<crate::model::AnalyticsMetadataType>,
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub context_data: std::option::Option<crate::model::ContextDataType>,
 }
 impl AdminInitiateAuthInput {
@@ -29942,93 +25845,30 @@ impl AdminInitiateAuthInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The authentication flow for this call to execute. The API action will depend on this
-    /// value. For example:</p>
+    /// <p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
-    /// new tokens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>SRP_A</code> and return the SRP variables to be used for next
-    /// challenge execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-    /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
-    /// </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>
     /// </ul>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
-    /// (SRP) protocol.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
-    /// flow for refreshing the access token and ID token by supplying a valid refresh
-    /// token.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
-    /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
-    /// client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
-    /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
-    /// flow will invoke the user migration Lambda if the USERNAME is not found in the
-    /// user pool. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
-    /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
-    /// flow. In this flow, Cognito receives the password in the request instead of
-    /// using the SRP process to verify passwords.</p>
-    /// </li>
+    /// <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
+    /// <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>
+    /// <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>
+    /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
+    /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>
+    /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
     pub fn auth_flow(&self) -> std::option::Option<&crate::model::AuthFlowType> {
         self.auth_flow.as_ref()
     }
-    /// <p>The authentication parameters. These are inputs corresponding to the
-    /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
-    /// of <code>AuthFlow</code>:</p>
+    /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
-    /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
-    /// (required), <code>SECRET_HASH</code> (required if the app client is configured
-    /// with a client secret), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
-    /// <code>SECRET_HASH</code> (if app client is configured with client secret),
-    /// <code>DEVICE_KEY</code>. To start the authentication flow with password
-    /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
-    /// SRP_A Value)</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>
+    /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     pub fn auth_parameters(
         &self,
@@ -30036,71 +25876,29 @@ impl AdminInitiateAuthInput {
     {
         self.auth_parameters.as_ref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for certain custom
-    /// workflows that this action triggers.</p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
-    /// functions that are specified for various triggers. The ClientMetadata value is passed as
-    /// input to the functions for only the following triggers:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pre signup</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>User migration</p>
-    /// </li>
+    /// <li> <p>Pre signup</p> </li>
+    /// <li> <p>Pre authentication</p> </li>
+    /// <li> <p>User migration</p> </li>
     /// </ul>
-    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
-    /// payload, which the function receives as input. This payload contains a
-    /// <code>validationData</code> attribute, which provides the data that you assigned to
-    /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
-    /// Lambda, you can process the <code>validationData</code> value to enhance your
-    /// workflow for your specific needs.</p>
-    /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
-    /// functions for the following triggers, but it does not provide the ClientMetadata value
-    /// as input:</p>
+    /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>
     /// <ul>
-    /// <li>
-    /// <p>Post authentication</p>
-    /// </li>
-    /// <li>
-    /// <p>Custom message</p>
-    /// </li>
-    /// <li>
-    /// <p>Pre token generation</p>
-    /// </li>
-    /// <li>
-    /// <p>Create auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Define auth challenge</p>
-    /// </li>
-    /// <li>
-    /// <p>Verify auth challenge</p>
-    /// </li>
+    /// <li> <p>Post authentication</p> </li>
+    /// <li> <p>Custom message</p> </li>
+    /// <li> <p>Pre token generation</p> </li>
+    /// <li> <p>Create auth challenge</p> </li>
+    /// <li> <p>Define auth challenge</p> </li>
+    /// <li> <p>Verify auth challenge</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -30109,14 +25907,11 @@ impl AdminInitiateAuthInput {
     {
         self.client_metadata.as_ref()
     }
-    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-    /// <code>AdminInitiateAuth</code> calls.</p>
+    /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
     pub fn analytics_metadata(&self) -> std::option::Option<&crate::model::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
-    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
-    /// security.</p>
+    /// <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
     pub fn context_data(&self) -> std::option::Option<&crate::model::ContextDataType> {
         self.context_data.as_ref()
     }
@@ -30139,15 +25934,13 @@ impl std::fmt::Debug for AdminInitiateAuthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminGetUserInput {
-    /// <p>The user pool ID for the user pool where you want to get information about the
-    /// user.</p>
+    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name of the user you wish to retrieve.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl AdminGetUserInput {
-    /// <p>The user pool ID for the user pool where you want to get information about the
-    /// user.</p>
+    /// <p>The user pool ID for the user pool where you want to get information about the user.</p>
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -30328,8 +26121,7 @@ pub struct AdminDeleteUserAttributesInput {
     /// <p>The user name of the user from which you would like to delete attributes.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub user_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdminDeleteUserAttributesInput {
@@ -30342,8 +26134,7 @@ impl AdminDeleteUserAttributesInput {
         self.username.as_deref()
     }
     /// <p>An array of strings representing the user attribute names you wish to delete.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     pub fn user_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.user_attribute_names.as_deref()
     }
@@ -30392,117 +26183,43 @@ impl std::fmt::Debug for AdminDeleteUserInput {
 pub struct AdminCreateUserInput {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
-    /// between 1 and 128 characters. After the user is created, the username cannot be
-    /// changed.</p>
+    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>An array of name-value pairs that contain user attributes and attribute values to be
-    /// set for the user to be created. You can create a user without specifying any attributes
-    /// other than <code>Username</code>. However, any attributes that you specify as required
-    /// (when creating a user pool or in the <b>Attributes</b> tab of
-    /// the console) must be supplied either by you (in your call to
-    /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
-    /// your welcome message).</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
-    /// <p>To send a message inviting the user to sign up, you must specify the user's email
-    /// address or phone number. This can be done in your call to AdminCreateUser or in the
-    /// <b>Users</b> tab of the Amazon Cognito console for
-    /// managing your user pools.</p>
-    /// <p>In your call to <code>AdminCreateUser</code>, you can set the
-    /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
-    /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
-    /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+    /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+    /// <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>email</b>: The email address of the user to whom
-    /// the message that contains the code and username will be sent. Required if the
-    /// <code>email_verified</code> attribute is set to <code>True</code>, or if
-    /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
-    /// parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>phone_number</b>: The phone number of the user to
-    /// whom the message that contains the code and username will be sent. Required if
-    /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
-    /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
+    /// <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
     /// </ul>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>The user's validation data. This is an array of name-value pairs that contain user
-    /// attributes and attribute values that you can use for custom validation, such as
-    /// restricting the types of user accounts that can be registered. For example, you might
-    /// choose to allow or disallow user sign-up based on the user's domain.</p>
-    /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
-    /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
-    /// receives the validation data and uses it in the validation process.</p>
+    /// <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>
+    /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>
     /// <p>The user's validation data is not persisted.</p>
     pub validation_data: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-    /// <p>The user's temporary password. This password must conform to the password policy that
-    /// you specified when you created the user pool.</p>
-    /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
-    /// user must enter the temporary password in the sign-in page along with a new password to
-    /// be used in all future sign-ins.</p>
-    /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
-    /// generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that
-    /// you specified when you created the user pool. To reset the account after that time
-    /// limit, you must call <code>AdminCreateUser</code> again, specifying
-    /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
+    /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p>
+    /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
     pub temporary_password: std::option::Option<std::string::String>,
-    /// <p>This parameter is only used if the <code>phone_number_verified</code> or
-    /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
-    /// ignored.</p>
-    /// <p>If this parameter is set to <code>True</code> and the phone number or email address
-    /// specified in the UserAttributes parameter already exists as an alias with a different
-    /// user, the API call will migrate the alias from the previous user to the newly created
-    /// user. The previous user will no longer be able to log in using that alias.</p>
-    /// <p>If this parameter is set to <code>False</code>, the API throws an
-    /// <code>AliasExistsException</code> error if the alias already exists. The default
-    /// value is <code>False</code>.</p>
+    /// <p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
+    /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
+    /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
     pub force_alias_creation: bool,
-    /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
-    /// exists and reset the expiration limit on the user's account. Set to
-    /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
-    /// specified.</p>
+    /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be specified.</p>
     pub message_action: std::option::Option<crate::model::MessageActionType>,
-    /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
-    /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
-    /// <code>"SMS"</code>. More than one value can be specified.</p>
+    /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.</p>
     pub desired_delivery_mediums:
         std::option::Option<std::vec::Vec<crate::model::DeliveryMediumType>>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
-    /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
-    /// this function, it passes a JSON payload, which the function receives as input. This
-    /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
-    /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -30513,132 +26230,58 @@ impl AdminCreateUserInput {
     pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
-    /// between 1 and 128 characters. After the user is created, the username cannot be
-    /// changed.</p>
+    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed.</p>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>An array of name-value pairs that contain user attributes and attribute values to be
-    /// set for the user to be created. You can create a user without specifying any attributes
-    /// other than <code>Username</code>. However, any attributes that you specify as required
-    /// (when creating a user pool or in the <b>Attributes</b> tab of
-    /// the console) must be supplied either by you (in your call to
-    /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
-    /// your welcome message).</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
-    /// attribute name.</p>
-    /// <p>To send a message inviting the user to sign up, you must specify the user's email
-    /// address or phone number. This can be done in your call to AdminCreateUser or in the
-    /// <b>Users</b> tab of the Amazon Cognito console for
-    /// managing your user pools.</p>
-    /// <p>In your call to <code>AdminCreateUser</code>, you can set the
-    /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
-    /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
-    /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+    /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p>
+    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
+    /// <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>email</b>: The email address of the user to whom
-    /// the message that contains the code and username will be sent. Required if the
-    /// <code>email_verified</code> attribute is set to <code>True</code>, or if
-    /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
-    /// parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>phone_number</b>: The phone number of the user to
-    /// whom the message that contains the code and username will be sent. Required if
-    /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
-    /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
+    /// <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
     /// </ul>
     pub fn user_attributes(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.user_attributes.as_deref()
     }
-    /// <p>The user's validation data. This is an array of name-value pairs that contain user
-    /// attributes and attribute values that you can use for custom validation, such as
-    /// restricting the types of user accounts that can be registered. For example, you might
-    /// choose to allow or disallow user sign-up based on the user's domain.</p>
-    /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
-    /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
-    /// receives the validation data and uses it in the validation process.</p>
+    /// <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>
+    /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>
     /// <p>The user's validation data is not persisted.</p>
     pub fn validation_data(&self) -> std::option::Option<&[crate::model::AttributeType]> {
         self.validation_data.as_deref()
     }
-    /// <p>The user's temporary password. This password must conform to the password policy that
-    /// you specified when you created the user pool.</p>
-    /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
-    /// user must enter the temporary password in the sign-in page along with a new password to
-    /// be used in all future sign-ins.</p>
-    /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
-    /// generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that
-    /// you specified when you created the user pool. To reset the account after that time
-    /// limit, you must call <code>AdminCreateUser</code> again, specifying
-    /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
+    /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p>
+    /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
     pub fn temporary_password(&self) -> std::option::Option<&str> {
         self.temporary_password.as_deref()
     }
-    /// <p>This parameter is only used if the <code>phone_number_verified</code> or
-    /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
-    /// ignored.</p>
-    /// <p>If this parameter is set to <code>True</code> and the phone number or email address
-    /// specified in the UserAttributes parameter already exists as an alias with a different
-    /// user, the API call will migrate the alias from the previous user to the newly created
-    /// user. The previous user will no longer be able to log in using that alias.</p>
-    /// <p>If this parameter is set to <code>False</code>, the API throws an
-    /// <code>AliasExistsException</code> error if the alias already exists. The default
-    /// value is <code>False</code>.</p>
+    /// <p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
+    /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
+    /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
     pub fn force_alias_creation(&self) -> bool {
         self.force_alias_creation
     }
-    /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
-    /// exists and reset the expiration limit on the user's account. Set to
-    /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
-    /// specified.</p>
+    /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be specified.</p>
     pub fn message_action(&self) -> std::option::Option<&crate::model::MessageActionType> {
         self.message_action.as_ref()
     }
-    /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
-    /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
-    /// <code>"SMS"</code>. More than one value can be specified.</p>
+    /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.</p>
     pub fn desired_delivery_mediums(
         &self,
     ) -> std::option::Option<&[crate::model::DeliveryMediumType]> {
         self.desired_delivery_mediums.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
-    /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
-    /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
-    /// this function, it passes a JSON payload, which the function receives as input. This
-    /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
-    /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
-    /// function code in Lambda, you can process the <code>clientMetadata</code> value to
-    /// enhance your workflow for your specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(
@@ -30672,35 +26315,14 @@ pub struct AdminConfirmSignUpInput {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The user name for which you want to confirm user registration.</p>
     pub username: std::option::Option<std::string::String>,
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
-    /// invokes the Lambda function that is specified for the <i>post
-    /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
-    /// passes a JSON payload, which the function receives as input. In this payload, the
-    /// <code>clientMetadata</code> attribute provides the data that you assigned to the
-    /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
-    /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
-    /// specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action invokes the Lambda function that is specified for the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. In this payload, the <code>clientMetadata</code> attribute provides the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in Lambda, you can process the ClientMetadata value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub client_metadata:
@@ -30715,35 +26337,14 @@ impl AdminConfirmSignUpInput {
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
-    /// that this action triggers. </p>
-    /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
-    /// invokes the Lambda function that is specified for the <i>post
-    /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
-    /// passes a JSON payload, which the function receives as input. In this payload, the
-    /// <code>clientMetadata</code> attribute provides the data that you assigned to the
-    /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
-    /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
-    /// specific needs.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
-    /// <i>Amazon Cognito Developer Guide</i>.</p>
-    /// <note>
-    /// <p>Take the following limitations into consideration when you use the ClientMetadata
-    /// parameter:</p>
+    /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>
+    /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action invokes the Lambda function that is specified for the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. In this payload, the <code>clientMetadata</code> attribute provides the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in Lambda, you can process the ClientMetadata value to enhance your workflow for your specific needs.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
+    /// <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
-    /// available only to Lambda triggers that are assigned to a user pool to
-    /// support custom workflows. If your user pool configuration does not include
-    /// triggers, the ClientMetadata parameter serves no purpose.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
-    /// it to provide sensitive information.</p>
-    /// </li>
+    /// <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>
+    /// <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>
+    /// <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
     pub fn client_metadata(

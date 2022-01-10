@@ -12,32 +12,24 @@ pub mod describe_services_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-        /// You can use
-        /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-        /// To retrieve a list of all services, leave this blank.</p>
+        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-        /// You can use
-        /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-        /// To retrieve a list of all services, leave this blank.</p>
+        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.format_version = Some(input.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn set_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -84,7 +76,7 @@ pub mod describe_services_input {
 #[doc(hidden)]
 pub type DescribeServicesInputOperationOutputAlias = crate::operation::DescribeServices;
 #[doc(hidden)]
-pub type DescribeServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(clippy::let_and_return)]
@@ -95,7 +87,7 @@ impl DescribeServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -180,7 +172,7 @@ impl DescribeServicesInput {
             "DescribeServices",
             "pricing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -215,14 +207,12 @@ pub mod get_attribute_values_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-        /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-        /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -279,7 +269,7 @@ pub mod get_attribute_values_input {
 #[doc(hidden)]
 pub type GetAttributeValuesInputOperationOutputAlias = crate::operation::GetAttributeValues;
 #[doc(hidden)]
-pub type GetAttributeValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAttributeValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAttributeValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetAttributeValues`](crate::operation::GetAttributeValues)>
     #[allow(clippy::let_and_return)]
@@ -290,7 +280,7 @@ impl GetAttributeValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAttributeValues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -375,7 +365,7 @@ impl GetAttributeValuesInput {
             "GetAttributeValues",
             "pricing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -425,16 +415,14 @@ pub mod get_products_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The list of filters that limit the returned products. only products that match all filters
-        /// are returned.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The list of filters that limit the returned products. only products that match all filters
-        /// are returned.</p>
+        /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -443,15 +431,13 @@ pub mod get_products_input {
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.format_version = Some(input.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn set_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -499,7 +485,7 @@ pub mod get_products_input {
 #[doc(hidden)]
 pub type GetProductsInputOperationOutputAlias = crate::operation::GetProducts;
 #[doc(hidden)]
-pub type GetProductsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProductsInput {
     /// Consumes the builder and constructs an Operation<[`GetProducts`](crate::operation::GetProducts)>
     #[allow(clippy::let_and_return)]
@@ -510,7 +496,7 @@ impl GetProductsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProducts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -594,7 +580,7 @@ impl GetProductsInput {
             "GetProducts",
             "pricing",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -623,12 +609,10 @@ impl GetProductsInput {
 pub struct GetProductsInput {
     /// <p>The code for the service whose products you want to retrieve. </p>
     pub service_code: std::option::Option<std::string::String>,
-    /// <p>The list of filters that limit the returned products. only products that match all filters
-    /// are returned.</p>
+    /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code>
-    /// </p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub format_version: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -640,14 +624,12 @@ impl GetProductsInput {
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p>The list of filters that limit the returned products. only products that match all filters
-    /// are returned.</p>
+    /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code>
-    /// </p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(&self) -> std::option::Option<&str> {
         self.format_version.as_deref()
     }
@@ -676,8 +658,7 @@ impl std::fmt::Debug for GetProductsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttributeValuesInput {
-    /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-    /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+    /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
     pub attribute_name: std::option::Option<std::string::String>,
@@ -687,8 +668,7 @@ pub struct GetAttributeValuesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetAttributeValuesInput {
-    /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-    /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+    /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -720,14 +700,10 @@ impl std::fmt::Debug for GetAttributeValuesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesInput {
-    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-    /// You can use
-    /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-    /// To retrieve a list of all services, leave this blank.</p>
+    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code>
-    /// </p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub format_version: std::option::Option<std::string::String>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -735,16 +711,12 @@ pub struct DescribeServicesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeServicesInput {
-    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-    /// You can use
-    /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-    /// To retrieve a list of all services, leave this blank.</p>
+    /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The format version that you want the response to be in.</p>
-    /// <p>Valid values are: <code>aws_v1</code>
-    /// </p>
+    /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(&self) -> std::option::Option<&str> {
         self.format_version.as_deref()
     }

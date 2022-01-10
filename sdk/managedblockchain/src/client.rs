@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Managed Blockchain
@@ -157,6 +157,7 @@ where
     ///
     /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
@@ -164,6 +165,7 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -171,6 +173,7 @@ where
     ///
     /// See [`ListNetworks`](crate::client::fluent_builders::ListNetworks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNetworks::into_paginator).
     pub fn list_networks(&self) -> fluent_builders::ListNetworks<C, M, R> {
         fluent_builders::ListNetworks::new(self.handle.clone())
     }
@@ -178,6 +181,7 @@ where
     ///
     /// See [`ListNodes`](crate::client::fluent_builders::ListNodes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNodes::into_paginator).
     pub fn list_nodes(&self) -> fluent_builders::ListNodes<C, M, R> {
         fluent_builders::ListNodes::new(self.handle.clone())
     }
@@ -185,6 +189,7 @@ where
     ///
     /// See [`ListProposals`](crate::client::fluent_builders::ListProposals) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProposals::into_paginator).
     pub fn list_proposals(&self) -> fluent_builders::ListProposals<C, M, R> {
         fluent_builders::ListProposals::new(self.handle.clone())
     }
@@ -192,6 +197,7 @@ where
     ///
     /// See [`ListProposalVotes`](crate::client::fluent_builders::ListProposalVotes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProposalVotes::into_paginator).
     pub fn list_proposal_votes(&self) -> fluent_builders::ListProposalVotes<C, M, R> {
         fluent_builders::ListProposalVotes::new(self.handle.clone())
     }
@@ -257,7 +263,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a member within a Managed Blockchain network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -302,10 +308,10 @@ pub mod fluent_builders {
                 crate::input::CreateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -314,8 +320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -327,8 +333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
@@ -340,8 +346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the network in which the member is created.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network in which the member is created.</p>
@@ -350,8 +356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Member configuration parameters.</p>
-        pub fn member_configuration(mut self, inp: crate::model::MemberConfiguration) -> Self {
-            self.inner = self.inner.member_configuration(inp);
+        pub fn member_configuration(mut self, input: crate::model::MemberConfiguration) -> Self {
+            self.inner = self.inner.member_configuration(input);
             self
         }
         /// <p>Member configuration parameters.</p>
@@ -367,7 +373,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new blockchain network using Amazon Managed Blockchain.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -412,10 +418,10 @@ pub mod fluent_builders {
                 crate::input::CreateNetworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -424,8 +430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -437,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the network.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the network.</p>
@@ -447,8 +453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the network.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the network.</p>
@@ -457,8 +463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
-        pub fn framework(mut self, inp: crate::model::Framework) -> Self {
-            self.inner = self.inner.framework(inp);
+        pub fn framework(mut self, input: crate::model::Framework) -> Self {
+            self.inner = self.inner.framework(input);
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
@@ -470,8 +476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
-        pub fn framework_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_version(inp);
+        pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_version(input.into());
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
@@ -482,19 +488,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_version(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn framework_configuration(
             mut self,
-            inp: crate::model::NetworkFrameworkConfiguration,
+            input: crate::model::NetworkFrameworkConfiguration,
         ) -> Self {
-            self.inner = self.inner.framework_configuration(inp);
+            self.inner = self.inner.framework_configuration(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn set_framework_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
@@ -502,16 +504,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_configuration(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
-        pub fn voting_policy(mut self, inp: crate::model::VotingPolicy) -> Self {
-            self.inner = self.inner.voting_policy(inp);
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
+        pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
+            self.inner = self.inner.voting_policy(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn set_voting_policy(
             mut self,
             input: std::option::Option<crate::model::VotingPolicy>,
@@ -520,8 +518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration properties for the first member within the network.</p>
-        pub fn member_configuration(mut self, inp: crate::model::MemberConfiguration) -> Self {
-            self.inner = self.inner.member_configuration(inp);
+        pub fn member_configuration(mut self, input: crate::model::MemberConfiguration) -> Self {
+            self.inner = self.inner.member_configuration(input);
             self
         }
         /// <p>Configuration properties for the first member within the network.</p>
@@ -544,7 +542,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to assign to the network. Each tag consists of a key and optional value.</p>
@@ -564,7 +562,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a node on the specified blockchain network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -609,10 +607,10 @@ pub mod fluent_builders {
                 crate::input::CreateNodeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -621,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -636,44 +634,20 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
@@ -681,8 +655,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns this node.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns this node.</p>
@@ -692,8 +666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The properties of a node configuration.</p>
-        pub fn node_configuration(mut self, inp: crate::model::NodeConfiguration) -> Self {
-            self.inner = self.inner.node_configuration(inp);
+        pub fn node_configuration(mut self, input: crate::model::NodeConfiguration) -> Self {
+            self.inner = self.inner.node_configuration(input);
             self
         }
         /// <p>The properties of a node configuration.</p>
@@ -716,7 +690,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to assign to the node. Each tag consists of a key and optional value.</p>
@@ -736,7 +710,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a proposal for a change to the network that other members of the network can vote on, for example, a proposal to add a new member to the network. Any member can create a proposal.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -781,10 +755,10 @@ pub mod fluent_builders {
                 crate::input::CreateProposalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -793,8 +767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -805,21 +779,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
         /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
@@ -828,8 +800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
-        pub fn actions(mut self, inp: crate::model::ProposalActions) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::ProposalActions) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
@@ -841,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
@@ -862,7 +834,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
@@ -882,7 +854,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the AWS account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted also.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -927,10 +899,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -939,8 +911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network from which the member is removed.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network from which the member is removed.</p>
@@ -949,8 +921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member to remove.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member to remove.</p>
@@ -963,7 +935,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1008,10 +980,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNodeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1022,44 +994,20 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
@@ -1067,8 +1015,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns this node.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns this node.</p>
@@ -1078,8 +1026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -1092,7 +1040,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a member.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1137,10 +1085,10 @@ pub mod fluent_builders {
                 crate::input::GetMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1149,8 +1097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network to which the member belongs.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network to which the member belongs.</p>
@@ -1159,8 +1107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member.</p>
@@ -1173,7 +1121,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1218,10 +1166,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,8 +1178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network to get information about.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network to get information about.</p>
@@ -1244,7 +1192,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a node.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,10 +1237,10 @@ pub mod fluent_builders {
                 crate::input::GetNodeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1301,8 +1249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network that the node is on.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
@@ -1312,8 +1260,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns the node.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns the node.</p>
@@ -1323,8 +1271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -1337,7 +1285,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns detailed information about a proposal.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1382,10 +1330,10 @@ pub mod fluent_builders {
                 crate::input::GetProposalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1394,8 +1342,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
@@ -1404,8 +1352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the proposal.</p>
-        pub fn proposal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(inp);
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>The unique identifier of the proposal.</p>
@@ -1418,7 +1366,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of all invitations for the current AWS account.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1463,10 +1411,10 @@ pub mod fluent_builders {
                 crate::input::ListInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1474,9 +1422,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInvitationsPaginator<C, M, R> {
+            crate::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of invitations to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of invitations to return.</p>
@@ -1485,8 +1439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1499,7 +1453,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the members in a network and properties of their configurations.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1544,10 +1498,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1555,9 +1509,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the network for which to list members.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which to list members.</p>
@@ -1566,8 +1526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional name of the member to list.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The optional name of the member to list.</p>
@@ -1576,8 +1536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-        pub fn status(mut self, inp: crate::model::MemberStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
@@ -1588,23 +1548,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
-        pub fn is_owned(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_owned(inp);
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
+        pub fn is_owned(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_owned(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_owned(input);
             self
         }
         /// <p>The maximum number of members to return in the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of members to return in the request.</p>
@@ -1613,8 +1569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1627,7 +1583,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the networks in which the current AWS account participates.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1672,10 +1628,10 @@ pub mod fluent_builders {
                 crate::input::ListNetworksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1683,9 +1639,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNetworksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNetworksPaginator<C, M, R> {
+            crate::paginator::ListNetworksPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the network.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the network.</p>
@@ -1694,8 +1656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
-        pub fn framework(mut self, inp: crate::model::Framework) -> Self {
-            self.inner = self.inner.framework(inp);
+        pub fn framework(mut self, input: crate::model::Framework) -> Self {
+            self.inner = self.inner.framework(input);
             self
         }
         /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
@@ -1708,8 +1670,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn status(mut self, inp: crate::model::NetworkStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::NetworkStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
@@ -1722,8 +1684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of networks to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of networks to list.</p>
@@ -1732,8 +1694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1746,7 +1708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns information about the nodes within a network.</p>
     /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNodes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1791,10 +1753,10 @@ pub mod fluent_builders {
                 crate::input::ListNodesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1802,9 +1764,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNodesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNodesPaginator<C, M, R> {
+            crate::paginator::ListNodesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the network for which to list nodes.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which to list nodes.</p>
@@ -1814,8 +1782,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member who owns the nodes to list.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member who owns the nodes to list.</p>
@@ -1825,8 +1793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
-        pub fn status(mut self, inp: crate::model::NodeStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::NodeStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
@@ -1835,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of nodes to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of nodes to list.</p>
@@ -1845,8 +1813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1859,7 +1827,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of proposals for the network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProposals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1904,10 +1872,10 @@ pub mod fluent_builders {
                 crate::input::ListProposalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1915,44 +1883,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProposalsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProposalsPaginator<C, M, R> {
+            crate::paginator::ListProposalsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The unique identifier of the network. </p>
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of proposals to return. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1962,7 +1924,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the list of votes for a specified proposal, including the value of each vote and the unique identifier of the member that cast the vote.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProposalVotes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2007,10 +1969,10 @@ pub mod fluent_builders {
                 crate::input::ListProposalVotesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2018,58 +1980,48 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProposalVotesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProposalVotesPaginator<C, M, R> {
+            crate::paginator::ListProposalVotesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The unique identifier of the network. </p>
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
-        pub fn proposal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(inp);
+        /// <p> The unique identifier of the proposal. </p>
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of votes to return. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2079,7 +2031,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of tags for the specified resource. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2124,10 +2076,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2136,8 +2088,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2150,7 +2102,7 @@ pub mod fluent_builders {
     ///
     /// <p>Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has received an invitation to create a member and join a network.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2195,10 +2147,10 @@ pub mod fluent_builders {
                 crate::input::RejectInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2207,8 +2159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the invitation to reject.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The unique identifier of the invitation to reject.</p>
@@ -2226,7 +2178,7 @@ pub mod fluent_builders {
     /// <p>When you specify a tag key that already exists, the tag value is overwritten with the new value. Use <code>UntagResource</code> to remove tag keys.</p>
     /// <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2271,10 +2223,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2283,8 +2235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2302,7 +2254,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
@@ -2320,7 +2272,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2365,10 +2317,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2377,8 +2329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2391,8 +2343,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -2408,7 +2360,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a member configuration with new parameters.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2453,10 +2405,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2465,8 +2417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
@@ -2475,8 +2427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member.</p>
@@ -2487,9 +2439,9 @@ pub mod fluent_builders {
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
         pub fn log_publishing_configuration(
             mut self,
-            inp: crate::model::MemberLogPublishingConfiguration,
+            input: crate::model::MemberLogPublishingConfiguration,
         ) -> Self {
-            self.inner = self.inner.log_publishing_configuration(inp);
+            self.inner = self.inner.log_publishing_configuration(input);
             self
         }
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
@@ -2505,7 +2457,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a node configuration with new parameters.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,10 +2502,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNodeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2562,8 +2514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network that the node is on.</p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
@@ -2573,8 +2525,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns the node.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns the node.</p>
@@ -2584,8 +2536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(inp);
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -2596,9 +2548,9 @@ pub mod fluent_builders {
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
         pub fn log_publishing_configuration(
             mut self,
-            inp: crate::model::NodeLogPublishingConfiguration,
+            input: crate::model::NodeLogPublishingConfiguration,
         ) -> Self {
-            self.inner = self.inner.log_publishing_configuration(inp);
+            self.inner = self.inner.log_publishing_configuration(input);
             self
         }
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
@@ -2614,7 +2566,7 @@ pub mod fluent_builders {
     ///
     /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VoteOnProposal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2659,10 +2611,10 @@ pub mod fluent_builders {
                 crate::input::VoteOnProposalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2670,42 +2622,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
-        pub fn network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(inp);
+        /// <p> The unique identifier of the network. </p>
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_network_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
-        pub fn proposal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(inp);
+        /// <p> The unique identifier of the proposal. </p>
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_proposal_id(input);
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
-        pub fn voter_member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voter_member_id(inp);
+        /// <p>The unique identifier of the member casting the vote. </p>
+        pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voter_member_id(input.into());
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn set_voter_member_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2713,22 +2655,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_voter_member_id(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
-        pub fn vote(mut self, inp: crate::model::VoteValue) -> Self {
-            self.inner = self.inner.vote(inp);
+        /// <p> The value of the vote. </p>
+        pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
+            self.inner = self.inner.vote(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
             self.inner = self.inner.set_vote(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

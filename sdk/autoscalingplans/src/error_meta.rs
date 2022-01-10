@@ -3,15 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to a
-    /// scaling plan that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The token provided is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>Your account exceeded a limit. This exception is thrown when a per-account resource
-    /// limit is exceeded.</p>
+    /// <p>Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified object could not be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),

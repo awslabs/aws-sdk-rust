@@ -25,9 +25,9 @@ pub mod batch_evaluate_feature_input {
         /// To override the contents of this collection use [`set_requests`](Self::set_requests).
         ///
         /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-        pub fn requests(mut self, input: impl Into<crate::model::EvaluationRequest>) -> Self {
+        pub fn requests(mut self, input: crate::model::EvaluationRequest) -> Self {
             let mut v = self.requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requests = Some(v);
             self
         }
@@ -56,7 +56,7 @@ pub mod batch_evaluate_feature_input {
 #[doc(hidden)]
 pub type BatchEvaluateFeatureInputOperationOutputAlias = crate::operation::BatchEvaluateFeature;
 #[doc(hidden)]
-pub type BatchEvaluateFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchEvaluateFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEvaluateFeatureInput {
     /// Consumes the builder and constructs an Operation<[`BatchEvaluateFeature`](crate::operation::BatchEvaluateFeature)>
     #[allow(clippy::let_and_return)]
@@ -67,7 +67,7 @@ impl BatchEvaluateFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEvaluateFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -167,7 +167,7 @@ impl BatchEvaluateFeatureInput {
             "BatchEvaluateFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -244,9 +244,9 @@ pub mod create_experiment_input {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::TreatmentConfig>) -> Self {
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -262,16 +262,14 @@ pub mod create_experiment_input {
         ///
         /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
         ///
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoalConfig>) -> Self {
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
         pub fn set_metric_goals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
@@ -279,18 +277,12 @@ pub mod create_experiment_input {
             self.metric_goals = input;
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -298,32 +290,24 @@ pub mod create_experiment_input {
             self.randomization_salt = input;
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.sampling_rate = Some(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. tThe "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
             self.online_ab_config = Some(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. tThe "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn set_online_ab_config(
             mut self,
             input: std::option::Option<crate::model::OnlineAbConfig>,
@@ -336,11 +320,8 @@ pub mod create_experiment_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an experiment.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -354,11 +335,8 @@ pub mod create_experiment_input {
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an experiment.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -394,7 +372,7 @@ pub mod create_experiment_input {
 #[doc(hidden)]
 pub type CreateExperimentInputOperationOutputAlias = crate::operation::CreateExperiment;
 #[doc(hidden)]
-pub type CreateExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExperimentInput {
     /// Consumes the builder and constructs an Operation<[`CreateExperiment`](crate::operation::CreateExperiment)>
     #[allow(clippy::let_and_return)]
@@ -405,7 +383,7 @@ impl CreateExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -501,7 +479,7 @@ impl CreateExperimentInput {
             "CreateExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -565,9 +543,7 @@ pub mod create_feature_input {
             self.name = input;
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-        /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-        /// variation to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn evaluation_strategy(
             mut self,
             input: crate::model::FeatureEvaluationStrategy,
@@ -575,9 +551,7 @@ pub mod create_feature_input {
             self.evaluation_strategy = Some(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-        /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-        /// variation to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -600,9 +574,9 @@ pub mod create_feature_input {
         /// To override the contents of this collection use [`set_variations`](Self::set_variations).
         ///
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-        pub fn variations(mut self, input: impl Into<crate::model::VariationConfig>) -> Self {
+        pub fn variations(mut self, input: crate::model::VariationConfig) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variations = Some(v);
             self
         }
@@ -614,22 +588,16 @@ pub mod create_feature_input {
             self.variations = input;
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
         pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_variation = Some(input.into());
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -642,11 +610,8 @@ pub mod create_feature_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a feature.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -660,11 +625,8 @@ pub mod create_feature_input {
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a feature.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -680,10 +642,7 @@ pub mod create_feature_input {
         ///
         /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
         ///
-        /// <p>Specify users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn entity_overrides(
             mut self,
             k: impl Into<std::string::String>,
@@ -694,10 +653,7 @@ pub mod create_feature_input {
             self.entity_overrides = Some(hash_map);
             self
         }
-        /// <p>Specify users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn set_entity_overrides(
             mut self,
             input: std::option::Option<
@@ -730,7 +686,7 @@ pub mod create_feature_input {
 #[doc(hidden)]
 pub type CreateFeatureInputOperationOutputAlias = crate::operation::CreateFeature;
 #[doc(hidden)]
-pub type CreateFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFeatureInput {
     /// Consumes the builder and constructs an Operation<[`CreateFeature`](crate::operation::CreateFeature)>
     #[allow(clippy::let_and_return)]
@@ -741,7 +697,7 @@ impl CreateFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -836,7 +792,7 @@ impl CreateFeatureInput {
             "CreateFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -909,8 +865,7 @@ pub mod create_launch_input {
             self.description = input;
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
             input: crate::model::ScheduledSplitsLaunchConfig,
@@ -918,8 +873,7 @@ pub mod create_launch_input {
             self.scheduled_splits_config = Some(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn set_scheduled_splits_config(
             mut self,
             input: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
@@ -931,19 +885,14 @@ pub mod create_launch_input {
         ///
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            input: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
         pub fn set_metric_monitors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
@@ -956,9 +905,9 @@ pub mod create_launch_input {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroupConfig>) -> Self {
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -970,18 +919,12 @@ pub mod create_launch_input {
             self.groups = input;
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -994,11 +937,8 @@ pub mod create_launch_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a launch.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -1012,11 +952,8 @@ pub mod create_launch_input {
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a launch.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -1051,7 +988,7 @@ pub mod create_launch_input {
 #[doc(hidden)]
 pub type CreateLaunchInputOperationOutputAlias = crate::operation::CreateLaunch;
 #[doc(hidden)]
-pub type CreateLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLaunchInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunch`](crate::operation::CreateLaunch)>
     #[allow(clippy::let_and_return)]
@@ -1062,7 +999,7 @@ impl CreateLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1157,7 +1094,7 @@ impl CreateLaunchInput {
             "CreateLaunch",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1214,18 +1151,12 @@ pub mod create_project_input {
             self.description = input;
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage, if you choose to do so. If you choose
-        /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-        /// results that you can view.</p>
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
         pub fn data_delivery(mut self, input: crate::model::ProjectDataDeliveryConfig) -> Self {
             self.data_delivery = Some(input);
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage, if you choose to do so. If you choose
-        /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-        /// results that you can view.</p>
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
         pub fn set_data_delivery(
             mut self,
             input: std::option::Option<crate::model::ProjectDataDeliveryConfig>,
@@ -1238,11 +1169,8 @@ pub mod create_project_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a project.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -1256,11 +1184,8 @@ pub mod create_project_input {
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a project.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -1291,7 +1216,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -1302,7 +1227,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1381,7 +1306,7 @@ impl CreateProjectInput {
             "CreateProject",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1451,7 +1376,7 @@ pub mod delete_experiment_input {
 #[doc(hidden)]
 pub type DeleteExperimentInputOperationOutputAlias = crate::operation::DeleteExperiment;
 #[doc(hidden)]
-pub type DeleteExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExperimentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExperiment`](crate::operation::DeleteExperiment)>
     #[allow(clippy::let_and_return)]
@@ -1462,7 +1387,7 @@ impl DeleteExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1572,7 +1497,7 @@ impl DeleteExperimentInput {
             "DeleteExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1634,7 +1559,7 @@ pub mod delete_feature_input {
 #[doc(hidden)]
 pub type DeleteFeatureInputOperationOutputAlias = crate::operation::DeleteFeature;
 #[doc(hidden)]
-pub type DeleteFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFeatureInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFeature`](crate::operation::DeleteFeature)>
     #[allow(clippy::let_and_return)]
@@ -1645,7 +1570,7 @@ impl DeleteFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1755,7 +1680,7 @@ impl DeleteFeatureInput {
             "DeleteFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1817,7 +1742,7 @@ pub mod delete_launch_input {
 #[doc(hidden)]
 pub type DeleteLaunchInputOperationOutputAlias = crate::operation::DeleteLaunch;
 #[doc(hidden)]
-pub type DeleteLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunch`](crate::operation::DeleteLaunch)>
     #[allow(clippy::let_and_return)]
@@ -1828,7 +1753,7 @@ impl DeleteLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1938,7 +1863,7 @@ impl DeleteLaunchInput {
             "DeleteLaunch",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1988,7 +1913,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -1999,7 +1924,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2089,7 +2014,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2136,28 +2061,22 @@ pub mod evaluate_feature_input {
             self.feature = input;
             self
         }
-        /// <p>An internal ID that represents a unique user of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
+        /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>An internal ID that represents a unique user of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
+        /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
         pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.evaluation_context = Some(input.into());
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
         pub fn set_evaluation_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2184,7 +2103,7 @@ pub mod evaluate_feature_input {
 #[doc(hidden)]
 pub type EvaluateFeatureInputOperationOutputAlias = crate::operation::EvaluateFeature;
 #[doc(hidden)]
-pub type EvaluateFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EvaluateFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EvaluateFeatureInput {
     /// Consumes the builder and constructs an Operation<[`EvaluateFeature`](crate::operation::EvaluateFeature)>
     #[allow(clippy::let_and_return)]
@@ -2195,7 +2114,7 @@ impl EvaluateFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EvaluateFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2313,7 +2232,7 @@ impl EvaluateFeatureInput {
             "EvaluateFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2383,7 +2302,7 @@ pub mod get_experiment_input {
 #[doc(hidden)]
 pub type GetExperimentInputOperationOutputAlias = crate::operation::GetExperiment;
 #[doc(hidden)]
-pub type GetExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExperimentInput {
     /// Consumes the builder and constructs an Operation<[`GetExperiment`](crate::operation::GetExperiment)>
     #[allow(clippy::let_and_return)]
@@ -2394,7 +2313,7 @@ impl GetExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2504,7 +2423,7 @@ impl GetExperimentInput {
             "GetExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2623,14 +2542,12 @@ pub mod get_experiment_results_input {
             self.treatment_names = input;
             self
         }
-        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-        /// which uses the mean of the collected values as the statistic.</p>
+        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
         pub fn base_stat(mut self, input: crate::model::ExperimentBaseStat) -> Self {
             self.base_stat = Some(input);
             self
         }
-        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-        /// which uses the mean of the collected values as the statistic.</p>
+        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
         pub fn set_base_stat(
             mut self,
             input: std::option::Option<crate::model::ExperimentBaseStat>,
@@ -2644,70 +2561,23 @@ pub mod get_experiment_results_input {
         ///
         /// <p>The statistics that you want to see in the returned results.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-        /// testing to measure how often you are willing to make a mistake in rejecting the null
-        /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-        /// results are statistically significant when the p-value is less than 0.05.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-        /// confidence interval represents the range of values for the chosen metric that is likely to
-        /// contain the true difference between the <code>baseStat</code> of a variation and the
-        /// baseline. Evidently returns the 95% confidence interval. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-        /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-        /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-        /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-        /// of the values collected for each variation.</p>
-        /// </li>
+        /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+        /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+        /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+        /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
         /// </ul>
-        pub fn result_stats(
-            mut self,
-            input: impl Into<crate::model::ExperimentResultRequestType>,
-        ) -> Self {
+        pub fn result_stats(mut self, input: crate::model::ExperimentResultRequestType) -> Self {
             let mut v = self.result_stats.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.result_stats = Some(v);
             self
         }
         /// <p>The statistics that you want to see in the returned results.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-        /// testing to measure how often you are willing to make a mistake in rejecting the null
-        /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-        /// results are statistically significant when the p-value is less than 0.05.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-        /// confidence interval represents the range of values for the chosen metric that is likely to
-        /// contain the true difference between the <code>baseStat</code> of a variation and the
-        /// baseline. Evidently returns the 95% confidence interval. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-        /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-        /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-        /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-        /// of the values collected for each variation.</p>
-        /// </li>
+        /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+        /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+        /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+        /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
         /// </ul>
         pub fn set_result_stats(
             mut self,
@@ -2720,19 +2590,14 @@ pub mod get_experiment_results_input {
         ///
         /// To override the contents of this collection use [`set_report_names`](Self::set_report_names).
         ///
-        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-        /// is the only valid value.</p>
-        pub fn report_names(
-            mut self,
-            input: impl Into<crate::model::ExperimentReportName>,
-        ) -> Self {
+        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
+        pub fn report_names(mut self, input: crate::model::ExperimentReportName) -> Self {
             let mut v = self.report_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_names = Some(v);
             self
         }
-        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-        /// is the only valid value.</p>
+        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
         pub fn set_report_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExperimentReportName>>,
@@ -2775,7 +2640,7 @@ pub mod get_experiment_results_input {
 #[doc(hidden)]
 pub type GetExperimentResultsInputOperationOutputAlias = crate::operation::GetExperimentResults;
 #[doc(hidden)]
-pub type GetExperimentResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExperimentResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExperimentResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetExperimentResults`](crate::operation::GetExperimentResults)>
     #[allow(clippy::let_and_return)]
@@ -2786,7 +2651,7 @@ impl GetExperimentResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExperimentResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2904,7 +2769,7 @@ impl GetExperimentResultsInput {
             "GetExperimentResults",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2974,7 +2839,7 @@ pub mod get_feature_input {
 #[doc(hidden)]
 pub type GetFeatureInputOperationOutputAlias = crate::operation::GetFeature;
 #[doc(hidden)]
-pub type GetFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFeatureInput {
     /// Consumes the builder and constructs an Operation<[`GetFeature`](crate::operation::GetFeature)>
     #[allow(clippy::let_and_return)]
@@ -2985,7 +2850,7 @@ impl GetFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3095,7 +2960,7 @@ impl GetFeatureInput {
             "GetFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3155,7 +3020,7 @@ pub mod get_launch_input {
 #[doc(hidden)]
 pub type GetLaunchInputOperationOutputAlias = crate::operation::GetLaunch;
 #[doc(hidden)]
-pub type GetLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunch`](crate::operation::GetLaunch)>
     #[allow(clippy::let_and_return)]
@@ -3166,7 +3031,7 @@ impl GetLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3274,7 +3139,7 @@ impl GetLaunchInput {
                     "GetLaunch",
                     "evidently",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3324,7 +3189,7 @@ pub mod get_project_input {
 #[doc(hidden)]
 pub type GetProjectInputOperationOutputAlias = crate::operation::GetProject;
 #[doc(hidden)]
-pub type GetProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProjectInput {
     /// Consumes the builder and constructs an Operation<[`GetProject`](crate::operation::GetProject)>
     #[allow(clippy::let_and_return)]
@@ -3335,7 +3200,7 @@ impl GetProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3425,7 +3290,7 @@ impl GetProjectInput {
             "GetProject",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3471,14 +3336,12 @@ pub mod list_experiments_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListExperiments</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListExperiments</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3501,7 +3364,7 @@ pub mod list_experiments_input {
 #[doc(hidden)]
 pub type ListExperimentsInputOperationOutputAlias = crate::operation::ListExperiments;
 #[doc(hidden)]
-pub type ListExperimentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExperimentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExperimentsInput {
     /// Consumes the builder and constructs an Operation<[`ListExperiments`](crate::operation::ListExperiments)>
     #[allow(clippy::let_and_return)]
@@ -3512,7 +3375,7 @@ impl ListExperimentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExperiments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3619,7 +3482,7 @@ impl ListExperimentsInput {
             "ListExperiments",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3665,14 +3528,12 @@ pub mod list_features_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListFeatures</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListFeatures</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3695,7 +3556,7 @@ pub mod list_features_input {
 #[doc(hidden)]
 pub type ListFeaturesInputOperationOutputAlias = crate::operation::ListFeatures;
 #[doc(hidden)]
-pub type ListFeaturesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFeaturesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFeaturesInput {
     /// Consumes the builder and constructs an Operation<[`ListFeatures`](crate::operation::ListFeatures)>
     #[allow(clippy::let_and_return)]
@@ -3706,7 +3567,7 @@ impl ListFeaturesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFeatures,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3813,7 +3674,7 @@ impl ListFeaturesInput {
             "ListFeatures",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3859,14 +3720,12 @@ pub mod list_launches_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListLaunches</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListLaunches</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3889,7 +3748,7 @@ pub mod list_launches_input {
 #[doc(hidden)]
 pub type ListLaunchesInputOperationOutputAlias = crate::operation::ListLaunches;
 #[doc(hidden)]
-pub type ListLaunchesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLaunchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchesInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunches`](crate::operation::ListLaunches)>
     #[allow(clippy::let_and_return)]
@@ -3900,7 +3759,7 @@ impl ListLaunchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLaunches,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4007,7 +3866,7 @@ impl ListLaunchesInput {
             "ListLaunches",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4042,14 +3901,12 @@ pub mod list_projects_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListProjects</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListProjects</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4071,7 +3928,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -4082,7 +3939,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4173,7 +4030,7 @@ impl ListProjectsInput {
             "ListProjects",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4223,7 +4080,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4234,7 +4091,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4324,7 +4181,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4363,16 +4220,14 @@ pub mod put_project_events_input {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>An array of event structures that contain the performance data that is being sent to
-        /// Evidently.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p>An array of event structures that contain the performance data that is being sent to
-        /// Evidently.</p>
+        /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -4397,7 +4252,7 @@ pub mod put_project_events_input {
 #[doc(hidden)]
 pub type PutProjectEventsInputOperationOutputAlias = crate::operation::PutProjectEvents;
 #[doc(hidden)]
-pub type PutProjectEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutProjectEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutProjectEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutProjectEvents`](crate::operation::PutProjectEvents)>
     #[allow(clippy::let_and_return)]
@@ -4408,7 +4263,7 @@ impl PutProjectEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutProjectEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4506,7 +4361,7 @@ impl PutProjectEventsInput {
             "PutProjectEvents",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4591,7 +4446,7 @@ pub mod start_experiment_input {
 #[doc(hidden)]
 pub type StartExperimentInputOperationOutputAlias = crate::operation::StartExperiment;
 #[doc(hidden)]
-pub type StartExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExperimentInput {
     /// Consumes the builder and constructs an Operation<[`StartExperiment`](crate::operation::StartExperiment)>
     #[allow(clippy::let_and_return)]
@@ -4602,7 +4457,7 @@ impl StartExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4718,7 +4573,7 @@ impl StartExperimentInput {
             "StartExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4788,7 +4643,7 @@ pub mod start_launch_input {
 #[doc(hidden)]
 pub type StartLaunchInputOperationOutputAlias = crate::operation::StartLaunch;
 #[doc(hidden)]
-pub type StartLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLaunchInput {
     /// Consumes the builder and constructs an Operation<[`StartLaunch`](crate::operation::StartLaunch)>
     #[allow(clippy::let_and_return)]
@@ -4799,7 +4654,7 @@ impl StartLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4909,7 +4764,7 @@ impl StartLaunchInput {
             "StartLaunch",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4956,14 +4811,12 @@ pub mod stop_experiment_input {
             self.experiment = input;
             self
         }
-        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn desired_state(mut self, input: crate::model::ExperimentStopDesiredState) -> Self {
             self.desired_state = Some(input);
             self
         }
-        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn set_desired_state(
             mut self,
             input: std::option::Option<crate::model::ExperimentStopDesiredState>,
@@ -5000,7 +4853,7 @@ pub mod stop_experiment_input {
 #[doc(hidden)]
 pub type StopExperimentInputOperationOutputAlias = crate::operation::StopExperiment;
 #[doc(hidden)]
-pub type StopExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopExperimentInput {
     /// Consumes the builder and constructs an Operation<[`StopExperiment`](crate::operation::StopExperiment)>
     #[allow(clippy::let_and_return)]
@@ -5011,7 +4864,7 @@ impl StopExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5127,7 +4980,7 @@ impl StopExperimentInput {
             "StopExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5182,14 +5035,12 @@ pub mod stop_launch_input {
             self.launch = input;
             self
         }
-        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn desired_state(mut self, input: crate::model::LaunchStopDesiredState) -> Self {
             self.desired_state = Some(input);
             self
         }
-        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn set_desired_state(
             mut self,
             input: std::option::Option<crate::model::LaunchStopDesiredState>,
@@ -5226,7 +5077,7 @@ pub mod stop_launch_input {
 #[doc(hidden)]
 pub type StopLaunchInputOperationOutputAlias = crate::operation::StopLaunch;
 #[doc(hidden)]
-pub type StopLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopLaunchInput {
     /// Consumes the builder and constructs an Operation<[`StopLaunch`](crate::operation::StopLaunch)>
     #[allow(clippy::let_and_return)]
@@ -5237,7 +5088,7 @@ impl StopLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5352,7 +5203,7 @@ impl StopLaunchInput {
             "StopLaunch",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5439,7 +5290,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5450,7 +5301,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5545,7 +5396,7 @@ impl TagResourceInput {
             "TagResource",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5624,7 +5475,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5635,7 +5486,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5738,7 +5589,7 @@ impl UntagResourceInput {
             "UntagResource",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5804,9 +5655,9 @@ pub mod update_experiment_input {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that define the variations being tested in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::TreatmentConfig>) -> Self {
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -5822,16 +5673,14 @@ pub mod update_experiment_input {
         ///
         /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
         ///
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoalConfig>) -> Self {
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
         pub fn set_metric_goals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
@@ -5839,18 +5688,12 @@ pub mod update_experiment_input {
             self.metric_goals = input;
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5858,32 +5701,24 @@ pub mod update_experiment_input {
             self.randomization_salt = input;
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.sampling_rate = Some(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
             self
         }
-        /// <p>A structure that contains the configuration of which variation o use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
             self.online_ab_config = Some(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation o use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn set_online_ab_config(
             mut self,
             input: std::option::Option<crate::model::OnlineAbConfig>,
@@ -5914,7 +5749,7 @@ pub mod update_experiment_input {
 #[doc(hidden)]
 pub type UpdateExperimentInputOperationOutputAlias = crate::operation::UpdateExperiment;
 #[doc(hidden)]
-pub type UpdateExperimentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateExperimentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExperimentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExperiment`](crate::operation::UpdateExperiment)>
     #[allow(clippy::let_and_return)]
@@ -5925,7 +5760,7 @@ impl UpdateExperimentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateExperiment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6041,7 +5876,7 @@ impl UpdateExperimentInput {
             "UpdateExperiment",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6104,9 +5939,7 @@ pub mod update_feature_input {
             self.feature = input;
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-        /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-        /// to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn evaluation_strategy(
             mut self,
             input: crate::model::FeatureEvaluationStrategy,
@@ -6114,9 +5947,7 @@ pub mod update_feature_input {
             self.evaluation_strategy = Some(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-        /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-        /// to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -6138,23 +5969,14 @@ pub mod update_feature_input {
         ///
         /// To override the contents of this collection use [`set_add_or_update_variations`](Self::set_add_or_update_variations).
         ///
-        /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-        /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-        /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-        /// as a new variation.</p>
-        pub fn add_or_update_variations(
-            mut self,
-            input: impl Into<crate::model::VariationConfig>,
-        ) -> Self {
+        /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
+        pub fn add_or_update_variations(mut self, input: crate::model::VariationConfig) -> Self {
             let mut v = self.add_or_update_variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_or_update_variations = Some(v);
             self
         }
-        /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-        /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-        /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-        /// as a new variation.</p>
+        /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
         pub fn set_add_or_update_variations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
@@ -6166,20 +5988,16 @@ pub mod update_feature_input {
         ///
         /// To override the contents of this collection use [`set_remove_variations`](Self::set_remove_variations).
         ///
-        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-        /// makes no change and does not report an error.</p>
-        /// <p>This operation fails if you try to remove a variation that is part of an
-        /// ongoing launch or experiment.</p>
+        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+        /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
         pub fn remove_variations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_variations.unwrap_or_default();
             v.push(input.into());
             self.remove_variations = Some(v);
             self
         }
-        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-        /// makes no change and does not report an error.</p>
-        /// <p>This operation fails if you try to remove a variation that is part of an
-        /// ongoing launch or experiment.</p>
+        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+        /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
         pub fn set_remove_variations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6187,16 +6005,12 @@ pub mod update_feature_input {
             self.remove_variations = input;
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_variation = Some(input.into());
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6208,10 +6022,7 @@ pub mod update_feature_input {
         ///
         /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
         ///
-        /// <p>Specified users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn entity_overrides(
             mut self,
             k: impl Into<std::string::String>,
@@ -6222,10 +6033,7 @@ pub mod update_feature_input {
             self.entity_overrides = Some(hash_map);
             self
         }
-        /// <p>Specified users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn set_entity_overrides(
             mut self,
             input: std::option::Option<
@@ -6258,7 +6066,7 @@ pub mod update_feature_input {
 #[doc(hidden)]
 pub type UpdateFeatureInputOperationOutputAlias = crate::operation::UpdateFeature;
 #[doc(hidden)]
-pub type UpdateFeatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFeatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFeatureInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFeature`](crate::operation::UpdateFeature)>
     #[allow(clippy::let_and_return)]
@@ -6269,7 +6077,7 @@ impl UpdateFeatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFeature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6384,7 +6192,7 @@ impl UpdateFeatureInput {
             "UpdateFeature",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6458,16 +6266,14 @@ pub mod update_launch_input {
         ///
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
-        /// <p>An array of structures that contains the feature and variations that are to be used for
-        /// the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroupConfig>) -> Self {
+        /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
-        /// <p>An array of structures that contains the feature and variations that are to be used for
-        /// the launch.</p>
+        /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
@@ -6479,19 +6285,14 @@ pub mod update_launch_input {
         ///
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            input: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
         pub fn set_metric_monitors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
@@ -6499,18 +6300,12 @@ pub mod update_launch_input {
             self.metric_monitors = input;
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6518,8 +6313,7 @@ pub mod update_launch_input {
             self.randomization_salt = input;
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
             input: crate::model::ScheduledSplitsLaunchConfig,
@@ -6527,8 +6321,7 @@ pub mod update_launch_input {
             self.scheduled_splits_config = Some(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn set_scheduled_splits_config(
             mut self,
             input: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
@@ -6558,7 +6351,7 @@ pub mod update_launch_input {
 #[doc(hidden)]
 pub type UpdateLaunchInputOperationOutputAlias = crate::operation::UpdateLaunch;
 #[doc(hidden)]
-pub type UpdateLaunchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLaunchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunch`](crate::operation::UpdateLaunch)>
     #[allow(clippy::let_and_return)]
@@ -6569,7 +6362,7 @@ impl UpdateLaunchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLaunch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6684,7 +6477,7 @@ impl UpdateLaunchInput {
             "UpdateLaunch",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6754,7 +6547,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -6765,7 +6558,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6860,7 +6653,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6918,8 +6711,7 @@ pub mod update_project_data_delivery_input {
             self.s3_destination = input;
             self
         }
-        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-        /// events.</p>
+        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
         pub fn cloud_watch_logs(
             mut self,
             input: crate::model::CloudWatchLogsDestinationConfig,
@@ -6927,8 +6719,7 @@ pub mod update_project_data_delivery_input {
             self.cloud_watch_logs = Some(input);
             self
         }
-        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-        /// events.</p>
+        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
@@ -6955,7 +6746,7 @@ pub mod update_project_data_delivery_input {
 pub type UpdateProjectDataDeliveryInputOperationOutputAlias =
     crate::operation::UpdateProjectDataDelivery;
 #[doc(hidden)]
-pub type UpdateProjectDataDeliveryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectDataDeliveryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectDataDeliveryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProjectDataDelivery`](crate::operation::UpdateProjectDataDelivery)>
     #[allow(clippy::let_and_return)]
@@ -6966,7 +6757,7 @@ impl UpdateProjectDataDeliveryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProjectDataDelivery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7068,7 +6859,7 @@ impl UpdateProjectDataDeliveryInput {
             "UpdateProjectDataDelivery",
             "evidently",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7099,8 +6890,7 @@ pub struct UpdateProjectDataDeliveryInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
     pub s3_destination: std::option::Option<crate::model::S3DestinationConfig>,
-    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-    /// events.</p>
+    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
 }
 impl UpdateProjectDataDeliveryInput {
@@ -7112,8 +6902,7 @@ impl UpdateProjectDataDeliveryInput {
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3DestinationConfig> {
         self.s3_destination.as_ref()
     }
-    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-    /// events.</p>
+    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
     pub fn cloud_watch_logs(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsDestinationConfig> {
@@ -7164,8 +6953,7 @@ impl std::fmt::Debug for UpdateProjectInput {
 pub struct PutProjectEventsInput {
     /// <p>The name or ARN of the project to write the events to.</p>
     pub project: std::option::Option<std::string::String>,
-    /// <p>An array of event structures that contain the performance data that is being sent to
-    /// Evidently.</p>
+    /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl PutProjectEventsInput {
@@ -7173,8 +6961,7 @@ impl PutProjectEventsInput {
     pub fn project(&self) -> std::option::Option<&str> {
         self.project.as_deref()
     }
-    /// <p>An array of event structures that contain the performance data that is being sent to
-    /// Evidently.</p>
+    /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
@@ -7196,12 +6983,9 @@ pub struct EvaluateFeatureInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
     pub feature: std::option::Option<std::string::String>,
-    /// <p>An internal ID that represents a unique user of the application. This
-    /// <code>entityID</code> is checked against any override rules assigned for this
-    /// feature.</p>
+    /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-    /// in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub evaluation_context: std::option::Option<std::string::String>,
 }
 impl EvaluateFeatureInput {
@@ -7213,14 +6997,11 @@ impl EvaluateFeatureInput {
     pub fn feature(&self) -> std::option::Option<&str> {
         self.feature.as_deref()
     }
-    /// <p>An internal ID that represents a unique user of the application. This
-    /// <code>entityID</code> is checked against any override rules assigned for this
-    /// feature.</p>
+    /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-    /// in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub fn evaluation_context(&self) -> std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
@@ -7270,8 +7051,7 @@ impl std::fmt::Debug for BatchEvaluateFeatureInput {
 pub struct ListProjectsInput {
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListProjects</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
@@ -7279,8 +7059,7 @@ impl ListProjectsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListProjects</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7302,17 +7081,11 @@ pub struct CreateProjectInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the project.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A structure that contains information about where Evidently is to store
-    /// evaluation events for longer term storage, if you choose to do so. If you choose
-    /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-    /// results that you can view.</p>
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
     pub data_delivery: std::option::Option<crate::model::ProjectDataDeliveryConfig>,
     /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a project.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
@@ -7327,19 +7100,13 @@ impl CreateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A structure that contains information about where Evidently is to store
-    /// evaluation events for longer term storage, if you choose to do so. If you choose
-    /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-    /// results that you can view.</p>
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
     pub fn data_delivery(&self) -> std::option::Option<&crate::model::ProjectDataDeliveryConfig> {
         self.data_delivery.as_ref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a project.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
@@ -7410,8 +7177,7 @@ pub struct StopLaunchInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the launch to stop.</p>
     pub launch: std::option::Option<std::string::String>,
-    /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-    /// <code>CANCELLED</code> after it stops.</p>
+    /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub desired_state: std::option::Option<crate::model::LaunchStopDesiredState>,
     /// <p>A string that describes why you are stopping the launch.</p>
     pub reason: std::option::Option<std::string::String>,
@@ -7425,8 +7191,7 @@ impl StopLaunchInput {
     pub fn launch(&self) -> std::option::Option<&str> {
         self.launch.as_deref()
     }
-    /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-    /// <code>CANCELLED</code> after it stops.</p>
+    /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(&self) -> std::option::Option<&crate::model::LaunchStopDesiredState> {
         self.desired_state.as_ref()
     }
@@ -7482,8 +7247,7 @@ pub struct ListLaunchesInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListLaunches</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchesInput {
@@ -7495,8 +7259,7 @@ impl ListLaunchesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListLaunches</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7521,25 +7284,17 @@ pub struct CreateLaunchInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the launch.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_config: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
-    /// <p>An array of structures that define the metrics that will be used to monitor
-    /// the launch performance.</p>
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the launch name as the <code>randomizationsSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
@@ -7558,15 +7313,13 @@ impl CreateLaunchInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_config(
         &self,
     ) -> std::option::Option<&crate::model::ScheduledSplitsLaunchConfig> {
         self.scheduled_splits_config.as_ref()
     }
-    /// <p>An array of structures that define the metrics that will be used to monitor
-    /// the launch performance.</p>
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub fn metric_monitors(&self) -> std::option::Option<&[crate::model::MetricMonitorConfig]> {
         self.metric_monitors.as_deref()
     }
@@ -7574,19 +7327,13 @@ impl CreateLaunchInput {
     pub fn groups(&self) -> std::option::Option<&[crate::model::LaunchGroupConfig]> {
         self.groups.as_deref()
     }
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the launch name as the <code>randomizationsSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a launch.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
@@ -7649,19 +7396,13 @@ pub struct UpdateLaunchInput {
     pub launch: std::option::Option<std::string::String>,
     /// <p>An optional description for the launch.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An array of structures that contains the feature and variations that are to be used for
-    /// the launch.</p>
+    /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
-    /// <p>An array of structures that define the metrics that will be used to monitor
-    /// the launch performance.</p>
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the launch name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_config: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
 }
 impl UpdateLaunchInput {
@@ -7677,25 +7418,19 @@ impl UpdateLaunchInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An array of structures that contains the feature and variations that are to be used for
-    /// the launch.</p>
+    /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::model::LaunchGroupConfig]> {
         self.groups.as_deref()
     }
-    /// <p>An array of structures that define the metrics that will be used to monitor
-    /// the launch performance.</p>
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub fn metric_monitors(&self) -> std::option::Option<&[crate::model::MetricMonitorConfig]> {
         self.metric_monitors.as_deref()
     }
-    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the launch name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_config(
         &self,
     ) -> std::option::Option<&crate::model::ScheduledSplitsLaunchConfig> {
@@ -7752,8 +7487,7 @@ pub struct ListFeaturesInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListFeatures</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFeaturesInput {
@@ -7765,8 +7499,7 @@ impl ListFeaturesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListFeatures</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7789,35 +7522,24 @@ pub struct CreateFeatureInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name for the new feature.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-    /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-    /// variation to all users instead.</p>
+    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
     pub variations: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
-    /// <p>The name of the variation to use as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-    /// the <code>variations</code> structure is used as the default variation.</p>
+    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specify users that should always be served a specific variation of a feature. Each user
-    /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-    /// account ID, or some other identifier. For the value, specify the name of the variation that
-    /// they are to be served.</p>
+    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7830,9 +7552,7 @@ impl CreateFeatureInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-    /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-    /// variation to all users instead.</p>
+    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn evaluation_strategy(
         &self,
     ) -> std::option::Option<&crate::model::FeatureEvaluationStrategy> {
@@ -7846,21 +7566,15 @@ impl CreateFeatureInput {
     pub fn variations(&self) -> std::option::Option<&[crate::model::VariationConfig]> {
         self.variations.as_deref()
     }
-    /// <p>The name of the variation to use as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-    /// the <code>variations</code> structure is used as the default variation.</p>
+    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub fn default_variation(&self) -> std::option::Option<&str> {
         self.default_variation.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
@@ -7869,10 +7583,7 @@ impl CreateFeatureInput {
     {
         self.tags.as_ref()
     }
-    /// <p>Specify users that should always be served a specific variation of a feature. Each user
-    /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-    /// account ID, or some other identifier. For the value, specify the name of the variation that
-    /// they are to be served.</p>
+    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     pub fn entity_overrides(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7931,30 +7642,18 @@ pub struct UpdateFeatureInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the feature to be updated.</p>
     pub feature: std::option::Option<std::string::String>,
-    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-    /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-    /// to all users instead.</p>
+    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-    /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-    /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-    /// as a new variation.</p>
+    /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
     pub add_or_update_variations: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
-    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-    /// makes no change and does not report an error.</p>
-    /// <p>This operation fails if you try to remove a variation that is part of an
-    /// ongoing launch or experiment.</p>
+    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+    /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
     pub remove_variations: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the variation to use as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub default_variation: std::option::Option<std::string::String>,
-    /// <p>Specified users that should always be served a specific variation of a feature. Each user
-    /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-    /// account ID, or some other identifier. For the value, specify the name of the variation that
-    /// they are to be served.</p>
+    /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7967,9 +7666,7 @@ impl UpdateFeatureInput {
     pub fn feature(&self) -> std::option::Option<&str> {
         self.feature.as_deref()
     }
-    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-    /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-    /// to all users instead.</p>
+    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn evaluation_strategy(
         &self,
     ) -> std::option::Option<&crate::model::FeatureEvaluationStrategy> {
@@ -7979,32 +7676,22 @@ impl UpdateFeatureInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-    /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-    /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-    /// as a new variation.</p>
+    /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
     pub fn add_or_update_variations(
         &self,
     ) -> std::option::Option<&[crate::model::VariationConfig]> {
         self.add_or_update_variations.as_deref()
     }
-    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-    /// makes no change and does not report an error.</p>
-    /// <p>This operation fails if you try to remove a variation that is part of an
-    /// ongoing launch or experiment.</p>
+    /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+    /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
     pub fn remove_variations(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_variations.as_deref()
     }
-    /// <p>The name of the variation to use as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub fn default_variation(&self) -> std::option::Option<&str> {
         self.default_variation.as_deref()
     }
-    /// <p>Specified users that should always be served a specific variation of a feature. Each user
-    /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-    /// account ID, or some other identifier. For the value, specify the name of the variation that
-    /// they are to be served.</p>
+    /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     pub fn entity_overrides(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8063,8 +7750,7 @@ pub struct StopExperimentInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The name of the experiment to stop.</p>
     pub experiment: std::option::Option<std::string::String>,
-    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-    /// <code>CANCELLED</code> after it stops.</p>
+    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub desired_state: std::option::Option<crate::model::ExperimentStopDesiredState>,
     /// <p>A string that describes why you are stopping the experiment.</p>
     pub reason: std::option::Option<std::string::String>,
@@ -8078,8 +7764,7 @@ impl StopExperimentInput {
     pub fn experiment(&self) -> std::option::Option<&str> {
         self.experiment.as_deref()
     }
-    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-    /// <code>CANCELLED</code> after it stops.</p>
+    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(&self) -> std::option::Option<&crate::model::ExperimentStopDesiredState> {
         self.desired_state.as_ref()
     }
@@ -8150,41 +7835,17 @@ pub struct GetExperimentResultsInput {
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
     pub treatment_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-    /// which uses the mean of the collected values as the statistic.</p>
+    /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub base_stat: std::option::Option<crate::model::ExperimentBaseStat>,
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-    /// testing to measure how often you are willing to make a mistake in rejecting the null
-    /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-    /// results are statistically significant when the p-value is less than 0.05.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-    /// confidence interval represents the range of values for the chosen metric that is likely to
-    /// contain the true difference between the <code>baseStat</code> of a variation and the
-    /// baseline. Evidently returns the 95% confidence interval. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-    /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-    /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-    /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-    /// of the values collected for each variation.</p>
-    /// </li>
+    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
     pub result_stats: std::option::Option<std::vec::Vec<crate::model::ExperimentResultRequestType>>,
-    /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-    /// is the only valid value.</p>
+    /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub report_names: std::option::Option<std::vec::Vec<crate::model::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together. </p>
     pub period: i64,
@@ -8214,47 +7875,23 @@ impl GetExperimentResultsInput {
     pub fn treatment_names(&self) -> std::option::Option<&[std::string::String]> {
         self.treatment_names.as_deref()
     }
-    /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-    /// which uses the mean of the collected values as the statistic.</p>
+    /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn base_stat(&self) -> std::option::Option<&crate::model::ExperimentBaseStat> {
         self.base_stat.as_ref()
     }
     /// <p>The statistics that you want to see in the returned results.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-    /// testing to measure how often you are willing to make a mistake in rejecting the null
-    /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-    /// results are statistically significant when the p-value is less than 0.05.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-    /// confidence interval represents the range of values for the chosen metric that is likely to
-    /// contain the true difference between the <code>baseStat</code> of a variation and the
-    /// baseline. Evidently returns the 95% confidence interval. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-    /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-    /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-    /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-    /// of the values collected for each variation.</p>
-    /// </li>
+    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
     /// </ul>
     pub fn result_stats(
         &self,
     ) -> std::option::Option<&[crate::model::ExperimentResultRequestType]> {
         self.result_stats.as_deref()
     }
-    /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-    /// is the only valid value.</p>
+    /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub fn report_names(&self) -> std::option::Option<&[crate::model::ExperimentReportName]> {
         self.report_names.as_deref()
     }
@@ -8288,8 +7925,7 @@ pub struct ListExperimentsInput {
     pub project: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListExperiments</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentsInput {
@@ -8301,8 +7937,7 @@ impl ListExperimentsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use when requesting the next set of results. You received this token from a previous
-    /// <code>ListExperiments</code> operation.</p>
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8329,29 +7964,18 @@ pub struct CreateExperimentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
     pub treatments: std::option::Option<std::vec::Vec<crate::model::TreatmentConfig>>,
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
-    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the experiment name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
-    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
     pub sampling_rate: std::option::Option<i64>,
-    /// <p>A structure that contains the configuration of which variation to use as the "control"
-    /// version. tThe "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
@@ -8374,37 +7998,26 @@ impl CreateExperimentInput {
     pub fn treatments(&self) -> std::option::Option<&[crate::model::TreatmentConfig]> {
         self.treatments.as_deref()
     }
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(&self) -> std::option::Option<&[crate::model::MetricGoalConfig]> {
         self.metric_goals.as_deref()
     }
-    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the experiment name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
-    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
     pub fn sampling_rate(&self) -> std::option::Option<i64> {
         self.sampling_rate
     }
-    /// <p>A structure that contains the configuration of which variation to use as the "control"
-    /// version. tThe "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_config(&self) -> std::option::Option<&crate::model::OnlineAbConfig> {
         self.online_ab_config.as_ref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
@@ -8470,22 +8083,14 @@ pub struct UpdateExperimentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
     pub treatments: std::option::Option<std::vec::Vec<crate::model::TreatmentConfig>>,
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
-    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the experiment name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
-    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
     pub sampling_rate: std::option::Option<i64>,
-    /// <p>A structure that contains the configuration of which variation o use as the "control"
-    /// version. The "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: std::option::Option<crate::model::OnlineAbConfig>,
 }
 impl UpdateExperimentInput {
@@ -8505,28 +8110,20 @@ impl UpdateExperimentInput {
     pub fn treatments(&self) -> std::option::Option<&[crate::model::TreatmentConfig]> {
         self.treatments.as_deref()
     }
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(&self) -> std::option::Option<&[crate::model::MetricGoalConfig]> {
         self.metric_goals.as_deref()
     }
-    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-    /// the experiment name as the <code>randomizationSalt</code>.</p>
+    /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
-    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
     pub fn sampling_rate(&self) -> std::option::Option<i64> {
         self.sampling_rate
     }
-    /// <p>A structure that contains the configuration of which variation o use as the "control"
-    /// version. The "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_config(&self) -> std::option::Option<&crate::model::OnlineAbConfig> {
         self.online_ab_config.as_ref()
     }

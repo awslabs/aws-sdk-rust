@@ -35,16 +35,12 @@ pub mod associate_device_with_placement_input {
             self.placement_name = input;
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_id = Some(input.into());
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -82,7 +78,8 @@ pub mod associate_device_with_placement_input {
 pub type AssociateDeviceWithPlacementInputOperationOutputAlias =
     crate::operation::AssociateDeviceWithPlacement;
 #[doc(hidden)]
-pub type AssociateDeviceWithPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDeviceWithPlacementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDeviceWithPlacementInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDeviceWithPlacement`](crate::operation::AssociateDeviceWithPlacement)>
     #[allow(clippy::let_and_return)]
@@ -93,7 +90,7 @@ impl AssociateDeviceWithPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDeviceWithPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -226,7 +223,7 @@ impl AssociateDeviceWithPlacementInput {
             "AssociateDeviceWithPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -289,8 +286,7 @@ pub mod create_placement_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -301,8 +297,7 @@ pub mod create_placement_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -330,7 +325,7 @@ pub mod create_placement_input {
 #[doc(hidden)]
 pub type CreatePlacementInputOperationOutputAlias = crate::operation::CreatePlacement;
 #[doc(hidden)]
-pub type CreatePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`CreatePlacement`](crate::operation::CreatePlacement)>
     #[allow(clippy::let_and_return)]
@@ -341,7 +336,7 @@ impl CreatePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -441,7 +436,7 @@ impl CreatePlacementInput {
             "CreatePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -498,18 +493,12 @@ pub mod create_project_input {
             self.description = input;
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.placement_template = Some(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -521,9 +510,7 @@ pub mod create_project_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -534,9 +521,7 @@ pub mod create_project_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -565,7 +550,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -576,7 +561,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -655,7 +640,7 @@ impl CreateProjectInput {
             "CreateProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -728,7 +713,7 @@ pub mod delete_placement_input {
 #[doc(hidden)]
 pub type DeletePlacementInputOperationOutputAlias = crate::operation::DeletePlacement;
 #[doc(hidden)]
-pub type DeletePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlacement`](crate::operation::DeletePlacement)>
     #[allow(clippy::let_and_return)]
@@ -739,7 +724,7 @@ impl DeletePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -849,7 +834,7 @@ impl DeletePlacementInput {
             "DeletePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -899,7 +884,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -910,7 +895,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1004,7 +989,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1069,7 +1054,7 @@ pub mod describe_placement_input {
 #[doc(hidden)]
 pub type DescribePlacementInputOperationOutputAlias = crate::operation::DescribePlacement;
 #[doc(hidden)]
-pub type DescribePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePlacementInput {
     /// Consumes the builder and constructs an Operation<[`DescribePlacement`](crate::operation::DescribePlacement)>
     #[allow(clippy::let_and_return)]
@@ -1080,7 +1065,7 @@ impl DescribePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1190,7 +1175,7 @@ impl DescribePlacementInput {
             "DescribePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1240,7 +1225,7 @@ pub mod describe_project_input {
 #[doc(hidden)]
 pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
 #[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
@@ -1251,7 +1236,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1345,7 +1330,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1426,7 +1411,8 @@ pub mod disassociate_device_from_placement_input {
 pub type DisassociateDeviceFromPlacementInputOperationOutputAlias =
     crate::operation::DisassociateDeviceFromPlacement;
 #[doc(hidden)]
-pub type DisassociateDeviceFromPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDeviceFromPlacementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDeviceFromPlacementInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDeviceFromPlacement`](crate::operation::DisassociateDeviceFromPlacement)>
     #[allow(clippy::let_and_return)]
@@ -1437,7 +1423,7 @@ impl DisassociateDeviceFromPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDeviceFromPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1563,7 +1549,7 @@ impl DisassociateDeviceFromPlacementInput {
             "DisassociateDeviceFromPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1628,7 +1614,7 @@ pub mod get_devices_in_placement_input {
 #[doc(hidden)]
 pub type GetDevicesInPlacementInputOperationOutputAlias = crate::operation::GetDevicesInPlacement;
 #[doc(hidden)]
-pub type GetDevicesInPlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevicesInPlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevicesInPlacementInput {
     /// Consumes the builder and constructs an Operation<[`GetDevicesInPlacement`](crate::operation::GetDevicesInPlacement)>
     #[allow(clippy::let_and_return)]
@@ -1639,7 +1625,7 @@ impl GetDevicesInPlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevicesInPlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1749,7 +1735,7 @@ impl GetDevicesInPlacementInput {
             "GetDevicesInPlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1795,14 +1781,12 @@ pub mod list_placements_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1825,7 +1809,7 @@ pub mod list_placements_input {
 #[doc(hidden)]
 pub type ListPlacementsInputOperationOutputAlias = crate::operation::ListPlacements;
 #[doc(hidden)]
-pub type ListPlacementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlacementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlacementsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlacements`](crate::operation::ListPlacements)>
     #[allow(clippy::let_and_return)]
@@ -1836,7 +1820,7 @@ impl ListPlacementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlacements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1947,7 +1931,7 @@ impl ListPlacementsInput {
             "ListPlacements",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1982,14 +1966,12 @@ pub mod list_projects_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2011,7 +1993,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -2022,7 +2004,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2113,7 +2095,7 @@ impl ListProjectsInput {
             "ListProjects",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2163,7 +2145,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2174,7 +2156,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2264,7 +2246,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2305,8 +2287,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2317,8 +2298,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2345,7 +2325,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2356,7 +2336,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2451,7 +2431,7 @@ impl TagResourceInput {
             "TagResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2530,7 +2510,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2541,7 +2521,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2644,7 +2624,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2699,8 +2679,7 @@ pub mod update_placement_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -2711,8 +2690,7 @@ pub mod update_placement_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -2740,7 +2718,7 @@ pub mod update_placement_input {
 #[doc(hidden)]
 pub type UpdatePlacementInputOperationOutputAlias = crate::operation::UpdatePlacement;
 #[doc(hidden)]
-pub type UpdatePlacementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePlacementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePlacementInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePlacement`](crate::operation::UpdatePlacement)>
     #[allow(clippy::let_and_return)]
@@ -2751,7 +2729,7 @@ impl UpdatePlacementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePlacement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2867,7 +2845,7 @@ impl UpdatePlacementInput {
             "UpdatePlacement",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2921,18 +2899,12 @@ pub mod update_project_input {
             self.description = input;
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.placement_template = Some(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -2958,7 +2930,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -2969,7 +2941,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3068,7 +3040,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "iot1clickprojects",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3099,10 +3071,7 @@ pub struct UpdateProjectInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional user-defined description for the project.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object defining the project update. Once a project has been created, you cannot add
-    /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-    /// can update the associated <code>callbackOverrides</code> for the device definition using this
-    /// API.</p>
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
 }
 impl UpdateProjectInput {
@@ -3114,10 +3083,7 @@ impl UpdateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object defining the project update. Once a project has been created, you cannot add
-    /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-    /// can update the associated <code>callbackOverrides</code> for the device definition using this
-    /// API.</p>
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
         self.placement_template.as_ref()
     }
@@ -3140,8 +3106,7 @@ pub struct UpdatePlacementInput {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project containing the placement to be updated.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-    /// key/value pairs is 50.</p>
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3154,8 +3119,7 @@ impl UpdatePlacementInput {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-    /// key/value pairs is 50.</p>
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3207,8 +3171,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-    /// resource.</p>
+    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3217,8 +3180,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-    /// resource.</p>
+    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3262,8 +3224,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListProjectsInput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -3271,8 +3232,7 @@ impl ListProjectsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3294,8 +3254,7 @@ pub struct ListPlacementsInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPlacementsInput {
@@ -3307,8 +3266,7 @@ impl ListPlacementsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3492,14 +3450,9 @@ pub struct CreateProjectInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional description for the project.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The schema defining the placement to be created. A placement template defines placement
-    /// default attributes and device templates. You cannot add or remove device templates after the
-    /// project has been created. However, you can update <code>callbackOverrides</code> for the
-    /// device templates using the <code>UpdateProject</code> API.</p>
+    /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
-    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-    /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3512,16 +3465,11 @@ impl CreateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The schema defining the placement to be created. A placement template defines placement
-    /// default attributes and device templates. You cannot add or remove device templates after the
-    /// project has been created. However, you can update <code>callbackOverrides</code> for the
-    /// device templates using the <code>UpdateProject</code> API.</p>
+    /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
     pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
         self.placement_template.as_ref()
     }
-    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-    /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3548,8 +3496,7 @@ pub struct CreatePlacementInput {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project in which to create the placement.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-    /// function) for the placement.</p>
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3562,8 +3509,7 @@ impl CreatePlacementInput {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-    /// function) for the placement.</p>
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3589,9 +3535,7 @@ pub struct AssociateDeviceWithPlacementInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement in which to associate the device.</p>
     pub placement_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the physical device to be associated with the given placement in the project.
-    /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-    /// values.</p>
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device template name to associate with the device ID.</p>
     pub device_template_name: std::option::Option<std::string::String>,
@@ -3605,9 +3549,7 @@ impl AssociateDeviceWithPlacementInput {
     pub fn placement_name(&self) -> std::option::Option<&str> {
         self.placement_name.as_deref()
     }
-    /// <p>The ID of the physical device to be associated with the given placement in the project.
-    /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-    /// values.</p>
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }

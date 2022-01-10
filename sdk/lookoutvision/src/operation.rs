@@ -257,6 +257,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeModel {
     }
 }
 
+/// Operation shape for `DescribeModelPackagingJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_model_packaging_job`](crate::client::Client::describe_model_packaging_job).
+///
+/// See [`crate::client::fluent_builders::DescribeModelPackagingJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeModelPackagingJob {
+    _private: (),
+}
+impl DescribeModelPackagingJob {
+    /// Creates a new builder-style object to manufacture [`DescribeModelPackagingJobInput`](crate::input::DescribeModelPackagingJobInput)
+    pub fn builder() -> crate::input::describe_model_packaging_job_input::Builder {
+        crate::input::describe_model_packaging_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeModelPackagingJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeModelPackagingJob {
+    type Output = std::result::Result<
+        crate::output::DescribeModelPackagingJobOutput,
+        crate::error::DescribeModelPackagingJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_model_packaging_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_model_packaging_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -355,6 +389,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetEntries {
             crate::operation_deser::parse_list_dataset_entries_error(response)
         } else {
             crate::operation_deser::parse_list_dataset_entries_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListModelPackagingJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_model_packaging_jobs`](crate::client::Client::list_model_packaging_jobs).
+///
+/// See [`crate::client::fluent_builders::ListModelPackagingJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListModelPackagingJobs {
+    _private: (),
+}
+impl ListModelPackagingJobs {
+    /// Creates a new builder-style object to manufacture [`ListModelPackagingJobsInput`](crate::input::ListModelPackagingJobsInput)
+    pub fn builder() -> crate::input::list_model_packaging_jobs_input::Builder {
+        crate::input::list_model_packaging_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListModelPackagingJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListModelPackagingJobs {
+    type Output = std::result::Result<
+        crate::output::ListModelPackagingJobsOutput,
+        crate::error::ListModelPackagingJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_model_packaging_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_model_packaging_jobs_response(response)
         }
     }
 }
@@ -485,6 +553,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartModel {
             crate::operation_deser::parse_start_model_error(response)
         } else {
             crate::operation_deser::parse_start_model_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartModelPackagingJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_model_packaging_job`](crate::client::Client::start_model_packaging_job).
+///
+/// See [`crate::client::fluent_builders::StartModelPackagingJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartModelPackagingJob {
+    _private: (),
+}
+impl StartModelPackagingJob {
+    /// Creates a new builder-style object to manufacture [`StartModelPackagingJobInput`](crate::input::StartModelPackagingJobInput)
+    pub fn builder() -> crate::input::start_model_packaging_job_input::Builder {
+        crate::input::start_model_packaging_job_input::Builder::default()
+    }
+    /// Creates a new `StartModelPackagingJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartModelPackagingJob {
+    type Output = std::result::Result<
+        crate::output::StartModelPackagingJobOutput,
+        crate::error::StartModelPackagingJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_model_packaging_job_error(response)
+        } else {
+            crate::operation_deser::parse_start_model_packaging_job_response(response)
         }
     }
 }

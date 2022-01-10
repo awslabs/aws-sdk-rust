@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT SiteWise
@@ -348,6 +348,7 @@ where
     ///
     /// See [`GetAssetPropertyAggregates`](crate::client::fluent_builders::GetAssetPropertyAggregates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyAggregates::into_paginator).
     pub fn get_asset_property_aggregates(
         &self,
     ) -> fluent_builders::GetAssetPropertyAggregates<C, M, R> {
@@ -364,6 +365,7 @@ where
     ///
     /// See [`GetAssetPropertyValueHistory`](crate::client::fluent_builders::GetAssetPropertyValueHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAssetPropertyValueHistory::into_paginator).
     pub fn get_asset_property_value_history(
         &self,
     ) -> fluent_builders::GetAssetPropertyValueHistory<C, M, R> {
@@ -373,6 +375,7 @@ where
     ///
     /// See [`GetInterpolatedAssetPropertyValues`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInterpolatedAssetPropertyValues::into_paginator).
     pub fn get_interpolated_asset_property_values(
         &self,
     ) -> fluent_builders::GetInterpolatedAssetPropertyValues<C, M, R> {
@@ -382,6 +385,7 @@ where
     ///
     /// See [`ListAccessPolicies`](crate::client::fluent_builders::ListAccessPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPolicies::into_paginator).
     pub fn list_access_policies(&self) -> fluent_builders::ListAccessPolicies<C, M, R> {
         fluent_builders::ListAccessPolicies::new(self.handle.clone())
     }
@@ -389,6 +393,7 @@ where
     ///
     /// See [`ListAssetModels`](crate::client::fluent_builders::ListAssetModels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssetModels::into_paginator).
     pub fn list_asset_models(&self) -> fluent_builders::ListAssetModels<C, M, R> {
         fluent_builders::ListAssetModels::new(self.handle.clone())
     }
@@ -396,6 +401,7 @@ where
     ///
     /// See [`ListAssetRelationships`](crate::client::fluent_builders::ListAssetRelationships) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssetRelationships::into_paginator).
     pub fn list_asset_relationships(&self) -> fluent_builders::ListAssetRelationships<C, M, R> {
         fluent_builders::ListAssetRelationships::new(self.handle.clone())
     }
@@ -403,6 +409,7 @@ where
     ///
     /// See [`ListAssets`](crate::client::fluent_builders::ListAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
     pub fn list_assets(&self) -> fluent_builders::ListAssets<C, M, R> {
         fluent_builders::ListAssets::new(self.handle.clone())
     }
@@ -410,6 +417,7 @@ where
     ///
     /// See [`ListAssociatedAssets`](crate::client::fluent_builders::ListAssociatedAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedAssets::into_paginator).
     pub fn list_associated_assets(&self) -> fluent_builders::ListAssociatedAssets<C, M, R> {
         fluent_builders::ListAssociatedAssets::new(self.handle.clone())
     }
@@ -417,6 +425,7 @@ where
     ///
     /// See [`ListDashboards`](crate::client::fluent_builders::ListDashboards) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
     pub fn list_dashboards(&self) -> fluent_builders::ListDashboards<C, M, R> {
         fluent_builders::ListDashboards::new(self.handle.clone())
     }
@@ -424,6 +433,7 @@ where
     ///
     /// See [`ListGateways`](crate::client::fluent_builders::ListGateways) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
     pub fn list_gateways(&self) -> fluent_builders::ListGateways<C, M, R> {
         fluent_builders::ListGateways::new(self.handle.clone())
     }
@@ -431,6 +441,7 @@ where
     ///
     /// See [`ListPortals`](crate::client::fluent_builders::ListPortals) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortals::into_paginator).
     pub fn list_portals(&self) -> fluent_builders::ListPortals<C, M, R> {
         fluent_builders::ListPortals::new(self.handle.clone())
     }
@@ -438,6 +449,7 @@ where
     ///
     /// See [`ListProjectAssets`](crate::client::fluent_builders::ListProjectAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjectAssets::into_paginator).
     pub fn list_project_assets(&self) -> fluent_builders::ListProjectAssets<C, M, R> {
         fluent_builders::ListProjectAssets::new(self.handle.clone())
     }
@@ -445,6 +457,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -459,6 +472,7 @@ where
     ///
     /// See [`ListTimeSeries`](crate::client::fluent_builders::ListTimeSeries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTimeSeries::into_paginator).
     pub fn list_time_series(&self) -> fluent_builders::ListTimeSeries<C, M, R> {
         fluent_builders::ListTimeSeries::new(self.handle.clone())
     }
@@ -575,10 +589,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAssets`.
     ///
-    /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the
-    /// parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -623,10 +635,10 @@ pub mod fluent_builders {
                 crate::input::AssociateAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -635,8 +647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the parent asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the parent asset.</p>
@@ -644,23 +656,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(inp);
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
             self
         }
         /// <p>The ID of the child asset to be associated.</p>
-        pub fn child_asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.child_asset_id(inp);
+        pub fn child_asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.child_asset_id(input.into());
             self
         }
         /// <p>The ID of the child asset to be associated.</p>
@@ -672,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -685,7 +693,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTimeSeriesToAssetProperty`.
     ///
     /// <p>Associates a time series (data stream) with an asset property.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTimeSeriesToAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -732,10 +740,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTimeSeriesToAssetPropertyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -744,8 +752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -754,8 +762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -764,8 +772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -774,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -787,7 +795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateProjectAssets`.
     ///
     /// <p>Associates a group (batch) of assets with an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -832,10 +840,10 @@ pub mod fluent_builders {
                 crate::input::BatchAssociateProjectAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -844,8 +852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to which to associate the assets.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to which to associate the assets.</p>
@@ -858,8 +866,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
         ///
         /// <p>The IDs of the assets to be associated to the project.</p>
-        pub fn asset_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_ids(inp);
+        pub fn asset_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_ids(input.into());
             self
         }
         /// <p>The IDs of the assets to be associated to the project.</p>
@@ -871,8 +879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -884,7 +892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateProjectAssets`.
     ///
     /// <p>Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -929,10 +937,10 @@ pub mod fluent_builders {
                 crate::input::BatchDisassociateProjectAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -941,8 +949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project from which to disassociate the assets.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project from which to disassociate the assets.</p>
@@ -955,8 +963,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
         ///
         /// <p>The IDs of the assets to be disassociated from the project.</p>
-        pub fn asset_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_ids(inp);
+        pub fn asset_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_ids(input.into());
             self
         }
         /// <p>The IDs of the assets to be disassociated from the project.</p>
@@ -968,8 +976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -980,32 +988,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchPutAssetPropertyValue`.
     ///
-    /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value
-    /// (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more
-    /// than 7 days in the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps
-    /// outside of the inclusive range of [-7 days, +10 minutes] and returns a
-    /// <code>TimestampOutOfRangeException</code> error.</p>
-    /// <p>For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer
-    /// TQV has a different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>,
-    /// then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.</p>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+    /// </ul> <important>
+    /// <p>With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.</p>
+    /// <p>For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.</p>
     /// </important>
-    /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually.
-    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1050,10 +1043,10 @@ pub mod fluent_builders {
                 crate::input::BatchPutAssetPropertyValueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1065,14 +1058,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The list of asset property value entries for the batch put request. You can specify up to
-        /// 10 entries per request.</p>
-        pub fn entries(mut self, inp: impl Into<crate::model::PutAssetPropertyValueEntry>) -> Self {
-            self.inner = self.inner.entries(inp);
+        /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
+        pub fn entries(mut self, input: crate::model::PutAssetPropertyValueEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
-        /// <p>The list of asset property value entries for the batch put request. You can specify up to
-        /// 10 entries per request.</p>
+        /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
@@ -1083,9 +1074,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccessPolicy`.
     ///
-    /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-    /// IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1130,10 +1120,10 @@ pub mod fluent_builders {
                 crate::input::CreateAccessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1142,8 +1132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-        pub fn access_policy_identity(mut self, inp: crate::model::Identity) -> Self {
-            self.inner = self.inner.access_policy_identity(inp);
+        pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
+            self.inner = self.inner.access_policy_identity(input);
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
@@ -1155,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-        pub fn access_policy_resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.access_policy_resource(inp);
+        pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.access_policy_resource(input);
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -1168,8 +1158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn access_policy_permission(mut self, inp: crate::model::Permission) -> Self {
-            self.inner = self.inner.access_policy_permission(inp);
+        pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.access_policy_permission(input);
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
@@ -1181,8 +1171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1194,20 +1184,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the access policy. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-        /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the access policy. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-        /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1220,9 +1206,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAsset`.
     ///
-    /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1267,10 +1252,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1279,8 +1264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the asset.</p>
-        pub fn asset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_name(inp);
+        pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
@@ -1289,8 +1274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset model from which to create the asset.</p>
-        pub fn asset_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(inp);
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model from which to create the asset.</p>
@@ -1302,8 +1287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1315,20 +1300,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1341,12 +1322,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssetModel`.
     ///
-    /// <p>Creates an asset model from specified property and hierarchy definitions. You create
-    /// assets from asset models. With asset models, you can easily create assets of the same type
-    /// that have standardized definitions. Each asset created from a model inherits the asset model's
-    /// property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1391,10 +1368,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssetModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1403,8 +1380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the asset model.</p>
-        pub fn asset_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_name(inp);
+        pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
@@ -1416,8 +1393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the asset model.</p>
-        pub fn asset_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_description(inp);
+        pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_description(input.into());
             self
         }
         /// <p>A description for the asset model.</p>
@@ -1432,21 +1409,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
-        /// <p>The property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(
             mut self,
-            inp: impl Into<crate::model::AssetModelPropertyDefinition>,
+            input: crate::model::AssetModelPropertyDefinition,
         ) -> Self {
-            self.inner = self.inner.asset_model_properties(inp);
+            self.inner = self.inner.asset_model_properties(input);
             self
         }
-        /// <p>The property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
@@ -1458,23 +1431,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
         ///
-        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
-        /// whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(
             mut self,
-            inp: impl Into<crate::model::AssetModelHierarchyDefinition>,
+            input: crate::model::AssetModelHierarchyDefinition,
         ) -> Self {
-            self.inner = self.inner.asset_model_hierarchies(inp);
+            self.inner = self.inner.asset_model_hierarchies(input);
             self
         }
-        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
-        /// whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_hierarchies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchyDefinition>>,
@@ -1486,21 +1453,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
         ///
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
-            inp: impl Into<crate::model::AssetModelCompositeModelDefinition>,
+            input: crate::model::AssetModelCompositeModelDefinition,
         ) -> Self {
-            self.inner = self.inner.asset_model_composite_models(inp);
+            self.inner = self.inner.asset_model_composite_models(input);
             self
         }
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn set_asset_model_composite_models(
             mut self,
             input: std::option::Option<
@@ -1511,8 +1472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1524,20 +1485,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1551,7 +1508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDashboard`.
     ///
     /// <p>Creates a dashboard in an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1596,10 +1553,10 @@ pub mod fluent_builders {
                 crate::input::CreateDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1608,8 +1565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project in which to create the dashboard.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project in which to create the dashboard.</p>
@@ -1618,8 +1575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the dashboard.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
         /// <p>A friendly name for the dashboard.</p>
@@ -1631,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the dashboard.</p>
-        pub fn dashboard_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_description(inp);
+        pub fn dashboard_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_description(input.into());
             self
         }
         /// <p>A description for the dashboard.</p>
@@ -1643,14 +1600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dashboard_description(input);
             self
         }
-        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn dashboard_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_definition(inp);
+        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_definition(input.into());
             self
         }
-        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_dashboard_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1659,8 +1614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1672,20 +1627,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1698,10 +1649,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGateway`.
     ///
-    /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams
-    /// from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1746,10 +1695,10 @@ pub mod fluent_builders {
                 crate::input::CreateGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1758,8 +1707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the gateway.</p>
-        pub fn gateway_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_name(inp);
+        pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
@@ -1768,8 +1717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
-        pub fn gateway_platform(mut self, inp: crate::model::GatewayPlatform) -> Self {
-            self.inner = self.inner.gateway_platform(inp);
+        pub fn gateway_platform(mut self, input: crate::model::GatewayPlatform) -> Self {
+            self.inner = self.inner.gateway_platform(input);
             self
         }
         /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
@@ -1784,20 +1733,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1810,14 +1755,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePortal`.
     ///
-    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or IAM
-    /// to authenticate portal users and manage user permissions.</p>
-    /// <note>
-    /// <p>Before you can sign in to a new portal, you must add at least one identity to that
-    /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal
-    /// administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and manage user permissions.</p> <note>
+    /// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1862,10 +1803,10 @@ pub mod fluent_builders {
                 crate::input::CreatePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1874,8 +1815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name for the portal.</p>
-        pub fn portal_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_name(inp);
+        pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_name(input.into());
             self
         }
         /// <p>A friendly name for the portal.</p>
@@ -1884,8 +1825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the portal.</p>
-        pub fn portal_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_description(inp);
+        pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_description(input.into());
             self
         }
         /// <p>A description for the portal.</p>
@@ -1897,8 +1838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
-        pub fn portal_contact_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_contact_email(inp);
+        pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_contact_email(input.into());
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
@@ -1910,8 +1851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1919,14 +1860,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
-        /// image is displayed on a dark background.</p>
-        pub fn portal_logo_image_file(mut self, inp: crate::model::ImageFile) -> Self {
-            self.inner = self.inner.portal_logo_image_file(inp);
+        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
+        pub fn portal_logo_image_file(mut self, input: crate::model::ImageFile) -> Self {
+            self.inner = self.inner.portal_logo_image_file(input);
             self
         }
-        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
-        /// image is displayed on a dark background.</p>
+        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
         pub fn set_portal_logo_image_file(
             mut self,
             input: std::option::Option<crate::model::ImageFile>,
@@ -1934,16 +1873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image_file(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1952,20 +1887,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1975,50 +1906,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The service to use to authenticate users to the portal. Choose from the following
-        /// options:</p>
+        /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
-        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
-        /// the China Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions.</p>
-        /// </li>
+        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
-        /// <p>Default: <code>SSO</code>
-        /// </p>
-        pub fn portal_auth_mode(mut self, inp: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.portal_auth_mode(inp);
+        /// <p>Default: <code>SSO</code> </p>
+        pub fn portal_auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.portal_auth_mode(input);
             self
         }
-        /// <p>The service to use to authenticate users to the portal. Choose from the following
-        /// options:</p>
+        /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
-        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
-        /// the China Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions.</p>
-        /// </li>
+        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
-        /// <p>Default: <code>SSO</code>
-        /// </p>
+        /// <p>Default: <code>SSO</code> </p>
         pub fn set_portal_auth_mode(
             mut self,
             input: std::option::Option<crate::model::AuthMode>,
@@ -2026,21 +1931,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_auth_mode(input);
             self
         }
-        /// <p>The email address that sends alarm notifications.</p>
-        /// <important>
-        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
-        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
-        /// address in Amazon SES</a>.</p>
+        /// <p>The email address that sends alarm notifications.</p> <important>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
         /// </important>
-        pub fn notification_sender_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_sender_email(inp);
+        pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_sender_email(input.into());
             self
         }
-        /// <p>The email address that sends alarm notifications.</p>
-        /// <important>
-        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
-        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
-        /// address in Amazon SES</a>.</p>
+        /// <p>The email address that sends alarm notifications.</p> <important>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
         /// </important>
         pub fn set_notification_sender_email(
             mut self,
@@ -2049,16 +1948,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-        pub fn alarms(mut self, inp: crate::model::Alarms) -> Self {
-            self.inner = self.inner.alarms(inp);
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
+            self.inner = self.inner.alarms(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn set_alarms(mut self, input: std::option::Option<crate::model::Alarms>) -> Self {
             self.inner = self.inner.set_alarms(input);
             self
@@ -2066,12 +1961,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a project in the specified portal.</p>
-    /// <note>
-    /// <p>Make sure that the project name and description don't contain confidential
-    /// information.</p>
+    /// <p>Creates a project in the specified portal.</p> <note>
+    /// <p>Make sure that the project name and description don't contain confidential information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2116,10 +2009,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2128,8 +2021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal in which to create the project.</p>
-        pub fn portal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(inp);
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal in which to create the project.</p>
@@ -2138,8 +2031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>A friendly name for the project.</p>
@@ -2148,8 +2041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the project.</p>
-        pub fn project_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(inp);
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>A description for the project.</p>
@@ -2161,8 +2054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2174,20 +2067,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2200,10 +2089,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccessPolicy`.
     ///
-    /// <p>Deletes an access policy that grants the specified identity access to the specified
-    /// IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor
-    /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2248,10 +2135,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAccessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2260,8 +2147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy to be deleted.</p>
-        pub fn access_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(inp);
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy to be deleted.</p>
@@ -2273,8 +2160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2285,13 +2172,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
-    /// <p>Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and
-    /// models</a> in the <i>IoT SiteWise User Guide</i>. </p>
-    /// <note>
-    /// <p>You can't delete an asset that's associated to another asset. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
+    /// <p>Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p> <note>
+    /// <p>You can't delete an asset that's associated to another asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2336,10 +2220,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2348,8 +2232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to delete.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to delete.</p>
@@ -2358,8 +2242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2370,12 +2254,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssetModel`.
     ///
-    /// <p>Deletes an asset model. This action can't be undone. You must delete all assets created
-    /// from an asset model before you can delete the model. Also, you can't delete an asset model if
-    /// a parent asset model exists that contains a property formula expression that depends on the
-    /// asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an asset model. This action can't be undone. You must delete all assets created from an asset model before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2420,10 +2300,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssetModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2432,8 +2312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model to delete.</p>
-        pub fn asset_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(inp);
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model to delete.</p>
@@ -2445,8 +2325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2458,7 +2338,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDashboard`.
     ///
     /// <p>Deletes a dashboard from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2503,10 +2383,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2515,8 +2395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard to delete.</p>
-        pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(inp);
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard to delete.</p>
@@ -2525,8 +2405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2537,9 +2417,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGateway`.
     ///
-    /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain
-    /// in your gateway's file system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2584,10 +2463,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2596,8 +2475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to delete.</p>
-        pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(inp);
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to delete.</p>
@@ -2609,7 +2488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortal`.
     ///
     /// <p>Deletes a portal from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2654,10 +2533,10 @@ pub mod fluent_builders {
                 crate::input::DeletePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2666,8 +2545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal to delete.</p>
-        pub fn portal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(inp);
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal to delete.</p>
@@ -2676,8 +2555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2689,7 +2568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes a project from IoT SiteWise Monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2734,10 +2613,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2746,8 +2625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -2756,8 +2635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2768,29 +2647,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTimeSeries`.
     ///
-    /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an
-    /// asset property, the asset property still exists, but the time series will no longer be
-    /// associated with this asset property.</p>
+    /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p>
     /// <p>To identify a time series, do one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the time series isn't associated with an asset property,
-    /// specify the <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the time series is associated with an asset property,
-    /// specify one of the following: </p>
+    /// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
-    /// </li>
+    /// <li> <p>The <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2835,10 +2702,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTimeSeriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2847,8 +2714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -2857,8 +2724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -2867,8 +2734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -2877,8 +2744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2889,9 +2756,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccessPolicy`.
     ///
-    /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or
-    /// project.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2936,10 +2802,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2948,8 +2814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy.</p>
-        pub fn access_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(inp);
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy.</p>
@@ -2964,7 +2830,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAsset`.
     ///
     /// <p>Retrieves information about an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3009,10 +2875,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3021,8 +2887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -3034,7 +2900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAssetModel`.
     ///
     /// <p>Retrieves information about an asset model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3079,10 +2945,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssetModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3091,8 +2957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model.</p>
-        pub fn asset_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(inp);
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model.</p>
@@ -3106,15 +2972,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssetProperty`.
     ///
-    /// <p>Retrieves information about an asset property.</p>
-    /// <note>
-    /// <p>When you call this operation for an attribute property, this response includes the
-    /// default attribute value that you define in the asset model. If you update the default value
-    /// in the model, this operation's response includes the new default value.</p>
+    /// <p>Retrieves information about an asset property.</p> <note>
+    /// <p>When you call this operation for an attribute property, this response includes the default attribute value that you define in the asset model. If you update the default value in the model, this operation's response includes the new default value.</p>
     /// </note>
-    /// <p>This operation doesn't return the value of the asset property. To get the value of an
-    /// asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation doesn't return the value of the asset property. To get the value of an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3159,10 +3021,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssetPropertyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3171,8 +3033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -3181,8 +3043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -3194,7 +3056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDashboard`.
     ///
     /// <p>Retrieves information about a dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3239,10 +3101,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3251,8 +3113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard.</p>
-        pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(inp);
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard.</p>
@@ -3263,10 +3125,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDefaultEncryptionConfiguration`.
     ///
-    /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in
-    /// the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3313,10 +3173,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDefaultEncryptionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3328,7 +3188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGateway`.
     ///
     /// <p>Retrieves information about a gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3373,10 +3233,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3385,8 +3245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway device.</p>
-        pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(inp);
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway device.</p>
@@ -3397,12 +3257,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGatewayCapabilityConfiguration`.
     ///
-    /// <p>Retrieves information about a gateway capability configuration.
-    /// Each gateway capability defines data sources for a gateway. A capability configuration
-    /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
-    /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
-    /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3449,10 +3305,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGatewayCapabilityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3461,8 +3317,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway that defines the capability configuration.</p>
-        pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(inp);
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway that defines the capability configuration.</p>
@@ -3470,20 +3326,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_id(input);
             self
         }
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
-        pub fn capability_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capability_namespace(inp);
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+        pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_namespace(input.into());
             self
         }
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn set_capability_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3495,7 +3343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current IoT SiteWise logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3540,10 +3388,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3555,7 +3403,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePortal`.
     ///
     /// <p>Retrieves information about a portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3600,10 +3448,10 @@ pub mod fluent_builders {
                 crate::input::DescribePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3612,8 +3460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal.</p>
-        pub fn portal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(inp);
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal.</p>
@@ -3625,7 +3473,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Retrieves information about a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3670,10 +3518,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3682,8 +3530,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -3695,7 +3543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStorageConfiguration`.
     ///
     /// <p>Retrieves information about the storage configuration for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3740,10 +3588,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStorageConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3757,24 +3605,14 @@ pub mod fluent_builders {
     /// <p>Retrieves information about a time series (data stream).</p>
     /// <p>To identify a time series, do one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the time series isn't associated with an asset property,
-    /// specify the <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the time series is associated with an asset property,
-    /// specify one of the following: </p>
+    /// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
-    /// </li>
+    /// <li> <p>The <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3819,10 +3657,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTimeSeriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3831,8 +3669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -3841,8 +3679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -3851,8 +3689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -3863,9 +3701,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateAssets`.
     ///
-    /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the
-    /// parent asset's model.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3910,10 +3747,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3922,8 +3759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
@@ -3931,25 +3768,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
-        /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(inp);
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
-        /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
             self
         }
         /// <p>The ID of the child asset to disassociate.</p>
-        pub fn child_asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.child_asset_id(inp);
+        pub fn child_asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.child_asset_id(input.into());
             self
         }
         /// <p>The ID of the child asset to disassociate.</p>
@@ -3961,8 +3792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -3974,7 +3805,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTimeSeriesFromAssetProperty`.
     ///
     /// <p>Disassociates a time series (data stream) from an asset property.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTimeSeriesFromAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4021,10 +3852,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTimeSeriesFromAssetPropertyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4033,8 +3864,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -4043,8 +3874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -4053,8 +3884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4063,8 +3894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -4075,19 +3906,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyAggregates`.
     ///
-    /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-    /// aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyAggregates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4132,10 +3957,10 @@ pub mod fluent_builders {
                 crate::input::GetAssetPropertyAggregatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4143,9 +3968,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAssetPropertyAggregatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAssetPropertyAggregatesPaginator<C, M, R> {
+            crate::paginator::GetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4154,8 +3987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4163,18 +3996,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(inp);
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4187,8 +4014,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_aggregate_types`](Self::set_aggregate_types).
         ///
         /// <p>The data aggregating function.</p>
-        pub fn aggregate_types(mut self, inp: impl Into<crate::model::AggregateType>) -> Self {
-            self.inner = self.inner.aggregate_types(inp);
+        pub fn aggregate_types(mut self, input: crate::model::AggregateType) -> Self {
+            self.inner = self.inner.aggregate_types(input);
             self
         }
         /// <p>The data aggregating function.</p>
@@ -4200,8 +4027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time interval over which to aggregate data.</p>
-        pub fn resolution(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(inp);
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(input.into());
             self
         }
         /// <p>The time interval over which to aggregate data.</p>
@@ -4214,8 +4041,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
         ///
         /// <p>The quality by which to filter asset data.</p>
-        pub fn qualities(mut self, inp: impl Into<crate::model::Quality>) -> Self {
-            self.inner = self.inner.qualities(inp);
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
+            self.inner = self.inner.qualities(input);
             self
         }
         /// <p>The quality by which to filter asset data.</p>
@@ -4227,8 +4054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4240,8 +4067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4253,15 +4080,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
-        pub fn time_ordering(mut self, inp: crate::model::TimeOrdering) -> Self {
-            self.inner = self.inner.time_ordering(inp);
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn set_time_ordering(
             mut self,
             input: std::option::Option<crate::model::TimeOrdering>,
@@ -4270,8 +4095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4281,8 +4106,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -4294,19 +4119,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyValue`.
     ///
-    /// <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-    /// current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4351,10 +4170,10 @@ pub mod fluent_builders {
                 crate::input::GetAssetPropertyValueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4363,8 +4182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4373,8 +4192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4382,18 +4201,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(inp);
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4404,19 +4217,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyValueHistory`.
     ///
-    /// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-    /// historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4461,10 +4268,10 @@ pub mod fluent_builders {
                 crate::input::GetAssetPropertyValueHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4472,9 +4279,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAssetPropertyValueHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAssetPropertyValueHistoryPaginator<C, M, R> {
+            crate::paginator::GetAssetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4483,8 +4298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4492,18 +4307,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(inp);
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4512,8 +4321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4525,8 +4334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4542,8 +4351,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).
         ///
         /// <p>The quality by which to filter asset data.</p>
-        pub fn qualities(mut self, inp: impl Into<crate::model::Quality>) -> Self {
-            self.inner = self.inner.qualities(inp);
+        pub fn qualities(mut self, input: crate::model::Quality) -> Self {
+            self.inner = self.inner.qualities(input);
             self
         }
         /// <p>The quality by which to filter asset data.</p>
@@ -4555,15 +4364,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
-        pub fn time_ordering(mut self, inp: crate::model::TimeOrdering) -> Self {
-            self.inner = self.inner.time_ordering(inp);
+        /// <p>Default: <code>ASCENDING</code> </p>
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn set_time_ordering(
             mut self,
             input: std::option::Option<crate::model::TimeOrdering>,
@@ -4572,8 +4379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4583,8 +4390,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -4596,22 +4403,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInterpolatedAssetPropertyValues`.
     ///
-    /// <p>Get interpolated values for an asset property for a specified time interval, during a
-    /// period of time. If your time series is missing data points during the specified time interval,
-    /// you can use interpolation to estimate the missing data.</p>
-    /// <p>For example, you can use this operation to return the interpolated temperature values for
-    /// a wind turbine every 24 hours over a duration of 7 days.</p>
+    /// <p>Get interpolated values for an asset property for a specified time interval, during a period of time. If your time series is missing data points during the specified time interval, you can use interpolation to estimate the missing data.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInterpolatedAssetPropertyValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4658,10 +4457,10 @@ pub mod fluent_builders {
                 crate::input::GetInterpolatedAssetPropertyValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4669,9 +4468,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetInterpolatedAssetPropertyValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetInterpolatedAssetPropertyValuesPaginator<C, M, R> {
+            crate::paginator::GetInterpolatedAssetPropertyValuesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4680,8 +4490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4689,18 +4499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(inp);
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4708,21 +4512,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_alias(input);
             self
         }
-        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
-        pub fn start_time_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.start_time_in_seconds(inp);
+        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+        pub fn start_time_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.start_time_in_seconds(input);
             self
         }
-        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn set_start_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_time_in_seconds(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
-        pub fn start_time_offset_in_nanos(mut self, inp: i32) -> Self {
-            self.inner = self.inner.start_time_offset_in_nanos(inp);
+        pub fn start_time_offset_in_nanos(mut self, input: i32) -> Self {
+            self.inner = self.inner.start_time_offset_in_nanos(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
@@ -4730,21 +4532,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_offset_in_nanos(input);
             self
         }
-        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
-        pub fn end_time_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.end_time_in_seconds(inp);
+        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+        pub fn end_time_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.end_time_in_seconds(input);
             self
         }
-        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn set_end_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_end_time_in_seconds(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
-        pub fn end_time_offset_in_nanos(mut self, inp: i32) -> Self {
-            self.inner = self.inner.end_time_offset_in_nanos(inp);
+        pub fn end_time_offset_in_nanos(mut self, input: i32) -> Self {
+            self.inner = self.inner.end_time_offset_in_nanos(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
@@ -4752,33 +4552,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time_offset_in_nanos(input);
             self
         }
-        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
-        /// only the asset property values that have a specific quality.</p>
-        pub fn quality(mut self, inp: crate::model::Quality) -> Self {
-            self.inner = self.inner.quality(inp);
+        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
+        pub fn quality(mut self, input: crate::model::Quality) -> Self {
+            self.inner = self.inner.quality(input);
             self
         }
-        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
-        /// only the asset property values that have a specific quality.</p>
+        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
         pub fn set_quality(mut self, input: std::option::Option<crate::model::Quality>) -> Self {
             self.inner = self.inner.set_quality(input);
             self
         }
-        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
-        /// previous one ends.</p>
-        pub fn interval_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.interval_in_seconds(inp);
+        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
+        pub fn interval_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.interval_in_seconds(input);
             self
         }
-        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
-        /// previous one ends.</p>
+        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
         pub fn set_interval_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_interval_in_seconds(input);
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4787,8 +4583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
@@ -4797,119 +4593,43 @@ pub mod fluent_builders {
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
-        /// </p>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
-        /// interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values
-        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
-        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
-        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
-        /// carried forward interpolation</p>
-        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
-        /// for the previous interval and carries forward this interpolated value until a new data
-        /// point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
-        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
-        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
-        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
-        /// same interpolated value for the rest of the days.</p>
-        /// </li>
+        /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
+        /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
-        /// </p>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
-        /// interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values
-        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
-        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
-        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
-        /// carried forward interpolation</p>
-        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
-        /// for the previous interval and carries forward this interpolated value until a new data
-        /// point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
-        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
-        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
-        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
-        /// same interpolated value for the rest of the days.</p>
-        /// </li>
+        /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
+        /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
-        /// using data points from the timestamp of each interval, minus the window to the timestamp of
-        /// each interval plus the window. If not specified, the window ranges between the start time
-        /// minus the interval and the end time plus the interval.</p>
-        /// <note>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// value for the <code>type</code> parameter must be
-        /// <code>LINEAR_INTERPOLATION</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
-        /// interpolated value for the interval. This indicates that there's a gap in the ingested
-        /// data points.</p>
-        /// </li>
+        /// <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+        /// <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
-        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
-        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
-        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
-        /// compute the second interpolated value, and so on. </p>
-        pub fn interval_window_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.interval_window_in_seconds(inp);
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
+        pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.interval_window_in_seconds(input);
             self
         }
-        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
-        /// using data points from the timestamp of each interval, minus the window to the timestamp of
-        /// each interval plus the window. If not specified, the window ranges between the start time
-        /// minus the interval and the end time plus the interval.</p>
-        /// <note>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// value for the <code>type</code> parameter must be
-        /// <code>LINEAR_INTERPOLATION</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
-        /// interpolated value for the interval. This indicates that there's a gap in the ingested
-        /// data points.</p>
-        /// </li>
+        /// <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+        /// <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
-        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
-        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
-        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
-        /// compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
         pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_interval_window_in_seconds(input);
             self
@@ -4917,9 +4637,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPolicies`.
     ///
-    /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-    /// group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4964,10 +4683,10 @@ pub mod fluent_builders {
                 crate::input::ListAccessPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4975,14 +4694,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
-        /// if you specify <code>identityId</code>.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccessPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccessPoliciesPaginator<C, M, R> {
+            crate::paginator::ListAccessPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
-        /// if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -4990,26 +4713,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_type(input);
             self
         }
-        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
-        /// <code>GROUP</code> for <code>identityType</code>.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
-        /// <code>GROUP</code> for <code>identityType</code>.</p>
+        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The type of resource (portal or project). This parameter is required if you specify
-        /// <code>resourceId</code>.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resource (portal or project). This parameter is required if you specify
-        /// <code>resourceId</code>.</p>
+        /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5017,35 +4736,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the resource. This parameter is required if you specify
-        /// <code>resourceType</code>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of the resource. This parameter is required if you specify
-        /// <code>resourceType</code>.</p>
+        /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>. This parameter is required if you specify
-        /// <code>IAM</code> for <code>identityType</code>.</p>
-        pub fn iam_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_arn(inp);
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
+        pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>. This parameter is required if you specify
-        /// <code>IAM</code> for <code>identityType</code>.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
         pub fn set_iam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_arn(input);
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5055,8 +4768,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5069,7 +4782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssetModels`.
     ///
     /// <p>Retrieves a paginated list of summaries of all asset models.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssetModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5114,10 +4827,10 @@ pub mod fluent_builders {
                 crate::input::ListAssetModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5125,9 +4838,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetModelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetModelsPaginator<C, M, R> {
+            crate::paginator::ListAssetModelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5137,8 +4856,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5150,10 +4869,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssetRelationships`.
     ///
-    /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation
-    /// to identify an asset's root asset and all associated assets between that asset and its
-    /// root.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's root asset and all associated assets between that asset and its root.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssetRelationships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5198,10 +4915,10 @@ pub mod fluent_builders {
                 crate::input::ListAssetRelationshipsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5209,9 +4926,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetRelationshipsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetRelationshipsPaginator<C, M, R> {
+            crate::paginator::ListAssetRelationshipsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -5219,29 +4942,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The type of traversal to use to identify asset relationships. Choose the following
-        /// option:</p>
+        /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root
-        /// asset. The asset that you specify in <code>assetId</code> is the first result in the list
-        /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
-        /// </li>
+        /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
         /// </ul>
-        pub fn traversal_type(mut self, inp: crate::model::TraversalType) -> Self {
-            self.inner = self.inner.traversal_type(inp);
+        pub fn traversal_type(mut self, input: crate::model::TraversalType) -> Self {
+            self.inner = self.inner.traversal_type(input);
             self
         }
-        /// <p>The type of traversal to use to identify asset relationships. Choose the following
-        /// option:</p>
+        /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root
-        /// asset. The asset that you specify in <code>assetId</code> is the first result in the list
-        /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
-        /// </li>
+        /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
         /// </ul>
         pub fn set_traversal_type(
             mut self,
@@ -5251,8 +4962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5261,8 +4972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5276,17 +4987,11 @@ pub mod fluent_builders {
     /// <p>Retrieves a paginated list of asset summaries.</p>
     /// <p>You can use this operation to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>List assets based on a specific asset model.</p>
-    /// </li>
-    /// <li>
-    /// <p>List top-level assets.</p>
-    /// </li>
+    /// <li> <p>List assets based on a specific asset model.</p> </li>
+    /// <li> <p>List top-level assets.</p> </li>
     /// </ul>
-    /// <p>You can't use this operation to list all assets. To retrieve summaries for all of your
-    /// assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all
-    /// assets for each asset model.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can't use this operation to list all assets. To retrieve summaries for all of your assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5331,10 +5036,10 @@ pub mod fluent_builders {
                 crate::input::ListAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5342,9 +5047,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetsPaginator<C, M, R> {
+            crate::paginator::ListAssetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5354,8 +5065,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5364,14 +5075,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
-        pub fn asset_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(inp);
+        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
-        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
+        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
         pub fn set_asset_model_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5381,40 +5090,20 @@ pub mod fluent_builders {
         }
         /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all assets for a given asset model ID. The
-        /// <code>assetModelId</code> parameter is required if you filter by
-        /// <code>ALL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset
-        /// hierarchy tree.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+        /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
         /// </ul>
-        /// <p>Default: <code>ALL</code>
-        /// </p>
-        pub fn filter(mut self, inp: crate::model::ListAssetsFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>Default: <code>ALL</code> </p>
+        pub fn filter(mut self, input: crate::model::ListAssetsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all assets for a given asset model ID. The
-        /// <code>assetModelId</code> parameter is required if you filter by
-        /// <code>ALL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset
-        /// hierarchy tree.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+        /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
         /// </ul>
-        /// <p>Default: <code>ALL</code>
-        /// </p>
+        /// <p>Default: <code>ALL</code> </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ListAssetsFilter>,
@@ -5428,14 +5117,10 @@ pub mod fluent_builders {
     /// <p>Retrieves a paginated list of associated assets.</p>
     /// <p>You can use this operation to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>List child assets associated to a parent asset by a hierarchy that you specify.</p>
-    /// </li>
-    /// <li>
-    /// <p>List an asset's parent asset.</p>
-    /// </li>
+    /// <li> <p>List child assets associated to a parent asset by a hierarchy that you specify.</p> </li>
+    /// <li> <p>List an asset's parent asset.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5480,10 +5165,10 @@ pub mod fluent_builders {
                 crate::input::ListAssociatedAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5491,9 +5176,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssociatedAssetsPaginator<C, M, R> {
+            crate::paginator::ListAssociatedAssetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the asset to query.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to query.</p>
@@ -5501,19 +5192,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
-        /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
-        /// parameter is required if you choose <code>CHILD</code> for
-        /// <code>traversalDirection</code>.</p>
+        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(inp);
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
-        /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
-        /// parameter is required if you choose <code>CHILD</code> for
-        /// <code>traversalDirection</code>.</p>
+        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
@@ -5521,38 +5206,20 @@ pub mod fluent_builders {
         }
         /// <p>The direction to list associated assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHILD</code> – The list includes all child assets associated to the
-        /// asset. The <code>hierarchyId</code> parameter is required if you choose
-        /// <code>CHILD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code> – The list includes the asset's parent asset.</p>
-        /// </li>
+        /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+        /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
         /// </ul>
-        /// <p>Default: <code>CHILD</code>
-        /// </p>
-        pub fn traversal_direction(mut self, inp: crate::model::TraversalDirection) -> Self {
-            self.inner = self.inner.traversal_direction(inp);
+        /// <p>Default: <code>CHILD</code> </p>
+        pub fn traversal_direction(mut self, input: crate::model::TraversalDirection) -> Self {
+            self.inner = self.inner.traversal_direction(input);
             self
         }
         /// <p>The direction to list associated assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHILD</code> – The list includes all child assets associated to the
-        /// asset. The <code>hierarchyId</code> parameter is required if you choose
-        /// <code>CHILD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code> – The list includes the asset's parent asset.</p>
-        /// </li>
+        /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+        /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
         /// </ul>
-        /// <p>Default: <code>CHILD</code>
-        /// </p>
+        /// <p>Default: <code>CHILD</code> </p>
         pub fn set_traversal_direction(
             mut self,
             input: std::option::Option<crate::model::TraversalDirection>,
@@ -5561,8 +5228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5572,8 +5239,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5586,7 +5253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDashboards`.
     ///
     /// <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5631,10 +5298,10 @@ pub mod fluent_builders {
                 crate::input::ListDashboardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5642,9 +5309,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDashboardsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDashboardsPaginator<C, M, R> {
+            crate::paginator::ListDashboardsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -5653,8 +5326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5664,8 +5337,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5678,7 +5351,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGateways`.
     ///
     /// <p>Retrieves a paginated list of gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5723,10 +5396,10 @@ pub mod fluent_builders {
                 crate::input::ListGatewaysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5734,9 +5407,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGatewaysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGatewaysPaginator<C, M, R> {
+            crate::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5746,8 +5425,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5760,7 +5439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortals`.
     ///
     /// <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5805,10 +5484,10 @@ pub mod fluent_builders {
                 crate::input::ListPortalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5816,9 +5495,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPortalsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPortalsPaginator<C, M, R> {
+            crate::paginator::ListPortalsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5828,8 +5513,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5842,7 +5527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjectAssets`.
     ///
     /// <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjectAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5887,10 +5572,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5898,9 +5583,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectAssetsPaginator<C, M, R> {
+            crate::paginator::ListProjectAssetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -5909,8 +5600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5920,8 +5611,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5934,7 +5625,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5979,10 +5670,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5990,9 +5681,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the portal.</p>
-        pub fn portal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(inp);
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal.</p>
@@ -6001,8 +5698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -6012,8 +5709,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -6026,7 +5723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the list of tags for an IoT SiteWise resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6071,10 +5768,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6083,8 +5780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
@@ -6096,7 +5793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTimeSeries`.
     ///
     /// <p>Retrieves a paginated list of time series (data streams).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6141,10 +5838,10 @@ pub mod fluent_builders {
                 crate::input::ListTimeSeriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6152,9 +5849,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTimeSeriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTimeSeriesPaginator<C, M, R> {
+            crate::paginator::ListTimeSeriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -6163,8 +5866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -6173,8 +5876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -6183,8 +5886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias prefix of the time series.</p>
-        pub fn alias_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_prefix(inp);
+        pub fn alias_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_prefix(input.into());
             self
         }
         /// <p>The alias prefix of the time series.</p>
@@ -6192,37 +5895,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_prefix(input);
             self
         }
-        /// <p>The type of the time series. The time series type can be one of the following
-        /// values:</p>
+        /// <p>The type of the time series. The time series type can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATED</code> – The time series is associated with an asset
-        /// property.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
-        /// property.</p>
-        /// </li>
+        /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+        /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
         /// </ul>
-        pub fn time_series_type(mut self, inp: crate::model::ListTimeSeriesType) -> Self {
-            self.inner = self.inner.time_series_type(inp);
+        pub fn time_series_type(mut self, input: crate::model::ListTimeSeriesType) -> Self {
+            self.inner = self.inner.time_series_type(input);
             self
         }
-        /// <p>The type of the time series. The time series type can be one of the following
-        /// values:</p>
+        /// <p>The type of the time series. The time series type can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATED</code> – The time series is associated with an asset
-        /// property.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
-        /// property.</p>
-        /// </li>
+        /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+        /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
         /// </ul>
         pub fn set_time_series_type(
             mut self,
@@ -6234,10 +5919,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDefaultEncryptionConfiguration`.
     ///
-    /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in
-    /// the <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6282,10 +5965,10 @@ pub mod fluent_builders {
                 crate::input::PutDefaultEncryptionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6294,8 +5977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
@@ -6306,14 +5989,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
-        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
-        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -6322,7 +6003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets logging options for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6367,10 +6048,10 @@ pub mod fluent_builders {
                 crate::input::PutLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6379,8 +6060,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The logging options to set.</p>
-        pub fn logging_options(mut self, inp: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(inp);
+        pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(input);
             self
         }
         /// <p>The logging options to set.</p>
@@ -6395,7 +6076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutStorageConfiguration`.
     ///
     /// <p>Configures storage settings for IoT SiteWise.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutStorageConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6440,10 +6121,10 @@ pub mod fluent_builders {
                 crate::input::PutStorageConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6451,37 +6132,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
-        pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -6490,14 +6153,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_type(input);
             self
         }
-        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
-        /// you must specify a <code>MultiLayerStorage</code> object.</p>
-        pub fn multi_layer_storage(mut self, inp: crate::model::MultiLayerStorage) -> Self {
-            self.inner = self.inner.multi_layer_storage(inp);
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.inner = self.inner.multi_layer_storage(input);
             self
         }
-        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
-        /// you must specify a <code>MultiLayerStorage</code> object.</p>
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
         pub fn set_multi_layer_storage(
             mut self,
             input: std::option::Option<crate::model::MultiLayerStorage>,
@@ -6505,47 +6166,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multi_layer_storage(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn disassociated_data_storage(
             mut self,
-            inp: crate::model::DisassociatedDataStorageState,
+            input: crate::model::DisassociatedDataStorageState,
         ) -> Self {
-            self.inner = self.inner.disassociated_data_storage(inp);
+            self.inner = self.inner.disassociated_data_storage(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_disassociated_data_storage(
             mut self,
             input: std::option::Option<crate::model::DisassociatedDataStorageState>,
@@ -6554,8 +6197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -6569,9 +6212,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation
-    /// updates the tag's value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6616,10 +6258,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6628,8 +6270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
@@ -6641,20 +6283,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6668,7 +6306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from an IoT SiteWise resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6713,10 +6351,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6725,8 +6363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
@@ -6739,8 +6377,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of keys for tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys for tags to remove from the resource.</p>
@@ -6754,9 +6392,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccessPolicy`.
     ///
-    /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor
-    /// portal or project resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6801,10 +6438,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAccessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6813,8 +6450,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy.</p>
-        pub fn access_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(inp);
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy.</p>
@@ -6826,8 +6463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-        pub fn access_policy_identity(mut self, inp: crate::model::Identity) -> Self {
-            self.inner = self.inner.access_policy_identity(inp);
+        pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
+            self.inner = self.inner.access_policy_identity(input);
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
@@ -6839,8 +6476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-        pub fn access_policy_resource(mut self, inp: crate::model::Resource) -> Self {
-            self.inner = self.inner.access_policy_resource(inp);
+        pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.access_policy_resource(input);
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -6852,8 +6489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn access_policy_permission(mut self, inp: crate::model::Permission) -> Self {
-            self.inner = self.inner.access_policy_permission(inp);
+        pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.access_policy_permission(input);
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
@@ -6865,8 +6502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -6877,9 +6514,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAsset`.
     ///
-    /// <p>Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6924,10 +6560,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6936,8 +6572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to update.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to update.</p>
@@ -6946,8 +6582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
-        pub fn asset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_name(inp);
+        pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
@@ -6956,8 +6592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -6968,20 +6604,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssetModel`.
     ///
-    /// <p>Updates an asset model and all of the assets that were created from the model. Each asset
-    /// created from the model inherits the updated asset model's property and hierarchy definitions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    /// <important>
-    /// <p>This operation overwrites the existing model with the provided model. To avoid deleting
-    /// your asset model's properties or hierarchies, you must include their IDs and definitions in
-    /// the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-    /// <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that
-    /// property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every
-    /// asset associated with that hierarchy. You can't change the type or data type of an existing
-    /// property.</p>
+    /// <p>Updates an asset model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> <important>
+    /// <p>This operation overwrites the existing model with the provided model. To avoid deleting your asset model's properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
+    /// <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing property.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7026,10 +6653,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssetModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7038,8 +6665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model to update.</p>
-        pub fn asset_model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(inp);
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model to update.</p>
@@ -7051,8 +6678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
-        pub fn asset_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_name(inp);
+        pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
@@ -7064,8 +6691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the asset model.</p>
-        pub fn asset_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_description(inp);
+        pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_description(input.into());
             self
         }
         /// <p>A description for the asset model.</p>
@@ -7080,21 +6707,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
-        /// <p>The updated property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn asset_model_properties(
-            mut self,
-            inp: impl Into<crate::model::AssetModelProperty>,
-        ) -> Self {
-            self.inner = self.inner.asset_model_properties(inp);
+        /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
+            self.inner = self.inner.asset_model_properties(input);
             self
         }
-        /// <p>The updated property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
@@ -7106,23 +6726,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
         ///
-        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
-        /// model whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn asset_model_hierarchies(
-            mut self,
-            inp: impl Into<crate::model::AssetModelHierarchy>,
-        ) -> Self {
-            self.inner = self.inner.asset_model_hierarchies(inp);
+        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
+            self.inner = self.inner.asset_model_hierarchies(input);
             self
         }
-        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
-        /// model whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_hierarchies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
@@ -7134,21 +6745,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
         ///
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
-            inp: impl Into<crate::model::AssetModelCompositeModel>,
+            input: crate::model::AssetModelCompositeModel,
         ) -> Self {
-            self.inner = self.inner.asset_model_composite_models(inp);
+            self.inner = self.inner.asset_model_composite_models(input);
             self
         }
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn set_asset_model_composite_models(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
@@ -7157,8 +6762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7169,13 +6774,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssetProperty`.
     ///
-    /// <p>Updates an asset property's alias and notification state.</p>
-    /// <important>
-    /// <p>This operation overwrites the property's existing alias and notification state. To keep
-    /// your existing property's alias or notification state, you must include the existing values
-    /// in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+    /// <p>Updates an asset property's alias and notification state.</p> <important>
+    /// <p>This operation overwrites the property's existing alias and notification state. To keep your existing property's alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7220,10 +6822,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssetPropertyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7232,8 +6834,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to be updated.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to be updated.</p>
@@ -7242,8 +6844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property to be updated.</p>
-        pub fn property_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(inp);
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property to be updated.</p>
@@ -7251,19 +6853,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
-        pub fn property_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(inp);
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
         pub fn set_property_alias(
             mut self,
@@ -7272,20 +6868,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_alias(input);
             self
         }
-        /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn property_notification_state(
             mut self,
-            inp: crate::model::PropertyNotificationState,
+            input: crate::model::PropertyNotificationState,
         ) -> Self {
-            self.inner = self.inner.property_notification_state(inp);
+            self.inner = self.inner.property_notification_state(input);
             self
         }
-        /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn set_property_notification_state(
             mut self,
@@ -7295,8 +6887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7308,7 +6900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDashboard`.
     ///
     /// <p>Updates an IoT SiteWise Monitor dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7353,10 +6945,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7365,8 +6957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard to update.</p>
-        pub fn dashboard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(inp);
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard to update.</p>
@@ -7375,8 +6967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the dashboard.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
         /// <p>A new friendly name for the dashboard.</p>
@@ -7388,8 +6980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the dashboard.</p>
-        pub fn dashboard_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_description(inp);
+        pub fn dashboard_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_description(input.into());
             self
         }
         /// <p>A new description for the dashboard.</p>
@@ -7400,14 +6992,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dashboard_description(input);
             self
         }
-        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn dashboard_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_definition(inp);
+        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_definition(input.into());
             self
         }
-        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_dashboard_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7416,8 +7006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7429,7 +7019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGateway`.
     ///
     /// <p>Updates a gateway's name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7474,10 +7064,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7486,8 +7076,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to update.</p>
-        pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(inp);
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to update.</p>
@@ -7496,8 +7086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
-        pub fn gateway_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_name(inp);
+        pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
@@ -7508,12 +7098,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayCapabilityConfiguration`.
     ///
-    /// <p>Updates a gateway capability configuration or defines a new capability configuration.
-    /// Each gateway capability defines data sources for a gateway. A capability configuration
-    /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
-    /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
-    /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7560,10 +7146,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGatewayCapabilityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7572,8 +7158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to be updated.</p>
-        pub fn gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(inp);
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to be updated.</p>
@@ -7581,20 +7167,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_id(input);
             self
         }
-        /// <p>The namespace of the gateway capability configuration to be updated.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
-        pub fn capability_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capability_namespace(inp);
+        /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+        pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_namespace(input.into());
             self
         }
-        /// <p>The namespace of the gateway capability configuration to be updated.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn set_capability_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7602,14 +7180,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capability_namespace(input);
             self
         }
-        /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn capability_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capability_configuration(inp);
+        /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_configuration(input.into());
             self
         }
-        /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_capability_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7621,7 +7197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortal`.
     ///
     /// <p>Updates an IoT SiteWise Monitor portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7666,10 +7242,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7678,8 +7254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal to update.</p>
-        pub fn portal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(inp);
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal to update.</p>
@@ -7688,8 +7264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the portal.</p>
-        pub fn portal_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_name(inp);
+        pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_name(input.into());
             self
         }
         /// <p>A new friendly name for the portal.</p>
@@ -7698,8 +7274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the portal.</p>
-        pub fn portal_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_description(inp);
+        pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_description(input.into());
             self
         }
         /// <p>A new description for the portal.</p>
@@ -7711,8 +7287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
-        pub fn portal_contact_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_contact_email(inp);
+        pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_contact_email(input.into());
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
@@ -7725,25 +7301,17 @@ pub mod fluent_builders {
         }
         /// <p>Contains an image that is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An image file. Choose this option to upload a new image.</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
-        /// </li>
+        /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+        /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
         /// </ul>
-        pub fn portal_logo_image(mut self, inp: crate::model::Image) -> Self {
-            self.inner = self.inner.portal_logo_image(inp);
+        pub fn portal_logo_image(mut self, input: crate::model::Image) -> Self {
+            self.inner = self.inner.portal_logo_image(input);
             self
         }
         /// <p>Contains an image that is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An image file. Choose this option to upload a new image.</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
-        /// </li>
+        /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+        /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
         /// </ul>
         pub fn set_portal_logo_image(
             mut self,
@@ -7752,23 +7320,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7777,8 +7341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
-        pub fn notification_sender_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_sender_email(inp);
+        pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_sender_email(input.into());
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
@@ -7789,16 +7353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-        pub fn alarms(mut self, inp: crate::model::Alarms) -> Self {
-            self.inner = self.inner.alarms(inp);
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
+            self.inner = self.inner.alarms(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn set_alarms(mut self, input: std::option::Option<crate::model::Alarms>) -> Self {
             self.inner = self.inner.set_alarms(input);
             self
@@ -7807,7 +7367,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Updates an IoT SiteWise Monitor project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7852,10 +7412,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7864,8 +7424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to update.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to update.</p>
@@ -7874,8 +7434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>A new friendly name for the project.</p>
@@ -7884,8 +7444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the project.</p>
-        pub fn project_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(inp);
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>A new description for the project.</p>
@@ -7897,8 +7457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7908,6 +7468,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

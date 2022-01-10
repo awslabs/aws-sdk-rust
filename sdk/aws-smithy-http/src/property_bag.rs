@@ -43,10 +43,6 @@ impl Hasher for IdHasher {
 ///
 /// `PropertyBag` can be used by `Request` and `Response` to store
 /// data used to configure the SDK request pipeline.
-///
-/// TODO: We should consider if we want to require members of the property to be "resettable" in some
-/// way to reset any state prior to a retry. I think this is worth delaying until we need it, but
-/// is worth keeping in mind.
 #[derive(Default)]
 pub struct PropertyBag {
     // In http where this property bag is usually empty, this makes sense. We will almost always put

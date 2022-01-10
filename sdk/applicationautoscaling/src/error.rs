@@ -12,19 +12,13 @@ pub struct DeleteScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScalingPolicyErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -70,8 +64,6 @@ impl DeleteScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -146,19 +138,13 @@ pub struct DeleteScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScheduledActionErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -204,8 +190,6 @@ impl DeleteScheduledActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -280,19 +264,13 @@ pub struct DeregisterScalableTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterScalableTargetErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -338,8 +316,6 @@ impl DeregisterScalableTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -414,15 +390,13 @@ pub struct DescribeScalableTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalableTargetsErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The next token supplied was invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -468,8 +442,6 @@ impl DescribeScalableTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -544,15 +516,13 @@ pub struct DescribeScalingActivitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingActivitiesErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The next token supplied was invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -598,8 +568,6 @@ impl DescribeScalingActivitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -674,20 +642,15 @@ pub struct DescribeScalingPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingPoliciesErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
-    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling
-    /// is unable to retrieve the alarms associated with a scaling policy due to a client error,
-    /// for example, if the role ARN specified for a scalable target does not have permission to
-    /// call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
+    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
     FailedResourceAccessException(crate::error::FailedResourceAccessException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The next token supplied was invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -736,8 +699,6 @@ impl DescribeScalingPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -820,15 +781,13 @@ pub struct DescribeScheduledActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScheduledActionsErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The next token supplied was invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -874,8 +833,6 @@ impl DescribeScheduledActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -950,26 +907,17 @@ pub struct PutScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScalingPolicyErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
-    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling
-    /// is unable to retrieve the alarms associated with a scaling policy due to a client error,
-    /// for example, if the role ARN specified for a scalable target does not have permission to
-    /// call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
+    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
     FailedResourceAccessException(crate::error::FailedResourceAccessException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application Auto Scaling service quotas</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1017,8 +965,6 @@ impl PutScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1109,21 +1055,15 @@ pub struct PutScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScheduledActionErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application Auto Scaling service quotas</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1170,8 +1110,6 @@ impl PutScheduledActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1254,15 +1192,13 @@ pub struct RegisterScalableTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterScalableTargetErrorKind {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application Auto Scaling service quotas</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1308,8 +1244,6 @@ impl RegisterScalableTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1371,8 +1305,7 @@ impl std::error::Error for RegisterScalableTargetError {
     }
 }
 
-/// <p>An exception was thrown for a validation issue. Review the available parameters for the
-/// API request.</p>
+/// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -1564,8 +1497,7 @@ impl InternalServiceException {
     }
 }
 
-/// <p>Concurrent updates caused an exception, for example, if you request an update to an
-/// Application Auto Scaling resource that already has a pending update.</p>
+/// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentUpdateException {
@@ -1629,11 +1561,7 @@ impl ConcurrentUpdateException {
     }
 }
 
-/// <p>The specified object could not be found. For any operation that depends on the existence
-/// of a scalable target, this exception is thrown if the scalable target with the specified
-/// service namespace, resource ID, and scalable dimension does not exist. For any operation
-/// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-/// found.</p>
+/// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotFoundException {
@@ -1697,10 +1625,7 @@ impl ObjectNotFoundException {
     }
 }
 
-/// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling
-/// is unable to retrieve the alarms associated with a scaling policy due to a client error,
-/// for example, if the role ARN specified for a scalable target does not have permission to
-/// call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
+/// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedResourceAccessException {

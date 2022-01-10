@@ -13,36 +13,26 @@ pub struct AddTagsError {
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -61,6 +51,9 @@ impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             AddTagsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            AddTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::InvalidTagParameterException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             AddTagsErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
@@ -103,8 +96,6 @@ impl AddTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -130,6 +121,24 @@ impl AddTagsError {
         matches!(
             &self.kind,
             AddTagsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AddTagsErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, AddTagsErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `AddTagsErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AddTagsErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsErrorKind::InactiveEventDataStoreException(_)
         )
     }
     /// Returns `true` if the error kind is `AddTagsErrorKind::InvalidTagParameterException`.
@@ -184,6 +193,9 @@ impl std::error::Error for AddTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             AddTagsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            AddTagsErrorKind::ConflictException(_inner) => Some(_inner),
+            AddTagsErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            AddTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             AddTagsErrorKind::InvalidTagParameterException(_inner) => Some(_inner),
             AddTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             AddTagsErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
@@ -193,6 +205,453 @@ impl std::error::Error for AddTagsError {
             AddTagsErrorKind::TagsLimitExceededException(_inner) => Some(_inner),
             AddTagsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             AddTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CancelQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CancelQueryError {
+    /// Kind of error that occurred.
+    pub kind: CancelQueryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CancelQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CancelQueryErrorKind {
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
+    InactiveQueryException(crate::error::InactiveQueryException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The query ID does not exist or does not map to a query.</p>
+    QueryIdNotFoundException(crate::error::QueryIdNotFoundException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CancelQueryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CancelQueryErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::InactiveQueryException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            CancelQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CancelQueryError {
+    fn code(&self) -> Option<&str> {
+        CancelQueryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CancelQueryError {
+    /// Creates a new `CancelQueryError`.
+    pub fn new(kind: CancelQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CancelQueryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CancelQueryErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CancelQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CancelQueryErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CancelQueryErrorKind::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::InactiveQueryException`.
+    pub fn is_inactive_query_exception(&self) -> bool {
+        matches!(&self.kind, CancelQueryErrorKind::InactiveQueryException(_))
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::QueryIdNotFoundException`.
+    pub fn is_query_id_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::QueryIdNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CancelQueryErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelQueryErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for CancelQueryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CancelQueryErrorKind::ConflictException(_inner) => Some(_inner),
+            CancelQueryErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            CancelQueryErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            CancelQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            CancelQueryErrorKind::InactiveQueryException(_inner) => Some(_inner),
+            CancelQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CancelQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            CancelQueryErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
+            CancelQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            CancelQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEventDataStoreError {
+    /// Kind of error that occurred.
+    pub kind: CreateEventDataStoreErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEventDataStoreErrorKind {
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>An event data store with that name already exists.</p>
+    EventDataStoreAlreadyExistsException(crate::error::EventDataStoreAlreadyExistsException),
+    /// <p>Your account has used the maximum number of event data stores.</p>
+    EventDataStoreMaxLimitExceededException(crate::error::EventDataStoreMaxLimitExceededException),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    InvalidTagParameterException(crate::error::InvalidTagParameterException),
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    OrganizationNotInAllFeaturesModeException(
+        crate::error::OrganizationNotInAllFeaturesModeException,
+    ),
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateEventDataStoreError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::InvalidTagParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateEventDataStoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEventDataStoreError {
+    fn code(&self) -> Option<&str> {
+        CreateEventDataStoreError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEventDataStoreError {
+    /// Creates a new `CreateEventDataStoreError`.
+    pub fn new(kind: CreateEventDataStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEventDataStoreError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEventDataStoreErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEventDataStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEventDataStoreErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException`.
+    pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::ConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException`.
+    pub fn is_event_data_store_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException`.
+    pub fn is_event_data_store_max_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::InvalidTagParameterException`.
+    pub fn is_invalid_tag_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::InvalidTagParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
+    pub fn is_not_organization_master_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException`.
+    pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::OrganizationsNotInUseException`.
+    pub fn is_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::OrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEventDataStoreErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventDataStoreErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateEventDataStoreError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::EventDataStoreAlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::InvalidTagParameterException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateEventDataStoreErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -210,21 +669,17 @@ pub struct CreateTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrailErrorKind {
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-    /// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
-    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-    /// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-    /// is in a suspended Amazon Web Services account.</p>
+    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::error::ConflictException),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -250,53 +705,34 @@ pub enum CreateTrailErrorKind {
     InvalidS3PrefixException(crate::error::InvalidS3PrefixException),
     /// <p>This exception is thrown when the provided SNS topic name is not valid.</p>
     InvalidSnsTopicNameException(crate::error::InvalidSnsTopicNameException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-    /// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-    /// topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::error::MaximumNumberOfTrailsExceededException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-    /// creating an organization trail. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),
-    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-    /// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
@@ -317,6 +753,7 @@ impl std::fmt::Display for CreateTrailError {
             CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
+            CreateTrailErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => _inner.fmt(f),
@@ -382,8 +819,6 @@ impl CreateTrailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -424,6 +859,10 @@ impl CreateTrailError {
             &self.kind,
             CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_)
         )
+    }
+    /// Returns `true` if the error kind is `CreateTrailErrorKind::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateTrailErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
@@ -600,6 +1039,7 @@ impl std::error::Error for CreateTrailError {
             CreateTrailErrorKind::CloudWatchLogsDeliveryUnavailableException(_inner) => {
                 Some(_inner)
             }
+            CreateTrailErrorKind::ConflictException(_inner) => Some(_inner),
             CreateTrailErrorKind::InsufficientDependencyServiceAccessPermissionException(
                 _inner,
             ) => Some(_inner),
@@ -632,6 +1072,218 @@ impl std::error::Error for CreateTrailError {
     }
 }
 
+/// Error type for the `DeleteEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEventDataStoreError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEventDataStoreErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEventDataStoreErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
+    EventDataStoreTerminationProtectedException(
+        crate::error::EventDataStoreTerminationProtectedException,
+    ),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEventDataStoreError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteEventDataStoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEventDataStoreError {
+    fn code(&self) -> Option<&str> {
+        DeleteEventDataStoreError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEventDataStoreError {
+    /// Creates a new `DeleteEventDataStoreError`.
+    pub fn new(kind: DeleteEventDataStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEventDataStoreError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEventDataStoreErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEventDataStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEventDataStoreErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException`.
+    pub fn is_event_data_store_termination_protected_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
+    pub fn is_not_organization_master_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventDataStoreErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEventDataStoreError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::EventDataStoreTerminationProtectedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteEventDataStoreErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DeleteTrail` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -645,13 +1297,9 @@ pub struct DeleteTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrailErrorKind {
-    /// <p>This exception is thrown when the specified resource is not ready for an operation.
-    /// This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail.
-    /// If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -659,27 +1307,14 @@ pub enum DeleteTrailErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -737,8 +1372,6 @@ impl DeleteTrailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -828,6 +1461,165 @@ impl std::error::Error for DeleteTrailError {
     }
 }
 
+/// Error type for the `DescribeQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeQueryError {
+    /// Kind of error that occurred.
+    pub kind: DescribeQueryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeQueryErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The query ID does not exist or does not map to a query.</p>
+    QueryIdNotFoundException(crate::error::QueryIdNotFoundException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeQueryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeQueryErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            DescribeQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeQueryError {
+    fn code(&self) -> Option<&str> {
+        DescribeQueryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeQueryError {
+    /// Creates a new `DescribeQueryError`.
+    pub fn new(kind: DescribeQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeQueryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeQueryErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeQueryErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::QueryIdNotFoundException`.
+    pub fn is_query_id_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::QueryIdNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeQueryErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeQueryErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeQueryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeQueryErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            DescribeQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeTrails` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -843,22 +1635,11 @@ pub struct DescribeTrailsError {
 pub enum DescribeTrailsErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -908,8 +1689,6 @@ impl DescribeTrailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -963,6 +1742,143 @@ impl std::error::Error for DescribeTrailsError {
     }
 }
 
+/// Error type for the `GetEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetEventDataStoreError {
+    /// Kind of error that occurred.
+    pub kind: GetEventDataStoreErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetEventDataStoreErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetEventDataStoreError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            GetEventDataStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetEventDataStoreError {
+    fn code(&self) -> Option<&str> {
+        GetEventDataStoreError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetEventDataStoreError {
+    /// Creates a new `GetEventDataStoreError`.
+    pub fn new(kind: GetEventDataStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetEventDataStoreError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetEventDataStoreErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetEventDataStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetEventDataStoreErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetEventDataStoreErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventDataStoreErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for GetEventDataStoreError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            GetEventDataStoreErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetEventSelectors` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -978,22 +1894,11 @@ pub struct GetEventSelectorsError {
 pub enum GetEventSelectorsErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1046,8 +1951,6 @@ impl GetEventSelectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1126,22 +2029,11 @@ pub enum GetInsightSelectorsErrorKind {
     InsightNotEnabledException(crate::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1195,8 +2087,6 @@ impl GetInsightSelectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1266,6 +2156,187 @@ impl std::error::Error for GetInsightSelectorsError {
     }
 }
 
+/// Error type for the `GetQueryResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetQueryResultsError {
+    /// Kind of error that occurred.
+    pub kind: GetQueryResultsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetQueryResults` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetQueryResultsErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown if the limit specified is not valid.</p>
+    InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The query ID does not exist or does not map to a query.</p>
+    QueryIdNotFoundException(crate::error::QueryIdNotFoundException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetQueryResultsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetQueryResultsErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::InvalidMaxResultsException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::QueryIdNotFoundException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            GetQueryResultsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetQueryResultsError {
+    fn code(&self) -> Option<&str> {
+        GetQueryResultsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetQueryResultsError {
+    /// Creates a new `GetQueryResultsError`.
+    pub fn new(kind: GetQueryResultsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetQueryResultsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetQueryResultsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetQueryResultsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetQueryResultsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidMaxResultsException`.
+    pub fn is_invalid_max_results_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::InvalidMaxResultsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::QueryIdNotFoundException`.
+    pub fn is_query_id_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::QueryIdNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryResultsErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for GetQueryResultsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetQueryResultsErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::QueryIdNotFoundException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            GetQueryResultsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetTrail` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1281,22 +2352,11 @@ pub struct GetTrailError {
 pub enum GetTrailErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1349,8 +2409,6 @@ impl GetTrailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1421,22 +2479,11 @@ pub struct GetTrailStatusError {
 pub enum GetTrailStatusErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1489,8 +2536,6 @@ impl GetTrailStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1548,6 +2593,132 @@ impl std::error::Error for GetTrailStatusError {
             GetTrailStatusErrorKind::TrailNotFoundException(_inner) => Some(_inner),
             GetTrailStatusErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             GetTrailStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListEventDataStores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEventDataStoresError {
+    /// Kind of error that occurred.
+    pub kind: ListEventDataStoresErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEventDataStores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEventDataStoresErrorKind {
+    /// <p>This exception is thrown if the limit specified is not valid.</p>
+    InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEventDataStoresError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEventDataStoresErrorKind::InvalidMaxResultsException(_inner) => _inner.fmt(f),
+            ListEventDataStoresErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListEventDataStoresErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            ListEventDataStoresErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ListEventDataStoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEventDataStoresError {
+    fn code(&self) -> Option<&str> {
+        ListEventDataStoresError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEventDataStoresError {
+    /// Creates a new `ListEventDataStoresError`.
+    pub fn new(kind: ListEventDataStoresErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEventDataStoresError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEventDataStoresErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEventDataStoresError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEventDataStoresErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::InvalidMaxResultsException`.
+    pub fn is_invalid_max_results_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventDataStoresErrorKind::InvalidMaxResultsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventDataStoresErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventDataStoresErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEventDataStoresErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventDataStoresErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListEventDataStoresError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEventDataStoresErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
+            ListEventDataStoresErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListEventDataStoresErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListEventDataStoresErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ListEventDataStoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1617,8 +2788,6 @@ impl ListPublicKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1680,6 +2849,198 @@ impl std::error::Error for ListPublicKeysError {
     }
 }
 
+/// Error type for the `ListQueries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListQueriesError {
+    /// Kind of error that occurred.
+    pub kind: ListQueriesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListQueries` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListQueriesErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>A date range for the query was specified that is not valid. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
+    InvalidDateRangeException(crate::error::InvalidDateRangeException),
+    /// <p>This exception is thrown if the limit specified is not valid.</p>
+    InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
+    /// <p>A token that is not valid, or a token that was previously used in a request with different parameters. This exception is thrown if the token is not valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The query status is not valid for the operation.</p>
+    InvalidQueryStatusException(crate::error::InvalidQueryStatusException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListQueriesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListQueriesErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InvalidDateRangeException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InvalidMaxResultsException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::InvalidQueryStatusException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ListQueriesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListQueriesError {
+    fn code(&self) -> Option<&str> {
+        ListQueriesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListQueriesError {
+    /// Creates a new `ListQueriesError`.
+    pub fn new(kind: ListQueriesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListQueriesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListQueriesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListQueriesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListQueriesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InvalidDateRangeException`.
+    pub fn is_invalid_date_range_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InvalidDateRangeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InvalidMaxResultsException`.
+    pub fn is_invalid_max_results_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InvalidMaxResultsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::InvalidQueryStatusException`.
+    pub fn is_invalid_query_status_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::InvalidQueryStatusException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListQueriesErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListQueriesErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ListQueriesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListQueriesErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            ListQueriesErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InvalidDateRangeException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InvalidMaxResultsException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListQueriesErrorKind::InvalidQueryStatusException(_inner) => Some(_inner),
+            ListQueriesErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            ListQueriesErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ListQueriesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1694,30 +3055,21 @@ pub struct ListTagsError {
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
     /// <p>Reserved for future use.</p>
     InvalidTokenException(crate::error::InvalidTokenException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1735,6 +3087,8 @@ impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListTagsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::InvalidTokenException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -1775,8 +3129,6 @@ impl ListTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1802,6 +3154,20 @@ impl ListTagsError {
         matches!(
             &self.kind,
             ListTagsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListTagsErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsErrorKind::InactiveEventDataStoreException(_)
         )
     }
     /// Returns `true` if the error kind is `ListTagsErrorKind::InvalidTokenException`.
@@ -1842,6 +3208,8 @@ impl std::error::Error for ListTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            ListTagsErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            ListTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidTokenException(_inner) => Some(_inner),
             ListTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             ListTagsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
@@ -1912,8 +3280,6 @@ impl ListTrailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2033,8 +3399,6 @@ impl LookupEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2133,61 +3497,31 @@ pub struct PutEventSelectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEventSelectorsErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
-    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-    /// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-    /// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-    /// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-    /// The limit of number of resources on an individual event selector is configurable up to 250.
-    /// However, this upper limit is allowed only if the total number of data resources does not
-    /// exceed 250 across all event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is not valid.</p>
-    /// </li>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2247,8 +3581,6 @@ impl PutEventSelectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2365,34 +3697,20 @@ pub enum PutInsightSelectorsErrorKind {
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
-    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request
-    /// is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
     InvalidInsightSelectorsException(crate::error::InvalidInsightSelectorsException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2459,8 +3777,6 @@ impl PutInsightSelectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2595,36 +3911,24 @@ pub struct RemoveTagsError {
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2641,6 +3945,8 @@ impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             RemoveTagsErrorKind::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            RemoveTagsErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            RemoveTagsErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::InvalidTagParameterException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::InvalidTrailNameException(_inner) => _inner.fmt(f),
             RemoveTagsErrorKind::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
@@ -2682,8 +3988,6 @@ impl RemoveTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2709,6 +4013,20 @@ impl RemoveTagsError {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::CloudTrailArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsErrorKind::InactiveEventDataStoreException(_)
         )
     }
     /// Returns `true` if the error kind is `RemoveTagsErrorKind::InvalidTagParameterException`.
@@ -2765,6 +4083,8 @@ impl std::error::Error for RemoveTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RemoveTagsErrorKind::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            RemoveTagsErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            RemoveTagsErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
             RemoveTagsErrorKind::InvalidTagParameterException(_inner) => Some(_inner),
             RemoveTagsErrorKind::InvalidTrailNameException(_inner) => Some(_inner),
             RemoveTagsErrorKind::NotOrganizationMasterAccountException(_inner) => Some(_inner),
@@ -2773,6 +4093,278 @@ impl std::error::Error for RemoveTagsError {
             RemoveTagsErrorKind::ResourceTypeNotSupportedException(_inner) => Some(_inner),
             RemoveTagsErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
             RemoveTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `RestoreEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RestoreEventDataStoreError {
+    /// Kind of error that occurred.
+    pub kind: RestoreEventDataStoreErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RestoreEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RestoreEventDataStoreErrorKind {
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>Your account has used the maximum number of event data stores.</p>
+    EventDataStoreMaxLimitExceededException(crate::error::EventDataStoreMaxLimitExceededException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The event data store is not in a status that supports the operation.</p>
+    InvalidEventDataStoreStatusException(crate::error::InvalidEventDataStoreStatusException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    OrganizationNotInAllFeaturesModeException(
+        crate::error::OrganizationNotInAllFeaturesModeException,
+    ),
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RestoreEventDataStoreError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreEventDataStoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RestoreEventDataStoreError {
+    fn code(&self) -> Option<&str> {
+        RestoreEventDataStoreError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RestoreEventDataStoreError {
+    /// Creates a new `RestoreEventDataStoreError`.
+    pub fn new(kind: RestoreEventDataStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RestoreEventDataStoreError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RestoreEventDataStoreErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RestoreEventDataStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RestoreEventDataStoreErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException`.
+    pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException`.
+    pub fn is_event_data_store_max_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException`.
+    pub fn is_invalid_event_data_store_status_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
+    pub fn is_not_organization_master_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException`.
+    pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::OrganizationsNotInUseException`.
+    pub fn is_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::OrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RestoreEventDataStoreErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreEventDataStoreErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for RestoreEventDataStoreError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RestoreEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreMaxLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::InvalidEventDataStoreStatusException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreEventDataStoreErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -2790,9 +4382,7 @@ pub struct StartLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartLoggingErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -2800,27 +4390,14 @@ pub enum StartLoggingErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2877,8 +4454,6 @@ impl StartLoggingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2963,6 +4538,176 @@ impl std::error::Error for StartLoggingError {
     }
 }
 
+/// Error type for the `StartQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartQueryError {
+    /// Kind of error that occurred.
+    pub kind: StartQueryErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartQuery` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartQueryErrorKind {
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The query that was submitted has validation errors, or uses incorrect syntax or unsupported keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
+    InvalidQueryStatementException(crate::error::InvalidQueryStatementException),
+    /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
+    MaxConcurrentQueriesException(crate::error::MaxConcurrentQueriesException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartQueryError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartQueryErrorKind::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::InvalidQueryStatementException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::MaxConcurrentQueriesException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            StartQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartQueryError {
+    fn code(&self) -> Option<&str> {
+        StartQueryError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartQueryError {
+    /// Creates a new `StartQueryError`.
+    pub fn new(kind: StartQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartQueryError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartQueryErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartQueryErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidQueryStatementException`.
+    pub fn is_invalid_query_statement_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::InvalidQueryStatementException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::MaxConcurrentQueriesException`.
+    pub fn is_max_concurrent_queries_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::MaxConcurrentQueriesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartQueryErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartQueryErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for StartQueryError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartQueryErrorKind::EventDataStoreArnInvalidException(_inner) => Some(_inner),
+            StartQueryErrorKind::EventDataStoreNotFoundException(_inner) => Some(_inner),
+            StartQueryErrorKind::InactiveEventDataStoreException(_inner) => Some(_inner),
+            StartQueryErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            StartQueryErrorKind::InvalidQueryStatementException(_inner) => Some(_inner),
+            StartQueryErrorKind::MaxConcurrentQueriesException(_inner) => Some(_inner),
+            StartQueryErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            StartQueryErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            StartQueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StopLogging` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2976,9 +4721,7 @@ pub struct StopLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopLoggingErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -2986,27 +4729,14 @@ pub enum StopLoggingErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -3063,8 +4793,6 @@ impl StopLoggingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3149,6 +4877,263 @@ impl std::error::Error for StopLoggingError {
     }
 }
 
+/// Error type for the `UpdateEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEventDataStoreError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEventDataStoreErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateEventDataStore` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEventDataStoreErrorKind {
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::error::EventDataStoreArnInvalidException),
+    /// <p>The specified event data store was not found.</p>
+    EventDataStoreNotFoundException(crate::error::EventDataStoreNotFoundException),
+    /// <p>The event data store against which you ran your query is inactive.</p>
+    InactiveEventDataStoreException(crate::error::InactiveEventDataStoreException),
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    InsufficientDependencyServiceAccessPermissionException(
+        crate::error::InsufficientDependencyServiceAccessPermissionException,
+    ),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
+    /// <p>This exception is thrown when the requested operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    OrganizationNotInAllFeaturesModeException(
+        crate::error::OrganizationNotInAllFeaturesModeException,
+    ),
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the requested operation is not supported.</p>
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEventDataStoreError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::InactiveEventDataStoreException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEventDataStoreErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEventDataStoreError {
+    fn code(&self) -> Option<&str> {
+        UpdateEventDataStoreError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEventDataStoreError {
+    /// Creates a new `UpdateEventDataStoreError`.
+    pub fn new(kind: UpdateEventDataStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEventDataStoreError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEventDataStoreErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEventDataStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEventDataStoreErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException`.
+    pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException`.
+    pub fn is_event_data_store_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InactiveEventDataStoreException`.
+    pub fn is_inactive_event_data_store_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InactiveEventDataStoreException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException`.
+    pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(
+                _
+            )
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException`.
+    pub fn is_not_organization_master_account_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException`.
+    pub fn is_organization_not_in_all_features_mode_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::OrganizationsNotInUseException`.
+    pub fn is_organizations_not_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::OrganizationsNotInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreErrorKind::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventDataStoreErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEventDataStoreError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEventDataStoreErrorKind::CloudTrailAccessNotEnabledException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::EventDataStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::InactiveEventDataStoreException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::InsufficientDependencyServiceAccessPermissionException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::NotOrganizationMasterAccountException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::OrganizationNotInAllFeaturesModeException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::OrganizationsNotInUseException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEventDataStoreErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `UpdateTrail` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3162,21 +5147,15 @@ pub struct UpdateTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrailErrorKind {
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-    /// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
-    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-    /// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-    /// is in a suspended Amazon Web Services account.</p>
+    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -3192,28 +5171,13 @@ pub enum UpdateTrailErrorKind {
     ),
     /// <p>This exception is thrown when the provided role is not valid.</p>
     InvalidCloudWatchLogsRoleArnException(crate::error::InvalidCloudWatchLogsRoleArnException),
-    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-    /// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-    /// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-    /// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-    /// The limit of number of resources on an individual event selector is configurable up to 250.
-    /// However, this upper limit is allowed only if the total number of data resources does not
-    /// exceed 250 across all event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is not valid.</p>
-    /// </li>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
@@ -3230,46 +5194,28 @@ pub enum UpdateTrailErrorKind {
     InvalidSnsTopicNameException(crate::error::InvalidSnsTopicNameException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-    /// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-    /// topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-    /// creating an organization trail. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),
-    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-    /// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
@@ -3355,8 +5301,6 @@ impl UpdateTrailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3858,8 +5802,7 @@ impl S3BucketDoesNotExistException {
     }
 }
 
-/// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-/// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+/// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsNotInUseException {
@@ -3923,9 +5866,7 @@ impl OrganizationsNotInUseException {
     }
 }
 
-/// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-/// creating an organization trail. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotInAllFeaturesModeException {
@@ -4053,9 +5994,7 @@ impl OperationNotPermittedException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-/// organization in Organizations. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotOrganizationMasterAccountException {
@@ -4119,9 +6058,7 @@ impl NotOrganizationMasterAccountException {
     }
 }
 
-/// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-/// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-/// topic either does not exist or is not in the same region.</p>
+/// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotFoundException {
@@ -4315,22 +6252,11 @@ impl KmsException {
 
 /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
 /// <ul>
-/// <li>
-/// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-/// </li>
-/// <li>
-/// <p>Start with a letter or number, and end with a letter or number</p>
-/// </li>
-/// <li>
-/// <p>Be between 3 and 128 characters</p>
-/// </li>
-/// <li>
-/// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-/// and <code>my--namespace</code> are not valid.</p>
-/// </li>
-/// <li>
-/// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-/// </li>
+/// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+/// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+/// <li> <p>Be between 3 and 128 characters</p> </li>
+/// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+/// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4779,28 +6705,13 @@ impl InvalidHomeRegionException {
     }
 }
 
-/// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-/// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-/// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-/// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+/// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
 /// <p>You can:</p>
 /// <ul>
-/// <li>
-/// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-/// The limit of number of resources on an individual event selector is configurable up to 250.
-/// However, this upper limit is allowed only if the total number of data resources does not
-/// exceed 250 across all event selectors for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-/// parameter with a value of <code>read-only</code> is not valid.</p>
-/// </li>
+/// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+/// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+/// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+/// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5185,9 +7096,7 @@ impl InsufficientEncryptionPolicyException {
     }
 }
 
-/// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-/// creating an organization trail in a required service. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDependencyServiceAccessPermissionException {
@@ -5318,9 +7227,7 @@ impl CloudWatchLogsDeliveryUnavailableException {
     }
 }
 
-/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-/// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-/// is in a suspended Amazon Web Services account.</p>
+/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailInvalidClientTokenIdException {
@@ -5384,9 +7291,7 @@ impl CloudTrailInvalidClientTokenIdException {
     }
 }
 
-/// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-/// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-/// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+/// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailAccessNotEnabledException {
@@ -5450,6 +7355,521 @@ impl CloudTrailAccessNotEnabledException {
     }
 }
 
+/// <p>The request includes a parameter that is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidParameterException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidParameterException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterException")?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterException {}
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException)
+pub mod invalid_parameter_exception {
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException)
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException)
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
+    }
+}
+
+/// <p>The event data store against which you ran your query is inactive.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InactiveEventDataStoreException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InactiveEventDataStoreException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InactiveEventDataStoreException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InactiveEventDataStoreException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InactiveEventDataStoreException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InactiveEventDataStoreException")?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InactiveEventDataStoreException {}
+/// See [`InactiveEventDataStoreException`](crate::error::InactiveEventDataStoreException)
+pub mod inactive_event_data_store_exception {
+    /// A builder for [`InactiveEventDataStoreException`](crate::error::InactiveEventDataStoreException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InactiveEventDataStoreException`](crate::error::InactiveEventDataStoreException)
+        pub fn build(self) -> crate::error::InactiveEventDataStoreException {
+            crate::error::InactiveEventDataStoreException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InactiveEventDataStoreException {
+    /// Creates a new builder-style object to manufacture [`InactiveEventDataStoreException`](crate::error::InactiveEventDataStoreException)
+    pub fn builder() -> crate::error::inactive_event_data_store_exception::Builder {
+        crate::error::inactive_event_data_store_exception::Builder::default()
+    }
+}
+
+/// <p>The specified event data store was not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreNotFoundException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EventDataStoreNotFoundException")?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreNotFoundException {}
+/// See [`EventDataStoreNotFoundException`](crate::error::EventDataStoreNotFoundException)
+pub mod event_data_store_not_found_exception {
+    /// A builder for [`EventDataStoreNotFoundException`](crate::error::EventDataStoreNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreNotFoundException`](crate::error::EventDataStoreNotFoundException)
+        pub fn build(self) -> crate::error::EventDataStoreNotFoundException {
+            crate::error::EventDataStoreNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreNotFoundException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreNotFoundException`](crate::error::EventDataStoreNotFoundException)
+    pub fn builder() -> crate::error::event_data_store_not_found_exception::Builder {
+        crate::error::event_data_store_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreArnInvalidException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreArnInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreArnInvalidException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreArnInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreArnInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "EventDataStoreArnInvalidException [EventDataStoreARNInvalidException]"
+        )?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreArnInvalidException {}
+/// See [`EventDataStoreArnInvalidException`](crate::error::EventDataStoreArnInvalidException)
+pub mod event_data_store_arn_invalid_exception {
+    /// A builder for [`EventDataStoreArnInvalidException`](crate::error::EventDataStoreArnInvalidException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreArnInvalidException`](crate::error::EventDataStoreArnInvalidException)
+        pub fn build(self) -> crate::error::EventDataStoreArnInvalidException {
+            crate::error::EventDataStoreArnInvalidException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreArnInvalidException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreArnInvalidException`](crate::error::EventDataStoreArnInvalidException)
+    pub fn builder() -> crate::error::event_data_store_arn_invalid_exception::Builder {
+        crate::error::event_data_store_arn_invalid_exception::Builder::default()
+    }
+}
+
+/// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MaxConcurrentQueriesException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MaxConcurrentQueriesException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MaxConcurrentQueriesException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl MaxConcurrentQueriesException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MaxConcurrentQueriesException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MaxConcurrentQueriesException")?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MaxConcurrentQueriesException {}
+/// See [`MaxConcurrentQueriesException`](crate::error::MaxConcurrentQueriesException)
+pub mod max_concurrent_queries_exception {
+    /// A builder for [`MaxConcurrentQueriesException`](crate::error::MaxConcurrentQueriesException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MaxConcurrentQueriesException`](crate::error::MaxConcurrentQueriesException)
+        pub fn build(self) -> crate::error::MaxConcurrentQueriesException {
+            crate::error::MaxConcurrentQueriesException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MaxConcurrentQueriesException {
+    /// Creates a new builder-style object to manufacture [`MaxConcurrentQueriesException`](crate::error::MaxConcurrentQueriesException)
+    pub fn builder() -> crate::error::max_concurrent_queries_exception::Builder {
+        crate::error::max_concurrent_queries_exception::Builder::default()
+    }
+}
+
+/// <p>The query that was submitted has validation errors, or uses incorrect syntax or unsupported keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidQueryStatementException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidQueryStatementException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidQueryStatementException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidQueryStatementException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidQueryStatementException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidQueryStatementException")?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidQueryStatementException {}
+/// See [`InvalidQueryStatementException`](crate::error::InvalidQueryStatementException)
+pub mod invalid_query_statement_exception {
+    /// A builder for [`InvalidQueryStatementException`](crate::error::InvalidQueryStatementException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidQueryStatementException`](crate::error::InvalidQueryStatementException)
+        pub fn build(self) -> crate::error::InvalidQueryStatementException {
+            crate::error::InvalidQueryStatementException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidQueryStatementException {
+    /// Creates a new builder-style object to manufacture [`InvalidQueryStatementException`](crate::error::InvalidQueryStatementException)
+    pub fn builder() -> crate::error::invalid_query_statement_exception::Builder {
+        crate::error::invalid_query_statement_exception::Builder::default()
+    }
+}
+
+/// <p>The event data store is not in a status that supports the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidEventDataStoreStatusException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidEventDataStoreStatusException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidEventDataStoreStatusException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidEventDataStoreStatusException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidEventDataStoreStatusException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidEventDataStoreStatusException")?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidEventDataStoreStatusException {}
+/// See [`InvalidEventDataStoreStatusException`](crate::error::InvalidEventDataStoreStatusException)
+pub mod invalid_event_data_store_status_exception {
+    /// A builder for [`InvalidEventDataStoreStatusException`](crate::error::InvalidEventDataStoreStatusException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidEventDataStoreStatusException`](crate::error::InvalidEventDataStoreStatusException)
+        pub fn build(self) -> crate::error::InvalidEventDataStoreStatusException {
+            crate::error::InvalidEventDataStoreStatusException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidEventDataStoreStatusException {
+    /// Creates a new builder-style object to manufacture [`InvalidEventDataStoreStatusException`](crate::error::InvalidEventDataStoreStatusException)
+    pub fn builder() -> crate::error::invalid_event_data_store_status_exception::Builder {
+        crate::error::invalid_event_data_store_status_exception::Builder::default()
+    }
+}
+
+/// <p>Your account has used the maximum number of event data stores.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreMaxLimitExceededException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreMaxLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreMaxLimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreMaxLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreMaxLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EventDataStoreMaxLimitExceededException")?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreMaxLimitExceededException {}
+/// See [`EventDataStoreMaxLimitExceededException`](crate::error::EventDataStoreMaxLimitExceededException)
+pub mod event_data_store_max_limit_exceeded_exception {
+    /// A builder for [`EventDataStoreMaxLimitExceededException`](crate::error::EventDataStoreMaxLimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreMaxLimitExceededException`](crate::error::EventDataStoreMaxLimitExceededException)
+        pub fn build(self) -> crate::error::EventDataStoreMaxLimitExceededException {
+            crate::error::EventDataStoreMaxLimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreMaxLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreMaxLimitExceededException`](crate::error::EventDataStoreMaxLimitExceededException)
+    pub fn builder() -> crate::error::event_data_store_max_limit_exceeded_exception::Builder {
+        crate::error::event_data_store_max_limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the specified resource type is not supported by CloudTrail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5473,8 +7893,8 @@ impl ResourceTypeNotSupportedException {
 impl std::fmt::Display for ResourceTypeNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceTypeNotSupportedException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -5537,8 +7957,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -5578,8 +7998,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>This exception is thrown when the specified tag key or values are not valid.
-/// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+/// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
@@ -5602,8 +8021,8 @@ impl InvalidTagParameterException {
 impl std::fmt::Display for InvalidTagParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTagParameterException")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -5644,9 +8063,7 @@ impl InvalidTagParameterException {
 }
 
 /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-/// <p>
-/// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-/// </p>
+/// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailArnInvalidException {
@@ -5672,8 +8089,8 @@ impl std::fmt::Display for CloudTrailArnInvalidException {
             f,
             "CloudTrailArnInvalidException [CloudTrailARNInvalidException]"
         )?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -5713,8 +8130,7 @@ impl CloudTrailArnInvalidException {
     }
 }
 
-/// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request
-/// is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+/// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInsightSelectorsException {
@@ -5737,8 +8153,8 @@ impl InvalidInsightSelectorsException {
 impl std::fmt::Display for InvalidInsightSelectorsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidInsightSelectorsException")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
@@ -5801,8 +8217,8 @@ impl InvalidTimeRangeException {
 impl std::fmt::Display for InvalidTimeRangeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTimeRangeException")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -5865,8 +8281,8 @@ impl InvalidNextTokenException {
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -5929,8 +8345,8 @@ impl InvalidMaxResultsException {
 impl std::fmt::Display for InvalidMaxResultsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMaxResultsException")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -5993,8 +8409,8 @@ impl InvalidLookupAttributesException {
 impl std::fmt::Display for InvalidLookupAttributesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLookupAttributesException")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -6057,8 +8473,8 @@ impl InvalidEventCategoryException {
 impl std::fmt::Display for InvalidEventCategoryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventCategoryException")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -6121,8 +8537,8 @@ impl InvalidTokenException {
 impl std::fmt::Display for InvalidTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTokenException")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -6162,6 +8578,198 @@ impl InvalidTokenException {
     }
 }
 
+/// <p>The query status is not valid for the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidQueryStatusException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidQueryStatusException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidQueryStatusException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidQueryStatusException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidQueryStatusException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidQueryStatusException")?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidQueryStatusException {}
+/// See [`InvalidQueryStatusException`](crate::error::InvalidQueryStatusException)
+pub mod invalid_query_status_exception {
+    /// A builder for [`InvalidQueryStatusException`](crate::error::InvalidQueryStatusException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidQueryStatusException`](crate::error::InvalidQueryStatusException)
+        pub fn build(self) -> crate::error::InvalidQueryStatusException {
+            crate::error::InvalidQueryStatusException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidQueryStatusException {
+    /// Creates a new builder-style object to manufacture [`InvalidQueryStatusException`](crate::error::InvalidQueryStatusException)
+    pub fn builder() -> crate::error::invalid_query_status_exception::Builder {
+        crate::error::invalid_query_status_exception::Builder::default()
+    }
+}
+
+/// <p>A date range for the query was specified that is not valid. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create or edit a query</a> in the <i>CloudTrail User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidDateRangeException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidDateRangeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidDateRangeException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidDateRangeException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidDateRangeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidDateRangeException")?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidDateRangeException {}
+/// See [`InvalidDateRangeException`](crate::error::InvalidDateRangeException)
+pub mod invalid_date_range_exception {
+    /// A builder for [`InvalidDateRangeException`](crate::error::InvalidDateRangeException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidDateRangeException`](crate::error::InvalidDateRangeException)
+        pub fn build(self) -> crate::error::InvalidDateRangeException {
+            crate::error::InvalidDateRangeException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidDateRangeException {
+    /// Creates a new builder-style object to manufacture [`InvalidDateRangeException`](crate::error::InvalidDateRangeException)
+    pub fn builder() -> crate::error::invalid_date_range_exception::Builder {
+        crate::error::invalid_date_range_exception::Builder::default()
+    }
+}
+
+/// <p>The query ID does not exist or does not map to a query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryIdNotFoundException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for QueryIdNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryIdNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl QueryIdNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for QueryIdNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "QueryIdNotFoundException")?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for QueryIdNotFoundException {}
+/// See [`QueryIdNotFoundException`](crate::error::QueryIdNotFoundException)
+pub mod query_id_not_found_exception {
+    /// A builder for [`QueryIdNotFoundException`](crate::error::QueryIdNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryIdNotFoundException`](crate::error::QueryIdNotFoundException)
+        pub fn build(self) -> crate::error::QueryIdNotFoundException {
+            crate::error::QueryIdNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl QueryIdNotFoundException {
+    /// Creates a new builder-style object to manufacture [`QueryIdNotFoundException`](crate::error::QueryIdNotFoundException)
+    pub fn builder() -> crate::error::query_id_not_found_exception::Builder {
+        crate::error::query_id_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6185,8 +8793,8 @@ impl InsightNotEnabledException {
 impl std::fmt::Display for InsightNotEnabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsightNotEnabledException")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -6226,9 +8834,7 @@ impl InsightNotEnabledException {
     }
 }
 
-/// <p>This exception is thrown when the specified resource is not ready for an operation.
-/// This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail.
-/// If this exception occurs, wait a few minutes, and then try the operation again.</p>
+/// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -6251,8 +8857,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -6292,6 +8898,70 @@ impl ConflictException {
     }
 }
 
+/// <p>The event data store cannot be deleted because termination protection is enabled for it.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreTerminationProtectedException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreTerminationProtectedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreTerminationProtectedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreTerminationProtectedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreTerminationProtectedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EventDataStoreTerminationProtectedException")?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreTerminationProtectedException {}
+/// See [`EventDataStoreTerminationProtectedException`](crate::error::EventDataStoreTerminationProtectedException)
+pub mod event_data_store_termination_protected_exception {
+    /// A builder for [`EventDataStoreTerminationProtectedException`](crate::error::EventDataStoreTerminationProtectedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreTerminationProtectedException`](crate::error::EventDataStoreTerminationProtectedException)
+        pub fn build(self) -> crate::error::EventDataStoreTerminationProtectedException {
+            crate::error::EventDataStoreTerminationProtectedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreTerminationProtectedException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreTerminationProtectedException`](crate::error::EventDataStoreTerminationProtectedException)
+    pub fn builder() -> crate::error::event_data_store_termination_protected_exception::Builder {
+        crate::error::event_data_store_termination_protected_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown when the specified trail already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6315,8 +8985,8 @@ impl TrailAlreadyExistsException {
 impl std::fmt::Display for TrailAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrailAlreadyExistsException")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -6379,8 +9049,8 @@ impl MaximumNumberOfTrailsExceededException {
 impl std::fmt::Display for MaximumNumberOfTrailsExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaximumNumberOfTrailsExceededException")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -6420,6 +9090,134 @@ impl MaximumNumberOfTrailsExceededException {
     }
 }
 
+/// <p>An event data store with that name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventDataStoreAlreadyExistsException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EventDataStoreAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventDataStoreAlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EventDataStoreAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EventDataStoreAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EventDataStoreAlreadyExistsException")?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EventDataStoreAlreadyExistsException {}
+/// See [`EventDataStoreAlreadyExistsException`](crate::error::EventDataStoreAlreadyExistsException)
+pub mod event_data_store_already_exists_exception {
+    /// A builder for [`EventDataStoreAlreadyExistsException`](crate::error::EventDataStoreAlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventDataStoreAlreadyExistsException`](crate::error::EventDataStoreAlreadyExistsException)
+        pub fn build(self) -> crate::error::EventDataStoreAlreadyExistsException {
+            crate::error::EventDataStoreAlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EventDataStoreAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`EventDataStoreAlreadyExistsException`](crate::error::EventDataStoreAlreadyExistsException)
+    pub fn builder() -> crate::error::event_data_store_already_exists_exception::Builder {
+        crate::error::event_data_store_already_exists_exception::Builder::default()
+    }
+}
+
+/// <p>The specified query cannot be canceled because it is in the <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InactiveQueryException {
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InactiveQueryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InactiveQueryException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InactiveQueryException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InactiveQueryException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InactiveQueryException")?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InactiveQueryException {}
+/// See [`InactiveQueryException`](crate::error::InactiveQueryException)
+pub mod inactive_query_exception {
+    /// A builder for [`InactiveQueryException`](crate::error::InactiveQueryException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Brief description of the exception returned by the request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InactiveQueryException`](crate::error::InactiveQueryException)
+        pub fn build(self) -> crate::error::InactiveQueryException {
+            crate::error::InactiveQueryException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InactiveQueryException {
+    /// Creates a new builder-style object to manufacture [`InactiveQueryException`](crate::error::InactiveQueryException)
+    pub fn builder() -> crate::error::inactive_query_exception::Builder {
+        crate::error::inactive_query_exception::Builder::default()
+    }
+}
+
 /// <p>The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6443,8 +9241,8 @@ impl TagsLimitExceededException {
 impl std::fmt::Display for TagsLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagsLimitExceededException")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }

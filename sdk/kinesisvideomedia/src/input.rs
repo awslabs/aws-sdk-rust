@@ -11,28 +11,22 @@ pub mod get_media_input {
         pub(crate) start_selector: std::option::Option<crate::model::StartSelector>,
     }
     impl Builder {
-        /// <p>The Kinesis video stream name from where you want to get the media content. If you
-        /// don't specify the <code>streamName</code>, you must specify the
-        /// <code>streamARN</code>.</p>
+        /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
-        /// <p>The Kinesis video stream name from where you want to get the media content. If you
-        /// don't specify the <code>streamName</code>, you must specify the
-        /// <code>streamARN</code>.</p>
+        /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
-        /// <p>The ARN of the stream from where you want to get the media content. If you don't
-        /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+        /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the stream from where you want to get the media content. If you don't
-        /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+        /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -66,7 +60,7 @@ pub mod get_media_input {
 #[doc(hidden)]
 pub type GetMediaInputOperationOutputAlias = crate::operation::GetMedia;
 #[doc(hidden)]
-pub type GetMediaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMediaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaInput {
     /// Consumes the builder and constructs an Operation<[`GetMedia`](crate::operation::GetMedia)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +71,7 @@ impl GetMediaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMedia,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +148,7 @@ impl GetMediaInput {
                     "GetMedia",
                     "kinesisvideomedia",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -181,25 +175,19 @@ impl GetMediaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaInput {
-    /// <p>The Kinesis video stream name from where you want to get the media content. If you
-    /// don't specify the <code>streamName</code>, you must specify the
-    /// <code>streamARN</code>.</p>
+    /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the stream from where you want to get the media content. If you don't
-    /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub start_selector: std::option::Option<crate::model::StartSelector>,
 }
 impl GetMediaInput {
-    /// <p>The Kinesis video stream name from where you want to get the media content. If you
-    /// don't specify the <code>streamName</code>, you must specify the
-    /// <code>streamARN</code>.</p>
+    /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The ARN of the stream from where you want to get the media content. If you don't
-    /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }

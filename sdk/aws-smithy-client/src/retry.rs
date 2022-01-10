@@ -118,7 +118,7 @@ const RETRY_COST: usize = 5;
 /// `CrossRequestRetryState`
 /// Its main functionality is via `new_request_policy` which creates a `RetryHandler` to manage the retry for
 /// an individual request.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Standard {
     config: Config,
     shared_state: CrossRequestRetryState,
@@ -181,7 +181,7 @@ impl RequestLocalRetryState {
     }
 }
 
-/* TODO in followup PR:
+/* TODO(retries)
 /// RetryPartition represents a scope for cross request retry state
 ///
 /// For example, a retry partition could be the id of a service. This would give each service a separate retry budget.

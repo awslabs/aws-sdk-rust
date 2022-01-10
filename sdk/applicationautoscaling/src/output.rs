@@ -111,9 +111,9 @@ pub mod put_scaling_policy_output {
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
         /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-        pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
+        pub fn alarms(mut self, input: crate::model::Alarm) -> Self {
             let mut v = self.alarms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarms = Some(v);
             self
         }
@@ -147,8 +147,7 @@ impl PutScalingPolicyOutput {
 pub struct DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledActionsOutput {
@@ -156,8 +155,7 @@ impl DescribeScheduledActionsOutput {
     pub fn scheduled_actions(&self) -> std::option::Option<&[crate::model::ScheduledAction]> {
         self.scheduled_actions.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -186,12 +184,9 @@ pub mod describe_scheduled_actions_output {
         /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
         ///
         /// <p>Information about the scheduled actions.</p>
-        pub fn scheduled_actions(
-            mut self,
-            input: impl Into<crate::model::ScheduledAction>,
-        ) -> Self {
+        pub fn scheduled_actions(mut self, input: crate::model::ScheduledAction) -> Self {
             let mut v = self.scheduled_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_actions = Some(v);
             self
         }
@@ -203,14 +198,12 @@ pub mod describe_scheduled_actions_output {
             self.scheduled_actions = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -237,8 +230,7 @@ impl DescribeScheduledActionsOutput {
 pub struct DescribeScalingPoliciesOutput {
     /// <p>Information about the scaling policies.</p>
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPoliciesOutput {
@@ -246,8 +238,7 @@ impl DescribeScalingPoliciesOutput {
     pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
         self.scaling_policies.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -276,9 +267,9 @@ pub mod describe_scaling_policies_output {
         /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
         ///
         /// <p>Information about the scaling policies.</p>
-        pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
+        pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_policies = Some(v);
             self
         }
@@ -290,14 +281,12 @@ pub mod describe_scaling_policies_output {
             self.scaling_policies = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -324,8 +313,7 @@ impl DescribeScalingPoliciesOutput {
 pub struct DescribeScalingActivitiesOutput {
     /// <p>A list of scaling activity objects.</p>
     pub scaling_activities: std::option::Option<std::vec::Vec<crate::model::ScalingActivity>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingActivitiesOutput {
@@ -333,8 +321,7 @@ impl DescribeScalingActivitiesOutput {
     pub fn scaling_activities(&self) -> std::option::Option<&[crate::model::ScalingActivity]> {
         self.scaling_activities.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -363,12 +350,9 @@ pub mod describe_scaling_activities_output {
         /// To override the contents of this collection use [`set_scaling_activities`](Self::set_scaling_activities).
         ///
         /// <p>A list of scaling activity objects.</p>
-        pub fn scaling_activities(
-            mut self,
-            input: impl Into<crate::model::ScalingActivity>,
-        ) -> Self {
+        pub fn scaling_activities(mut self, input: crate::model::ScalingActivity) -> Self {
             let mut v = self.scaling_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_activities = Some(v);
             self
         }
@@ -380,14 +364,12 @@ pub mod describe_scaling_activities_output {
             self.scaling_activities = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -414,8 +396,7 @@ impl DescribeScalingActivitiesOutput {
 pub struct DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
     pub scalable_targets: std::option::Option<std::vec::Vec<crate::model::ScalableTarget>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalableTargetsOutput {
@@ -423,8 +404,7 @@ impl DescribeScalableTargetsOutput {
     pub fn scalable_targets(&self) -> std::option::Option<&[crate::model::ScalableTarget]> {
         self.scalable_targets.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -453,9 +433,9 @@ pub mod describe_scalable_targets_output {
         /// To override the contents of this collection use [`set_scalable_targets`](Self::set_scalable_targets).
         ///
         /// <p>The scalable targets that match the request parameters.</p>
-        pub fn scalable_targets(mut self, input: impl Into<crate::model::ScalableTarget>) -> Self {
+        pub fn scalable_targets(mut self, input: crate::model::ScalableTarget) -> Self {
             let mut v = self.scalable_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scalable_targets = Some(v);
             self
         }
@@ -467,14 +447,12 @@ pub mod describe_scalable_targets_output {
             self.scalable_targets = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

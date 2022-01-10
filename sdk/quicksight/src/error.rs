@@ -12,10 +12,7 @@ pub struct CancelIngestionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelIngestionErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -73,8 +70,6 @@ impl CancelIngestionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -162,10 +157,7 @@ pub struct CreateAccountCustomizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccountCustomizationErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -233,8 +225,6 @@ impl CreateAccountCustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -357,10 +347,7 @@ pub enum CreateAnalysisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -409,8 +396,6 @@ impl CreateAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -515,10 +500,7 @@ pub enum CreateDashboardErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -567,8 +549,6 @@ impl CreateDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -661,10 +641,7 @@ pub struct CreateDataSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDataSetErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -680,10 +657,7 @@ pub enum CreateDataSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -734,8 +708,6 @@ impl CreateDataSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -841,10 +813,7 @@ pub struct CreateDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDataSourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -908,8 +877,6 @@ impl CreateDataSourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1013,10 +980,7 @@ pub struct CreateFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFolderErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -1032,10 +996,7 @@ pub enum CreateFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1086,8 +1047,6 @@ impl CreateFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1190,10 +1149,7 @@ pub struct CreateFolderMembershipError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFolderMembershipErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -1207,10 +1163,7 @@ pub enum CreateFolderMembershipErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1264,8 +1217,6 @@ impl CreateFolderMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1374,10 +1325,7 @@ pub struct CreateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGroupErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -1444,8 +1392,6 @@ impl CreateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1548,10 +1494,7 @@ pub struct CreateGroupMembershipError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGroupMembershipErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -1612,8 +1555,6 @@ impl CreateGroupMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1712,13 +1653,9 @@ pub struct CreateIAMPolicyAssignmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIAMPolicyAssignmentErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A resource is already in a state that indicates an operation is happening that must complete
-    /// before a new update can be applied.</p>
+    /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::error::ConcurrentUpdatingException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -1781,8 +1718,6 @@ impl CreateIAMPolicyAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1883,10 +1818,7 @@ pub struct CreateIngestionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIngestionErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -1947,8 +1879,6 @@ impl CreateIngestionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2044,10 +1974,7 @@ pub struct CreateNamespaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNamespaceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -2117,8 +2044,6 @@ impl CreateNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2235,10 +2160,7 @@ pub struct CreateTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTemplateErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -2254,10 +2176,7 @@ pub enum CreateTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2308,8 +2227,6 @@ impl CreateTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2430,10 +2347,7 @@ pub enum CreateTemplateAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2482,8 +2396,6 @@ impl CreateTemplateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2582,10 +2494,7 @@ pub struct CreateThemeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateThemeErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -2599,10 +2508,7 @@ pub enum CreateThemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2652,8 +2558,6 @@ impl CreateThemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2762,10 +2666,7 @@ pub enum CreateThemeAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2815,8 +2716,6 @@ impl CreateThemeAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2920,10 +2819,7 @@ pub struct DeleteAccountCustomizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountCustomizationErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -2988,8 +2884,6 @@ impl DeleteAccountCustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3102,10 +2996,7 @@ pub enum DeleteAnalysisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3153,8 +3044,6 @@ impl DeleteAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3249,10 +3138,7 @@ pub enum DeleteDashboardErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3300,8 +3186,6 @@ impl DeleteDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3386,10 +3270,7 @@ pub struct DeleteDataSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDataSetErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3444,8 +3325,6 @@ impl DeleteDataSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3522,10 +3401,7 @@ pub struct DeleteDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDataSourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3580,8 +3456,6 @@ impl DeleteDataSourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3664,10 +3538,7 @@ pub struct DeleteFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFolderErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -3681,10 +3552,7 @@ pub enum DeleteFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3734,8 +3602,6 @@ impl DeleteFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3833,10 +3699,7 @@ pub struct DeleteFolderMembershipError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFolderMembershipErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3846,10 +3709,7 @@ pub enum DeleteFolderMembershipErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3901,8 +3761,6 @@ impl DeleteFolderMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3995,10 +3853,7 @@ pub struct DeleteGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -4059,8 +3914,6 @@ impl DeleteGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4153,10 +4006,7 @@ pub struct DeleteGroupMembershipError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupMembershipErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -4217,8 +4067,6 @@ impl DeleteGroupMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4317,13 +4165,9 @@ pub struct DeleteIAMPolicyAssignmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIAMPolicyAssignmentErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A resource is already in a state that indicates an operation is happening that must complete
-    /// before a new update can be applied.</p>
+    /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::error::ConcurrentUpdatingException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -4386,8 +4230,6 @@ impl DeleteIAMPolicyAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4488,10 +4330,7 @@ pub struct DeleteNamespaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNamespaceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -4552,8 +4391,6 @@ impl DeleteNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4661,10 +4498,7 @@ pub enum DeleteTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4713,8 +4547,6 @@ impl DeleteTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4815,10 +4647,7 @@ pub enum DeleteTemplateAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4865,8 +4694,6 @@ impl DeleteTemplateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4949,10 +4776,7 @@ pub struct DeleteThemeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteThemeErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -4964,10 +4788,7 @@ pub enum DeleteThemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5016,8 +4837,6 @@ impl DeleteThemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5117,10 +4936,7 @@ pub enum DeleteThemeAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5168,8 +4984,6 @@ impl DeleteThemeAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5257,10 +5071,7 @@ pub struct DeleteUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5321,8 +5132,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5412,10 +5221,7 @@ pub struct DeleteUserByPrincipalIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserByPrincipalIdErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5478,8 +5284,6 @@ impl DeleteUserByPrincipalIdError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5580,10 +5384,7 @@ pub struct DescribeAccountCustomizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountCustomizationErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5649,8 +5450,6 @@ impl DescribeAccountCustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5747,10 +5546,7 @@ pub struct DescribeAccountSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountSettingsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5810,8 +5606,6 @@ impl DescribeAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5904,10 +5698,7 @@ pub struct DescribeAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAnalysisErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5917,10 +5708,7 @@ pub enum DescribeAnalysisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5968,8 +5756,6 @@ impl DescribeAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6068,10 +5854,7 @@ pub enum DescribeAnalysisPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6124,8 +5907,6 @@ impl DescribeAnalysisPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6212,10 +5993,7 @@ pub struct DescribeDashboardError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDashboardErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6225,10 +6003,7 @@ pub enum DescribeDashboardErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6276,8 +6051,6 @@ impl DescribeDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6376,10 +6149,7 @@ pub enum DescribeDashboardPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6434,8 +6204,6 @@ impl DescribeDashboardPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6524,10 +6292,7 @@ pub struct DescribeDataSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDataSetErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6582,8 +6347,6 @@ impl DescribeDataSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6663,10 +6426,7 @@ pub struct DescribeDataSetPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDataSetPermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6723,8 +6483,6 @@ impl DescribeDataSetPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6809,10 +6567,7 @@ pub struct DescribeDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDataSourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6867,8 +6622,6 @@ impl DescribeDataSourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6951,10 +6704,7 @@ pub struct DescribeDataSourcePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDataSourcePermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7018,8 +6768,6 @@ impl DescribeDataSourcePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7108,10 +6856,7 @@ pub struct DescribeFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFolderErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7121,10 +6866,7 @@ pub enum DescribeFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7172,8 +6914,6 @@ impl DescribeFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7261,10 +7001,7 @@ pub struct DescribeFolderPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFolderPermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7274,10 +7011,7 @@ pub enum DescribeFolderPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7329,8 +7063,6 @@ impl DescribeFolderPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7425,10 +7157,7 @@ pub struct DescribeFolderResolvedPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFolderResolvedPermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7438,10 +7167,7 @@ pub enum DescribeFolderResolvedPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7504,8 +7230,6 @@ impl DescribeFolderResolvedPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7606,10 +7330,7 @@ pub struct DescribeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGroupErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7670,8 +7391,6 @@ impl DescribeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7764,10 +7483,7 @@ pub struct DescribeIAMPolicyAssignmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIAMPolicyAssignmentErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7831,8 +7547,6 @@ impl DescribeIAMPolicyAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7925,10 +7639,7 @@ pub struct DescribeIngestionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIngestionErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7986,8 +7697,6 @@ impl DescribeIngestionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8078,10 +7787,7 @@ pub struct DescribeIpRestrictionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIpRestrictionErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -8136,8 +7842,6 @@ impl DescribeIpRestrictionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8220,10 +7924,7 @@ pub struct DescribeNamespaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNamespaceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -8281,8 +7982,6 @@ impl DescribeNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8373,10 +8072,7 @@ pub struct DescribeTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTemplateErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -8390,10 +8086,7 @@ pub enum DescribeTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8443,8 +8136,6 @@ impl DescribeTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8554,10 +8245,7 @@ pub enum DescribeTemplateAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8605,8 +8293,6 @@ impl DescribeTemplateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8691,10 +8377,7 @@ pub enum DescribeTemplatePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8748,8 +8431,6 @@ impl DescribeTemplatePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8844,10 +8525,7 @@ pub struct DescribeThemeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeThemeErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -8859,10 +8537,7 @@ pub enum DescribeThemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8911,8 +8586,6 @@ impl DescribeThemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9015,10 +8688,7 @@ pub enum DescribeThemeAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9066,8 +8736,6 @@ impl DescribeThemeAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9158,10 +8826,7 @@ pub struct DescribeThemePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeThemePermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9171,10 +8836,7 @@ pub enum DescribeThemePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9226,8 +8888,6 @@ impl DescribeThemePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9322,10 +8982,7 @@ pub struct DescribeUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9386,8 +9043,6 @@ impl DescribeUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9480,10 +9135,7 @@ pub struct GenerateEmbedUrlForAnonymousUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9491,27 +9143,16 @@ pub enum GenerateEmbedUrlForAnonymousUserErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-    /// lifetime must be 15-600 minutes.</p>
+    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
     SessionLifetimeInMinutesInvalidException(
         crate::error::SessionLifetimeInMinutesInvalidException,
     ),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-    /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
-    /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
-    /// <p>After capacity pricing is added, you can use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-    /// </code> API operation with the
-    /// <code>--identity-type ANONYMOUS</code> option.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+    /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9578,8 +9219,6 @@ impl GenerateEmbedUrlForAnonymousUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9700,42 +9339,26 @@ pub struct GenerateEmbedUrlForRegisteredUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateEmbedUrlForRegisteredUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The user with the provided name isn't found. This error can happen in any operation
-    /// that requires finding a user based on a provided user name, such as
-    /// <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
+    /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::error::QuickSightUserNotFoundException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-    /// lifetime must be 15-600 minutes.</p>
+    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
     SessionLifetimeInMinutesInvalidException(
         crate::error::SessionLifetimeInMinutesInvalidException,
     ),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-    /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
-    /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
-    /// <p>After capacity pricing is added, you can use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-    /// </code> API operation with the
-    /// <code>--identity-type ANONYMOUS</code> option.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+    /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9809,8 +9432,6 @@ impl GenerateEmbedUrlForRegisteredUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9945,50 +9566,32 @@ pub struct GetDashboardEmbedUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDashboardEmbedUrlErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be
-    /// added to the approved list by an Amazon QuickSight admin.</p>
+    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
     DomainNotWhitelistedException(crate::error::DomainNotWhitelistedException),
-    /// <p>The identity type specified isn't supported. Supported identity types include
-    /// <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
+    /// <p>The identity type specified isn't supported. Supported identity types include <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
     IdentityTypeNotSupportedException(crate::error::IdentityTypeNotSupportedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The user with the provided name isn't found. This error can happen in any operation
-    /// that requires finding a user based on a provided user name, such as
-    /// <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
+    /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::error::QuickSightUserNotFoundException),
     /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-    /// lifetime must be 15-600 minutes.</p>
+    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
     SessionLifetimeInMinutesInvalidException(
         crate::error::SessionLifetimeInMinutesInvalidException,
     ),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-    /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
-    /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
-    /// <p>After capacity pricing is added, you can use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-    /// </code> API operation with the
-    /// <code>--identity-type ANONYMOUS</code> option.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+    /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10046,8 +9649,6 @@ impl GetDashboardEmbedUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10190,34 +9791,25 @@ pub struct GetSessionEmbedUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSessionEmbedUrlErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The user with the provided name isn't found. This error can happen in any operation
-    /// that requires finding a user based on a provided user name, such as
-    /// <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
+    /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::error::QuickSightUserNotFoundException),
     /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-    /// lifetime must be 15-600 minutes.</p>
+    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
     SessionLifetimeInMinutesInvalidException(
         crate::error::SessionLifetimeInMinutesInvalidException,
     ),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10270,8 +9862,6 @@ impl GetSessionEmbedUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10394,10 +9984,7 @@ pub enum ListAnalysesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10443,8 +10030,6 @@ impl ListAnalysesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10522,10 +10107,7 @@ pub enum ListDashboardsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10571,8 +10153,6 @@ impl ListDashboardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10654,10 +10234,7 @@ pub enum ListDashboardVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10707,8 +10284,6 @@ impl ListDashboardVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10799,10 +10374,7 @@ pub struct ListDataSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataSetsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -10857,8 +10429,6 @@ impl ListDataSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10935,10 +10505,7 @@ pub struct ListDataSourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataSourcesErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -10993,8 +10560,6 @@ impl ListDataSourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11074,10 +10639,7 @@ pub struct ListFolderMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFolderMembersErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11089,10 +10651,7 @@ pub enum ListFolderMembersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11141,8 +10700,6 @@ impl ListFolderMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11241,10 +10798,7 @@ pub struct ListFoldersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFoldersErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11256,10 +10810,7 @@ pub enum ListFoldersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11308,8 +10859,6 @@ impl ListFoldersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11402,10 +10951,7 @@ pub struct ListGroupMembershipsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupMembershipsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11469,8 +11015,6 @@ impl ListGroupMembershipsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11577,10 +11121,7 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11644,8 +11185,6 @@ impl ListGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11743,10 +11282,7 @@ pub struct ListIAMPolicyAssignmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIAMPolicyAssignmentsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11806,8 +11342,6 @@ impl ListIAMPolicyAssignmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11900,13 +11434,9 @@ pub struct ListIAMPolicyAssignmentsForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIAMPolicyAssignmentsForUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A resource is already in a state that indicates an operation is happening that must complete
-    /// before a new update can be applied.</p>
+    /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::error::ConcurrentUpdatingException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -11980,8 +11510,6 @@ impl ListIAMPolicyAssignmentsForUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12090,10 +11618,7 @@ pub struct ListIngestionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIngestionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -12154,8 +11679,6 @@ impl ListIngestionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12251,10 +11774,7 @@ pub struct ListNamespacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNamespacesErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -12318,8 +11838,6 @@ impl ListNamespacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12423,10 +11941,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -12481,8 +11996,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12573,10 +12086,7 @@ pub enum ListTemplateAliasesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12623,8 +12133,6 @@ impl ListTemplateAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12717,10 +12225,7 @@ pub enum ListTemplatesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12768,8 +12273,6 @@ impl ListTemplatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12867,10 +12370,7 @@ pub enum ListTemplateVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12918,8 +12418,6 @@ impl ListTemplateVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13022,10 +12520,7 @@ pub enum ListThemeAliasesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13074,8 +12569,6 @@ impl ListThemeAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13171,10 +12664,7 @@ pub struct ListThemesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListThemesErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -13186,10 +12676,7 @@ pub enum ListThemesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13238,8 +12725,6 @@ impl ListThemesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13329,10 +12814,7 @@ pub struct ListThemeVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListThemeVersionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -13344,10 +12826,7 @@ pub enum ListThemeVersionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13396,8 +12875,6 @@ impl ListThemeVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13496,10 +12973,7 @@ pub struct ListUserGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserGroupsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -13560,8 +13034,6 @@ impl ListUserGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13657,10 +13129,7 @@ pub struct ListUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUsersErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -13724,8 +13193,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13817,10 +13284,7 @@ pub struct RegisterUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -13887,8 +13351,6 @@ impl RegisterUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14004,10 +13466,7 @@ pub enum RestoreAnalysisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14055,8 +13514,6 @@ impl RestoreAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14151,10 +13608,7 @@ pub enum SearchAnalysesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14202,8 +13656,6 @@ impl SearchAnalysesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14301,10 +13753,7 @@ pub enum SearchDashboardsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14352,8 +13801,6 @@ impl SearchDashboardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14444,10 +13891,7 @@ pub struct SearchFoldersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchFoldersErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -14459,10 +13903,7 @@ pub enum SearchFoldersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14511,8 +13952,6 @@ impl SearchFoldersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14605,10 +14044,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -14666,8 +14102,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14749,10 +14183,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -14807,8 +14238,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14885,10 +14314,7 @@ pub struct UpdateAccountCustomizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountCustomizationErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -14953,8 +14379,6 @@ impl UpdateAccountCustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15057,10 +14481,7 @@ pub struct UpdateAccountSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountSettingsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -15118,8 +14539,6 @@ impl UpdateAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15222,10 +14641,7 @@ pub enum UpdateAnalysisErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15274,8 +14690,6 @@ impl UpdateAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15378,10 +14792,7 @@ pub enum UpdateAnalysisPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15433,8 +14844,6 @@ impl UpdateAnalysisPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15541,10 +14950,7 @@ pub enum UpdateDashboardErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15593,8 +14999,6 @@ impl UpdateDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15697,10 +15101,7 @@ pub enum UpdateDashboardPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15752,8 +15153,6 @@ impl UpdateDashboardPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15858,10 +15257,7 @@ pub enum UpdateDashboardPublishedVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15920,8 +15316,6 @@ impl UpdateDashboardPublishedVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16020,10 +15414,7 @@ pub struct UpdateDataSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataSetErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -16037,10 +15428,7 @@ pub enum UpdateDataSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16090,8 +15478,6 @@ impl UpdateDataSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16189,10 +15575,7 @@ pub struct UpdateDataSetPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataSetPermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -16252,8 +15635,6 @@ impl UpdateDataSetPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16346,10 +15727,7 @@ pub struct UpdateDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataSourceErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -16407,8 +15785,6 @@ impl UpdateDataSourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16496,10 +15872,7 @@ pub struct UpdateDataSourcePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataSourcePermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -16561,8 +15934,6 @@ impl UpdateDataSourcePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16655,10 +16026,7 @@ pub struct UpdateFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFolderErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
@@ -16672,10 +16040,7 @@ pub enum UpdateFolderErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16725,8 +16090,6 @@ impl UpdateFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16824,10 +16187,7 @@ pub struct UpdateFolderPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFolderPermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -16839,10 +16199,7 @@ pub enum UpdateFolderPermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16895,8 +16252,6 @@ impl UpdateFolderPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16999,10 +16354,7 @@ pub struct UpdateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGroupErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -17063,8 +16415,6 @@ impl UpdateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17157,13 +16507,9 @@ pub struct UpdateIAMPolicyAssignmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIAMPolicyAssignmentErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A resource is already in a state that indicates an operation is happening that must complete
-    /// before a new update can be applied.</p>
+    /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::error::ConcurrentUpdatingException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -17226,8 +16572,6 @@ impl UpdateIAMPolicyAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17328,10 +16672,7 @@ pub struct UpdateIpRestrictionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIpRestrictionErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -17389,8 +16730,6 @@ impl UpdateIpRestrictionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17495,10 +16834,7 @@ pub enum UpdateTemplateErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17548,8 +16884,6 @@ impl UpdateTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17658,10 +16992,7 @@ pub enum UpdateTemplateAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17708,8 +17039,6 @@ impl UpdateTemplateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17802,10 +17131,7 @@ pub enum UpdateTemplatePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17857,8 +17183,6 @@ impl UpdateTemplatePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17953,10 +17277,7 @@ pub struct UpdateThemeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateThemeErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -17970,10 +17291,7 @@ pub enum UpdateThemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18023,8 +17341,6 @@ impl UpdateThemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18131,10 +17447,7 @@ pub enum UpdateThemeAliasErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18183,8 +17496,6 @@ impl UpdateThemeAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18280,10 +17591,7 @@ pub struct UpdateThemePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateThemePermissionsErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -18293,10 +17601,7 @@ pub enum UpdateThemePermissionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18348,8 +17653,6 @@ impl UpdateThemePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18442,10 +17745,7 @@ pub struct UpdateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserErrorKind {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -18506,8 +17806,6 @@ impl UpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19138,10 +18436,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p>You don't have access to this item. The provided credentials couldn't be
-/// validated. You might not be authorized to carry out the request. Make sure that your
-/// account is authorized to use the Amazon QuickSight service, that your policies have the
-/// correct permissions, and that you are using the correct access keys.</p>
+/// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -19226,10 +18521,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-/// subscription where the edition doesn't include support for that operation. Amazon
-/// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-/// capability is available in every edition.</p>
+/// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedUserEditionException {
@@ -19613,8 +18905,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>A resource is already in a state that indicates an operation is happening that must complete
-/// before a new update can be applied.</p>
+/// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentUpdatingException {
@@ -19784,8 +19075,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-/// lifetime must be 15-600 minutes.</p>
+/// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionLifetimeInMinutesInvalidException {
@@ -19870,9 +19160,7 @@ impl SessionLifetimeInMinutesInvalidException {
     }
 }
 
-/// <p>The user with the provided name isn't found. This error can happen in any operation
-/// that requires finding a user based on a provided user name, such as
-/// <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
+/// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickSightUserNotFoundException {
@@ -19957,15 +19245,8 @@ impl QuickSightUserNotFoundException {
     }
 }
 
-/// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-/// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-/// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
-/// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
-/// <p>After capacity pricing is added, you can use the
-/// <code>
-/// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-/// </code> API operation with the
-/// <code>--identity-type ANONYMOUS</code> option.</p>
+/// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+/// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPricingPlanException {
@@ -20050,8 +19331,7 @@ impl UnsupportedPricingPlanException {
     }
 }
 
-/// <p>The identity type specified isn't supported. Supported identity types include
-/// <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
+/// <p>The identity type specified isn't supported. Supported identity types include <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityTypeNotSupportedException {
@@ -20136,8 +19416,7 @@ impl IdentityTypeNotSupportedException {
     }
 }
 
-/// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be
-/// added to the approved list by an Amazon QuickSight admin.</p>
+/// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainNotWhitelistedException {

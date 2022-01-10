@@ -9,16 +9,12 @@ pub mod describe_entities_detection_v2_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -40,7 +36,8 @@ pub mod describe_entities_detection_v2_job_input {
 pub type DescribeEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::DescribeEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEntitiesDetectionV2JobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEntitiesDetectionV2Job`](crate::operation::DescribeEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -51,7 +48,7 @@ impl DescribeEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -137,7 +134,7 @@ impl DescribeEntitiesDetectionV2JobInput {
             "DescribeEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -169,14 +166,12 @@ pub mod describe_icd10_cm_inference_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -198,7 +193,7 @@ pub mod describe_icd10_cm_inference_job_input {
 pub type DescribeIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeICD10CMInferenceJob;
 #[doc(hidden)]
-pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeICD10CMInferenceJob`](crate::operation::DescribeICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -209,7 +204,7 @@ impl DescribeIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -295,7 +290,7 @@ impl DescribeIcd10CmInferenceJobInput {
             "DescribeICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -327,14 +322,12 @@ pub mod describe_phi_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -356,7 +349,7 @@ pub mod describe_phi_detection_job_input {
 pub type DescribePhiDetectionJobInputOperationOutputAlias =
     crate::operation::DescribePHIDetectionJob;
 #[doc(hidden)]
-pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePHIDetectionJob`](crate::operation::DescribePHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -367,7 +360,7 @@ impl DescribePhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -454,7 +447,7 @@ impl DescribePhiDetectionJobInput {
             "DescribePHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -486,14 +479,12 @@ pub mod describe_rx_norm_inference_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -515,7 +506,7 @@ pub mod describe_rx_norm_inference_job_input {
 pub type DescribeRxNormInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeRxNormInferenceJob;
 #[doc(hidden)]
-pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRxNormInferenceJob`](crate::operation::DescribeRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -526,7 +517,7 @@ impl DescribeRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -612,7 +603,7 @@ impl DescribeRxNormInferenceJobInput {
             "DescribeRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -635,6 +626,163 @@ impl DescribeRxNormInferenceJobInput {
     }
 }
 
+/// See [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+pub mod describe_snomedct_inference_job_input {
+    /// A builder for [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeSnomedctInferenceJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeSnomedctInferenceJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeSnomedctInferenceJobInputOperationOutputAlias =
+    crate::operation::DescribeSNOMEDCTInferenceJob;
+#[doc(hidden)]
+pub type DescribeSnomedctInferenceJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeSnomedctInferenceJobInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeSNOMEDCTInferenceJob`](crate::operation::DescribeSNOMEDCTInferenceJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeSNOMEDCTInferenceJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeSnomedctInferenceJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeSnomedctInferenceJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeSnomedctInferenceJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComprehendMedical_20181030.DescribeSNOMEDCTInferenceJob",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_snomedct_inference_job(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSNOMEDCTInferenceJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSNOMEDCTInferenceJob",
+            "comprehendmedical",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::describe_snomedct_inference_job_input::Builder {
+        crate::input::describe_snomedct_inference_job_input::Builder::default()
+    }
+}
+
 /// See [`DetectEntitiesInput`](crate::input::DetectEntitiesInput)
 pub mod detect_entities_input {
     /// A builder for [`DetectEntitiesInput`](crate::input::DetectEntitiesInput)
@@ -644,14 +792,12 @@ pub mod detect_entities_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -670,7 +816,7 @@ pub mod detect_entities_input {
 #[doc(hidden)]
 pub type DetectEntitiesInputOperationOutputAlias = crate::operation::DetectEntities;
 #[doc(hidden)]
-pub type DetectEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`DetectEntities`](crate::operation::DetectEntities)>
     #[allow(clippy::let_and_return)]
@@ -681,7 +827,7 @@ impl DetectEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -766,7 +912,7 @@ impl DetectEntitiesInput {
             "DetectEntities",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -798,14 +944,12 @@ pub mod detect_entities_v2_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -824,7 +968,7 @@ pub mod detect_entities_v2_input {
 #[doc(hidden)]
 pub type DetectEntitiesV2InputOperationOutputAlias = crate::operation::DetectEntitiesV2;
 #[doc(hidden)]
-pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectEntitiesV2InputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectEntitiesV2Input {
     /// Consumes the builder and constructs an Operation<[`DetectEntitiesV2`](crate::operation::DetectEntitiesV2)>
     #[allow(clippy::let_and_return)]
@@ -835,7 +979,7 @@ impl DetectEntitiesV2Input {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectEntitiesV2,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -920,7 +1064,7 @@ impl DetectEntitiesV2Input {
             "DetectEntitiesV2",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -952,14 +1096,12 @@ pub mod detect_phi_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -976,7 +1118,7 @@ pub mod detect_phi_input {
 #[doc(hidden)]
 pub type DetectPhiInputOperationOutputAlias = crate::operation::DetectPHI;
 #[doc(hidden)]
-pub type DetectPhiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectPhiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectPhiInput {
     /// Consumes the builder and constructs an Operation<[`DetectPHI`](crate::operation::DetectPHI)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +1129,7 @@ impl DetectPhiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectPHI,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1069,7 +1211,7 @@ impl DetectPhiInput {
                     "DetectPHI",
                     "comprehendmedical",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1101,14 +1243,12 @@ pub mod infer_icd10_cm_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1127,7 +1267,7 @@ pub mod infer_icd10_cm_input {
 #[doc(hidden)]
 pub type InferIcd10CmInputOperationOutputAlias = crate::operation::InferICD10CM;
 #[doc(hidden)]
-pub type InferIcd10CmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InferIcd10CmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferIcd10CmInput {
     /// Consumes the builder and constructs an Operation<[`InferICD10CM`](crate::operation::InferICD10CM)>
     #[allow(clippy::let_and_return)]
@@ -1138,7 +1278,7 @@ impl InferIcd10CmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferICD10CM,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1222,7 +1362,7 @@ impl InferIcd10CmInput {
             "InferICD10CM",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1254,14 +1394,12 @@ pub mod infer_rx_norm_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1280,7 +1418,7 @@ pub mod infer_rx_norm_input {
 #[doc(hidden)]
 pub type InferRxNormInputOperationOutputAlias = crate::operation::InferRxNorm;
 #[doc(hidden)]
-pub type InferRxNormInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InferRxNormInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InferRxNormInput {
     /// Consumes the builder and constructs an Operation<[`InferRxNorm`](crate::operation::InferRxNorm)>
     #[allow(clippy::let_and_return)]
@@ -1291,7 +1429,7 @@ impl InferRxNormInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InferRxNorm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1375,7 +1513,7 @@ impl InferRxNormInput {
             "InferRxNorm",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1398,6 +1536,157 @@ impl InferRxNormInput {
     }
 }
 
+/// See [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+pub mod infer_snomedct_input {
+    /// A builder for [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) text: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::InferSnomedctInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::InferSnomedctInput { text: self.text })
+        }
+    }
+}
+#[doc(hidden)]
+pub type InferSnomedctInputOperationOutputAlias = crate::operation::InferSNOMEDCT;
+#[doc(hidden)]
+pub type InferSnomedctInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl InferSnomedctInput {
+    /// Consumes the builder and constructs an Operation<[`InferSNOMEDCT`](crate::operation::InferSNOMEDCT)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::InferSNOMEDCT,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::InferSnomedctInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::InferSnomedctInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::InferSnomedctInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComprehendMedical_20181030.InferSNOMEDCT",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_infer_snomedct(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InferSNOMEDCT::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InferSNOMEDCT",
+            "comprehendmedical",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+    pub fn builder() -> crate::input::infer_snomedct_input::Builder {
+        crate::input::infer_snomedct_input::Builder::default()
+    }
+}
+
 /// See [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput)
 pub mod list_entities_detection_v2_jobs_input {
     /// A builder for [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput)
@@ -1409,14 +1698,12 @@ pub mod list_entities_detection_v2_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1463,7 +1750,7 @@ pub mod list_entities_detection_v2_jobs_input {
 pub type ListEntitiesDetectionV2JobsInputOperationOutputAlias =
     crate::operation::ListEntitiesDetectionV2Jobs;
 #[doc(hidden)]
-pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntitiesDetectionV2JobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitiesDetectionV2JobsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitiesDetectionV2Jobs`](crate::operation::ListEntitiesDetectionV2Jobs)>
     #[allow(clippy::let_and_return)]
@@ -1474,7 +1761,7 @@ impl ListEntitiesDetectionV2JobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitiesDetectionV2Jobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1560,7 +1847,7 @@ impl ListEntitiesDetectionV2JobsInput {
             "ListEntitiesDetectionV2Jobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1594,14 +1881,12 @@ pub mod list_icd10_cm_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1648,7 +1933,7 @@ pub mod list_icd10_cm_inference_jobs_input {
 pub type ListIcd10CmInferenceJobsInputOperationOutputAlias =
     crate::operation::ListICD10CMInferenceJobs;
 #[doc(hidden)]
-pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIcd10CmInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListICD10CMInferenceJobs`](crate::operation::ListICD10CMInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -1659,7 +1944,7 @@ impl ListIcd10CmInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListICD10CMInferenceJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1746,7 +2031,7 @@ impl ListIcd10CmInferenceJobsInput {
             "ListICD10CMInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1780,14 +2065,12 @@ pub mod list_phi_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1833,7 +2116,7 @@ pub mod list_phi_detection_jobs_input {
 #[doc(hidden)]
 pub type ListPhiDetectionJobsInputOperationOutputAlias = crate::operation::ListPHIDetectionJobs;
 #[doc(hidden)]
-pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPhiDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPHIDetectionJobs`](crate::operation::ListPHIDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -1844,7 +2127,7 @@ impl ListPhiDetectionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPHIDetectionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1931,7 +2214,7 @@ impl ListPhiDetectionJobsInput {
             "ListPHIDetectionJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1965,14 +2248,12 @@ pub mod list_rx_norm_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2019,7 +2300,7 @@ pub mod list_rx_norm_inference_jobs_input {
 pub type ListRxNormInferenceJobsInputOperationOutputAlias =
     crate::operation::ListRxNormInferenceJobs;
 #[doc(hidden)]
-pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRxNormInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRxNormInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListRxNormInferenceJobs`](crate::operation::ListRxNormInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -2030,7 +2311,7 @@ impl ListRxNormInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRxNormInferenceJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2117,7 +2398,7 @@ impl ListRxNormInferenceJobsInput {
             "ListRxNormInferenceJobs",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2140,6 +2421,190 @@ impl ListRxNormInferenceJobsInput {
     }
 }
 
+/// See [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+pub mod list_snomedct_inference_jobs_input {
+    /// A builder for [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Provides information for filtering a list of detection jobs.</p>
+        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>Provides information for filtering a list of detection jobs.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
+        /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p> The maximum number of results to return in each page. The default is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p> The maximum number of results to return in each page. The default is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListSnomedctInferenceJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListSnomedctInferenceJobsInput {
+                filter: self.filter,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListSnomedctInferenceJobsInputOperationOutputAlias =
+    crate::operation::ListSNOMEDCTInferenceJobs;
+#[doc(hidden)]
+pub type ListSnomedctInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListSnomedctInferenceJobsInput {
+    /// Consumes the builder and constructs an Operation<[`ListSNOMEDCTInferenceJobs`](crate::operation::ListSNOMEDCTInferenceJobs)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListSNOMEDCTInferenceJobs,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListSnomedctInferenceJobsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListSnomedctInferenceJobsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListSnomedctInferenceJobsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComprehendMedical_20181030.ListSNOMEDCTInferenceJobs",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_snomedct_inference_jobs(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSNOMEDCTInferenceJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSNOMEDCTInferenceJobs",
+            "comprehendmedical",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+    pub fn builder() -> crate::input::list_snomedct_inference_jobs_input::Builder {
+        crate::input::list_snomedct_inference_jobs_input::Builder::default()
+    }
+}
+
 /// See [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput)
 pub mod start_entities_detection_v2_job_input {
     /// A builder for [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput)
@@ -2155,12 +2620,12 @@ pub mod start_entities_detection_v2_job_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>Specifies the format and location of the input data for the job.</p>
+        /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>Specifies the format and location of the input data for the job.</p>
+        /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -2168,12 +2633,12 @@ pub mod start_entities_detection_v2_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>Specifies where to send the output files.</p>
+        /// <p>The output configuration that specifies where to send the output files.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>Specifies where to send the output files.</p>
+        /// <p>The output configuration that specifies where to send the output files.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -2181,14 +2646,12 @@ pub mod start_entities_detection_v2_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2206,14 +2669,12 @@ pub mod start_entities_detection_v2_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2221,24 +2682,22 @@ pub mod start_entities_detection_v2_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -2269,7 +2728,7 @@ pub mod start_entities_detection_v2_job_input {
 pub type StartEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::StartEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StartEntitiesDetectionV2Job`](crate::operation::StartEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -2280,7 +2739,7 @@ impl StartEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2369,7 +2828,7 @@ impl StartEntitiesDetectionV2JobInput {
             "StartEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2433,14 +2892,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2458,14 +2915,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2473,14 +2928,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -2521,7 +2974,7 @@ pub mod start_icd10_cm_inference_job_input {
 pub type StartIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StartICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartICD10CMInferenceJob`](crate::operation::StartICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -2532,7 +2985,7 @@ impl StartIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2622,7 +3075,7 @@ impl StartIcd10CmInferenceJobInput {
             "StartICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2686,14 +3139,12 @@ pub mod start_phi_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2711,14 +3162,12 @@ pub mod start_phi_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2726,14 +3175,12 @@ pub mod start_phi_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -2773,7 +3220,7 @@ pub mod start_phi_detection_job_input {
 #[doc(hidden)]
 pub type StartPhiDetectionJobInputOperationOutputAlias = crate::operation::StartPHIDetectionJob;
 #[doc(hidden)]
-pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPHIDetectionJob`](crate::operation::StartPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -2784,7 +3231,7 @@ impl StartPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2874,7 +3321,7 @@ impl StartPhiDetectionJobInput {
             "StartPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2938,14 +3385,12 @@ pub mod start_rx_norm_inference_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2963,14 +3408,12 @@ pub mod start_rx_norm_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2978,14 +3421,12 @@ pub mod start_rx_norm_inference_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -3026,7 +3467,7 @@ pub mod start_rx_norm_inference_job_input {
 pub type StartRxNormInferenceJobInputOperationOutputAlias =
     crate::operation::StartRxNormInferenceJob;
 #[doc(hidden)]
-pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartRxNormInferenceJob`](crate::operation::StartRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3037,7 +3478,7 @@ impl StartRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3127,7 +3568,7 @@ impl StartRxNormInferenceJobInput {
             "StartRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3147,6 +3588,253 @@ impl StartRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput)
     pub fn builder() -> crate::input::start_rx_norm_inference_job_input::Builder {
         crate::input::start_rx_norm_inference_job_input::Builder::default()
+    }
+}
+
+/// See [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+pub mod start_snomedct_inference_job_input {
+    /// A builder for [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
+        pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) kms_key: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+    }
+    impl Builder {
+        /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.input_data_config = Some(input);
+            self
+        }
+        /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+        pub fn set_input_data_config(
+            mut self,
+            input: std::option::Option<crate::model::InputDataConfig>,
+        ) -> Self {
+            self.input_data_config = input;
+            self
+        }
+        /// <p>The output properties for a detection job.</p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.output_data_config = Some(input);
+            self
+        }
+        /// <p>The output properties for a detection job.</p>
+        pub fn set_output_data_config(
+            mut self,
+            input: std::option::Option<crate::model::OutputDataConfig>,
+        ) -> Self {
+            self.output_data_config = input;
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key = Some(input.into());
+            self
+        }
+        /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+        pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key = input;
+            self
+        }
+        /// <p> The language of the input documents. All documents must be in the same language. </p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p> The language of the input documents. All documents must be in the same language. </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartSnomedctInferenceJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartSnomedctInferenceJobInput {
+                input_data_config: self.input_data_config,
+                output_data_config: self.output_data_config,
+                data_access_role_arn: self.data_access_role_arn,
+                job_name: self.job_name,
+                client_request_token: self.client_request_token,
+                kms_key: self.kms_key,
+                language_code: self.language_code,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartSnomedctInferenceJobInputOperationOutputAlias =
+    crate::operation::StartSNOMEDCTInferenceJob;
+#[doc(hidden)]
+pub type StartSnomedctInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StartSnomedctInferenceJobInput {
+    /// Consumes the builder and constructs an Operation<[`StartSNOMEDCTInferenceJob`](crate::operation::StartSNOMEDCTInferenceJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartSNOMEDCTInferenceJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartSnomedctInferenceJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartSnomedctInferenceJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartSnomedctInferenceJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComprehendMedical_20181030.StartSNOMEDCTInferenceJob",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_snomedct_inference_job(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartSNOMEDCTInferenceJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartSNOMEDCTInferenceJob",
+            "comprehendmedical",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::start_snomedct_inference_job_input::Builder {
+        crate::input::start_snomedct_inference_job_input::Builder::default()
     }
 }
 
@@ -3186,7 +3874,7 @@ pub mod stop_entities_detection_v2_job_input {
 pub type StopEntitiesDetectionV2JobInputOperationOutputAlias =
     crate::operation::StopEntitiesDetectionV2Job;
 #[doc(hidden)]
-pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopEntitiesDetectionV2JobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEntitiesDetectionV2JobInput {
     /// Consumes the builder and constructs an Operation<[`StopEntitiesDetectionV2Job`](crate::operation::StopEntitiesDetectionV2Job)>
     #[allow(clippy::let_and_return)]
@@ -3197,7 +3885,7 @@ impl StopEntitiesDetectionV2JobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEntitiesDetectionV2Job,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3283,7 +3971,7 @@ impl StopEntitiesDetectionV2JobInput {
             "StopEntitiesDetectionV2Job",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3342,7 +4030,7 @@ pub mod stop_icd10_cm_inference_job_input {
 pub type StopIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StopICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopICD10CMInferenceJob`](crate::operation::StopICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3353,7 +4041,7 @@ impl StopIcd10CmInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopICD10CMInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3440,7 +4128,7 @@ impl StopIcd10CmInferenceJobInput {
             "StopICD10CMInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3498,7 +4186,7 @@ pub mod stop_phi_detection_job_input {
 #[doc(hidden)]
 pub type StopPhiDetectionJobInputOperationOutputAlias = crate::operation::StopPHIDetectionJob;
 #[doc(hidden)]
-pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPHIDetectionJob`](crate::operation::StopPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3509,7 +4197,7 @@ impl StopPhiDetectionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPHIDetectionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3596,7 +4284,7 @@ impl StopPhiDetectionJobInput {
             "StopPHIDetectionJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3654,7 +4342,7 @@ pub mod stop_rx_norm_inference_job_input {
 #[doc(hidden)]
 pub type StopRxNormInferenceJobInputOperationOutputAlias = crate::operation::StopRxNormInferenceJob;
 #[doc(hidden)]
-pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopRxNormInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopRxNormInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopRxNormInferenceJob`](crate::operation::StopRxNormInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3665,7 +4353,7 @@ impl StopRxNormInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopRxNormInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3752,7 +4440,7 @@ impl StopRxNormInferenceJobInput {
             "StopRxNormInferenceJob",
             "comprehendmedical",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3772,6 +4460,184 @@ impl StopRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput)
     pub fn builder() -> crate::input::stop_rx_norm_inference_job_input::Builder {
         crate::input::stop_rx_norm_inference_job_input::Builder::default()
+    }
+}
+
+/// See [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+pub mod stop_snomedct_inference_job_input {
+    /// A builder for [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StopSnomedctInferenceJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StopSnomedctInferenceJobInput {
+                job_id: self.job_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StopSnomedctInferenceJobInputOperationOutputAlias =
+    crate::operation::StopSNOMEDCTInferenceJob;
+#[doc(hidden)]
+pub type StopSnomedctInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StopSnomedctInferenceJobInput {
+    /// Consumes the builder and constructs an Operation<[`StopSNOMEDCTInferenceJob`](crate::operation::StopSNOMEDCTInferenceJob)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StopSNOMEDCTInferenceJob,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StopSnomedctInferenceJobInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StopSnomedctInferenceJobInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StopSnomedctInferenceJobInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "ComprehendMedical_20181030.StopSNOMEDCTInferenceJob",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_stop_snomedct_inference_job(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopSNOMEDCTInferenceJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopSNOMEDCTInferenceJob",
+            "comprehendmedical",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::stop_snomedct_inference_job_input::Builder {
+        crate::input::stop_snomedct_inference_job_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopSnomedctInferenceJobInput {
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl StopSnomedctInferenceJobInput {
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StopSnomedctInferenceJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopSnomedctInferenceJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
     }
 }
 
@@ -3862,21 +4728,81 @@ impl std::fmt::Debug for StopEntitiesDetectionV2JobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartSnomedctInferenceJobInput {
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
+    /// <p>The output properties for a detection job.</p>
+    pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
+    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    pub kms_key: std::option::Option<std::string::String>,
+    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+}
+impl StartSnomedctInferenceJobInput {
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+        self.input_data_config.as_ref()
+    }
+    /// <p>The output properties for a detection job.</p>
+    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+        self.output_data_config.as_ref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
+        self.client_request_token.as_deref()
+    }
+    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    pub fn kms_key(&self) -> std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
+    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
+        self.language_code.as_ref()
+    }
+}
+impl std::fmt::Debug for StartSnomedctInferenceJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartSnomedctInferenceJobInput");
+        formatter.field("input_data_config", &self.input_data_config);
+        formatter.field("output_data_config", &self.output_data_config);
+        formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("client_request_token", &self.client_request_token);
+        formatter.field("kms_key", &self.kms_key);
+        formatter.field("language_code", &self.language_code);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRxNormInferenceJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -3890,8 +4816,7 @@ impl StartRxNormInferenceJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -3899,13 +4824,11 @@ impl StartRxNormInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -3936,16 +4859,13 @@ pub struct StartPhiDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -3959,8 +4879,7 @@ impl StartPhiDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -3968,13 +4887,11 @@ impl StartPhiDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4005,16 +4922,13 @@ pub struct StartIcd10CmInferenceJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -4028,8 +4942,7 @@ impl StartIcd10CmInferenceJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -4037,13 +4950,11 @@ impl StartIcd10CmInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4070,35 +4981,31 @@ impl std::fmt::Debug for StartIcd10CmInferenceJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartEntitiesDetectionV2JobInput {
-    /// <p>Specifies the format and location of the input data for the job.</p>
+    /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>Specifies where to send the output files.</p>
+    /// <p>The output configuration that specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl StartEntitiesDetectionV2JobInput {
-    /// <p>Specifies the format and location of the input data for the job.</p>
+    /// <p>The input configuration that specifies the format and location of the input data for the job.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Specifies where to send the output files.</p>
+    /// <p>The output configuration that specifies where to send the output files.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -4106,17 +5013,15 @@ impl StartEntitiesDetectionV2JobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one for you.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The language of the input documents. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. All documents must be in the same language. Comprehend Medical; processes files in US English (en).</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -4138,9 +5043,43 @@ impl std::fmt::Debug for StartEntitiesDetectionV2JobInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListSnomedctInferenceJobsInput {
+    /// <p>Provides information for filtering a list of detection jobs.</p>
+    pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListSnomedctInferenceJobsInput {
+    /// <p>Provides information for filtering a list of detection jobs.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
+        self.filter.as_ref()
+    }
+    /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p> The maximum number of results to return in each page. The default is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListSnomedctInferenceJobsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListSnomedctInferenceJobsInput");
+        formatter.field("filter", &self.filter);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRxNormInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4148,8 +5087,7 @@ pub struct ListRxNormInferenceJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListRxNormInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4176,8 +5114,7 @@ impl std::fmt::Debug for ListRxNormInferenceJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhiDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4185,8 +5122,7 @@ pub struct ListPhiDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListPhiDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4213,8 +5149,7 @@ impl std::fmt::Debug for ListPhiDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIcd10CmInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4222,8 +5157,7 @@ pub struct ListIcd10CmInferenceJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListIcd10CmInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4250,8 +5184,7 @@ impl std::fmt::Debug for ListIcd10CmInferenceJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesDetectionV2JobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4259,8 +5192,7 @@ pub struct ListEntitiesDetectionV2JobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesDetectionV2JobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4286,14 +5218,33 @@ impl std::fmt::Debug for ListEntitiesDetectionV2JobsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InferSnomedctInput {
+    /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+    pub text: std::option::Option<std::string::String>,
+}
+impl InferSnomedctInput {
+    /// <p> The input text to be analyzed using InferSNOMEDCT. The text should be a string with 1 to 10000 characters. </p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+}
+impl std::fmt::Debug for InferSnomedctInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InferSnomedctInput");
+        formatter.field("text", &self.text);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferRxNormInput {
-    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl InferRxNormInput {
-    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4310,13 +5261,11 @@ impl std::fmt::Debug for InferRxNormInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4333,13 +5282,11 @@ impl std::fmt::Debug for InferIcd10CmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4356,13 +5303,11 @@ impl std::fmt::Debug for DetectPhiInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesV2Input {
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-    /// must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesV2Input {
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-    /// must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4379,13 +5324,11 @@ impl std::fmt::Debug for DetectEntitiesV2Input {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4401,14 +5344,33 @@ impl std::fmt::Debug for DetectEntitiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeSnomedctInferenceJobInput {
+    /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl DescribeSnomedctInferenceJobInput {
+    /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeSnomedctInferenceJobInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeSnomedctInferenceJobInput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRxNormInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeRxNormInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4425,13 +5387,11 @@ impl std::fmt::Debug for DescribeRxNormInferenceJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhiDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-    /// operation returns this identifier in its response.</p>
+    /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribePhiDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-    /// operation returns this identifier in its response.</p>
+    /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4448,13 +5408,11 @@ impl std::fmt::Debug for DescribePhiDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIcd10CmInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-    /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeIcd10CmInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-    /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4471,15 +5429,11 @@ impl std::fmt::Debug for DescribeIcd10CmInferenceJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitiesDetectionV2JobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntitiesDetectionV2JobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }

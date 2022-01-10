@@ -32,14 +32,12 @@ pub mod create_auto_predictor_input {
             self.predictor_name = input;
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
         pub fn forecast_horizon(mut self, input: i32) -> Self {
             self.forecast_horizon = Some(input);
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.forecast_horizon = input;
             self
@@ -48,18 +46,14 @@ pub mod create_auto_predictor_input {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
-        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -71,22 +65,16 @@ pub mod create_auto_predictor_input {
         ///
         /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
         ///
-        /// <p>An array of dimension (field) names that specify how to group the generated
-        /// forecast.</p>
-        /// <p>For example, if you are generating forecasts for item sales across all your stores,
-        /// and your dataset contains a <code>store_id</code> field, you would specify
-        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
         pub fn forecast_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_dimensions.unwrap_or_default();
             v.push(input.into());
             self.forecast_dimensions = Some(v);
             self
         }
-        /// <p>An array of dimension (field) names that specify how to group the generated
-        /// forecast.</p>
-        /// <p>For example, if you are generating forecasts for item sales across all your stores,
-        /// and your dataset contains a <code>store_id</code> field, you would specify
-        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
         pub fn set_forecast_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -95,25 +83,17 @@ pub mod create_auto_predictor_input {
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
         pub fn forecast_frequency(mut self, input: impl Into<std::string::String>) -> Self {
             self.forecast_frequency = Some(input.into());
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
         pub fn set_forecast_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -134,16 +114,12 @@ pub mod create_auto_predictor_input {
             self.data_config = input;
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -151,22 +127,14 @@ pub mod create_auto_predictor_input {
             self.encryption_config = input;
             self
         }
-        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-        /// value for this parameter.</p>
-        /// <p>When upgrading or retraining a predictor, only specify values for the
-        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-        /// <code>PredictorName</code> must be a unique predictor name.</p>
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
         pub fn reference_predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.reference_predictor_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-        /// value for this parameter.</p>
-        /// <p>When upgrading or retraining a predictor, only specify values for the
-        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-        /// <code>PredictorName</code> must be a unique predictor name.</p>
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
         pub fn set_reference_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -187,12 +155,12 @@ pub mod create_auto_predictor_input {
             self.optimization_metric = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Create an Explainability resource for the predictor.</p>
         pub fn explain_predictor(mut self, input: bool) -> Self {
             self.explain_predictor = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Create an Explainability resource for the predictor.</p>
         pub fn set_explain_predictor(mut self, input: std::option::Option<bool>) -> Self {
             self.explain_predictor = input;
             self
@@ -201,75 +169,31 @@ pub mod create_auto_predictor_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -304,7 +228,7 @@ pub mod create_auto_predictor_input {
 #[doc(hidden)]
 pub type CreateAutoPredictorInputOperationOutputAlias = crate::operation::CreateAutoPredictor;
 #[doc(hidden)]
-pub type CreateAutoPredictorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAutoPredictorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAutoPredictorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAutoPredictor`](crate::operation::CreateAutoPredictor)>
     #[allow(clippy::let_and_return)]
@@ -315,7 +239,7 @@ impl CreateAutoPredictorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAutoPredictor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -400,7 +324,7 @@ impl CreateAutoPredictorInput {
             "CreateAutoPredictor",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -448,24 +372,14 @@ pub mod create_dataset_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-        /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in the training data that you import to the dataset. For example, if you
-        /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-        /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-        /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in the training data that you import to the dataset. For example, if you
-        /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-        /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -483,20 +397,14 @@ pub mod create_dataset_input {
             self.dataset_type = input;
             self
         }
-        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-        /// datasets.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
         pub fn data_frequency(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_frequency = Some(input.into());
             self
         }
-        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-        /// datasets.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
         pub fn set_data_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -504,30 +412,22 @@ pub mod create_dataset_input {
             self.data_frequency = input;
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-        /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-        /// determine the minimum required fields in your training data. For information about the
-        /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
         pub fn schema(mut self, input: crate::model::Schema) -> Self {
             self.schema = Some(input);
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-        /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-        /// determine the minimum required fields in your training data. For information about the
-        /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.schema = input;
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -542,58 +442,30 @@ pub mod create_dataset_input {
         /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -624,7 +496,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -635,7 +507,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -719,7 +591,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -767,26 +639,14 @@ pub mod create_dataset_group_input {
             self.dataset_group_name = input;
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in training data that you import to a dataset. For example, if you choose
-        /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-        /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-        /// information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in training data that you import to a dataset. For example, if you choose
-        /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-        /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-        /// information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -795,16 +655,14 @@ pub mod create_dataset_group_input {
         ///
         /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-        /// dataset group.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
         pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_arns = Some(v);
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-        /// dataset group.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -819,58 +677,30 @@ pub mod create_dataset_group_input {
         /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -898,7 +728,7 @@ pub mod create_dataset_group_input {
 #[doc(hidden)]
 pub type CreateDatasetGroupInputOperationOutputAlias = crate::operation::CreateDatasetGroup;
 #[doc(hidden)]
-pub type CreateDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetGroup`](crate::operation::CreateDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -909,7 +739,7 @@ impl CreateDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -994,7 +824,7 @@ impl CreateDatasetGroupInput {
             "CreateDatasetGroup",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1033,16 +863,12 @@ pub mod create_dataset_import_job_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-        /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-        /// <code>ResourceAlreadyExistsException</code> exception.</p>
+        /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
         pub fn dataset_import_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_import_job_name = Some(input.into());
             self
         }
-        /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-        /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-        /// <code>ResourceAlreadyExistsException</code> exception.</p>
+        /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
         pub fn set_dataset_import_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1050,32 +876,24 @@ pub mod create_dataset_import_job_input {
             self.dataset_import_job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-        /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-        /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-        /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-        /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1083,42 +901,22 @@ pub mod create_dataset_import_job_input {
             self.data_source = input;
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
-        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-        /// HH:mm:ss".</p>
+        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
         pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
-        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-        /// HH:mm:ss".</p>
+        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1126,34 +924,24 @@ pub mod create_dataset_import_job_input {
             self.timestamp_format = input;
             self
         }
-        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-        /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-        /// single time zone. </p>
-        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-        /// API</a> for a complete list of valid time zone names.</p>
+        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
         pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.time_zone = Some(input.into());
             self
         }
-        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-        /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-        /// single time zone. </p>
-        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-        /// API</a> for a complete list of valid time zone names.</p>
+        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self
         }
-        /// <p>Automatically derive time zone information from the geolocation attribute. This option
-        /// is ideal for datasets that contain timestamps in multiple time zones and those
-        /// timestamps are expressed in local time.</p>
+        /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
         pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
             self.use_geolocation_for_time_zone = Some(input);
             self
         }
-        /// <p>Automatically derive time zone information from the geolocation attribute. This option
-        /// is ideal for datasets that contain timestamps in multiple time zones and those
-        /// timestamps are expressed in local time.</p>
+        /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
         pub fn set_use_geolocation_for_time_zone(
             mut self,
             input: std::option::Option<bool>,
@@ -1161,33 +949,19 @@ pub mod create_dataset_import_job_input {
             self.use_geolocation_for_time_zone = input;
             self
         }
-        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-        /// one of two ways:</p>
+        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-        /// </li>
+        /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+        /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
         /// </ul>
         pub fn geolocation_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.geolocation_format = Some(input.into());
             self
         }
-        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-        /// one of two ways:</p>
+        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-        /// </li>
+        /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+        /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
         /// </ul>
         pub fn set_geolocation_format(
             mut self,
@@ -1203,58 +977,30 @@ pub mod create_dataset_import_job_input {
         /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1288,7 +1034,7 @@ pub mod create_dataset_import_job_input {
 #[doc(hidden)]
 pub type CreateDatasetImportJobInputOperationOutputAlias = crate::operation::CreateDatasetImportJob;
 #[doc(hidden)]
-pub type CreateDatasetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetImportJob`](crate::operation::CreateDatasetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -1299,7 +1045,7 @@ impl CreateDatasetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1386,7 +1132,7 @@ impl CreateDatasetImportJobInput {
             "CreateDatasetImportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1439,26 +1185,22 @@ pub mod create_explainability_input {
             self.explainability_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
             self.explainability_config = Some(input);
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn set_explainability_config(
             mut self,
             input: std::option::Option<crate::model::ExplainabilityConfig>,
@@ -1466,16 +1208,12 @@ pub mod create_explainability_input {
             self.explainability_config = input;
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1483,12 +1221,12 @@ pub mod create_explainability_input {
             self.data_source = input;
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        /// <p>Defines the fields of a dataset.</p>
         pub fn schema(mut self, input: crate::model::Schema) -> Self {
             self.schema = Some(input);
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        /// <p>Defines the fields of a dataset.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.schema = input;
             self
@@ -1503,14 +1241,14 @@ pub mod create_explainability_input {
             self.enable_visualization = input;
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-        /// point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date_time = Some(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-        /// point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1518,14 +1256,14 @@ pub mod create_explainability_input {
             self.start_date_time = input;
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-        /// time point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date_time = Some(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-        /// time point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1537,75 +1275,31 @@ pub mod create_explainability_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1638,7 +1332,7 @@ pub mod create_explainability_input {
 #[doc(hidden)]
 pub type CreateExplainabilityInputOperationOutputAlias = crate::operation::CreateExplainability;
 #[doc(hidden)]
-pub type CreateExplainabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExplainabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExplainabilityInput {
     /// Consumes the builder and constructs an Operation<[`CreateExplainability`](crate::operation::CreateExplainability)>
     #[allow(clippy::let_and_return)]
@@ -1649,7 +1343,7 @@ impl CreateExplainabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExplainability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1734,7 +1428,7 @@ impl CreateExplainabilityInput {
             "CreateExplainability",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1795,14 +1489,12 @@ pub mod create_explainability_export_input {
             self.explainability_arn = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -1814,75 +1506,31 @@ pub mod create_explainability_export_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1911,7 +1559,7 @@ pub mod create_explainability_export_input {
 pub type CreateExplainabilityExportInputOperationOutputAlias =
     crate::operation::CreateExplainabilityExport;
 #[doc(hidden)]
-pub type CreateExplainabilityExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExplainabilityExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExplainabilityExportInput {
     /// Consumes the builder and constructs an Operation<[`CreateExplainabilityExport`](crate::operation::CreateExplainabilityExport)>
     #[allow(clippy::let_and_return)]
@@ -1922,7 +1570,7 @@ impl CreateExplainabilityExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExplainabilityExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2009,7 +1657,7 @@ impl CreateExplainabilityExportInput {
             "CreateExplainabilityExport",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2074,22 +1722,14 @@ pub mod create_forecast_input {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2104,58 +1744,30 @@ pub mod create_forecast_input {
         /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2183,7 +1795,7 @@ pub mod create_forecast_input {
 #[doc(hidden)]
 pub type CreateForecastInputOperationOutputAlias = crate::operation::CreateForecast;
 #[doc(hidden)]
-pub type CreateForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateForecastInput {
     /// Consumes the builder and constructs an Operation<[`CreateForecast`](crate::operation::CreateForecast)>
     #[allow(clippy::let_and_return)]
@@ -2194,7 +1806,7 @@ impl CreateForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2279,7 +1891,7 @@ impl CreateForecastInput {
             "CreateForecast",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2337,20 +1949,14 @@ pub mod create_forecast_export_job_input {
             self.forecast_arn = input;
             self
         }
-        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-        /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-        /// bucket.</p>
-        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-        /// IAM role must allow Amazon Forecast permission to access the key.</p>
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-        /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-        /// bucket.</p>
-        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-        /// IAM role must allow Amazon Forecast permission to access the key.</p>
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -2365,58 +1971,30 @@ pub mod create_forecast_export_job_input {
         /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2445,7 +2023,7 @@ pub mod create_forecast_export_job_input {
 pub type CreateForecastExportJobInputOperationOutputAlias =
     crate::operation::CreateForecastExportJob;
 #[doc(hidden)]
-pub type CreateForecastExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateForecastExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateForecastExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateForecastExportJob`](crate::operation::CreateForecastExportJob)>
     #[allow(clippy::let_and_return)]
@@ -2456,7 +2034,7 @@ impl CreateForecastExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateForecastExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2543,7 +2121,7 @@ impl CreateForecastExportJobInput {
             "CreateForecastExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2605,83 +2183,29 @@ pub mod create_predictor_input {
             self.predictor_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-        /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-        /// <p class="title">
-        /// <b>Supported algorithms:</b>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+        /// <p class="title"> <b>Supported algorithms:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ETS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
         /// </ul>
         pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.algorithm_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-        /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-        /// <p class="title">
-        /// <b>Supported algorithms:</b>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+        /// <p class="title"> <b>Supported algorithms:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ETS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
         /// </ul>
         pub fn set_algorithm_arn(
             mut self,
@@ -2690,24 +2214,16 @@ pub mod create_predictor_input {
             self.algorithm_arn = input;
             self
         }
-        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-        /// horizon is also called the prediction length.</p>
-        /// <p>For example, if you configure a dataset for daily data collection (using the
-        /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-        /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-        /// TARGET_TIME_SERIES dataset length.</p>
+        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+        /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
         pub fn forecast_horizon(mut self, input: i32) -> Self {
             self.forecast_horizon = Some(input);
             self
         }
-        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-        /// horizon is also called the prediction length.</p>
-        /// <p>For example, if you configure a dataset for daily data collection (using the
-        /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-        /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-        /// TARGET_TIME_SERIES dataset length.</p>
+        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+        /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.forecast_horizon = input;
             self
@@ -2716,9 +2232,7 @@ pub mod create_predictor_input {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
@@ -2726,9 +2240,7 @@ pub mod create_predictor_input {
             self.forecast_types = Some(v);
             self
         }
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
@@ -2737,36 +2249,24 @@ pub mod create_predictor_input {
             self.forecast_types = input;
             self
         }
-        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-        /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-        /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-        /// algorithm.</p>
-        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-        /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-        /// this case, <code>PerformHPO</code> must be false.</p>
+        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+        /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
             self.perform_auto_ml = Some(input);
             self
         }
-        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-        /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-        /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-        /// algorithm.</p>
-        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-        /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-        /// this case, <code>PerformHPO</code> must be false.</p>
+        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+        /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_auto_ml = input;
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-        /// To apply an AutoML strategy that minimizes training time, use
-        /// <code>LatencyOptimized</code>.</p>
+        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn auto_ml_override_strategy(
             mut self,
@@ -2776,13 +2276,9 @@ pub mod create_predictor_input {
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-        /// To apply an AutoML strategy that minimizes training time, use
-        /// <code>LatencyOptimized</code>.</p>
+        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn set_auto_ml_override_strategy(
             mut self,
@@ -2791,47 +2287,25 @@ pub mod create_predictor_input {
             self.auto_ml_override_strategy = input;
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-        /// values for your training data. The process of performing HPO is known as running a
-        /// hyperparameter tuning job.</p>
-        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-        /// hyperparameter values from the chosen algorithm.</p>
-        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-        /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-        /// and <code>PerformAutoML</code> must be false.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
         /// <p>The following algorithms support HPO:</p>
         /// <ul>
-        /// <li>
-        /// <p>DeepAR+</p>
-        /// </li>
-        /// <li>
-        /// <p>CNN-QR</p>
-        /// </li>
+        /// <li> <p>DeepAR+</p> </li>
+        /// <li> <p>CNN-QR</p> </li>
         /// </ul>
         pub fn perform_hpo(mut self, input: bool) -> Self {
             self.perform_hpo = Some(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-        /// values for your training data. The process of performing HPO is known as running a
-        /// hyperparameter tuning job.</p>
-        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-        /// hyperparameter values from the chosen algorithm.</p>
-        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-        /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-        /// and <code>PerformAutoML</code> must be false.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
         /// <p>The following algorithms support HPO:</p>
         /// <ul>
-        /// <li>
-        /// <p>DeepAR+</p>
-        /// </li>
-        /// <li>
-        /// <p>CNN-QR</p>
-        /// </li>
+        /// <li> <p>DeepAR+</p> </li>
+        /// <li> <p>CNN-QR</p> </li>
         /// </ul>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_hpo = input;
@@ -2841,9 +2315,7 @@ pub mod create_predictor_input {
         ///
         /// To override the contents of this collection use [`set_training_parameters`](Self::set_training_parameters).
         ///
-        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-        /// override are listed in the individual algorithms. For the list of supported algorithms, see
-        /// <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn training_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2854,9 +2326,7 @@ pub mod create_predictor_input {
             self.training_parameters = Some(hash_map);
             self
         }
-        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-        /// override are listed in the individual algorithms. For the list of supported algorithms, see
-        /// <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn set_training_parameters(
             mut self,
             input: std::option::Option<
@@ -2866,16 +2336,12 @@ pub mod create_predictor_input {
             self.training_parameters = input;
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn evaluation_parameters(mut self, input: crate::model::EvaluationParameters) -> Self {
             self.evaluation_parameters = Some(input);
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn set_evaluation_parameters(
             mut self,
             input: std::option::Option<crate::model::EvaluationParameters>,
@@ -2883,20 +2349,14 @@ pub mod create_predictor_input {
             self.evaluation_parameters = input;
             self
         }
-        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-        /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-        /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-        /// true.</p>
+        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
         pub fn hpo_config(mut self, input: crate::model::HyperParameterTuningJobConfig) -> Self {
             self.hpo_config = Some(input);
             self
         }
-        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-        /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-        /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-        /// true.</p>
+        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
         pub fn set_hpo_config(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
@@ -2930,14 +2390,12 @@ pub mod create_predictor_input {
             self.featurization_config = input;
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
             self.encryption_config = Some(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -2952,58 +2410,30 @@ pub mod create_predictor_input {
         /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3055,7 +2485,7 @@ pub mod create_predictor_input {
 #[doc(hidden)]
 pub type CreatePredictorInputOperationOutputAlias = crate::operation::CreatePredictor;
 #[doc(hidden)]
-pub type CreatePredictorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePredictorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePredictorInput {
     /// Consumes the builder and constructs an Operation<[`CreatePredictor`](crate::operation::CreatePredictor)>
     #[allow(clippy::let_and_return)]
@@ -3066,7 +2496,7 @@ impl CreatePredictorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePredictor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3151,7 +2581,7 @@ impl CreatePredictorInput {
             "CreatePredictor",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3215,14 +2645,12 @@ pub mod create_predictor_backtest_export_job_input {
             self.predictor_arn = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -3234,75 +2662,31 @@ pub mod create_predictor_backtest_export_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-        /// of a key and an optional value, both of which you define. Tag keys and values are case
-        /// sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-        /// - = . _ : / @. If your tagging schema is used across other services and resources,
-        /// the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-        /// cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-        /// of a key and an optional value, both of which you define. Tag keys and values are case
-        /// sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-        /// - = . _ : / @. If your tagging schema is used across other services and resources,
-        /// the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-        /// cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3331,7 +2715,8 @@ pub mod create_predictor_backtest_export_job_input {
 pub type CreatePredictorBacktestExportJobInputOperationOutputAlias =
     crate::operation::CreatePredictorBacktestExportJob;
 #[doc(hidden)]
-pub type CreatePredictorBacktestExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePredictorBacktestExportJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePredictorBacktestExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreatePredictorBacktestExportJob`](crate::operation::CreatePredictorBacktestExportJob)>
     #[allow(clippy::let_and_return)]
@@ -3342,7 +2727,7 @@ impl CreatePredictorBacktestExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePredictorBacktestExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3428,7 +2813,7 @@ impl CreatePredictorBacktestExportJobInput {
             "CreatePredictorBacktestExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3486,7 +2871,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -3497,7 +2882,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3581,7 +2966,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3642,7 +3027,7 @@ pub mod delete_dataset_group_input {
 #[doc(hidden)]
 pub type DeleteDatasetGroupInputOperationOutputAlias = crate::operation::DeleteDatasetGroup;
 #[doc(hidden)]
-pub type DeleteDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatasetGroup`](crate::operation::DeleteDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -3653,7 +3038,7 @@ impl DeleteDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3738,7 +3123,7 @@ impl DeleteDatasetGroupInput {
             "DeleteDatasetGroup",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3799,7 +3184,7 @@ pub mod delete_dataset_import_job_input {
 #[doc(hidden)]
 pub type DeleteDatasetImportJobInputOperationOutputAlias = crate::operation::DeleteDatasetImportJob;
 #[doc(hidden)]
-pub type DeleteDatasetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatasetImportJob`](crate::operation::DeleteDatasetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -3810,7 +3195,7 @@ impl DeleteDatasetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3897,7 +3282,7 @@ impl DeleteDatasetImportJobInput {
             "DeleteDatasetImportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3958,7 +3343,7 @@ pub mod delete_explainability_input {
 #[doc(hidden)]
 pub type DeleteExplainabilityInputOperationOutputAlias = crate::operation::DeleteExplainability;
 #[doc(hidden)]
-pub type DeleteExplainabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExplainabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExplainabilityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExplainability`](crate::operation::DeleteExplainability)>
     #[allow(clippy::let_and_return)]
@@ -3969,7 +3354,7 @@ impl DeleteExplainabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExplainability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4054,7 +3439,7 @@ impl DeleteExplainabilityInput {
             "DeleteExplainability",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4116,7 +3501,7 @@ pub mod delete_explainability_export_input {
 pub type DeleteExplainabilityExportInputOperationOutputAlias =
     crate::operation::DeleteExplainabilityExport;
 #[doc(hidden)]
-pub type DeleteExplainabilityExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExplainabilityExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExplainabilityExportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExplainabilityExport`](crate::operation::DeleteExplainabilityExport)>
     #[allow(clippy::let_and_return)]
@@ -4127,7 +3512,7 @@ impl DeleteExplainabilityExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExplainabilityExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4214,7 +3599,7 @@ impl DeleteExplainabilityExportInput {
             "DeleteExplainabilityExport",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4272,7 +3657,7 @@ pub mod delete_forecast_input {
 #[doc(hidden)]
 pub type DeleteForecastInputOperationOutputAlias = crate::operation::DeleteForecast;
 #[doc(hidden)]
-pub type DeleteForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteForecastInput {
     /// Consumes the builder and constructs an Operation<[`DeleteForecast`](crate::operation::DeleteForecast)>
     #[allow(clippy::let_and_return)]
@@ -4283,7 +3668,7 @@ impl DeleteForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4368,7 +3753,7 @@ impl DeleteForecastInput {
             "DeleteForecast",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4430,7 +3815,7 @@ pub mod delete_forecast_export_job_input {
 pub type DeleteForecastExportJobInputOperationOutputAlias =
     crate::operation::DeleteForecastExportJob;
 #[doc(hidden)]
-pub type DeleteForecastExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteForecastExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteForecastExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteForecastExportJob`](crate::operation::DeleteForecastExportJob)>
     #[allow(clippy::let_and_return)]
@@ -4441,7 +3826,7 @@ impl DeleteForecastExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteForecastExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4528,7 +3913,7 @@ impl DeleteForecastExportJobInput {
             "DeleteForecastExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4589,7 +3974,7 @@ pub mod delete_predictor_input {
 #[doc(hidden)]
 pub type DeletePredictorInputOperationOutputAlias = crate::operation::DeletePredictor;
 #[doc(hidden)]
-pub type DeletePredictorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePredictorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePredictorInput {
     /// Consumes the builder and constructs an Operation<[`DeletePredictor`](crate::operation::DeletePredictor)>
     #[allow(clippy::let_and_return)]
@@ -4600,7 +3985,7 @@ impl DeletePredictorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePredictor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4685,7 +4070,7 @@ impl DeletePredictorInput {
             "DeletePredictor",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4750,7 +4135,8 @@ pub mod delete_predictor_backtest_export_job_input {
 pub type DeletePredictorBacktestExportJobInputOperationOutputAlias =
     crate::operation::DeletePredictorBacktestExportJob;
 #[doc(hidden)]
-pub type DeletePredictorBacktestExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePredictorBacktestExportJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePredictorBacktestExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DeletePredictorBacktestExportJob`](crate::operation::DeletePredictorBacktestExportJob)>
     #[allow(clippy::let_and_return)]
@@ -4761,7 +4147,7 @@ impl DeletePredictorBacktestExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePredictorBacktestExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4847,7 +4233,7 @@ impl DeletePredictorBacktestExportJobInput {
             "DeletePredictorBacktestExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4879,14 +4265,12 @@ pub mod delete_resource_tree_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-        /// of the parent resource will also be deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-        /// of the parent resource will also be deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4907,7 +4291,7 @@ pub mod delete_resource_tree_input {
 #[doc(hidden)]
 pub type DeleteResourceTreeInputOperationOutputAlias = crate::operation::DeleteResourceTree;
 #[doc(hidden)]
-pub type DeleteResourceTreeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceTreeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceTreeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceTree`](crate::operation::DeleteResourceTree)>
     #[allow(clippy::let_and_return)]
@@ -4918,7 +4302,7 @@ impl DeleteResourceTreeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceTree,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5003,7 +4387,7 @@ impl DeleteResourceTreeInput {
             "DeleteResourceTree",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5064,7 +4448,7 @@ pub mod describe_auto_predictor_input {
 #[doc(hidden)]
 pub type DescribeAutoPredictorInputOperationOutputAlias = crate::operation::DescribeAutoPredictor;
 #[doc(hidden)]
-pub type DescribeAutoPredictorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAutoPredictorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAutoPredictorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAutoPredictor`](crate::operation::DescribeAutoPredictor)>
     #[allow(clippy::let_and_return)]
@@ -5075,7 +4459,7 @@ impl DescribeAutoPredictorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAutoPredictor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5162,7 +4546,7 @@ impl DescribeAutoPredictorInput {
             "DescribeAutoPredictor",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5220,7 +4604,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -5231,7 +4615,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5316,7 +4700,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5377,7 +4761,7 @@ pub mod describe_dataset_group_input {
 #[doc(hidden)]
 pub type DescribeDatasetGroupInputOperationOutputAlias = crate::operation::DescribeDatasetGroup;
 #[doc(hidden)]
-pub type DescribeDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatasetGroup`](crate::operation::DescribeDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -5388,7 +4772,7 @@ impl DescribeDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5475,7 +4859,7 @@ impl DescribeDatasetGroupInput {
             "DescribeDatasetGroup",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5537,7 +4921,7 @@ pub mod describe_dataset_import_job_input {
 pub type DescribeDatasetImportJobInputOperationOutputAlias =
     crate::operation::DescribeDatasetImportJob;
 #[doc(hidden)]
-pub type DescribeDatasetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatasetImportJob`](crate::operation::DescribeDatasetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -5548,7 +4932,7 @@ impl DescribeDatasetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5635,7 +5019,7 @@ impl DescribeDatasetImportJobInput {
             "DescribeDatasetImportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5696,7 +5080,7 @@ pub mod describe_explainability_input {
 #[doc(hidden)]
 pub type DescribeExplainabilityInputOperationOutputAlias = crate::operation::DescribeExplainability;
 #[doc(hidden)]
-pub type DescribeExplainabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExplainabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExplainabilityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExplainability`](crate::operation::DescribeExplainability)>
     #[allow(clippy::let_and_return)]
@@ -5707,7 +5091,7 @@ impl DescribeExplainabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExplainability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5794,7 +5178,7 @@ impl DescribeExplainabilityInput {
             "DescribeExplainability",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5856,7 +5240,8 @@ pub mod describe_explainability_export_input {
 pub type DescribeExplainabilityExportInputOperationOutputAlias =
     crate::operation::DescribeExplainabilityExport;
 #[doc(hidden)]
-pub type DescribeExplainabilityExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExplainabilityExportInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExplainabilityExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExplainabilityExport`](crate::operation::DescribeExplainabilityExport)>
     #[allow(clippy::let_and_return)]
@@ -5867,7 +5252,7 @@ impl DescribeExplainabilityExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExplainabilityExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5953,7 +5338,7 @@ impl DescribeExplainabilityExportInput {
             "DescribeExplainabilityExport",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6011,7 +5396,7 @@ pub mod describe_forecast_input {
 #[doc(hidden)]
 pub type DescribeForecastInputOperationOutputAlias = crate::operation::DescribeForecast;
 #[doc(hidden)]
-pub type DescribeForecastInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeForecastInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeForecastInput {
     /// Consumes the builder and constructs an Operation<[`DescribeForecast`](crate::operation::DescribeForecast)>
     #[allow(clippy::let_and_return)]
@@ -6022,7 +5407,7 @@ impl DescribeForecastInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeForecast,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6107,7 +5492,7 @@ impl DescribeForecastInput {
             "DescribeForecast",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6169,7 +5554,7 @@ pub mod describe_forecast_export_job_input {
 pub type DescribeForecastExportJobInputOperationOutputAlias =
     crate::operation::DescribeForecastExportJob;
 #[doc(hidden)]
-pub type DescribeForecastExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeForecastExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeForecastExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeForecastExportJob`](crate::operation::DescribeForecastExportJob)>
     #[allow(clippy::let_and_return)]
@@ -6180,7 +5565,7 @@ impl DescribeForecastExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeForecastExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6267,7 +5652,7 @@ impl DescribeForecastExportJobInput {
             "DescribeForecastExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6328,7 +5713,7 @@ pub mod describe_predictor_input {
 #[doc(hidden)]
 pub type DescribePredictorInputOperationOutputAlias = crate::operation::DescribePredictor;
 #[doc(hidden)]
-pub type DescribePredictorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePredictorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePredictorInput {
     /// Consumes the builder and constructs an Operation<[`DescribePredictor`](crate::operation::DescribePredictor)>
     #[allow(clippy::let_and_return)]
@@ -6339,7 +5724,7 @@ impl DescribePredictorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePredictor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6424,7 +5809,7 @@ impl DescribePredictorInput {
             "DescribePredictor",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6489,7 +5874,8 @@ pub mod describe_predictor_backtest_export_job_input {
 pub type DescribePredictorBacktestExportJobInputOperationOutputAlias =
     crate::operation::DescribePredictorBacktestExportJob;
 #[doc(hidden)]
-pub type DescribePredictorBacktestExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePredictorBacktestExportJobInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePredictorBacktestExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePredictorBacktestExportJob`](crate::operation::DescribePredictorBacktestExportJob)>
     #[allow(clippy::let_and_return)]
@@ -6500,7 +5886,7 @@ impl DescribePredictorBacktestExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePredictorBacktestExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6586,7 +5972,7 @@ impl DescribePredictorBacktestExportJobInput {
             "DescribePredictorBacktestExportJob",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6647,7 +6033,7 @@ pub mod get_accuracy_metrics_input {
 #[doc(hidden)]
 pub type GetAccuracyMetricsInputOperationOutputAlias = crate::operation::GetAccuracyMetrics;
 #[doc(hidden)]
-pub type GetAccuracyMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccuracyMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccuracyMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetAccuracyMetrics`](crate::operation::GetAccuracyMetrics)>
     #[allow(clippy::let_and_return)]
@@ -6658,7 +6044,7 @@ impl GetAccuracyMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccuracyMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6743,7 +6129,7 @@ impl GetAccuracyMetricsInput {
             "GetAccuracyMetrics",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6776,16 +6162,12 @@ pub mod list_dataset_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6817,7 +6199,7 @@ pub mod list_dataset_groups_input {
 #[doc(hidden)]
 pub type ListDatasetGroupsInputOperationOutputAlias = crate::operation::ListDatasetGroups;
 #[doc(hidden)]
-pub type ListDatasetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetGroups`](crate::operation::ListDatasetGroups)>
     #[allow(clippy::let_and_return)]
@@ -6828,7 +6210,7 @@ impl ListDatasetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6913,7 +6295,7 @@ impl ListDatasetGroupsInput {
             "ListDatasetGroups",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6947,16 +6329,12 @@ pub mod list_dataset_import_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6975,72 +6353,30 @@ pub mod list_dataset_import_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the datasets that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-        /// following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the datasets that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-        /// following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7066,7 +6402,7 @@ pub mod list_dataset_import_jobs_input {
 #[doc(hidden)]
 pub type ListDatasetImportJobsInputOperationOutputAlias = crate::operation::ListDatasetImportJobs;
 #[doc(hidden)]
-pub type ListDatasetImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetImportJobs`](crate::operation::ListDatasetImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -7077,7 +6413,7 @@ impl ListDatasetImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7164,7 +6500,7 @@ impl ListDatasetImportJobsInput {
             "ListDatasetImportJobs",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7197,16 +6533,12 @@ pub mod list_datasets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7238,7 +6570,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -7249,7 +6581,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7333,7 +6665,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7367,16 +6699,12 @@ pub mod list_explainabilities_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7395,57 +6723,25 @@ pub mod list_explainabilities_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the resources that match the statement from the list. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the resources that match the statement from the list. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7472,7 +6768,7 @@ pub mod list_explainabilities_input {
 #[doc(hidden)]
 pub type ListExplainabilitiesInputOperationOutputAlias = crate::operation::ListExplainabilities;
 #[doc(hidden)]
-pub type ListExplainabilitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExplainabilitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExplainabilitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListExplainabilities`](crate::operation::ListExplainabilities)>
     #[allow(clippy::let_and_return)]
@@ -7483,7 +6779,7 @@ impl ListExplainabilitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExplainabilities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7568,7 +6864,7 @@ impl ListExplainabilitiesInput {
             "ListExplainabilities",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7602,16 +6898,12 @@ pub mod list_explainability_exports_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7630,57 +6922,25 @@ pub mod list_explainability_exports_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude resources that match the statement from the list. The match statement
-        /// consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude resources that match the statement from the list. The match statement
-        /// consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7708,7 +6968,7 @@ pub mod list_explainability_exports_input {
 pub type ListExplainabilityExportsInputOperationOutputAlias =
     crate::operation::ListExplainabilityExports;
 #[doc(hidden)]
-pub type ListExplainabilityExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExplainabilityExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExplainabilityExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExplainabilityExports`](crate::operation::ListExplainabilityExports)>
     #[allow(clippy::let_and_return)]
@@ -7719,7 +6979,7 @@ impl ListExplainabilityExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExplainabilityExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7806,7 +7066,7 @@ impl ListExplainabilityExportsInput {
             "ListExplainabilityExports",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7840,16 +7100,12 @@ pub mod list_forecast_export_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7868,74 +7124,36 @@ pub mod list_forecast_export_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-        /// match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-        /// <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>ForecastArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all jobs that export a forecast named
-        /// <i>electricityforecast</i>, specify the following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityforecast" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-        /// match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-        /// <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>ForecastArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all jobs that export a forecast named
-        /// <i>electricityforecast</i>, specify the following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-        /// </p>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityforecast" } ]
+        /// </acct-id></code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7961,7 +7179,7 @@ pub mod list_forecast_export_jobs_input {
 #[doc(hidden)]
 pub type ListForecastExportJobsInputOperationOutputAlias = crate::operation::ListForecastExportJobs;
 #[doc(hidden)]
-pub type ListForecastExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListForecastExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListForecastExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListForecastExportJobs`](crate::operation::ListForecastExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -7972,7 +7190,7 @@ impl ListForecastExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListForecastExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8059,7 +7277,7 @@ impl ListForecastExportJobsInput {
             "ListForecastExportJobs",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8093,16 +7311,12 @@ pub mod list_forecasts_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8121,70 +7335,30 @@ pub mod list_forecasts_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecasts that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecasts that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8210,7 +7384,7 @@ pub mod list_forecasts_input {
 #[doc(hidden)]
 pub type ListForecastsInputOperationOutputAlias = crate::operation::ListForecasts;
 #[doc(hidden)]
-pub type ListForecastsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListForecastsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListForecastsInput {
     /// Consumes the builder and constructs an Operation<[`ListForecasts`](crate::operation::ListForecasts)>
     #[allow(clippy::let_and_return)]
@@ -8221,7 +7395,7 @@ impl ListForecastsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListForecasts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8305,7 +7479,7 @@ impl ListForecastsInput {
             "ListForecasts",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8339,16 +7513,12 @@ pub mod list_predictor_backtest_export_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-        /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-        /// 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-        /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-        /// 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8367,61 +7537,25 @@ pub mod list_predictor_backtest_export_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the predictor backtest export jobs that match the statement from the
-        /// list. The match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the predictor backtest export jobs that match the statement from the
-        /// list. The match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -8449,7 +7583,8 @@ pub mod list_predictor_backtest_export_jobs_input {
 pub type ListPredictorBacktestExportJobsInputOperationOutputAlias =
     crate::operation::ListPredictorBacktestExportJobs;
 #[doc(hidden)]
-pub type ListPredictorBacktestExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPredictorBacktestExportJobsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPredictorBacktestExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPredictorBacktestExportJobs`](crate::operation::ListPredictorBacktestExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -8460,7 +7595,7 @@ impl ListPredictorBacktestExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPredictorBacktestExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8546,7 +7681,7 @@ impl ListPredictorBacktestExportJobsInput {
             "ListPredictorBacktestExportJobs",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8580,16 +7715,12 @@ pub mod list_predictors_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8608,70 +7739,30 @@ pub mod list_predictors_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the predictors that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the predictors that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8697,7 +7788,7 @@ pub mod list_predictors_input {
 #[doc(hidden)]
 pub type ListPredictorsInputOperationOutputAlias = crate::operation::ListPredictors;
 #[doc(hidden)]
-pub type ListPredictorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPredictorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPredictorsInput {
     /// Consumes the builder and constructs an Operation<[`ListPredictors`](crate::operation::ListPredictors)>
     #[allow(clippy::let_and_return)]
@@ -8708,7 +7799,7 @@ impl ListPredictorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPredictors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8793,7 +7884,7 @@ impl ListPredictorsInput {
             "ListPredictors",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8825,12 +7916,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8851,7 +7942,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8862,7 +7953,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8949,7 +8040,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8981,18 +8072,12 @@ pub mod stop_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-        /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-        /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-        /// <code>ForecastExportJobArn</code>. </p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-        /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-        /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-        /// <code>ForecastExportJobArn</code>. </p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9013,7 +8098,7 @@ pub mod stop_resource_input {
 #[doc(hidden)]
 pub type StopResourceInputOperationOutputAlias = crate::operation::StopResource;
 #[doc(hidden)]
-pub type StopResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopResourceInput {
     /// Consumes the builder and constructs an Operation<[`StopResource`](crate::operation::StopResource)>
     #[allow(clippy::let_and_return)]
@@ -9024,7 +8109,7 @@ impl StopResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9108,7 +8193,7 @@ impl StopResourceInput {
             "StopResource",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9141,12 +8226,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9158,58 +8243,30 @@ pub mod tag_resource_input {
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -9235,7 +8292,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9246,7 +8303,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9330,7 +8387,7 @@ impl TagResourceInput {
             "TagResource",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9363,12 +8420,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9409,7 +8466,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9420,7 +8477,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9504,7 +8561,7 @@ impl UntagResourceInput {
             "UntagResource",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9554,16 +8611,14 @@ pub mod update_dataset_group_input {
         ///
         /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
         ///
-        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-        /// group.</p>
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
         pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_arns = Some(v);
             self
         }
-        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-        /// group.</p>
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9588,7 +8643,7 @@ pub mod update_dataset_group_input {
 #[doc(hidden)]
 pub type UpdateDatasetGroupInputOperationOutputAlias = crate::operation::UpdateDatasetGroup;
 #[doc(hidden)]
-pub type UpdateDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatasetGroup`](crate::operation::UpdateDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -9599,7 +8654,7 @@ impl UpdateDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9684,7 +8739,7 @@ impl UpdateDatasetGroupInput {
             "UpdateDatasetGroup",
             "forecast",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9713,8 +8768,7 @@ impl UpdateDatasetGroupInput {
 pub struct UpdateDatasetGroupInput {
     /// <p>The ARN of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-    /// group.</p>
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateDatasetGroupInput {
@@ -9722,8 +8776,7 @@ impl UpdateDatasetGroupInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-    /// group.</p>
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
     pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_arns.as_deref()
     }
@@ -9741,13 +8794,13 @@ impl std::fmt::Debug for UpdateDatasetGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9769,64 +8822,36 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -9845,17 +8870,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-    /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-    /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-    /// <code>ForecastExportJobArn</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl StopResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-    /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-    /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-    /// <code>ForecastExportJobArn</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9872,11 +8891,11 @@ impl std::fmt::Debug for StopResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9893,47 +8912,23 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the predictors that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-    /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListPredictorsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9941,35 +8936,15 @@ impl ListPredictorsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the predictors that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-    /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -9988,43 +8963,21 @@ impl std::fmt::Debug for ListPredictorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorBacktestExportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-    /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-    /// 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude the predictor backtest export jobs that match the statement from the
-    /// list. The match statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-    /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-    /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListPredictorBacktestExportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-    /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-    /// 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10032,30 +8985,12 @@ impl ListPredictorBacktestExportJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude the predictor backtest export jobs that match the statement from the
-    /// list. The match statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-    /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-    /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10075,47 +9010,23 @@ impl std::fmt::Debug for ListPredictorBacktestExportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the forecasts that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-    /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListForecastsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10123,35 +9034,15 @@ impl ListForecastsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the forecasts that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-    /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -10170,49 +9061,26 @@ impl std::fmt::Debug for ListForecastsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastExportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-    /// match statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-    /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-    /// <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>ForecastArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    /// <p>For example, to list all jobs that export a forecast named
-    /// <i>electricityforecast</i>, specify the following filter:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-    /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-    /// </p>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityforecast" } ]
+    /// </acct-id></code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListForecastExportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10220,37 +9088,18 @@ impl ListForecastExportJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-    /// match statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-    /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-    /// <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>ForecastArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    /// <p>For example, to list all jobs that export a forecast named
-    /// <i>electricityforecast</i>, specify the following filter:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-    /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-    /// </p>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityforecast" } ]
+    /// </acct-id></code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -10269,41 +9118,21 @@ impl std::fmt::Debug for ListForecastExportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilityExportsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// NextToken. To retrieve the next set of results, use the token in the next request.
-    /// Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude resources that match the statement from the list. The match statement
-    /// consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListExplainabilityExportsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// NextToken. To retrieve the next set of results, use the token in the next request.
-    /// Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10311,28 +9140,12 @@ impl ListExplainabilityExportsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude resources that match the statement from the list. The match statement
-    /// consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10352,41 +9165,21 @@ impl std::fmt::Debug for ListExplainabilityExportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExplainabilitiesInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// NextToken. To retrieve the next set of results, use the token in the next request.
-    /// Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items returned in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude the resources that match the statement from the list. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListExplainabilitiesInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// NextToken. To retrieve the next set of results, use the token in the next request.
-    /// Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10394,28 +9187,12 @@ impl ListExplainabilitiesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-    /// include or exclude the resources that match the statement from the list. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are
-    /// <code>IS</code> and <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>PredictorArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10435,17 +9212,13 @@ impl std::fmt::Debug for ListExplainabilitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10467,48 +9240,23 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the datasets that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-    /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-    /// following filter:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListDatasetImportJobsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10516,36 +9264,15 @@ impl ListDatasetImportJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-    /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-    /// or exclude the datasets that match the statement from the list, respectively. The match
-    /// statement consists of a key and a value.</p>
-    /// <p>
-    /// <b>Filter properties</b>
-    /// </p>
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-    /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-    /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-    /// <code>DatasetArn</code> and <code>Status</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Value</code> - The value to match.</p>
-    /// </li>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-    /// following filter:</p>
-    /// <p>
-    /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-    /// ]</code>
-    /// </p>
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -10564,17 +9291,13 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of items to return in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetGroupsInput {
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10830,13 +9553,11 @@ impl std::fmt::Debug for DescribeAutoPredictorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceTreeInput {
-    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-    /// of the parent resource will also be deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteResourceTreeInput {
-    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-    /// of the parent resource will also be deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -11049,40 +9770,17 @@ pub struct CreatePredictorBacktestExportJobInput {
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
-    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-    /// of a key and an optional value, both of which you define. Tag keys and values are case
-    /// sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-    /// - = . _ : / @. If your tagging schema is used across other services and resources,
-    /// the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-    /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-    /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-    /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-    /// cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11095,42 +9793,19 @@ impl CreatePredictorBacktestExportJobInput {
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
-    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-    /// of a key and an optional value, both of which you define. Tag keys and values are case
-    /// sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-    /// - = . _ : / @. If your tagging schema is used across other services and resources,
-    /// the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-    /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-    /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-    /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-    /// cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11156,141 +9831,67 @@ impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
 pub struct CreatePredictorInput {
     /// <p>A name for the predictor.</p>
     pub predictor_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-    /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-    /// <p class="title">
-    /// <b>Supported algorithms:</b>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+    /// <p class="title"> <b>Supported algorithms:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/ETS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
     pub algorithm_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-    /// horizon is also called the prediction length.</p>
-    /// <p>For example, if you configure a dataset for daily data collection (using the
-    /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-    /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-    /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-    /// TARGET_TIME_SERIES dataset length.</p>
+    /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+    /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+    /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
     pub forecast_horizon: std::option::Option<i32>,
-    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-    /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-    /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-    /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-    /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-    /// algorithm.</p>
-    /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-    /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-    /// this case, <code>PerformHPO</code> must be false.</p>
+    /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+    /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+    /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
     pub perform_auto_ml: std::option::Option<bool>,
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-    /// To apply an AutoML strategy that minimizes training time, use
-    /// <code>LatencyOptimized</code>.</p>
+    /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub auto_ml_override_strategy: std::option::Option<crate::model::AutoMlOverrideStrategy>,
-    /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-    /// values for your training data. The process of performing HPO is known as running a
-    /// hyperparameter tuning job.</p>
-    /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-    /// hyperparameter values from the chosen algorithm.</p>
-    /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-    /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-    /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-    /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-    /// and <code>PerformAutoML</code> must be false.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+    /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+    /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
     /// <p>The following algorithms support HPO:</p>
     /// <ul>
-    /// <li>
-    /// <p>DeepAR+</p>
-    /// </li>
-    /// <li>
-    /// <p>CNN-QR</p>
-    /// </li>
+    /// <li> <p>DeepAR+</p> </li>
+    /// <li> <p>CNN-QR</p> </li>
     /// </ul>
     pub perform_hpo: std::option::Option<bool>,
-    /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-    /// override are listed in the individual algorithms. For the list of supported algorithms, see
-    /// <a>aws-forecast-choosing-recipes</a>.</p>
+    /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub training_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-    /// evaluates a predictor by splitting a dataset into training data and testing data. The
-    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
     pub evaluation_parameters: std::option::Option<crate::model::EvaluationParameters>,
-    /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-    /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-    /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-    /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-    /// true.</p>
+    /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+    /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
     pub hpo_config: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The featurization configuration.</p>
     pub featurization_config: std::option::Option<crate::model::FeaturizationConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -11301,131 +9902,72 @@ impl CreatePredictorInput {
     pub fn predictor_name(&self) -> std::option::Option<&str> {
         self.predictor_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-    /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-    /// <p class="title">
-    /// <b>Supported algorithms:</b>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+    /// <p class="title"> <b>Supported algorithms:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/ETS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+    /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
     pub fn algorithm_arn(&self) -> std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
-    /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-    /// horizon is also called the prediction length.</p>
-    /// <p>For example, if you configure a dataset for daily data collection (using the
-    /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-    /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-    /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-    /// TARGET_TIME_SERIES dataset length.</p>
+    /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+    /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+    /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
     pub fn forecast_horizon(&self) -> std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-    /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-    /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
-    /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-    /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-    /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-    /// algorithm.</p>
-    /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-    /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-    /// this case, <code>PerformHPO</code> must be false.</p>
+    /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+    /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+    /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
     pub fn perform_auto_ml(&self) -> std::option::Option<bool> {
         self.perform_auto_ml
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-    /// Contact AWS Support or your account manager to learn more about access privileges.
-    /// </p>
+    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
     /// </note>
-    /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-    /// To apply an AutoML strategy that minimizes training time, use
-    /// <code>LatencyOptimized</code>.</p>
+    /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
     pub fn auto_ml_override_strategy(
         &self,
     ) -> std::option::Option<&crate::model::AutoMlOverrideStrategy> {
         self.auto_ml_override_strategy.as_ref()
     }
-    /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-    /// values for your training data. The process of performing HPO is known as running a
-    /// hyperparameter tuning job.</p>
-    /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-    /// hyperparameter values from the chosen algorithm.</p>
-    /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-    /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-    /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-    /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-    /// and <code>PerformAutoML</code> must be false.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+    /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+    /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
     /// <p>The following algorithms support HPO:</p>
     /// <ul>
-    /// <li>
-    /// <p>DeepAR+</p>
-    /// </li>
-    /// <li>
-    /// <p>CNN-QR</p>
-    /// </li>
+    /// <li> <p>DeepAR+</p> </li>
+    /// <li> <p>CNN-QR</p> </li>
     /// </ul>
     pub fn perform_hpo(&self) -> std::option::Option<bool> {
         self.perform_hpo
     }
-    /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-    /// override are listed in the individual algorithms. For the list of supported algorithms, see
-    /// <a>aws-forecast-choosing-recipes</a>.</p>
+    /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub fn training_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.training_parameters.as_ref()
     }
-    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-    /// evaluates a predictor by splitting a dataset into training data and testing data. The
-    /// evaluation parameters define how to perform the split and the number of iterations.</p>
+    /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
     pub fn evaluation_parameters(
         &self,
     ) -> std::option::Option<&crate::model::EvaluationParameters> {
         self.evaluation_parameters.as_ref()
     }
-    /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-    /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-    /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-    /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-    /// true.</p>
+    /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+    /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
     pub fn hpo_config(&self) -> std::option::Option<&crate::model::HyperParameterTuningJobConfig> {
         self.hpo_config.as_ref()
     }
@@ -11437,35 +9979,20 @@ impl CreatePredictorInput {
     pub fn featurization_config(&self) -> std::option::Option<&crate::model::FeaturizationConfig> {
         self.featurization_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11505,36 +10032,19 @@ pub struct CreateForecastExportJobInput {
     pub forecast_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub forecast_arn: std::option::Option<std::string::String>,
-    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-    /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-    /// bucket.</p>
-    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-    /// IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11547,38 +10057,21 @@ impl CreateForecastExportJobInput {
     pub fn forecast_arn(&self) -> std::option::Option<&str> {
         self.forecast_arn.as_deref()
     }
-    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-    /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-    /// bucket.</p>
-    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-    /// IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11603,36 +10096,18 @@ pub struct CreateForecastInput {
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
-    /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-    /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-    /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-    /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-    /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11645,38 +10120,20 @@ impl CreateForecastInput {
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
-    /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-    /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-    /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-    /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-    /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+    /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11701,40 +10158,17 @@ pub struct CreateExplainabilityExportInput {
     pub explainability_export_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
     pub explainability_arn: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11747,42 +10181,19 @@ impl CreateExplainabilityExportInput {
     pub fn explainability_arn(&self) -> std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11808,57 +10219,31 @@ impl std::fmt::Debug for CreateExplainabilityExportInput {
 pub struct CreateExplainabilityInput {
     /// <p>A unique name for the Explainability.</p>
     pub explainability_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
-    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-    /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-    /// <a>CreateDatasetImportJob</a> request.</p>
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+    /// <p>Defines the fields of a dataset.</p>
     pub schema: std::option::Option<crate::model::Schema>,
     /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
     pub enable_visualization: std::option::Option<bool>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-    /// point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     pub start_date_time: std::option::Option<std::string::String>,
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-    /// time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     pub end_date_time: std::option::Option<std::string::String>,
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11867,25 +10252,21 @@ impl CreateExplainabilityInput {
     pub fn explainability_name(&self) -> std::option::Option<&str> {
         self.explainability_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn explainability_config(
         &self,
     ) -> std::option::Option<&crate::model::ExplainabilityConfig> {
         self.explainability_config.as_ref()
     }
-    /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-    /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-    /// <a>CreateDatasetImportJob</a> request.</p>
+    /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
     }
-    /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+    /// <p>Defines the fields of a dataset.</p>
     pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
         self.schema.as_ref()
     }
@@ -11893,47 +10274,25 @@ impl CreateExplainabilityInput {
     pub fn enable_visualization(&self) -> std::option::Option<bool> {
         self.enable_visualization
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-    /// point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     pub fn start_date_time(&self) -> std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
-    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-    /// time point for the Explainability.</p>
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+    /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
     pub fn end_date_time(&self) -> std::option::Option<&str> {
         self.end_date_time.as_deref()
     }
-    /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11959,150 +10318,80 @@ impl std::fmt::Debug for CreateExplainabilityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobInput {
-    /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-    /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-    /// <code>ResourceAlreadyExistsException</code> exception.</p>
+    /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
     pub dataset_import_job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-    /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-    /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-    /// supported</p>
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li>
-    /// <p>"yyyy-MM-dd"</p>
-    /// <p>For the following data frequencies: Y, M, W, and D</p>
-    /// </li>
-    /// <li>
-    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-    /// M, W, and D</p>
-    /// </li>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-    /// HH:mm:ss".</p>
+    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
     pub timestamp_format: std::option::Option<std::string::String>,
-    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-    /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-    /// single time zone. </p>
-    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-    /// API</a> for a complete list of valid time zone names.</p>
+    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
     pub time_zone: std::option::Option<std::string::String>,
-    /// <p>Automatically derive time zone information from the geolocation attribute. This option
-    /// is ideal for datasets that contain timestamps in multiple time zones and those
-    /// timestamps are expressed in local time.</p>
+    /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
     pub use_geolocation_for_time_zone: bool,
-    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-    /// one of two ways:</p>
+    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-    /// </li>
+    /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+    /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
     /// </ul>
     pub geolocation_format: std::option::Option<std::string::String>,
     /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDatasetImportJobInput {
-    /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-    /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-    /// <code>ResourceAlreadyExistsException</code> exception.</p>
+    /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
     pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
         self.dataset_import_job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-    /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-    /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-    /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
     }
-    /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-    /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-    /// supported</p>
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li>
-    /// <p>"yyyy-MM-dd"</p>
-    /// <p>For the following data frequencies: Y, M, W, and D</p>
-    /// </li>
-    /// <li>
-    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-    /// M, W, and D</p>
-    /// </li>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-    /// HH:mm:ss".</p>
+    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
     pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
-    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-    /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-    /// single time zone. </p>
-    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-    /// API</a> for a complete list of valid time zone names.</p>
+    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
     pub fn time_zone(&self) -> std::option::Option<&str> {
         self.time_zone.as_deref()
     }
-    /// <p>Automatically derive time zone information from the geolocation attribute. This option
-    /// is ideal for datasets that contain timestamps in multiple time zones and those
-    /// timestamps are expressed in local time.</p>
+    /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
     pub fn use_geolocation_for_time_zone(&self) -> bool {
         self.use_geolocation_for_time_zone
     }
-    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-    /// one of two ways:</p>
+    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-    /// </li>
+    /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+    /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
     /// </ul>
     pub fn geolocation_format(&self) -> std::option::Option<&str> {
         self.geolocation_format.as_deref()
@@ -12110,27 +10399,13 @@ impl CreateDatasetImportJobInput {
     /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12160,42 +10435,21 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
 pub struct CreateDatasetGroupInput {
     /// <p>A name for the dataset group.</p>
     pub dataset_group_name: std::option::Option<std::string::String>,
-    /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-    /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-    /// that must be present in training data that you import to a dataset. For example, if you choose
-    /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-    /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-    /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-    /// information, see <a>howitworks-datasets-groups</a>.</p>
+    /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
     pub domain: std::option::Option<crate::model::Domain>,
-    /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-    /// dataset group.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
     pub dataset_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -12204,46 +10458,25 @@ impl CreateDatasetGroupInput {
     pub fn dataset_group_name(&self) -> std::option::Option<&str> {
         self.dataset_group_name.as_deref()
     }
-    /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-    /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-    /// that must be present in training data that you import to a dataset. For example, if you choose
-    /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-    /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-    /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-    /// information, see <a>howitworks-datasets-groups</a>.</p>
+    /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
-    /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-    /// dataset group.</p>
+    /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
     pub fn dataset_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_arns.as_deref()
     }
     /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12266,54 +10499,28 @@ impl std::fmt::Debug for CreateDatasetGroupInput {
 pub struct CreateDatasetInput {
     /// <p>A name for the dataset.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-    /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-    /// that must be present in the training data that you import to the dataset. For example, if you
-    /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-    /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-    /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+    /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
-    /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-    /// datasets.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-    /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+    /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
     pub data_frequency: std::option::Option<std::string::String>,
-    /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-    /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-    /// determine the minimum required fields in your training data. For information about the
-    /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+    /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
     pub schema: std::option::Option<crate::model::Schema>,
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
     /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -12322,13 +10529,8 @@ impl CreateDatasetInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-    /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-    /// that must be present in the training data that you import to the dataset. For example, if you
-    /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-    /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-    /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+    /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+    /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -12336,50 +10538,29 @@ impl CreateDatasetInput {
     pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
         self.dataset_type.as_ref()
     }
-    /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-    /// datasets.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-    /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+    /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
     pub fn data_frequency(&self) -> std::option::Option<&str> {
         self.data_frequency.as_deref()
     }
-    /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-    /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-    /// determine the minimum required fields in your training data. For information about the
-    /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+    /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
     pub fn schema(&self) -> std::option::Option<&crate::model::Schema> {
         self.schema.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-    /// the key.</p>
+    /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
     /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12405,76 +10586,38 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct CreateAutoPredictorInput {
     /// <p>A unique name for the predictor</p>
     pub predictor_name: std::option::Option<std::string::String>,
-    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-    /// the prediction length.</p>
+    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     pub forecast_horizon: std::option::Option<i32>,
-    /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-    /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-    /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+    /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     pub forecast_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of dimension (field) names that specify how to group the generated
-    /// forecast.</p>
-    /// <p>For example, if you are generating forecasts for item sales across all your stores,
-    /// and your dataset contains a <code>store_id</code> field, you would specify
-    /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+    /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+    /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
     pub forecast_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-    /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-    /// frequency.</p>
-    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-    /// RELATED_TIME_SERIES dataset frequency.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
     pub forecast_frequency: std::option::Option<std::string::String>,
     /// <p>The data configuration for your dataset group and any additional datasets.</p>
     pub data_config: std::option::Option<crate::model::DataConfig>,
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-    /// access the key. You can specify this optional object in the
-    /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub encryption_config: std::option::Option<crate::model::EncryptionConfig>,
-    /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-    /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-    /// value for this parameter.</p>
-    /// <p>When upgrading or retraining a predictor, only specify values for the
-    /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-    /// <code>PredictorName</code> must be a unique predictor name.</p>
+    /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+    /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
     pub reference_predictor_arn: std::option::Option<std::string::String>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
     pub optimization_metric: std::option::Option<crate::model::OptimizationMetric>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Create an Explainability resource for the predictor.</p>
     pub explain_predictor: std::option::Option<bool>,
-    /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -12483,33 +10626,23 @@ impl CreateAutoPredictorInput {
     pub fn predictor_name(&self) -> std::option::Option<&str> {
         self.predictor_name.as_deref()
     }
-    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-    /// the prediction length.</p>
+    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
     pub fn forecast_horizon(&self) -> std::option::Option<i32> {
         self.forecast_horizon
     }
-    /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-    /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-    /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+    /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     pub fn forecast_types(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_types.as_deref()
     }
-    /// <p>An array of dimension (field) names that specify how to group the generated
-    /// forecast.</p>
-    /// <p>For example, if you are generating forecasts for item sales across all your stores,
-    /// and your dataset contains a <code>store_id</code> field, you would specify
-    /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+    /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+    /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
     pub fn forecast_dimensions(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_dimensions.as_deref()
     }
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-    /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-    /// frequency.</p>
-    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-    /// RELATED_TIME_SERIES dataset frequency.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
     pub fn forecast_frequency(&self) -> std::option::Option<&str> {
         self.forecast_frequency.as_deref()
     }
@@ -12517,18 +10650,12 @@ impl CreateAutoPredictorInput {
     pub fn data_config(&self) -> std::option::Option<&crate::model::DataConfig> {
         self.data_config.as_ref()
     }
-    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-    /// access the key. You can specify this optional object in the
-    /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+    /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
     pub fn encryption_config(&self) -> std::option::Option<&crate::model::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
-    /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-    /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-    /// value for this parameter.</p>
-    /// <p>When upgrading or retraining a predictor, only specify values for the
-    /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-    /// <code>PredictorName</code> must be a unique predictor name.</p>
+    /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+    /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
     pub fn reference_predictor_arn(&self) -> std::option::Option<&str> {
         self.reference_predictor_arn.as_deref()
     }
@@ -12536,41 +10663,19 @@ impl CreateAutoPredictorInput {
     pub fn optimization_metric(&self) -> std::option::Option<&crate::model::OptimizationMetric> {
         self.optimization_metric.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Create an Explainability resource for the predictor.</p>
     pub fn explain_predictor(&self) -> std::option::Option<bool> {
         self.explain_predictor
     }
-    /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-    /// consists of a key and an optional value, both of which you define. Tag keys and values
-    /// are case sensitive.</p>
+    /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique and each tag key must have one
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum number of tags per resource: 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-    /// and + - = . _ : / @. If your tagging schema is used across other services and
-    /// resources, the character restrictions of those services also apply. </p>
-    /// </li>
-    /// <li>
-    /// <p>Key prefixes cannot include any upper or lowercase combination of
-    /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-    /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-    /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-    /// with only the key prefix of <code>aws</code> do not count against your tags per
-    /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-    /// </li>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()

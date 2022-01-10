@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Core Device Advisor
@@ -129,6 +129,7 @@ where
     ///
     /// See [`ListSuiteDefinitions`](crate::client::fluent_builders::ListSuiteDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuiteDefinitions::into_paginator).
     pub fn list_suite_definitions(&self) -> fluent_builders::ListSuiteDefinitions<C, M, R> {
         fluent_builders::ListSuiteDefinitions::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`ListSuiteRuns`](crate::client::fluent_builders::ListSuiteRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuiteRuns::into_paginator).
     pub fn list_suite_runs(&self) -> fluent_builders::ListSuiteRuns<C, M, R> {
         fluent_builders::ListSuiteRuns::new(self.handle.clone())
     }
@@ -194,7 +196,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a Device Advisor test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -239,10 +241,10 @@ pub mod fluent_builders {
                 crate::input::CreateSuiteDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -253,9 +255,9 @@ pub mod fluent_builders {
         /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
         pub fn suite_definition_configuration(
             mut self,
-            inp: crate::model::SuiteDefinitionConfiguration,
+            input: crate::model::SuiteDefinitionConfiguration,
         ) -> Self {
-            self.inner = self.inner.suite_definition_configuration(inp);
+            self.inner = self.inner.suite_definition_configuration(input);
             self
         }
         /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
@@ -276,7 +278,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be attached to the suite definition.</p>
@@ -294,7 +296,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes a Device Advisor test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -339,10 +341,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSuiteDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -351,8 +353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to be deleted.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to be deleted.</p>
@@ -367,7 +369,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEndpoint`.
     ///
     /// <p>Gets information about an Device Advisor endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -412,10 +414,10 @@ pub mod fluent_builders {
                 crate::input::GetEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -424,8 +426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The thing ARN of the device. This is an optional parameter.</p>
-        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(inp);
+        pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(input.into());
             self
         }
         /// <p>The thing ARN of the device. This is an optional parameter.</p>
@@ -434,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The certificate ARN of the device. This is an optional parameter.</p>
@@ -451,7 +453,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a Device Advisor test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -496,10 +498,10 @@ pub mod fluent_builders {
                 crate::input::GetSuiteDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -508,8 +510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to get.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to get.</p>
@@ -521,8 +523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite definition version of the test suite to get.</p>
-        pub fn suite_definition_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_version(inp);
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
         /// <p>Suite definition version of the test suite to get.</p>
@@ -538,7 +540,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about a Device Advisor test suite run.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -583,10 +585,10 @@ pub mod fluent_builders {
                 crate::input::GetSuiteRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -595,8 +597,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID for the test suite run.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID for the test suite run.</p>
@@ -608,8 +610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID for the test suite run.</p>
-        pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(inp);
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID for the test suite run.</p>
@@ -622,7 +624,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a report download link for a successful Device Advisor qualifying test suite run.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuiteRunReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -667,10 +669,10 @@ pub mod fluent_builders {
                 crate::input::GetSuiteRunReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -679,8 +681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite.</p>
@@ -692,8 +694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID of the test suite run.</p>
-        pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(inp);
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID of the test suite run.</p>
@@ -706,7 +708,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the Device Advisor test suites you have created.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuiteDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -751,10 +753,10 @@ pub mod fluent_builders {
                 crate::input::ListSuiteDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -762,9 +764,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSuiteDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSuiteDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListSuiteDefinitionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -773,8 +781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used to get the next set of results.</p>
@@ -785,10 +793,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSuiteRuns`.
     ///
-    /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test
-    /// suite, or the runs of a specific version of the test suite.</p>
+    /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuiteRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -833,10 +840,10 @@ pub mod fluent_builders {
                 crate::input::ListSuiteRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -844,14 +851,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSuiteRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSuiteRunsPaginator<C, M, R> {
+            crate::paginator::ListSuiteRunsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -859,14 +870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
-        pub fn suite_definition_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_version(inp);
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -875,8 +884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -885,8 +894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
@@ -899,7 +908,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the tags attached to an IoT Device Advisor resource.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -944,10 +953,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -956,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the IoT Device Advisor resource.</p>
@@ -970,7 +979,7 @@ pub mod fluent_builders {
     ///
     /// <p>Starts a Device Advisor test suite run.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1015,10 +1024,10 @@ pub mod fluent_builders {
                 crate::input::StartSuiteRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1027,8 +1036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite.</p>
@@ -1040,8 +1049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite definition version of the test suite.</p>
-        pub fn suite_definition_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_version(inp);
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
         /// <p>Suite definition version of the test suite.</p>
@@ -1053,8 +1062,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run configuration.</p>
-        pub fn suite_run_configuration(mut self, inp: crate::model::SuiteRunConfiguration) -> Self {
-            self.inner = self.inner.suite_run_configuration(inp);
+        pub fn suite_run_configuration(
+            mut self,
+            input: crate::model::SuiteRunConfiguration,
+        ) -> Self {
+            self.inner = self.inner.suite_run_configuration(input);
             self
         }
         /// <p>Suite run configuration.</p>
@@ -1075,7 +1087,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be attached to the suite run.</p>
@@ -1093,7 +1105,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops a Device Advisor test suite run that is currently running.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopSuiteRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1138,10 +1150,10 @@ pub mod fluent_builders {
                 crate::input::StopSuiteRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1150,8 +1162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite run to be stopped.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite run to be stopped.</p>
@@ -1163,8 +1175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID of the test suite run to be stopped.</p>
-        pub fn suite_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(inp);
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID of the test suite run to be stopped.</p>
@@ -1177,7 +1189,7 @@ pub mod fluent_builders {
     ///
     /// <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1222,10 +1234,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1234,8 +1246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
@@ -1253,7 +1265,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be attached to the IoT Device Advisor resource.</p>
@@ -1271,7 +1283,7 @@ pub mod fluent_builders {
     ///
     /// <p>Removes tags from an IoT Device Advisor resource.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1316,10 +1328,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1328,8 +1340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
@@ -1342,8 +1354,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>List of tag keys to remove from the IoT Device Advisor resource.</p>
@@ -1359,7 +1371,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates a Device Advisor test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSuiteDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1404,10 +1416,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSuiteDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1416,8 +1428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to be updated.</p>
-        pub fn suite_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(inp);
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to be updated.</p>
@@ -1431,9 +1443,9 @@ pub mod fluent_builders {
         /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
         pub fn suite_definition_configuration(
             mut self,
-            inp: crate::model::SuiteDefinitionConfiguration,
+            input: crate::model::SuiteDefinitionConfiguration,
         ) -> Self {
-            self.inner = self.inner.suite_definition_configuration(inp);
+            self.inner = self.inner.suite_definition_configuration(input);
             self
         }
         /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
@@ -1446,6 +1458,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

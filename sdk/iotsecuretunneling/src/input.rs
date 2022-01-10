@@ -20,14 +20,12 @@ pub mod close_tunnel_input {
             self.tunnel_id = input;
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn delete(mut self, input: bool) -> Self {
             self.delete = Some(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.delete = input;
             self
@@ -49,7 +47,7 @@ pub mod close_tunnel_input {
 #[doc(hidden)]
 pub type CloseTunnelInputOperationOutputAlias = crate::operation::CloseTunnel;
 #[doc(hidden)]
-pub type CloseTunnelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CloseTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloseTunnelInput {
     /// Consumes the builder and constructs an Operation<[`CloseTunnel`](crate::operation::CloseTunnel)>
     #[allow(clippy::let_and_return)]
@@ -60,7 +58,7 @@ impl CloseTunnelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CloseTunnel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -158,7 +156,7 @@ impl CloseTunnelInput {
             "CloseTunnel",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -216,7 +214,7 @@ pub mod describe_tunnel_input {
 #[doc(hidden)]
 pub type DescribeTunnelInputOperationOutputAlias = crate::operation::DescribeTunnel;
 #[doc(hidden)]
-pub type DescribeTunnelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTunnelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTunnel`](crate::operation::DescribeTunnel)>
     #[allow(clippy::let_and_return)]
@@ -227,7 +225,7 @@ impl DescribeTunnelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTunnel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -312,7 +310,7 @@ impl DescribeTunnelInput {
             "DescribeTunnel",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -370,7 +368,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -381,7 +379,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -479,7 +477,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -561,7 +559,7 @@ pub mod list_tunnels_input {
 #[doc(hidden)]
 pub type ListTunnelsInputOperationOutputAlias = crate::operation::ListTunnels;
 #[doc(hidden)]
-pub type ListTunnelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTunnelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTunnelsInput {
     /// Consumes the builder and constructs an Operation<[`ListTunnels`](crate::operation::ListTunnels)>
     #[allow(clippy::let_and_return)]
@@ -572,7 +570,7 @@ impl ListTunnelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTunnels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -676,7 +674,7 @@ impl ListTunnelsInput {
             "ListTunnels",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -726,9 +724,9 @@ pub mod open_tunnel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tag metadata.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -785,7 +783,7 @@ pub mod open_tunnel_input {
 #[doc(hidden)]
 pub type OpenTunnelInputOperationOutputAlias = crate::operation::OpenTunnel;
 #[doc(hidden)]
-pub type OpenTunnelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type OpenTunnelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl OpenTunnelInput {
     /// Consumes the builder and constructs an Operation<[`OpenTunnel`](crate::operation::OpenTunnel)>
     #[allow(clippy::let_and_return)]
@@ -796,7 +794,7 @@ impl OpenTunnelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::OpenTunnel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -880,7 +878,7 @@ impl OpenTunnelInput {
             "OpenTunnel",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -928,9 +926,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -959,7 +957,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -970,7 +968,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1052,7 @@ impl TagResourceInput {
             "TagResource",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1133,7 +1131,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1144,7 +1142,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1228,7 +1226,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotsecuretunneling",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1432,8 +1430,7 @@ impl std::fmt::Debug for DescribeTunnelInput {
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-    /// immediately.</p>
+    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub delete: std::option::Option<bool>,
 }
 impl CloseTunnelInput {
@@ -1441,8 +1438,7 @@ impl CloseTunnelInput {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-    /// immediately.</p>
+    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(&self) -> std::option::Option<bool> {
         self.delete
     }

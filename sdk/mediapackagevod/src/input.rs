@@ -50,7 +50,7 @@ pub mod configure_logs_input {
 #[doc(hidden)]
 pub type ConfigureLogsInputOperationOutputAlias = crate::operation::ConfigureLogs;
 #[doc(hidden)]
-pub type ConfigureLogsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfigureLogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureLogsInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureLogs`](crate::operation::ConfigureLogs)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl ConfigureLogsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureLogs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -156,7 +156,7 @@ impl ConfigureLogsInput {
             "ConfigureLogs",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -297,7 +297,7 @@ pub mod create_asset_input {
 #[doc(hidden)]
 pub type CreateAssetInputOperationOutputAlias = crate::operation::CreateAsset;
 #[doc(hidden)]
-pub type CreateAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssetInput {
     /// Consumes the builder and constructs an Operation<[`CreateAsset`](crate::operation::CreateAsset)>
     #[allow(clippy::let_and_return)]
@@ -308,7 +308,7 @@ impl CreateAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -387,7 +387,7 @@ impl CreateAssetInput {
             "CreateAsset",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -550,7 +550,8 @@ pub mod create_packaging_configuration_input {
 pub type CreatePackagingConfigurationInputOperationOutputAlias =
     crate::operation::CreatePackagingConfiguration;
 #[doc(hidden)]
-pub type CreatePackagingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePackagingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackagingConfiguration`](crate::operation::CreatePackagingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -561,7 +562,7 @@ impl CreatePackagingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePackagingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -642,7 +643,7 @@ impl CreatePackagingConfigurationInput {
             "CreatePackagingConfiguration",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -759,7 +760,7 @@ pub mod create_packaging_group_input {
 #[doc(hidden)]
 pub type CreatePackagingGroupInputOperationOutputAlias = crate::operation::CreatePackagingGroup;
 #[doc(hidden)]
-pub type CreatePackagingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreatePackagingGroup`](crate::operation::CreatePackagingGroup)>
     #[allow(clippy::let_and_return)]
@@ -770,7 +771,7 @@ impl CreatePackagingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePackagingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -852,7 +853,7 @@ impl CreatePackagingGroupInput {
             "CreatePackagingGroup",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -908,7 +909,7 @@ pub mod delete_asset_input {
 #[doc(hidden)]
 pub type DeleteAssetInputOperationOutputAlias = crate::operation::DeleteAsset;
 #[doc(hidden)]
-pub type DeleteAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAsset`](crate::operation::DeleteAsset)>
     #[allow(clippy::let_and_return)]
@@ -919,7 +920,7 @@ impl DeleteAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1008,7 +1009,7 @@ impl DeleteAssetInput {
             "DeleteAsset",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1057,7 +1058,8 @@ pub mod delete_packaging_configuration_input {
 pub type DeletePackagingConfigurationInputOperationOutputAlias =
     crate::operation::DeletePackagingConfiguration;
 #[doc(hidden)]
-pub type DeletePackagingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePackagingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackagingConfiguration`](crate::operation::DeletePackagingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1068,7 +1070,7 @@ impl DeletePackagingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePackagingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1158,7 +1160,7 @@ impl DeletePackagingConfigurationInput {
             "DeletePackagingConfiguration",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1206,7 +1208,7 @@ pub mod delete_packaging_group_input {
 #[doc(hidden)]
 pub type DeletePackagingGroupInputOperationOutputAlias = crate::operation::DeletePackagingGroup;
 #[doc(hidden)]
-pub type DeletePackagingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeletePackagingGroup`](crate::operation::DeletePackagingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1217,7 +1219,7 @@ impl DeletePackagingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePackagingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1306,7 +1308,7 @@ impl DeletePackagingGroupInput {
             "DeletePackagingGroup",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1354,7 +1356,7 @@ pub mod describe_asset_input {
 #[doc(hidden)]
 pub type DescribeAssetInputOperationOutputAlias = crate::operation::DescribeAsset;
 #[doc(hidden)]
-pub type DescribeAssetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAsset`](crate::operation::DescribeAsset)>
     #[allow(clippy::let_and_return)]
@@ -1365,7 +1367,7 @@ impl DescribeAssetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAsset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1454,7 +1456,7 @@ impl DescribeAssetInput {
             "DescribeAsset",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1503,7 +1505,8 @@ pub mod describe_packaging_configuration_input {
 pub type DescribePackagingConfigurationInputOperationOutputAlias =
     crate::operation::DescribePackagingConfiguration;
 #[doc(hidden)]
-pub type DescribePackagingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePackagingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackagingConfiguration`](crate::operation::DescribePackagingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1514,7 +1517,7 @@ impl DescribePackagingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePackagingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1604,7 +1607,7 @@ impl DescribePackagingConfigurationInput {
             "DescribePackagingConfiguration",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1652,7 +1655,7 @@ pub mod describe_packaging_group_input {
 #[doc(hidden)]
 pub type DescribePackagingGroupInputOperationOutputAlias = crate::operation::DescribePackagingGroup;
 #[doc(hidden)]
-pub type DescribePackagingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribePackagingGroup`](crate::operation::DescribePackagingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1663,7 +1666,7 @@ impl DescribePackagingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePackagingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1752,7 +1755,7 @@ impl DescribePackagingGroupInput {
             "DescribePackagingGroup",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1829,7 +1832,7 @@ pub mod list_assets_input {
 #[doc(hidden)]
 pub type ListAssetsInputOperationOutputAlias = crate::operation::ListAssets;
 #[doc(hidden)]
-pub type ListAssetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssets`](crate::operation::ListAssets)>
     #[allow(clippy::let_and_return)]
@@ -1840,7 +1843,7 @@ impl ListAssetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1937,7 +1940,7 @@ impl ListAssetsInput {
             "ListAssets",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2015,7 +2018,7 @@ pub mod list_packaging_configurations_input {
 pub type ListPackagingConfigurationsInputOperationOutputAlias =
     crate::operation::ListPackagingConfigurations;
 #[doc(hidden)]
-pub type ListPackagingConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPackagingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagingConfigurations`](crate::operation::ListPackagingConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -2026,7 +2029,7 @@ impl ListPackagingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPackagingConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2123,7 +2126,7 @@ impl ListPackagingConfigurationsInput {
             "ListPackagingConfigurations",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2185,7 +2188,7 @@ pub mod list_packaging_groups_input {
 #[doc(hidden)]
 pub type ListPackagingGroupsInputOperationOutputAlias = crate::operation::ListPackagingGroups;
 #[doc(hidden)]
-pub type ListPackagingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPackagingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPackagingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListPackagingGroups`](crate::operation::ListPackagingGroups)>
     #[allow(clippy::let_and_return)]
@@ -2196,7 +2199,7 @@ impl ListPackagingGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPackagingGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2287,7 +2290,7 @@ impl ListPackagingGroupsInput {
             "ListPackagingGroups",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2337,7 +2340,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2348,7 +2351,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2438,7 +2441,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2517,7 +2520,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2528,7 +2531,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2623,7 +2626,7 @@ impl TagResourceInput {
             "TagResource",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2702,7 +2705,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2713,7 +2716,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2816,7 +2819,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2881,7 +2884,7 @@ pub mod update_packaging_group_input {
 #[doc(hidden)]
 pub type UpdatePackagingGroupInputOperationOutputAlias = crate::operation::UpdatePackagingGroup;
 #[doc(hidden)]
-pub type UpdatePackagingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePackagingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePackagingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePackagingGroup`](crate::operation::UpdatePackagingGroup)>
     #[allow(clippy::let_and_return)]
@@ -2892,7 +2895,7 @@ impl UpdatePackagingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePackagingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2989,7 +2992,7 @@ impl UpdatePackagingGroupInput {
             "UpdatePackagingGroup",
             "mediapackagevod",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

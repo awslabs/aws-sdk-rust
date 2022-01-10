@@ -5,17 +5,13 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate that authorization of an action was successful, when the
-    /// <code>DryRun</code> flag is set to true.</p>
+    /// <p>Exception raised to indicate that authorization of an action was successful, when the <code>DryRun</code> flag is set to true.</p>
     DryRunOperation(crate::error::DryRunOperation),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the
-    /// wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when a request fails due to temporary unavailability of the
-    /// service.</p>
+    /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

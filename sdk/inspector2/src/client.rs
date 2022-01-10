@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Inspector2
@@ -207,6 +207,7 @@ where
     ///
     /// See [`ListAccountPermissions`](crate::client::fluent_builders::ListAccountPermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountPermissions::into_paginator).
     pub fn list_account_permissions(&self) -> fluent_builders::ListAccountPermissions<C, M, R> {
         fluent_builders::ListAccountPermissions::new(self.handle.clone())
     }
@@ -214,6 +215,7 @@ where
     ///
     /// See [`ListCoverage`](crate::client::fluent_builders::ListCoverage) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoverage::into_paginator).
     pub fn list_coverage(&self) -> fluent_builders::ListCoverage<C, M, R> {
         fluent_builders::ListCoverage::new(self.handle.clone())
     }
@@ -221,6 +223,7 @@ where
     ///
     /// See [`ListCoverageStatistics`](crate::client::fluent_builders::ListCoverageStatistics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoverageStatistics::into_paginator).
     pub fn list_coverage_statistics(&self) -> fluent_builders::ListCoverageStatistics<C, M, R> {
         fluent_builders::ListCoverageStatistics::new(self.handle.clone())
     }
@@ -228,6 +231,7 @@ where
     ///
     /// See [`ListDelegatedAdminAccounts`](crate::client::fluent_builders::ListDelegatedAdminAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDelegatedAdminAccounts::into_paginator).
     pub fn list_delegated_admin_accounts(
         &self,
     ) -> fluent_builders::ListDelegatedAdminAccounts<C, M, R> {
@@ -237,6 +241,7 @@ where
     ///
     /// See [`ListFilters`](crate::client::fluent_builders::ListFilters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
     pub fn list_filters(&self) -> fluent_builders::ListFilters<C, M, R> {
         fluent_builders::ListFilters::new(self.handle.clone())
     }
@@ -244,6 +249,7 @@ where
     ///
     /// See [`ListFindingAggregations`](crate::client::fluent_builders::ListFindingAggregations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregations::into_paginator).
     pub fn list_finding_aggregations(&self) -> fluent_builders::ListFindingAggregations<C, M, R> {
         fluent_builders::ListFindingAggregations::new(self.handle.clone())
     }
@@ -251,6 +257,7 @@ where
     ///
     /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
@@ -258,6 +265,7 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -272,6 +280,7 @@ where
     ///
     /// See [`ListUsageTotals`](crate::client::fluent_builders::ListUsageTotals) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsageTotals::into_paginator).
     pub fn list_usage_totals(&self) -> fluent_builders::ListUsageTotals<C, M, R> {
         fluent_builders::ListUsageTotals::new(self.handle.clone())
     }
@@ -317,7 +326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMember`.
     ///
     /// <p>Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -362,10 +371,10 @@ pub mod fluent_builders {
                 crate::input::AssociateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -374,8 +383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
@@ -387,7 +396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetAccountStatus`.
     ///
     /// <p>Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -432,10 +441,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetAccountStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -444,8 +453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-        pub fn account_ids(mut self, inp: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
@@ -460,7 +469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetFreeTrialInfo`.
     ///
     /// <p>Gets free trial status for multiple Amazon Web Services accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetFreeTrialInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -505,10 +514,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetFreeTrialInfoInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -521,8 +530,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The account IDs to get free trial status for.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The account IDs to get free trial status for.</p>
@@ -537,7 +546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelFindingsReport`.
     ///
     /// <p>Cancels the given findings report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelFindingsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -582,10 +591,10 @@ pub mod fluent_builders {
                 crate::input::CancelFindingsReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -594,8 +603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the report to be canceled.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>The ID of the report to be canceled.</p>
@@ -607,7 +616,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
     /// <p>Creates a filter resource using specified filter criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -652,10 +661,10 @@ pub mod fluent_builders {
                 crate::input::CreateFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -664,8 +673,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
@@ -677,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the filter.</p>
@@ -687,8 +696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Defines the criteria to be used in the filter for querying findings.</p>
@@ -699,16 +708,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_criteria(input);
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -723,7 +728,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags for the filter.</p>
@@ -740,7 +745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingsReport`.
     ///
     /// <p>Creates a finding report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,10 +790,10 @@ pub mod fluent_builders {
                 crate::input::CreateFindingsReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -797,8 +802,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The filter criteria to apply to the results of the finding report.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>The filter criteria to apply to the results of the finding report.</p>
@@ -810,8 +815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format to generate the report in.</p>
-        pub fn report_format(mut self, inp: crate::model::ReportFormat) -> Self {
-            self.inner = self.inner.report_format(inp);
+        pub fn report_format(mut self, input: crate::model::ReportFormat) -> Self {
+            self.inner = self.inner.report_format(input);
             self
         }
         /// <p>The format to generate the report in.</p>
@@ -823,8 +828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 export destination for the report.</p>
-        pub fn s3_destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.s3_destination(inp);
+        pub fn s3_destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.s3_destination(input);
             self
         }
         /// <p>The Amazon S3 export destination for the report.</p>
@@ -839,7 +844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFilter`.
     ///
     /// <p>Deletes a filter resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -884,10 +889,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -896,8 +901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
@@ -909,7 +914,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
     /// <p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -954,10 +959,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -968,9 +973,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Disable`.
     ///
-    /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account
-    /// disables the Amazon Inspector service.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account disables the Amazon Inspector service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Disable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1015,10 +1019,10 @@ pub mod fluent_builders {
                 crate::input::DisableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1027,8 +1031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, inp: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
@@ -1044,8 +1048,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to disable.</p>
-        pub fn resource_types(mut self, inp: impl Into<crate::model::ResourceScanType>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
+            self.inner = self.inner.resource_types(input);
             self
         }
         /// <p>The resource scan types you want to disable.</p>
@@ -1060,7 +1064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableDelegatedAdminAccount`.
     ///
     /// <p>Disables the Amazon Inspector delegated administrator for your organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1105,10 +1109,10 @@ pub mod fluent_builders {
                 crate::input::DisableDelegatedAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1117,8 +1121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
-        pub fn delegated_admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegated_admin_account_id(inp);
+        pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
@@ -1133,7 +1137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMember`.
     ///
     /// <p>Disassociates a member account from an Amazon Inspector delegated administrator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1178,10 +1182,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1190,8 +1194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
@@ -1203,7 +1207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Enable`.
     ///
     /// <p>Enables Amazon Inspector scans for one or more Amazon Web Services accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Enable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1248,10 +1252,10 @@ pub mod fluent_builders {
                 crate::input::EnableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1260,8 +1264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, inp: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
@@ -1277,8 +1281,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to enable.</p>
-        pub fn resource_types(mut self, inp: impl Into<crate::model::ResourceScanType>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
+            self.inner = self.inner.resource_types(input);
             self
         }
         /// <p>The resource scan types you want to enable.</p>
@@ -1290,8 +1294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1303,7 +1307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableDelegatedAdminAccount`.
     ///
     /// <p>Enables the Amazon Inspector delegated administrator for your Organizations organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1348,10 +1352,10 @@ pub mod fluent_builders {
                 crate::input::EnableDelegatedAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1360,8 +1364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-        pub fn delegated_admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegated_admin_account_id(inp);
+        pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
@@ -1373,8 +1377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1385,9 +1389,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDelegatedAdminAccount`.
     ///
-    /// <p>Retrieves information about the Amazon Inspector delegated administrator for your
-    /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about the Amazon Inspector delegated administrator for your organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1432,10 +1435,10 @@ pub mod fluent_builders {
                 crate::input::GetDelegatedAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1447,7 +1450,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsReportStatus`.
     ///
     /// <p>Gets the status of a findings report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsReportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1492,10 +1495,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsReportStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1504,8 +1507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the report to retrieve the status of.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>The ID of the report to retrieve the status of.</p>
@@ -1517,7 +1520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMember`.
     ///
     /// <p>Gets member information for your organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,10 +1565,10 @@ pub mod fluent_builders {
                 crate::input::GetMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1574,8 +1577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
@@ -1587,7 +1590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountPermissions`.
     ///
     /// <p>Lists the permissions an account has to configure Amazon Inspector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,10 +1635,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1643,9 +1646,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountPermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccountPermissionsPaginator<C, M, R> {
+            crate::paginator::ListAccountPermissionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The service scan type to check permissions for.</p>
-        pub fn service(mut self, inp: crate::model::Service) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
         /// <p>The service scan type to check permissions for.</p>
@@ -1654,8 +1663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1663,18 +1672,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1683,7 +1686,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoverage`.
     ///
     /// <p>Lists coverage details for you environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1728,10 +1731,10 @@ pub mod fluent_builders {
                 crate::input::ListCoverageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1739,9 +1742,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCoveragePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCoveragePaginator<C, M, R> {
+            crate::paginator::ListCoveragePaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1749,30 +1758,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::CoverageFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+        pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -1784,7 +1785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoverageStatistics`.
     ///
     /// <p>Lists Amazon Inspector coverage statistics for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoverageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1829,10 +1830,10 @@ pub mod fluent_builders {
                 crate::input::ListCoverageStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1840,14 +1841,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::CoverageFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCoverageStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCoverageStatisticsPaginator<C, M, R> {
+            crate::paginator::ListCoverageStatisticsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+        pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -1856,8 +1861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value to group the results by.</p>
-        pub fn group_by(mut self, inp: crate::model::GroupKey) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupKey) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>The value to group the results by.</p>
@@ -1865,18 +1870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1884,9 +1883,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDelegatedAdminAccounts`.
     ///
-    /// <p>Lists information about the Amazon Inspector delegated administrator of your
-    /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists information about the Amazon Inspector delegated administrator of your organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1931,10 +1929,10 @@ pub mod fluent_builders {
                 crate::input::ListDelegatedAdminAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1942,9 +1940,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDelegatedAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDelegatedAdminAccountsPaginator<C, M, R> {
+            crate::paginator::ListDelegatedAdminAccountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1952,18 +1958,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1972,7 +1972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFilters`.
     ///
     /// <p>Lists the filters associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2017,10 +2017,10 @@ pub mod fluent_builders {
                 crate::input::ListFiltersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2028,13 +2028,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFiltersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFiltersPaginator<C, M, R> {
+            crate::paginator::ListFiltersPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `arns`.
         ///
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The Amazon resource number (ARN) of the filter.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The Amazon resource number (ARN) of the filter.</p>
@@ -2046,8 +2052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action the filter applies to matched findings.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action the filter applies to matched findings.</p>
@@ -2058,25 +2064,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2088,7 +2088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingAggregations`.
     ///
     /// <p>Lists aggregated finding data for your environment based on specific criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingAggregations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,10 +2133,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingAggregationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2144,9 +2144,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingAggregationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingAggregationsPaginator<C, M, R> {
+            crate::paginator::ListFindingAggregationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The type of the aggregation request.</p>
-        pub fn aggregation_type(mut self, inp: crate::model::AggregationType) -> Self {
-            self.inner = self.inner.aggregation_type(inp);
+        pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
+            self.inner = self.inner.aggregation_type(input);
             self
         }
         /// <p>The type of the aggregation request.</p>
@@ -2157,25 +2163,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aggregation_type(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2188,8 +2188,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-        pub fn account_ids(mut self, inp: impl Into<crate::model::StringFilter>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: crate::model::StringFilter) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
@@ -2201,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-        pub fn aggregation_request(mut self, inp: crate::model::AggregationRequest) -> Self {
-            self.inner = self.inner.aggregation_request(inp);
+        pub fn aggregation_request(mut self, input: crate::model::AggregationRequest) -> Self {
+            self.inner = self.inner.aggregation_request(input);
             self
         }
         /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
@@ -2217,7 +2217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Lists findings for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2262,10 +2262,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,9 +2273,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsPaginator<C, M, R> {
+            crate::paginator::ListFindingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2283,25 +2289,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Details on the filters to apply to your finding results.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Details on the filters to apply to your finding results.</p>
@@ -2313,8 +2313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details on the sort criteria to apply to your finding results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>Details on the sort criteria to apply to your finding results.</p>
@@ -2328,9 +2328,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMembers`.
     ///
-    /// <p>List members associated with the Amazon Inspector delegated administrator for your
-    /// organization.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List members associated with the Amazon Inspector delegated administrator for your organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2375,10 +2374,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2386,21 +2385,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
-        pub fn only_associated(mut self, inp: bool) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
+        pub fn only_associated(mut self, input: bool) -> Self {
+            self.inner = self.inner.only_associated(input);
             self
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_only_associated(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2408,18 +2411,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2428,7 +2425,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags attached to a given resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2473,10 +2470,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2485,8 +2482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
@@ -2498,7 +2495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsageTotals`.
     ///
     /// <p>Lists the Amazon Inspector usage totals over the last 30 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsageTotals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2543,10 +2540,10 @@ pub mod fluent_builders {
                 crate::input::ListUsageTotalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2554,9 +2551,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUsageTotalsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUsageTotalsPaginator<C, M, R> {
+            crate::paginator::ListUsageTotalsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2564,18 +2567,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2585,8 +2582,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
@@ -2601,7 +2598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2646,10 +2643,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2658,8 +2655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
@@ -2677,7 +2674,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a resource.</p>
@@ -2694,7 +2691,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2739,10 +2736,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2751,8 +2748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
@@ -2765,8 +2762,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the resource.</p>
@@ -2781,7 +2778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFilter`.
     ///
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2826,10 +2823,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2838,8 +2835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -2851,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the filter.</p>
@@ -2861,8 +2858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the criteria to be update in the filter.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Defines the criteria to be update in the filter.</p>
@@ -2874,8 +2871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the filter.</p>
@@ -2884,8 +2881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-        pub fn filter_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(inp);
+        pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
@@ -2897,7 +2894,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the configurations for your Amazon Inspector organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2942,10 +2939,10 @@ pub mod fluent_builders {
                 crate::input::UpdateOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2954,8 +2951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
-        pub fn auto_enable(mut self, inp: crate::model::AutoEnable) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, input: crate::model::AutoEnable) -> Self {
+            self.inner = self.inner.auto_enable(input);
             self
         }
         /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
@@ -2968,6 +2965,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

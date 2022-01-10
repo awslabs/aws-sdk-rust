@@ -54,27 +54,17 @@ impl AsRef<str> for LanguageCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
-    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
-    /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
-    /// same region as the API endpoint that you are calling. The location is used as the prefix for
-    /// the actual location of the output.</p>
+    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
-    /// using the job ID so that the output from one job does not overwrite the output of
-    /// another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl OutputDataConfig {
-    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
-    /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
-    /// same region as the API endpoint that you are calling. The location is used as the prefix for
-    /// the actual location of the output.</p>
+    /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
-    /// using the job ID so that the output from one job does not overwrite the output of
-    /// another.</p>
+    /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
@@ -97,32 +87,22 @@ pub mod output_data_config {
         pub(crate) s3_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
-        /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
-        /// same region as the API endpoint that you are calling. The location is used as the prefix for
-        /// the actual location of the output.</p>
+        /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
         }
-        /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
-        /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
-        /// same region as the API endpoint that you are calling. The location is used as the prefix for
-        /// the actual location of the output.</p>
+        /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data. The URI must be in the same region as the API endpoint that you are calling. The location is used as the prefix for the actual location of the output.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
         }
-        /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
-        /// using the job ID so that the output from one job does not overwrite the output of
-        /// another.</p>
+        /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key = Some(input.into());
             self
         }
-        /// <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
-        /// using the job ID so that the output from one job does not overwrite the output of
-        /// another.</p>
+        /// <p>The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job ID so that the output from one job does not overwrite the output of another.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_key = input;
             self
@@ -143,24 +123,19 @@ impl OutputDataConfig {
     }
 }
 
-/// <p>The input properties for an entities detection job. This includes the name of the S3
-/// bucket and the path to the files to be analyzed. </p>
+/// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
-    /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same
-    /// region as the API endpoint that you are calling.</p>
-    /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of
-    /// 30 GB in the bucket.</p>
+    /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
+    /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
-    /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same
-    /// region as the API endpoint that you are calling.</p>
-    /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of
-    /// 30 GB in the bucket.</p>
+    /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
+    /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
@@ -187,18 +162,14 @@ pub mod input_data_config {
         pub(crate) s3_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same
-        /// region as the API endpoint that you are calling.</p>
-        /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of
-        /// 30 GB in the bucket.</p>
+        /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
+        /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
         }
-        /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same
-        /// region as the API endpoint that you are calling.</p>
-        /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of
-        /// 30 GB in the bucket.</p>
+        /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
+        /// <p>Each file in the document collection must be less than 40 KB. You can store a maximum of 30 GB in the bucket.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -237,8 +208,7 @@ pub struct ComprehendMedicalAsyncJobProperties {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name that you assigned to the detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the
-    /// <code>Message</code> field shows the reason for the failure.</p>
+    /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
@@ -246,10 +216,7 @@ pub struct ComprehendMedicalAsyncJobProperties {
     pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the detection job completed.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
-    /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
-    /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
-    /// <code>ListPHIDetectionJobs</code> operation.</p>
+    /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -257,15 +224,13 @@ pub struct ComprehendMedicalAsyncJobProperties {
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>The language code of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the file that describes the results of a batch job.</p>
     pub manifest_file_path: std::option::Option<std::string::String>,
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
     pub kms_key: std::option::Option<std::string::String>,
-    /// <p>The version of the model used to analyze the documents. The version number looks like
-    /// X.X.X. You can use this information to track the model used for a particular batch of
-    /// documents.</p>
+    /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub model_version: std::option::Option<std::string::String>,
 }
 impl ComprehendMedicalAsyncJobProperties {
@@ -277,8 +242,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the
-    /// <code>Message</code> field shows the reason for the failure.</p>
+    /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
@@ -294,10 +258,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
-    /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
-    /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
-    /// <code>ListPHIDetectionJobs</code> operation.</p>
+    /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
@@ -313,7 +274,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -325,9 +286,7 @@ impl ComprehendMedicalAsyncJobProperties {
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>The version of the model used to analyze the documents. The version number looks like
-    /// X.X.X. You can use this information to track the model used for a particular batch of
-    /// documents.</p>
+    /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
     }
@@ -394,14 +353,12 @@ pub mod comprehend_medical_async_job_properties {
             self.job_name = input;
             self
         }
-        /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the
-        /// <code>Message</code> field shows the reason for the failure.</p>
+        /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the
-        /// <code>Message</code> field shows the reason for the failure.</p>
+        /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -445,18 +402,12 @@ pub mod comprehend_medical_async_job_properties {
             self.end_time = input;
             self
         }
-        /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
-        /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
-        /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
-        /// <code>ListPHIDetectionJobs</code> operation.</p>
+        /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
-        /// <p>The date and time that job metadata is deleted from the server. Output files in your S3
-        /// bucket will not be deleted. After the metadata is deleted, the job will no longer appear in
-        /// the results of the <code>ListEntitiesDetectionV2Job</code> or the
-        /// <code>ListPHIDetectionJobs</code> operation.</p>
+        /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -503,12 +454,12 @@ pub mod comprehend_medical_async_job_properties {
             self.language_code = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -539,16 +490,12 @@ pub mod comprehend_medical_async_job_properties {
             self.kms_key = input;
             self
         }
-        /// <p>The version of the model used to analyze the documents. The version number looks like
-        /// X.X.X. You can use this information to track the model used for a particular batch of
-        /// documents.</p>
+        /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
         pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_version = Some(input.into());
             self
         }
-        /// <p>The version of the model used to analyze the documents. The version number looks like
-        /// X.X.X. You can use this information to track the model used for a particular batch of
-        /// documents.</p>
+        /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
         pub fn set_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -673,16 +620,11 @@ impl AsRef<str> for JobStatus {
 pub struct ComprehendMedicalAsyncJobFilter {
     /// <p>Filters on the name of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
-    /// status.</p>
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
-    /// oldest to newest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub submit_time_before: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
-    /// newest to oldest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub submit_time_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ComprehendMedicalAsyncJobFilter {
@@ -690,20 +632,15 @@ impl ComprehendMedicalAsyncJobFilter {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
-    /// status.</p>
+    /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-    /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
-    /// oldest to newest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submit_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_before.as_ref()
     }
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-    /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
-    /// newest to oldest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submit_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submit_time_after.as_ref()
     }
@@ -740,14 +677,12 @@ pub mod comprehend_medical_async_job_filter {
             self.job_name = input;
             self
         }
-        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
-        /// status.</p>
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
-        /// status.</p>
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -755,16 +690,12 @@ pub mod comprehend_medical_async_job_filter {
             self.job_status = input;
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
-        /// oldest to newest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
         pub fn submit_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_before = Some(input);
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
-        /// oldest to newest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -772,16 +703,12 @@ pub mod comprehend_medical_async_job_filter {
             self.submit_time_before = input;
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
-        /// newest to oldest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
         pub fn submit_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submit_time_after = Some(input);
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
-        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
-        /// newest to oldest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -807,48 +734,1221 @@ impl ComprehendMedicalAsyncJobFilter {
     }
 }
 
-/// <p>The collection of medical entities extracted from the input text and their associated
-/// information. For each entity, the response provides the entity text, the entity category,
-/// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
-/// Medical has in the detection and analysis. Attributes and traits of the entity are also
-/// returned. </p>
+/// <p> The number of characters in the input text to be analyzed. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Characters {
+    /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
+    pub original_text_characters: std::option::Option<i32>,
+}
+impl Characters {
+    /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
+    pub fn original_text_characters(&self) -> std::option::Option<i32> {
+        self.original_text_characters
+    }
+}
+impl std::fmt::Debug for Characters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Characters");
+        formatter.field("original_text_characters", &self.original_text_characters);
+        formatter.finish()
+    }
+}
+/// See [`Characters`](crate::model::Characters)
+pub mod characters {
+    /// A builder for [`Characters`](crate::model::Characters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) original_text_characters: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
+        pub fn original_text_characters(mut self, input: i32) -> Self {
+            self.original_text_characters = Some(input);
+            self
+        }
+        /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
+        pub fn set_original_text_characters(mut self, input: std::option::Option<i32>) -> Self {
+            self.original_text_characters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Characters`](crate::model::Characters)
+        pub fn build(self) -> crate::model::Characters {
+            crate::model::Characters {
+                original_text_characters: self.original_text_characters,
+            }
+        }
+    }
+}
+impl Characters {
+    /// Creates a new builder-style object to manufacture [`Characters`](crate::model::Characters)
+    pub fn builder() -> crate::model::characters::Builder {
+        crate::model::characters::Builder::default()
+    }
+}
+
+/// <p> The information about the revision of the SNOMED-CT ontology in the response. Specifically, the details include the SNOMED-CT edition, language, and version date. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnomedctDetails {
+    /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+    pub edition: std::option::Option<std::string::String>,
+    /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+    pub language: std::option::Option<std::string::String>,
+    /// <p> The version date of the SNOMED-CT ontology used. </p>
+    pub version_date: std::option::Option<std::string::String>,
+}
+impl SnomedctDetails {
+    /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+    pub fn edition(&self) -> std::option::Option<&str> {
+        self.edition.as_deref()
+    }
+    /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+    pub fn language(&self) -> std::option::Option<&str> {
+        self.language.as_deref()
+    }
+    /// <p> The version date of the SNOMED-CT ontology used. </p>
+    pub fn version_date(&self) -> std::option::Option<&str> {
+        self.version_date.as_deref()
+    }
+}
+impl std::fmt::Debug for SnomedctDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnomedctDetails");
+        formatter.field("edition", &self.edition);
+        formatter.field("language", &self.language);
+        formatter.field("version_date", &self.version_date);
+        formatter.finish()
+    }
+}
+/// See [`SnomedctDetails`](crate::model::SnomedctDetails)
+pub mod snomedct_details {
+    /// A builder for [`SnomedctDetails`](crate::model::SnomedctDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) edition: std::option::Option<std::string::String>,
+        pub(crate) language: std::option::Option<std::string::String>,
+        pub(crate) version_date: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+        pub fn edition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edition = Some(input.into());
+            self
+        }
+        /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
+        pub fn set_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.edition = input;
+            self
+        }
+        /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language = Some(input.into());
+            self
+        }
+        /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
+        pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language = input;
+            self
+        }
+        /// <p> The version date of the SNOMED-CT ontology used. </p>
+        pub fn version_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_date = Some(input.into());
+            self
+        }
+        /// <p> The version date of the SNOMED-CT ontology used. </p>
+        pub fn set_version_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnomedctDetails`](crate::model::SnomedctDetails)
+        pub fn build(self) -> crate::model::SnomedctDetails {
+            crate::model::SnomedctDetails {
+                edition: self.edition,
+                language: self.language,
+                version_date: self.version_date,
+            }
+        }
+    }
+}
+impl SnomedctDetails {
+    /// Creates a new builder-style object to manufacture [`SnomedctDetails`](crate::model::SnomedctDetails)
+    pub fn builder() -> crate::model::snomedct_details::Builder {
+        crate::model::snomedct_details::Builder::default()
+    }
+}
+
+/// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnomedctEntity {
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub id: std::option::Option<i32>,
+    /// <p> The segment of input text extracted as this entity. </p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+    pub category: std::option::Option<crate::model::SnomedctEntityCategory>,
+    /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+    pub r#type: std::option::Option<crate::model::SnomedctEntityType>,
+    /// <p> The level of confidence that Comprehend Medical has in the accuracy of the detected entity. </p>
+    pub score: std::option::Option<f32>,
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    pub begin_offset: std::option::Option<i32>,
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    pub end_offset: std::option::Option<i32>,
+    /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::SnomedctAttribute>>,
+    /// <p> Contextual information for the entity. </p>
+    pub traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+    /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+    pub snomedct_concepts: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+}
+impl SnomedctEntity {
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p> The segment of input text extracted as this entity. </p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+    pub fn category(&self) -> std::option::Option<&crate::model::SnomedctEntityCategory> {
+        self.category.as_ref()
+    }
+    /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SnomedctEntityType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The level of confidence that Comprehend Medical has in the accuracy of the detected entity. </p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::SnomedctAttribute]> {
+        self.attributes.as_deref()
+    }
+    /// <p> Contextual information for the entity. </p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::SnomedctTrait]> {
+        self.traits.as_deref()
+    }
+    /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+    pub fn snomedct_concepts(&self) -> std::option::Option<&[crate::model::SnomedctConcept]> {
+        self.snomedct_concepts.as_deref()
+    }
+}
+impl std::fmt::Debug for SnomedctEntity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnomedctEntity");
+        formatter.field("id", &self.id);
+        formatter.field("text", &self.text);
+        formatter.field("category", &self.category);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("score", &self.score);
+        formatter.field("begin_offset", &self.begin_offset);
+        formatter.field("end_offset", &self.end_offset);
+        formatter.field("attributes", &self.attributes);
+        formatter.field("traits", &self.traits);
+        formatter.field("snomedct_concepts", &self.snomedct_concepts);
+        formatter.finish()
+    }
+}
+/// See [`SnomedctEntity`](crate::model::SnomedctEntity)
+pub mod snomedct_entity {
+    /// A builder for [`SnomedctEntity`](crate::model::SnomedctEntity)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<i32>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) category: std::option::Option<crate::model::SnomedctEntityCategory>,
+        pub(crate) r#type: std::option::Option<crate::model::SnomedctEntityType>,
+        pub(crate) score: std::option::Option<f32>,
+        pub(crate) begin_offset: std::option::Option<i32>,
+        pub(crate) end_offset: std::option::Option<i32>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::SnomedctAttribute>>,
+        pub(crate) traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+        pub(crate) snomedct_concepts:
+            std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+    }
+    impl Builder {
+        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p> The segment of input text extracted as this entity. </p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p> The segment of input text extracted as this entity. </p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+        pub fn category(mut self, input: crate::model::SnomedctEntityCategory) -> Self {
+            self.category = Some(input);
+            self
+        }
+        /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
+        pub fn set_category(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctEntityCategory>,
+        ) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+        pub fn r#type(mut self, input: crate::model::SnomedctEntityType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctEntityType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has in the accuracy of the detected entity. </p>
+        pub fn score(mut self, input: f32) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has in the accuracy of the detected entity. </p>
+        pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+        pub fn begin_offset(mut self, input: i32) -> Self {
+            self.begin_offset = Some(input);
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+        pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.begin_offset = input;
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+        pub fn end_offset(mut self, input: i32) -> Self {
+            self.end_offset = Some(input);
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+        pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_offset = input;
+            self
+        }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+        pub fn attributes(mut self, input: crate::model::SnomedctAttribute) -> Self {
+            let mut v = self.attributes.unwrap_or_default();
+            v.push(input);
+            self.attributes = Some(v);
+            self
+        }
+        /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnomedctAttribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// Appends an item to `traits`.
+        ///
+        /// To override the contents of this collection use [`set_traits`](Self::set_traits).
+        ///
+        /// <p> Contextual information for the entity. </p>
+        pub fn traits(mut self, input: crate::model::SnomedctTrait) -> Self {
+            let mut v = self.traits.unwrap_or_default();
+            v.push(input);
+            self.traits = Some(v);
+            self
+        }
+        /// <p> Contextual information for the entity. </p>
+        pub fn set_traits(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+        ) -> Self {
+            self.traits = input;
+            self
+        }
+        /// Appends an item to `snomedct_concepts`.
+        ///
+        /// To override the contents of this collection use [`set_snomedct_concepts`](Self::set_snomedct_concepts).
+        ///
+        /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+        pub fn snomedct_concepts(mut self, input: crate::model::SnomedctConcept) -> Self {
+            let mut v = self.snomedct_concepts.unwrap_or_default();
+            v.push(input);
+            self.snomedct_concepts = Some(v);
+            self
+        }
+        /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+        pub fn set_snomedct_concepts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+        ) -> Self {
+            self.snomedct_concepts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnomedctEntity`](crate::model::SnomedctEntity)
+        pub fn build(self) -> crate::model::SnomedctEntity {
+            crate::model::SnomedctEntity {
+                id: self.id,
+                text: self.text,
+                category: self.category,
+                r#type: self.r#type,
+                score: self.score,
+                begin_offset: self.begin_offset,
+                end_offset: self.end_offset,
+                attributes: self.attributes,
+                traits: self.traits,
+                snomedct_concepts: self.snomedct_concepts,
+            }
+        }
+    }
+}
+impl SnomedctEntity {
+    /// Creates a new builder-style object to manufacture [`SnomedctEntity`](crate::model::SnomedctEntity)
+    pub fn builder() -> crate::model::snomedct_entity::Builder {
+        crate::model::snomedct_entity::Builder::default()
+    }
+}
+
+/// <p> The SNOMED-CT concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnomedctConcept {
+    /// <p> The description of the SNOMED-CT concept. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p> The numeric ID for the SNOMED-CT concept. </p>
+    pub code: std::option::Option<std::string::String>,
+    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    pub score: std::option::Option<f32>,
+}
+impl SnomedctConcept {
+    /// <p> The description of the SNOMED-CT concept. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The numeric ID for the SNOMED-CT concept. </p>
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
+impl std::fmt::Debug for SnomedctConcept {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnomedctConcept");
+        formatter.field("description", &self.description);
+        formatter.field("code", &self.code);
+        formatter.field("score", &self.score);
+        formatter.finish()
+    }
+}
+/// See [`SnomedctConcept`](crate::model::SnomedctConcept)
+pub mod snomedct_concept {
+    /// A builder for [`SnomedctConcept`](crate::model::SnomedctConcept)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) score: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The description of the SNOMED-CT concept. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p> The description of the SNOMED-CT concept. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p> The numeric ID for the SNOMED-CT concept. </p>
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        /// <p> The numeric ID for the SNOMED-CT concept. </p>
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+        pub fn score(mut self, input: f32) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p> The level of confidence Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
+        pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.score = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnomedctConcept`](crate::model::SnomedctConcept)
+        pub fn build(self) -> crate::model::SnomedctConcept {
+            crate::model::SnomedctConcept {
+                description: self.description,
+                code: self.code,
+                score: self.score,
+            }
+        }
+    }
+}
+impl SnomedctConcept {
+    /// Creates a new builder-style object to manufacture [`SnomedctConcept`](crate::model::SnomedctConcept)
+    pub fn builder() -> crate::model::snomedct_concept::Builder {
+        crate::model::snomedct_concept::Builder::default()
+    }
+}
+
+/// <p> Contextual information for an entity. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnomedctTrait {
+    /// <p> The name or contextual description of a detected trait. </p>
+    pub name: std::option::Option<crate::model::SnomedctTraitName>,
+    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    pub score: std::option::Option<f32>,
+}
+impl SnomedctTrait {
+    /// <p> The name or contextual description of a detected trait. </p>
+    pub fn name(&self) -> std::option::Option<&crate::model::SnomedctTraitName> {
+        self.name.as_ref()
+    }
+    /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+}
+impl std::fmt::Debug for SnomedctTrait {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnomedctTrait");
+        formatter.field("name", &self.name);
+        formatter.field("score", &self.score);
+        formatter.finish()
+    }
+}
+/// See [`SnomedctTrait`](crate::model::SnomedctTrait)
+pub mod snomedct_trait {
+    /// A builder for [`SnomedctTrait`](crate::model::SnomedctTrait)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<crate::model::SnomedctTraitName>,
+        pub(crate) score: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The name or contextual description of a detected trait. </p>
+        pub fn name(mut self, input: crate::model::SnomedctTraitName) -> Self {
+            self.name = Some(input);
+            self
+        }
+        /// <p> The name or contextual description of a detected trait. </p>
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctTraitName>,
+        ) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+        pub fn score(mut self, input: f32) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has in the accuracy of a detected trait. </p>
+        pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.score = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnomedctTrait`](crate::model::SnomedctTrait)
+        pub fn build(self) -> crate::model::SnomedctTrait {
+            crate::model::SnomedctTrait {
+                name: self.name,
+                score: self.score,
+            }
+        }
+    }
+}
+impl SnomedctTrait {
+    /// Creates a new builder-style object to manufacture [`SnomedctTrait`](crate::model::SnomedctTrait)
+    pub fn builder() -> crate::model::snomedct_trait::Builder {
+        crate::model::snomedct_trait::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnomedctTraitName {
+    #[allow(missing_docs)] // documentation missing in model
+    Diagnosis,
+    #[allow(missing_docs)] // documentation missing in model
+    Negation,
+    #[allow(missing_docs)] // documentation missing in model
+    Sign,
+    #[allow(missing_docs)] // documentation missing in model
+    Symptom,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnomedctTraitName {
+    fn from(s: &str) -> Self {
+        match s {
+            "DIAGNOSIS" => SnomedctTraitName::Diagnosis,
+            "NEGATION" => SnomedctTraitName::Negation,
+            "SIGN" => SnomedctTraitName::Sign,
+            "SYMPTOM" => SnomedctTraitName::Symptom,
+            other => SnomedctTraitName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnomedctTraitName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnomedctTraitName::from(s))
+    }
+}
+impl SnomedctTraitName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnomedctTraitName::Diagnosis => "DIAGNOSIS",
+            SnomedctTraitName::Negation => "NEGATION",
+            SnomedctTraitName::Sign => "SIGN",
+            SnomedctTraitName::Symptom => "SYMPTOM",
+            SnomedctTraitName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DIAGNOSIS", "NEGATION", "SIGN", "SYMPTOM"]
+    }
+}
+impl AsRef<str> for SnomedctTraitName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> The extracted attributes that relate to an entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SnomedctAttribute {
+    /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
+    pub category: std::option::Option<crate::model::SnomedctEntityCategory>,
+    /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
+    pub r#type: std::option::Option<crate::model::SnomedctAttributeType>,
+    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    pub score: std::option::Option<f32>,
+    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    pub relationship_score: std::option::Option<f32>,
+    /// <p> The type of relationship that exists between the entity and the related attribute. </p>
+    pub relationship_type: std::option::Option<crate::model::SnomedctRelationshipType>,
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub id: std::option::Option<i32>,
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+    pub begin_offset: std::option::Option<i32>,
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
+    pub end_offset: std::option::Option<i32>,
+    /// <p> The segment of input text extracted as this attribute. </p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
+    pub traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+    /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
+    pub snomedct_concepts: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+}
+impl SnomedctAttribute {
+    /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
+    pub fn category(&self) -> std::option::Option<&crate::model::SnomedctEntityCategory> {
+        self.category.as_ref()
+    }
+    /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::SnomedctAttributeType> {
+        self.r#type.as_ref()
+    }
+    /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+    pub fn score(&self) -> std::option::Option<f32> {
+        self.score
+    }
+    /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+    pub fn relationship_score(&self) -> std::option::Option<f32> {
+        self.relationship_score
+    }
+    /// <p> The type of relationship that exists between the entity and the related attribute. </p>
+    pub fn relationship_type(
+        &self,
+    ) -> std::option::Option<&crate::model::SnomedctRelationshipType> {
+        self.relationship_type.as_ref()
+    }
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub fn id(&self) -> std::option::Option<i32> {
+        self.id
+    }
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+    pub fn begin_offset(&self) -> std::option::Option<i32> {
+        self.begin_offset
+    }
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
+    pub fn end_offset(&self) -> std::option::Option<i32> {
+        self.end_offset
+    }
+    /// <p> The segment of input text extracted as this attribute. </p>
+    pub fn text(&self) -> std::option::Option<&str> {
+        self.text.as_deref()
+    }
+    /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
+    pub fn traits(&self) -> std::option::Option<&[crate::model::SnomedctTrait]> {
+        self.traits.as_deref()
+    }
+    /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
+    pub fn snomedct_concepts(&self) -> std::option::Option<&[crate::model::SnomedctConcept]> {
+        self.snomedct_concepts.as_deref()
+    }
+}
+impl std::fmt::Debug for SnomedctAttribute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnomedctAttribute");
+        formatter.field("category", &self.category);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("score", &self.score);
+        formatter.field("relationship_score", &self.relationship_score);
+        formatter.field("relationship_type", &self.relationship_type);
+        formatter.field("id", &self.id);
+        formatter.field("begin_offset", &self.begin_offset);
+        formatter.field("end_offset", &self.end_offset);
+        formatter.field("text", &self.text);
+        formatter.field("traits", &self.traits);
+        formatter.field("snomedct_concepts", &self.snomedct_concepts);
+        formatter.finish()
+    }
+}
+/// See [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+pub mod snomedct_attribute {
+    /// A builder for [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category: std::option::Option<crate::model::SnomedctEntityCategory>,
+        pub(crate) r#type: std::option::Option<crate::model::SnomedctAttributeType>,
+        pub(crate) score: std::option::Option<f32>,
+        pub(crate) relationship_score: std::option::Option<f32>,
+        pub(crate) relationship_type: std::option::Option<crate::model::SnomedctRelationshipType>,
+        pub(crate) id: std::option::Option<i32>,
+        pub(crate) begin_offset: std::option::Option<i32>,
+        pub(crate) end_offset: std::option::Option<i32>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) traits: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+        pub(crate) snomedct_concepts:
+            std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+    }
+    impl Builder {
+        /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
+        pub fn category(mut self, input: crate::model::SnomedctEntityCategory) -> Self {
+            self.category = Some(input);
+            self
+        }
+        /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
+        pub fn set_category(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctEntityCategory>,
+        ) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
+        pub fn r#type(mut self, input: crate::model::SnomedctAttributeType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctAttributeType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+        pub fn score(mut self, input: f32) -> Self {
+            self.score = Some(input);
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
+        pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+        pub fn relationship_score(mut self, input: f32) -> Self {
+            self.relationship_score = Some(input);
+            self
+        }
+        /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
+        pub fn set_relationship_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.relationship_score = input;
+            self
+        }
+        /// <p> The type of relationship that exists between the entity and the related attribute. </p>
+        pub fn relationship_type(mut self, input: crate::model::SnomedctRelationshipType) -> Self {
+            self.relationship_type = Some(input);
+            self
+        }
+        /// <p> The type of relationship that exists between the entity and the related attribute. </p>
+        pub fn set_relationship_type(
+            mut self,
+            input: std::option::Option<crate::model::SnomedctRelationshipType>,
+        ) -> Self {
+            self.relationship_type = input;
+            self
+        }
+        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+        pub fn id(mut self, input: i32) -> Self {
+            self.id = Some(input);
+            self
+        }
+        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+        pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+        pub fn begin_offset(mut self, input: i32) -> Self {
+            self.begin_offset = Some(input);
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
+        pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.begin_offset = input;
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
+        pub fn end_offset(mut self, input: i32) -> Self {
+            self.end_offset = Some(input);
+            self
+        }
+        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
+        pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_offset = input;
+            self
+        }
+        /// <p> The segment of input text extracted as this attribute. </p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p> The segment of input text extracted as this attribute. </p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// Appends an item to `traits`.
+        ///
+        /// To override the contents of this collection use [`set_traits`](Self::set_traits).
+        ///
+        /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
+        pub fn traits(mut self, input: crate::model::SnomedctTrait) -> Self {
+            let mut v = self.traits.unwrap_or_default();
+            v.push(input);
+            self.traits = Some(v);
+            self
+        }
+        /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
+        pub fn set_traits(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnomedctTrait>>,
+        ) -> Self {
+            self.traits = input;
+            self
+        }
+        /// Appends an item to `snomedct_concepts`.
+        ///
+        /// To override the contents of this collection use [`set_snomedct_concepts`](Self::set_snomedct_concepts).
+        ///
+        /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
+        pub fn snomedct_concepts(mut self, input: crate::model::SnomedctConcept) -> Self {
+            let mut v = self.snomedct_concepts.unwrap_or_default();
+            v.push(input);
+            self.snomedct_concepts = Some(v);
+            self
+        }
+        /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
+        pub fn set_snomedct_concepts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+        ) -> Self {
+            self.snomedct_concepts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+        pub fn build(self) -> crate::model::SnomedctAttribute {
+            crate::model::SnomedctAttribute {
+                category: self.category,
+                r#type: self.r#type,
+                score: self.score,
+                relationship_score: self.relationship_score,
+                relationship_type: self.relationship_type,
+                id: self.id,
+                begin_offset: self.begin_offset,
+                end_offset: self.end_offset,
+                text: self.text,
+                traits: self.traits,
+                snomedct_concepts: self.snomedct_concepts,
+            }
+        }
+    }
+}
+impl SnomedctAttribute {
+    /// Creates a new builder-style object to manufacture [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+    pub fn builder() -> crate::model::snomedct_attribute::Builder {
+        crate::model::snomedct_attribute::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnomedctRelationshipType {
+    #[allow(missing_docs)] // documentation missing in model
+    Acuity,
+    #[allow(missing_docs)] // documentation missing in model
+    Direction,
+    #[allow(missing_docs)] // documentation missing in model
+    Quality,
+    #[allow(missing_docs)] // documentation missing in model
+    SystemOrganSite,
+    #[allow(missing_docs)] // documentation missing in model
+    TestUnits,
+    #[allow(missing_docs)] // documentation missing in model
+    TestValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnomedctRelationshipType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACUITY" => SnomedctRelationshipType::Acuity,
+            "DIRECTION" => SnomedctRelationshipType::Direction,
+            "QUALITY" => SnomedctRelationshipType::Quality,
+            "SYSTEM_ORGAN_SITE" => SnomedctRelationshipType::SystemOrganSite,
+            "TEST_UNITS" => SnomedctRelationshipType::TestUnits,
+            "TEST_VALUE" => SnomedctRelationshipType::TestValue,
+            other => SnomedctRelationshipType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnomedctRelationshipType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnomedctRelationshipType::from(s))
+    }
+}
+impl SnomedctRelationshipType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnomedctRelationshipType::Acuity => "ACUITY",
+            SnomedctRelationshipType::Direction => "DIRECTION",
+            SnomedctRelationshipType::Quality => "QUALITY",
+            SnomedctRelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+            SnomedctRelationshipType::TestUnits => "TEST_UNITS",
+            SnomedctRelationshipType::TestValue => "TEST_VALUE",
+            SnomedctRelationshipType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACUITY",
+            "DIRECTION",
+            "QUALITY",
+            "SYSTEM_ORGAN_SITE",
+            "TEST_UNITS",
+            "TEST_VALUE",
+        ]
+    }
+}
+impl AsRef<str> for SnomedctRelationshipType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnomedctAttributeType {
+    #[allow(missing_docs)] // documentation missing in model
+    Acuity,
+    #[allow(missing_docs)] // documentation missing in model
+    Direction,
+    #[allow(missing_docs)] // documentation missing in model
+    Quality,
+    #[allow(missing_docs)] // documentation missing in model
+    SystemOrganSite,
+    #[allow(missing_docs)] // documentation missing in model
+    TestUnit,
+    #[allow(missing_docs)] // documentation missing in model
+    TestValue,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnomedctAttributeType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACUITY" => SnomedctAttributeType::Acuity,
+            "DIRECTION" => SnomedctAttributeType::Direction,
+            "QUALITY" => SnomedctAttributeType::Quality,
+            "SYSTEM_ORGAN_SITE" => SnomedctAttributeType::SystemOrganSite,
+            "TEST_UNIT" => SnomedctAttributeType::TestUnit,
+            "TEST_VALUE" => SnomedctAttributeType::TestValue,
+            other => SnomedctAttributeType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnomedctAttributeType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnomedctAttributeType::from(s))
+    }
+}
+impl SnomedctAttributeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnomedctAttributeType::Acuity => "ACUITY",
+            SnomedctAttributeType::Direction => "DIRECTION",
+            SnomedctAttributeType::Quality => "QUALITY",
+            SnomedctAttributeType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+            SnomedctAttributeType::TestUnit => "TEST_UNIT",
+            SnomedctAttributeType::TestValue => "TEST_VALUE",
+            SnomedctAttributeType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACUITY",
+            "DIRECTION",
+            "QUALITY",
+            "SYSTEM_ORGAN_SITE",
+            "TEST_UNIT",
+            "TEST_VALUE",
+        ]
+    }
+}
+impl AsRef<str> for SnomedctAttributeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnomedctEntityCategory {
+    #[allow(missing_docs)] // documentation missing in model
+    Anatomy,
+    #[allow(missing_docs)] // documentation missing in model
+    MedicalCondition,
+    #[allow(missing_docs)] // documentation missing in model
+    TestTreatmentProcedure,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnomedctEntityCategory {
+    fn from(s: &str) -> Self {
+        match s {
+            "ANATOMY" => SnomedctEntityCategory::Anatomy,
+            "MEDICAL_CONDITION" => SnomedctEntityCategory::MedicalCondition,
+            "TEST_TREATMENT_PROCEDURE" => SnomedctEntityCategory::TestTreatmentProcedure,
+            other => SnomedctEntityCategory::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnomedctEntityCategory {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnomedctEntityCategory::from(s))
+    }
+}
+impl SnomedctEntityCategory {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnomedctEntityCategory::Anatomy => "ANATOMY",
+            SnomedctEntityCategory::MedicalCondition => "MEDICAL_CONDITION",
+            SnomedctEntityCategory::TestTreatmentProcedure => "TEST_TREATMENT_PROCEDURE",
+            SnomedctEntityCategory::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ANATOMY", "MEDICAL_CONDITION", "TEST_TREATMENT_PROCEDURE"]
+    }
+}
+impl AsRef<str> for SnomedctEntityCategory {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SnomedctEntityType {
+    #[allow(missing_docs)] // documentation missing in model
+    DxName,
+    #[allow(missing_docs)] // documentation missing in model
+    ProcedureName,
+    #[allow(missing_docs)] // documentation missing in model
+    TestName,
+    #[allow(missing_docs)] // documentation missing in model
+    TreatmentName,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SnomedctEntityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DX_NAME" => SnomedctEntityType::DxName,
+            "PROCEDURE_NAME" => SnomedctEntityType::ProcedureName,
+            "TEST_NAME" => SnomedctEntityType::TestName,
+            "TREATMENT_NAME" => SnomedctEntityType::TreatmentName,
+            other => SnomedctEntityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SnomedctEntityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SnomedctEntityType::from(s))
+    }
+}
+impl SnomedctEntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SnomedctEntityType::DxName => "DX_NAME",
+            SnomedctEntityType::ProcedureName => "PROCEDURE_NAME",
+            SnomedctEntityType::TestName => "TEST_NAME",
+            SnomedctEntityType::TreatmentName => "TREATMENT_NAME",
+            SnomedctEntityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DX_NAME", "PROCEDURE_NAME", "TEST_NAME", "TREATMENT_NAME"]
+    }
+}
+impl AsRef<str> for SnomedctEntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormEntity {
-    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-    /// this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub id: std::option::Option<i32>,
     /// <p>The segment of input text extracted from which the entity was detected.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or
-    /// <code>BRAND_NAME</code>.</p>
+    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
     pub category: std::option::Option<crate::model::RxNormEntityCategory>,
-    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is
-    /// <code>MEDICATION</code>.</p>
+    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
     pub r#type: std::option::Option<crate::model::RxNormEntityType>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-    /// entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
     pub score: std::option::Option<f32>,
-    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub end_offset: std::option::Option<i32>,
-    /// <p>The extracted attributes that relate to the entity. The attributes recognized by
-    /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
-    /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
-    /// <code>STRENGTH</code>.</p>
+    /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::RxNormAttribute>>,
     /// <p> Contextual information for the entity.</p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
-    /// likelihood of the match.</p>
+    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub rx_norm_concepts: std::option::Option<std::vec::Vec<crate::model::RxNormConcept>>,
 }
 impl RxNormEntity {
-    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-    /// this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
@@ -856,35 +1956,27 @@ impl RxNormEntity {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or
-    /// <code>BRAND_NAME</code>.</p>
+    /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::RxNormEntityCategory> {
         self.category.as_ref()
     }
-    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is
-    /// <code>MEDICATION</code>.</p>
+    /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RxNormEntityType> {
         self.r#type.as_ref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-    /// entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
-    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>The extracted attributes that relate to the entity. The attributes recognized by
-    /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
-    /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
-    /// <code>STRENGTH</code>.</p>
+    /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::RxNormAttribute]> {
         self.attributes.as_deref()
     }
@@ -892,8 +1984,7 @@ impl RxNormEntity {
     pub fn traits(&self) -> std::option::Option<&[crate::model::RxNormTrait]> {
         self.traits.as_deref()
     }
-    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
-    /// likelihood of the match.</p>
+    /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn rx_norm_concepts(&self) -> std::option::Option<&[crate::model::RxNormConcept]> {
         self.rx_norm_concepts.as_deref()
     }
@@ -933,14 +2024,12 @@ pub mod rx_norm_entity {
             std::option::Option<std::vec::Vec<crate::model::RxNormConcept>>,
     }
     impl Builder {
-        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-        /// this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-        /// this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
@@ -955,14 +2044,12 @@ pub mod rx_norm_entity {
             self.text = input;
             self
         }
-        /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or
-        /// <code>BRAND_NAME</code>.</p>
+        /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
         pub fn category(mut self, input: crate::model::RxNormEntityCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or
-        /// <code>BRAND_NAME</code>.</p>
+        /// <p>The category of the entity. The recognized categories are <code>GENERIC</code> or <code>BRAND_NAME</code>.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::RxNormEntityCategory>,
@@ -970,14 +2057,12 @@ pub mod rx_norm_entity {
             self.category = input;
             self
         }
-        /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is
-        /// <code>MEDICATION</code>.</p>
+        /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::RxNormEntityType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is
-        /// <code>MEDICATION</code>.</p>
+        /// <p> Describes the specific type of entity. For InferRxNorm, the recognized entity type is <code>MEDICATION</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::RxNormEntityType>,
@@ -985,38 +2070,32 @@ pub mod rx_norm_entity {
             self.r#type = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-        /// entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-        /// entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -1025,20 +2104,14 @@ pub mod rx_norm_entity {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The extracted attributes that relate to the entity. The attributes recognized by
-        /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
-        /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
-        /// <code>STRENGTH</code>.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::RxNormAttribute>) -> Self {
+        /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
+        pub fn attributes(mut self, input: crate::model::RxNormAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>The extracted attributes that relate to the entity. The attributes recognized by
-        /// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
-        /// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and
-        /// <code>STRENGTH</code>.</p>
+        /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RxNormAttribute>>,
@@ -1051,9 +2124,9 @@ pub mod rx_norm_entity {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p> Contextual information for the entity.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::RxNormTrait>) -> Self {
+        pub fn traits(mut self, input: crate::model::RxNormTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -1069,16 +2142,14 @@ pub mod rx_norm_entity {
         ///
         /// To override the contents of this collection use [`set_rx_norm_concepts`](Self::set_rx_norm_concepts).
         ///
-        /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
-        /// likelihood of the match.</p>
-        pub fn rx_norm_concepts(mut self, input: impl Into<crate::model::RxNormConcept>) -> Self {
+        /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+        pub fn rx_norm_concepts(mut self, input: crate::model::RxNormConcept) -> Self {
             let mut v = self.rx_norm_concepts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rx_norm_concepts = Some(v);
             self
         }
-        /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the
-        /// likelihood of the match.</p>
+        /// <p> The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
         pub fn set_rx_norm_concepts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RxNormConcept>>,
@@ -1110,8 +2181,7 @@ impl RxNormEntity {
     }
 }
 
-/// <p>The RxNorm concept that the entity could refer to, along with a score indicating the
-/// likelihood of the match.</p>
+/// <p>The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormConcept {
@@ -1119,8 +2189,7 @@ pub struct RxNormConcept {
     pub description: std::option::Option<std::string::String>,
     /// <p>RxNorm concept ID, also known as the RxCUI.</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-    /// linked to the reported RxNorm concept.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
     pub score: std::option::Option<f32>,
 }
 impl RxNormConcept {
@@ -1132,8 +2201,7 @@ impl RxNormConcept {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-    /// linked to the reported RxNorm concept.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -1178,14 +2246,12 @@ pub mod rx_norm_concept {
             self.code = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-        /// linked to the reported RxNorm concept.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-        /// linked to the reported RxNorm concept.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -1207,16 +2273,13 @@ impl RxNormConcept {
     }
 }
 
-/// <p>The contextual information for the entity. InferRxNorm recognizes the trait
-/// <code>NEGATION</code>, which is any indication that the patient is not taking a medication.
-/// </p>
+/// <p>The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
     pub name: std::option::Option<crate::model::RxNormTraitName>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-    /// trait.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
     pub score: std::option::Option<f32>,
 }
 impl RxNormTrait {
@@ -1224,8 +2287,7 @@ impl RxNormTrait {
     pub fn name(&self) -> std::option::Option<&crate::model::RxNormTraitName> {
         self.name.as_ref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-    /// trait.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -1261,14 +2323,12 @@ pub mod rx_norm_trait {
             self.name = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-        /// trait.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected
-        /// trait.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -1340,65 +2400,49 @@ impl AsRef<str> for RxNormTraitName {
     }
 }
 
-/// <p>The extracted attributes that relate to this entity. The attributes recognized by
-/// InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>,
-/// <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.</p>
+/// <p>The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RxNormAttribute {
-    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are
-    /// <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
     pub r#type: std::option::Option<crate::model::RxNormAttributeType>,
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly
-    /// recognized as an attribute.</p>
+    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub score: std::option::Option<f32>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is
-    /// accurately linked to an entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
     pub relationship_score: std::option::Option<f32>,
-    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub id: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub end_offset: std::option::Option<i32>,
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
-    /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
-    /// form of a medication.</p>
+    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
 }
 impl RxNormAttribute {
-    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are
-    /// <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+    /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RxNormAttributeType> {
         self.r#type.as_ref()
     }
-    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly
-    /// recognized as an attribute.</p>
+    /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is
-    /// accurately linked to an entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
     pub fn relationship_score(&self) -> std::option::Option<f32> {
         self.relationship_score
     }
-    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
-    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -1406,9 +2450,7 @@ impl RxNormAttribute {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
-    /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
-    /// form of a medication.</p>
+    /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
     pub fn traits(&self) -> std::option::Option<&[crate::model::RxNormTrait]> {
         self.traits.as_deref()
     }
@@ -1443,14 +2485,12 @@ pub mod rx_norm_attribute {
         pub(crate) traits: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
     }
     impl Builder {
-        /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are
-        /// <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+        /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
         pub fn r#type(mut self, input: crate::model::RxNormAttributeType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are
-        /// <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
+        /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::RxNormAttributeType>,
@@ -1458,62 +2498,52 @@ pub mod rx_norm_attribute {
             self.r#type = input;
             self
         }
-        /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly
-        /// recognized as an attribute.</p>
+        /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly
-        /// recognized as an attribute.</p>
+        /// <p>The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is
-        /// accurately linked to an entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
         pub fn relationship_score(mut self, input: f32) -> Self {
             self.relationship_score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is
-        /// accurately linked to an entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
         pub fn set_relationship_score(mut self, input: std::option::Option<f32>) -> Self {
             self.relationship_score = input;
             self
         }
-        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -1532,18 +2562,14 @@ pub mod rx_norm_attribute {
         ///
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
-        /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
-        /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
-        /// form of a medication.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::RxNormTrait>) -> Self {
+        /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
+        pub fn traits(mut self, input: crate::model::RxNormTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
-        /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait
-        /// <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or
-        /// form of a medication.</p>
+        /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
         pub fn set_traits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RxNormTrait>>,
@@ -1762,50 +2788,33 @@ impl AsRef<str> for RxNormEntityCategory {
     }
 }
 
-/// <p>The collection of medical entities extracted from the input text and their associated
-/// information. For each entity, the response provides the entity text, the entity category,
-/// where the entity text begins and ends, and the level of confidence that Amazon Comprehend
-/// Medical has in the detection and analysis. Attributes and traits of the entity are also
-/// returned. </p>
+/// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmEntity {
-    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-    /// this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub id: std::option::Option<i32>,
     /// <p>The segment of input text that is matched to the detected entity.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p> The category of the entity. InferICD10CM detects entities in the
-    /// <code>MEDICAL_CONDITION</code> category. </p>
+    /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
     pub category: std::option::Option<crate::model::Icd10CmEntityCategory>,
-    /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects
-    /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+    /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
     pub r#type: std::option::Option<crate::model::Icd10CmEntityType>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-    /// detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub score: std::option::Option<f32>,
-    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub end_offset: std::option::Option<i32>,
-    /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
-    /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
-    /// medical condition.</p>
+    /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Icd10CmAttribute>>,
-    /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are
-    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-    /// <code>NEGATION.</code>
-    /// </p>
+    /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
-    /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
-    /// likelihood of the match.</p>
+    /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub icd10_cm_concepts: std::option::Option<std::vec::Vec<crate::model::Icd10CmConcept>>,
 }
 impl Icd10CmEntity {
-    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-    /// this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
@@ -1813,46 +2822,35 @@ impl Icd10CmEntity {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p> The category of the entity. InferICD10CM detects entities in the
-    /// <code>MEDICAL_CONDITION</code> category. </p>
+    /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
     pub fn category(&self) -> std::option::Option<&crate::model::Icd10CmEntityCategory> {
         self.category.as_ref()
     }
-    /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects
-    /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+    /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Icd10CmEntityType> {
         self.r#type.as_ref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-    /// detection.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
-    /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
-    /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
-    /// medical condition.</p>
+    /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Icd10CmAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are
-    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-    /// <code>NEGATION.</code>
-    /// </p>
+    /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
     pub fn traits(&self) -> std::option::Option<&[crate::model::Icd10CmTrait]> {
         self.traits.as_deref()
     }
-    /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
-    /// likelihood of the match.</p>
+    /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn icd10_cm_concepts(&self) -> std::option::Option<&[crate::model::Icd10CmConcept]> {
         self.icd10_cm_concepts.as_deref()
     }
@@ -1892,14 +2890,12 @@ pub mod icd10_cm_entity {
             std::option::Option<std::vec::Vec<crate::model::Icd10CmConcept>>,
     }
     impl Builder {
-        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-        /// this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within
-        /// this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
@@ -1914,14 +2910,12 @@ pub mod icd10_cm_entity {
             self.text = input;
             self
         }
-        /// <p> The category of the entity. InferICD10CM detects entities in the
-        /// <code>MEDICAL_CONDITION</code> category. </p>
+        /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
         pub fn category(mut self, input: crate::model::Icd10CmEntityCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p> The category of the entity. InferICD10CM detects entities in the
-        /// <code>MEDICAL_CONDITION</code> category. </p>
+        /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::Icd10CmEntityCategory>,
@@ -1929,14 +2923,12 @@ pub mod icd10_cm_entity {
             self.category = input;
             self
         }
-        /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects
-        /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+        /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
         pub fn r#type(mut self, input: crate::model::Icd10CmEntityType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects
-        /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
+        /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::Icd10CmEntityType>,
@@ -1944,38 +2936,32 @@ pub mod icd10_cm_entity {
             self.r#type = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-        /// detection.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the
-        /// detection.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -1984,18 +2970,14 @@ pub mod icd10_cm_entity {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
-        /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
-        /// medical condition.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Icd10CmAttribute>) -> Self {
+        /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
+        pub fn attributes(mut self, input: crate::model::Icd10CmAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>The detected attributes that relate to the entity. An extracted segment of the text that
-        /// is an attribute of an entity, or otherwise related to an entity, such as the nature of a
-        /// medical condition.</p>
+        /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Icd10CmAttribute>>,
@@ -2007,20 +2989,14 @@ pub mod icd10_cm_entity {
         ///
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
-        /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are
-        /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-        /// <code>NEGATION.</code>
-        /// </p>
-        pub fn traits(mut self, input: impl Into<crate::model::Icd10CmTrait>) -> Self {
+        /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
+        pub fn traits(mut self, input: crate::model::Icd10CmTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
-        /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are
-        /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-        /// <code>NEGATION.</code>
-        /// </p>
+        /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
         pub fn set_traits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
@@ -2032,16 +3008,14 @@ pub mod icd10_cm_entity {
         ///
         /// To override the contents of this collection use [`set_icd10_cm_concepts`](Self::set_icd10_cm_concepts).
         ///
-        /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
-        /// likelihood of the match.</p>
-        pub fn icd10_cm_concepts(mut self, input: impl Into<crate::model::Icd10CmConcept>) -> Self {
+        /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
+        pub fn icd10_cm_concepts(mut self, input: crate::model::Icd10CmConcept) -> Self {
             let mut v = self.icd10_cm_concepts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.icd10_cm_concepts = Some(v);
             self
         }
-        /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
-        /// likelihood of the match.</p>
+        /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
         pub fn set_icd10_cm_concepts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Icd10CmConcept>>,
@@ -2073,18 +3047,15 @@ impl Icd10CmEntity {
     }
 }
 
-/// <p> The ICD-10-CM concepts that the entity could refer to, along with a score indicating the
-/// likelihood of the match.</p>
+/// <p> The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the
-    /// Centers for Disease Control.</p>
+    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-    /// linked to an ICD-10-CM concept.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub score: std::option::Option<f32>,
 }
 impl Icd10CmConcept {
@@ -2092,13 +3063,11 @@ impl Icd10CmConcept {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the
-    /// Centers for Disease Control.</p>
+    /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-    /// linked to an ICD-10-CM concept.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -2133,26 +3102,22 @@ pub mod icd10_cm_concept {
             self.description = input;
             self
         }
-        /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the
-        /// Centers for Disease Control.</p>
+        /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
-        /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the
-        /// Centers for Disease Control.</p>
+        /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-        /// linked to an ICD-10-CM concept.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately
-        /// linked to an ICD-10-CM concept.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -2174,16 +3139,13 @@ impl Icd10CmConcept {
     }
 }
 
-/// <p>Contextual information for the entity. The traits recognized by InferICD10CM are
-/// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-/// <code>NEGATION</code>.</p>
+/// <p>Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
     pub name: std::option::Option<crate::model::Icd10CmTraitName>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-    /// as a trait.</p>
+    /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
     pub score: std::option::Option<f32>,
 }
 impl Icd10CmTrait {
@@ -2191,8 +3153,7 @@ impl Icd10CmTrait {
     pub fn name(&self) -> std::option::Option<&crate::model::Icd10CmTraitName> {
         self.name.as_ref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-    /// as a trait.</p>
+    /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -2228,14 +3189,12 @@ pub mod icd10_cm_trait {
             self.name = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-        /// as a trait.</p>
+        /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-        /// as a trait.</p>
+        /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -2319,71 +3278,53 @@ impl AsRef<str> for Icd10CmTraitName {
     }
 }
 
-/// <p>The detected attributes that relate to an entity. This includes an extracted segment of
-/// the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM
-/// detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>,
-/// and <code>Acuity</code>.</p>
+/// <p>The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Icd10CmAttribute {
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
-    /// </p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub r#type: std::option::Option<crate::model::Icd10CmAttributeType>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is
-    /// correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub score: std::option::Option<f32>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is
-    /// correctly related to this entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub relationship_score: std::option::Option<f32>,
-    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub id: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub end_offset: std::option::Option<i32>,
     /// <p>The segment of input text which contains the detected attribute.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
-    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-    /// <code>NEGATION</code>.</p>
+    /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
     pub traits: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
     pub category: std::option::Option<crate::model::Icd10CmEntityType>,
-    /// <p>The type of relationship between the entity and attribute. Type for the relationship can
-    /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub relationship_type: std::option::Option<crate::model::Icd10CmRelationshipType>,
 }
 impl Icd10CmAttribute {
-    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
-    /// </p>
+    /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Icd10CmAttributeType> {
         self.r#type.as_ref()
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is
-    /// correctly recognized as an attribute.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is
-    /// correctly related to this entity.</p>
+    /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub fn relationship_score(&self) -> std::option::Option<f32> {
         self.relationship_score
     }
-    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier.</p>
+    /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
-    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -2391,9 +3332,7 @@ impl Icd10CmAttribute {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
-    /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-    /// <code>NEGATION</code>.</p>
+    /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
     pub fn traits(&self) -> std::option::Option<&[crate::model::Icd10CmTrait]> {
         self.traits.as_deref()
     }
@@ -2401,8 +3340,7 @@ impl Icd10CmAttribute {
     pub fn category(&self) -> std::option::Option<&crate::model::Icd10CmEntityType> {
         self.category.as_ref()
     }
-    /// <p>The type of relationship between the entity and attribute. Type for the relationship can
-    /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub fn relationship_type(&self) -> std::option::Option<&crate::model::Icd10CmRelationshipType> {
         self.relationship_type.as_ref()
     }
@@ -2441,14 +3379,12 @@ pub mod icd10_cm_attribute {
         pub(crate) relationship_type: std::option::Option<crate::model::Icd10CmRelationshipType>,
     }
     impl Builder {
-        /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
-        /// </p>
+        /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
         pub fn r#type(mut self, input: crate::model::Icd10CmAttributeType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
-        /// </p>
+        /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::Icd10CmAttributeType>,
@@ -2456,62 +3392,52 @@ pub mod icd10_cm_attribute {
             self.r#type = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is
-        /// correctly recognized as an attribute.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is
-        /// correctly recognized as an attribute.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is
-        /// correctly related to this entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
         pub fn relationship_score(mut self, input: f32) -> Self {
             self.relationship_score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is
-        /// correctly related to this entity.</p>
+        /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
         pub fn set_relationship_score(mut self, input: std::option::Option<f32>) -> Self {
             self.relationship_score = input;
             self
         }
-        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier.</p>
+        /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -2530,18 +3456,14 @@ pub mod icd10_cm_attribute {
         ///
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
-        /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
-        /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-        /// <code>NEGATION</code>.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::Icd10CmTrait>) -> Self {
+        /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
+        pub fn traits(mut self, input: crate::model::Icd10CmTrait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
-        /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are
-        /// <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and
-        /// <code>NEGATION</code>.</p>
+        /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
         pub fn set_traits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Icd10CmTrait>>,
@@ -2562,14 +3484,12 @@ pub mod icd10_cm_attribute {
             self.category = input;
             self
         }
-        /// <p>The type of relationship between the entity and attribute. Type for the relationship can
-        /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+        /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
         pub fn relationship_type(mut self, input: crate::model::Icd10CmRelationshipType) -> Self {
             self.relationship_type = Some(input);
             self
         }
-        /// <p>The type of relationship between the entity and attribute. Type for the relationship can
-        /// be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
+        /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
         pub fn set_relationship_type(
             mut self,
             input: std::option::Option<crate::model::Icd10CmRelationshipType>,
@@ -2849,16 +3769,13 @@ impl AsRef<str> for Icd10CmEntityCategory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Entity {
-    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier. </p>
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub id: std::option::Option<i32>,
-    /// <p> The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p> The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     pub end_offset: std::option::Option<i32>,
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
     pub score: std::option::Option<f32>,
     /// <p> The segment of input text extracted as this entity.</p>
     pub text: std::option::Option<std::string::String>,
@@ -2872,22 +3789,19 @@ pub struct Entity {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl Entity {
-    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier. </p>
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
-    /// <p> The 0-based character offset in the input text that shows where the entity begins. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p> The 0-based character offset in the input text that shows where the entity ends. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
-    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+    /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -2944,48 +3858,42 @@ pub mod entity {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
-        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. </p>
+        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. </p>
+        /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the entity begins. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the entity ends. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+        /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+        /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -3028,9 +3936,9 @@ pub mod entity {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p>Contextual information for the entity.</p>
-        pub fn traits(mut self, input: impl Into<crate::model::Trait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Trait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -3047,9 +3955,9 @@ pub mod entity {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p> The extracted attributes that relate to this entity.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -3084,33 +3992,23 @@ impl Entity {
     }
 }
 
-/// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related
-/// to an entity, such as the dosage of a medication taken. It contains information about the
-/// attribute such as id, begin and end offset within the input text, and the segment of the input
-/// text. </p>
+/// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
     /// <p> The type of attribute. </p>
     pub r#type: std::option::Option<crate::model::EntitySubType>,
-    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-    /// as an attribute. </p>
+    /// <p> The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as an attribute. </p>
     pub score: std::option::Option<f32>,
-    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
-    /// entity. </p>
+    /// <p> The level of confidence that Comprehend Medical; has that this attribute is correctly related to this entity. </p>
     pub relationship_score: std::option::Option<f32>,
-    /// <p>The type of relationship between the entity and attribute. Type for the relationship is
-    /// <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-    /// <code>Date_Expression</code>. </p>
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
     pub relationship_type: std::option::Option<crate::model::RelationshipType>,
-    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier. </p>
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub id: std::option::Option<i32>,
-    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
     pub begin_offset: std::option::Option<i32>,
-    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub end_offset: std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute.</p>
     pub text: std::option::Option<std::string::String>,
@@ -3124,34 +4022,27 @@ impl Attribute {
     pub fn r#type(&self) -> std::option::Option<&crate::model::EntitySubType> {
         self.r#type.as_ref()
     }
-    /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-    /// as an attribute. </p>
+    /// <p> The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as an attribute. </p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
-    /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
-    /// entity. </p>
+    /// <p> The level of confidence that Comprehend Medical; has that this attribute is correctly related to this entity. </p>
     pub fn relationship_score(&self) -> std::option::Option<f32> {
         self.relationship_score
     }
-    /// <p>The type of relationship between the entity and attribute. Type for the relationship is
-    /// <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-    /// <code>Date_Expression</code>. </p>
+    /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
     pub fn relationship_type(&self) -> std::option::Option<&crate::model::RelationshipType> {
         self.relationship_type.as_ref()
     }
-    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique
-    /// within this response rather than a global unique identifier. </p>
+    /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub fn id(&self) -> std::option::Option<i32> {
         self.id
     }
-    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The
-    /// offset returns the UTF-8 code point in the string. </p>
+    /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(&self) -> std::option::Option<i32> {
         self.begin_offset
     }
-    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The
-    /// offset returns the UTF-8 code point in the string.</p>
+    /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
     }
@@ -3212,40 +4103,32 @@ pub mod attribute {
             self.r#type = input;
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-        /// as an attribute. </p>
+        /// <p> The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as an attribute. </p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized
-        /// as an attribute. </p>
+        /// <p> The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as an attribute. </p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
-        /// entity. </p>
+        /// <p> The level of confidence that Comprehend Medical; has that this attribute is correctly related to this entity. </p>
         pub fn relationship_score(mut self, input: f32) -> Self {
             self.relationship_score = Some(input);
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
-        /// entity. </p>
+        /// <p> The level of confidence that Comprehend Medical; has that this attribute is correctly related to this entity. </p>
         pub fn set_relationship_score(mut self, input: std::option::Option<f32>) -> Self {
             self.relationship_score = input;
             self
         }
-        /// <p>The type of relationship between the entity and attribute. Type for the relationship is
-        /// <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-        /// <code>Date_Expression</code>. </p>
+        /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
         pub fn relationship_type(mut self, input: crate::model::RelationshipType) -> Self {
             self.relationship_type = Some(input);
             self
         }
-        /// <p>The type of relationship between the entity and attribute. Type for the relationship is
-        /// <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-        /// <code>Date_Expression</code>. </p>
+        /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
         pub fn set_relationship_type(
             mut self,
             input: std::option::Option<crate::model::RelationshipType>,
@@ -3253,38 +4136,32 @@ pub mod attribute {
             self.relationship_type = input;
             self
         }
-        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. </p>
+        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
         pub fn id(mut self, input: i32) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique
-        /// within this response rather than a global unique identifier. </p>
+        /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
         pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
             self.id = input;
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
         pub fn begin_offset(mut self, input: i32) -> Self {
             self.begin_offset = Some(input);
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The
-        /// offset returns the UTF-8 code point in the string. </p>
+        /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn end_offset(mut self, input: i32) -> Self {
             self.end_offset = Some(input);
             self
         }
-        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The
-        /// offset returns the UTF-8 code point in the string.</p>
+        /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -3317,9 +4194,9 @@ pub mod attribute {
         /// To override the contents of this collection use [`set_traits`](Self::set_traits).
         ///
         /// <p> Contextual information for this attribute. </p>
-        pub fn traits(mut self, input: impl Into<crate::model::Trait>) -> Self {
+        pub fn traits(mut self, input: crate::model::Trait) -> Self {
             let mut v = self.traits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traits = Some(v);
             self
         }
@@ -3361,7 +4238,7 @@ impl Attribute {
 pub struct Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
     pub name: std::option::Option<crate::model::AttributeName>,
-    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
     pub score: std::option::Option<f32>,
 }
 impl Trait {
@@ -3369,7 +4246,7 @@ impl Trait {
     pub fn name(&self) -> std::option::Option<&crate::model::AttributeName> {
         self.name.as_ref()
     }
-    /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+    /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
     pub fn score(&self) -> std::option::Option<f32> {
         self.score
     }
@@ -3402,12 +4279,12 @@ pub mod r#trait {
             self.name = input;
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+        /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
         pub fn score(mut self, input: f32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.</p>
+        /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -3612,6 +4489,8 @@ pub enum RelationshipType {
     #[allow(missing_docs)] // documentation missing in model
     SystemOrganSite,
     #[allow(missing_docs)] // documentation missing in model
+    TestUnit,
+    #[allow(missing_docs)] // documentation missing in model
     TestUnits,
     #[allow(missing_docs)] // documentation missing in model
     TestValue,
@@ -3638,6 +4517,7 @@ impl std::convert::From<&str> for RelationshipType {
             "ROUTE_OR_MODE" => RelationshipType::RouteOrMode,
             "STRENGTH" => RelationshipType::Strength,
             "SYSTEM_ORGAN_SITE" => RelationshipType::SystemOrganSite,
+            "TEST_UNIT" => RelationshipType::TestUnit,
             "TEST_UNITS" => RelationshipType::TestUnits,
             "TEST_VALUE" => RelationshipType::TestValue,
             "WITH_DOSAGE" => RelationshipType::WithDosage,
@@ -3671,6 +4551,7 @@ impl RelationshipType {
             RelationshipType::RouteOrMode => "ROUTE_OR_MODE",
             RelationshipType::Strength => "STRENGTH",
             RelationshipType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+            RelationshipType::TestUnit => "TEST_UNIT",
             RelationshipType::TestUnits => "TEST_UNITS",
             RelationshipType::TestValue => "TEST_VALUE",
             RelationshipType::WithDosage => "WITH_DOSAGE",
@@ -3695,6 +4576,7 @@ impl RelationshipType {
             "ROUTE_OR_MODE",
             "STRENGTH",
             "SYSTEM_ORGAN_SITE",
+            "TEST_UNIT",
             "TEST_UNITS",
             "TEST_VALUE",
             "WITH_DOSAGE",
@@ -3738,6 +4620,8 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Duration,
     #[allow(missing_docs)] // documentation missing in model
+    DxName,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
     Form,
@@ -3746,9 +4630,13 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     GenericName,
     #[allow(missing_docs)] // documentation missing in model
+    Id,
+    #[allow(missing_docs)] // documentation missing in model
     Identifier,
     #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
+    PhoneOrFax,
     #[allow(missing_docs)] // documentation missing in model
     ProcedureName,
     #[allow(missing_docs)] // documentation missing in model
@@ -3767,6 +4655,8 @@ pub enum EntitySubType {
     SystemOrganSite,
     #[allow(missing_docs)] // documentation missing in model
     TestName,
+    #[allow(missing_docs)] // documentation missing in model
+    TestUnit,
     #[allow(missing_docs)] // documentation missing in model
     TestUnits,
     #[allow(missing_docs)] // documentation missing in model
@@ -3802,12 +4692,15 @@ impl std::convert::From<&str> for EntitySubType {
             "DIRECTION" => EntitySubType::Direction,
             "DOSAGE" => EntitySubType::Dosage,
             "DURATION" => EntitySubType::Duration,
+            "DX_NAME" => EntitySubType::DxName,
             "EMAIL" => EntitySubType::Email,
             "FORM" => EntitySubType::Form,
             "FREQUENCY" => EntitySubType::Frequency,
             "GENERIC_NAME" => EntitySubType::GenericName,
+            "ID" => EntitySubType::Id,
             "IDENTIFIER" => EntitySubType::Identifier,
             "NAME" => EntitySubType::Name,
+            "PHONE_OR_FAX" => EntitySubType::PhoneOrFax,
             "PROCEDURE_NAME" => EntitySubType::ProcedureName,
             "PROFESSION" => EntitySubType::Profession,
             "QUALITY" => EntitySubType::Quality,
@@ -3817,6 +4710,7 @@ impl std::convert::From<&str> for EntitySubType {
             "STRENGTH" => EntitySubType::Strength,
             "SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
             "TEST_NAME" => EntitySubType::TestName,
+            "TEST_UNIT" => EntitySubType::TestUnit,
             "TEST_UNITS" => EntitySubType::TestUnits,
             "TEST_VALUE" => EntitySubType::TestValue,
             "TIME_EXPRESSION" => EntitySubType::TimeExpression,
@@ -3851,12 +4745,15 @@ impl EntitySubType {
             EntitySubType::Direction => "DIRECTION",
             EntitySubType::Dosage => "DOSAGE",
             EntitySubType::Duration => "DURATION",
+            EntitySubType::DxName => "DX_NAME",
             EntitySubType::Email => "EMAIL",
             EntitySubType::Form => "FORM",
             EntitySubType::Frequency => "FREQUENCY",
             EntitySubType::GenericName => "GENERIC_NAME",
+            EntitySubType::Id => "ID",
             EntitySubType::Identifier => "IDENTIFIER",
             EntitySubType::Name => "NAME",
+            EntitySubType::PhoneOrFax => "PHONE_OR_FAX",
             EntitySubType::ProcedureName => "PROCEDURE_NAME",
             EntitySubType::Profession => "PROFESSION",
             EntitySubType::Quality => "QUALITY",
@@ -3866,6 +4763,7 @@ impl EntitySubType {
             EntitySubType::Strength => "STRENGTH",
             EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
             EntitySubType::TestName => "TEST_NAME",
+            EntitySubType::TestUnit => "TEST_UNIT",
             EntitySubType::TestUnits => "TEST_UNITS",
             EntitySubType::TestValue => "TEST_VALUE",
             EntitySubType::TimeExpression => "TIME_EXPRESSION",
@@ -3891,12 +4789,15 @@ impl EntitySubType {
             "DIRECTION",
             "DOSAGE",
             "DURATION",
+            "DX_NAME",
             "EMAIL",
             "FORM",
             "FREQUENCY",
             "GENERIC_NAME",
+            "ID",
             "IDENTIFIER",
             "NAME",
+            "PHONE_OR_FAX",
             "PROCEDURE_NAME",
             "PROFESSION",
             "QUALITY",
@@ -3906,6 +4807,7 @@ impl EntitySubType {
             "STRENGTH",
             "SYSTEM_ORGAN_SITE",
             "TEST_NAME",
+            "TEST_UNIT",
             "TEST_UNITS",
             "TEST_VALUE",
             "TIME_EXPRESSION",
@@ -3925,21 +4827,17 @@ impl AsRef<str> for EntitySubType {
     }
 }
 
-/// <p> An attribute that we extracted, but were unable to relate to an entity. </p>
+/// <p> An attribute that was extracted, but Comprehend Medical; was unable to relate to an entity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnmappedAttribute {
-    /// <p> The type of the attribute, could be one of the following values: "MEDICATION",
-    /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-    /// "PROTECTED_HEALTH_INFORMATION". </p>
+    /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub attribute: std::option::Option<crate::model::Attribute>,
 }
 impl UnmappedAttribute {
-    /// <p> The type of the attribute, could be one of the following values: "MEDICATION",
-    /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-    /// "PROTECTED_HEALTH_INFORMATION". </p>
+    /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EntityType> {
         self.r#type.as_ref()
     }
@@ -3966,16 +4864,12 @@ pub mod unmapped_attribute {
         pub(crate) attribute: std::option::Option<crate::model::Attribute>,
     }
     impl Builder {
-        /// <p> The type of the attribute, could be one of the following values: "MEDICATION",
-        /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-        /// "PROTECTED_HEALTH_INFORMATION". </p>
+        /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
         pub fn r#type(mut self, input: crate::model::EntityType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of the attribute, could be one of the following values: "MEDICATION",
-        /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-        /// "PROTECTED_HEALTH_INFORMATION". </p>
+        /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EntityType>) -> Self {
             self.r#type = input;
             self

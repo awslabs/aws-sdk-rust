@@ -11,30 +11,25 @@ pub enum Error {
     CertificateAlreadyExistsException(crate::error::CertificateAlreadyExistsException),
     /// <p>The certificate is not present in the system for describe or deregister activities.</p>
     CertificateDoesNotExistException(crate::error::CertificateDoesNotExistException),
-    /// <p>The certificate is being used for the LDAP security connection and cannot be removed
-    /// without disabling LDAP security.</p>
+    /// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
     CertificateInUseException(crate::error::CertificateInUseException),
     /// <p>The certificate could not be added because the certificate limit has been reached.</p>
     CertificateLimitExceededException(crate::error::CertificateLimitExceededException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
-    /// was created. Specify a different Region and try again.</p>
+    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
     DirectoryAlreadyInRegionException(crate::error::DirectoryAlreadyInRegionException),
     /// <p>The specified directory has already been shared with this Amazon Web Services account.</p>
     DirectoryAlreadySharedException(crate::error::DirectoryAlreadySharedException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>The specified directory has not been shared with this Amazon Web Services account.</p>
     DirectoryNotSharedException(crate::error::DirectoryNotSharedException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The
-    /// default limit per directory is 20 domain controllers.</p>
+    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::error::DomainControllerLimitExceededException),
     /// <p>The specified entity already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
@@ -46,37 +41,29 @@ pub enum Error {
     InvalidCertificateException(crate::error::InvalidCertificateException),
     /// <p>Client authentication is already enabled.</p>
     InvalidClientAuthStatusException(crate::error::InvalidClientAuthStatusException),
-    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-    /// status.</p>
+    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::error::InvalidLdapsStatusException),
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The new password provided by the user does not meet the password complexity
-    /// requirements defined in your directory.</p>
+    /// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>The specified shared target is not valid.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
-    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
-    /// address blocks.</p>
+    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
     IpRouteLimitExceededException(crate::error::IpRouteLimitExceededException),
-    /// <p>Client authentication setup could not be completed because at least one valid certificate must be
-    /// registered in the system.</p>
+    /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
     NoAvailableCertificateException(crate::error::NoAvailableCertificateException),
     /// <p>Exception encountered while trying to access your Amazon Web Services organization.</p>
     OrganizationsException(crate::error::OrganizationsException),
-    /// <p>You have reached the limit for maximum number of simultaneous Region replications per
-    /// directory.</p>
+    /// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
     RegionLimitExceededException(crate::error::RegionLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
-    /// reached.</p>
+    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
     ShareLimitExceededException(crate::error::ShareLimitExceededException),
-    /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-    /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-    /// for a directory.</p>
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
     /// <p>The maximum allowed number of tags was exceeded.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),

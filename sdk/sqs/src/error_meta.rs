@@ -19,20 +19,15 @@ pub enum Error {
     InvalidMessageContents(crate::error::InvalidMessageContents),
     /// <p>The specified message isn't in flight.</p>
     MessageNotInflight(crate::error::MessageNotInflight),
-    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code>
-    /// returns this error if the maximum number of inflight messages is reached and
-    /// <code>AddPermission</code> returns this error if the maximum number of permissions
-    /// for the queue is reached.</p>
+    /// <p>The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the maximum number of permissions for the queue is reached.</p>
     OverLimit(crate::error::OverLimit),
     /// <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
     PurgeQueueInProgress(crate::error::PurgeQueueInProgress),
-    /// <p>You must wait 60 seconds after deleting a queue before you can create another queue
-    /// with the same name.</p>
+    /// <p>You must wait 60 seconds after deleting a queue before you can create another queue with the same name.</p>
     QueueDeletedRecently(crate::error::QueueDeletedRecently),
     /// <p>The specified queue doesn't exist.</p>
     QueueDoesNotExist(crate::error::QueueDoesNotExist),
-    /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request
-    /// includes attributes whose values differ from those of the existing queue.</p>
+    /// <p>A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose values differ from those of the existing queue.</p>
     QueueNameExists(crate::error::QueueNameExists),
     /// <p>The specified receipt handle isn't valid.</p>
     ReceiptHandleIsInvalid(crate::error::ReceiptHandleIsInvalid),

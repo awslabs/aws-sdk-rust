@@ -531,6 +531,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyDetectors {
     }
 }
 
+/// Operation shape for `ListAnomalyGroupRelatedMetrics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_anomaly_group_related_metrics`](crate::client::Client::list_anomaly_group_related_metrics).
+///
+/// See [`crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAnomalyGroupRelatedMetrics {
+    _private: (),
+}
+impl ListAnomalyGroupRelatedMetrics {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+    pub fn builder() -> crate::input::list_anomaly_group_related_metrics_input::Builder {
+        crate::input::list_anomaly_group_related_metrics_input::Builder::default()
+    }
+    /// Creates a new `ListAnomalyGroupRelatedMetrics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupRelatedMetrics {
+    type Output = std::result::Result<
+        crate::output::ListAnomalyGroupRelatedMetricsOutput,
+        crate::error::ListAnomalyGroupRelatedMetricsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_anomaly_group_related_metrics_error(response)
+        } else {
+            crate::operation_deser::parse_list_anomaly_group_related_metrics_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListAnomalyGroupSummaries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

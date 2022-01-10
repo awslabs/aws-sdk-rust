@@ -413,9 +413,9 @@ pub mod describe_suggesters_output {
         /// To override the contents of this collection use [`set_suggesters`](Self::set_suggesters).
         ///
         /// <p>The suggesters configured for the domain specified in the request.</p>
-        pub fn suggesters(mut self, input: impl Into<crate::model::SuggesterStatus>) -> Self {
+        pub fn suggesters(mut self, input: crate::model::SuggesterStatus) -> Self {
             let mut v = self.suggesters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suggesters = Some(v);
             self
         }
@@ -592,9 +592,9 @@ pub mod describe_index_fields_output {
         /// To override the contents of this collection use [`set_index_fields`](Self::set_index_fields).
         ///
         /// <p>The index fields configured for the domain.</p>
-        pub fn index_fields(mut self, input: impl Into<crate::model::IndexFieldStatus>) -> Self {
+        pub fn index_fields(mut self, input: crate::model::IndexFieldStatus) -> Self {
             let mut v = self.index_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_fields = Some(v);
             self
         }
@@ -655,9 +655,9 @@ pub mod describe_expressions_output {
         /// To override the contents of this collection use [`set_expressions`](Self::set_expressions).
         ///
         /// <p>The expressions configured for the domain.</p>
-        pub fn expressions(mut self, input: impl Into<crate::model::ExpressionStatus>) -> Self {
+        pub fn expressions(mut self, input: crate::model::ExpressionStatus) -> Self {
             let mut v = self.expressions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expressions = Some(v);
             self
         }
@@ -719,9 +719,9 @@ pub mod describe_domains_output {
         /// To override the contents of this collection use [`set_domain_status_list`](Self::set_domain_status_list).
         ///
         /// <p>A list that contains the status of each requested domain.</p>
-        pub fn domain_status_list(mut self, input: impl Into<crate::model::DomainStatus>) -> Self {
+        pub fn domain_status_list(mut self, input: crate::model::DomainStatus) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_status_list = Some(v);
             self
         }
@@ -909,12 +909,9 @@ pub mod describe_analysis_schemes_output {
         /// To override the contents of this collection use [`set_analysis_schemes`](Self::set_analysis_schemes).
         ///
         /// <p>The analysis scheme descriptions.</p>
-        pub fn analysis_schemes(
-            mut self,
-            input: impl Into<crate::model::AnalysisSchemeStatus>,
-        ) -> Self {
+        pub fn analysis_schemes(mut self, input: crate::model::AnalysisSchemeStatus) -> Self {
             let mut v = self.analysis_schemes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_schemes = Some(v);
             self
         }
@@ -998,7 +995,7 @@ impl DeleteSuggesterOutput {
     }
 }
 
-/// <p>The result of a <code><a>DeleteIndexField</a></code> request.</p>
+/// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldOutput {
@@ -1055,7 +1052,7 @@ impl DeleteIndexFieldOutput {
     }
 }
 
-/// <p>The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted.</p>
+/// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionOutput {
@@ -1283,7 +1280,7 @@ impl DefineSuggesterOutput {
     }
 }
 
-/// <p>The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field.</p>
+/// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldOutput {
@@ -1397,15 +1394,15 @@ impl DefineExpressionOutput {
     }
 }
 
-/// <p>The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme.</p>
+/// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeOutput {
-    /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+    /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DefineAnalysisSchemeOutput {
-    /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+    /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
@@ -1426,12 +1423,12 @@ pub mod define_analysis_scheme_output {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
     }
     impl Builder {
-        /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+        /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
         pub fn analysis_scheme(mut self, input: crate::model::AnalysisSchemeStatus) -> Self {
             self.analysis_scheme = Some(input);
             self
         }
-        /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+        /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeStatus>,

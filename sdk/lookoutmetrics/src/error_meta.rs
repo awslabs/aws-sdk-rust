@@ -15,8 +15,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -532,6 +531,31 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupRelatedMetricsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListAnomalyGroupRelatedMetricsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListAnomalyGroupRelatedMetricsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

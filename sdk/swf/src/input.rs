@@ -25,23 +25,15 @@ pub mod count_closed_workflow_executions_input {
             self.domain = input;
             self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_start_time_filter(
             mut self,
@@ -50,23 +42,15 @@ pub mod count_closed_workflow_executions_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.close_time_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-        /// are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_close_time_filter(
             mut self,
@@ -75,25 +59,15 @@ pub mod count_closed_workflow_executions_input {
             self.close_time_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -102,23 +76,15 @@ pub mod count_closed_workflow_executions_input {
             self.execution_filter = input;
             self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -127,25 +93,15 @@ pub mod count_closed_workflow_executions_input {
             self.type_filter = input;
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -154,27 +110,15 @@ pub mod count_closed_workflow_executions_input {
             self.tag_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This
-        /// filter has an affect only if <code>executionStatus</code> is specified as
-        /// <code>CLOSED</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
             self.close_status_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This
-        /// filter has an affect only if <code>executionStatus</code> is specified as
-        /// <code>CLOSED</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_close_status_filter(
             mut self,
@@ -206,7 +150,8 @@ pub mod count_closed_workflow_executions_input {
 pub type CountClosedWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::CountClosedWorkflowExecutions;
 #[doc(hidden)]
-pub type CountClosedWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountClosedWorkflowExecutionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CountClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountClosedWorkflowExecutions`](crate::operation::CountClosedWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -217,7 +162,7 @@ impl CountClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountClosedWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +248,7 @@ impl CountClosedWorkflowExecutionsInput {
             "CountClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -349,14 +294,12 @@ pub mod count_open_workflow_executions_input {
             self.domain = input;
             self
         }
-        /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-        /// counted.</p>
+        /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-        /// counted.</p>
+        /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -364,21 +307,15 @@ pub mod count_open_workflow_executions_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -387,23 +324,15 @@ pub mod count_open_workflow_executions_input {
             self.type_filter = input;
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are
-        /// counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -412,23 +341,15 @@ pub mod count_open_workflow_executions_input {
             self.tag_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -458,7 +379,7 @@ pub mod count_open_workflow_executions_input {
 pub type CountOpenWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::CountOpenWorkflowExecutions;
 #[doc(hidden)]
-pub type CountOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountOpenWorkflowExecutions`](crate::operation::CountOpenWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -469,7 +390,7 @@ impl CountOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountOpenWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -555,7 +476,7 @@ impl CountOpenWorkflowExecutionsInput {
             "CountOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -626,7 +547,7 @@ pub mod count_pending_activity_tasks_input {
 pub type CountPendingActivityTasksInputOperationOutputAlias =
     crate::operation::CountPendingActivityTasks;
 #[doc(hidden)]
-pub type CountPendingActivityTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountPendingActivityTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingActivityTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingActivityTasks`](crate::operation::CountPendingActivityTasks)>
     #[allow(clippy::let_and_return)]
@@ -637,7 +558,7 @@ impl CountPendingActivityTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingActivityTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -724,7 +645,7 @@ impl CountPendingActivityTasksInput {
             "CountPendingActivityTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -795,7 +716,7 @@ pub mod count_pending_decision_tasks_input {
 pub type CountPendingDecisionTasksInputOperationOutputAlias =
     crate::operation::CountPendingDecisionTasks;
 #[doc(hidden)]
-pub type CountPendingDecisionTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CountPendingDecisionTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CountPendingDecisionTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingDecisionTasks`](crate::operation::CountPendingDecisionTasks)>
     #[allow(clippy::let_and_return)]
@@ -806,7 +727,7 @@ impl CountPendingDecisionTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CountPendingDecisionTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -893,7 +814,7 @@ impl CountPendingDecisionTasksInput {
             "CountPendingDecisionTasks",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -966,7 +887,7 @@ pub mod deprecate_activity_type_input {
 #[doc(hidden)]
 pub type DeprecateActivityTypeInputOperationOutputAlias = crate::operation::DeprecateActivityType;
 #[doc(hidden)]
-pub type DeprecateActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateActivityType`](crate::operation::DeprecateActivityType)>
     #[allow(clippy::let_and_return)]
@@ -977,7 +898,7 @@ impl DeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1064,7 +985,7 @@ impl DeprecateActivityTypeInput {
             "DeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1120,7 +1041,7 @@ pub mod deprecate_domain_input {
 #[doc(hidden)]
 pub type DeprecateDomainInputOperationOutputAlias = crate::operation::DeprecateDomain;
 #[doc(hidden)]
-pub type DeprecateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateDomain`](crate::operation::DeprecateDomain)>
     #[allow(clippy::let_and_return)]
@@ -1131,7 +1052,7 @@ impl DeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1216,7 +1137,7 @@ impl DeprecateDomainInput {
             "DeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1289,7 +1210,7 @@ pub mod deprecate_workflow_type_input {
 #[doc(hidden)]
 pub type DeprecateWorkflowTypeInputOperationOutputAlias = crate::operation::DeprecateWorkflowType;
 #[doc(hidden)]
-pub type DeprecateWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateWorkflowType`](crate::operation::DeprecateWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -1300,7 +1221,7 @@ impl DeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1308,7 @@ impl DeprecateWorkflowTypeInput {
             "DeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1430,16 +1351,12 @@ pub mod describe_activity_type_input {
             self.domain = input;
             self
         }
-        /// <p>The activity type to get information about. Activity types are identified by the
-        /// <code>name</code> and <code>version</code> that were supplied when the activity was
-        /// registered.</p>
+        /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
         pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
             self.activity_type = Some(input);
             self
         }
-        /// <p>The activity type to get information about. Activity types are identified by the
-        /// <code>name</code> and <code>version</code> that were supplied when the activity was
-        /// registered.</p>
+        /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -1464,7 +1381,7 @@ pub mod describe_activity_type_input {
 #[doc(hidden)]
 pub type DescribeActivityTypeInputOperationOutputAlias = crate::operation::DescribeActivityType;
 #[doc(hidden)]
-pub type DescribeActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivityType`](crate::operation::DescribeActivityType)>
     #[allow(clippy::let_and_return)]
@@ -1475,7 +1392,7 @@ impl DescribeActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1562,7 +1479,7 @@ impl DescribeActivityTypeInput {
             "DescribeActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1618,7 +1535,7 @@ pub mod describe_domain_input {
 #[doc(hidden)]
 pub type DescribeDomainInputOperationOutputAlias = crate::operation::DescribeDomain;
 #[doc(hidden)]
-pub type DescribeDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
     #[allow(clippy::let_and_return)]
@@ -1629,7 +1546,7 @@ impl DescribeDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1714,7 +1631,7 @@ impl DescribeDomainInput {
             "DescribeDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1788,7 +1705,7 @@ pub mod describe_workflow_execution_input {
 pub type DescribeWorkflowExecutionInputOperationOutputAlias =
     crate::operation::DescribeWorkflowExecution;
 #[doc(hidden)]
-pub type DescribeWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowExecution`](crate::operation::DescribeWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -1799,7 +1716,7 @@ impl DescribeWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1886,7 +1803,7 @@ impl DescribeWorkflowExecutionInput {
             "DescribeWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1959,7 +1876,7 @@ pub mod describe_workflow_type_input {
 #[doc(hidden)]
 pub type DescribeWorkflowTypeInputOperationOutputAlias = crate::operation::DescribeWorkflowType;
 #[doc(hidden)]
-pub type DescribeWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowType`](crate::operation::DescribeWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -1970,7 +1887,7 @@ impl DescribeWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2057,7 +1974,7 @@ impl DescribeWorkflowTypeInput {
             "DescribeWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2116,26 +2033,14 @@ pub mod get_workflow_execution_history_input {
             self.execution = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2143,28 +2048,22 @@ pub mod get_workflow_execution_history_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2190,7 +2089,7 @@ pub mod get_workflow_execution_history_input {
 pub type GetWorkflowExecutionHistoryInputOperationOutputAlias =
     crate::operation::GetWorkflowExecutionHistory;
 #[doc(hidden)]
-pub type GetWorkflowExecutionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowExecutionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowExecutionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowExecutionHistory`](crate::operation::GetWorkflowExecutionHistory)>
     #[allow(clippy::let_and_return)]
@@ -2201,7 +2100,7 @@ impl GetWorkflowExecutionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowExecutionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2287,7 +2186,7 @@ impl GetWorkflowExecutionHistoryInput {
             "GetWorkflowExecutionHistory",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2357,26 +2256,14 @@ pub mod list_activity_types_input {
             self.registration_status = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2384,28 +2271,22 @@ pub mod list_activity_types_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2431,7 +2312,7 @@ pub mod list_activity_types_input {
 #[doc(hidden)]
 pub type ListActivityTypesInputOperationOutputAlias = crate::operation::ListActivityTypes;
 #[doc(hidden)]
-pub type ListActivityTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActivityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActivityTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActivityTypes`](crate::operation::ListActivityTypes)>
     #[allow(clippy::let_and_return)]
@@ -2442,7 +2323,7 @@ impl ListActivityTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActivityTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2527,7 +2408,7 @@ impl ListActivityTypesInput {
             "ListActivityTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2578,25 +2459,15 @@ pub mod list_closed_workflow_executions_input {
             self.domain = input;
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their start times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their start times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their start times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their start times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_start_time_filter(
             mut self,
@@ -2605,25 +2476,15 @@ pub mod list_closed_workflow_executions_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their close times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their close times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.close_time_filter = Some(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on
-        /// whether their close times are within the range specified by this filter. Also, if this
-        /// parameter is specified, the returned results are ordered by their close times.</p>
-        /// <note>
-        /// <p>
-        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-        /// must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
         /// </note>
         pub fn set_close_time_filter(
             mut self,
@@ -2632,25 +2493,15 @@ pub mod list_closed_workflow_executions_input {
             self.close_time_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -2659,27 +2510,15 @@ pub mod list_closed_workflow_executions_input {
             self.execution_filter = input;
             self
         }
-        /// <p>If specified, only workflow executions that match this <i>close
-        /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-        /// workflow executions are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
             self.close_status_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this <i>close
-        /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-        /// workflow executions are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_close_status_filter(
             mut self,
@@ -2688,25 +2527,15 @@ pub mod list_closed_workflow_executions_input {
             self.close_status_filter = input;
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -2715,23 +2544,15 @@ pub mod list_closed_workflow_executions_input {
             self.type_filter = input;
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-        /// request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -2740,26 +2561,14 @@ pub mod list_closed_workflow_executions_input {
             self.tag_filter = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2767,28 +2576,22 @@ pub mod list_closed_workflow_executions_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start or the close time of the
-        /// executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start or the close time of the
-        /// executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2819,7 +2622,8 @@ pub mod list_closed_workflow_executions_input {
 pub type ListClosedWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::ListClosedWorkflowExecutions;
 #[doc(hidden)]
-pub type ListClosedWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClosedWorkflowExecutionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListClosedWorkflowExecutions`](crate::operation::ListClosedWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -2830,7 +2634,7 @@ impl ListClosedWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClosedWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2916,7 +2720,7 @@ impl ListClosedWorkflowExecutionsInput {
             "ListClosedWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2951,26 +2755,14 @@ pub mod list_domains_input {
         pub(crate) reverse_order: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2991,28 +2783,22 @@ pub mod list_domains_input {
             self.registration_status = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the
-        /// domains.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-        /// results are returned in ascending alphabetical order by <code>name</code> of the
-        /// domains.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -3036,7 +2822,7 @@ pub mod list_domains_input {
 #[doc(hidden)]
 pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
 #[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(clippy::let_and_return)]
@@ -3047,7 +2833,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3131,7 +2917,7 @@ impl ListDomainsInput {
             "ListDomains",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3180,14 +2966,12 @@ pub mod list_open_workflow_executions_input {
             self.domain = input;
             self
         }
-        /// <p>Workflow executions are included in the returned results based on whether their start
-        /// times are within the range specified by this filter.</p>
+        /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>Workflow executions are included in the returned results based on whether their start
-        /// times are within the range specified by this filter.</p>
+        /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -3195,23 +2979,15 @@ pub mod list_open_workflow_executions_input {
             self.start_time_filter = input;
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are
-        /// returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_type_filter(
             mut self,
@@ -3220,21 +2996,15 @@ pub mod list_open_workflow_executions_input {
             self.type_filter = input;
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_tag_filter(
             mut self,
@@ -3243,26 +3013,14 @@ pub mod list_open_workflow_executions_input {
             self.tag_filter = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3270,47 +3028,35 @@ pub mod list_open_workflow_executions_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start time of the executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in descending order of the start time of the executions.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-        /// are returned.</p>
-        /// <note>
-        /// <p>
-        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
         pub fn set_execution_filter(
             mut self,
@@ -3343,7 +3089,7 @@ pub mod list_open_workflow_executions_input {
 pub type ListOpenWorkflowExecutionsInputOperationOutputAlias =
     crate::operation::ListOpenWorkflowExecutions;
 #[doc(hidden)]
-pub type ListOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOpenWorkflowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListOpenWorkflowExecutions`](crate::operation::ListOpenWorkflowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -3354,7 +3100,7 @@ impl ListOpenWorkflowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOpenWorkflowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3440,7 +3186,7 @@ impl ListOpenWorkflowExecutionsInput {
             "ListOpenWorkflowExecutions",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3498,7 +3244,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3509,7 +3255,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3596,7 +3342,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3666,26 +3412,14 @@ pub mod list_workflow_types_input {
             self.registration_status = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3693,28 +3427,22 @@ pub mod list_workflow_types_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-        /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-        /// types.</p>
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -3740,7 +3468,7 @@ pub mod list_workflow_types_input {
 #[doc(hidden)]
 pub type ListWorkflowTypesInputOperationOutputAlias = crate::operation::ListWorkflowTypes;
 #[doc(hidden)]
-pub type ListWorkflowTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkflowTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkflowTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowTypes`](crate::operation::ListWorkflowTypes)>
     #[allow(clippy::let_and_return)]
@@ -3751,7 +3479,7 @@ impl ListWorkflowTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflowTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3836,7 +3564,7 @@ impl ListWorkflowTypesInput {
             "ListWorkflowTypes",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3881,35 +3609,23 @@ pub mod poll_for_activity_task_input {
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
         }
-        /// <p>Identity of the worker making the request, recorded in the
-        /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-        /// tracing when problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>Identity of the worker making the request, recorded in the
-        /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-        /// tracing when problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -3932,7 +3648,7 @@ pub mod poll_for_activity_task_input {
 #[doc(hidden)]
 pub type PollForActivityTaskInputOperationOutputAlias = crate::operation::PollForActivityTask;
 #[doc(hidden)]
-pub type PollForActivityTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForActivityTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForActivityTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForActivityTask`](crate::operation::PollForActivityTask)>
     #[allow(clippy::let_and_return)]
@@ -3943,7 +3659,7 @@ impl PollForActivityTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForActivityTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4030,7 +3746,7 @@ impl PollForActivityTaskInput {
             "PollForActivityTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4078,68 +3794,38 @@ pub mod poll_for_decision_task_input {
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
         }
-        /// <p>Identity of the decider making the request, which is recorded in the
-        /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-        /// problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>Identity of the decider making the request, which is recorded in the
-        /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-        /// problems arise. The form of this identity is user defined.</p>
+        /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        /// <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-        /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-        /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
         /// </note>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results
-        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-        /// exceeded its maximum lifetime</code>". </p>
-        ///
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-        /// in a single call. </p>
-        /// <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-        /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-        /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
         /// </note>
         pub fn set_next_page_token(
             mut self,
@@ -4148,34 +3834,24 @@ pub mod poll_for_decision_task_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-        /// <p>This
-        /// is an upper limit only; the actual number of results returned per call may be fewer than the
-        /// specified maximum.</p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call.
-        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-        /// <p>This
-        /// is an upper limit only; the actual number of results returned per call may be fewer than the
-        /// specified maximum.</p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.reverse_order = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-        /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-        /// events.</p>
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -4201,7 +3877,7 @@ pub mod poll_for_decision_task_input {
 #[doc(hidden)]
 pub type PollForDecisionTaskInputOperationOutputAlias = crate::operation::PollForDecisionTask;
 #[doc(hidden)]
-pub type PollForDecisionTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForDecisionTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForDecisionTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForDecisionTask`](crate::operation::PollForDecisionTask)>
     #[allow(clippy::let_and_return)]
@@ -4212,7 +3888,7 @@ impl PollForDecisionTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForDecisionTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4299,7 +3975,7 @@ impl PollForDecisionTaskInput {
             "PollForDecisionTask",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4332,23 +4008,15 @@ pub mod record_activity_task_heartbeat_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
@@ -4382,7 +4050,7 @@ pub mod record_activity_task_heartbeat_input {
 pub type RecordActivityTaskHeartbeatInputOperationOutputAlias =
     crate::operation::RecordActivityTaskHeartbeat;
 #[doc(hidden)]
-pub type RecordActivityTaskHeartbeatInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RecordActivityTaskHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecordActivityTaskHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`RecordActivityTaskHeartbeat`](crate::operation::RecordActivityTaskHeartbeat)>
     #[allow(clippy::let_and_return)]
@@ -4393,7 +4061,7 @@ impl RecordActivityTaskHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecordActivityTaskHeartbeat,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4479,7 +4147,7 @@ impl RecordActivityTaskHeartbeatInput {
             "RecordActivityTaskHeartbeat",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4531,49 +4199,29 @@ pub mod register_activity_type_input {
             self
         }
         /// <p>The name of the activity type within the domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the activity type within the domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The version of the activity type.</p>
-        /// <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be
-        /// unique within the domain.</p>
+        /// <p>The version of the activity type.</p> <note>
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the activity type.</p>
-        /// <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be
-        /// unique within the domain.</p>
+        /// <p>The version of the activity type.</p> <note>
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4588,12 +4236,8 @@ pub mod register_activity_type_input {
             self.description = input;
             self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-        /// of this activity type. This default can be overridden when scheduling an activity task using
-        /// the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -4601,12 +4245,8 @@ pub mod register_activity_type_input {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-        /// of this activity type. This default can be overridden when scheduling an activity task using
-        /// the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4614,16 +4254,8 @@ pub mod register_activity_type_input {
             self.default_task_start_to_close_timeout = input;
             self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of
-        /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-        /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-        /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-        /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-        /// clean up the activity task.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_heartbeat_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -4631,16 +4263,8 @@ pub mod register_activity_type_input {
             self.default_task_heartbeat_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of
-        /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-        /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-        /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-        /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-        /// clean up the activity task.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4648,18 +4272,12 @@ pub mod register_activity_type_input {
             self.default_task_heartbeat_timeout = input;
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-        /// type. This default task list is used if a task list isn't provided when a task is scheduled
-        /// through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
         pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
             self.default_task_list = Some(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-        /// type. This default task list is used if a task list isn't provided when a task is scheduled
-        /// through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -4667,24 +4285,14 @@ pub mod register_activity_type_input {
             self.default_task_list = input;
             self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>in the
-        /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
         pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_priority = Some(input.into());
             self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>in the
-        /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4692,12 +4300,8 @@ pub mod register_activity_type_input {
             self.default_task_priority = input;
             self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can
-        /// wait before being assigned to a worker. This default can be overridden when scheduling an
-        /// activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_start_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -4705,12 +4309,8 @@ pub mod register_activity_type_input {
             self.default_task_schedule_to_start_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can
-        /// wait before being assigned to a worker. This default can be overridden when scheduling an
-        /// activity task using the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4718,12 +4318,8 @@ pub mod register_activity_type_input {
             self.default_task_schedule_to_start_timeout = input;
             self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-        /// default can be overridden when scheduling an activity task using the
-        /// <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_close_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -4731,12 +4327,8 @@ pub mod register_activity_type_input {
             self.default_task_schedule_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-        /// default can be overridden when scheduling an activity task using the
-        /// <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4769,7 +4361,7 @@ pub mod register_activity_type_input {
 #[doc(hidden)]
 pub type RegisterActivityTypeInputOperationOutputAlias = crate::operation::RegisterActivityType;
 #[doc(hidden)]
-pub type RegisterActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterActivityType`](crate::operation::RegisterActivityType)>
     #[allow(clippy::let_and_return)]
@@ -4780,7 +4372,7 @@ impl RegisterActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4867,7 +4459,7 @@ impl RegisterActivityTypeInput {
             "RegisterActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4903,24 +4495,14 @@ pub mod register_domain_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     }
     impl Builder {
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain
-        /// is registered in.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain
-        /// is registered in.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4935,15 +4517,9 @@ pub mod register_domain_input {
             self.description = input;
             self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain
-        /// should be kept by the service. After the retention period, the workflow execution isn't
-        /// available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-        /// execution history isn't retained. As soon as the workflow execution completes, the execution
-        /// record and its history are deleted.</p>
-        /// <p>The maximum workflow execution retention period is 90 days. For more information about
-        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn workflow_execution_retention_period_in_days(
             mut self,
             input: impl Into<std::string::String>,
@@ -4951,15 +4527,9 @@ pub mod register_domain_input {
             self.workflow_execution_retention_period_in_days = Some(input.into());
             self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain
-        /// should be kept by the service. After the retention period, the workflow execution isn't
-        /// available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-        /// execution history isn't retained. As soon as the workflow execution completes, the execution
-        /// record and its history are deleted.</p>
-        /// <p>The maximum workflow execution retention period is 90 days. For more information about
-        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_workflow_execution_retention_period_in_days(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4973,9 +4543,9 @@ pub mod register_domain_input {
         ///
         /// <p>Tags to be added when registering a domain.</p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5008,7 +4578,7 @@ pub mod register_domain_input {
 #[doc(hidden)]
 pub type RegisterDomainInputOperationOutputAlias = crate::operation::RegisterDomain;
 #[doc(hidden)]
-pub type RegisterDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(clippy::let_and_return)]
@@ -5019,7 +4589,7 @@ impl RegisterDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5104,7 +4674,7 @@ impl RegisterDomainInput {
             "RegisterDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5157,51 +4727,29 @@ pub mod register_workflow_type_input {
             self
         }
         /// <p>The name of the workflow type.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the workflow type.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The version of the workflow type.</p>
-        /// <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be
-        /// unique within the domain. To get a list of all currently registered workflow types, use the
-        /// <a>ListWorkflowTypes</a> action.</p>
+        /// <p>The version of the workflow type.</p> <note>
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the workflow type.</p>
-        /// <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be
-        /// unique within the domain. To get a list of all currently registered workflow types, use the
-        /// <a>ListWorkflowTypes</a> action.</p>
+        /// <p>The version of the workflow type.</p> <note>
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5216,11 +4764,8 @@ pub mod register_workflow_type_input {
             self.description = input;
             self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-        /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -5228,11 +4773,8 @@ pub mod register_workflow_type_input {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-        /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5240,15 +4782,8 @@ pub mod register_workflow_type_input {
             self.default_task_start_to_close_timeout = input;
             self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-        /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-        /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-        /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-        /// to time out.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
         pub fn default_execution_start_to_close_timeout(
             mut self,
             input: impl Into<std::string::String>,
@@ -5256,15 +4791,8 @@ pub mod register_workflow_type_input {
             self.default_execution_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-        /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-        /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-        /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-        /// to time out.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
         pub fn set_default_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5272,20 +4800,12 @@ pub mod register_workflow_type_input {
             self.default_execution_start_to_close_timeout = input;
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-        /// executions of this workflow type. This default is used only if a task list isn't provided when
-        /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-        /// <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
             self.default_task_list = Some(input);
             self
         }
-        /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-        /// executions of this workflow type. This default is used only if a task list isn't provided when
-        /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-        /// <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -5293,22 +4813,14 @@ pub mod register_workflow_type_input {
             self.default_task_list = input;
             self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_priority = Some(input.into());
             self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then
-        /// <code>0</code> is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5316,55 +4828,23 @@ pub mod register_workflow_type_input {
             self.default_task_priority = input;
             self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a
-        /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-        /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
         /// </ul>
         pub fn default_child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.default_child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a
-        /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-        /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-        /// <a>Decision</a>.</p>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
         /// </ul>
         pub fn set_default_child_policy(
             mut self,
@@ -5373,23 +4853,15 @@ pub mod register_workflow_type_input {
             self.default_child_policy = input;
             self
         }
-        /// <p>The default IAM role attached to this workflow type.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn default_lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_lambda_role = Some(input.into());
             self
         }
-        /// <p>The default IAM role attached to this workflow type.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn set_default_lambda_role(
             mut self,
@@ -5424,7 +4896,7 @@ pub mod register_workflow_type_input {
 #[doc(hidden)]
 pub type RegisterWorkflowTypeInputOperationOutputAlias = crate::operation::RegisterWorkflowType;
 #[doc(hidden)]
-pub type RegisterWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkflowType`](crate::operation::RegisterWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -5435,7 +4907,7 @@ impl RegisterWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5522,7 +4994,7 @@ impl RegisterWorkflowTypeInput {
             "RegisterWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5605,7 +5077,8 @@ pub mod request_cancel_workflow_execution_input {
 pub type RequestCancelWorkflowExecutionInputOperationOutputAlias =
     crate::operation::RequestCancelWorkflowExecution;
 #[doc(hidden)]
-pub type RequestCancelWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RequestCancelWorkflowExecutionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RequestCancelWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RequestCancelWorkflowExecution`](crate::operation::RequestCancelWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -5616,7 +5089,7 @@ impl RequestCancelWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RequestCancelWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5702,7 +5175,7 @@ impl RequestCancelWorkflowExecutionInput {
             "RequestCancelWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5735,23 +5208,15 @@ pub mod respond_activity_task_canceled_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
@@ -5785,7 +5250,7 @@ pub mod respond_activity_task_canceled_input {
 pub type RespondActivityTaskCanceledInputOperationOutputAlias =
     crate::operation::RespondActivityTaskCanceled;
 #[doc(hidden)]
-pub type RespondActivityTaskCanceledInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskCanceledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCanceledInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCanceled`](crate::operation::RespondActivityTaskCanceled)>
     #[allow(clippy::let_and_return)]
@@ -5796,7 +5261,7 @@ impl RespondActivityTaskCanceledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCanceled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5882,7 +5347,7 @@ impl RespondActivityTaskCanceledInput {
             "RespondActivityTaskCanceled",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5915,36 +5380,26 @@ pub mod respond_activity_task_completed_input {
         pub(crate) result: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
         }
-        /// <p>The result of the activity task. It is a free form string that is implementation
-        /// specific.</p>
+        /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
         pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
             self.result = Some(input.into());
             self
         }
-        /// <p>The result of the activity task. It is a free form string that is implementation
-        /// specific.</p>
+        /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -5967,7 +5422,8 @@ pub mod respond_activity_task_completed_input {
 pub type RespondActivityTaskCompletedInputOperationOutputAlias =
     crate::operation::RespondActivityTaskCompleted;
 #[doc(hidden)]
-pub type RespondActivityTaskCompletedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskCompletedInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCompleted`](crate::operation::RespondActivityTaskCompleted)>
     #[allow(clippy::let_and_return)]
@@ -5978,7 +5434,7 @@ impl RespondActivityTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCompleted,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6064,7 +5520,7 @@ impl RespondActivityTaskCompletedInput {
             "RespondActivityTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6098,25 +5554,15 @@ pub mod respond_activity_task_failed_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        ///
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-        ///
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
@@ -6161,7 +5607,7 @@ pub mod respond_activity_task_failed_input {
 pub type RespondActivityTaskFailedInputOperationOutputAlias =
     crate::operation::RespondActivityTaskFailed;
 #[doc(hidden)]
-pub type RespondActivityTaskFailedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondActivityTaskFailedInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RespondActivityTaskFailedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskFailed`](crate::operation::RespondActivityTaskFailed)>
     #[allow(clippy::let_and_return)]
@@ -6172,7 +5618,7 @@ impl RespondActivityTaskFailedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskFailed,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6259,7 +5705,7 @@ impl RespondActivityTaskFailedInput {
             "RespondActivityTaskFailed",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6293,23 +5739,15 @@ pub mod respond_decision_task_completed_input {
         pub(crate) execution_context: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-        /// <important>
-        /// <p>
-        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-        /// This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
@@ -6319,18 +5757,14 @@ pub mod respond_decision_task_completed_input {
         ///
         /// To override the contents of this collection use [`set_decisions`](Self::set_decisions).
         ///
-        /// <p>The list of decisions (possibly empty) made by the decider while processing this
-        /// decision task. See the docs for the <a>Decision</a> structure for
-        /// details.</p>
-        pub fn decisions(mut self, input: impl Into<crate::model::Decision>) -> Self {
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
+        pub fn decisions(mut self, input: crate::model::Decision) -> Self {
             let mut v = self.decisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.decisions = Some(v);
             self
         }
-        /// <p>The list of decisions (possibly empty) made by the decider while processing this
-        /// decision task. See the docs for the <a>Decision</a> structure for
-        /// details.</p>
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
         pub fn set_decisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Decision>>,
@@ -6370,7 +5804,8 @@ pub mod respond_decision_task_completed_input {
 pub type RespondDecisionTaskCompletedInputOperationOutputAlias =
     crate::operation::RespondDecisionTaskCompleted;
 #[doc(hidden)]
-pub type RespondDecisionTaskCompletedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RespondDecisionTaskCompletedInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RespondDecisionTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondDecisionTaskCompleted`](crate::operation::RespondDecisionTaskCompleted)>
     #[allow(clippy::let_and_return)]
@@ -6381,7 +5816,7 @@ impl RespondDecisionTaskCompletedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RespondDecisionTaskCompleted,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6467,7 +5902,7 @@ impl RespondDecisionTaskCompletedInput {
             "RespondDecisionTaskCompleted",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6543,14 +5978,12 @@ pub mod signal_workflow_execution_input {
             self.signal_name = input;
             self
         }
-        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history.</p>
+        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
             self.input = Some(input.into());
             self
         }
-        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-        /// workflow execution's history.</p>
+        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -6576,7 +6009,7 @@ pub mod signal_workflow_execution_input {
 pub type SignalWorkflowExecutionInputOperationOutputAlias =
     crate::operation::SignalWorkflowExecution;
 #[doc(hidden)]
-pub type SignalWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SignalWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignalWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`SignalWorkflowExecution`](crate::operation::SignalWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -6587,7 +6020,7 @@ impl SignalWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignalWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6674,7 +6107,7 @@ impl SignalWorkflowExecutionInput {
             "SignalWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6726,30 +6159,14 @@ pub mod start_workflow_execution_input {
             self.domain = input;
             self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to
-        /// associate a custom identifier with the workflow execution. You may specify the same identifier
-        /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-        /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-        /// time within the same domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workflow_id = Some(input.into());
             self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to
-        /// associate a custom identifier with the workflow execution. You may specify the same identifier
-        /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-        /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-        /// time within the same domain.</p>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -6767,58 +6184,30 @@ pub mod start_workflow_execution_input {
             self.workflow_type = input;
             self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-        /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-        /// type.</p>
-        /// <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the
-        /// workflow type or through this parameter. If neither this parameter is set nor a default task
-        /// list was specified at registration time then a fault is returned.</p>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-        /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-        /// type.</p>
-        /// <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the
-        /// workflow type or through this parameter. If neither this parameter is set nor a default task
-        /// list was specified at registration time then a fault is returned.</p>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
         /// </note>
-        ///
-        /// <p>The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-        /// not <i>be</i> the literal string <code>arn</code>.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default
-        /// priority that was assigned when the workflow type was registered. If not set, then the default
-        /// task priority for the workflow type is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_priority = Some(input.into());
             self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default
-        /// priority that was assigned when the workflow type was registered. If not set, then the default
-        /// task priority for the workflow type is used. Valid values are integers that range from Java's
-        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-        /// Higher numbers indicate higher priority.</p>
-        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6826,33 +6215,19 @@ pub mod start_workflow_execution_input {
             self.task_priority = input;
             self
         }
-        /// <p>The input for the workflow execution. This is a free form string which should be
-        /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+        /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
             self.input = Some(input.into());
             self
         }
-        /// <p>The input for the workflow execution. This is a free form string which should be
-        /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+        /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
         }
-        /// <p>The total duration for this workflow execution. This overrides the
-        /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to
-        /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-        /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-        /// timeout; there is a one-year max limit on the time that a workflow execution can
-        /// run.</p>
-        ///
-        /// <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter
-        /// or as a default when the workflow type is registered. If neither this parameter nor a
-        /// default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
         /// </note>
         pub fn execution_start_to_close_timeout(
             mut self,
@@ -6861,19 +6236,9 @@ pub mod start_workflow_execution_input {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>The total duration for this workflow execution. This overrides the
-        /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        ///
-        /// <p>The duration is specified in seconds; an integer greater than or equal to
-        /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-        /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-        /// timeout; there is a one-year max limit on the time that a workflow execution can
-        /// run.</p>
-        ///
-        /// <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter
-        /// or as a default when the workflow type is registered. If neither this parameter nor a
-        /// default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
         /// </note>
         pub fn set_execution_start_to_close_timeout(
             mut self,
@@ -6886,18 +6251,14 @@ pub mod start_workflow_execution_input {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-        /// specifying a <a>TagFilter</a>.</p>
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
-        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-        /// specifying a <a>TagFilter</a>.</p>
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6905,16 +6266,9 @@ pub mod start_workflow_execution_input {
             self.tag_list = input;
             self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-        /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        /// <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-        /// a default for the workflow type or through this parameter. If neither this parameter is set
-        /// nor a default task start-to-close timeout was specified at registration time then a fault is
-        /// returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn task_start_to_close_timeout(
             mut self,
@@ -6923,16 +6277,9 @@ pub mod start_workflow_execution_input {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-        /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to
-        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        /// <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-        /// a default for the workflow type or through this parameter. If neither this parameter is set
-        /// nor a default task start-to-close timeout was specified at registration time then a fault is
-        /// returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_task_start_to_close_timeout(
             mut self,
@@ -6941,65 +6288,27 @@ pub mod start_workflow_execution_input {
             self.task_start_to_close_timeout = input;
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-        /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-        /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-        /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-        /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-        /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-        /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_child_policy(
             mut self,
@@ -7008,23 +6317,15 @@ pub mod start_workflow_execution_input {
             self.child_policy = input;
             self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-        /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_role = Some(input.into());
             self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p>
-        /// <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-        /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-        /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
@@ -7056,7 +6357,7 @@ pub mod start_workflow_execution_input {
 #[doc(hidden)]
 pub type StartWorkflowExecutionInputOperationOutputAlias = crate::operation::StartWorkflowExecution;
 #[doc(hidden)]
-pub type StartWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflowExecution`](crate::operation::StartWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -7067,7 +6368,7 @@ impl StartWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7154,7 +6455,7 @@ impl StartWorkflowExecutionInput {
             "StartWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7203,9 +6504,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The list of tags to add to a domain. </p>
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7235,7 +6536,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7246,7 +6547,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7330,7 +6631,7 @@ impl TagResourceInput {
             "TagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7417,63 +6718,27 @@ pub mod terminate_workflow_execution_input {
             self.details = input;
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-        /// execution being terminated. This policy overrides the child policy specified for the workflow
-        /// execution at registration time or when starting the execution.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-        /// execution being terminated. This policy overrides the child policy specified for the workflow
-        /// execution at registration time or when starting the execution.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
         /// <p>The supported child policies are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TERMINATE</code> – The child executions are terminated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-        /// history. It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ABANDON</code> – No action is taken. The child executions continue to
-        /// run.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for
-        /// the workflow type or through this parameter. If neither this parameter is set nor a default
-        /// child policy was specified at registration time then a fault is returned.</p>
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// </ul> <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
         /// </note>
         pub fn set_child_policy(
             mut self,
@@ -7504,7 +6769,7 @@ pub mod terminate_workflow_execution_input {
 pub type TerminateWorkflowExecutionInputOperationOutputAlias =
     crate::operation::TerminateWorkflowExecution;
 #[doc(hidden)]
-pub type TerminateWorkflowExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateWorkflowExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkflowExecution`](crate::operation::TerminateWorkflowExecution)>
     #[allow(clippy::let_and_return)]
@@ -7515,7 +6780,7 @@ impl TerminateWorkflowExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateWorkflowExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7602,7 +6867,7 @@ impl TerminateWorkflowExecutionInput {
             "TerminateWorkflowExecution",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7676,7 +6941,7 @@ pub mod undeprecate_activity_type_input {
 pub type UndeprecateActivityTypeInputOperationOutputAlias =
     crate::operation::UndeprecateActivityType;
 #[doc(hidden)]
-pub type UndeprecateActivityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateActivityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateActivityType`](crate::operation::UndeprecateActivityType)>
     #[allow(clippy::let_and_return)]
@@ -7687,7 +6952,7 @@ impl UndeprecateActivityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateActivityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7774,7 +7039,7 @@ impl UndeprecateActivityTypeInput {
             "UndeprecateActivityType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7830,7 +7095,7 @@ pub mod undeprecate_domain_input {
 #[doc(hidden)]
 pub type UndeprecateDomainInputOperationOutputAlias = crate::operation::UndeprecateDomain;
 #[doc(hidden)]
-pub type UndeprecateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateDomain`](crate::operation::UndeprecateDomain)>
     #[allow(clippy::let_and_return)]
@@ -7841,7 +7106,7 @@ impl UndeprecateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7926,7 +7191,7 @@ impl UndeprecateDomainInput {
             "UndeprecateDomain",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8000,7 +7265,7 @@ pub mod undeprecate_workflow_type_input {
 pub type UndeprecateWorkflowTypeInputOperationOutputAlias =
     crate::operation::UndeprecateWorkflowType;
 #[doc(hidden)]
-pub type UndeprecateWorkflowTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeprecateWorkflowTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateWorkflowType`](crate::operation::UndeprecateWorkflowType)>
     #[allow(clippy::let_and_return)]
@@ -8011,7 +7276,7 @@ impl UndeprecateWorkflowTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateWorkflowType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8098,7 +7363,7 @@ impl UndeprecateWorkflowTypeInput {
             "UndeprecateWorkflowType",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8177,7 +7442,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8188,7 +7453,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8272,7 +7537,7 @@ impl UntagResourceInput {
             "UntagResource",
             "swf",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8414,32 +7679,14 @@ pub struct TerminateWorkflowExecutionInput {
     pub reason: std::option::Option<std::string::String>,
     /// <p> Details for terminating the workflow execution.</p>
     pub details: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-    /// execution being terminated. This policy overrides the child policy specified for the workflow
-    /// execution at registration time or when starting the execution.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for
-    /// the workflow type or through this parameter. If neither this parameter is set nor a default
-    /// child policy was specified at registration time then a fault is returned.</p>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
 }
@@ -8464,32 +7711,14 @@ impl TerminateWorkflowExecutionInput {
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
     }
-    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
-    /// execution being terminated. This policy overrides the child policy specified for the workflow
-    /// execution at registration time or when starting the execution.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for
-    /// the workflow type or through this parameter. If neither this parameter is set nor a default
-    /// child policy was specified at registration time then a fault is returned.</p>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
         self.child_policy.as_ref()
@@ -8544,111 +7773,45 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StartWorkflowExecutionInput {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The user defined identifier associated with the workflow execution. You can use this to
-    /// associate a custom identifier with the workflow execution. You may specify the same identifier
-    /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-    /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-    /// time within the same domain.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of the workflow to start.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
-    /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-    /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-    /// type.</p>
-    /// <note>
-    /// <p>A task list for this workflow execution must be specified either as a default for the
-    /// workflow type or through this parameter. If neither this parameter is set nor a default task
-    /// list was specified at registration time then a fault is returned.</p>
+    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The task priority to use for this workflow execution. This overrides any default
-    /// priority that was assigned when the workflow type was registered. If not set, then the default
-    /// task priority for the workflow type is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub task_priority: std::option::Option<std::string::String>,
-    /// <p>The input for the workflow execution. This is a free form string which should be
-    /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-    /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+    /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
     pub input: std::option::Option<std::string::String>,
-    /// <p>The total duration for this workflow execution. This overrides the
-    /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    ///
-    /// <p>The duration is specified in seconds; an integer greater than or equal to
-    /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-    /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-    /// timeout; there is a one-year max limit on the time that a workflow execution can
-    /// run.</p>
-    ///
-    /// <note>
-    /// <p>An execution start-to-close timeout must be specified either through this parameter
-    /// or as a default when the workflow type is registered. If neither this parameter nor a
-    /// default execution start-to-close timeout is specified, a fault is returned.</p>
+    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-    /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-    /// specifying a <a>TagFilter</a>.</p>
+    /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-    /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-    /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    /// <note>
-    /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-    /// a default for the workflow type or through this parameter. If neither this parameter is set
-    /// nor a default task start-to-close timeout was specified at registration time then a fault is
-    /// returned.</p>
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-    /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-    /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-    /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for
-    /// the workflow type or through this parameter. If neither this parameter is set nor a default
-    /// child policy was specified at registration time then a fault is returned.</p>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
-    /// <p>The IAM role to attach to this workflow execution.</p>
-    /// <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-    /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-    /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The IAM role to attach to this workflow execution.</p> <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub lambda_role: std::option::Option<std::string::String>,
 }
@@ -8657,16 +7820,8 @@ impl StartWorkflowExecutionInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The user defined identifier associated with the workflow execution. You can use this to
-    /// associate a custom identifier with the workflow execution. You may specify the same identifier
-    /// if a workflow execution is logically a <i>restart</i> of a previous execution.
-    /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
-    /// time within the same domain.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
@@ -8674,112 +7829,54 @@ impl StartWorkflowExecutionInput {
     pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
-    /// <p>The task list to use for the decision tasks generated for this workflow execution. This
-    /// overrides the <code>defaultTaskList</code> specified when registering the workflow
-    /// type.</p>
-    /// <note>
-    /// <p>A task list for this workflow execution must be specified either as a default for the
-    /// workflow type or through this parameter. If neither this parameter is set nor a default task
-    /// list was specified at registration time then a fault is returned.</p>
+    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
+    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p>The task priority to use for this workflow execution. This overrides any default
-    /// priority that was assigned when the workflow type was registered. If not set, then the default
-    /// task priority for the workflow type is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(&self) -> std::option::Option<&str> {
         self.task_priority.as_deref()
     }
-    /// <p>The input for the workflow execution. This is a free form string which should be
-    /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
-    /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+    /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
     pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
-    /// <p>The total duration for this workflow execution. This overrides the
-    /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    ///
-    /// <p>The duration is specified in seconds; an integer greater than or equal to
-    /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
-    /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
-    /// timeout; there is a one-year max limit on the time that a workflow execution can
-    /// run.</p>
-    ///
-    /// <note>
-    /// <p>An execution start-to-close timeout must be specified either through this parameter
-    /// or as a default when the workflow type is registered. If neither this parameter nor a
-    /// default execution start-to-close timeout is specified, a fault is returned.</p>
+    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
+    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
     /// </note>
     pub fn execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.execution_start_to_close_timeout.as_deref()
     }
-    /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
-    /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
-    /// specifying a <a>TagFilter</a>.</p>
+    /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
     pub fn tag_list(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_list.as_deref()
     }
-    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
-    /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
-    /// the workflow type using <a>RegisterWorkflowType</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    /// <note>
-    /// <p>A task start-to-close timeout for this workflow execution must be specified either as
-    /// a default for the workflow type or through this parameter. If neither this parameter is set
-    /// nor a default task start-to-close timeout was specified at registration time then a fault is
-    /// returned.</p>
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn task_start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
-    /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
-    /// action explicitly or due to an expired timeout. This policy overrides the default child policy
-    /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for
-    /// the workflow type or through this parameter. If neither this parameter is set nor a default
-    /// child policy was specified at registration time then a fault is returned.</p>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
     /// </note>
     pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
         self.child_policy.as_ref()
     }
-    /// <p>The IAM role to attach to this workflow execution.</p>
-    /// <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-    /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
-    /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The IAM role to attach to this workflow execution.</p> <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn lambda_role(&self) -> std::option::Option<&str> {
         self.lambda_role.as_deref()
@@ -8821,8 +7918,7 @@ pub struct SignalWorkflowExecutionInput {
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
     pub signal_name: std::option::Option<std::string::String>,
-    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-    /// workflow execution's history.</p>
+    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub input: std::option::Option<std::string::String>,
 }
 impl SignalWorkflowExecutionInput {
@@ -8842,8 +7938,7 @@ impl SignalWorkflowExecutionInput {
     pub fn signal_name(&self) -> std::option::Option<&str> {
         self.signal_name.as_deref()
     }
-    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
-    /// workflow execution's history.</p>
+    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
@@ -8864,35 +7959,23 @@ impl std::fmt::Debug for SignalWorkflowExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondDecisionTaskCompletedInput {
-    /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub task_token: std::option::Option<std::string::String>,
-    /// <p>The list of decisions (possibly empty) made by the decider while processing this
-    /// decision task. See the docs for the <a>Decision</a> structure for
-    /// details.</p>
+    /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
     pub decisions: std::option::Option<std::vec::Vec<crate::model::Decision>>,
     /// <p>User defined context to add to workflow execution.</p>
     pub execution_context: std::option::Option<std::string::String>,
 }
 impl RespondDecisionTaskCompletedInput {
-    /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
-    /// <p>The list of decisions (possibly empty) made by the decider while processing this
-    /// decision task. See the docs for the <a>Decision</a> structure for
-    /// details.</p>
+    /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
     pub fn decisions(&self) -> std::option::Option<&[crate::model::Decision]> {
         self.decisions.as_deref()
     }
@@ -8915,13 +7998,8 @@ impl std::fmt::Debug for RespondDecisionTaskCompletedInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskFailedInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    ///
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub task_token: std::option::Option<std::string::String>,
     /// <p>Description of the error that may assist in diagnostics.</p>
@@ -8930,13 +8008,8 @@ pub struct RespondActivityTaskFailedInput {
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskFailedInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    ///
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
@@ -8964,31 +8037,21 @@ impl std::fmt::Debug for RespondActivityTaskFailedInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskCompletedInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub task_token: std::option::Option<std::string::String>,
-    /// <p>The result of the activity task. It is a free form string that is implementation
-    /// specific.</p>
+    /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
     pub result: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCompletedInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
-    /// <p>The result of the activity task. It is a free form string that is implementation
-    /// specific.</p>
+    /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
     pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
     }
@@ -9006,24 +8069,16 @@ impl std::fmt::Debug for RespondActivityTaskCompletedInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskCanceledInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub task_token: std::option::Option<std::string::String>,
     /// <p> Information about the cancellation.</p>
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCanceledInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
@@ -9084,85 +8139,36 @@ pub struct RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the workflow type.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the workflow type.</p>
-    /// <note>
-    /// <p>The workflow type consists of the name and version, the combination of which must be
-    /// unique within the domain. To get a list of all currently registered workflow types, use the
-    /// <a>ListWorkflowTypes</a> action.</p>
+    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>Textual description of the workflow type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-    /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-    /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
-    ///
-    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-    /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-    /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-    /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-    /// to time out.</p>
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
     pub default_execution_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-    /// executions of this workflow type. This default is used only if a task list isn't provided when
-    /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-    /// <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     pub default_task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The default task priority to assign to the workflow type. If not assigned, then
-    /// <code>0</code> is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub default_task_priority: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default policy to use for the child workflow executions when a
-    /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-    /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     pub default_child_policy: std::option::Option<crate::model::ChildPolicy>,
-    /// <p>The default IAM role attached to this workflow type.</p>
-    /// <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-    /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-    /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub default_lambda_role: std::option::Option<std::string::String>,
 }
@@ -9172,25 +8178,14 @@ impl RegisterWorkflowTypeInput {
         self.domain.as_deref()
     }
     /// <p>The name of the workflow type.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the workflow type.</p>
-    /// <note>
-    /// <p>The workflow type consists of the name and version, the combination of which must be
-    /// unique within the domain. To get a list of all currently registered workflow types, use the
-    /// <a>ListWorkflowTypes</a> action.</p>
+    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -9198,75 +8193,37 @@ impl RegisterWorkflowTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
-    /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.default_task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration for executions of this workflow type.
-    /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
-    ///
-    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
-    /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
-    /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
-    /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
-    /// to time out.</p>
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
     pub fn default_execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.default_execution_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the default task list to use for scheduling decision tasks for
-    /// executions of this workflow type. This default is used only if a task list isn't provided when
-    /// starting the execution through the <a>StartWorkflowExecution</a> Action or
-    /// <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
         self.default_task_list.as_ref()
     }
-    /// <p>The default task priority to assign to the workflow type. If not assigned, then
-    /// <code>0</code> is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn default_task_priority(&self) -> std::option::Option<&str> {
         self.default_task_priority.as_deref()
     }
-    /// <p>If set, specifies the default policy to use for the child workflow executions when a
-    /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
-    /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TERMINATE</code> – The child executions are terminated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
-    /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
-    /// history. It is up to the decider to take appropriate actions when it receives an execution
-    /// history with this event.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ABANDON</code> – No action is taken. The child executions continue to
-    /// run.</p>
-    /// </li>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     pub fn default_child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
         self.default_child_policy.as_ref()
     }
-    /// <p>The default IAM role attached to this workflow type.</p>
-    /// <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
-    /// don't specify an IAM role when you start this workflow type, the default Lambda role is
-    /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn default_lambda_role(&self) -> std::option::Option<&str> {
         self.default_lambda_role.as_deref()
@@ -9299,38 +8256,22 @@ impl std::fmt::Debug for RegisterWorkflowTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDomainInput {
-    /// <p>Name of the domain to register. The name must be unique in the region that the domain
-    /// is registered in.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A text description of the domain.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The duration (in days) that records and histories of workflow executions on the domain
-    /// should be kept by the service. After the retention period, the workflow execution isn't
-    /// available in the results of visibility calls.</p>
-    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-    /// execution history isn't retained. As soon as the workflow execution completes, the execution
-    /// record and its history are deleted.</p>
-    /// <p>The maximum workflow execution retention period is 90 days. For more information about
-    /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+    /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
     /// <p>Tags to be added when registering a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl RegisterDomainInput {
-    /// <p>Name of the domain to register. The name must be unique in the region that the domain
-    /// is registered in.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9338,15 +8279,9 @@ impl RegisterDomainInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The duration (in days) that records and histories of workflow executions on the domain
-    /// should be kept by the service. After the retention period, the workflow execution isn't
-    /// available in the results of visibility calls.</p>
-    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-    /// execution history isn't retained. As soon as the workflow execution completes, the execution
-    /// record and its history are deleted.</p>
-    /// <p>The maximum workflow execution retention period is 90 days. For more information about
-    /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
-    /// <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
+    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+    /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<&str> {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
@@ -9377,69 +8312,31 @@ pub struct RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the activity type within the domain.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the activity type.</p>
-    /// <note>
-    /// <p>The activity type consists of the name and version, the combination of which must be
-    /// unique within the domain.</p>
+    /// <p>The version of the activity type.</p> <note>
+    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>A textual description of the activity type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-    /// of this activity type. This default can be overridden when scheduling an activity task using
-    /// the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum time before which a worker processing a task of
-    /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-    /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-    /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-    /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-    /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-    /// clean up the activity task.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_heartbeat_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-    /// type. This default task list is used if a task list isn't provided when a task is scheduled
-    /// through the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     pub default_task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The default task priority to assign to the activity type. If not assigned, then
-    /// <code>0</code> is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>in the
-    /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
     pub default_task_priority: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration that a task of this activity type can
-    /// wait before being assigned to a worker. This default can be overridden when scheduling an
-    /// activity task using the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_schedule_to_start_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-    /// default can be overridden when scheduling an activity task using the
-    /// <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub default_task_schedule_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl RegisterActivityTypeInput {
@@ -9448,24 +8345,14 @@ impl RegisterActivityTypeInput {
         self.domain.as_deref()
     }
     /// <p>The name of the activity type within the domain.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the activity type.</p>
-    /// <note>
-    /// <p>The activity type consists of the name and version, the combination of which must be
-    /// unique within the domain.</p>
+    /// <p>The version of the activity type.</p> <note>
+    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -9473,60 +8360,32 @@ impl RegisterActivityTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
-    /// of this activity type. This default can be overridden when scheduling an activity task using
-    /// the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.default_task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum time before which a worker processing a task of
-    /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
-    /// the timeout is exceeded, the activity task is automatically timed out. This default can be
-    /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-    /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-    /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
-    /// clean up the activity task.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_heartbeat_timeout(&self) -> std::option::Option<&str> {
         self.default_task_heartbeat_timeout.as_deref()
     }
-    /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
-    /// type. This default task list is used if a task list isn't provided when a task is scheduled
-    /// through the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
+    /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
         self.default_task_list.as_ref()
     }
-    /// <p>The default task priority to assign to the activity type. If not assigned, then
-    /// <code>0</code> is used. Valid values are integers that range from Java's
-    /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
-    /// Higher numbers indicate higher priority.</p>
-    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-    /// Priority</a> in the <i>in the
-    /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
+    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
     pub fn default_task_priority(&self) -> std::option::Option<&str> {
         self.default_task_priority.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration that a task of this activity type can
-    /// wait before being assigned to a worker. This default can be overridden when scheduling an
-    /// activity task using the <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_schedule_to_start_timeout(&self) -> std::option::Option<&str> {
         self.default_task_schedule_to_start_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration for a task of this activity type. This
-    /// default can be overridden when scheduling an activity task using the
-    /// <code>ScheduleActivityTask</code>
-    /// <a>Decision</a>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to
-    /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn default_task_schedule_to_close_timeout(&self) -> std::option::Option<&str> {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
@@ -9564,24 +8423,16 @@ impl std::fmt::Debug for RegisterActivityTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordActivityTaskHeartbeatInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results. </p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
     /// </important>
     pub task_token: std::option::Option<std::string::String>,
     /// <p>If specified, contains details about the progress of the task.</p>
     pub details: std::option::Option<std::string::String>,
 }
 impl RecordActivityTaskHeartbeatInput {
-    /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
-    /// <important>
-    /// <p>
-    /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
-    /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
-    /// This enables it to provide its progress and respond with results. </p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
     /// </important>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
@@ -9607,39 +8458,19 @@ pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>Identity of the decider making the request, which is recorded in the
-    /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-    /// problems arise. The form of this identity is user defined.</p>
+    /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub identity: std::option::Option<std::string::String>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
-    /// <note>
-    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-    /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-    /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-    /// <p>This
-    /// is an upper limit only; the actual number of results returned per call may be fewer than the
-    /// specified maximum.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-    /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-    /// events.</p>
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     pub reverse_order: bool,
 }
 impl PollForDecisionTaskInput {
@@ -9648,47 +8479,27 @@ impl PollForDecisionTaskInput {
         self.domain.as_deref()
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p>Identity of the decider making the request, which is recorded in the
-    /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
-    /// problems arise. The form of this identity is user defined.</p>
+    /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
-    /// <note>
-    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
-    /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
-    /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
-    /// <p>This
-    /// is an upper limit only; the actual number of results returned per call may be fewer than the
-    /// specified maximum.</p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-    /// results are returned in ascending order of the <code>eventTimestamp</code> of the
-    /// events.</p>
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -9713,15 +8524,9 @@ pub struct PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for activity tasks.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>Identity of the worker making the request, recorded in the
-    /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-    /// tracing when problems arise. The form of this identity is user defined.</p>
+    /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub identity: std::option::Option<std::string::String>,
 }
 impl PollForActivityTaskInput {
@@ -9730,17 +8535,11 @@ impl PollForActivityTaskInput {
         self.domain.as_deref()
     }
     /// <p>Specifies the task list to poll for activity tasks.</p>
-    ///
-    /// <p>The specified string must not start or end with whitespace. It must not contain a
-    /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
-    /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
-    /// not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p>Identity of the worker making the request, recorded in the
-    /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
-    /// tracing when problems arise. The form of this identity is user defined.</p>
+    /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
@@ -9765,21 +8564,12 @@ pub struct ListWorkflowTypesInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the workflow types to list.</p>
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-    /// types.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
     pub reverse_order: bool,
 }
 impl ListWorkflowTypesInput {
@@ -9795,25 +8585,16 @@ impl ListWorkflowTypesInput {
     pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
-    /// types.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -9858,45 +8639,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>Workflow executions are included in the returned results based on whether their start
-    /// times are within the range specified by this filter.</p>
+    /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only executions of the type specified in the filter are
-    /// returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have the matching tag are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in descending order of the start time of the executions.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
     pub reverse_order: bool,
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-    /// are returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
@@ -9905,57 +8666,37 @@ impl ListOpenWorkflowExecutionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>Workflow executions are included in the returned results based on whether their start
-    /// times are within the range specified by this filter.</p>
+    /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, only executions of the type specified in the filter are
-    /// returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in descending order of the start time of the executions.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-    /// are returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
@@ -9980,34 +8721,19 @@ impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the domains to list.</p>
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-    /// results are returned in ascending alphabetical order by <code>name</code> of the
-    /// domains.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
     pub reverse_order: bool,
 }
 impl ListDomainsInput {
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -10015,14 +8741,11 @@ impl ListDomainsInput {
     pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-    /// results are returned in ascending alphabetical order by <code>name</code> of the
-    /// domains.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -10044,75 +8767,36 @@ impl std::fmt::Debug for ListDomainsInput {
 pub struct ListClosedWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>If specified, the workflow executions are included in the returned results based on
-    /// whether their start times are within the range specified by this filter. Also, if this
-    /// parameter is specified, the returned results are ordered by their start times.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, the workflow executions are included in the returned results based on
-    /// whether their close times are within the range specified by this filter. Also, if this
-    /// parameter is specified, the returned results are ordered by their close times.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-    /// are returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
-    /// <p>If specified, only workflow executions that match this <i>close
-    /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-    /// workflow executions are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
-    /// <p>If specified, only executions of the type specified in the filter are
-    /// returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have the matching tag are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in descending order of the start or the close time of the
-    /// executions.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
     pub reverse_order: bool,
 }
 impl ListClosedWorkflowExecutionsInput {
@@ -10120,91 +8804,52 @@ impl ListClosedWorkflowExecutionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>If specified, the workflow executions are included in the returned results based on
-    /// whether their start times are within the range specified by this filter. Also, if this
-    /// parameter is specified, the returned results are ordered by their start times.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, the workflow executions are included in the returned results based on
-    /// whether their close times are within the range specified by this filter. Also, if this
-    /// parameter is specified, the returned results are ordered by their close times.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.close_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
-    /// are returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that match this <i>close
-    /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
-    /// workflow executions are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()
     }
-    /// <p>If specified, only executions of the type specified in the filter are
-    /// returned.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
-    /// results are returned in descending order of the start or the close time of the
-    /// executions.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -10236,21 +8881,12 @@ pub struct ListActivityTypesInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the registration status of the activity types to list.</p>
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-    /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-    /// types.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
     pub reverse_order: bool,
 }
 impl ListActivityTypesInput {
@@ -10266,25 +8902,16 @@ impl ListActivityTypesInput {
     pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
-    /// results are returned in ascending alphabetical order by <code>name</code> of the activity
-    /// types.</p>
+    /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -10310,21 +8937,12 @@ pub struct GetWorkflowExecutionHistoryInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow execution for which to return the history.</p>
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub maximum_page_size: i32,
-    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-    /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-    /// events.</p>
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     pub reverse_order: bool,
 }
 impl GetWorkflowExecutionHistoryInput {
@@ -10336,25 +8954,16 @@ impl GetWorkflowExecutionHistoryInput {
     pub fn execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
         self.execution.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results
-    /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
-    /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
-    /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
-    /// exceeded its maximum lifetime</code>". </p>
-    ///
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
-    /// in a single call. </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call.
-    /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
     }
-    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
-    /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
-    /// events.</p>
+    /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
@@ -10454,9 +9063,7 @@ impl std::fmt::Debug for DescribeDomainInput {
 pub struct DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The activity type to get information about. Activity types are identified by the
-    /// <code>name</code> and <code>version</code> that were supplied when the activity was
-    /// registered.</p>
+    /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
     pub activity_type: std::option::Option<crate::model::ActivityType>,
 }
 impl DescribeActivityTypeInput {
@@ -10464,9 +9071,7 @@ impl DescribeActivityTypeInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The activity type to get information about. Activity types are identified by the
-    /// <code>name</code> and <code>version</code> that were supplied when the activity was
-    /// registered.</p>
+    /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
     pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
         self.activity_type.as_ref()
     }
@@ -10619,30 +9224,18 @@ impl std::fmt::Debug for CountPendingActivityTasksInput {
 pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-    /// counted.</p>
+    /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>Specifies the type of the workflow executions to be counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have a tag that matches the filter are
-    /// counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-    /// filter are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
@@ -10651,36 +9244,24 @@ impl CountOpenWorkflowExecutionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>Specifies the start time criteria that workflow executions must meet in order to be
-    /// counted.</p>
+    /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>Specifies the type of the workflow executions to be counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are
-    /// counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-    /// filter are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-    /// mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
@@ -10704,56 +9285,28 @@ impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
 pub struct CountClosedWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-    /// are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-    /// are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-    /// filter are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have a tag that matches the filter are
-    /// counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If specified, only workflow executions that match this close status are counted. This
-    /// filter has an affect only if <code>executionStatus</code> is specified as
-    /// <code>CLOSED</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
 }
@@ -10762,66 +9315,38 @@ impl CountClosedWorkflowExecutionsInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter
-    /// are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter
-    /// are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
-    /// must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
     pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
         self.close_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
-    /// filter are counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are
-    /// counted.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that match this close status are counted. This
-    /// filter has an affect only if <code>executionStatus</code> is specified as
-    /// <code>CLOSED</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-    /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
-    /// request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()

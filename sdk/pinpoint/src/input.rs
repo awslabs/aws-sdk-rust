@@ -40,7 +40,7 @@ pub mod create_app_input {
 #[doc(hidden)]
 pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
 #[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(clippy::let_and_return)]
@@ -51,7 +51,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -129,7 +129,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "pinpoint",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -205,7 +205,7 @@ pub mod create_campaign_input {
 #[doc(hidden)]
 pub type CreateCampaignInputOperationOutputAlias = crate::operation::CreateCampaign;
 #[doc(hidden)]
-pub type CreateCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCampaignInput {
     /// Consumes the builder and constructs an Operation<[`CreateCampaign`](crate::operation::CreateCampaign)>
     #[allow(clippy::let_and_return)]
@@ -216,7 +216,7 @@ impl CreateCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -316,7 +316,7 @@ impl CreateCampaignInput {
             "CreateCampaign",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -392,7 +392,7 @@ pub mod create_email_template_input {
 #[doc(hidden)]
 pub type CreateEmailTemplateInputOperationOutputAlias = crate::operation::CreateEmailTemplate;
 #[doc(hidden)]
-pub type CreateEmailTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEmailTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateEmailTemplate`](crate::operation::CreateEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -403,7 +403,7 @@ impl CreateEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -504,7 +504,7 @@ impl CreateEmailTemplateInput {
             "CreateEmailTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -580,7 +580,7 @@ pub mod create_export_job_input {
 #[doc(hidden)]
 pub type CreateExportJobInputOperationOutputAlias = crate::operation::CreateExportJob;
 #[doc(hidden)]
-pub type CreateExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateExportJob`](crate::operation::CreateExportJob)>
     #[allow(clippy::let_and_return)]
@@ -591,7 +591,7 @@ impl CreateExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -691,7 +691,7 @@ impl CreateExportJobInput {
             "CreateExportJob",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -767,7 +767,7 @@ pub mod create_import_job_input {
 #[doc(hidden)]
 pub type CreateImportJobInputOperationOutputAlias = crate::operation::CreateImportJob;
 #[doc(hidden)]
-pub type CreateImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateImportJob`](crate::operation::CreateImportJob)>
     #[allow(clippy::let_and_return)]
@@ -778,7 +778,7 @@ impl CreateImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -878,7 +878,7 @@ impl CreateImportJobInput {
             "CreateImportJob",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -957,7 +957,7 @@ pub mod create_in_app_template_input {
 #[doc(hidden)]
 pub type CreateInAppTemplateInputOperationOutputAlias = crate::operation::CreateInAppTemplate;
 #[doc(hidden)]
-pub type CreateInAppTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInAppTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInAppTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateInAppTemplate`](crate::operation::CreateInAppTemplate)>
     #[allow(clippy::let_and_return)]
@@ -968,7 +968,7 @@ impl CreateInAppTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInAppTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1069,7 +1069,7 @@ impl CreateInAppTemplateInput {
             "CreateInAppTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1145,7 +1145,7 @@ pub mod create_journey_input {
 #[doc(hidden)]
 pub type CreateJourneyInputOperationOutputAlias = crate::operation::CreateJourney;
 #[doc(hidden)]
-pub type CreateJourneyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJourneyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJourneyInput {
     /// Consumes the builder and constructs an Operation<[`CreateJourney`](crate::operation::CreateJourney)>
     #[allow(clippy::let_and_return)]
@@ -1156,7 +1156,7 @@ impl CreateJourneyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJourney,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1256,7 +1256,7 @@ impl CreateJourneyInput {
             "CreateJourney",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1336,7 +1336,7 @@ pub mod create_push_template_input {
 #[doc(hidden)]
 pub type CreatePushTemplateInputOperationOutputAlias = crate::operation::CreatePushTemplate;
 #[doc(hidden)]
-pub type CreatePushTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePushTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePushTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreatePushTemplate`](crate::operation::CreatePushTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1347,7 +1347,7 @@ impl CreatePushTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePushTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1448,7 +1448,7 @@ impl CreatePushTemplateInput {
             "CreatePushTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1514,7 +1514,8 @@ pub mod create_recommender_configuration_input {
 pub type CreateRecommenderConfigurationInputOperationOutputAlias =
     crate::operation::CreateRecommenderConfiguration;
 #[doc(hidden)]
-pub type CreateRecommenderConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecommenderConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecommenderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecommenderConfiguration`](crate::operation::CreateRecommenderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1525,7 +1526,7 @@ impl CreateRecommenderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecommenderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1606,7 +1607,7 @@ impl CreateRecommenderConfigurationInput {
             "CreateRecommenderConfiguration",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1682,7 +1683,7 @@ pub mod create_segment_input {
 #[doc(hidden)]
 pub type CreateSegmentInputOperationOutputAlias = crate::operation::CreateSegment;
 #[doc(hidden)]
-pub type CreateSegmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSegmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateSegment`](crate::operation::CreateSegment)>
     #[allow(clippy::let_and_return)]
@@ -1693,7 +1694,7 @@ impl CreateSegmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSegment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1793,7 +1794,7 @@ impl CreateSegmentInput {
             "CreateSegment",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1869,7 +1870,7 @@ pub mod create_sms_template_input {
 #[doc(hidden)]
 pub type CreateSmsTemplateInputOperationOutputAlias = crate::operation::CreateSmsTemplate;
 #[doc(hidden)]
-pub type CreateSmsTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSmsTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSmsTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateSmsTemplate`](crate::operation::CreateSmsTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1880,7 +1881,7 @@ impl CreateSmsTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSmsTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1981,7 +1982,7 @@ impl CreateSmsTemplateInput {
             "CreateSmsTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2057,7 +2058,7 @@ pub mod create_voice_template_input {
 #[doc(hidden)]
 pub type CreateVoiceTemplateInputOperationOutputAlias = crate::operation::CreateVoiceTemplate;
 #[doc(hidden)]
-pub type CreateVoiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVoiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVoiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateVoiceTemplate`](crate::operation::CreateVoiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2068,7 +2069,7 @@ impl CreateVoiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVoiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2169,7 +2170,7 @@ impl CreateVoiceTemplateInput {
             "CreateVoiceTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2230,7 +2231,7 @@ pub mod delete_adm_channel_input {
 #[doc(hidden)]
 pub type DeleteAdmChannelInputOperationOutputAlias = crate::operation::DeleteAdmChannel;
 #[doc(hidden)]
-pub type DeleteAdmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAdmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAdmChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAdmChannel`](crate::operation::DeleteAdmChannel)>
     #[allow(clippy::let_and_return)]
@@ -2241,7 +2242,7 @@ impl DeleteAdmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAdmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2335,7 +2336,7 @@ impl DeleteAdmChannelInput {
             "DeleteAdmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2388,7 +2389,7 @@ pub mod delete_apns_channel_input {
 #[doc(hidden)]
 pub type DeleteApnsChannelInputOperationOutputAlias = crate::operation::DeleteApnsChannel;
 #[doc(hidden)]
-pub type DeleteApnsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApnsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApnsChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApnsChannel`](crate::operation::DeleteApnsChannel)>
     #[allow(clippy::let_and_return)]
@@ -2399,7 +2400,7 @@ impl DeleteApnsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApnsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2493,7 +2494,7 @@ impl DeleteApnsChannelInput {
             "DeleteApnsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2547,7 +2548,7 @@ pub mod delete_apns_sandbox_channel_input {
 pub type DeleteApnsSandboxChannelInputOperationOutputAlias =
     crate::operation::DeleteApnsSandboxChannel;
 #[doc(hidden)]
-pub type DeleteApnsSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApnsSandboxChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApnsSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApnsSandboxChannel`](crate::operation::DeleteApnsSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -2558,7 +2559,7 @@ impl DeleteApnsSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApnsSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2652,7 +2653,7 @@ impl DeleteApnsSandboxChannelInput {
             "DeleteApnsSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2705,7 +2706,7 @@ pub mod delete_apns_voip_channel_input {
 #[doc(hidden)]
 pub type DeleteApnsVoipChannelInputOperationOutputAlias = crate::operation::DeleteApnsVoipChannel;
 #[doc(hidden)]
-pub type DeleteApnsVoipChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApnsVoipChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApnsVoipChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApnsVoipChannel`](crate::operation::DeleteApnsVoipChannel)>
     #[allow(clippy::let_and_return)]
@@ -2716,7 +2717,7 @@ impl DeleteApnsVoipChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApnsVoipChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2810,7 +2811,7 @@ impl DeleteApnsVoipChannelInput {
             "DeleteApnsVoipChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2864,7 +2865,8 @@ pub mod delete_apns_voip_sandbox_channel_input {
 pub type DeleteApnsVoipSandboxChannelInputOperationOutputAlias =
     crate::operation::DeleteApnsVoipSandboxChannel;
 #[doc(hidden)]
-pub type DeleteApnsVoipSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApnsVoipSandboxChannelInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApnsVoipSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApnsVoipSandboxChannel`](crate::operation::DeleteApnsVoipSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -2875,7 +2877,7 @@ impl DeleteApnsVoipSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApnsVoipSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2969,7 +2971,7 @@ impl DeleteApnsVoipSandboxChannelInput {
             "DeleteApnsVoipSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3020,7 +3022,7 @@ pub mod delete_app_input {
 #[doc(hidden)]
 pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
 #[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(clippy::let_and_return)]
@@ -3031,7 +3033,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3123,7 +3125,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "pinpoint",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3176,7 +3178,7 @@ pub mod delete_baidu_channel_input {
 #[doc(hidden)]
 pub type DeleteBaiduChannelInputOperationOutputAlias = crate::operation::DeleteBaiduChannel;
 #[doc(hidden)]
-pub type DeleteBaiduChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBaiduChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBaiduChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBaiduChannel`](crate::operation::DeleteBaiduChannel)>
     #[allow(clippy::let_and_return)]
@@ -3187,7 +3189,7 @@ impl DeleteBaiduChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBaiduChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3281,7 +3283,7 @@ impl DeleteBaiduChannelInput {
             "DeleteBaiduChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3346,7 +3348,7 @@ pub mod delete_campaign_input {
 #[doc(hidden)]
 pub type DeleteCampaignInputOperationOutputAlias = crate::operation::DeleteCampaign;
 #[doc(hidden)]
-pub type DeleteCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCampaignInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCampaign`](crate::operation::DeleteCampaign)>
     #[allow(clippy::let_and_return)]
@@ -3357,7 +3359,7 @@ impl DeleteCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3467,7 +3469,7 @@ impl DeleteCampaignInput {
             "DeleteCampaign",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3520,7 +3522,7 @@ pub mod delete_email_channel_input {
 #[doc(hidden)]
 pub type DeleteEmailChannelInputOperationOutputAlias = crate::operation::DeleteEmailChannel;
 #[doc(hidden)]
-pub type DeleteEmailChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEmailChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEmailChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEmailChannel`](crate::operation::DeleteEmailChannel)>
     #[allow(clippy::let_and_return)]
@@ -3531,7 +3533,7 @@ impl DeleteEmailChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEmailChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3625,7 +3627,7 @@ impl DeleteEmailChannelInput {
             "DeleteEmailChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3663,12 +3665,28 @@ pub mod delete_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3690,7 +3708,7 @@ pub mod delete_email_template_input {
 #[doc(hidden)]
 pub type DeleteEmailTemplateInputOperationOutputAlias = crate::operation::DeleteEmailTemplate;
 #[doc(hidden)]
-pub type DeleteEmailTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEmailTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEmailTemplate`](crate::operation::DeleteEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3701,7 +3719,7 @@ impl DeleteEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3806,7 +3824,7 @@ impl DeleteEmailTemplateInput {
             "DeleteEmailTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3871,7 +3889,7 @@ pub mod delete_endpoint_input {
 #[doc(hidden)]
 pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
 #[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -3882,7 +3900,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3992,7 +4010,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4045,7 +4063,7 @@ pub mod delete_event_stream_input {
 #[doc(hidden)]
 pub type DeleteEventStreamInputOperationOutputAlias = crate::operation::DeleteEventStream;
 #[doc(hidden)]
-pub type DeleteEventStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventStream`](crate::operation::DeleteEventStream)>
     #[allow(clippy::let_and_return)]
@@ -4056,7 +4074,7 @@ impl DeleteEventStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4150,7 +4168,7 @@ impl DeleteEventStreamInput {
             "DeleteEventStream",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4203,7 +4221,7 @@ pub mod delete_gcm_channel_input {
 #[doc(hidden)]
 pub type DeleteGcmChannelInputOperationOutputAlias = crate::operation::DeleteGcmChannel;
 #[doc(hidden)]
-pub type DeleteGcmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGcmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGcmChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGcmChannel`](crate::operation::DeleteGcmChannel)>
     #[allow(clippy::let_and_return)]
@@ -4214,7 +4232,7 @@ impl DeleteGcmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGcmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4308,7 +4326,7 @@ impl DeleteGcmChannelInput {
             "DeleteGcmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4346,12 +4364,28 @@ pub mod delete_in_app_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4373,7 +4407,7 @@ pub mod delete_in_app_template_input {
 #[doc(hidden)]
 pub type DeleteInAppTemplateInputOperationOutputAlias = crate::operation::DeleteInAppTemplate;
 #[doc(hidden)]
-pub type DeleteInAppTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInAppTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInAppTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInAppTemplate`](crate::operation::DeleteInAppTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4384,7 +4418,7 @@ impl DeleteInAppTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInAppTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4489,7 +4523,7 @@ impl DeleteInAppTemplateInput {
             "DeleteInAppTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4554,7 +4588,7 @@ pub mod delete_journey_input {
 #[doc(hidden)]
 pub type DeleteJourneyInputOperationOutputAlias = crate::operation::DeleteJourney;
 #[doc(hidden)]
-pub type DeleteJourneyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJourneyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJourneyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJourney`](crate::operation::DeleteJourney)>
     #[allow(clippy::let_and_return)]
@@ -4565,7 +4599,7 @@ impl DeleteJourneyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJourney,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4675,7 +4709,7 @@ impl DeleteJourneyInput {
             "DeleteJourney",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4713,12 +4747,28 @@ pub mod delete_push_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4740,7 +4790,7 @@ pub mod delete_push_template_input {
 #[doc(hidden)]
 pub type DeletePushTemplateInputOperationOutputAlias = crate::operation::DeletePushTemplate;
 #[doc(hidden)]
-pub type DeletePushTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePushTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePushTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeletePushTemplate`](crate::operation::DeletePushTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4751,7 +4801,7 @@ impl DeletePushTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePushTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4856,7 +4906,7 @@ impl DeletePushTemplateInput {
             "DeletePushTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4910,7 +4960,8 @@ pub mod delete_recommender_configuration_input {
 pub type DeleteRecommenderConfigurationInputOperationOutputAlias =
     crate::operation::DeleteRecommenderConfiguration;
 #[doc(hidden)]
-pub type DeleteRecommenderConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecommenderConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecommenderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecommenderConfiguration`](crate::operation::DeleteRecommenderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4921,7 +4972,7 @@ impl DeleteRecommenderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecommenderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5015,7 +5066,7 @@ impl DeleteRecommenderConfigurationInput {
             "DeleteRecommenderConfiguration",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5080,7 +5131,7 @@ pub mod delete_segment_input {
 #[doc(hidden)]
 pub type DeleteSegmentInputOperationOutputAlias = crate::operation::DeleteSegment;
 #[doc(hidden)]
-pub type DeleteSegmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSegmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSegment`](crate::operation::DeleteSegment)>
     #[allow(clippy::let_and_return)]
@@ -5091,7 +5142,7 @@ impl DeleteSegmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSegment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5201,7 +5252,7 @@ impl DeleteSegmentInput {
             "DeleteSegment",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5254,7 +5305,7 @@ pub mod delete_sms_channel_input {
 #[doc(hidden)]
 pub type DeleteSmsChannelInputOperationOutputAlias = crate::operation::DeleteSmsChannel;
 #[doc(hidden)]
-pub type DeleteSmsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSmsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSmsChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSmsChannel`](crate::operation::DeleteSmsChannel)>
     #[allow(clippy::let_and_return)]
@@ -5265,7 +5316,7 @@ impl DeleteSmsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSmsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5359,7 +5410,7 @@ impl DeleteSmsChannelInput {
             "DeleteSmsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5397,12 +5448,28 @@ pub mod delete_sms_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5424,7 +5491,7 @@ pub mod delete_sms_template_input {
 #[doc(hidden)]
 pub type DeleteSmsTemplateInputOperationOutputAlias = crate::operation::DeleteSmsTemplate;
 #[doc(hidden)]
-pub type DeleteSmsTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSmsTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSmsTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSmsTemplate`](crate::operation::DeleteSmsTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5435,7 +5502,7 @@ impl DeleteSmsTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSmsTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5540,7 +5607,7 @@ impl DeleteSmsTemplateInput {
             "DeleteSmsTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5605,7 +5672,7 @@ pub mod delete_user_endpoints_input {
 #[doc(hidden)]
 pub type DeleteUserEndpointsInputOperationOutputAlias = crate::operation::DeleteUserEndpoints;
 #[doc(hidden)]
-pub type DeleteUserEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserEndpoints`](crate::operation::DeleteUserEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -5616,7 +5683,7 @@ impl DeleteUserEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5726,7 +5793,7 @@ impl DeleteUserEndpointsInput {
             "DeleteUserEndpoints",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5779,7 +5846,7 @@ pub mod delete_voice_channel_input {
 #[doc(hidden)]
 pub type DeleteVoiceChannelInputOperationOutputAlias = crate::operation::DeleteVoiceChannel;
 #[doc(hidden)]
-pub type DeleteVoiceChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVoiceChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceChannel`](crate::operation::DeleteVoiceChannel)>
     #[allow(clippy::let_and_return)]
@@ -5790,7 +5857,7 @@ impl DeleteVoiceChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVoiceChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5884,7 +5951,7 @@ impl DeleteVoiceChannelInput {
             "DeleteVoiceChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5922,12 +5989,28 @@ pub mod delete_voice_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5949,7 +6032,7 @@ pub mod delete_voice_template_input {
 #[doc(hidden)]
 pub type DeleteVoiceTemplateInputOperationOutputAlias = crate::operation::DeleteVoiceTemplate;
 #[doc(hidden)]
-pub type DeleteVoiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVoiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVoiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVoiceTemplate`](crate::operation::DeleteVoiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5960,7 +6043,7 @@ impl DeleteVoiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVoiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6065,7 +6148,7 @@ impl DeleteVoiceTemplateInput {
             "DeleteVoiceTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6118,7 +6201,7 @@ pub mod get_adm_channel_input {
 #[doc(hidden)]
 pub type GetAdmChannelInputOperationOutputAlias = crate::operation::GetAdmChannel;
 #[doc(hidden)]
-pub type GetAdmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAdmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAdmChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetAdmChannel`](crate::operation::GetAdmChannel)>
     #[allow(clippy::let_and_return)]
@@ -6129,7 +6212,7 @@ impl GetAdmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAdmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6223,7 +6306,7 @@ impl GetAdmChannelInput {
             "GetAdmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6276,7 +6359,7 @@ pub mod get_apns_channel_input {
 #[doc(hidden)]
 pub type GetApnsChannelInputOperationOutputAlias = crate::operation::GetApnsChannel;
 #[doc(hidden)]
-pub type GetApnsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApnsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApnsChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetApnsChannel`](crate::operation::GetApnsChannel)>
     #[allow(clippy::let_and_return)]
@@ -6287,7 +6370,7 @@ impl GetApnsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApnsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6381,7 +6464,7 @@ impl GetApnsChannelInput {
             "GetApnsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6434,7 +6517,7 @@ pub mod get_apns_sandbox_channel_input {
 #[doc(hidden)]
 pub type GetApnsSandboxChannelInputOperationOutputAlias = crate::operation::GetApnsSandboxChannel;
 #[doc(hidden)]
-pub type GetApnsSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApnsSandboxChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApnsSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetApnsSandboxChannel`](crate::operation::GetApnsSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -6445,7 +6528,7 @@ impl GetApnsSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApnsSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6539,7 +6622,7 @@ impl GetApnsSandboxChannelInput {
             "GetApnsSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6592,7 +6675,7 @@ pub mod get_apns_voip_channel_input {
 #[doc(hidden)]
 pub type GetApnsVoipChannelInputOperationOutputAlias = crate::operation::GetApnsVoipChannel;
 #[doc(hidden)]
-pub type GetApnsVoipChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApnsVoipChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApnsVoipChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetApnsVoipChannel`](crate::operation::GetApnsVoipChannel)>
     #[allow(clippy::let_and_return)]
@@ -6603,7 +6686,7 @@ impl GetApnsVoipChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApnsVoipChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6697,7 +6780,7 @@ impl GetApnsVoipChannelInput {
             "GetApnsVoipChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6751,7 +6834,7 @@ pub mod get_apns_voip_sandbox_channel_input {
 pub type GetApnsVoipSandboxChannelInputOperationOutputAlias =
     crate::operation::GetApnsVoipSandboxChannel;
 #[doc(hidden)]
-pub type GetApnsVoipSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApnsVoipSandboxChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApnsVoipSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetApnsVoipSandboxChannel`](crate::operation::GetApnsVoipSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -6762,7 +6845,7 @@ impl GetApnsVoipSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApnsVoipSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6856,7 +6939,7 @@ impl GetApnsVoipSandboxChannelInput {
             "GetApnsVoipSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6907,7 +6990,7 @@ pub mod get_app_input {
 #[doc(hidden)]
 pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
 #[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(clippy::let_and_return)]
@@ -6918,7 +7001,7 @@ impl GetAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7009,7 +7092,7 @@ impl GetAppInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetApp", "pinpoint",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7074,12 +7157,12 @@ pub mod get_application_date_range_kpi_input {
             self.kpi_name = input;
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7129,7 +7212,7 @@ pub mod get_application_date_range_kpi_input {
 pub type GetApplicationDateRangeKpiInputOperationOutputAlias =
     crate::operation::GetApplicationDateRangeKpi;
 #[doc(hidden)]
-pub type GetApplicationDateRangeKpiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationDateRangeKpiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationDateRangeKpiInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationDateRangeKpi`](crate::operation::GetApplicationDateRangeKpi)>
     #[allow(clippy::let_and_return)]
@@ -7140,7 +7223,7 @@ impl GetApplicationDateRangeKpiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplicationDateRangeKpi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7282,7 +7365,7 @@ impl GetApplicationDateRangeKpiInput {
             "GetApplicationDateRangeKpi",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7335,7 +7418,7 @@ pub mod get_application_settings_input {
 #[doc(hidden)]
 pub type GetApplicationSettingsInputOperationOutputAlias = crate::operation::GetApplicationSettings;
 #[doc(hidden)]
-pub type GetApplicationSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationSettings`](crate::operation::GetApplicationSettings)>
     #[allow(clippy::let_and_return)]
@@ -7346,7 +7429,7 @@ impl GetApplicationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplicationSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7440,7 +7523,7 @@ impl GetApplicationSettingsInput {
             "GetApplicationSettings",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7500,7 +7583,7 @@ pub mod get_apps_input {
 #[doc(hidden)]
 pub type GetAppsInputOperationOutputAlias = crate::operation::GetApps;
 #[doc(hidden)]
-pub type GetAppsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppsInput {
     /// Consumes the builder and constructs an Operation<[`GetApps`](crate::operation::GetApps)>
     #[allow(clippy::let_and_return)]
@@ -7511,7 +7594,7 @@ impl GetAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7596,7 +7679,7 @@ impl GetAppsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetApps", "pinpoint",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7649,7 +7732,7 @@ pub mod get_baidu_channel_input {
 #[doc(hidden)]
 pub type GetBaiduChannelInputOperationOutputAlias = crate::operation::GetBaiduChannel;
 #[doc(hidden)]
-pub type GetBaiduChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBaiduChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBaiduChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetBaiduChannel`](crate::operation::GetBaiduChannel)>
     #[allow(clippy::let_and_return)]
@@ -7660,7 +7743,7 @@ impl GetBaiduChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBaiduChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7754,7 +7837,7 @@ impl GetBaiduChannelInput {
             "GetBaiduChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7819,7 +7902,7 @@ pub mod get_campaign_input {
 #[doc(hidden)]
 pub type GetCampaignInputOperationOutputAlias = crate::operation::GetCampaign;
 #[doc(hidden)]
-pub type GetCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaign`](crate::operation::GetCampaign)>
     #[allow(clippy::let_and_return)]
@@ -7830,7 +7913,7 @@ impl GetCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7940,7 +8023,7 @@ impl GetCampaignInput {
             "GetCampaign",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8029,7 +8112,7 @@ pub mod get_campaign_activities_input {
 #[doc(hidden)]
 pub type GetCampaignActivitiesInputOperationOutputAlias = crate::operation::GetCampaignActivities;
 #[doc(hidden)]
-pub type GetCampaignActivitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaignActivities`](crate::operation::GetCampaignActivities)>
     #[allow(clippy::let_and_return)]
@@ -8040,7 +8123,7 @@ impl GetCampaignActivitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignActivities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8164,7 +8247,7 @@ impl GetCampaignActivitiesInput {
             "GetCampaignActivities",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8240,12 +8323,12 @@ pub mod get_campaign_date_range_kpi_input {
             self.kpi_name = input;
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8296,7 +8379,7 @@ pub mod get_campaign_date_range_kpi_input {
 pub type GetCampaignDateRangeKpiInputOperationOutputAlias =
     crate::operation::GetCampaignDateRangeKpi;
 #[doc(hidden)]
-pub type GetCampaignDateRangeKpiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignDateRangeKpiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignDateRangeKpiInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaignDateRangeKpi`](crate::operation::GetCampaignDateRangeKpi)>
     #[allow(clippy::let_and_return)]
@@ -8307,7 +8390,7 @@ impl GetCampaignDateRangeKpiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignDateRangeKpi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8465,7 +8548,7 @@ impl GetCampaignDateRangeKpiInput {
             "GetCampaignDateRangeKpi",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8542,7 +8625,7 @@ pub mod get_campaigns_input {
 #[doc(hidden)]
 pub type GetCampaignsInputOperationOutputAlias = crate::operation::GetCampaigns;
 #[doc(hidden)]
-pub type GetCampaignsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignsInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaigns`](crate::operation::GetCampaigns)>
     #[allow(clippy::let_and_return)]
@@ -8553,7 +8636,7 @@ impl GetCampaignsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaigns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8661,7 +8744,7 @@ impl GetCampaignsInput {
             "GetCampaigns",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8738,7 +8821,7 @@ pub mod get_campaign_version_input {
 #[doc(hidden)]
 pub type GetCampaignVersionInputOperationOutputAlias = crate::operation::GetCampaignVersion;
 #[doc(hidden)]
-pub type GetCampaignVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaignVersion`](crate::operation::GetCampaignVersion)>
     #[allow(clippy::let_and_return)]
@@ -8749,7 +8832,7 @@ impl GetCampaignVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8875,7 +8958,7 @@ impl GetCampaignVersionInput {
             "GetCampaignVersion",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8964,7 +9047,7 @@ pub mod get_campaign_versions_input {
 #[doc(hidden)]
 pub type GetCampaignVersionsInputOperationOutputAlias = crate::operation::GetCampaignVersions;
 #[doc(hidden)]
-pub type GetCampaignVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCampaignVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCampaignVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetCampaignVersions`](crate::operation::GetCampaignVersions)>
     #[allow(clippy::let_and_return)]
@@ -8975,7 +9058,7 @@ impl GetCampaignVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCampaignVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9099,7 +9182,7 @@ impl GetCampaignVersionsInput {
             "GetCampaignVersions",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9152,7 +9235,7 @@ pub mod get_channels_input {
 #[doc(hidden)]
 pub type GetChannelsInputOperationOutputAlias = crate::operation::GetChannels;
 #[doc(hidden)]
-pub type GetChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelsInput {
     /// Consumes the builder and constructs an Operation<[`GetChannels`](crate::operation::GetChannels)>
     #[allow(clippy::let_and_return)]
@@ -9163,7 +9246,7 @@ impl GetChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9257,7 +9340,7 @@ impl GetChannelsInput {
             "GetChannels",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9310,7 +9393,7 @@ pub mod get_email_channel_input {
 #[doc(hidden)]
 pub type GetEmailChannelInputOperationOutputAlias = crate::operation::GetEmailChannel;
 #[doc(hidden)]
-pub type GetEmailChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEmailChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEmailChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetEmailChannel`](crate::operation::GetEmailChannel)>
     #[allow(clippy::let_and_return)]
@@ -9321,7 +9404,7 @@ impl GetEmailChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEmailChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9415,7 +9498,7 @@ impl GetEmailChannelInput {
             "GetEmailChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9453,12 +9536,28 @@ pub mod get_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -9480,7 +9579,7 @@ pub mod get_email_template_input {
 #[doc(hidden)]
 pub type GetEmailTemplateInputOperationOutputAlias = crate::operation::GetEmailTemplate;
 #[doc(hidden)]
-pub type GetEmailTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEmailTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetEmailTemplate`](crate::operation::GetEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -9491,7 +9590,7 @@ impl GetEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9596,7 +9695,7 @@ impl GetEmailTemplateInput {
             "GetEmailTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9661,7 +9760,7 @@ pub mod get_endpoint_input {
 #[doc(hidden)]
 pub type GetEndpointInputOperationOutputAlias = crate::operation::GetEndpoint;
 #[doc(hidden)]
-pub type GetEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpoint`](crate::operation::GetEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -9672,7 +9771,7 @@ impl GetEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9782,7 +9881,7 @@ impl GetEndpointInput {
             "GetEndpoint",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9835,7 +9934,7 @@ pub mod get_event_stream_input {
 #[doc(hidden)]
 pub type GetEventStreamInputOperationOutputAlias = crate::operation::GetEventStream;
 #[doc(hidden)]
-pub type GetEventStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetEventStream`](crate::operation::GetEventStream)>
     #[allow(clippy::let_and_return)]
@@ -9846,7 +9945,7 @@ impl GetEventStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9940,7 +10039,7 @@ impl GetEventStreamInput {
             "GetEventStream",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10005,7 +10104,7 @@ pub mod get_export_job_input {
 #[doc(hidden)]
 pub type GetExportJobInputOperationOutputAlias = crate::operation::GetExportJob;
 #[doc(hidden)]
-pub type GetExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExportJobInput {
     /// Consumes the builder and constructs an Operation<[`GetExportJob`](crate::operation::GetExportJob)>
     #[allow(clippy::let_and_return)]
@@ -10016,7 +10115,7 @@ impl GetExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10126,7 +10225,7 @@ impl GetExportJobInput {
             "GetExportJob",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10203,7 +10302,7 @@ pub mod get_export_jobs_input {
 #[doc(hidden)]
 pub type GetExportJobsInputOperationOutputAlias = crate::operation::GetExportJobs;
 #[doc(hidden)]
-pub type GetExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetExportJobs`](crate::operation::GetExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -10214,7 +10313,7 @@ impl GetExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10322,7 +10421,7 @@ impl GetExportJobsInput {
             "GetExportJobs",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10375,7 +10474,7 @@ pub mod get_gcm_channel_input {
 #[doc(hidden)]
 pub type GetGcmChannelInputOperationOutputAlias = crate::operation::GetGcmChannel;
 #[doc(hidden)]
-pub type GetGcmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGcmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGcmChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetGcmChannel`](crate::operation::GetGcmChannel)>
     #[allow(clippy::let_and_return)]
@@ -10386,7 +10485,7 @@ impl GetGcmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGcmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10480,7 +10579,7 @@ impl GetGcmChannelInput {
             "GetGcmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10545,7 +10644,7 @@ pub mod get_import_job_input {
 #[doc(hidden)]
 pub type GetImportJobInputOperationOutputAlias = crate::operation::GetImportJob;
 #[doc(hidden)]
-pub type GetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`GetImportJob`](crate::operation::GetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -10556,7 +10655,7 @@ impl GetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10666,7 +10765,7 @@ impl GetImportJobInput {
             "GetImportJob",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10743,7 +10842,7 @@ pub mod get_import_jobs_input {
 #[doc(hidden)]
 pub type GetImportJobsInputOperationOutputAlias = crate::operation::GetImportJobs;
 #[doc(hidden)]
-pub type GetImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetImportJobs`](crate::operation::GetImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -10754,7 +10853,7 @@ impl GetImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10862,7 +10961,7 @@ impl GetImportJobsInput {
             "GetImportJobs",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10927,7 +11026,7 @@ pub mod get_in_app_messages_input {
 #[doc(hidden)]
 pub type GetInAppMessagesInputOperationOutputAlias = crate::operation::GetInAppMessages;
 #[doc(hidden)]
-pub type GetInAppMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInAppMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInAppMessagesInput {
     /// Consumes the builder and constructs an Operation<[`GetInAppMessages`](crate::operation::GetInAppMessages)>
     #[allow(clippy::let_and_return)]
@@ -10938,7 +11037,7 @@ impl GetInAppMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInAppMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11048,7 +11147,7 @@ impl GetInAppMessagesInput {
             "GetInAppMessages",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11086,12 +11185,28 @@ pub mod get_in_app_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -11113,7 +11228,7 @@ pub mod get_in_app_template_input {
 #[doc(hidden)]
 pub type GetInAppTemplateInputOperationOutputAlias = crate::operation::GetInAppTemplate;
 #[doc(hidden)]
-pub type GetInAppTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInAppTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInAppTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetInAppTemplate`](crate::operation::GetInAppTemplate)>
     #[allow(clippy::let_and_return)]
@@ -11124,7 +11239,7 @@ impl GetInAppTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInAppTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11229,7 +11344,7 @@ impl GetInAppTemplateInput {
             "GetInAppTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11294,7 +11409,7 @@ pub mod get_journey_input {
 #[doc(hidden)]
 pub type GetJourneyInputOperationOutputAlias = crate::operation::GetJourney;
 #[doc(hidden)]
-pub type GetJourneyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJourneyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJourneyInput {
     /// Consumes the builder and constructs an Operation<[`GetJourney`](crate::operation::GetJourney)>
     #[allow(clippy::let_and_return)]
@@ -11305,7 +11420,7 @@ impl GetJourneyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJourney,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11415,7 +11530,7 @@ impl GetJourneyInput {
             "GetJourney",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11491,12 +11606,12 @@ pub mod get_journey_date_range_kpi_input {
             self.kpi_name = input;
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11546,7 +11661,7 @@ pub mod get_journey_date_range_kpi_input {
 #[doc(hidden)]
 pub type GetJourneyDateRangeKpiInputOperationOutputAlias = crate::operation::GetJourneyDateRangeKpi;
 #[doc(hidden)]
-pub type GetJourneyDateRangeKpiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJourneyDateRangeKpiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJourneyDateRangeKpiInput {
     /// Consumes the builder and constructs an Operation<[`GetJourneyDateRangeKpi`](crate::operation::GetJourneyDateRangeKpi)>
     #[allow(clippy::let_and_return)]
@@ -11557,7 +11672,7 @@ impl GetJourneyDateRangeKpiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJourneyDateRangeKpi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11718,7 +11833,7 @@ impl GetJourneyDateRangeKpiInput {
             "GetJourneyDateRangeKpi",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11782,12 +11897,12 @@ pub mod get_journey_execution_activity_metrics_input {
             self.journey_id = input;
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11823,7 +11938,8 @@ pub mod get_journey_execution_activity_metrics_input {
 pub type GetJourneyExecutionActivityMetricsInputOperationOutputAlias =
     crate::operation::GetJourneyExecutionActivityMetrics;
 #[doc(hidden)]
-pub type GetJourneyExecutionActivityMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJourneyExecutionActivityMetricsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetJourneyExecutionActivityMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetJourneyExecutionActivityMetrics`](crate::operation::GetJourneyExecutionActivityMetrics)>
     #[allow(clippy::let_and_return)]
@@ -11834,7 +11950,7 @@ impl GetJourneyExecutionActivityMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJourneyExecutionActivityMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11970,7 +12086,7 @@ impl GetJourneyExecutionActivityMetricsInput {
             "GetJourneyExecutionActivityMetrics",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12020,12 +12136,12 @@ pub mod get_journey_execution_metrics_input {
             self.journey_id = input;
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12060,7 +12176,7 @@ pub mod get_journey_execution_metrics_input {
 pub type GetJourneyExecutionMetricsInputOperationOutputAlias =
     crate::operation::GetJourneyExecutionMetrics;
 #[doc(hidden)]
-pub type GetJourneyExecutionMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJourneyExecutionMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJourneyExecutionMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetJourneyExecutionMetrics`](crate::operation::GetJourneyExecutionMetrics)>
     #[allow(clippy::let_and_return)]
@@ -12071,7 +12187,7 @@ impl GetJourneyExecutionMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJourneyExecutionMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12198,7 +12314,7 @@ impl GetJourneyExecutionMetricsInput {
             "GetJourneyExecutionMetrics",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12236,12 +12352,28 @@ pub mod get_push_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -12263,7 +12395,7 @@ pub mod get_push_template_input {
 #[doc(hidden)]
 pub type GetPushTemplateInputOperationOutputAlias = crate::operation::GetPushTemplate;
 #[doc(hidden)]
-pub type GetPushTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPushTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPushTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetPushTemplate`](crate::operation::GetPushTemplate)>
     #[allow(clippy::let_and_return)]
@@ -12274,7 +12406,7 @@ impl GetPushTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPushTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12379,7 +12511,7 @@ impl GetPushTemplateInput {
             "GetPushTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12433,7 +12565,7 @@ pub mod get_recommender_configuration_input {
 pub type GetRecommenderConfigurationInputOperationOutputAlias =
     crate::operation::GetRecommenderConfiguration;
 #[doc(hidden)]
-pub type GetRecommenderConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommenderConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommenderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommenderConfiguration`](crate::operation::GetRecommenderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -12444,7 +12576,7 @@ impl GetRecommenderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommenderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12538,7 +12670,7 @@ impl GetRecommenderConfigurationInput {
             "GetRecommenderConfiguration",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12601,7 +12733,8 @@ pub mod get_recommender_configurations_input {
 pub type GetRecommenderConfigurationsInputOperationOutputAlias =
     crate::operation::GetRecommenderConfigurations;
 #[doc(hidden)]
-pub type GetRecommenderConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommenderConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommenderConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommenderConfigurations`](crate::operation::GetRecommenderConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -12612,7 +12745,7 @@ impl GetRecommenderConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommenderConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12700,7 +12833,7 @@ impl GetRecommenderConfigurationsInput {
             "GetRecommenderConfigurations",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12765,7 +12898,7 @@ pub mod get_segment_input {
 #[doc(hidden)]
 pub type GetSegmentInputOperationOutputAlias = crate::operation::GetSegment;
 #[doc(hidden)]
-pub type GetSegmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentInput {
     /// Consumes the builder and constructs an Operation<[`GetSegment`](crate::operation::GetSegment)>
     #[allow(clippy::let_and_return)]
@@ -12776,7 +12909,7 @@ impl GetSegmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12886,7 +13019,7 @@ impl GetSegmentInput {
             "GetSegment",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12975,7 +13108,7 @@ pub mod get_segment_export_jobs_input {
 #[doc(hidden)]
 pub type GetSegmentExportJobsInputOperationOutputAlias = crate::operation::GetSegmentExportJobs;
 #[doc(hidden)]
-pub type GetSegmentExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentExportJobs`](crate::operation::GetSegmentExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -12986,7 +13119,7 @@ impl GetSegmentExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13110,7 +13243,7 @@ impl GetSegmentExportJobsInput {
             "GetSegmentExportJobs",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13199,7 +13332,7 @@ pub mod get_segment_import_jobs_input {
 #[doc(hidden)]
 pub type GetSegmentImportJobsInputOperationOutputAlias = crate::operation::GetSegmentImportJobs;
 #[doc(hidden)]
-pub type GetSegmentImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentImportJobs`](crate::operation::GetSegmentImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -13210,7 +13343,7 @@ impl GetSegmentImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13334,7 +13467,7 @@ impl GetSegmentImportJobsInput {
             "GetSegmentImportJobs",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13411,7 +13544,7 @@ pub mod get_segments_input {
 #[doc(hidden)]
 pub type GetSegmentsInputOperationOutputAlias = crate::operation::GetSegments;
 #[doc(hidden)]
-pub type GetSegmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentsInput {
     /// Consumes the builder and constructs an Operation<[`GetSegments`](crate::operation::GetSegments)>
     #[allow(clippy::let_and_return)]
@@ -13422,7 +13555,7 @@ impl GetSegmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13530,7 +13663,7 @@ impl GetSegmentsInput {
             "GetSegments",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13607,7 +13740,7 @@ pub mod get_segment_version_input {
 #[doc(hidden)]
 pub type GetSegmentVersionInputOperationOutputAlias = crate::operation::GetSegmentVersion;
 #[doc(hidden)]
-pub type GetSegmentVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentVersion`](crate::operation::GetSegmentVersion)>
     #[allow(clippy::let_and_return)]
@@ -13618,7 +13751,7 @@ impl GetSegmentVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13744,7 +13877,7 @@ impl GetSegmentVersionInput {
             "GetSegmentVersion",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13833,7 +13966,7 @@ pub mod get_segment_versions_input {
 #[doc(hidden)]
 pub type GetSegmentVersionsInputOperationOutputAlias = crate::operation::GetSegmentVersions;
 #[doc(hidden)]
-pub type GetSegmentVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentVersions`](crate::operation::GetSegmentVersions)>
     #[allow(clippy::let_and_return)]
@@ -13844,7 +13977,7 @@ impl GetSegmentVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13968,7 +14101,7 @@ impl GetSegmentVersionsInput {
             "GetSegmentVersions",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14021,7 +14154,7 @@ pub mod get_sms_channel_input {
 #[doc(hidden)]
 pub type GetSmsChannelInputOperationOutputAlias = crate::operation::GetSmsChannel;
 #[doc(hidden)]
-pub type GetSmsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSmsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSmsChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetSmsChannel`](crate::operation::GetSmsChannel)>
     #[allow(clippy::let_and_return)]
@@ -14032,7 +14165,7 @@ impl GetSmsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSmsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14126,7 +14259,7 @@ impl GetSmsChannelInput {
             "GetSmsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14164,12 +14297,28 @@ pub mod get_sms_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -14191,7 +14340,7 @@ pub mod get_sms_template_input {
 #[doc(hidden)]
 pub type GetSmsTemplateInputOperationOutputAlias = crate::operation::GetSmsTemplate;
 #[doc(hidden)]
-pub type GetSmsTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSmsTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSmsTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetSmsTemplate`](crate::operation::GetSmsTemplate)>
     #[allow(clippy::let_and_return)]
@@ -14202,7 +14351,7 @@ impl GetSmsTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSmsTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14307,7 +14456,7 @@ impl GetSmsTemplateInput {
             "GetSmsTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14372,7 +14521,7 @@ pub mod get_user_endpoints_input {
 #[doc(hidden)]
 pub type GetUserEndpointsInputOperationOutputAlias = crate::operation::GetUserEndpoints;
 #[doc(hidden)]
-pub type GetUserEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`GetUserEndpoints`](crate::operation::GetUserEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -14383,7 +14532,7 @@ impl GetUserEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14493,7 +14642,7 @@ impl GetUserEndpointsInput {
             "GetUserEndpoints",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14546,7 +14695,7 @@ pub mod get_voice_channel_input {
 #[doc(hidden)]
 pub type GetVoiceChannelInputOperationOutputAlias = crate::operation::GetVoiceChannel;
 #[doc(hidden)]
-pub type GetVoiceChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVoiceChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceChannel`](crate::operation::GetVoiceChannel)>
     #[allow(clippy::let_and_return)]
@@ -14557,7 +14706,7 @@ impl GetVoiceChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVoiceChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14651,7 +14800,7 @@ impl GetVoiceChannelInput {
             "GetVoiceChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14689,12 +14838,28 @@ pub mod get_voice_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -14716,7 +14881,7 @@ pub mod get_voice_template_input {
 #[doc(hidden)]
 pub type GetVoiceTemplateInputOperationOutputAlias = crate::operation::GetVoiceTemplate;
 #[doc(hidden)]
-pub type GetVoiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVoiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVoiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetVoiceTemplate`](crate::operation::GetVoiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -14727,7 +14892,7 @@ impl GetVoiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVoiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14832,7 +14997,7 @@ impl GetVoiceTemplateInput {
             "GetVoiceTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14909,7 +15074,7 @@ pub mod list_journeys_input {
 #[doc(hidden)]
 pub type ListJourneysInputOperationOutputAlias = crate::operation::ListJourneys;
 #[doc(hidden)]
-pub type ListJourneysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJourneysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJourneysInput {
     /// Consumes the builder and constructs an Operation<[`ListJourneys`](crate::operation::ListJourneys)>
     #[allow(clippy::let_and_return)]
@@ -14920,7 +15085,7 @@ impl ListJourneysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJourneys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15028,7 +15193,7 @@ impl ListJourneysInput {
             "ListJourneys",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15078,7 +15243,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -15089,7 +15254,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15179,7 +15344,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15206,12 +15371,12 @@ pub mod list_templates_input {
         pub(crate) template_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15268,7 +15433,7 @@ pub mod list_templates_input {
 #[doc(hidden)]
 pub type ListTemplatesInputOperationOutputAlias = crate::operation::ListTemplates;
 #[doc(hidden)]
-pub type ListTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplates`](crate::operation::ListTemplates)>
     #[allow(clippy::let_and_return)]
@@ -15279,7 +15444,7 @@ impl ListTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15379,7 +15544,7 @@ impl ListTemplatesInput {
             "ListTemplates",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15406,12 +15571,12 @@ pub mod list_template_versions_input {
         pub(crate) template_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15471,7 +15636,7 @@ pub mod list_template_versions_input {
 #[doc(hidden)]
 pub type ListTemplateVersionsInputOperationOutputAlias = crate::operation::ListTemplateVersions;
 #[doc(hidden)]
-pub type ListTemplateVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTemplateVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTemplateVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplateVersions`](crate::operation::ListTemplateVersions)>
     #[allow(clippy::let_and_return)]
@@ -15482,7 +15647,7 @@ impl ListTemplateVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTemplateVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15609,7 +15774,7 @@ impl ListTemplateVersionsInput {
             "ListTemplateVersions",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15666,7 +15831,7 @@ pub mod phone_number_validate_input {
 #[doc(hidden)]
 pub type PhoneNumberValidateInputOperationOutputAlias = crate::operation::PhoneNumberValidate;
 #[doc(hidden)]
-pub type PhoneNumberValidateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PhoneNumberValidateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PhoneNumberValidateInput {
     /// Consumes the builder and constructs an Operation<[`PhoneNumberValidate`](crate::operation::PhoneNumberValidate)>
     #[allow(clippy::let_and_return)]
@@ -15677,7 +15842,7 @@ impl PhoneNumberValidateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PhoneNumberValidate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15758,7 +15923,7 @@ impl PhoneNumberValidateInput {
             "PhoneNumberValidate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15832,7 +15997,7 @@ pub mod put_events_input {
 #[doc(hidden)]
 pub type PutEventsInputOperationOutputAlias = crate::operation::PutEvents;
 #[doc(hidden)]
-pub type PutEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutEvents`](crate::operation::PutEvents)>
     #[allow(clippy::let_and_return)]
@@ -15843,7 +16008,7 @@ impl PutEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15940,7 +16105,7 @@ impl PutEventsInput {
                     "PutEvents",
                     "pinpoint",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16016,7 +16181,7 @@ pub mod put_event_stream_input {
 #[doc(hidden)]
 pub type PutEventStreamInputOperationOutputAlias = crate::operation::PutEventStream;
 #[doc(hidden)]
-pub type PutEventStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventStreamInput {
     /// Consumes the builder and constructs an Operation<[`PutEventStream`](crate::operation::PutEventStream)>
     #[allow(clippy::let_and_return)]
@@ -16027,7 +16192,7 @@ impl PutEventStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEventStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16127,7 +16292,7 @@ impl PutEventStreamInput {
             "PutEventStream",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16175,12 +16340,22 @@ pub mod remove_attributes_input {
             self.application_id = input;
             self
         }
-        /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+        /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+        /// <ul>
+        /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+        /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+        /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+        /// </ul>
         pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_type = Some(input.into());
             self
         }
-        /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+        /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+        /// <ul>
+        /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+        /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+        /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+        /// </ul>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16222,7 +16397,7 @@ pub mod remove_attributes_input {
 #[doc(hidden)]
 pub type RemoveAttributesInputOperationOutputAlias = crate::operation::RemoveAttributes;
 #[doc(hidden)]
-pub type RemoveAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAttributesInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAttributes`](crate::operation::RemoveAttributes)>
     #[allow(clippy::let_and_return)]
@@ -16233,7 +16408,7 @@ impl RemoveAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16350,7 +16525,7 @@ impl RemoveAttributesInput {
             "RemoveAttributes",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16426,7 +16601,7 @@ pub mod send_messages_input {
 #[doc(hidden)]
 pub type SendMessagesInputOperationOutputAlias = crate::operation::SendMessages;
 #[doc(hidden)]
-pub type SendMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendMessagesInput {
     /// Consumes the builder and constructs an Operation<[`SendMessages`](crate::operation::SendMessages)>
     #[allow(clippy::let_and_return)]
@@ -16437,7 +16612,7 @@ impl SendMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16536,7 +16711,7 @@ impl SendMessagesInput {
             "SendMessages",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16616,7 +16791,7 @@ pub mod send_otp_message_input {
 #[doc(hidden)]
 pub type SendOtpMessageInputOperationOutputAlias = crate::operation::SendOTPMessage;
 #[doc(hidden)]
-pub type SendOtpMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendOtpMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendOtpMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendOTPMessage`](crate::operation::SendOTPMessage)>
     #[allow(clippy::let_and_return)]
@@ -16627,7 +16802,7 @@ impl SendOtpMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendOTPMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16728,7 +16903,7 @@ impl SendOtpMessageInput {
             "SendOTPMessage",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16808,7 +16983,7 @@ pub mod send_users_messages_input {
 #[doc(hidden)]
 pub type SendUsersMessagesInputOperationOutputAlias = crate::operation::SendUsersMessages;
 #[doc(hidden)]
-pub type SendUsersMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendUsersMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendUsersMessagesInput {
     /// Consumes the builder and constructs an Operation<[`SendUsersMessages`](crate::operation::SendUsersMessages)>
     #[allow(clippy::let_and_return)]
@@ -16819,7 +16994,7 @@ impl SendUsersMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendUsersMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16920,7 +17095,7 @@ impl SendUsersMessagesInput {
             "SendUsersMessages",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16993,7 +17168,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -17004,7 +17179,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17099,7 +17274,7 @@ impl TagResourceInput {
             "TagResource",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17178,7 +17353,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -17189,7 +17364,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17292,7 +17467,7 @@ impl UntagResourceInput {
             "UntagResource",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17360,7 +17535,7 @@ pub mod update_adm_channel_input {
 #[doc(hidden)]
 pub type UpdateAdmChannelInputOperationOutputAlias = crate::operation::UpdateAdmChannel;
 #[doc(hidden)]
-pub type UpdateAdmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAdmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAdmChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAdmChannel`](crate::operation::UpdateAdmChannel)>
     #[allow(clippy::let_and_return)]
@@ -17371,7 +17546,7 @@ impl UpdateAdmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAdmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17471,7 +17646,7 @@ impl UpdateAdmChannelInput {
             "UpdateAdmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17547,7 +17722,7 @@ pub mod update_apns_channel_input {
 #[doc(hidden)]
 pub type UpdateApnsChannelInputOperationOutputAlias = crate::operation::UpdateApnsChannel;
 #[doc(hidden)]
-pub type UpdateApnsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApnsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApnsChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApnsChannel`](crate::operation::UpdateApnsChannel)>
     #[allow(clippy::let_and_return)]
@@ -17558,7 +17733,7 @@ impl UpdateApnsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApnsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17659,7 +17834,7 @@ impl UpdateApnsChannelInput {
             "UpdateApnsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17740,7 +17915,7 @@ pub mod update_apns_sandbox_channel_input {
 pub type UpdateApnsSandboxChannelInputOperationOutputAlias =
     crate::operation::UpdateApnsSandboxChannel;
 #[doc(hidden)]
-pub type UpdateApnsSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApnsSandboxChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApnsSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApnsSandboxChannel`](crate::operation::UpdateApnsSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -17751,7 +17926,7 @@ impl UpdateApnsSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApnsSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17852,7 +18027,7 @@ impl UpdateApnsSandboxChannelInput {
             "UpdateApnsSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17932,7 +18107,7 @@ pub mod update_apns_voip_channel_input {
 #[doc(hidden)]
 pub type UpdateApnsVoipChannelInputOperationOutputAlias = crate::operation::UpdateApnsVoipChannel;
 #[doc(hidden)]
-pub type UpdateApnsVoipChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApnsVoipChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApnsVoipChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApnsVoipChannel`](crate::operation::UpdateApnsVoipChannel)>
     #[allow(clippy::let_and_return)]
@@ -17943,7 +18118,7 @@ impl UpdateApnsVoipChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApnsVoipChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18044,7 +18219,7 @@ impl UpdateApnsVoipChannelInput {
             "UpdateApnsVoipChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18125,7 +18300,8 @@ pub mod update_apns_voip_sandbox_channel_input {
 pub type UpdateApnsVoipSandboxChannelInputOperationOutputAlias =
     crate::operation::UpdateApnsVoipSandboxChannel;
 #[doc(hidden)]
-pub type UpdateApnsVoipSandboxChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApnsVoipSandboxChannelInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApnsVoipSandboxChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApnsVoipSandboxChannel`](crate::operation::UpdateApnsVoipSandboxChannel)>
     #[allow(clippy::let_and_return)]
@@ -18136,7 +18312,7 @@ impl UpdateApnsVoipSandboxChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApnsVoipSandboxChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18237,7 +18413,7 @@ impl UpdateApnsVoipSandboxChannelInput {
             "UpdateApnsVoipSandboxChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18318,7 +18494,7 @@ pub mod update_application_settings_input {
 pub type UpdateApplicationSettingsInputOperationOutputAlias =
     crate::operation::UpdateApplicationSettings;
 #[doc(hidden)]
-pub type UpdateApplicationSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationSettings`](crate::operation::UpdateApplicationSettings)>
     #[allow(clippy::let_and_return)]
@@ -18329,7 +18505,7 @@ impl UpdateApplicationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18430,7 +18606,7 @@ impl UpdateApplicationSettingsInput {
             "UpdateApplicationSettings",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18506,7 +18682,7 @@ pub mod update_baidu_channel_input {
 #[doc(hidden)]
 pub type UpdateBaiduChannelInputOperationOutputAlias = crate::operation::UpdateBaiduChannel;
 #[doc(hidden)]
-pub type UpdateBaiduChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBaiduChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBaiduChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBaiduChannel`](crate::operation::UpdateBaiduChannel)>
     #[allow(clippy::let_and_return)]
@@ -18517,7 +18693,7 @@ impl UpdateBaiduChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBaiduChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18618,7 +18794,7 @@ impl UpdateBaiduChannelInput {
             "UpdateBaiduChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18706,7 +18882,7 @@ pub mod update_campaign_input {
 #[doc(hidden)]
 pub type UpdateCampaignInputOperationOutputAlias = crate::operation::UpdateCampaign;
 #[doc(hidden)]
-pub type UpdateCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCampaignInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCampaign`](crate::operation::UpdateCampaign)>
     #[allow(clippy::let_and_return)]
@@ -18717,7 +18893,7 @@ impl UpdateCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18833,7 +19009,7 @@ impl UpdateCampaignInput {
             "UpdateCampaign",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18909,7 +19085,7 @@ pub mod update_email_channel_input {
 #[doc(hidden)]
 pub type UpdateEmailChannelInputOperationOutputAlias = crate::operation::UpdateEmailChannel;
 #[doc(hidden)]
-pub type UpdateEmailChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEmailChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEmailChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEmailChannel`](crate::operation::UpdateEmailChannel)>
     #[allow(clippy::let_and_return)]
@@ -18920,7 +19096,7 @@ impl UpdateEmailChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEmailChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19021,7 +19197,7 @@ impl UpdateEmailChannelInput {
             "UpdateEmailChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19056,12 +19232,14 @@ pub mod update_email_template_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn create_new_version(mut self, input: bool) -> Self {
             self.create_new_version = Some(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.create_new_version = input;
             self
@@ -19092,12 +19270,28 @@ pub mod update_email_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -19121,7 +19315,7 @@ pub mod update_email_template_input {
 #[doc(hidden)]
 pub type UpdateEmailTemplateInputOperationOutputAlias = crate::operation::UpdateEmailTemplate;
 #[doc(hidden)]
-pub type UpdateEmailTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEmailTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEmailTemplate`](crate::operation::UpdateEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -19132,7 +19326,7 @@ impl UpdateEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19250,7 +19444,7 @@ impl UpdateEmailTemplateInput {
             "UpdateEmailTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19338,7 +19532,7 @@ pub mod update_endpoint_input {
 #[doc(hidden)]
 pub type UpdateEndpointInputOperationOutputAlias = crate::operation::UpdateEndpoint;
 #[doc(hidden)]
-pub type UpdateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpoint`](crate::operation::UpdateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -19349,7 +19543,7 @@ impl UpdateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19464,7 +19658,7 @@ impl UpdateEndpointInput {
             "UpdateEndpoint",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19540,7 +19734,7 @@ pub mod update_endpoints_batch_input {
 #[doc(hidden)]
 pub type UpdateEndpointsBatchInputOperationOutputAlias = crate::operation::UpdateEndpointsBatch;
 #[doc(hidden)]
-pub type UpdateEndpointsBatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEndpointsBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEndpointsBatchInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEndpointsBatch`](crate::operation::UpdateEndpointsBatch)>
     #[allow(clippy::let_and_return)]
@@ -19551,7 +19745,7 @@ impl UpdateEndpointsBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpointsBatch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19652,7 +19846,7 @@ impl UpdateEndpointsBatchInput {
             "UpdateEndpointsBatch",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19728,7 +19922,7 @@ pub mod update_gcm_channel_input {
 #[doc(hidden)]
 pub type UpdateGcmChannelInputOperationOutputAlias = crate::operation::UpdateGcmChannel;
 #[doc(hidden)]
-pub type UpdateGcmChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGcmChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGcmChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGcmChannel`](crate::operation::UpdateGcmChannel)>
     #[allow(clippy::let_and_return)]
@@ -19739,7 +19933,7 @@ impl UpdateGcmChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGcmChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19839,7 +20033,7 @@ impl UpdateGcmChannelInput {
             "UpdateGcmChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19874,12 +20068,14 @@ pub mod update_in_app_template_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn create_new_version(mut self, input: bool) -> Self {
             self.create_new_version = Some(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.create_new_version = input;
             self
@@ -19913,12 +20109,28 @@ pub mod update_in_app_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -19942,7 +20154,7 @@ pub mod update_in_app_template_input {
 #[doc(hidden)]
 pub type UpdateInAppTemplateInputOperationOutputAlias = crate::operation::UpdateInAppTemplate;
 #[doc(hidden)]
-pub type UpdateInAppTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInAppTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInAppTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInAppTemplate`](crate::operation::UpdateInAppTemplate)>
     #[allow(clippy::let_and_return)]
@@ -19953,7 +20165,7 @@ impl UpdateInAppTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInAppTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20071,7 +20283,7 @@ impl UpdateInAppTemplateInput {
             "UpdateInAppTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20159,7 +20371,7 @@ pub mod update_journey_input {
 #[doc(hidden)]
 pub type UpdateJourneyInputOperationOutputAlias = crate::operation::UpdateJourney;
 #[doc(hidden)]
-pub type UpdateJourneyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJourneyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJourneyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJourney`](crate::operation::UpdateJourney)>
     #[allow(clippy::let_and_return)]
@@ -20170,7 +20382,7 @@ impl UpdateJourneyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJourney,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20286,7 +20498,7 @@ impl UpdateJourneyInput {
             "UpdateJourney",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20374,7 +20586,7 @@ pub mod update_journey_state_input {
 #[doc(hidden)]
 pub type UpdateJourneyStateInputOperationOutputAlias = crate::operation::UpdateJourneyState;
 #[doc(hidden)]
-pub type UpdateJourneyStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJourneyStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJourneyStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJourneyState`](crate::operation::UpdateJourneyState)>
     #[allow(clippy::let_and_return)]
@@ -20385,7 +20597,7 @@ impl UpdateJourneyStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJourneyState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20502,7 +20714,7 @@ impl UpdateJourneyStateInput {
             "UpdateJourneyState",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20538,12 +20750,14 @@ pub mod update_push_template_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn create_new_version(mut self, input: bool) -> Self {
             self.create_new_version = Some(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.create_new_version = input;
             self
@@ -20577,12 +20791,28 @@ pub mod update_push_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -20606,7 +20836,7 @@ pub mod update_push_template_input {
 #[doc(hidden)]
 pub type UpdatePushTemplateInputOperationOutputAlias = crate::operation::UpdatePushTemplate;
 #[doc(hidden)]
-pub type UpdatePushTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePushTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePushTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePushTemplate`](crate::operation::UpdatePushTemplate)>
     #[allow(clippy::let_and_return)]
@@ -20617,7 +20847,7 @@ impl UpdatePushTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePushTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20735,7 +20965,7 @@ impl UpdatePushTemplateInput {
             "UpdatePushTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20816,7 +21046,8 @@ pub mod update_recommender_configuration_input {
 pub type UpdateRecommenderConfigurationInputOperationOutputAlias =
     crate::operation::UpdateRecommenderConfiguration;
 #[doc(hidden)]
-pub type UpdateRecommenderConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecommenderConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecommenderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecommenderConfiguration`](crate::operation::UpdateRecommenderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -20827,7 +21058,7 @@ impl UpdateRecommenderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecommenderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20928,7 +21159,7 @@ impl UpdateRecommenderConfigurationInput {
             "UpdateRecommenderConfiguration",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21016,7 +21247,7 @@ pub mod update_segment_input {
 #[doc(hidden)]
 pub type UpdateSegmentInputOperationOutputAlias = crate::operation::UpdateSegment;
 #[doc(hidden)]
-pub type UpdateSegmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSegmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSegmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSegment`](crate::operation::UpdateSegment)>
     #[allow(clippy::let_and_return)]
@@ -21027,7 +21258,7 @@ impl UpdateSegmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSegment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21143,7 +21374,7 @@ impl UpdateSegmentInput {
             "UpdateSegment",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21219,7 +21450,7 @@ pub mod update_sms_channel_input {
 #[doc(hidden)]
 pub type UpdateSmsChannelInputOperationOutputAlias = crate::operation::UpdateSmsChannel;
 #[doc(hidden)]
-pub type UpdateSmsChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSmsChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmsChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSmsChannel`](crate::operation::UpdateSmsChannel)>
     #[allow(clippy::let_and_return)]
@@ -21230,7 +21461,7 @@ impl UpdateSmsChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSmsChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21330,7 +21561,7 @@ impl UpdateSmsChannelInput {
             "UpdateSmsChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21365,12 +21596,14 @@ pub mod update_sms_template_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn create_new_version(mut self, input: bool) -> Self {
             self.create_new_version = Some(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.create_new_version = input;
             self
@@ -21401,12 +21634,28 @@ pub mod update_sms_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -21430,7 +21679,7 @@ pub mod update_sms_template_input {
 #[doc(hidden)]
 pub type UpdateSmsTemplateInputOperationOutputAlias = crate::operation::UpdateSmsTemplate;
 #[doc(hidden)]
-pub type UpdateSmsTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSmsTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSmsTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSmsTemplate`](crate::operation::UpdateSmsTemplate)>
     #[allow(clippy::let_and_return)]
@@ -21441,7 +21690,7 @@ impl UpdateSmsTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSmsTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21559,7 +21808,7 @@ impl UpdateSmsTemplateInput {
             "UpdateSmsTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21655,7 +21904,7 @@ pub mod update_template_active_version_input {
 pub type UpdateTemplateActiveVersionInputOperationOutputAlias =
     crate::operation::UpdateTemplateActiveVersion;
 #[doc(hidden)]
-pub type UpdateTemplateActiveVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTemplateActiveVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTemplateActiveVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTemplateActiveVersion`](crate::operation::UpdateTemplateActiveVersion)>
     #[allow(clippy::let_and_return)]
@@ -21666,7 +21915,7 @@ impl UpdateTemplateActiveVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTemplateActiveVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21783,7 +22032,7 @@ impl UpdateTemplateActiveVersionInput {
             "UpdateTemplateActiveVersion",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21859,7 +22108,7 @@ pub mod update_voice_channel_input {
 #[doc(hidden)]
 pub type UpdateVoiceChannelInputOperationOutputAlias = crate::operation::UpdateVoiceChannel;
 #[doc(hidden)]
-pub type UpdateVoiceChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVoiceChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVoiceChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVoiceChannel`](crate::operation::UpdateVoiceChannel)>
     #[allow(clippy::let_and_return)]
@@ -21870,7 +22119,7 @@ impl UpdateVoiceChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVoiceChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21971,7 +22220,7 @@ impl UpdateVoiceChannelInput {
             "UpdateVoiceChannel",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22006,12 +22255,14 @@ pub mod update_voice_template_input {
         pub(crate) voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
     }
     impl Builder {
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn create_new_version(mut self, input: bool) -> Self {
             self.create_new_version = Some(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.create_new_version = input;
             self
@@ -22029,12 +22280,28 @@ pub mod update_voice_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -22071,7 +22338,7 @@ pub mod update_voice_template_input {
 #[doc(hidden)]
 pub type UpdateVoiceTemplateInputOperationOutputAlias = crate::operation::UpdateVoiceTemplate;
 #[doc(hidden)]
-pub type UpdateVoiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVoiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVoiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVoiceTemplate`](crate::operation::UpdateVoiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -22082,7 +22349,7 @@ impl UpdateVoiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVoiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22200,7 +22467,7 @@ impl UpdateVoiceTemplateInput {
             "UpdateVoiceTemplate",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22280,7 +22547,7 @@ pub mod verify_otp_message_input {
 #[doc(hidden)]
 pub type VerifyOtpMessageInputOperationOutputAlias = crate::operation::VerifyOTPMessage;
 #[doc(hidden)]
-pub type VerifyOtpMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyOtpMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyOtpMessageInput {
     /// Consumes the builder and constructs an Operation<[`VerifyOTPMessage`](crate::operation::VerifyOTPMessage)>
     #[allow(clippy::let_and_return)]
@@ -22291,7 +22558,7 @@ impl VerifyOtpMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyOTPMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22392,7 +22659,7 @@ impl VerifyOtpMessageInput {
             "VerifyOTPMessage",
             "pinpoint",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22453,17 +22720,27 @@ impl std::fmt::Debug for VerifyOtpMessageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: bool,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub voice_template_request: std::option::Option<crate::model::VoiceTemplateRequest>,
 }
 impl UpdateVoiceTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> bool {
         self.create_new_version
     }
@@ -22471,7 +22748,15 @@ impl UpdateVoiceTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -22566,17 +22851,27 @@ impl std::fmt::Debug for UpdateTemplateActiveVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSmsTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub sms_template_request: std::option::Option<crate::model::SmsTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateSmsTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> bool {
         self.create_new_version
     }
@@ -22588,7 +22883,15 @@ impl UpdateSmsTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -22705,18 +23008,28 @@ impl std::fmt::Debug for UpdateRecommenderConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePushTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
     pub push_notification_template_request:
         std::option::Option<crate::model::PushNotificationTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdatePushTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> bool {
         self.create_new_version
     }
@@ -22730,7 +23043,15 @@ impl UpdatePushTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -22823,17 +23144,27 @@ impl std::fmt::Debug for UpdateJourneyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInAppTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: bool,
     /// <p>InApp Template Request.</p>
     pub in_app_template_request: std::option::Option<crate::model::InAppTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateInAppTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> bool {
         self.create_new_version
     }
@@ -22847,7 +23178,15 @@ impl UpdateInAppTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -22960,17 +23299,27 @@ impl std::fmt::Debug for UpdateEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub create_new_version: bool,
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
     pub email_template_request: std::option::Option<crate::model::EmailTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl UpdateEmailTemplateInput {
-    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+    /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
     pub fn create_new_version(&self) -> bool {
         self.create_new_version
     }
@@ -22984,7 +23333,15 @@ impl UpdateEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -23437,7 +23794,12 @@ impl std::fmt::Debug for SendMessagesInput {
 pub struct RemoveAttributesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+    /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+    /// <ul>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// </ul>
     pub attribute_type: std::option::Option<std::string::String>,
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
     pub update_attributes_request: std::option::Option<crate::model::UpdateAttributesRequest>,
@@ -23447,7 +23809,12 @@ impl RemoveAttributesInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+    /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+    /// <ul>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+    /// </ul>
     pub fn attribute_type(&self) -> std::option::Option<&str> {
         self.attribute_type.as_deref()
     }
@@ -23551,7 +23918,7 @@ impl std::fmt::Debug for PhoneNumberValidateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplateVersionsInput {
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -23561,7 +23928,7 @@ pub struct ListTemplateVersionsInput {
     pub template_type: std::option::Option<std::string::String>,
 }
 impl ListTemplateVersionsInput {
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -23593,7 +23960,7 @@ impl std::fmt::Debug for ListTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -23603,7 +23970,7 @@ pub struct ListTemplatesInput {
     pub template_type: std::option::Option<std::string::String>,
 }
 impl ListTemplatesInput {
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -23693,7 +24060,15 @@ impl std::fmt::Debug for ListJourneysInput {
 pub struct GetVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetVoiceTemplateInput {
@@ -23701,7 +24076,15 @@ impl GetVoiceTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -23770,7 +24153,15 @@ impl std::fmt::Debug for GetUserEndpointsInput {
 pub struct GetSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetSmsTemplateInput {
@@ -23778,7 +24169,15 @@ impl GetSmsTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -24092,7 +24491,15 @@ impl std::fmt::Debug for GetRecommenderConfigurationInput {
 pub struct GetPushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetPushTemplateInput {
@@ -24100,7 +24507,15 @@ impl GetPushTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -24122,7 +24537,7 @@ pub struct GetJourneyExecutionMetricsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
     pub journey_id: std::option::Option<std::string::String>,
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -24136,7 +24551,7 @@ impl GetJourneyExecutionMetricsInput {
     pub fn journey_id(&self) -> std::option::Option<&str> {
         self.journey_id.as_deref()
     }
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24166,7 +24581,7 @@ pub struct GetJourneyExecutionActivityMetricsInput {
     pub journey_activity_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the journey.</p>
     pub journey_id: std::option::Option<std::string::String>,
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -24184,7 +24599,7 @@ impl GetJourneyExecutionActivityMetricsInput {
     pub fn journey_id(&self) -> std::option::Option<&str> {
         self.journey_id.as_deref()
     }
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24217,7 +24632,7 @@ pub struct GetJourneyDateRangeKpiInput {
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub kpi_name: std::option::Option<std::string::String>,
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -24241,7 +24656,7 @@ impl GetJourneyDateRangeKpiInput {
     pub fn kpi_name(&self) -> std::option::Option<&str> {
         self.kpi_name.as_deref()
     }
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24302,7 +24717,15 @@ impl std::fmt::Debug for GetJourneyInput {
 pub struct GetInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetInAppTemplateInput {
@@ -24310,7 +24733,15 @@ impl GetInAppTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -24554,7 +24985,15 @@ impl std::fmt::Debug for GetEndpointInput {
 pub struct GetEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetEmailTemplateInput {
@@ -24562,7 +25001,15 @@ impl GetEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -24742,7 +25189,7 @@ pub struct GetCampaignDateRangeKpiInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub kpi_name: std::option::Option<std::string::String>,
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -24766,7 +25213,7 @@ impl GetCampaignDateRangeKpiInput {
     pub fn kpi_name(&self) -> std::option::Option<&str> {
         self.kpi_name.as_deref()
     }
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24943,7 +25390,7 @@ pub struct GetApplicationDateRangeKpiInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub kpi_name: std::option::Option<std::string::String>,
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub page_size: std::option::Option<std::string::String>,
@@ -24963,7 +25410,7 @@ impl GetApplicationDateRangeKpiInput {
     pub fn kpi_name(&self) -> std::option::Option<&str> {
         self.kpi_name.as_deref()
     }
-    /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -25121,7 +25568,15 @@ impl std::fmt::Debug for GetAdmChannelInput {
 pub struct DeleteVoiceTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceTemplateInput {
@@ -25129,7 +25584,15 @@ impl DeleteVoiceTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -25198,7 +25661,15 @@ impl std::fmt::Debug for DeleteUserEndpointsInput {
 pub struct DeleteSmsTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteSmsTemplateInput {
@@ -25206,7 +25677,15 @@ impl DeleteSmsTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -25296,7 +25775,15 @@ impl std::fmt::Debug for DeleteRecommenderConfigurationInput {
 pub struct DeletePushTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeletePushTemplateInput {
@@ -25304,7 +25791,15 @@ impl DeletePushTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -25352,7 +25847,15 @@ impl std::fmt::Debug for DeleteJourneyInput {
 pub struct DeleteInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteInAppTemplateInput {
@@ -25360,7 +25863,15 @@ impl DeleteInAppTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -25450,7 +25961,15 @@ impl std::fmt::Debug for DeleteEndpointInput {
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteEmailTemplateInput {
@@ -25458,7 +25977,15 @@ impl DeleteEmailTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+    /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+    /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+    /// <ul>
+    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// </ul>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }

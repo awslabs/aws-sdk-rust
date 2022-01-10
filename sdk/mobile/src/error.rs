@@ -12,40 +12,19 @@ pub struct CreateProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProjectErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// There are too many AWS Mobile Hub projects in the account or the account has
-    /// exceeded the maximum number of resources in some AWS service. You should create
-    /// another sub-account using AWS Organizations or remove some resources and retry
-    /// your request.
-    /// </p>
+    /// <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -94,8 +73,6 @@ impl CreateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -185,28 +162,15 @@ pub struct DeleteProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProjectErrorKind {
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -253,8 +217,6 @@ impl DeleteProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -331,33 +293,17 @@ pub struct DescribeBundleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBundleErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -405,8 +351,6 @@ impl DescribeBundleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -491,33 +435,17 @@ pub struct DescribeProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeProjectErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -565,8 +493,6 @@ impl DescribeProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -651,33 +577,17 @@ pub struct ExportBundleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportBundleErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -725,8 +635,6 @@ impl ExportBundleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -808,33 +716,17 @@ pub struct ExportProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportProjectErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -882,8 +774,6 @@ impl ExportProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -965,29 +855,15 @@ pub struct ListBundlesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBundlesErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1034,8 +910,6 @@ impl ListBundlesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1112,29 +986,15 @@ pub struct ListProjectsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProjectsErrorKind {
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1181,8 +1041,6 @@ impl ListProjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1259,44 +1117,21 @@ pub struct UpdateProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateProjectErrorKind {
-    /// <p>
-    /// Account Action is required in order to continue the request.
-    /// </p>
+    /// <p> Account Action is required in order to continue the request. </p>
     AccountActionRequiredException(crate::error::AccountActionRequiredException),
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// There are too many AWS Mobile Hub projects in the account or the account has
-    /// exceeded the maximum number of resources in some AWS service. You should create
-    /// another sub-account using AWS Organizations or remove some resources and retry
-    /// your request.
-    /// </p>
+    /// <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1346,8 +1181,6 @@ impl UpdateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1432,15 +1265,11 @@ impl std::error::Error for UpdateProjectError {
     }
 }
 
-/// <p>
-/// Credentials of the caller are insufficient to authorize the request.
-/// </p>
+/// <p> Credentials of the caller are insufficient to authorize the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedException {
@@ -1475,16 +1304,12 @@ pub mod unauthorized_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1504,26 +1329,17 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>
-/// Too many requests have been received for this AWS account in too short a time. The
-/// request should be retried after some time delay.
-/// </p>
+/// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequestsException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
     }
@@ -1562,16 +1378,12 @@ pub mod too_many_requests_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.retry_after_seconds = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_retry_after_seconds(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1579,16 +1391,12 @@ pub mod too_many_requests_exception {
             self.retry_after_seconds = input;
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1609,26 +1417,17 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>
-/// The service is temporarily unavailable. The request should be retried after some
-/// time delay.
-/// </p>
+/// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
     }
@@ -1667,16 +1466,12 @@ pub mod service_unavailable_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.retry_after_seconds = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_retry_after_seconds(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1684,16 +1479,12 @@ pub mod service_unavailable_exception {
             self.retry_after_seconds = input;
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1714,15 +1505,11 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>
-/// No entity can be found with the specified identifier.
-/// </p>
+/// <p> No entity can be found with the specified identifier. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -1757,16 +1544,12 @@ pub mod not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1786,28 +1569,17 @@ impl NotFoundException {
     }
 }
 
-/// <p>
-/// There are too many AWS Mobile Hub projects in the account or the account has
-/// exceeded the maximum number of resources in some AWS service. You should create
-/// another sub-account using AWS Organizations or remove some resources and retry
-/// your request.
-/// </p>
+/// <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
     }
@@ -1846,16 +1618,12 @@ pub mod limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
             self.retry_after_seconds = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_retry_after_seconds(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1863,16 +1631,12 @@ pub mod limit_exceeded_exception {
             self.retry_after_seconds = input;
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1893,16 +1657,11 @@ impl LimitExceededException {
     }
 }
 
-/// <p>
-/// The service has encountered an unexpected error condition which prevents it from
-/// servicing the request.
-/// </p>
+/// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailureException {
@@ -1937,16 +1696,12 @@ pub mod internal_failure_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1966,16 +1721,11 @@ impl InternalFailureException {
     }
 }
 
-/// <p>
-/// The request cannot be processed because some parameter is not valid or the project
-/// state prevents the operation from being performed.
-/// </p>
+/// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BadRequestException {
@@ -2010,16 +1760,12 @@ pub mod bad_request_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2039,15 +1785,11 @@ impl BadRequestException {
     }
 }
 
-/// <p>
-/// Account Action is required in order to continue the request.
-/// </p>
+/// <p> Account Action is required in order to continue the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountActionRequiredException {
-    /// <p>
-    /// The Exception Error Message.
-    /// </p>
+    /// <p> The Exception Error Message. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountActionRequiredException {
@@ -2082,16 +1824,12 @@ pub mod account_action_required_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>
-        /// The Exception Error Message.
-        /// </p>
+        /// <p> The Exception Error Message. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

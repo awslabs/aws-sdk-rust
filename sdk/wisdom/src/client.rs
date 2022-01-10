@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Connect Wisdom Service
@@ -203,6 +203,7 @@ where
     ///
     /// See [`ListAssistantAssociations`](crate::client::fluent_builders::ListAssistantAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssistantAssociations::into_paginator).
     pub fn list_assistant_associations(
         &self,
     ) -> fluent_builders::ListAssistantAssociations<C, M, R> {
@@ -212,6 +213,7 @@ where
     ///
     /// See [`ListAssistants`](crate::client::fluent_builders::ListAssistants) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssistants::into_paginator).
     pub fn list_assistants(&self) -> fluent_builders::ListAssistants<C, M, R> {
         fluent_builders::ListAssistants::new(self.handle.clone())
     }
@@ -219,6 +221,7 @@ where
     ///
     /// See [`ListContents`](crate::client::fluent_builders::ListContents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContents::into_paginator).
     pub fn list_contents(&self) -> fluent_builders::ListContents<C, M, R> {
         fluent_builders::ListContents::new(self.handle.clone())
     }
@@ -226,6 +229,7 @@ where
     ///
     /// See [`ListKnowledgeBases`](crate::client::fluent_builders::ListKnowledgeBases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKnowledgeBases::into_paginator).
     pub fn list_knowledge_bases(&self) -> fluent_builders::ListKnowledgeBases<C, M, R> {
         fluent_builders::ListKnowledgeBases::new(self.handle.clone())
     }
@@ -249,6 +253,7 @@ where
     ///
     /// See [`QueryAssistant`](crate::client::fluent_builders::QueryAssistant) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryAssistant::into_paginator).
     pub fn query_assistant(&self) -> fluent_builders::QueryAssistant<C, M, R> {
         fluent_builders::QueryAssistant::new(self.handle.clone())
     }
@@ -265,6 +270,7 @@ where
     ///
     /// See [`SearchContent`](crate::client::fluent_builders::SearchContent) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchContent::into_paginator).
     pub fn search_content(&self) -> fluent_builders::SearchContent<C, M, R> {
         fluent_builders::SearchContent::new(self.handle.clone())
     }
@@ -272,6 +278,7 @@ where
     ///
     /// See [`SearchSessions`](crate::client::fluent_builders::SearchSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSessions::into_paginator).
     pub fn search_sessions(&self) -> fluent_builders::SearchSessions<C, M, R> {
         fluent_builders::SearchSessions::new(self.handle.clone())
     }
@@ -324,7 +331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssistant`.
     ///
     /// <p>Creates an Amazon Connect Wisdom assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -369,10 +376,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssistantInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -380,21 +387,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the assistant.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the assistant.</p>
@@ -403,8 +408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of assistant.</p>
-        pub fn r#type(mut self, inp: crate::model::AssistantType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::AssistantType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of assistant.</p>
@@ -413,8 +418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the assistant.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the assistant.</p>
@@ -432,7 +437,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -448,9 +453,9 @@ pub mod fluent_builders {
         /// <p>The KMS key used for encryption.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
@@ -464,10 +469,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssistantAssociation`.
     ///
-    /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the
-    /// only supported association is with a knowledge base. An assistant can have only a single
-    /// association.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -512,10 +515,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssistantAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -524,8 +527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -534,8 +537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of association.</p>
-        pub fn association_type(mut self, inp: crate::model::AssociationType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        pub fn association_type(mut self, input: crate::model::AssociationType) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
         /// <p>The type of association.</p>
@@ -547,8 +550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the associated resource.</p>
-        pub fn association(mut self, inp: crate::model::AssistantAssociationInputData) -> Self {
-            self.inner = self.inner.association(inp);
+        pub fn association(mut self, input: crate::model::AssistantAssociationInputData) -> Self {
+            self.inner = self.inner.association(input);
             self
         }
         /// <p>The identifier of the associated resource.</p>
@@ -559,14 +562,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -581,7 +582,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -597,9 +598,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContent`.
     ///
-    /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to
-    /// upload an asset.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to upload an asset.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -644,10 +644,10 @@ pub mod fluent_builders {
                 crate::input::CreateContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -656,8 +656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -668,23 +668,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_knowledge_base_id(input);
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The title of the content. If not set, the title is equal to the name.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>The title of the content. If not set, the title is equal to the name.</p>
@@ -692,14 +688,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
-        pub fn override_link_out_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.override_link_out_uri(inp);
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
+        pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.override_link_out_uri(input.into());
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,18 +705,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -733,8 +725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(input.into());
             self
         }
         /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
@@ -742,14 +734,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_upload_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -764,7 +754,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -780,32 +770,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateKnowledgeBase`.
     ///
-    /// <p>Creates a knowledge base.</p>
-    /// <note>
-    /// <p>When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a>
-    /// DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do,
-    /// you'll get an <code>InvalidRequestException</code> error. </p>
-    ///
-    /// <p>For example, you're programmatically managing your external knowledge base, and you want
-    /// to add or remove one of the fields that is being ingested from Salesforce. Do the
-    /// following:</p>
+    /// <p>Creates a knowledge base.</p> <note>
+    /// <p>When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p>
+    /// <p>For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different
-    /// one.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call CreateKnowledgeBase.</p>
-    /// </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p> </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p> </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different one.</p> </li>
+    /// <li> <p>Call CreateKnowledgeBase.</p> </li>
     /// </ol>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,10 +825,10 @@ pub mod fluent_builders {
                 crate::input::CreateKnowledgeBaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -861,21 +836,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the knowledge base.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the knowledge base.</p>
@@ -883,16 +856,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
-        pub fn knowledge_base_type(mut self, inp: crate::model::KnowledgeBaseType) -> Self {
-            self.inner = self.inner.knowledge_base_type(inp);
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
+        pub fn knowledge_base_type(mut self, input: crate::model::KnowledgeBaseType) -> Self {
+            self.inner = self.inner.knowledge_base_type(input);
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
         pub fn set_knowledge_base_type(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseType>,
@@ -900,14 +869,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_knowledge_base_type(input);
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
-        pub fn source_configuration(mut self, inp: crate::model::SourceConfiguration) -> Self {
-            self.inner = self.inner.source_configuration(inp);
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.inner = self.inner.source_configuration(input);
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -918,9 +885,9 @@ pub mod fluent_builders {
         /// <p>Information about how to render the content.</p>
         pub fn rendering_configuration(
             mut self,
-            inp: crate::model::RenderingConfiguration,
+            input: crate::model::RenderingConfiguration,
         ) -> Self {
-            self.inner = self.inner.rendering_configuration(inp);
+            self.inner = self.inner.rendering_configuration(input);
             self
         }
         /// <p>Information about how to render the content.</p>
@@ -934,9 +901,9 @@ pub mod fluent_builders {
         /// <p>The KMS key used for encryption.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
         /// <p>The KMS key used for encryption.</p>
@@ -948,8 +915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description.</p>
@@ -967,7 +934,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -983,10 +950,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSession`.
     ///
-    /// <p>Creates a session. A session is a contextual container used for generating
-    /// recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is
-    /// enabled.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1031,10 +996,10 @@ pub mod fluent_builders {
                 crate::input::CreateSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1042,21 +1007,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1065,8 +1028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the session.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the session.</p>
@@ -1075,8 +1038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description.</p>
@@ -1094,7 +1057,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -1111,7 +1074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssistant`.
     ///
     /// <p>Deletes an assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1156,10 +1119,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssistantInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1168,8 +1131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1181,7 +1144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssistantAssociation`.
     ///
     /// <p>Deletes an assistant association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1226,10 +1189,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssistantAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1238,8 +1201,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_association_id(inp);
+        pub fn assistant_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_association_id(input.into());
             self
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1251,8 +1214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1264,7 +1227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContent`.
     ///
     /// <p>Deletes the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1309,10 +1272,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1321,8 +1284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1334,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(input.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1346,15 +1309,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteKnowledgeBase`.
     ///
-    /// <p>Deletes the knowledge base.</p>
-    /// <note>
-    /// <p>When you use this API to delete an external knowledge base such as Salesforce or
-    /// ServiceNow, you must also delete the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegration.
-    /// This is because you can't reuse the DataIntegration after it's been associated with an
-    /// external knowledge base. However, you can delete and recreate it. See <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a> and <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API
-    /// Reference</i>.</p>
+    /// <p>Deletes the knowledge base.</p> <note>
+    /// <p>When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegration. This is because you can't reuse the DataIntegration after it's been associated with an external knowledge base. However, you can delete and recreate it. See <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a> and <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API Reference</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1399,10 +1357,10 @@ pub mod fluent_builders {
                 crate::input::DeleteKnowledgeBaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1411,8 +1369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1427,7 +1385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssistant`.
     ///
     /// <p>Retrieves information about an assistant.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1472,10 +1430,10 @@ pub mod fluent_builders {
                 crate::input::GetAssistantInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1484,8 +1442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1497,7 +1455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssistantAssociation`.
     ///
     /// <p>Retrieves information about an assistant association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1542,10 +1500,10 @@ pub mod fluent_builders {
                 crate::input::GetAssistantAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1554,8 +1512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_association_id(inp);
+        pub fn assistant_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_association_id(input.into());
             self
         }
         /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1567,8 +1525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1580,7 +1538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContent`.
     ///
     /// <p>Retrieves content, including a pre-signed URL to download the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1625,10 +1583,10 @@ pub mod fluent_builders {
                 crate::input::GetContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1637,8 +1595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(input.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1647,8 +1605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1663,7 +1621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContentSummary`.
     ///
     /// <p>Retrieves summary information about the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContentSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1708,10 +1666,10 @@ pub mod fluent_builders {
                 crate::input::GetContentSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1720,8 +1678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(input.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1730,8 +1688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1746,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetKnowledgeBase`.
     ///
     /// <p>Retrieves information about the knowledge base.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetKnowledgeBase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1791,10 +1749,10 @@ pub mod fluent_builders {
                 crate::input::GetKnowledgeBaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1803,8 +1761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1818,11 +1776,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecommendations`.
     ///
-    /// <p>Retrieves recommendations for the specified session. To avoid retrieving the same
-    /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the
-    /// <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns
-    /// recommendations already available. To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1867,10 +1822,10 @@ pub mod fluent_builders {
                 crate::input::GetRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1879,8 +1834,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1889,8 +1844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1899,8 +1854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1908,18 +1863,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
-        pub fn wait_time_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.wait_time_seconds(inp);
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
+        pub fn wait_time_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.wait_time_seconds(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
         pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_wait_time_seconds(input);
             self
@@ -1928,7 +1877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSession`.
     ///
     /// <p>Retrieves information for a specified session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1973,10 +1922,10 @@ pub mod fluent_builders {
                 crate::input::GetSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1985,8 +1934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -1995,8 +1944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2008,7 +1957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssistantAssociations`.
     ///
     /// <p>Lists information about assistant associations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssistantAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2053,10 +2002,10 @@ pub mod fluent_builders {
                 crate::input::ListAssistantAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2064,21 +2013,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssistantAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssistantAssociationsPaginator<C, M, R> {
+            crate::paginator::ListAssistantAssociationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2087,8 +2042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2100,7 +2055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssistants`.
     ///
     /// <p>Lists information about assistants.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssistants<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2145,10 +2100,10 @@ pub mod fluent_builders {
                 crate::input::ListAssistantsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2156,21 +2111,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssistantsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssistantsPaginator<C, M, R> {
+            crate::paginator::ListAssistantsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2182,7 +2141,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContents`.
     ///
     /// <p>Lists the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2227,10 +2186,10 @@ pub mod fluent_builders {
                 crate::input::ListContentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2238,21 +2197,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContentsPaginator<C, M, R> {
+            crate::paginator::ListContentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2261,8 +2224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2277,7 +2240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKnowledgeBases`.
     ///
     /// <p>Lists the knowledge bases.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKnowledgeBases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,10 +2285,10 @@ pub mod fluent_builders {
                 crate::input::ListKnowledgeBasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2333,21 +2296,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListKnowledgeBasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListKnowledgeBasesPaginator<C, M, R> {
+            crate::paginator::ListKnowledgeBasesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2359,7 +2326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,10 +2371,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2416,8 +2383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2428,10 +2395,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyRecommendationsReceived`.
     ///
-    /// <p>Removes the specified recommendations from the specified assistant's queue of newly
-    /// available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling
-    /// behavior and avoiding duplicate recommendations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyRecommendationsReceived<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2476,10 +2441,10 @@ pub mod fluent_builders {
                 crate::input::NotifyRecommendationsReceivedInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2488,8 +2453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2498,8 +2463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2512,8 +2477,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
         ///
         /// <p>The identifiers of the recommendations.</p>
-        pub fn recommendation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_ids(inp);
+        pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_ids(input.into());
             self
         }
         /// <p>The identifiers of the recommendations.</p>
@@ -2527,10 +2492,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `QueryAssistant`.
     ///
-    /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for
-    /// an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryAssistant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2575,10 +2538,10 @@ pub mod fluent_builders {
                 crate::input::QueryAssistantInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2586,9 +2549,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::QueryAssistantPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::QueryAssistantPaginator<C, M, R> {
+            crate::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2597,8 +2566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text to search for.</p>
-        pub fn query_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_text(inp);
+        pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_text(input.into());
             self
         }
         /// <p>The text to search for.</p>
@@ -2606,21 +2575,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_text(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2632,7 +2599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveKnowledgeBaseTemplateUri`.
     ///
     /// <p>Removes a URI template from a knowledge base.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveKnowledgeBaseTemplateUri<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2677,10 +2644,10 @@ pub mod fluent_builders {
                 crate::input::RemoveKnowledgeBaseTemplateUriInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2689,8 +2656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2704,9 +2671,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchContent`.
     ///
-    /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content
-    /// resource by its name.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,10 +2717,10 @@ pub mod fluent_builders {
                 crate::input::SearchContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2762,21 +2728,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchContentPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchContentPaginator<C, M, R> {
+            crate::paginator::SearchContentPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2785,8 +2755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2798,8 +2768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search expression to filter results.</p>
-        pub fn search_expression(mut self, inp: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(inp);
+        pub fn search_expression(mut self, input: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(input);
             self
         }
         /// <p>The search expression to filter results.</p>
@@ -2814,7 +2784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSessions`.
     ///
     /// <p>Searches for sessions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2859,10 +2829,10 @@ pub mod fluent_builders {
                 crate::input::SearchSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2870,21 +2840,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchSessionsPaginator<C, M, R> {
+            crate::paginator::SearchSessionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2893,8 +2867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn assistant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assistant_id(inp);
+        pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assistant_id(input.into());
             self
         }
         /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2903,8 +2877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search expression to filter results.</p>
-        pub fn search_expression(mut self, inp: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(inp);
+        pub fn search_expression(mut self, input: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(input);
             self
         }
         /// <p>The search expression to filter results.</p>
@@ -2918,11 +2892,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartContentUpload`.
     ///
-    /// <p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT
-    /// request to the returned URL with your file, making sure to include the required headers. Then
-    /// use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a
-    /// knowledge base of type CUSTOM.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContentUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,10 +2938,10 @@ pub mod fluent_builders {
                 crate::input::StartContentUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2979,8 +2950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -2992,8 +2963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of content to upload.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The type of content to upload.</p>
@@ -3005,7 +2976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3050,10 +3021,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3062,8 +3033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3081,7 +3052,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3098,7 +3069,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3143,10 +3114,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3155,8 +3126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -3169,8 +3140,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -3185,7 +3156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContent`.
     ///
     /// <p>Updates information about the content.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3230,10 +3201,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3242,8 +3213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
@@ -3255,8 +3226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn content_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_id(inp);
+        pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_id(input.into());
             self
         }
         /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -3264,27 +3235,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_id(input);
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
         }
         /// <p>The title of the content.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>The title of the content.</p>
@@ -3292,16 +3255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
-        pub fn override_link_out_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.override_link_out_uri(inp);
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.override_link_out_uri(input.into());
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3310,8 +3269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
-        pub fn remove_override_link_out_uri(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remove_override_link_out_uri(inp);
+        pub fn remove_override_link_out_uri(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_override_link_out_uri(input);
             self
         }
         /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
@@ -3326,20 +3285,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -3349,14 +3304,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata(input);
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(input.into());
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_upload_id(input);
             self
@@ -3364,13 +3317,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateKnowledgeBaseTemplateUri`.
     ///
-    /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases
-    /// of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this
-    /// interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce
-    /// article, it has an <code>Id</code> value, and you can set the template URI to
-    /// <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKnowledgeBaseTemplateUri<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3415,10 +3363,10 @@ pub mod fluent_builders {
                 crate::input::UpdateKnowledgeBaseTemplateUriInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3427,8 +3375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-        pub fn knowledge_base_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.knowledge_base_id(inp);
+        pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.knowledge_base_id(input.into());
             self
         }
         /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -3440,8 +3388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template URI to update.</p>
-        pub fn template_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_uri(inp);
+        pub fn template_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_uri(input.into());
             self
         }
         /// <p>The template URI to update.</p>
@@ -3451,6 +3399,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

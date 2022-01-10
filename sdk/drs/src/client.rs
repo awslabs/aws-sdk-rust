@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Elastic Disaster Recovery Service
@@ -126,6 +126,7 @@ where
     ///
     /// See [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
     pub fn describe_job_log_items(&self) -> fluent_builders::DescribeJobLogItems<C, M, R> {
         fluent_builders::DescribeJobLogItems::new(self.handle.clone())
     }
@@ -133,6 +134,7 @@ where
     ///
     /// See [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
     pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs<C, M, R> {
         fluent_builders::DescribeJobs::new(self.handle.clone())
     }
@@ -140,6 +142,7 @@ where
     ///
     /// See [`DescribeRecoveryInstances`](crate::client::fluent_builders::DescribeRecoveryInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoveryInstances::into_paginator).
     pub fn describe_recovery_instances(
         &self,
     ) -> fluent_builders::DescribeRecoveryInstances<C, M, R> {
@@ -149,6 +152,7 @@ where
     ///
     /// See [`DescribeRecoverySnapshots`](crate::client::fluent_builders::DescribeRecoverySnapshots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoverySnapshots::into_paginator).
     pub fn describe_recovery_snapshots(
         &self,
     ) -> fluent_builders::DescribeRecoverySnapshots<C, M, R> {
@@ -158,6 +162,7 @@ where
     ///
     /// See [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
     pub fn describe_replication_configuration_templates(
         &self,
     ) -> fluent_builders::DescribeReplicationConfigurationTemplates<C, M, R> {
@@ -167,6 +172,7 @@ where
     ///
     /// See [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
     pub fn describe_source_servers(&self) -> fluent_builders::DescribeSourceServers<C, M, R> {
         fluent_builders::DescribeSourceServers::new(self.handle.clone())
     }
@@ -324,7 +330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
     ///
     /// <p>Creates a new ReplicationConfigurationTemplate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -371,10 +377,10 @@ pub mod fluent_builders {
                 crate::input::CreateReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -383,8 +389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -396,8 +402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
@@ -415,9 +421,11 @@ pub mod fluent_builders {
         /// <p>The security group IDs that will be used by the replication server.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>The security group IDs that will be used by the replication server.</p>
@@ -433,9 +441,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -447,8 +455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -462,9 +470,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -480,9 +488,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -494,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -507,8 +515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -519,9 +527,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -533,8 +541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -552,7 +560,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
@@ -570,8 +578,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, inp: impl Into<crate::model::PitPolicyRule>) -> Self {
-            self.inner = self.inner.pit_policy(inp);
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
+            self.inner = self.inner.pit_policy(input);
             self
         }
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
@@ -592,7 +600,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
@@ -609,7 +617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes a single Job by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -654,10 +662,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -666,8 +674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Job to be deleted.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the Job to be deleted.</p>
@@ -679,7 +687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecoveryInstance`.
     ///
     /// <p>Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -724,10 +732,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecoveryInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -736,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>RThe ID of the Recovery Instance to be deleted.</p>
-        pub fn recovery_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(inp);
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>RThe ID of the Recovery Instance to be deleted.</p>
@@ -752,7 +760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationConfigurationTemplate`.
     ///
     /// <p>Deletes a single Replication Configuration Template by ID</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -799,10 +807,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -813,9 +821,11 @@ pub mod fluent_builders {
         /// <p>The ID of the Replication Configuration Template to be deleted.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>The ID of the Replication Configuration Template to be deleted.</p>
@@ -830,7 +840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceServer`.
     ///
     /// <p>Deletes a single Source Server by ID. The Source Server must be disconnected first.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -875,10 +885,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSourceServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -887,8 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server to be deleted.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server to be deleted.</p>
@@ -903,7 +913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobLogItems`.
     ///
     /// <p>Retrieves a detailed Job log with pagination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobLogItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -948,10 +958,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobLogItemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -959,9 +969,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobLogItemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeJobLogItemsPaginator<C, M, R> {
+            crate::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the Job for which Job log items will be retrieved.</p>
@@ -970,8 +986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Job log items to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Job log items to retrieve.</p>
@@ -980,8 +996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Job log items to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Job log items to retrieve.</p>
@@ -993,7 +1009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobs`.
     ///
     /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1038,10 +1054,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1049,9 +1065,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeJobsPaginator<C, M, R> {
+            crate::paginator::DescribeJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A set of filters by which to return Jobs.</p>
-        pub fn filters(mut self, inp: crate::model::DescribeJobsRequestFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DescribeJobsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Jobs.</p>
@@ -1063,8 +1085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Jobs to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Jobs to retrieve.</p>
@@ -1073,8 +1095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Job to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Job to retrieve.</p>
@@ -1086,7 +1108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecoveryInstances`.
     ///
     /// <p>Lists all Recovery Instances or multiple Recovery Instances by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoveryInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1131,10 +1153,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRecoveryInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1142,12 +1164,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRecoveryInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeRecoveryInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeRecoveryInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>A set of filters by which to return Recovery Instances.</p>
         pub fn filters(
             mut self,
-            inp: crate::model::DescribeRecoveryInstancesRequestFilters,
+            input: crate::model::DescribeRecoveryInstancesRequestFilters,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Recovery Instances.</p>
@@ -1159,8 +1189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Recovery Instances to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -1169,8 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Recovery Instance to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Recovery Instance to retrieve.</p>
@@ -1182,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecoverySnapshots`.
     ///
     /// <p>Lists all Recovery Snapshots for a single Source Server.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoverySnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,10 +1257,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRecoverySnapshotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1238,9 +1268,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRecoverySnapshotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeRecoverySnapshotsPaginator<C, M, R> {
+            crate::paginator::DescribeRecoverySnapshotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Filter Recovery Snapshots by Source Server ID.</p>
@@ -1254,9 +1292,9 @@ pub mod fluent_builders {
         /// <p>A set of filters by which to return Recovery Snapshots.</p>
         pub fn filters(
             mut self,
-            inp: crate::model::DescribeRecoverySnapshotsRequestFilters,
+            input: crate::model::DescribeRecoverySnapshotsRequestFilters,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Recovery Snapshots.</p>
@@ -1268,8 +1306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-        pub fn order(mut self, inp: crate::model::RecoverySnapshotsOrder) -> Self {
-            self.inner = self.inner.order(inp);
+        pub fn order(mut self, input: crate::model::RecoverySnapshotsOrder) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -1281,8 +1319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
@@ -1291,8 +1329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Recovery Snapshot to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Recovery Snapshot to retrieve.</p>
@@ -1304,7 +1342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
     ///
     /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationConfigurationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1351,16 +1389,27 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationConfigurationTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationConfigurationTemplatesPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `replicationConfigurationTemplateIDs`.
         ///
@@ -1369,9 +1418,11 @@ pub mod fluent_builders {
         /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
         pub fn replication_configuration_template_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_i_ds(input.into());
             self
         }
         /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
@@ -1385,8 +1436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
@@ -1395,8 +1446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Replication Configuration Template to retrieve.</p>
@@ -1408,7 +1459,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceServers`.
     ///
     /// <p>Lists all Source Servers or multiple Source Servers filtered by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1453,10 +1504,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSourceServersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1464,9 +1515,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSourceServersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSourceServersPaginator<C, M, R> {
+            crate::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
+        }
         /// <p>A set of filters by which to return Source Servers.</p>
-        pub fn filters(mut self, inp: crate::model::DescribeSourceServersRequestFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DescribeSourceServersRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Source Servers.</p>
@@ -1478,8 +1535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Source Servers to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Source Servers to retrieve.</p>
@@ -1488,8 +1545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Source Server to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Source Server to retrieve.</p>
@@ -1501,7 +1558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectRecoveryInstance`.
     ///
     /// <p>Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Recovery Instance will be terminated / deleted within 90 minutes. If the agent on the Recovery Instance has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the Recovery Instance will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectRecoveryInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1546,10 +1603,10 @@ pub mod fluent_builders {
                 crate::input::DisconnectRecoveryInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1558,8 +1615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance to disconnect.</p>
-        pub fn recovery_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(inp);
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance to disconnect.</p>
@@ -1574,7 +1631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectSourceServer`.
     ///
     /// <p>Disconnects a specific Source Server from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Source Server will be terminated / deleted within 90 minutes. You cannot disconnect a Source Server if it has a Recovery Instance. If the agent on the Source Server has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1619,10 +1676,10 @@ pub mod fluent_builders {
                 crate::input::DisconnectSourceServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1631,8 +1688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server to disconnect.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server to disconnect.</p>
@@ -1647,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFailbackReplicationConfiguration`.
     ///
     /// <p>Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFailbackReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,10 +1751,10 @@ pub mod fluent_builders {
                 crate::input::GetFailbackReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1706,8 +1763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-        pub fn recovery_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(inp);
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
@@ -1722,7 +1779,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchConfiguration`.
     ///
     /// <p>Gets a LaunchConfiguration, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1767,10 +1824,10 @@ pub mod fluent_builders {
                 crate::input::GetLaunchConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1779,8 +1836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
@@ -1795,7 +1852,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationConfiguration`.
     ///
     /// <p>Gets a ReplicationConfiguration, filtered by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1840,10 +1897,10 @@ pub mod fluent_builders {
                 crate::input::GetReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1852,8 +1909,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
@@ -1868,7 +1925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitializeService`.
     ///
     /// <p>Initialize Elastic Disaster Recovery.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1913,10 +1970,10 @@ pub mod fluent_builders {
                 crate::input::InitializeServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1928,7 +1985,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for your Elastic Disaster Recovery resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1973,10 +2030,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1985,8 +2042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags should be returned.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags should be returned.</p>
@@ -1998,7 +2055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryDataReplication`.
     ///
     /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryDataReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2043,10 +2100,10 @@ pub mod fluent_builders {
                 crate::input::RetryDataReplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2055,8 +2112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server whose data replication should be retried.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server whose data replication should be retried.</p>
@@ -2071,7 +2128,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFailbackLaunch`.
     ///
     /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFailbackLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2116,10 +2173,10 @@ pub mod fluent_builders {
                 crate::input::StartFailbackLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2132,8 +2189,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
         ///
         /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-        pub fn recovery_instance_i_ds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_i_ds(inp);
+        pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_i_ds(input.into());
             self
         }
         /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
@@ -2154,7 +2211,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be associated with the failback launch Job.</p>
@@ -2171,7 +2228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartRecovery`.
     ///
     /// <p>Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRecovery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,10 +2273,10 @@ pub mod fluent_builders {
                 crate::input::StartRecoveryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2234,9 +2291,9 @@ pub mod fluent_builders {
         /// <p>The Source Servers that we want to start a Recovery Job for.</p>
         pub fn source_servers(
             mut self,
-            inp: impl Into<crate::model::StartRecoveryRequestSourceServer>,
+            input: crate::model::StartRecoveryRequestSourceServer,
         ) -> Self {
-            self.inner = self.inner.source_servers(inp);
+            self.inner = self.inner.source_servers(input);
             self
         }
         /// <p>The Source Servers that we want to start a Recovery Job for.</p>
@@ -2250,8 +2307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
-        pub fn is_drill(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_drill(inp);
+        pub fn is_drill(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_drill(input);
             self
         }
         /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
@@ -2269,7 +2326,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be associated with the Recovery Job.</p>
@@ -2286,7 +2343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopFailback`.
     ///
     /// <p>Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFailback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2331,10 +2388,10 @@ pub mod fluent_builders {
                 crate::input::StopFailbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2343,8 +2400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-        pub fn recovery_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(inp);
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
@@ -2359,7 +2416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,10 +2461,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2416,8 +2473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
@@ -2435,7 +2492,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of tags to be added or updated.</p>
@@ -2452,7 +2509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateRecoveryInstances`.
     ///
     /// <p>Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateRecoveryInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2497,10 +2554,10 @@ pub mod fluent_builders {
                 crate::input::TerminateRecoveryInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2513,8 +2570,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
         ///
         /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-        pub fn recovery_instance_i_ds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_i_ds(inp);
+        pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_i_ds(input.into());
             self
         }
         /// <p>The IDs of the Recovery Instances that should be terminated.</p>
@@ -2529,7 +2586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2574,10 +2631,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2586,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
@@ -2600,8 +2657,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Array of tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Array of tags to be removed.</p>
@@ -2616,7 +2673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFailbackReplicationConfiguration`.
     ///
     /// <p>Allows you to update the failback replication configuration of a Recovery Instance by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFailbackReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2663,10 +2720,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFailbackReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2675,8 +2732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance.</p>
-        pub fn recovery_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(inp);
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance.</p>
@@ -2688,8 +2745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Failback Replication Configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Failback Replication Configuration.</p>
@@ -2698,8 +2755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
@@ -2708,8 +2765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
-        pub fn use_private_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_private_ip(inp);
+        pub fn use_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_private_ip(input);
             self
         }
         /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
@@ -2721,7 +2778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
     ///
     /// <p>Updates a LaunchConfiguration by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2766,10 +2823,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLaunchConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2778,8 +2835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
@@ -2791,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the launch configuration.</p>
@@ -2801,8 +2858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-        pub fn launch_disposition(mut self, inp: crate::model::LaunchDisposition) -> Self {
-            self.inner = self.inner.launch_disposition(inp);
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
             self
         }
         /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
@@ -2816,9 +2873,9 @@ pub mod fluent_builders {
         /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
-            inp: crate::model::TargetInstanceTypeRightSizingMethod,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
         ) -> Self {
-            self.inner = self.inner.target_instance_type_right_sizing_method(inp);
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
             self
         }
         /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
@@ -2832,8 +2889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
-        pub fn copy_private_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_private_ip(inp);
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
             self
         }
         /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -2842,8 +2899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
@@ -2852,8 +2909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The licensing configuration to be used for this launch configuration.</p>
-        pub fn licensing(mut self, inp: crate::model::Licensing) -> Self {
-            self.inner = self.inner.licensing(inp);
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
             self
         }
         /// <p>The licensing configuration to be used for this launch configuration.</p>
@@ -2868,7 +2925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
     ///
     /// <p>Allows you to update a ReplicationConfiguration by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2913,10 +2970,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2925,8 +2982,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server for this Replication Configuration.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server for this Replication Configuration.</p>
@@ -2938,8 +2995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Replication Configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Replication Configuration.</p>
@@ -2948,8 +3005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -2961,8 +3018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
@@ -2980,9 +3037,11 @@ pub mod fluent_builders {
         /// <p>The security group IDs that will be used by the replication server.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>The security group IDs that will be used by the replication server.</p>
@@ -2998,9 +3057,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -3012,8 +3071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -3027,9 +3086,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -3049,9 +3108,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the disks of the Source Server to be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            inp: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
-            self.inner = self.inner.replicated_disks(inp);
+            self.inner = self.inner.replicated_disks(input);
             self
         }
         /// <p>The configuration of the disks of the Source Server to be replicated.</p>
@@ -3067,9 +3126,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -3081,8 +3140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -3094,8 +3153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -3106,9 +3165,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -3120,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -3139,7 +3198,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
@@ -3157,8 +3216,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, inp: impl Into<crate::model::PitPolicyRule>) -> Self {
-            self.inner = self.inner.pit_policy(inp);
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
+            self.inner = self.inner.pit_policy(input);
             self
         }
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
@@ -3173,7 +3232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
     ///
     /// <p>Updates a ReplicationConfigurationTemplate by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3220,10 +3279,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3234,9 +3293,11 @@ pub mod fluent_builders {
         /// <p>The Replication Configuration Template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>The Replication Configuration Template ID.</p>
@@ -3248,8 +3309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Replication Configuration Template ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Replication Configuration Template ARN.</p>
@@ -3258,8 +3319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -3271,8 +3332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
@@ -3290,9 +3351,11 @@ pub mod fluent_builders {
         /// <p>The security group IDs that will be used by the replication server.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>The security group IDs that will be used by the replication server.</p>
@@ -3308,9 +3371,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -3322,8 +3385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -3337,9 +3400,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -3355,9 +3418,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -3369,8 +3432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -3382,8 +3445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -3394,9 +3457,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -3408,8 +3471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -3427,7 +3490,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
@@ -3445,8 +3508,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, inp: impl Into<crate::model::PitPolicyRule>) -> Self {
-            self.inner = self.inner.pit_policy(inp);
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
+            self.inner = self.inner.pit_policy(input);
             self
         }
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
@@ -3459,6 +3522,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

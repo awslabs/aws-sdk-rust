@@ -140,8 +140,118 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>Contains information about a component version that is compatible to run on a Greengrass core
-/// device.</p>
+/// <p>Contains information about an endpoint and port where client devices can connect to an MQTT broker on a Greengrass core device.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectivityInfo {
+    /// <p>An ID for the connectivity information.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+    pub host_address: std::option::Option<std::string::String>,
+    /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+    pub port_number: i32,
+    /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+    pub metadata: std::option::Option<std::string::String>,
+}
+impl ConnectivityInfo {
+    /// <p>An ID for the connectivity information.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+    pub fn host_address(&self) -> std::option::Option<&str> {
+        self.host_address.as_deref()
+    }
+    /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+    pub fn port_number(&self) -> i32 {
+        self.port_number
+    }
+    /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+    pub fn metadata(&self) -> std::option::Option<&str> {
+        self.metadata.as_deref()
+    }
+}
+impl std::fmt::Debug for ConnectivityInfo {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectivityInfo");
+        formatter.field("id", &self.id);
+        formatter.field("host_address", &self.host_address);
+        formatter.field("port_number", &self.port_number);
+        formatter.field("metadata", &self.metadata);
+        formatter.finish()
+    }
+}
+/// See [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+pub mod connectivity_info {
+    /// A builder for [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) host_address: std::option::Option<std::string::String>,
+        pub(crate) port_number: std::option::Option<i32>,
+        pub(crate) metadata: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An ID for the connectivity information.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>An ID for the connectivity information.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+        pub fn host_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+        pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_address = input;
+            self
+        }
+        /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+        pub fn port_number(mut self, input: i32) -> Self {
+            self.port_number = Some(input);
+            self
+        }
+        /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+        pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.port_number = input;
+            self
+        }
+        /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metadata = Some(input.into());
+            self
+        }
+        /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+        pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+        pub fn build(self) -> crate::model::ConnectivityInfo {
+            crate::model::ConnectivityInfo {
+                id: self.id,
+                host_address: self.host_address,
+                port_number: self.port_number.unwrap_or_default(),
+                metadata: self.metadata,
+            }
+        }
+    }
+}
+impl ConnectivityInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo)
+    pub fn builder() -> crate::model::connectivity_info::Builder {
+        crate::model::connectivity_info::Builder::default()
+    }
+}
+
+/// <p>Contains information about a component version that is compatible to run on a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolvedComponentVersion {
@@ -258,8 +368,7 @@ impl ResolvedComponentVersion {
     }
 }
 
-/// <p>Contains information about a component that is a candidate to deploy to a Greengrass core
-/// device.</p>
+/// <p>Contains information about a component that is a candidate to deploy to a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentCandidate {
@@ -267,8 +376,7 @@ pub struct ComponentCandidate {
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
-    /// version requirements from component recipes.</p>
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     pub version_requirements:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -282,8 +390,7 @@ impl ComponentCandidate {
     pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
-    /// version requirements from component recipes.</p>
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     pub fn version_requirements(
         &self,
@@ -344,8 +451,7 @@ pub mod component_candidate {
         ///
         /// To override the contents of this collection use [`set_version_requirements`](Self::set_version_requirements).
         ///
-        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
-        /// version requirements from component recipes.</p>
+        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
         /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn version_requirements(
             mut self,
@@ -357,8 +463,7 @@ pub mod component_candidate {
             self.version_requirements = Some(hash_map);
             self
         }
-        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
-        /// version requirements from component recipes.</p>
+        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
         /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn set_version_requirements(
             mut self,
@@ -391,29 +496,19 @@ impl ComponentCandidate {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentPlatform {
     /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
-    /// <code>architecture</code> of the platform.</p>
+    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
-    /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
-    /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComponentPlatform {
     /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
-    /// <code>architecture</code> of the platform.</p>
+    /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
-    /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
-    /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -442,15 +537,13 @@ pub mod component_platform {
     }
     impl Builder {
         /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
-        /// <code>architecture</code> of the platform.</p>
+        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
-        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
-        /// <code>architecture</code> of the platform.</p>
+        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and <code>architecture</code> of the platform.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -459,11 +552,7 @@ pub mod component_platform {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
-        /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
-        /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -474,11 +563,7 @@ pub mod component_platform {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
-        /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
-        /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the <code>os</code> and <code>platform</code> by default. You can specify additional platform attributes for a core device when you deploy the Greengrass nucleus component. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -763,8 +848,7 @@ pub struct EffectiveDeployment {
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EffectiveDeployment {
@@ -806,8 +890,7 @@ impl EffectiveDeployment {
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
     pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
@@ -955,14 +1038,12 @@ pub mod effective_deployment {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
         pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
         pub fn set_modified_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1379,8 +1460,7 @@ impl AsRef<str> for DeploymentHistoryFilter {
     }
 }
 
-/// <p>Contains information about a Greengrass core device, which is an IoT thing that runs the IoT Greengrass
-/// Core software.</p>
+/// <p>Contains information about a Greengrass core device, which is an IoT thing that runs the IoT Greengrass Core software.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CoreDevice {
@@ -1388,19 +1468,11 @@ pub struct CoreDevice {
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
-    /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CoreDevice {
@@ -1410,21 +1482,13 @@ impl CoreDevice {
     }
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::CoreDeviceStatus> {
         self.status.as_ref()
     }
-    /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
@@ -1467,15 +1531,8 @@ pub mod core_device {
         }
         /// <p>The status of the core device. Core devices can have the following statuses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::CoreDeviceStatus) -> Self {
             self.status = Some(input);
@@ -1483,15 +1540,8 @@ pub mod core_device {
         }
         /// <p>The status of the core device. Core devices can have the following statuses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1500,14 +1550,12 @@ pub mod core_device {
             self.status = input;
             self
         }
-        /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
         pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_update_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
         pub fn set_last_status_update_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1913,9 +1961,9 @@ pub mod component_latest_version {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::ComponentPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -2002,8 +2050,7 @@ impl AsRef<str> for ComponentVisibilityScope {
     }
 }
 
-/// <p>Contains information about a client device that is associated to a core device for cloud
-/// discovery.</p>
+/// <p>Contains information about a client device that is associated to a core device for cloud discovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedClientDevice {
@@ -2083,32 +2130,26 @@ impl AssociatedClientDevice {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentIoTJobConfiguration {
-    /// <p>The rollout configuration for the job. This configuration defines the rate at which the
-    /// job rolls out to the fleet of target devices.</p>
+    /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
     pub job_executions_rollout_config:
         std::option::Option<crate::model::IoTJobExecutionsRolloutConfig>,
-    /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
-    /// rollout.</p>
+    /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
     pub abort_config: std::option::Option<crate::model::IoTJobAbortConfig>,
-    /// <p>The timeout configuration for the job. This configuration defines the amount of time each
-    /// device has to complete the job.</p>
+    /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
     pub timeout_config: std::option::Option<crate::model::IoTJobTimeoutConfig>,
 }
 impl DeploymentIoTJobConfiguration {
-    /// <p>The rollout configuration for the job. This configuration defines the rate at which the
-    /// job rolls out to the fleet of target devices.</p>
+    /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
     pub fn job_executions_rollout_config(
         &self,
     ) -> std::option::Option<&crate::model::IoTJobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
-    /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
-    /// rollout.</p>
+    /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
     pub fn abort_config(&self) -> std::option::Option<&crate::model::IoTJobAbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>The timeout configuration for the job. This configuration defines the amount of time each
-    /// device has to complete the job.</p>
+    /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::IoTJobTimeoutConfig> {
         self.timeout_config.as_ref()
     }
@@ -2137,8 +2178,7 @@ pub mod deployment_io_t_job_configuration {
         pub(crate) timeout_config: std::option::Option<crate::model::IoTJobTimeoutConfig>,
     }
     impl Builder {
-        /// <p>The rollout configuration for the job. This configuration defines the rate at which the
-        /// job rolls out to the fleet of target devices.</p>
+        /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
         pub fn job_executions_rollout_config(
             mut self,
             input: crate::model::IoTJobExecutionsRolloutConfig,
@@ -2146,8 +2186,7 @@ pub mod deployment_io_t_job_configuration {
             self.job_executions_rollout_config = Some(input);
             self
         }
-        /// <p>The rollout configuration for the job. This configuration defines the rate at which the
-        /// job rolls out to the fleet of target devices.</p>
+        /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
         pub fn set_job_executions_rollout_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobExecutionsRolloutConfig>,
@@ -2155,14 +2194,12 @@ pub mod deployment_io_t_job_configuration {
             self.job_executions_rollout_config = input;
             self
         }
-        /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
-        /// rollout.</p>
+        /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
         pub fn abort_config(mut self, input: crate::model::IoTJobAbortConfig) -> Self {
             self.abort_config = Some(input);
             self
         }
-        /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
-        /// rollout.</p>
+        /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
         pub fn set_abort_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobAbortConfig>,
@@ -2170,14 +2207,12 @@ pub mod deployment_io_t_job_configuration {
             self.abort_config = input;
             self
         }
-        /// <p>The timeout configuration for the job. This configuration defines the amount of time each
-        /// device has to complete the job.</p>
+        /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
         pub fn timeout_config(mut self, input: crate::model::IoTJobTimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>The timeout configuration for the job. This configuration defines the amount of time each
-        /// device has to complete the job.</p>
+        /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobTimeoutConfig>,
@@ -2206,18 +2241,12 @@ impl DeploymentIoTJobConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobTimeoutConfig {
-    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
-    /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
-    /// terminal state before the time expires, then the job status is set to
-    /// <code>TIMED_OUT</code>.</p>
+    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
     /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
     pub in_progress_timeout_in_minutes: std::option::Option<i64>,
 }
 impl IoTJobTimeoutConfig {
-    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
-    /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
-    /// terminal state before the time expires, then the job status is set to
-    /// <code>TIMED_OUT</code>.</p>
+    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
     /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
     pub fn in_progress_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.in_progress_timeout_in_minutes
@@ -2242,19 +2271,13 @@ pub mod io_t_job_timeout_config {
         pub(crate) in_progress_timeout_in_minutes: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
-        /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
-        /// terminal state before the time expires, then the job status is set to
-        /// <code>TIMED_OUT</code>.</p>
+        /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
         /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
         pub fn in_progress_timeout_in_minutes(mut self, input: i64) -> Self {
             self.in_progress_timeout_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
-        /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
-        /// terminal state before the time expires, then the job status is set to
-        /// <code>TIMED_OUT</code>.</p>
+        /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
         /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
         pub fn set_in_progress_timeout_in_minutes(
             mut self,
@@ -2278,8 +2301,7 @@ impl IoTJobTimeoutConfig {
     }
 }
 
-/// <p>Contains a list of criteria that define when and how to cancel a configuration
-/// deployment.</p>
+/// <p>Contains a list of criteria that define when and how to cancel a configuration deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobAbortConfig {
@@ -2314,12 +2336,9 @@ pub mod io_t_job_abort_config {
         /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
         ///
         /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
-        pub fn criteria_list(
-            mut self,
-            input: impl Into<crate::model::IoTJobAbortCriteria>,
-        ) -> Self {
+        pub fn criteria_list(mut self, input: crate::model::IoTJobAbortCriteria) -> Self {
             let mut v = self.criteria_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.criteria_list = Some(v);
             self
         }
@@ -2349,14 +2368,8 @@ impl IoTJobAbortConfig {
 /// <p>Contains criteria that define when and how to cancel a job.</p>
 /// <p>The deployment stops if the following conditions are true:</p>
 /// <ol>
-/// <li>
-/// <p>The number of things that receive the deployment exceeds the
-/// <code>minNumberOfExecutedThings</code>.</p>
-/// </li>
-/// <li>
-/// <p>The percentage of failures with type <code>failureType</code> exceeds the
-/// <code>thresholdPercentage</code>.</p>
-/// </li>
+/// <li> <p>The number of things that receive the deployment exceeds the <code>minNumberOfExecutedThings</code>.</p> </li>
+/// <li> <p>The percentage of failures with type <code>failureType</code> exceeds the <code>thresholdPercentage</code>.</p> </li>
 /// </ol>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2365,13 +2378,10 @@ pub struct IoTJobAbortCriteria {
     pub failure_type: std::option::Option<crate::model::IoTJobExecutionFailureType>,
     /// <p>The action to perform when the criteria are met.</p>
     pub action: std::option::Option<crate::model::IoTJobAbortAction>,
-    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
-    /// cancel.</p>
-    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
-    /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
+    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub threshold_percentage: f64,
-    /// <p>The minimum number of things that receive the configuration before the job can
-    /// cancel.</p>
+    /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub min_number_of_executed_things: i32,
 }
 impl IoTJobAbortCriteria {
@@ -2383,15 +2393,12 @@ impl IoTJobAbortCriteria {
     pub fn action(&self) -> std::option::Option<&crate::model::IoTJobAbortAction> {
         self.action.as_ref()
     }
-    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
-    /// cancel.</p>
-    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
-    /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
+    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub fn threshold_percentage(&self) -> f64 {
         self.threshold_percentage
     }
-    /// <p>The minimum number of things that receive the configuration before the job can
-    /// cancel.</p>
+    /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub fn min_number_of_executed_things(&self) -> i32 {
         self.min_number_of_executed_things
     }
@@ -2447,30 +2454,24 @@ pub mod io_t_job_abort_criteria {
             self.action = input;
             self
         }
-        /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
-        /// cancel.</p>
-        /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
-        /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+        /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
+        /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
         pub fn threshold_percentage(mut self, input: f64) -> Self {
             self.threshold_percentage = Some(input);
             self
         }
-        /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
-        /// cancel.</p>
-        /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
-        /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+        /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
+        /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
         pub fn set_threshold_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold_percentage = input;
             self
         }
-        /// <p>The minimum number of things that receive the configuration before the job can
-        /// cancel.</p>
+        /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
         pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
             self.min_number_of_executed_things = Some(input);
             self
         }
-        /// <p>The minimum number of things that receive the configuration before the job can
-        /// cancel.</p>
+        /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
         pub fn set_min_number_of_executed_things(
             mut self,
             input: std::option::Option<i32>,
@@ -2612,8 +2613,7 @@ impl AsRef<str> for IoTJobExecutionFailureType {
     }
 }
 
-/// <p>Contains information about the rollout configuration for a job. This configuration defines
-/// the rate at which the job deploys a configuration to a fleet of target devices.</p>
+/// <p>Contains information about the rollout configuration for a job. This configuration defines the rate at which the job deploys a configuration to a fleet of target devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobExecutionsRolloutConfig {
@@ -2695,30 +2695,25 @@ impl IoTJobExecutionsRolloutConfig {
     }
 }
 
-/// <p>Contains information about an exponential rollout rate for a configuration deployment
-/// job.</p>
+/// <p>Contains information about an exponential rollout rate for a configuration deployment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobExponentialRolloutRate {
-    /// <p>The minimum number of devices that receive a pending job notification, per minute, when
-    /// the job starts. This parameter defines the initial rollout rate of the job.</p>
+    /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
     pub base_rate_per_minute: i32,
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
-    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
-    /// <code>1.5</code>, but not <code>1.55</code>).</p>
+    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
     pub increment_factor: f64,
     /// <p>The criteria to increase the rollout rate for the job.</p>
     pub rate_increase_criteria: std::option::Option<crate::model::IoTJobRateIncreaseCriteria>,
 }
 impl IoTJobExponentialRolloutRate {
-    /// <p>The minimum number of devices that receive a pending job notification, per minute, when
-    /// the job starts. This parameter defines the initial rollout rate of the job.</p>
+    /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
     pub fn base_rate_per_minute(&self) -> i32 {
         self.base_rate_per_minute
     }
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
-    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
-    /// <code>1.5</code>, but not <code>1.55</code>).</p>
+    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
     pub fn increment_factor(&self) -> f64 {
         self.increment_factor
     }
@@ -2750,28 +2745,24 @@ pub mod io_t_job_exponential_rollout_rate {
             std::option::Option<crate::model::IoTJobRateIncreaseCriteria>,
     }
     impl Builder {
-        /// <p>The minimum number of devices that receive a pending job notification, per minute, when
-        /// the job starts. This parameter defines the initial rollout rate of the job.</p>
+        /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
         pub fn base_rate_per_minute(mut self, input: i32) -> Self {
             self.base_rate_per_minute = Some(input);
             self
         }
-        /// <p>The minimum number of devices that receive a pending job notification, per minute, when
-        /// the job starts. This parameter defines the initial rollout rate of the job.</p>
+        /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
         pub fn set_base_rate_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.base_rate_per_minute = input;
             self
         }
         /// <p>The exponential factor to increase the rollout rate for the job.</p>
-        /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
-        /// <code>1.5</code>, but not <code>1.55</code>).</p>
+        /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
         pub fn increment_factor(mut self, input: f64) -> Self {
             self.increment_factor = Some(input);
             self
         }
         /// <p>The exponential factor to increase the rollout rate for the job.</p>
-        /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
-        /// <code>1.5</code>, but not <code>1.55</code>).</p>
+        /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
         pub fn set_increment_factor(mut self, input: std::option::Option<f64>) -> Self {
             self.increment_factor = input;
             self
@@ -2809,27 +2800,21 @@ impl IoTJobExponentialRolloutRate {
     }
 }
 
-/// <p>Contains information about criteria to meet before a job increases its rollout rate.
-/// Specify either <code>numberOfNotifiedThings</code> or
-/// <code>numberOfSucceededThings</code>.</p>
+/// <p>Contains information about criteria to meet before a job increases its rollout rate. Specify either <code>numberOfNotifiedThings</code> or <code>numberOfSucceededThings</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IoTJobRateIncreaseCriteria {
-    /// <p>The number of devices to receive the job notification before the rollout rate
-    /// increases.</p>
+    /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub number_of_notified_things: std::option::Option<i32>,
-    /// <p>The number of devices to successfully run the configuration job before the rollout rate
-    /// increases.</p>
+    /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub number_of_succeeded_things: std::option::Option<i32>,
 }
 impl IoTJobRateIncreaseCriteria {
-    /// <p>The number of devices to receive the job notification before the rollout rate
-    /// increases.</p>
+    /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
     pub fn number_of_notified_things(&self) -> std::option::Option<i32> {
         self.number_of_notified_things
     }
-    /// <p>The number of devices to successfully run the configuration job before the rollout rate
-    /// increases.</p>
+    /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
     pub fn number_of_succeeded_things(&self) -> std::option::Option<i32> {
         self.number_of_succeeded_things
     }
@@ -2855,26 +2840,22 @@ pub mod io_t_job_rate_increase_criteria {
         pub(crate) number_of_succeeded_things: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of devices to receive the job notification before the rollout rate
-        /// increases.</p>
+        /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
         pub fn number_of_notified_things(mut self, input: i32) -> Self {
             self.number_of_notified_things = Some(input);
             self
         }
-        /// <p>The number of devices to receive the job notification before the rollout rate
-        /// increases.</p>
+        /// <p>The number of devices to receive the job notification before the rollout rate increases.</p>
         pub fn set_number_of_notified_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_notified_things = input;
             self
         }
-        /// <p>The number of devices to successfully run the configuration job before the rollout rate
-        /// increases.</p>
+        /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
         pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
             self.number_of_succeeded_things = Some(input);
             self
         }
-        /// <p>The number of devices to successfully run the configuration job before the rollout rate
-        /// increases.</p>
+        /// <p>The number of devices to successfully run the configuration job before the rollout rate increases.</p>
         pub fn set_number_of_succeeded_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_succeeded_things = input;
             self
@@ -2895,43 +2876,34 @@ impl IoTJobRateIncreaseCriteria {
     }
 }
 
-/// <p>Contains information about policies that define how a deployment updates components and
-/// handles failure.</p>
+/// <p>Contains information about policies that define how a deployment updates components and handles failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentPolicies {
-    /// <p>The failure handling policy for the configuration deployment. This policy defines what to
-    /// do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code>
-    /// </p>
+    /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
+    /// <p>Default: <code>ROLLBACK</code> </p>
     pub failure_handling_policy: std::option::Option<crate::model::DeploymentFailureHandlingPolicy>,
-    /// <p>The component update policy for the configuration deployment. This policy defines when
-    /// it's safe to deploy the configuration to devices.</p>
+    /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub component_update_policy: std::option::Option<crate::model::DeploymentComponentUpdatePolicy>,
-    /// <p>The configuration validation policy for the configuration deployment. This policy defines
-    /// how long each component has to validate its configure updates.</p>
+    /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
     pub configuration_validation_policy:
         std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
 }
 impl DeploymentPolicies {
-    /// <p>The failure handling policy for the configuration deployment. This policy defines what to
-    /// do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code>
-    /// </p>
+    /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
+    /// <p>Default: <code>ROLLBACK</code> </p>
     pub fn failure_handling_policy(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentFailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
-    /// <p>The component update policy for the configuration deployment. This policy defines when
-    /// it's safe to deploy the configuration to devices.</p>
+    /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub fn component_update_policy(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentComponentUpdatePolicy> {
         self.component_update_policy.as_ref()
     }
-    /// <p>The configuration validation policy for the configuration deployment. This policy defines
-    /// how long each component has to validate its configure updates.</p>
+    /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
     pub fn configuration_validation_policy(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentConfigurationValidationPolicy> {
@@ -2964,10 +2936,8 @@ pub mod deployment_policies {
             std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
     }
     impl Builder {
-        /// <p>The failure handling policy for the configuration deployment. This policy defines what to
-        /// do if the deployment fails.</p>
-        /// <p>Default: <code>ROLLBACK</code>
-        /// </p>
+        /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
+        /// <p>Default: <code>ROLLBACK</code> </p>
         pub fn failure_handling_policy(
             mut self,
             input: crate::model::DeploymentFailureHandlingPolicy,
@@ -2975,10 +2945,8 @@ pub mod deployment_policies {
             self.failure_handling_policy = Some(input);
             self
         }
-        /// <p>The failure handling policy for the configuration deployment. This policy defines what to
-        /// do if the deployment fails.</p>
-        /// <p>Default: <code>ROLLBACK</code>
-        /// </p>
+        /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
+        /// <p>Default: <code>ROLLBACK</code> </p>
         pub fn set_failure_handling_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentFailureHandlingPolicy>,
@@ -2986,8 +2954,7 @@ pub mod deployment_policies {
             self.failure_handling_policy = input;
             self
         }
-        /// <p>The component update policy for the configuration deployment. This policy defines when
-        /// it's safe to deploy the configuration to devices.</p>
+        /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
         pub fn component_update_policy(
             mut self,
             input: crate::model::DeploymentComponentUpdatePolicy,
@@ -2995,8 +2962,7 @@ pub mod deployment_policies {
             self.component_update_policy = Some(input);
             self
         }
-        /// <p>The component update policy for the configuration deployment. This policy defines when
-        /// it's safe to deploy the configuration to devices.</p>
+        /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
         pub fn set_component_update_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentComponentUpdatePolicy>,
@@ -3004,8 +2970,7 @@ pub mod deployment_policies {
             self.component_update_policy = input;
             self
         }
-        /// <p>The configuration validation policy for the configuration deployment. This policy defines
-        /// how long each component has to validate its configure updates.</p>
+        /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
         pub fn configuration_validation_policy(
             mut self,
             input: crate::model::DeploymentConfigurationValidationPolicy,
@@ -3013,8 +2978,7 @@ pub mod deployment_policies {
             self.configuration_validation_policy = Some(input);
             self
         }
-        /// <p>The configuration validation policy for the configuration deployment. This policy defines
-        /// how long each component has to validate its configure updates.</p>
+        /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
         pub fn set_configuration_validation_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
@@ -3039,23 +3003,17 @@ impl DeploymentPolicies {
     }
 }
 
-/// <p>Contains information about how long a component on a core device can validate its
-/// configuration updates before it times out. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates">SubscribeToValidateConfigurationUpdates</a> IPC operation to receive notifications when
-/// a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+/// <p>Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates">SubscribeToValidateConfigurationUpdates</a> IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigurationValidationPolicy {
-    /// <p>The amount of time in seconds that a component can validate its configuration updates. If
-    /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code>
-    /// </p>
+    /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+    /// <p>Default: <code>30</code> </p>
     pub timeout_in_seconds: std::option::Option<i32>,
 }
 impl DeploymentConfigurationValidationPolicy {
-    /// <p>The amount of time in seconds that a component can validate its configuration updates. If
-    /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-    /// <p>Default: <code>30</code>
-    /// </p>
+    /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+    /// <p>Default: <code>30</code> </p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
     }
@@ -3076,18 +3034,14 @@ pub mod deployment_configuration_validation_policy {
         pub(crate) timeout_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of time in seconds that a component can validate its configuration updates. If
-        /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-        /// <p>Default: <code>30</code>
-        /// </p>
+        /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+        /// <p>Default: <code>30</code> </p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time in seconds that a component can validate its configuration updates. If
-        /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
-        /// <p>Default: <code>30</code>
-        /// </p>
+        /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+        /// <p>Default: <code>30</code> </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -3107,67 +3061,34 @@ impl DeploymentConfigurationValidationPolicy {
     }
 }
 
-/// <p>Contains information about a deployment's policy that defines when components are safe to
-/// update.</p>
-/// <p>Each component on a device can report whether or not it's ready to update. After a
-/// component and its dependencies are ready, they can apply the update in the deployment. You can
-/// configure whether or not the deployment notifies components of an update and waits for a
-/// response. You specify the amount of time each component has to respond to the update
-/// notification.</p>
+/// <p>Contains information about a deployment's policy that defines when components are safe to update.</p>
+/// <p>Each component on a device can report whether or not it's ready to update. After a component and its dependencies are ready, they can apply the update in the deployment. You can configure whether or not the deployment notifies components of an update and waits for a response. You specify the amount of time each component has to respond to the update notification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentComponentUpdatePolicy {
-    /// <p>The amount of time in seconds that each component on a device has to report that it's safe
-    /// to update. If the component waits for longer than this timeout, then the deployment proceeds
-    /// on the device.</p>
-    /// <p>Default: <code>60</code>
-    /// </p>
+    /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
+    /// <p>Default: <code>60</code> </p>
     pub timeout_in_seconds: std::option::Option<i32>,
-    /// <p>Whether or not to notify components and wait for components to become safe to update.
-    /// Choose from the following options:</p>
+    /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
-    /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-    /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
-    /// or wait for them to be safe to update.</p>
-    /// </li>
+    /// <li> <p> <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
-    /// <p>Default: <code>NOTIFY_COMPONENTS</code>
-    /// </p>
+    /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
     pub action: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
 }
 impl DeploymentComponentUpdatePolicy {
-    /// <p>The amount of time in seconds that each component on a device has to report that it's safe
-    /// to update. If the component waits for longer than this timeout, then the deployment proceeds
-    /// on the device.</p>
-    /// <p>Default: <code>60</code>
-    /// </p>
+    /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
+    /// <p>Default: <code>60</code> </p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>Whether or not to notify components and wait for components to become safe to update.
-    /// Choose from the following options:</p>
+    /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
-    /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-    /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
-    /// or wait for them to be safe to update.</p>
-    /// </li>
+    /// <li> <p> <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
     /// </ul>
-    /// <p>Default: <code>NOTIFY_COMPONENTS</code>
-    /// </p>
+    /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
     pub fn action(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentComponentUpdatePolicyAction> {
@@ -3192,41 +3113,24 @@ pub mod deployment_component_update_policy {
         pub(crate) action: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
     }
     impl Builder {
-        /// <p>The amount of time in seconds that each component on a device has to report that it's safe
-        /// to update. If the component waits for longer than this timeout, then the deployment proceeds
-        /// on the device.</p>
-        /// <p>Default: <code>60</code>
-        /// </p>
+        /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
+        /// <p>Default: <code>60</code> </p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time in seconds that each component on a device has to report that it's safe
-        /// to update. If the component waits for longer than this timeout, then the deployment proceeds
-        /// on the device.</p>
-        /// <p>Default: <code>60</code>
-        /// </p>
+        /// <p>The amount of time in seconds that each component on a device has to report that it's safe to update. If the component waits for longer than this timeout, then the deployment proceeds on the device.</p>
+        /// <p>Default: <code>60</code> </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
         }
-        /// <p>Whether or not to notify components and wait for components to become safe to update.
-        /// Choose from the following options:</p>
+        /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
-        /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-        /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
-        /// or wait for them to be safe to update.</p>
-        /// </li>
+        /// <li> <p> <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
         /// </ul>
-        /// <p>Default: <code>NOTIFY_COMPONENTS</code>
-        /// </p>
+        /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
         pub fn action(
             mut self,
             input: crate::model::DeploymentComponentUpdatePolicyAction,
@@ -3234,23 +3138,12 @@ pub mod deployment_component_update_policy {
             self.action = Some(input);
             self
         }
-        /// <p>Whether or not to notify components and wait for components to become safe to update.
-        /// Choose from the following options:</p>
+        /// <p>Whether or not to notify components and wait for components to become safe to update. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
-        /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
-        /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
-        /// or wait for them to be safe to update.</p>
-        /// </li>
+        /// <li> <p> <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or wait for them to be safe to update.</p> </li>
         /// </ul>
-        /// <p>Default: <code>NOTIFY_COMPONENTS</code>
-        /// </p>
+        /// <p>Default: <code>NOTIFY_COMPONENTS</code> </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
@@ -3390,18 +3283,9 @@ impl AsRef<str> for DeploymentFailureHandlingPolicy {
 pub struct ComponentDeploymentSpecification {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
-    /// <p>The configuration updates to deploy for the component. You can define
-    /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
-    /// the keys that you specify to the default configuration for the component. A merge updates the
-    /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
-    /// software applies reset updates before it applies merge updates. For more information, see
-    /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-    /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub configuration_update: std::option::Option<crate::model::ComponentConfigurationUpdate>,
-    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
-    /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
-    /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub run_with: std::option::Option<crate::model::ComponentRunWith>,
 }
 impl ComponentDeploymentSpecification {
@@ -3409,22 +3293,13 @@ impl ComponentDeploymentSpecification {
     pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
-    /// <p>The configuration updates to deploy for the component. You can define
-    /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
-    /// the keys that you specify to the default configuration for the component. A merge updates the
-    /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
-    /// software applies reset updates before it applies merge updates. For more information, see
-    /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-    /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn configuration_update(
         &self,
     ) -> std::option::Option<&crate::model::ComponentConfigurationUpdate> {
         self.configuration_update.as_ref()
     }
-    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
-    /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
-    /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn run_with(&self) -> std::option::Option<&crate::model::ComponentRunWith> {
         self.run_with.as_ref()
     }
@@ -3463,13 +3338,7 @@ pub mod component_deployment_specification {
             self.component_version = input;
             self
         }
-        /// <p>The configuration updates to deploy for the component. You can define
-        /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
-        /// the keys that you specify to the default configuration for the component. A merge updates the
-        /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
-        /// software applies reset updates before it applies merge updates. For more information, see
-        /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-        /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn configuration_update(
             mut self,
             input: crate::model::ComponentConfigurationUpdate,
@@ -3477,13 +3346,7 @@ pub mod component_deployment_specification {
             self.configuration_update = Some(input);
             self
         }
-        /// <p>The configuration updates to deploy for the component. You can define
-        /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
-        /// the keys that you specify to the default configuration for the component. A merge updates the
-        /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
-        /// software applies reset updates before it applies merge updates. For more information, see
-        /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-        /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>The configuration updates to deploy for the component. You can define <i>reset</i> updates and <i>merge</i> updates. A reset updates the keys that you specify to the default configuration for the component. A merge updates the core device's component configuration with the keys and values that you specify. The IoT Greengrass Core software applies reset updates before it applies merge updates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ComponentConfigurationUpdate>,
@@ -3491,18 +3354,12 @@ pub mod component_deployment_specification {
             self.configuration_update = input;
             self
         }
-        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
-        /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
-        /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn run_with(mut self, input: crate::model::ComponentRunWith) -> Self {
             self.run_with = Some(input);
             self
         }
-        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
-        /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
-        /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_run_with(
             mut self,
             input: std::option::Option<crate::model::ComponentRunWith>,
@@ -3527,57 +3384,35 @@ impl ComponentDeploymentSpecification {
     }
 }
 
-/// <p>Contains information system user and group that the IoT Greengrass Core software uses to run component
-/// processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
-/// Guide</i>.</p>
+/// <p>Contains information system user and group that the IoT Greengrass Core software uses to run component processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRunWith {
-    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
-    /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
-    /// user and group separated by a colon (<code>:</code>) in the following format:
-    /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
-    /// software uses the primary user for the group.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
-    /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core devices. The user, and group if specified, must exist on each Linux core device. Specify the user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core software uses the primary user for the group.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub posix_user: std::option::Option<std::string::String>,
-    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
-    /// currently supports this feature on only Linux core devices.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
-    /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
     pub system_resource_limits: std::option::Option<crate::model::SystemResourceLimits>,
-    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
-    /// on each Windows core device, and its name and password must be in the LocalSystem account's
-    /// Credentials Manager instance.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
-    /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub windows_user: std::option::Option<std::string::String>,
 }
 impl ComponentRunWith {
-    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
-    /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
-    /// user and group separated by a colon (<code>:</code>) in the following format:
-    /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
-    /// software uses the primary user for the group.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
-    /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core devices. The user, and group if specified, must exist on each Linux core device. Specify the user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core software uses the primary user for the group.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub fn posix_user(&self) -> std::option::Option<&str> {
         self.posix_user.as_deref()
     }
-    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
-    /// currently supports this feature on only Linux core devices.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
-    /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+    /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
     pub fn system_resource_limits(
         &self,
     ) -> std::option::Option<&crate::model::SystemResourceLimits> {
         self.system_resource_limits.as_ref()
     }
-    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
-    /// on each Windows core device, and its name and password must be in the LocalSystem account's
-    /// Credentials Manager instance.</p>
-    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
-    /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+    /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
+    /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
     pub fn windows_user(&self) -> std::option::Option<&str> {
         self.windows_user.as_deref()
     }
@@ -3602,40 +3437,26 @@ pub mod component_run_with {
         pub(crate) windows_user: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
-        /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
-        /// user and group separated by a colon (<code>:</code>) in the following format:
-        /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
-        /// software uses the primary user for the group.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
-        /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core devices. The user, and group if specified, must exist on each Linux core device. Specify the user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core software uses the primary user for the group.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn posix_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.posix_user = Some(input.into());
             self
         }
-        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core
-        /// devices. The user, and group if specified, must exist on each Linux core device. Specify the
-        /// user and group separated by a colon (<code>:</code>) in the following format:
-        /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
-        /// software uses the primary user for the group.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
-        /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        /// <p>The POSIX system user and, optionally, group to use to run this component on Linux core devices. The user, and group if specified, must exist on each Linux core device. Specify the user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core software uses the primary user for the group.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn set_posix_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.posix_user = input;
             self
         }
-        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
-        /// currently supports this feature on only Linux core devices.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
-        /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
         pub fn system_resource_limits(mut self, input: crate::model::SystemResourceLimits) -> Self {
             self.system_resource_limits = Some(input);
             self
         }
-        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass
-        /// currently supports this feature on only Linux core devices.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
-        /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+        /// <p>The system resource limits to apply to this component's process on the core device. IoT Greengrass currently supports this feature on only Linux core devices.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
         pub fn set_system_resource_limits(
             mut self,
             input: std::option::Option<crate::model::SystemResourceLimits>,
@@ -3643,20 +3464,14 @@ pub mod component_run_with {
             self.system_resource_limits = input;
             self
         }
-        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
-        /// on each Windows core device, and its name and password must be in the LocalSystem account's
-        /// Credentials Manager instance.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
-        /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn windows_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.windows_user = Some(input.into());
             self
         }
-        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist
-        /// on each Windows core device, and its name and password must be in the LocalSystem account's
-        /// Credentials Manager instance.</p>
-        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you
-        /// configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
+        /// <p>The Windows user to use to run this component on Windows core devices. The user must exist on each Windows core device, and its name and password must be in the LocalSystem account's Credentials Manager instance.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default Windows user that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn set_windows_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.windows_user = input;
             self
@@ -3678,36 +3493,21 @@ impl ComponentRunWith {
     }
 }
 
-/// <p>Contains information about system resource limits that the IoT Greengrass Core software applies to a
-/// component's processes. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
+/// <p>Contains information about system resource limits that the IoT Greengrass Core software applies to a component's processes. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemResourceLimits {
-    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
-    /// the core device.</p>
+    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
     pub memory: i64,
-    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
-    /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
-    /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
-    /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
-    /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
-    /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
-    /// software doesn't limit the component's CPU usage.</p>
+    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
     pub cpus: f64,
 }
 impl SystemResourceLimits {
-    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
-    /// the core device.</p>
+    /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
     pub fn memory(&self) -> i64 {
         self.memory
     }
-    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
-    /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
-    /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
-    /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
-    /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
-    /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
-    /// software doesn't limit the component's CPU usage.</p>
+    /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
     pub fn cpus(&self) -> f64 {
         self.cpus
     }
@@ -3730,36 +3530,22 @@ pub mod system_resource_limits {
         pub(crate) cpus: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
-        /// the core device.</p>
+        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
         pub fn memory(mut self, input: i64) -> Self {
             self.memory = Some(input);
             self
         }
-        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
-        /// the core device.</p>
+        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
         pub fn set_memory(mut self, input: std::option::Option<i64>) -> Self {
             self.memory = input;
             self
         }
-        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
-        /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
-        /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
-        /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
-        /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
-        /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
-        /// software doesn't limit the component's CPU usage.</p>
+        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
         pub fn cpus(mut self, input: f64) -> Self {
             self.cpus = Some(input);
             self
         }
-        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
-        /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
-        /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
-        /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
-        /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
-        /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
-        /// software doesn't limit the component's CPU usage.</p>
+        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
         pub fn set_cpus(mut self, input: std::option::Option<f64>) -> Self {
             self.cpus = input;
             self
@@ -3780,45 +3566,21 @@ impl SystemResourceLimits {
     }
 }
 
-/// <p>Contains information about a deployment's update to a component's configuration on
-/// Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
-/// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+/// <p>Contains information about a deployment's update to a component's configuration on Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentConfigurationUpdate {
-    /// <p>A serialized JSON string that contains the configuration object to merge to target
-    /// devices. The core device merges this configuration with the component's existing
-    /// configuration. If this is the first time a component deploys on a device, the core device
-    /// merges this configuration with the component's default configuration. This means that the core
-    /// device keeps it's existing configuration for keys and values that you don't specify in this
-    /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub merge: std::option::Option<std::string::String>,
-    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
-    /// pointers to specify each node to reset. JSON pointers start with a forward slash
-    /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
-    /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
-    /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub reset: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ComponentConfigurationUpdate {
-    /// <p>A serialized JSON string that contains the configuration object to merge to target
-    /// devices. The core device merges this configuration with the component's existing
-    /// configuration. If this is the first time a component deploys on a device, the core device
-    /// merges this configuration with the component's default configuration. This means that the core
-    /// device keeps it's existing configuration for keys and values that you don't specify in this
-    /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn merge(&self) -> std::option::Option<&str> {
         self.merge.as_deref()
     }
-    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
-    /// pointers to specify each node to reset. JSON pointers start with a forward slash
-    /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
-    /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
-    /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
-    /// Guide</i>.</p>
+    /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn reset(&self) -> std::option::Option<&[std::string::String]> {
         self.reset.as_deref()
     }
@@ -3841,24 +3603,12 @@ pub mod component_configuration_update {
         pub(crate) reset: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A serialized JSON string that contains the configuration object to merge to target
-        /// devices. The core device merges this configuration with the component's existing
-        /// configuration. If this is the first time a component deploys on a device, the core device
-        /// merges this configuration with the component's default configuration. This means that the core
-        /// device keeps it's existing configuration for keys and values that you don't specify in this
-        /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn merge(mut self, input: impl Into<std::string::String>) -> Self {
             self.merge = Some(input.into());
             self
         }
-        /// <p>A serialized JSON string that contains the configuration object to merge to target
-        /// devices. The core device merges this configuration with the component's existing
-        /// configuration. If this is the first time a component deploys on a device, the core device
-        /// merges this configuration with the component's default configuration. This means that the core
-        /// device keeps it's existing configuration for keys and values that you don't specify in this
-        /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_merge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge = input;
             self
@@ -3867,24 +3617,14 @@ pub mod component_configuration_update {
         ///
         /// To override the contents of this collection use [`set_reset`](Self::set_reset).
         ///
-        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
-        /// pointers to specify each node to reset. JSON pointers start with a forward slash
-        /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
-        /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
-        /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn reset(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reset.unwrap_or_default();
             v.push(input.into());
             self.reset = Some(v);
             self
         }
-        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
-        /// pointers to specify each node to reset. JSON pointers start with a forward slash
-        /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
-        /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
-        /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
-        /// Guide</i>.</p>
+        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_reset(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3971,9 +3711,7 @@ pub struct CloudComponentStatus {
     pub component_state: std::option::Option<crate::model::CloudComponentState>,
     /// <p>A message that communicates details, such as errors, about the status of the component.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A dictionary of errors that communicate why the component is in an error state. For
-    /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
-    /// the artifact's URI as a key, and the error message as the value for that key.</p>
+    /// <p>A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
     pub errors:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3986,9 +3724,7 @@ impl CloudComponentStatus {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>A dictionary of errors that communicate why the component is in an error state. For
-    /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
-    /// the artifact's URI as a key, and the error message as the value for that key.</p>
+    /// <p>A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4045,9 +3781,7 @@ pub mod cloud_component_status {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A dictionary of errors that communicate why the component is in an error state. For
-        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
-        /// the artifact's URI as a key, and the error message as the value for that key.</p>
+        /// <p>A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
         pub fn errors(
             mut self,
             k: impl Into<std::string::String>,
@@ -4058,9 +3792,7 @@ pub mod cloud_component_status {
             self.errors = Some(hash_map);
             self
         }
-        /// <p>A dictionary of errors that communicate why the component is in an error state. For
-        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
-        /// the artifact's URI as a key, and the error message as the value for that key.</p>
+        /// <p>A dictionary of errors that communicate why the component is in an error state. For example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -4164,15 +3896,13 @@ impl AsRef<str> for CloudComponentState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionRecipeSource {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
-    /// import. You can't use version aliases like <code>$LATEST</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
     pub lambda_arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
-    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
-    /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The platforms that the component version supports.</p>
     pub component_platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
@@ -4183,13 +3913,11 @@ pub struct LambdaFunctionRecipeSource {
             crate::model::ComponentDependencyRequirement,
         >,
     >,
-    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
-    /// device.</p>
+    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub component_lambda_parameters: std::option::Option<crate::model::LambdaExecutionParameters>,
 }
 impl LambdaFunctionRecipeSource {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
-    /// import. You can't use version aliases like <code>$LATEST</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
@@ -4199,8 +3927,7 @@ impl LambdaFunctionRecipeSource {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
-    /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
     pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
@@ -4219,8 +3946,7 @@ impl LambdaFunctionRecipeSource {
     > {
         self.component_dependencies.as_ref()
     }
-    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
-    /// device.</p>
+    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub fn component_lambda_parameters(
         &self,
     ) -> std::option::Option<&crate::model::LambdaExecutionParameters> {
@@ -4263,14 +3989,12 @@ pub mod lambda_function_recipe_source {
             std::option::Option<crate::model::LambdaExecutionParameters>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
-        /// import. You can't use version aliases like <code>$LATEST</code>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
         pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
-        /// import. You can't use version aliases like <code>$LATEST</code>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_arn = input;
             self
@@ -4291,15 +4015,13 @@ pub mod lambda_function_recipe_source {
             self
         }
         /// <p>The version of the component.</p>
-        /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
-        /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+        /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
         pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.component_version = Some(input.into());
             self
         }
         /// <p>The version of the component.</p>
-        /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
-        /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+        /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4312,12 +4034,9 @@ pub mod lambda_function_recipe_source {
         /// To override the contents of this collection use [`set_component_platforms`](Self::set_component_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn component_platforms(
-            mut self,
-            input: impl Into<crate::model::ComponentPlatform>,
-        ) -> Self {
+        pub fn component_platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.component_platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_platforms = Some(v);
             self
         }
@@ -4337,10 +4056,10 @@ pub mod lambda_function_recipe_source {
         pub fn component_dependencies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDependencyRequirement>,
+            v: crate::model::ComponentDependencyRequirement,
         ) -> Self {
             let mut hash_map = self.component_dependencies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.component_dependencies = Some(hash_map);
             self
         }
@@ -4357,8 +4076,7 @@ pub mod lambda_function_recipe_source {
             self.component_dependencies = input;
             self
         }
-        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
-        /// device.</p>
+        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
         pub fn component_lambda_parameters(
             mut self,
             input: crate::model::LambdaExecutionParameters,
@@ -4366,8 +4084,7 @@ pub mod lambda_function_recipe_source {
             self.component_lambda_parameters = Some(input);
             self
         }
-        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
-        /// device.</p>
+        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
         pub fn set_component_lambda_parameters(
             mut self,
             input: std::option::Option<crate::model::LambdaExecutionParameters>,
@@ -4399,44 +4116,27 @@ impl LambdaFunctionRecipeSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaExecutionParameters {
-    /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
-    /// function runs when it receives a message from an event source. You can subscribe this function
-    /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+    /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
     pub event_sources: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
-    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
-    /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
-    /// consume each message.</p>
+    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
     pub max_queue_size: std::option::Option<i32>,
-    /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
-    /// time.</p>
+    /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
     pub max_instances_count: std::option::Option<i32>,
-    /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-    /// IoT Greengrass Core software stops its process.</p>
+    /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
     pub max_idle_time_in_seconds: std::option::Option<i32>,
-    /// <p>The maximum amount of time in seconds that the Lambda function can process a work
-    /// item.</p>
+    /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
     pub timeout_in_seconds: std::option::Option<i32>,
-    /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
-    /// component sends status updates to the Lambda manager component.</p>
+    /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
     pub status_timeout_in_seconds: std::option::Option<i32>,
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li>
-    /// <p>A pinned Lambda function starts
-    /// when IoT Greengrass starts and keeps running in its own container.</p>
-    /// </li>
-    /// <li>
-    /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
-    /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-    /// the IoT Greengrass Core software creates multiple instances of the function.</p>
-    /// </li>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Default: <code>true</code> </p>
     pub pinned: std::option::Option<bool>,
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code>
-    /// </p>
+    /// <p>Default: <code>json</code> </p>
     pub input_payload_encoding_type:
         std::option::Option<crate::model::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
@@ -4448,58 +4148,41 @@ pub struct LambdaExecutionParameters {
     pub linux_process_params: std::option::Option<crate::model::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParameters {
-    /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
-    /// function runs when it receives a message from an event source. You can subscribe this function
-    /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+    /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
     pub fn event_sources(&self) -> std::option::Option<&[crate::model::LambdaEventSource]> {
         self.event_sources.as_deref()
     }
-    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
-    /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
-    /// consume each message.</p>
+    /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
     pub fn max_queue_size(&self) -> std::option::Option<i32> {
         self.max_queue_size
     }
-    /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
-    /// time.</p>
+    /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
     pub fn max_instances_count(&self) -> std::option::Option<i32> {
         self.max_instances_count
     }
-    /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-    /// IoT Greengrass Core software stops its process.</p>
+    /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
     pub fn max_idle_time_in_seconds(&self) -> std::option::Option<i32> {
         self.max_idle_time_in_seconds
     }
-    /// <p>The maximum amount of time in seconds that the Lambda function can process a work
-    /// item.</p>
+    /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
     }
-    /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
-    /// component sends status updates to the Lambda manager component.</p>
+    /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
     pub fn status_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.status_timeout_in_seconds
     }
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li>
-    /// <p>A pinned Lambda function starts
-    /// when IoT Greengrass starts and keeps running in its own container.</p>
-    /// </li>
-    /// <li>
-    /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
-    /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-    /// the IoT Greengrass Core software creates multiple instances of the function.</p>
-    /// </li>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
     /// </ul>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Default: <code>true</code> </p>
     pub fn pinned(&self) -> std::option::Option<bool> {
         self.pinned
     }
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code>
-    /// </p>
+    /// <p>Default: <code>json</code> </p>
     pub fn input_payload_encoding_type(
         &self,
     ) -> std::option::Option<&crate::model::LambdaInputPayloadEncodingType> {
@@ -4571,18 +4254,14 @@ pub mod lambda_execution_parameters {
         ///
         /// To override the contents of this collection use [`set_event_sources`](Self::set_event_sources).
         ///
-        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
-        /// function runs when it receives a message from an event source. You can subscribe this function
-        /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-        pub fn event_sources(mut self, input: impl Into<crate::model::LambdaEventSource>) -> Self {
+        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+        pub fn event_sources(mut self, input: crate::model::LambdaEventSource) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_sources = Some(v);
             self
         }
-        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
-        /// function runs when it receives a message from an event source. You can subscribe this function
-        /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
+        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
         pub fn set_event_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
@@ -4590,107 +4269,78 @@ pub mod lambda_execution_parameters {
             self.event_sources = input;
             self
         }
-        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
-        /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
-        /// consume each message.</p>
+        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
         pub fn max_queue_size(mut self, input: i32) -> Self {
             self.max_queue_size = Some(input);
             self
         }
-        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
-        /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
-        /// consume each message.</p>
+        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
         pub fn set_max_queue_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_queue_size = input;
             self
         }
-        /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
-        /// time.</p>
+        /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
         pub fn max_instances_count(mut self, input: i32) -> Self {
             self.max_instances_count = Some(input);
             self
         }
-        /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
-        /// time.</p>
+        /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
         pub fn set_max_instances_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_instances_count = input;
             self
         }
-        /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-        /// IoT Greengrass Core software stops its process.</p>
+        /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
         pub fn max_idle_time_in_seconds(mut self, input: i32) -> Self {
             self.max_idle_time_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
-        /// IoT Greengrass Core software stops its process.</p>
+        /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
         pub fn set_max_idle_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_idle_time_in_seconds = input;
             self
         }
-        /// <p>The maximum amount of time in seconds that the Lambda function can process a work
-        /// item.</p>
+        /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
         pub fn timeout_in_seconds(mut self, input: i32) -> Self {
             self.timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time in seconds that the Lambda function can process a work
-        /// item.</p>
+        /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
         }
-        /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
-        /// component sends status updates to the Lambda manager component.</p>
+        /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
         pub fn status_timeout_in_seconds(mut self, input: i32) -> Self {
             self.status_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
-        /// component sends status updates to the Lambda manager component.</p>
+        /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
         pub fn set_status_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.status_timeout_in_seconds = input;
             self
         }
         /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
         /// <ul>
-        /// <li>
-        /// <p>A pinned Lambda function starts
-        /// when IoT Greengrass starts and keeps running in its own container.</p>
-        /// </li>
-        /// <li>
-        /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
-        /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-        /// the IoT Greengrass Core software creates multiple instances of the function.</p>
-        /// </li>
+        /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+        /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
         /// </ul>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Default: <code>true</code> </p>
         pub fn pinned(mut self, input: bool) -> Self {
             self.pinned = Some(input);
             self
         }
         /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
         /// <ul>
-        /// <li>
-        /// <p>A pinned Lambda function starts
-        /// when IoT Greengrass starts and keeps running in its own container.</p>
-        /// </li>
-        /// <li>
-        /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
-        /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
-        /// the IoT Greengrass Core software creates multiple instances of the function.</p>
-        /// </li>
+        /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+        /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
         /// </ul>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_pinned(mut self, input: std::option::Option<bool>) -> Self {
             self.pinned = input;
             self
         }
         /// <p>The encoding type that the Lambda function supports.</p>
-        /// <p>Default: <code>json</code>
-        /// </p>
+        /// <p>Default: <code>json</code> </p>
         pub fn input_payload_encoding_type(
             mut self,
             input: crate::model::LambdaInputPayloadEncodingType,
@@ -4699,8 +4349,7 @@ pub mod lambda_execution_parameters {
             self
         }
         /// <p>The encoding type that the Lambda function supports.</p>
-        /// <p>Default: <code>json</code>
-        /// </p>
+        /// <p>Default: <code>json</code> </p>
         pub fn set_input_payload_encoding_type(
             mut self,
             input: std::option::Option<crate::model::LambdaInputPayloadEncodingType>,
@@ -4797,21 +4446,15 @@ impl LambdaExecutionParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaLinuxProcessParams {
-    /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-    /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
-    /// any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code>
-    /// </p>
+    /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
+    /// <p>Default: <code>GreengrassContainer</code> </p>
     pub isolation_mode: std::option::Option<crate::model::LambdaIsolationMode>,
     /// <p>The parameters for the container in which the Lambda function runs.</p>
     pub container_params: std::option::Option<crate::model::LambdaContainerParams>,
 }
 impl LambdaLinuxProcessParams {
-    /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-    /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
-    /// any container.</p>
-    /// <p>Default: <code>GreengrassContainer</code>
-    /// </p>
+    /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
+    /// <p>Default: <code>GreengrassContainer</code> </p>
     pub fn isolation_mode(&self) -> std::option::Option<&crate::model::LambdaIsolationMode> {
         self.isolation_mode.as_ref()
     }
@@ -4838,20 +4481,14 @@ pub mod lambda_linux_process_params {
         pub(crate) container_params: std::option::Option<crate::model::LambdaContainerParams>,
     }
     impl Builder {
-        /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-        /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
-        /// any container.</p>
-        /// <p>Default: <code>GreengrassContainer</code>
-        /// </p>
+        /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
+        /// <p>Default: <code>GreengrassContainer</code> </p>
         pub fn isolation_mode(mut self, input: crate::model::LambdaIsolationMode) -> Self {
             self.isolation_mode = Some(input);
             self
         }
-        /// <p>The isolation mode for the process that contains the Lambda function. The process can run
-        /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
-        /// any container.</p>
-        /// <p>Default: <code>GreengrassContainer</code>
-        /// </p>
+        /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
+        /// <p>Default: <code>GreengrassContainer</code> </p>
         pub fn set_isolation_mode(
             mut self,
             input: std::option::Option<crate::model::LambdaIsolationMode>,
@@ -4888,18 +4525,15 @@ impl LambdaLinuxProcessParams {
     }
 }
 
-/// <p>Contains information about a container in which Lambda functions run on Greengrass core
-/// devices.</p>
+/// <p>Contains information about a container in which Lambda functions run on Greengrass core devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaContainerParams {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
     pub memory_size_in_kb: std::option::Option<i32>,
-    /// <p>Whether or not the container can read information from the device's <code>/sys</code>
-    /// folder.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
+    /// <p>Default: <code>false</code> </p>
     pub mount_ro_sysfs: std::option::Option<bool>,
     /// <p>The list of volumes that the container can access.</p>
     pub volumes: std::option::Option<std::vec::Vec<crate::model::LambdaVolumeMount>>,
@@ -4912,10 +4546,8 @@ impl LambdaContainerParams {
     pub fn memory_size_in_kb(&self) -> std::option::Option<i32> {
         self.memory_size_in_kb
     }
-    /// <p>Whether or not the container can read information from the device's <code>/sys</code>
-    /// folder.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
+    /// <p>Default: <code>false</code> </p>
     pub fn mount_ro_sysfs(&self) -> std::option::Option<bool> {
         self.mount_ro_sysfs
     }
@@ -4962,18 +4594,14 @@ pub mod lambda_container_params {
             self.memory_size_in_kb = input;
             self
         }
-        /// <p>Whether or not the container can read information from the device's <code>/sys</code>
-        /// folder.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn mount_ro_sysfs(mut self, input: bool) -> Self {
             self.mount_ro_sysfs = Some(input);
             self
         }
-        /// <p>Whether or not the container can read information from the device's <code>/sys</code>
-        /// folder.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_mount_ro_sysfs(mut self, input: std::option::Option<bool>) -> Self {
             self.mount_ro_sysfs = input;
             self
@@ -4983,9 +4611,9 @@ pub mod lambda_container_params {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>The list of volumes that the container can access.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::LambdaVolumeMount>) -> Self {
+        pub fn volumes(mut self, input: crate::model::LambdaVolumeMount) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -5002,9 +4630,9 @@ pub mod lambda_container_params {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The list of system devices that the container can access.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::LambdaDeviceMount>) -> Self {
+        pub fn devices(mut self, input: crate::model::LambdaDeviceMount) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -5040,14 +4668,11 @@ impl LambdaContainerParams {
 pub struct LambdaDeviceMount {
     /// <p>The mount path for the device in the file system.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
-    /// (<code>rw</code>).</p>
-    /// <p>Default: <code>ro</code>
-    /// </p>
+    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
     pub permission: std::option::Option<crate::model::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub add_group_owner: std::option::Option<bool>,
 }
 impl LambdaDeviceMount {
@@ -5055,16 +4680,13 @@ impl LambdaDeviceMount {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
-    /// (<code>rw</code>).</p>
-    /// <p>Default: <code>ro</code>
-    /// </p>
+    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
     pub fn permission(&self) -> std::option::Option<&crate::model::LambdaFilesystemPermission> {
         self.permission.as_ref()
     }
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn add_group_owner(&self) -> std::option::Option<bool> {
         self.add_group_owner
     }
@@ -5099,18 +4721,14 @@ pub mod lambda_device_mount {
             self.path = input;
             self
         }
-        /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
-        /// (<code>rw</code>).</p>
-        /// <p>Default: <code>ro</code>
-        /// </p>
+        /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code> </p>
         pub fn permission(mut self, input: crate::model::LambdaFilesystemPermission) -> Self {
             self.permission = Some(input);
             self
         }
-        /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
-        /// (<code>rw</code>).</p>
-        /// <p>Default: <code>ro</code>
-        /// </p>
+        /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code> </p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::LambdaFilesystemPermission>,
@@ -5119,15 +4737,13 @@ pub mod lambda_device_mount {
             self
         }
         /// <p>Whether or not to add the component's system user as an owner of the device.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn add_group_owner(mut self, input: bool) -> Self {
             self.add_group_owner = Some(input);
             self
         }
         /// <p>Whether or not to add the component's system user as an owner of the device.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.add_group_owner = input;
             self
@@ -5204,9 +4820,7 @@ impl AsRef<str> for LambdaFilesystemPermission {
     }
 }
 
-/// <p>Contains information about a volume that Linux processes in a container can access. When
-/// you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the
-/// container.</p>
+/// <p>Contains information about a volume that Linux processes in a container can access. When you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaVolumeMount {
@@ -5214,14 +4828,11 @@ pub struct LambdaVolumeMount {
     pub source_path: std::option::Option<std::string::String>,
     /// <p>The path to the logical volume in the file system.</p>
     pub destination_path: std::option::Option<std::string::String>,
-    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
-    /// (<code>rw</code>).</p>
-    /// <p>Default: <code>ro</code>
-    /// </p>
+    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
     pub permission: std::option::Option<crate::model::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub add_group_owner: std::option::Option<bool>,
 }
 impl LambdaVolumeMount {
@@ -5233,16 +4844,13 @@ impl LambdaVolumeMount {
     pub fn destination_path(&self) -> std::option::Option<&str> {
         self.destination_path.as_deref()
     }
-    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
-    /// (<code>rw</code>).</p>
-    /// <p>Default: <code>ro</code>
-    /// </p>
+    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
     pub fn permission(&self) -> std::option::Option<&crate::model::LambdaFilesystemPermission> {
         self.permission.as_ref()
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn add_group_owner(&self) -> std::option::Option<bool> {
         self.add_group_owner
     }
@@ -5292,18 +4900,14 @@ pub mod lambda_volume_mount {
             self.destination_path = input;
             self
         }
-        /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
-        /// (<code>rw</code>).</p>
-        /// <p>Default: <code>ro</code>
-        /// </p>
+        /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code> </p>
         pub fn permission(mut self, input: crate::model::LambdaFilesystemPermission) -> Self {
             self.permission = Some(input);
             self
         }
-        /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
-        /// (<code>rw</code>).</p>
-        /// <p>Default: <code>ro</code>
-        /// </p>
+        /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code> </p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::LambdaFilesystemPermission>,
@@ -5312,15 +4916,13 @@ pub mod lambda_volume_mount {
             self
         }
         /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn add_group_owner(mut self, input: bool) -> Self {
             self.add_group_owner = Some(input);
             self
         }
         /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.add_group_owner = input;
             self
@@ -5453,9 +5055,7 @@ impl AsRef<str> for LambdaInputPayloadEncodingType {
     }
 }
 
-/// <p>Contains information about an event source for an Lambda function. The event source
-/// defines the topics on which this Lambda function subscribes to receive messages that run the
-/// function.</p>
+/// <p>Contains information about an event source for an Lambda function. The event source defines the topics on which this Lambda function subscribes to receive messages that run the function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaEventSource {
@@ -5463,18 +5063,8 @@ pub struct LambdaEventSource {
     pub topic: std::option::Option<std::string::String>,
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
-    /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
-    /// event source topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
-    /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
-    /// topic.</p>
-    /// </li>
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::LambdaEventSourceType>,
 }
@@ -5485,18 +5075,8 @@ impl LambdaEventSource {
     }
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
-    /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
-    /// event source topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
-    /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
-    /// topic.</p>
-    /// </li>
+    /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+    /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::LambdaEventSourceType> {
         self.r#type.as_ref()
@@ -5532,18 +5112,8 @@ pub mod lambda_event_source {
         }
         /// <p>The type of event source. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
-        /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
-        /// event source topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
-        /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+        /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::LambdaEventSourceType) -> Self {
             self.r#type = Some(input);
@@ -5551,18 +5121,8 @@ pub mod lambda_event_source {
         }
         /// <p>The type of event source. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
-        /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
-        /// event source topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
-        /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
+        /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -5651,19 +5211,10 @@ pub struct ComponentDependencyRequirement {
     pub version_requirement: std::option::Option<std::string::String>,
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SOFT</code> – The component doesn't restart if the dependency changes
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HARD</code> – The component restarts if the dependency changes
-    /// state.</p>
-    /// </li>
+    /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
+    /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
-    /// <p>Default: <code>HARD</code>
-    /// </p>
+    /// <p>Default: <code>HARD</code> </p>
     pub dependency_type: std::option::Option<crate::model::ComponentDependencyType>,
 }
 impl ComponentDependencyRequirement {
@@ -5674,19 +5225,10 @@ impl ComponentDependencyRequirement {
     }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SOFT</code> – The component doesn't restart if the dependency changes
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HARD</code> – The component restarts if the dependency changes
-    /// state.</p>
-    /// </li>
+    /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
+    /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
     /// </ul>
-    /// <p>Default: <code>HARD</code>
-    /// </p>
+    /// <p>Default: <code>HARD</code> </p>
     pub fn dependency_type(&self) -> std::option::Option<&crate::model::ComponentDependencyType> {
         self.dependency_type.as_ref()
     }
@@ -5726,38 +5268,20 @@ pub mod component_dependency_requirement {
         }
         /// <p>The type of this dependency. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SOFT</code> – The component doesn't restart if the dependency changes
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HARD</code> – The component restarts if the dependency changes
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
+        /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
         /// </ul>
-        /// <p>Default: <code>HARD</code>
-        /// </p>
+        /// <p>Default: <code>HARD</code> </p>
         pub fn dependency_type(mut self, input: crate::model::ComponentDependencyType) -> Self {
             self.dependency_type = Some(input);
             self
         }
         /// <p>The type of this dependency. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SOFT</code> – The component doesn't restart if the dependency changes
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HARD</code> – The component restarts if the dependency changes
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
+        /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
         /// </ul>
-        /// <p>Default: <code>HARD</code>
-        /// </p>
+        /// <p>Default: <code>HARD</code> </p>
         pub fn set_dependency_type(
             mut self,
             input: std::option::Option<crate::model::ComponentDependencyType>,
@@ -5836,9 +5360,7 @@ impl AsRef<str> for ComponentDependencyType {
     }
 }
 
-/// <p>Contains an error that occurs from a request to disassociate a client device from a core
-/// device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation returns a list of these
-/// errors.</p>
+/// <p>Contains an error that occurs from a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation returns a list of these errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
@@ -5931,8 +5453,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
     }
 }
 
-/// <p>Contains a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation consumes a list of these
-/// requests.</p>
+/// <p>Contains a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateClientDeviceFromCoreDeviceEntry {
@@ -5986,9 +5507,7 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
     }
 }
 
-/// <p>Contains an error that occurs from a request to associate a client device with a core
-/// device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation returns a list of these
-/// errors.</p>
+/// <p>Contains an error that occurs from a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation returns a list of these errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
@@ -6081,8 +5600,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
     }
 }
 
-/// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these
-/// requests.</p>
+/// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateClientDeviceWithCoreDeviceEntry {

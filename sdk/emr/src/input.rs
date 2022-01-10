@@ -50,7 +50,7 @@ pub mod add_instance_fleet_input {
 #[doc(hidden)]
 pub type AddInstanceFleetInputOperationOutputAlias = crate::operation::AddInstanceFleet;
 #[doc(hidden)]
-pub type AddInstanceFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddInstanceFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddInstanceFleetInput {
     /// Consumes the builder and constructs an Operation<[`AddInstanceFleet`](crate::operation::AddInstanceFleet)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl AddInstanceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddInstanceFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +146,7 @@ impl AddInstanceFleetInput {
             "AddInstanceFleet",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -185,12 +185,9 @@ pub mod add_instance_groups_input {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to add.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupConfig>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -229,7 +226,7 @@ pub mod add_instance_groups_input {
 #[doc(hidden)]
 pub type AddInstanceGroupsInputOperationOutputAlias = crate::operation::AddInstanceGroups;
 #[doc(hidden)]
-pub type AddInstanceGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddInstanceGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddInstanceGroupsInput {
     /// Consumes the builder and constructs an Operation<[`AddInstanceGroups`](crate::operation::AddInstanceGroups)>
     #[allow(clippy::let_and_return)]
@@ -240,7 +237,7 @@ impl AddInstanceGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddInstanceGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -325,7 +322,7 @@ impl AddInstanceGroupsInput {
             "AddInstanceGroups",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -358,14 +355,12 @@ pub mod add_job_flow_steps_input {
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
     }
     impl Builder {
-        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-        /// </p>
+        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
         pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_flow_id = Some(input.into());
             self
         }
-        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-        /// </p>
+        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
         pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_flow_id = input;
             self
@@ -374,14 +369,14 @@ pub mod add_job_flow_steps_input {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
+        /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+        /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
@@ -406,7 +401,7 @@ pub mod add_job_flow_steps_input {
 #[doc(hidden)]
 pub type AddJobFlowStepsInputOperationOutputAlias = crate::operation::AddJobFlowSteps;
 #[doc(hidden)]
-pub type AddJobFlowStepsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddJobFlowStepsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddJobFlowStepsInput {
     /// Consumes the builder and constructs an Operation<[`AddJobFlowSteps`](crate::operation::AddJobFlowSteps)>
     #[allow(clippy::let_and_return)]
@@ -417,7 +412,7 @@ impl AddJobFlowStepsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddJobFlowSteps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -502,7 +497,7 @@ impl AddJobFlowStepsInput {
             "AddJobFlowSteps",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -535,14 +530,12 @@ pub mod add_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -551,18 +544,14 @@ pub mod add_tags_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with a resource. Tags are
-        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-        /// characters, and an optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to associate with a resource. Tags are
-        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-        /// characters, and an optional value string with a maximum of 256 characters.</p>
+        /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -585,7 +574,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -596,7 +585,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -675,7 +664,7 @@ impl AddTagsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "emr"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -710,12 +699,12 @@ pub mod cancel_steps_input {
             std::option::Option<crate::model::StepCancellationOption>,
     }
     impl Builder {
-        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -724,16 +713,14 @@ pub mod cancel_steps_input {
         ///
         /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
         ///
-        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-        /// and their states for the specified cluster.</p>
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
         pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_ids.unwrap_or_default();
             v.push(input.into());
             self.step_ids = Some(v);
             self
         }
-        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-        /// and their states for the specified cluster.</p>
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -741,8 +728,7 @@ pub mod cancel_steps_input {
             self.step_ids = input;
             self
         }
-        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-        /// <code>SEND_INTERRUPT</code>.</p>
+        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
         pub fn step_cancellation_option(
             mut self,
             input: crate::model::StepCancellationOption,
@@ -750,8 +736,7 @@ pub mod cancel_steps_input {
             self.step_cancellation_option = Some(input);
             self
         }
-        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-        /// <code>SEND_INTERRUPT</code>.</p>
+        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
         pub fn set_step_cancellation_option(
             mut self,
             input: std::option::Option<crate::model::StepCancellationOption>,
@@ -777,7 +762,7 @@ pub mod cancel_steps_input {
 #[doc(hidden)]
 pub type CancelStepsInputOperationOutputAlias = crate::operation::CancelSteps;
 #[doc(hidden)]
-pub type CancelStepsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelStepsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelStepsInput {
     /// Consumes the builder and constructs an Operation<[`CancelSteps`](crate::operation::CancelSteps)>
     #[allow(clippy::let_and_return)]
@@ -788,7 +773,7 @@ impl CancelStepsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelSteps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -872,7 +857,7 @@ impl CancelStepsInput {
             "CancelSteps",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -915,18 +900,12 @@ pub mod create_security_configuration_input {
             self.name = input;
             self
         }
-        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-        /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-        /// Guide</i>.</p>
+        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-        /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-        /// Guide</i>.</p>
+        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,7 +931,7 @@ pub mod create_security_configuration_input {
 pub type CreateSecurityConfigurationInputOperationOutputAlias =
     crate::operation::CreateSecurityConfiguration;
 #[doc(hidden)]
-pub type CreateSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSecurityConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSecurityConfiguration`](crate::operation::CreateSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -963,7 +942,7 @@ impl CreateSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1049,7 +1028,7 @@ impl CreateSecurityConfigurationInput {
             "CreateSecurityConfiguration",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1123,14 +1102,12 @@ pub mod create_studio_input {
             self.auth_mode = input;
             self
         }
-        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-        /// Studio.</p>
+        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-        /// Studio.</p>
+        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -1139,18 +1116,14 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-        /// specified subnets.</p>
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-        /// specified subnets.</p>
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1158,35 +1131,27 @@ pub mod create_studio_input {
             self.subnet_ids = input;
             self
         }
-        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-        /// session policies.</p>
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
         pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role = Some(input.into());
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-        /// session policies.</p>
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
         pub fn set_user_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_role = input;
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-        /// allows outbound network traffic to resources in the Engine security group, and it must be
-        /// in the same VPC specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn workspace_security_group_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -1194,9 +1159,7 @@ pub mod create_studio_input {
             self.workspace_security_group_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-        /// allows outbound network traffic to resources in the Engine security group, and it must be
-        /// in the same VPC specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn set_workspace_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1204,16 +1167,12 @@ pub mod create_studio_input {
             self.workspace_security_group_id = input;
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-        /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-        /// specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn engine_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_security_group_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-        /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-        /// specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn set_engine_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1264,18 +1223,14 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-        /// consist of a required key string with a maximum of 128 characters, and an optional value
-        /// string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-        /// consist of a required key string with a maximum of 128 characters, and an optional value
-        /// string with a maximum of 256 characters.</p>
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1311,7 +1266,7 @@ pub mod create_studio_input {
 #[doc(hidden)]
 pub type CreateStudioInputOperationOutputAlias = crate::operation::CreateStudio;
 #[doc(hidden)]
-pub type CreateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudio`](crate::operation::CreateStudio)>
     #[allow(clippy::let_and_return)]
@@ -1322,7 +1277,7 @@ impl CreateStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1406,7 +1361,7 @@ impl CreateStudioInput {
             "CreateStudio",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1452,28 +1407,22 @@ pub mod create_studio_session_mapping_input {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1494,14 +1443,12 @@ pub mod create_studio_session_mapping_input {
             self.identity_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
         pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1530,7 +1477,7 @@ pub mod create_studio_session_mapping_input {
 pub type CreateStudioSessionMappingInputOperationOutputAlias =
     crate::operation::CreateStudioSessionMapping;
 #[doc(hidden)]
-pub type CreateStudioSessionMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStudioSessionMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioSessionMappingInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudioSessionMapping`](crate::operation::CreateStudioSessionMapping)>
     #[allow(clippy::let_and_return)]
@@ -1541,7 +1488,7 @@ impl CreateStudioSessionMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStudioSessionMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1627,7 +1574,7 @@ impl CreateStudioSessionMappingInput {
             "CreateStudioSessionMapping",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1684,7 +1631,7 @@ pub mod delete_security_configuration_input {
 pub type DeleteSecurityConfigurationInputOperationOutputAlias =
     crate::operation::DeleteSecurityConfiguration;
 #[doc(hidden)]
-pub type DeleteSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSecurityConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSecurityConfiguration`](crate::operation::DeleteSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1695,7 +1642,7 @@ impl DeleteSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1781,7 +1728,7 @@ impl DeleteSecurityConfigurationInput {
             "DeleteSecurityConfiguration",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1839,7 +1786,7 @@ pub mod delete_studio_input {
 #[doc(hidden)]
 pub type DeleteStudioInputOperationOutputAlias = crate::operation::DeleteStudio;
 #[doc(hidden)]
-pub type DeleteStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudio`](crate::operation::DeleteStudio)>
     #[allow(clippy::let_and_return)]
@@ -1850,7 +1797,7 @@ impl DeleteStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1934,7 +1881,7 @@ impl DeleteStudioInput {
             "DeleteStudio",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1979,30 +1926,22 @@ pub mod delete_studio_session_mapping_input {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2043,7 +1982,7 @@ pub mod delete_studio_session_mapping_input {
 pub type DeleteStudioSessionMappingInputOperationOutputAlias =
     crate::operation::DeleteStudioSessionMapping;
 #[doc(hidden)]
-pub type DeleteStudioSessionMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStudioSessionMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioSessionMappingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioSessionMapping`](crate::operation::DeleteStudioSessionMapping)>
     #[allow(clippy::let_and_return)]
@@ -2054,7 +1993,7 @@ impl DeleteStudioSessionMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudioSessionMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2140,7 +2079,7 @@ impl DeleteStudioSessionMappingInput {
             "DeleteStudioSessionMapping",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2198,7 +2137,7 @@ pub mod describe_cluster_input {
 #[doc(hidden)]
 pub type DescribeClusterInputOperationOutputAlias = crate::operation::DescribeCluster;
 #[doc(hidden)]
-pub type DescribeClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(clippy::let_and_return)]
@@ -2209,7 +2148,7 @@ impl DescribeClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2294,7 +2233,7 @@ impl DescribeClusterInput {
             "DescribeCluster",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2380,12 +2319,9 @@ pub mod describe_job_flows_input {
         /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
         ///
         /// <p>Return only job flows whose state is contained in this list.</p>
-        pub fn job_flow_states(
-            mut self,
-            input: impl Into<crate::model::JobFlowExecutionState>,
-        ) -> Self {
+        pub fn job_flow_states(mut self, input: crate::model::JobFlowExecutionState) -> Self {
             let mut v = self.job_flow_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_flow_states = Some(v);
             self
         }
@@ -2416,7 +2352,7 @@ pub mod describe_job_flows_input {
 #[doc(hidden)]
 pub type DescribeJobFlowsInputOperationOutputAlias = crate::operation::DescribeJobFlows;
 #[doc(hidden)]
-pub type DescribeJobFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobFlowsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobFlows`](crate::operation::DescribeJobFlows)>
     #[allow(clippy::let_and_return)]
@@ -2427,7 +2363,7 @@ impl DescribeJobFlowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobFlows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2512,7 +2448,7 @@ impl DescribeJobFlowsInput {
             "DescribeJobFlows",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2574,7 +2510,7 @@ pub mod describe_notebook_execution_input {
 pub type DescribeNotebookExecutionInputOperationOutputAlias =
     crate::operation::DescribeNotebookExecution;
 #[doc(hidden)]
-pub type DescribeNotebookExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNotebookExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotebookExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotebookExecution`](crate::operation::DescribeNotebookExecution)>
     #[allow(clippy::let_and_return)]
@@ -2585,7 +2521,7 @@ impl DescribeNotebookExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotebookExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2672,7 +2608,7 @@ impl DescribeNotebookExecutionInput {
             "DescribeNotebookExecution",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2757,7 +2693,7 @@ pub mod describe_release_label_input {
 #[doc(hidden)]
 pub type DescribeReleaseLabelInputOperationOutputAlias = crate::operation::DescribeReleaseLabel;
 #[doc(hidden)]
-pub type DescribeReleaseLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReleaseLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReleaseLabelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReleaseLabel`](crate::operation::DescribeReleaseLabel)>
     #[allow(clippy::let_and_return)]
@@ -2768,7 +2704,7 @@ impl DescribeReleaseLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReleaseLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2855,7 +2791,7 @@ impl DescribeReleaseLabelInput {
             "DescribeReleaseLabel",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2912,7 +2848,8 @@ pub mod describe_security_configuration_input {
 pub type DescribeSecurityConfigurationInputOperationOutputAlias =
     crate::operation::DescribeSecurityConfiguration;
 #[doc(hidden)]
-pub type DescribeSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSecurityConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSecurityConfiguration`](crate::operation::DescribeSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2923,7 +2860,7 @@ impl DescribeSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3009,7 +2946,7 @@ impl DescribeSecurityConfigurationInput {
             "DescribeSecurityConfiguration",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3079,7 +3016,7 @@ pub mod describe_step_input {
 #[doc(hidden)]
 pub type DescribeStepInputOperationOutputAlias = crate::operation::DescribeStep;
 #[doc(hidden)]
-pub type DescribeStepInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStepInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStepInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStep`](crate::operation::DescribeStep)>
     #[allow(clippy::let_and_return)]
@@ -3090,7 +3027,7 @@ impl DescribeStepInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStep,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3174,7 +3111,7 @@ impl DescribeStepInput {
             "DescribeStep",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3232,7 +3169,7 @@ pub mod describe_studio_input {
 #[doc(hidden)]
 pub type DescribeStudioInputOperationOutputAlias = crate::operation::DescribeStudio;
 #[doc(hidden)]
-pub type DescribeStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStudioInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStudio`](crate::operation::DescribeStudio)>
     #[allow(clippy::let_and_return)]
@@ -3243,7 +3180,7 @@ impl DescribeStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3328,7 +3265,7 @@ impl DescribeStudioInput {
             "DescribeStudio",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3387,7 +3324,7 @@ pub mod get_auto_termination_policy_input {
 pub type GetAutoTerminationPolicyInputOperationOutputAlias =
     crate::operation::GetAutoTerminationPolicy;
 #[doc(hidden)]
-pub type GetAutoTerminationPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAutoTerminationPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAutoTerminationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetAutoTerminationPolicy`](crate::operation::GetAutoTerminationPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3398,7 +3335,7 @@ impl GetAutoTerminationPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAutoTerminationPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3485,7 +3422,7 @@ impl GetAutoTerminationPolicyInput {
             "GetAutoTerminationPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3530,7 +3467,8 @@ pub mod get_block_public_access_configuration_input {
 pub type GetBlockPublicAccessConfigurationInputOperationOutputAlias =
     crate::operation::GetBlockPublicAccessConfiguration;
 #[doc(hidden)]
-pub type GetBlockPublicAccessConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBlockPublicAccessConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlockPublicAccessConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetBlockPublicAccessConfiguration`](crate::operation::GetBlockPublicAccessConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3541,7 +3479,7 @@ impl GetBlockPublicAccessConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBlockPublicAccessConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3627,7 +3565,7 @@ impl GetBlockPublicAccessConfigurationInput {
             "GetBlockPublicAccessConfiguration",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3651,14 +3589,12 @@ pub mod get_managed_scaling_policy_input {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-        /// </p>
+        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-        /// </p>
+        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3680,7 +3616,7 @@ pub mod get_managed_scaling_policy_input {
 pub type GetManagedScalingPolicyInputOperationOutputAlias =
     crate::operation::GetManagedScalingPolicy;
 #[doc(hidden)]
-pub type GetManagedScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetManagedScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetManagedScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetManagedScalingPolicy`](crate::operation::GetManagedScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3691,7 +3627,7 @@ impl GetManagedScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetManagedScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3778,7 +3714,7 @@ impl GetManagedScalingPolicyInput {
             "GetManagedScalingPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3823,28 +3759,22 @@ pub mod get_studio_session_mapping_input {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3885,7 +3815,7 @@ pub mod get_studio_session_mapping_input {
 pub type GetStudioSessionMappingInputOperationOutputAlias =
     crate::operation::GetStudioSessionMapping;
 #[doc(hidden)]
-pub type GetStudioSessionMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStudioSessionMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioSessionMappingInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioSessionMapping`](crate::operation::GetStudioSessionMapping)>
     #[allow(clippy::let_and_return)]
@@ -3896,7 +3826,7 @@ impl GetStudioSessionMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStudioSessionMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3983,7 +3913,7 @@ impl GetStudioSessionMappingInput {
             "GetStudioSessionMapping",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4053,7 +3983,7 @@ pub mod list_bootstrap_actions_input {
 #[doc(hidden)]
 pub type ListBootstrapActionsInputOperationOutputAlias = crate::operation::ListBootstrapActions;
 #[doc(hidden)]
-pub type ListBootstrapActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBootstrapActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBootstrapActionsInput {
     /// Consumes the builder and constructs an Operation<[`ListBootstrapActions`](crate::operation::ListBootstrapActions)>
     #[allow(clippy::let_and_return)]
@@ -4064,7 +3994,7 @@ impl ListBootstrapActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBootstrapActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4151,7 +4081,7 @@ impl ListBootstrapActionsInput {
             "ListBootstrapActions",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4217,9 +4147,9 @@ pub mod list_clusters_input {
         /// To override the contents of this collection use [`set_cluster_states`](Self::set_cluster_states).
         ///
         /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-        pub fn cluster_states(mut self, input: impl Into<crate::model::ClusterState>) -> Self {
+        pub fn cluster_states(mut self, input: crate::model::ClusterState) -> Self {
             let mut v = self.cluster_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_states = Some(v);
             self
         }
@@ -4260,7 +4190,7 @@ pub mod list_clusters_input {
 #[doc(hidden)]
 pub type ListClustersInputOperationOutputAlias = crate::operation::ListClusters;
 #[doc(hidden)]
-pub type ListClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(clippy::let_and_return)]
@@ -4271,7 +4201,7 @@ impl ListClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4355,7 +4285,7 @@ impl ListClustersInput {
             "ListClusters",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4425,7 +4355,7 @@ pub mod list_instance_fleets_input {
 #[doc(hidden)]
 pub type ListInstanceFleetsInputOperationOutputAlias = crate::operation::ListInstanceFleets;
 #[doc(hidden)]
-pub type ListInstanceFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInstanceFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstanceFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListInstanceFleets`](crate::operation::ListInstanceFleets)>
     #[allow(clippy::let_and_return)]
@@ -4436,7 +4366,7 @@ impl ListInstanceFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInstanceFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4521,7 +4451,7 @@ impl ListInstanceFleetsInput {
             "ListInstanceFleets",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4591,7 +4521,7 @@ pub mod list_instance_groups_input {
 #[doc(hidden)]
 pub type ListInstanceGroupsInputOperationOutputAlias = crate::operation::ListInstanceGroups;
 #[doc(hidden)]
-pub type ListInstanceGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInstanceGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstanceGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListInstanceGroups`](crate::operation::ListInstanceGroups)>
     #[allow(clippy::let_and_return)]
@@ -4602,7 +4532,7 @@ impl ListInstanceGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInstanceGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4687,7 +4617,7 @@ impl ListInstanceGroupsInput {
             "ListInstanceGroups",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4754,12 +4684,9 @@ pub mod list_instances_input {
         /// To override the contents of this collection use [`set_instance_group_types`](Self::set_instance_group_types).
         ///
         /// <p>The type of instance group for which to list the instances.</p>
-        pub fn instance_group_types(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupType>,
-        ) -> Self {
+        pub fn instance_group_types(mut self, input: crate::model::InstanceGroupType) -> Self {
             let mut v = self.instance_group_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_group_types = Some(v);
             self
         }
@@ -4801,16 +4728,14 @@ pub mod list_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_states`](Self::set_instance_states).
         ///
-        /// <p>A list of instance states that will filter the instances returned with this
-        /// request.</p>
-        pub fn instance_states(mut self, input: impl Into<crate::model::InstanceState>) -> Self {
+        /// <p>A list of instance states that will filter the instances returned with this request.</p>
+        pub fn instance_states(mut self, input: crate::model::InstanceState) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_states = Some(v);
             self
         }
-        /// <p>A list of instance states that will filter the instances returned with this
-        /// request.</p>
+        /// <p>A list of instance states that will filter the instances returned with this request.</p>
         pub fn set_instance_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
@@ -4850,7 +4775,7 @@ pub mod list_instances_input {
 #[doc(hidden)]
 pub type ListInstancesInputOperationOutputAlias = crate::operation::ListInstances;
 #[doc(hidden)]
-pub type ListInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListInstances`](crate::operation::ListInstances)>
     #[allow(clippy::let_and_return)]
@@ -4861,7 +4786,7 @@ impl ListInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4945,7 +4870,7 @@ impl ListInstancesInput {
             "ListInstances",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4993,55 +4918,16 @@ pub mod list_notebook_executions_input {
         }
         /// <p>The status filter for listing notebook executions.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> indicates that the execution is starting on the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> indicates that the execution is being processed by the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHING</code> indicates that execution processing is in the final
-        /// stages.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHED</code> indicates that the execution has completed without
-        /// error.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> indicates that the execution failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_PENDING</code> indicates that the cluster has received a
-        /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> indicates that the execution stopped because of a
-        /// <code>StopNotebookExecution</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::NotebookExecutionStatus) -> Self {
             self.status = Some(input);
@@ -5049,55 +4935,16 @@ pub mod list_notebook_executions_input {
         }
         /// <p>The status filter for listing notebook executions.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> indicates that the execution is starting on the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> indicates that the execution is being processed by the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHING</code> indicates that execution processing is in the final
-        /// stages.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHED</code> indicates that the execution has completed without
-        /// error.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> indicates that the execution failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_PENDING</code> indicates that the cluster has received a
-        /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> indicates that the execution stopped because of a
-        /// <code>StopNotebookExecution</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -5106,40 +4953,32 @@ pub mod list_notebook_executions_input {
             self.status = input;
             self
         }
-        /// <p>The beginning of time range filter for listing notebook executions. The default is the
-        /// timestamp of 30 days ago.</p>
+        /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
         pub fn from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from = Some(input);
             self
         }
-        /// <p>The beginning of time range filter for listing notebook executions. The default is the
-        /// timestamp of 30 days ago.</p>
+        /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
         pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.from = input;
             self
         }
-        /// <p>The end of time range filter for listing notebook executions. The default is the current
-        /// timestamp.</p>
+        /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
         pub fn to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to = Some(input);
             self
         }
-        /// <p>The end of time range filter for listing notebook executions. The default is the current
-        /// timestamp.</p>
+        /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
         pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.to = input;
             self
         }
-        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-        /// call.</p>
+        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-        /// call.</p>
+        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5164,7 +5003,7 @@ pub mod list_notebook_executions_input {
 #[doc(hidden)]
 pub type ListNotebookExecutionsInputOperationOutputAlias = crate::operation::ListNotebookExecutions;
 #[doc(hidden)]
-pub type ListNotebookExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNotebookExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotebookExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListNotebookExecutions`](crate::operation::ListNotebookExecutions)>
     #[allow(clippy::let_and_return)]
@@ -5175,7 +5014,7 @@ impl ListNotebookExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotebookExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5262,7 +5101,7 @@ impl ListNotebookExecutionsInput {
             "ListNotebookExecutions",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5347,7 +5186,7 @@ pub mod list_release_labels_input {
 #[doc(hidden)]
 pub type ListReleaseLabelsInputOperationOutputAlias = crate::operation::ListReleaseLabels;
 #[doc(hidden)]
-pub type ListReleaseLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReleaseLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReleaseLabelsInput {
     /// Consumes the builder and constructs an Operation<[`ListReleaseLabels`](crate::operation::ListReleaseLabels)>
     #[allow(clippy::let_and_return)]
@@ -5358,7 +5197,7 @@ impl ListReleaseLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReleaseLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5443,7 +5282,7 @@ impl ListReleaseLabelsInput {
             "ListReleaseLabels",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5502,7 +5341,7 @@ pub mod list_security_configurations_input {
 pub type ListSecurityConfigurationsInputOperationOutputAlias =
     crate::operation::ListSecurityConfigurations;
 #[doc(hidden)]
-pub type ListSecurityConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSecurityConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecurityConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityConfigurations`](crate::operation::ListSecurityConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -5513,7 +5352,7 @@ impl ListSecurityConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5600,7 +5439,7 @@ impl ListSecurityConfigurationsInput {
             "ListSecurityConfigurations",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5650,9 +5489,9 @@ pub mod list_steps_input {
         /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
         ///
         /// <p>The filter to limit the step list based on certain states.</p>
-        pub fn step_states(mut self, input: impl Into<crate::model::StepState>) -> Self {
+        pub fn step_states(mut self, input: crate::model::StepState) -> Self {
             let mut v = self.step_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.step_states = Some(v);
             self
         }
@@ -5668,18 +5507,14 @@ pub mod list_steps_input {
         ///
         /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
         ///
-        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-        /// array.</p>
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
         pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_ids.unwrap_or_default();
             v.push(input.into());
             self.step_ids = Some(v);
             self
         }
-        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-        /// array.</p>
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5714,7 +5549,7 @@ pub mod list_steps_input {
 #[doc(hidden)]
 pub type ListStepsInputOperationOutputAlias = crate::operation::ListSteps;
 #[doc(hidden)]
-pub type ListStepsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStepsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStepsInput {
     /// Consumes the builder and constructs an Operation<[`ListSteps`](crate::operation::ListSteps)>
     #[allow(clippy::let_and_return)]
@@ -5725,7 +5560,7 @@ impl ListStepsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSteps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5807,7 +5642,7 @@ impl ListStepsInput {
                     "ListSteps",
                     "emr",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5865,7 +5700,7 @@ pub mod list_studios_input {
 #[doc(hidden)]
 pub type ListStudiosInputOperationOutputAlias = crate::operation::ListStudios;
 #[doc(hidden)]
-pub type ListStudiosInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStudiosInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudiosInput {
     /// Consumes the builder and constructs an Operation<[`ListStudios`](crate::operation::ListStudios)>
     #[allow(clippy::let_and_return)]
@@ -5876,7 +5711,7 @@ impl ListStudiosInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudios,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5960,7 +5795,7 @@ impl ListStudiosInput {
             "ListStudios",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6004,14 +5839,12 @@ pub mod list_studio_session_mappings_input {
             self.studio_id = input;
             self
         }
-        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-        /// results include session mapping details for both users and groups.</p>
+        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
         }
-        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-        /// results include session mapping details for both users and groups.</p>
+        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -6048,7 +5881,7 @@ pub mod list_studio_session_mappings_input {
 pub type ListStudioSessionMappingsInputOperationOutputAlias =
     crate::operation::ListStudioSessionMappings;
 #[doc(hidden)]
-pub type ListStudioSessionMappingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStudioSessionMappingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudioSessionMappingsInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioSessionMappings`](crate::operation::ListStudioSessionMappings)>
     #[allow(clippy::let_and_return)]
@@ -6059,7 +5892,7 @@ impl ListStudioSessionMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudioSessionMappings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6146,7 +5979,7 @@ impl ListStudioSessionMappingsInput {
             "ListStudioSessionMappings",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6189,12 +6022,12 @@ pub mod modify_cluster_input {
             self.cluster_id = input;
             self
         }
-        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
         pub fn step_concurrency_level(mut self, input: i32) -> Self {
             self.step_concurrency_level = Some(input);
             self
         }
-        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.step_concurrency_level = input;
             self
@@ -6216,7 +6049,7 @@ pub mod modify_cluster_input {
 #[doc(hidden)]
 pub type ModifyClusterInputOperationOutputAlias = crate::operation::ModifyCluster;
 #[doc(hidden)]
-pub type ModifyClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterInput {
     /// Consumes the builder and constructs an Operation<[`ModifyCluster`](crate::operation::ModifyCluster)>
     #[allow(clippy::let_and_return)]
@@ -6227,7 +6060,7 @@ impl ModifyClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6311,7 +6144,7 @@ impl ModifyClusterInput {
             "ModifyCluster",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6384,7 +6217,7 @@ pub mod modify_instance_fleet_input {
 #[doc(hidden)]
 pub type ModifyInstanceFleetInputOperationOutputAlias = crate::operation::ModifyInstanceFleet;
 #[doc(hidden)]
-pub type ModifyInstanceFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyInstanceFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyInstanceFleetInput {
     /// Consumes the builder and constructs an Operation<[`ModifyInstanceFleet`](crate::operation::ModifyInstanceFleet)>
     #[allow(clippy::let_and_return)]
@@ -6395,7 +6228,7 @@ impl ModifyInstanceFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyInstanceFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6480,7 +6313,7 @@ impl ModifyInstanceFleetInput {
             "ModifyInstanceFleet",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6529,12 +6362,9 @@ pub mod modify_instance_groups_input {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to change.</p>
-        pub fn instance_groups(
-            mut self,
-            input: impl Into<crate::model::InstanceGroupModifyConfig>,
-        ) -> Self {
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupModifyConfig) -> Self {
             let mut v = self.instance_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_groups = Some(v);
             self
         }
@@ -6563,7 +6393,7 @@ pub mod modify_instance_groups_input {
 #[doc(hidden)]
 pub type ModifyInstanceGroupsInputOperationOutputAlias = crate::operation::ModifyInstanceGroups;
 #[doc(hidden)]
-pub type ModifyInstanceGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyInstanceGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyInstanceGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ModifyInstanceGroups`](crate::operation::ModifyInstanceGroups)>
     #[allow(clippy::let_and_return)]
@@ -6574,7 +6404,7 @@ impl ModifyInstanceGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyInstanceGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6661,7 +6491,7 @@ impl ModifyInstanceGroupsInput {
             "ModifyInstanceGroups",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6695,26 +6525,22 @@ pub mod put_auto_scaling_policy_input {
         pub(crate) auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
     }
     impl Builder {
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
-        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-        /// applied.</p>
+        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
         pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_group_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-        /// applied.</p>
+        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
         pub fn set_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6753,7 +6579,7 @@ pub mod put_auto_scaling_policy_input {
 #[doc(hidden)]
 pub type PutAutoScalingPolicyInputOperationOutputAlias = crate::operation::PutAutoScalingPolicy;
 #[doc(hidden)]
-pub type PutAutoScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAutoScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAutoScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutAutoScalingPolicy`](crate::operation::PutAutoScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -6764,7 +6590,7 @@ impl PutAutoScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAutoScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6851,7 +6677,7 @@ impl PutAutoScalingPolicyInput {
             "PutAutoScalingPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6929,7 +6755,7 @@ pub mod put_auto_termination_policy_input {
 pub type PutAutoTerminationPolicyInputOperationOutputAlias =
     crate::operation::PutAutoTerminationPolicy;
 #[doc(hidden)]
-pub type PutAutoTerminationPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAutoTerminationPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAutoTerminationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutAutoTerminationPolicy`](crate::operation::PutAutoTerminationPolicy)>
     #[allow(clippy::let_and_return)]
@@ -6940,7 +6766,7 @@ impl PutAutoTerminationPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAutoTerminationPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7027,7 +6853,7 @@ impl PutAutoTerminationPolicyInput {
             "PutAutoTerminationPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7060,20 +6886,8 @@ pub mod put_block_public_access_configuration_input {
             std::option::Option<crate::model::BlockPublicAccessConfiguration>,
     }
     impl Builder {
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating
-        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn block_public_access_configuration(
             mut self,
@@ -7082,20 +6896,8 @@ pub mod put_block_public_access_configuration_input {
             self.block_public_access_configuration = Some(input);
             self
         }
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating
-        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn set_block_public_access_configuration(
             mut self,
@@ -7121,7 +6923,8 @@ pub mod put_block_public_access_configuration_input {
 pub type PutBlockPublicAccessConfigurationInputOperationOutputAlias =
     crate::operation::PutBlockPublicAccessConfiguration;
 #[doc(hidden)]
-pub type PutBlockPublicAccessConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutBlockPublicAccessConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutBlockPublicAccessConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutBlockPublicAccessConfiguration`](crate::operation::PutBlockPublicAccessConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -7132,7 +6935,7 @@ impl PutBlockPublicAccessConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBlockPublicAccessConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7218,7 +7021,7 @@ impl PutBlockPublicAccessConfigurationInput {
             "PutBlockPublicAccessConfiguration",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7292,7 +7095,7 @@ pub mod put_managed_scaling_policy_input {
 pub type PutManagedScalingPolicyInputOperationOutputAlias =
     crate::operation::PutManagedScalingPolicy;
 #[doc(hidden)]
-pub type PutManagedScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutManagedScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutManagedScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutManagedScalingPolicy`](crate::operation::PutManagedScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7303,7 +7106,7 @@ impl PutManagedScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutManagedScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7390,7 +7193,7 @@ impl PutManagedScalingPolicyInput {
             "PutManagedScalingPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7423,14 +7226,12 @@ pub mod remove_auto_scaling_policy_input {
         pub(crate) instance_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -7466,7 +7267,7 @@ pub mod remove_auto_scaling_policy_input {
 pub type RemoveAutoScalingPolicyInputOperationOutputAlias =
     crate::operation::RemoveAutoScalingPolicy;
 #[doc(hidden)]
-pub type RemoveAutoScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAutoScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAutoScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAutoScalingPolicy`](crate::operation::RemoveAutoScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7477,7 +7278,7 @@ impl RemoveAutoScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAutoScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7564,7 +7365,7 @@ impl RemoveAutoScalingPolicyInput {
             "RemoveAutoScalingPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7623,7 +7424,7 @@ pub mod remove_auto_termination_policy_input {
 pub type RemoveAutoTerminationPolicyInputOperationOutputAlias =
     crate::operation::RemoveAutoTerminationPolicy;
 #[doc(hidden)]
-pub type RemoveAutoTerminationPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAutoTerminationPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAutoTerminationPolicyInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAutoTerminationPolicy`](crate::operation::RemoveAutoTerminationPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7634,7 +7435,7 @@ impl RemoveAutoTerminationPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAutoTerminationPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7720,7 +7521,7 @@ impl RemoveAutoTerminationPolicyInput {
             "RemoveAutoTerminationPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7752,14 +7553,12 @@ pub mod remove_managed_scaling_policy_input {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-        /// </p>
+        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-        /// </p>
+        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -7781,7 +7580,7 @@ pub mod remove_managed_scaling_policy_input {
 pub type RemoveManagedScalingPolicyInputOperationOutputAlias =
     crate::operation::RemoveManagedScalingPolicy;
 #[doc(hidden)]
-pub type RemoveManagedScalingPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveManagedScalingPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveManagedScalingPolicyInput {
     /// Consumes the builder and constructs an Operation<[`RemoveManagedScalingPolicy`](crate::operation::RemoveManagedScalingPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7792,7 +7591,7 @@ impl RemoveManagedScalingPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveManagedScalingPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7878,7 +7677,7 @@ impl RemoveManagedScalingPolicyInput {
             "RemoveManagedScalingPolicy",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7911,14 +7710,12 @@ pub mod remove_tags_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -7959,7 +7756,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -7970,7 +7767,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8054,7 +7851,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8127,28 +7924,22 @@ pub mod run_job_flow_input {
             self.name = input;
             self
         }
-        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-        /// provided, logs are not created.</p>
+        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
         pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_uri = Some(input.into());
             self
         }
-        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-        /// provided, logs are not created.</p>
+        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
         }
-        /// <p>The KMS key used for encrypting log files. If a value is not
-        /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-        /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+        /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
         pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_encryption_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key used for encrypting log files. If a value is not
-        /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-        /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+        /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
         pub fn set_log_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8169,38 +7960,22 @@ pub mod run_job_flow_input {
             self.additional_info = input;
             self
         }
-        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-        /// <code>CustomAmiID</code>.</p>
+        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
         pub fn ami_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.ami_version = Some(input.into());
             self
         }
-        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-        /// <code>CustomAmiID</code>.</p>
+        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
         pub fn set_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_version = input;
             self
         }
-        /// <p>The Amazon EMR release label, which determines the version of open-source application
-        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-        /// information about Amazon EMR release versions and included application versions and
-        /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-        /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-        /// <code>AmiVersion</code>.</p>
+        /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
         pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.release_label = Some(input.into());
             self
         }
-        /// <p>The Amazon EMR release label, which determines the version of open-source application
-        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-        /// information about Amazon EMR release versions and included application versions and
-        /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-        /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-        /// <code>AmiVersion</code>.</p>
+        /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8226,9 +8001,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>A list of steps to run.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -8245,12 +8020,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
         ///
         /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-        pub fn bootstrap_actions(
-            mut self,
-            input: impl Into<crate::model::BootstrapActionConfig>,
-        ) -> Self {
+        pub fn bootstrap_actions(mut self, input: crate::model::BootstrapActionConfig) -> Self {
             let mut v = self.bootstrap_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bootstrap_actions = Some(v);
             self
         }
@@ -8267,19 +8039,12 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_supported_products`](Self::set_supported_products).
         ///
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
         /// </ul>
         pub fn supported_products(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_products.unwrap_or_default();
@@ -8288,19 +8053,12 @@ pub mod run_job_flow_input {
             self
         }
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
         /// </ul>
         pub fn set_supported_products(
             mut self,
@@ -8314,87 +8072,41 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_new_supported_products`](Self::set_new_supported_products).
         ///
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use with the job flow that
-        /// accepts a user argument list. EMR accepts and forwards the argument list to the
-        /// corresponding installation script as bootstrap action arguments. For more information, see
-        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-        /// values are:</p>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hue"- launch the cluster with Hue installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-        /// installed.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+        /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+        /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+        /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+        /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+        /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+        /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
         /// </ul>
         pub fn new_supported_products(
             mut self,
-            input: impl Into<crate::model::SupportedProductConfig>,
+            input: crate::model::SupportedProductConfig,
         ) -> Self {
             let mut v = self.new_supported_products.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.new_supported_products = Some(v);
             self
         }
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use with the job flow that
-        /// accepts a user argument list. EMR accepts and forwards the argument list to the
-        /// corresponding installation script as bootstrap action arguments. For more information, see
-        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-        /// values are:</p>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hue"- launch the cluster with Hue installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-        /// installed.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+        /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+        /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+        /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+        /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+        /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+        /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
         /// </ul>
         pub fn set_new_supported_products(
             mut self,
@@ -8407,20 +8119,14 @@ pub mod run_job_flow_input {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-        /// for Amazon EMR to install and configure when launching the cluster. For a list of
-        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-        /// Guide</a>.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
-        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-        /// for Amazon EMR to install and configure when launching the cluster. For a list of
-        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-        /// Guide</a>.</p>
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -8432,16 +8138,14 @@ pub mod run_job_flow_input {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-        /// cluster you are creating.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
-        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-        /// cluster you are creating.</p>
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -8461,18 +8165,12 @@ pub mod run_job_flow_input {
             self.visible_to_all_users = input;
             self
         }
-        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-        /// instances of the cluster assume this role. The default role is
-        /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-        /// already created it using the CLI or console.</p>
+        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
         pub fn job_flow_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_flow_role = Some(input.into());
             self
         }
-        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-        /// instances of the cluster assume this role. The default role is
-        /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-        /// already created it using the CLI or console.</p>
+        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
         pub fn set_job_flow_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8480,14 +8178,12 @@ pub mod run_job_flow_input {
             self.job_flow_role = input;
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-        /// your behalf.</p>
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-        /// your behalf.</p>
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -8497,9 +8193,9 @@ pub mod run_job_flow_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8524,18 +8220,12 @@ pub mod run_job_flow_input {
             self.security_configuration = input;
             self
         }
-        /// <p>An IAM role for automatic scaling policies. The default role is
-        /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-        /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-        /// group.</p>
+        /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
         pub fn auto_scaling_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_scaling_role = Some(input.into());
             self
         }
-        /// <p>An IAM role for automatic scaling policies. The default role is
-        /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-        /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-        /// group.</p>
+        /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
         pub fn set_auto_scaling_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8543,34 +8233,12 @@ pub mod run_job_flow_input {
             self.auto_scaling_role = input;
             self
         }
-        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-        /// scale-in activity occurs or an instance group is resized.
-        /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-        /// the instance-hour boundary, regardless of when the request to terminate the instance was
-        /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-        /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-        /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-        /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-        /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-        /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-        /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-        /// earlier than 5.1.0.</p>
+        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
         pub fn scale_down_behavior(mut self, input: crate::model::ScaleDownBehavior) -> Self {
             self.scale_down_behavior = Some(input);
             self
         }
-        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-        /// scale-in activity occurs or an instance group is resized.
-        /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-        /// the instance-hour boundary, regardless of when the request to terminate the instance was
-        /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-        /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-        /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-        /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-        /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-        /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-        /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-        /// earlier than 5.1.0.</p>
+        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
         pub fn set_scale_down_behavior(
             mut self,
             input: std::option::Option<crate::model::ScaleDownBehavior>,
@@ -8578,30 +8246,14 @@ pub mod run_job_flow_input {
             self.scale_down_behavior = input;
             self
         }
-        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-        /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-        /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-        /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-        /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-        /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-        /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-        /// AMI</a>. </p>
+        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
         pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_ami_id = Some(input.into());
             self
         }
-        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-        /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-        /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-        /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-        /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-        /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-        /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-        /// AMI</a>. </p>
+        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
         pub fn set_custom_ami_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8609,32 +8261,22 @@ pub mod run_job_flow_input {
             self.custom_ami_id = input;
             self
         }
-        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
             self.ebs_root_volume_size = Some(input);
             self
         }
-        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn set_ebs_root_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.ebs_root_volume_size = input;
             self
         }
-        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-        /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-        /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-        /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-        /// and all updates must be applied manually.</p>
+        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
         pub fn repo_upgrade_on_boot(mut self, input: crate::model::RepoUpgradeOnBoot) -> Self {
             self.repo_upgrade_on_boot = Some(input);
             self
         }
-        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-        /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-        /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-        /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-        /// and all updates must be applied manually.</p>
+        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
         pub fn set_repo_upgrade_on_boot(
             mut self,
             input: std::option::Option<crate::model::RepoUpgradeOnBoot>,
@@ -8642,16 +8284,12 @@ pub mod run_job_flow_input {
             self.repo_upgrade_on_boot = input;
             self
         }
-        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-        /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-        /// in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn kerberos_attributes(mut self, input: crate::model::KerberosAttributes) -> Self {
             self.kerberos_attributes = Some(input);
             self
         }
-        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-        /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-        /// in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn set_kerberos_attributes(
             mut self,
             input: std::option::Option<crate::model::KerberosAttributes>,
@@ -8659,14 +8297,12 @@ pub mod run_job_flow_input {
             self.kerberos_attributes = input;
             self
         }
-        /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-        /// <code>1</code>. The maximum value is <code>256</code>.</p>
+        /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
         pub fn step_concurrency_level(mut self, input: i32) -> Self {
             self.step_concurrency_level = Some(input);
             self
         }
-        /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-        /// <code>1</code>. The maximum value is <code>256</code>.</p>
+        /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.step_concurrency_level = input;
             self
@@ -8691,10 +8327,10 @@ pub mod run_job_flow_input {
         /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
         pub fn placement_group_configs(
             mut self,
-            input: impl Into<crate::model::PlacementGroupConfig>,
+            input: crate::model::PlacementGroupConfig,
         ) -> Self {
             let mut v = self.placement_group_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_group_configs = Some(v);
             self
         }
@@ -8765,7 +8401,7 @@ pub mod run_job_flow_input {
 #[doc(hidden)]
 pub type RunJobFlowInputOperationOutputAlias = crate::operation::RunJobFlow;
 #[doc(hidden)]
-pub type RunJobFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RunJobFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RunJobFlowInput {
     /// Consumes the builder and constructs an Operation<[`RunJobFlow`](crate::operation::RunJobFlow)>
     #[allow(clippy::let_and_return)]
@@ -8776,7 +8412,7 @@ impl RunJobFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RunJobFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8860,7 +8496,7 @@ impl RunJobFlowInput {
             "RunJobFlow",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8897,16 +8533,14 @@ pub mod set_termination_protection_input {
         ///
         /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
         ///
-        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
         pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_flow_ids.unwrap_or_default();
             v.push(input.into());
             self.job_flow_ids = Some(v);
             self
         }
-        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8914,16 +8548,12 @@ pub mod set_termination_protection_input {
             self.job_flow_ids = input;
             self
         }
-        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-        /// instances in the cluster from shutting down due to API calls, user intervention, or
-        /// job-flow error.</p>
+        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
         pub fn termination_protected(mut self, input: bool) -> Self {
             self.termination_protected = Some(input);
             self
         }
-        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-        /// instances in the cluster from shutting down due to API calls, user intervention, or
-        /// job-flow error.</p>
+        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.termination_protected = input;
             self
@@ -8946,7 +8576,7 @@ pub mod set_termination_protection_input {
 pub type SetTerminationProtectionInputOperationOutputAlias =
     crate::operation::SetTerminationProtection;
 #[doc(hidden)]
-pub type SetTerminationProtectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetTerminationProtectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetTerminationProtectionInput {
     /// Consumes the builder and constructs an Operation<[`SetTerminationProtection`](crate::operation::SetTerminationProtection)>
     #[allow(clippy::let_and_return)]
@@ -8957,7 +8587,7 @@ impl SetTerminationProtectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetTerminationProtection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9044,7 +8674,7 @@ impl SetTerminationProtectionInput {
             "SetTerminationProtection",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9096,16 +8726,12 @@ pub mod set_visible_to_all_users_input {
             self.job_flow_ids = input;
             self
         }
-        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
         }
-        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.visible_to_all_users = input;
             self
@@ -9127,7 +8753,7 @@ pub mod set_visible_to_all_users_input {
 #[doc(hidden)]
 pub type SetVisibleToAllUsersInputOperationOutputAlias = crate::operation::SetVisibleToAllUsers;
 #[doc(hidden)]
-pub type SetVisibleToAllUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetVisibleToAllUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetVisibleToAllUsersInput {
     /// Consumes the builder and constructs an Operation<[`SetVisibleToAllUsers`](crate::operation::SetVisibleToAllUsers)>
     #[allow(clippy::let_and_return)]
@@ -9138,7 +8764,7 @@ impl SetVisibleToAllUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetVisibleToAllUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9225,7 +8851,7 @@ impl SetVisibleToAllUsersInput {
             "SetVisibleToAllUsers",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9274,26 +8900,12 @@ pub mod start_notebook_execution_input {
             self.editor_id = input;
             self
         }
-        /// <p>The path and file name of the notebook file for this execution, relative to the path
-        /// specified for the EMR Notebook. For example, if you specify a path of
-        /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-        /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-        /// request), and you specify a <code>RelativePath</code> of
-        /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-        /// for the notebook execution is
-        /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+        /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
         pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.relative_path = Some(input.into());
             self
         }
-        /// <p>The path and file name of the notebook file for this execution, relative to the path
-        /// specified for the EMR Notebook. For example, if you specify a path of
-        /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-        /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-        /// request), and you specify a <code>RelativePath</code> of
-        /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-        /// for the notebook execution is
-        /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+        /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9314,14 +8926,12 @@ pub mod start_notebook_execution_input {
             self.notebook_execution_name = input;
             self
         }
-        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-        /// execution.</p>
+        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
         pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
             self.notebook_params = Some(input.into());
             self
         }
-        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-        /// execution.</p>
+        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
         pub fn set_notebook_params(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9342,20 +8952,17 @@ pub mod start_notebook_execution_input {
             self.execution_engine = input;
             self
         }
-        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-        /// role) for the notebook execution.</p>
+        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-        /// role) for the notebook execution.</p>
+        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
         }
-        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-        /// Notebook for this notebook execution.</p>
+        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
         pub fn notebook_instance_security_group_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -9363,8 +8970,7 @@ pub mod start_notebook_execution_input {
             self.notebook_instance_security_group_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-        /// Notebook for this notebook execution.</p>
+        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
         pub fn set_notebook_instance_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9376,18 +8982,14 @@ pub mod start_notebook_execution_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-        /// pairs that consist of a required key string with a maximum of 128 characters and an
-        /// optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-        /// pairs that consist of a required key string with a maximum of 128 characters and an
-        /// optional value string with a maximum of 256 characters.</p>
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9418,7 +9020,7 @@ pub mod start_notebook_execution_input {
 #[doc(hidden)]
 pub type StartNotebookExecutionInputOperationOutputAlias = crate::operation::StartNotebookExecution;
 #[doc(hidden)]
-pub type StartNotebookExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartNotebookExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartNotebookExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartNotebookExecution`](crate::operation::StartNotebookExecution)>
     #[allow(clippy::let_and_return)]
@@ -9429,7 +9031,7 @@ impl StartNotebookExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartNotebookExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9516,7 +9118,7 @@ impl StartNotebookExecutionInput {
             "StartNotebookExecution",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9577,7 +9179,7 @@ pub mod stop_notebook_execution_input {
 #[doc(hidden)]
 pub type StopNotebookExecutionInputOperationOutputAlias = crate::operation::StopNotebookExecution;
 #[doc(hidden)]
-pub type StopNotebookExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopNotebookExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopNotebookExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopNotebookExecution`](crate::operation::StopNotebookExecution)>
     #[allow(clippy::let_and_return)]
@@ -9588,7 +9190,7 @@ impl StopNotebookExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopNotebookExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9675,7 +9277,7 @@ impl StopNotebookExecutionInput {
             "StopNotebookExecution",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9742,7 +9344,7 @@ pub mod terminate_job_flows_input {
 #[doc(hidden)]
 pub type TerminateJobFlowsInputOperationOutputAlias = crate::operation::TerminateJobFlows;
 #[doc(hidden)]
-pub type TerminateJobFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateJobFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateJobFlowsInput {
     /// Consumes the builder and constructs an Operation<[`TerminateJobFlows`](crate::operation::TerminateJobFlows)>
     #[allow(clippy::let_and_return)]
@@ -9753,7 +9355,7 @@ impl TerminateJobFlowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateJobFlows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9838,7 +9440,7 @@ impl TerminateJobFlowsInput {
             "TerminateJobFlows",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9956,7 +9558,7 @@ pub mod update_studio_input {
 #[doc(hidden)]
 pub type UpdateStudioInputOperationOutputAlias = crate::operation::UpdateStudio;
 #[doc(hidden)]
-pub type UpdateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudio`](crate::operation::UpdateStudio)>
     #[allow(clippy::let_and_return)]
@@ -9967,7 +9569,7 @@ impl UpdateStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10051,7 +9653,7 @@ impl UpdateStudioInput {
             "UpdateStudio",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10097,28 +9699,22 @@ pub mod update_studio_session_mapping_input {
             self.studio_id = input;
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10139,14 +9735,12 @@ pub mod update_studio_session_mapping_input {
             self.identity_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-        /// user or group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
         pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-        /// user or group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10175,7 +9769,7 @@ pub mod update_studio_session_mapping_input {
 pub type UpdateStudioSessionMappingInputOperationOutputAlias =
     crate::operation::UpdateStudioSessionMapping;
 #[doc(hidden)]
-pub type UpdateStudioSessionMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStudioSessionMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioSessionMappingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudioSessionMapping`](crate::operation::UpdateStudioSessionMapping)>
     #[allow(clippy::let_and_return)]
@@ -10186,7 +9780,7 @@ impl UpdateStudioSessionMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudioSessionMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10272,7 +9866,7 @@ impl UpdateStudioSessionMappingInput {
             "UpdateStudioSessionMapping",
             "emr",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10301,17 +9895,13 @@ impl UpdateStudioSessionMappingInput {
 pub struct UpdateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to update is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
-    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-    /// user or group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioSessionMappingInput {
@@ -10319,14 +9909,11 @@ impl UpdateStudioSessionMappingInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -10334,8 +9921,7 @@ impl UpdateStudioSessionMappingInput {
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-    /// user or group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
     pub fn session_policy_arn(&self) -> std::option::Option<&str> {
         self.session_policy_arn.as_deref()
     }
@@ -10401,7 +9987,7 @@ impl std::fmt::Debug for UpdateStudioInput {
     }
 }
 
-/// <p> Input to the <a>TerminateJobFlows</a> operation. </p>
+/// <p> Input to the <code>TerminateJobFlows</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateJobFlowsInput {
@@ -10449,31 +10035,19 @@ impl std::fmt::Debug for StopNotebookExecutionInput {
 pub struct StartNotebookExecutionInput {
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
     pub editor_id: std::option::Option<std::string::String>,
-    /// <p>The path and file name of the notebook file for this execution, relative to the path
-    /// specified for the EMR Notebook. For example, if you specify a path of
-    /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-    /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-    /// request), and you specify a <code>RelativePath</code> of
-    /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-    /// for the notebook execution is
-    /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub relative_path: std::option::Option<std::string::String>,
     /// <p>An optional name for the notebook execution.</p>
     pub notebook_execution_name: std::option::Option<std::string::String>,
-    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-    /// execution.</p>
+    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub notebook_params: std::option::Option<std::string::String>,
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
     pub execution_engine: std::option::Option<crate::model::ExecutionEngineConfig>,
-    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-    /// role) for the notebook execution.</p>
+    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-    /// Notebook for this notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
     pub notebook_instance_security_group_id: std::option::Option<std::string::String>,
-    /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-    /// pairs that consist of a required key string with a maximum of 128 characters and an
-    /// optional value string with a maximum of 256 characters.</p>
+    /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartNotebookExecutionInput {
@@ -10481,14 +10055,7 @@ impl StartNotebookExecutionInput {
     pub fn editor_id(&self) -> std::option::Option<&str> {
         self.editor_id.as_deref()
     }
-    /// <p>The path and file name of the notebook file for this execution, relative to the path
-    /// specified for the EMR Notebook. For example, if you specify a path of
-    /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-    /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-    /// request), and you specify a <code>RelativePath</code> of
-    /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-    /// for the notebook execution is
-    /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub fn relative_path(&self) -> std::option::Option<&str> {
         self.relative_path.as_deref()
     }
@@ -10496,8 +10063,7 @@ impl StartNotebookExecutionInput {
     pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
         self.notebook_execution_name.as_deref()
     }
-    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-    /// execution.</p>
+    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub fn notebook_params(&self) -> std::option::Option<&str> {
         self.notebook_params.as_deref()
     }
@@ -10505,19 +10071,15 @@ impl StartNotebookExecutionInput {
     pub fn execution_engine(&self) -> std::option::Option<&crate::model::ExecutionEngineConfig> {
         self.execution_engine.as_ref()
     }
-    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-    /// role) for the notebook execution.</p>
+    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
-    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-    /// Notebook for this notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
     pub fn notebook_instance_security_group_id(&self) -> std::option::Option<&str> {
         self.notebook_instance_security_group_id.as_deref()
     }
-    /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-    /// pairs that consist of a required key string with a maximum of 128 characters and an
-    /// optional value string with a maximum of 256 characters.</p>
+    /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -10546,9 +10108,7 @@ impl std::fmt::Debug for StartNotebookExecutionInput {
 pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-    /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-    /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     pub visible_to_all_users: bool,
 }
 impl SetVisibleToAllUsersInput {
@@ -10556,9 +10116,7 @@ impl SetVisibleToAllUsersInput {
     pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_flow_ids.as_deref()
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-    /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-    /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
@@ -10572,27 +10130,21 @@ impl std::fmt::Debug for SetVisibleToAllUsersInput {
     }
 }
 
-/// <p> The input argument to the <a>TerminationProtection</a> operation. </p>
+/// <p> The input argument to the <code>TerminationProtection</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTerminationProtectionInput {
-    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-    /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-    /// instances in the cluster from shutting down due to API calls, user intervention, or
-    /// job-flow error.</p>
+    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub termination_protected: bool,
 }
 impl SetTerminationProtectionInput {
-    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-    /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+    /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
     pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_flow_ids.as_deref()
     }
-    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-    /// instances in the cluster from shutting down due to API calls, user intervention, or
-    /// job-flow error.</p>
+    /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn termination_protected(&self) -> bool {
         self.termination_protected
     }
@@ -10606,32 +10158,21 @@ impl std::fmt::Debug for SetTerminationProtectionInput {
     }
 }
 
-/// <p> Input to the <a>RunJobFlow</a> operation. </p>
+/// <p> Input to the <code>RunJobFlow</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunJobFlowInput {
     /// <p>The name of the job flow.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-    /// provided, logs are not created.</p>
+    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
     pub log_uri: std::option::Option<std::string::String>,
-    /// <p>The KMS key used for encrypting log files. If a value is not
-    /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-    /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub log_encryption_kms_key_id: std::option::Option<std::string::String>,
     /// <p>A JSON string for selecting additional features.</p>
     pub additional_info: std::option::Option<std::string::String>,
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-    /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-    /// <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub ami_version: std::option::Option<std::string::String>,
-    /// <p>The Amazon EMR release label, which determines the version of open-source application
-    /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-    /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-    /// information about Amazon EMR release versions and included application versions and
-    /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-    /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-    /// <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
     pub release_label: std::option::Option<std::string::String>,
     /// <p>A specification of the number and type of Amazon EC2 instances.</p>
     pub instances: std::option::Option<crate::model::JobFlowInstancesConfig>,
@@ -10640,127 +10181,59 @@ pub struct RunJobFlowInput {
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
     pub bootstrap_actions: std::option::Option<std::vec::Vec<crate::model::BootstrapActionConfig>>,
     /// <note>
-    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-    /// Applications.</p>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
     /// </note>
-    /// <p>A list of strings that indicates third-party software to use. For more information, see
-    /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-    /// Developer Guide</a>. Currently supported values are:</p>
+    /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-    /// </li>
+    /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
     /// </ul>
     pub supported_products: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <note>
-    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-    /// Applications.</p>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
     /// </note>
-    /// <p>A list of strings that indicates third-party software to use with the job flow that
-    /// accepts a user argument list. EMR accepts and forwards the argument list to the
-    /// corresponding installation script as bootstrap action arguments. For more information, see
-    /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-    /// values are:</p>
+    /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-    /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-    /// </li>
-    /// <li>
-    /// <p>"hue"- launch the cluster with Hue installed.</p>
-    /// </li>
-    /// <li>
-    /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-    /// </li>
-    /// <li>
-    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-    /// installed.</p>
-    /// </li>
+    /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+    /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+    /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+    /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+    /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+    /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+    /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
     /// </ul>
     pub new_supported_products:
         std::option::Option<std::vec::Vec<crate::model::SupportedProductConfig>>,
-    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-    /// for Amazon EMR to install and configure when launching the cluster. For a list of
-    /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-    /// Guide</a>.</p>
+    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
-    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-    /// cluster you are creating.</p>
+    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
     /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
     /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
-    /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-    /// instances of the cluster assume this role. The default role is
-    /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-    /// already created it using the CLI or console.</p>
+    /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
     pub job_flow_role: std::option::Option<std::string::String>,
-    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-    /// your behalf.</p>
+    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of a security configuration to apply to the cluster.</p>
     pub security_configuration: std::option::Option<std::string::String>,
-    /// <p>An IAM role for automatic scaling policies. The default role is
-    /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-    /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-    /// group.</p>
+    /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
     pub auto_scaling_role: std::option::Option<std::string::String>,
-    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-    /// scale-in activity occurs or an instance group is resized.
-    /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-    /// the instance-hour boundary, regardless of when the request to terminate the instance was
-    /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-    /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-    /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-    /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-    /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-    /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-    /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-    /// earlier than 5.1.0.</p>
+    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub scale_down_behavior: std::option::Option<crate::model::ScaleDownBehavior>,
-    /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-    /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-    /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-    /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-    /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-    /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-    /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-    /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-    /// AMI</a>. </p>
+    /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
     pub custom_ami_id: std::option::Option<std::string::String>,
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-    /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
     pub ebs_root_volume_size: std::option::Option<i32>,
-    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-    /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-    /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-    /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-    /// and all updates must be applied manually.</p>
+    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
     pub repo_upgrade_on_boot: std::option::Option<crate::model::RepoUpgradeOnBoot>,
-    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-    /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-    /// in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub kerberos_attributes: std::option::Option<crate::model::KerberosAttributes>,
-    /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-    /// <code>1</code>. The maximum value is <code>256</code>.</p>
+    /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
     pub step_concurrency_level: std::option::Option<i32>,
     /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
     pub managed_scaling_policy: std::option::Option<crate::model::ManagedScalingPolicy>,
@@ -10775,14 +10248,11 @@ impl RunJobFlowInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-    /// provided, logs are not created.</p>
+    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
     pub fn log_uri(&self) -> std::option::Option<&str> {
         self.log_uri.as_deref()
     }
-    /// <p>The KMS key used for encrypting log files. If a value is not
-    /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-    /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+    /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn log_encryption_kms_key_id(&self) -> std::option::Option<&str> {
         self.log_encryption_kms_key_id.as_deref()
     }
@@ -10790,19 +10260,11 @@ impl RunJobFlowInput {
     pub fn additional_info(&self) -> std::option::Option<&str> {
         self.additional_info.as_deref()
     }
-    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-    /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-    /// <code>CustomAmiID</code>.</p>
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn ami_version(&self) -> std::option::Option<&str> {
         self.ami_version.as_deref()
     }
-    /// <p>The Amazon EMR release label, which determines the version of open-source application
-    /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-    /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-    /// information about Amazon EMR release versions and included application versions and
-    /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-    /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-    /// <code>AmiVersion</code>.</p>
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn release_label(&self) -> std::option::Option<&str> {
         self.release_label.as_deref()
     }
@@ -10819,74 +10281,40 @@ impl RunJobFlowInput {
         self.bootstrap_actions.as_deref()
     }
     /// <note>
-    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-    /// Applications.</p>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
     /// </note>
-    /// <p>A list of strings that indicates third-party software to use. For more information, see
-    /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-    /// Developer Guide</a>. Currently supported values are:</p>
+    /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-    /// </li>
+    /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
     /// </ul>
     pub fn supported_products(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_products.as_deref()
     }
     /// <note>
-    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-    /// Applications.</p>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
     /// </note>
-    /// <p>A list of strings that indicates third-party software to use with the job flow that
-    /// accepts a user argument list. EMR accepts and forwards the argument list to the
-    /// corresponding installation script as bootstrap action arguments. For more information, see
-    /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-    /// values are:</p>
+    /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-    /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-    /// </li>
-    /// <li>
-    /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-    /// </li>
-    /// <li>
-    /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-    /// </li>
-    /// <li>
-    /// <p>"hue"- launch the cluster with Hue installed.</p>
-    /// </li>
-    /// <li>
-    /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-    /// </li>
-    /// <li>
-    /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-    /// installed.</p>
-    /// </li>
+    /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+    /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+    /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+    /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+    /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+    /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+    /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
     /// </ul>
     pub fn new_supported_products(
         &self,
     ) -> std::option::Option<&[crate::model::SupportedProductConfig]> {
         self.new_supported_products.as_deref()
     }
-    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-    /// for Amazon EMR to install and configure when launching the cluster. For a list of
-    /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-    /// Guide</a>.</p>
+    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
         self.applications.as_deref()
     }
-    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-    /// cluster you are creating.</p>
+    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
     pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
         self.configurations.as_deref()
     }
@@ -10895,15 +10323,11 @@ impl RunJobFlowInput {
     pub fn visible_to_all_users(&self) -> bool {
         self.visible_to_all_users
     }
-    /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-    /// instances of the cluster assume this role. The default role is
-    /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-    /// already created it using the CLI or console.</p>
+    /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
     pub fn job_flow_role(&self) -> std::option::Option<&str> {
         self.job_flow_role.as_deref()
     }
-    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-    /// your behalf.</p>
+    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
@@ -10915,62 +10339,32 @@ impl RunJobFlowInput {
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
-    /// <p>An IAM role for automatic scaling policies. The default role is
-    /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-    /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-    /// group.</p>
+    /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
     pub fn auto_scaling_role(&self) -> std::option::Option<&str> {
         self.auto_scaling_role.as_deref()
     }
-    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-    /// scale-in activity occurs or an instance group is resized.
-    /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-    /// the instance-hour boundary, regardless of when the request to terminate the instance was
-    /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-    /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-    /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-    /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-    /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-    /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-    /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-    /// earlier than 5.1.0.</p>
+    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(&self) -> std::option::Option<&crate::model::ScaleDownBehavior> {
         self.scale_down_behavior.as_ref()
     }
-    /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-    /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-    /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-    /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-    /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-    /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-    /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-    /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-    /// AMI</a>. </p>
+    /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
     pub fn custom_ami_id(&self) -> std::option::Option<&str> {
         self.custom_ami_id.as_deref()
     }
-    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-    /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
     pub fn ebs_root_volume_size(&self) -> std::option::Option<i32> {
         self.ebs_root_volume_size
     }
-    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-    /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-    /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-    /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-    /// and all updates must be applied manually.</p>
+    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
     pub fn repo_upgrade_on_boot(&self) -> std::option::Option<&crate::model::RepoUpgradeOnBoot> {
         self.repo_upgrade_on_boot.as_ref()
     }
-    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-    /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-    /// in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn kerberos_attributes(&self) -> std::option::Option<&crate::model::KerberosAttributes> {
         self.kerberos_attributes.as_ref()
     }
-    /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-    /// <code>1</code>. The maximum value is <code>256</code>.</p>
+    /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
     pub fn step_concurrency_level(&self) -> std::option::Option<i32> {
         self.step_concurrency_level
     }
@@ -11032,15 +10426,13 @@ impl std::fmt::Debug for RunJobFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
-    /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsInput {
-    /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -11062,13 +10454,11 @@ impl std::fmt::Debug for RemoveTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveManagedScalingPolicyInput {
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-    /// </p>
+    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RemoveManagedScalingPolicyInput {
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-    /// </p>
+    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -11106,15 +10496,13 @@ impl std::fmt::Debug for RemoveAutoTerminationPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoScalingPolicyInput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub instance_group_id: std::option::Option<std::string::String>,
 }
 impl RemoveAutoScalingPolicyInput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -11166,39 +10554,15 @@ impl std::fmt::Debug for PutManagedScalingPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBlockPublicAccessConfigurationInput {
-    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-    /// clusters created in your account for the current Region. The configuration specifies
-    /// whether block public access is enabled. If block public access is enabled, security groups
-    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-    /// ::/0 on a port, unless the port is specified as an exception using
-    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-    /// and public access is allowed on this port. You can change this by updating
-    /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-    /// <note>
-    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-    /// access is disabled by default in that Region. To use this feature, you must manually
-    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-    /// before this date, block public access is enabled by default in that Region.</p>
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
 }
 impl PutBlockPublicAccessConfigurationInput {
-    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-    /// clusters created in your account for the current Region. The configuration specifies
-    /// whether block public access is enabled. If block public access is enabled, security groups
-    /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-    /// ::/0 on a port, unless the port is specified as an exception using
-    /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-    /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-    /// and public access is allowed on this port. You can change this by updating
-    /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-    /// <note>
-    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-    /// access is disabled by default in that Region. To use this feature, you must manually
-    /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-    /// before this date, block public access is enabled by default in that Region.</p>
+    /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+    /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub fn block_public_access_configuration(
         &self,
@@ -11251,23 +10615,19 @@ impl std::fmt::Debug for PutAutoTerminationPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoScalingPolicyInput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-    /// applied.</p>
+    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
     pub instance_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies the definition of the automatic scaling policy.</p>
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
 }
 impl PutAutoScalingPolicyInput {
-    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-    /// is applied is within this cluster.</p>
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-    /// applied.</p>
+    /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
     pub fn instance_group_id(&self) -> std::option::Option<&str> {
         self.instance_group_id.as_deref()
     }
@@ -11351,7 +10711,7 @@ impl std::fmt::Debug for ModifyInstanceFleetInput {
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+    /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub step_concurrency_level: std::option::Option<i32>,
 }
 impl ModifyClusterInput {
@@ -11359,7 +10719,7 @@ impl ModifyClusterInput {
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+    /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
     pub fn step_concurrency_level(&self) -> std::option::Option<i32> {
         self.step_concurrency_level
     }
@@ -11379,8 +10739,7 @@ impl std::fmt::Debug for ModifyClusterInput {
 pub struct ListStudioSessionMappingsInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-    /// results include session mapping details for both users and groups.</p>
+    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -11390,8 +10749,7 @@ impl ListStudioSessionMappingsInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-    /// results include session mapping details for both users and groups.</p>
+    /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
@@ -11439,9 +10797,7 @@ pub struct ListStepsInput {
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The filter to limit the step list based on certain states.</p>
     pub step_states: std::option::Option<std::vec::Vec<crate::model::StepState>>,
-    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-    /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-    /// array.</p>
+    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -11455,9 +10811,7 @@ impl ListStepsInput {
     pub fn step_states(&self) -> std::option::Option<&[crate::model::StepState]> {
         self.step_states.as_deref()
     }
-    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-    /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-    /// array.</p>
+    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
     pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.step_ids.as_deref()
     }
@@ -11541,66 +10895,23 @@ pub struct ListNotebookExecutionsInput {
     pub editor_id: std::option::Option<std::string::String>,
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>START_PENDING</code> indicates that the cluster has received the execution
-    /// request but execution has not begun.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> indicates that the execution is starting on the
-    /// cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> indicates that the execution is being processed by the
-    /// cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FINISHING</code> indicates that execution processing is in the final
-    /// stages.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FINISHED</code> indicates that the execution has completed without
-    /// error.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILING</code> indicates that the execution is failing and will not finish
-    /// successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> indicates that the execution failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOP_PENDING</code> indicates that the cluster has received a
-    /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-    /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code> indicates that the execution stopped because of a
-    /// <code>StopNotebookExecution</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
-    /// <p>The beginning of time range filter for listing notebook executions. The default is the
-    /// timestamp of 30 days ago.</p>
+    /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub from: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of time range filter for listing notebook executions. The default is the current
-    /// timestamp.</p>
+    /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub to: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-    /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-    /// call.</p>
+    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsInput {
@@ -11610,72 +10921,29 @@ impl ListNotebookExecutionsInput {
     }
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>START_PENDING</code> indicates that the cluster has received the execution
-    /// request but execution has not begun.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> indicates that the execution is starting on the
-    /// cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> indicates that the execution is being processed by the
-    /// cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FINISHING</code> indicates that execution processing is in the final
-    /// stages.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FINISHED</code> indicates that the execution has completed without
-    /// error.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILING</code> indicates that the execution is failing and will not finish
-    /// successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> indicates that the execution failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOP_PENDING</code> indicates that the cluster has received a
-    /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-    /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code> indicates that the execution stopped because of a
-    /// <code>StopNotebookExecution</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+    /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+    /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+    /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+    /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+    /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+    /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+    /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+    /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::NotebookExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>The beginning of time range filter for listing notebook executions. The default is the
-    /// timestamp of 30 days ago.</p>
+    /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from.as_ref()
     }
-    /// <p>The end of time range filter for listing notebook executions. The default is the current
-    /// timestamp.</p>
+    /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to.as_ref()
     }
-    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-    /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-    /// call.</p>
+    /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -11706,8 +10974,7 @@ pub struct ListInstancesInput {
     pub instance_fleet_id: std::option::Option<std::string::String>,
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
     pub instance_fleet_type: std::option::Option<crate::model::InstanceFleetType>,
-    /// <p>A list of instance states that will filter the instances returned with this
-    /// request.</p>
+    /// <p>A list of instance states that will filter the instances returned with this request.</p>
     pub instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -11733,8 +11000,7 @@ impl ListInstancesInput {
     pub fn instance_fleet_type(&self) -> std::option::Option<&crate::model::InstanceFleetType> {
         self.instance_fleet_type.as_ref()
     }
-    /// <p>A list of instance states that will filter the instances returned with this
-    /// request.</p>
+    /// <p>A list of instance states that will filter the instances returned with this request.</p>
     pub fn instance_states(&self) -> std::option::Option<&[crate::model::InstanceState]> {
         self.instance_states.as_deref()
     }
@@ -11813,8 +11079,7 @@ impl std::fmt::Debug for ListInstanceFleetsInput {
     }
 }
 
-/// <p>This input determines how the ListClusters action filters the list of clusters that it
-/// returns.</p>
+/// <p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
@@ -11890,12 +11155,9 @@ impl std::fmt::Debug for ListBootstrapActionsInput {
 pub struct GetStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
@@ -11905,14 +11167,11 @@ impl GetStudioSessionMappingInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -11936,13 +11195,11 @@ impl std::fmt::Debug for GetStudioSessionMappingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedScalingPolicyInput {
-    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-    /// </p>
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl GetManagedScalingPolicyInput {
-    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-    /// </p>
+    /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -12113,7 +11370,7 @@ impl std::fmt::Debug for DescribeNotebookExecutionInput {
     }
 }
 
-/// <p> The input for the <a>DescribeJobFlows</a> operation. </p>
+/// <p> The input for the <code>DescribeJobFlows</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobFlowsInput {
@@ -12182,13 +11439,9 @@ impl std::fmt::Debug for DescribeClusterInput {
 pub struct DeleteStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-    /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
@@ -12198,15 +11451,11 @@ impl DeleteStudioSessionMappingInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-    /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -12274,17 +11523,13 @@ impl std::fmt::Debug for DeleteSecurityConfigurationInput {
 pub struct CreateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-    /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub identity_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-    /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioSessionMappingInput {
@@ -12292,14 +11537,11 @@ impl CreateStudioSessionMappingInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-    /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
@@ -12307,8 +11549,7 @@ impl CreateStudioSessionMappingInput {
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-    /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
     pub fn session_policy_arn(&self) -> std::option::Option<&str> {
         self.session_policy_arn.as_deref()
     }
@@ -12335,27 +11576,17 @@ pub struct CreateStudioInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
     pub auth_mode: std::option::Option<crate::model::AuthMode>,
-    /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-    /// Studio.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-    /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-    /// specified subnets.</p>
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-    /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+    /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-    /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-    /// session policies.</p>
+    /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
     pub user_role: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-    /// allows outbound network traffic to resources in the Engine security group, and it must be
-    /// in the same VPC specified by <code>VpcId</code>.</p>
+    /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub workspace_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-    /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-    /// specified by <code>VpcId</code>.</p>
+    /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub engine_security_group_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
     pub default_s3_location: std::option::Option<std::string::String>,
@@ -12363,9 +11594,7 @@ pub struct CreateStudioInput {
     pub idp_auth_url: std::option::Option<std::string::String>,
     /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
     pub idp_relay_state_parameter_name: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-    /// consist of a required key string with a maximum of 128 characters, and an optional value
-    /// string with a maximum of 256 characters.</p>
+    /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateStudioInput {
@@ -12381,37 +11610,27 @@ impl CreateStudioInput {
     pub fn auth_mode(&self) -> std::option::Option<&crate::model::AuthMode> {
         self.auth_mode.as_ref()
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-    /// Studio.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-    /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-    /// specified subnets.</p>
+    /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-    /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+    /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
-    /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-    /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-    /// session policies.</p>
+    /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
     pub fn user_role(&self) -> std::option::Option<&str> {
         self.user_role.as_deref()
     }
-    /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-    /// allows outbound network traffic to resources in the Engine security group, and it must be
-    /// in the same VPC specified by <code>VpcId</code>.</p>
+    /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
         self.workspace_security_group_id.as_deref()
     }
-    /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-    /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-    /// specified by <code>VpcId</code>.</p>
+    /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
     pub fn engine_security_group_id(&self) -> std::option::Option<&str> {
         self.engine_security_group_id.as_deref()
     }
@@ -12427,9 +11646,7 @@ impl CreateStudioInput {
     pub fn idp_relay_state_parameter_name(&self) -> std::option::Option<&str> {
         self.idp_relay_state_parameter_name.as_deref()
     }
-    /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-    /// consist of a required key string with a maximum of 128 characters, and an optional value
-    /// string with a maximum of 256 characters.</p>
+    /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12466,10 +11683,7 @@ impl std::fmt::Debug for CreateStudioInput {
 pub struct CreateSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-    /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-    /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-    /// Guide</i>.</p>
+    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
 }
 impl CreateSecurityConfigurationInput {
@@ -12477,10 +11691,7 @@ impl CreateSecurityConfigurationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-    /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-    /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-    /// Guide</i>.</p>
+    /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -12494,31 +11705,27 @@ impl std::fmt::Debug for CreateSecurityConfigurationInput {
     }
 }
 
-/// <p>The input argument to the <a>CancelSteps</a> operation.</p>
+/// <p>The input argument to the <code>CancelSteps</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStepsInput {
-    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-    /// and their states for the specified cluster.</p>
+    /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-    /// <code>SEND_INTERRUPT</code>.</p>
+    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
     pub step_cancellation_option: std::option::Option<crate::model::StepCancellationOption>,
 }
 impl CancelStepsInput {
-    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+    /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-    /// and their states for the specified cluster.</p>
+    /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
     pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.step_ids.as_deref()
     }
-    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-    /// <code>SEND_INTERRUPT</code>.</p>
+    /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
     pub fn step_cancellation_option(
         &self,
     ) -> std::option::Option<&crate::model::StepCancellationOption> {
@@ -12539,23 +11746,17 @@ impl std::fmt::Debug for CancelStepsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
-    /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>A list of tags to associate with a resource. Tags are
-    /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-    /// characters, and an optional value string with a maximum of 256 characters.</p>
+    /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
-    /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-    /// cluster identifier or an Amazon EMR Studio ID.</p>
+    /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A list of tags to associate with a resource. Tags are
-    /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-    /// characters, and an optional value string with a maximum of 256 characters.</p>
+    /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12569,23 +11770,21 @@ impl std::fmt::Debug for AddTagsInput {
     }
 }
 
-/// <p> The input argument to the <a>AddJobFlowSteps</a> operation. </p>
+/// <p> The input argument to the <code>AddJobFlowSteps</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddJobFlowStepsInput {
-    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-    /// </p>
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
     pub job_flow_id: std::option::Option<std::string::String>,
-    /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
 }
 impl AddJobFlowStepsInput {
-    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-    /// </p>
+    /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
     pub fn job_flow_id(&self) -> std::option::Option<&str> {
         self.job_flow_id.as_deref()
     }
-    /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+    /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::StepConfig]> {
         self.steps.as_deref()
     }

@@ -9,16 +9,13 @@ pub enum Error {
     CannotDeleteException(crate::error::CannotDeleteException),
     /// <p>An entity with the same name already exists.</p>
     IdempotencyException(crate::error::IdempotencyException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>There was an error with the update request, or you do not have sufficient permissions
-    /// to update this VPC endpoint configuration.</p>
+    /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -26,11 +23,9 @@ pub enum Error {
     ServiceAccountException(crate::error::ServiceAccountException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag
-    /// policy. Correct your request and then retry it.</p>
+    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50. </p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

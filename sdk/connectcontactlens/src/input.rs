@@ -42,14 +42,12 @@ pub mod list_realtime_contact_analysis_segments_input {
             self.max_results = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -75,7 +73,7 @@ pub type ListRealtimeContactAnalysisSegmentsInputOperationOutputAlias =
     crate::operation::ListRealtimeContactAnalysisSegments;
 #[doc(hidden)]
 pub type ListRealtimeContactAnalysisSegmentsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeContactAnalysisSegments`](crate::operation::ListRealtimeContactAnalysisSegments)>
     #[allow(clippy::let_and_return)]
@@ -86,7 +84,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRealtimeContactAnalysisSegments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -168,7 +166,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
             "ListRealtimeContactAnalysisSegments",
             "connectcontactlens",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -201,8 +199,7 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The maximimum number of results to return per page.</p>
     pub max_results: i32,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
@@ -218,8 +215,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

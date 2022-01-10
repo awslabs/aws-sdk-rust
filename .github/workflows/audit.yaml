@@ -11,20 +11,30 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
       - name: install cargo audit
         run: cargo install cargo-audit
       - name: Run audit
+        # RUSTSEC-2020-0071 , RUSTSEC-2020-0159
         # chrono, a Rust date-time crate we use for timestamp parsing was added
         # to the RustSec vulnerability database because of a call to localtime_r.
         # We use chrono for an extremely narrow use case of converting epoch timestamps to UTC dates
         # (so we never invoke the problematic behavior that results from attempting to determine
         # the local time of the current platform).
         #
-        # There currently is no release from chrono that rectifies the issue, and we are working
-        # on a mitigation to ensure that we either use a patched version of chrono or add a deny-lint
-        # to call any chrono methods other than the method we use currently.
-        run: cargo audit --ignore RUSTSEC-2020-0071 --ignore RUSTSEC-2020-0159
+        # Chrono's only use is as an optional feature in `aws-smithy-types-convert`, for
+        # the narrow use-case of converting from the SDK's `DateTime` into chrono types,
+        # and we never invoke the problematic behavior that results from attempting to
+        # determine the local time of the current platform.
+        #
+        # RUSTSEC-2021-0127
+        # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
+        run: |
+          cargo audit \
+            --ignore RUSTSEC-2020-0071 \
+            --ignore RUSTSEC-2020-0159 \
+            --ignore RUSTSEC-2021-0127
+

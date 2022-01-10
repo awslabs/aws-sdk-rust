@@ -63,9 +63,9 @@ pub mod get_scaling_plan_resource_forecast_data_output {
         /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
         ///
         /// <p>The data points to return.</p>
-        pub fn datapoints(mut self, input: impl Into<crate::model::Datapoint>) -> Self {
+        pub fn datapoints(mut self, input: crate::model::Datapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datapoints = Some(v);
             self
         }
@@ -98,8 +98,7 @@ impl GetScalingPlanResourceForecastDataOutput {
 pub struct DescribeScalingPlansOutput {
     /// <p>Information about the scaling plans.</p>
     pub scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlansOutput {
@@ -107,8 +106,7 @@ impl DescribeScalingPlansOutput {
     pub fn scaling_plans(&self) -> std::option::Option<&[crate::model::ScalingPlan]> {
         self.scaling_plans.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -136,9 +134,9 @@ pub mod describe_scaling_plans_output {
         /// To override the contents of this collection use [`set_scaling_plans`](Self::set_scaling_plans).
         ///
         /// <p>Information about the scaling plans.</p>
-        pub fn scaling_plans(mut self, input: impl Into<crate::model::ScalingPlan>) -> Self {
+        pub fn scaling_plans(mut self, input: crate::model::ScalingPlan) -> Self {
             let mut v = self.scaling_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_plans = Some(v);
             self
         }
@@ -150,14 +148,12 @@ pub mod describe_scaling_plans_output {
             self.scaling_plans = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -185,8 +181,7 @@ pub struct DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
     pub scaling_plan_resources:
         std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlanResourcesOutput {
@@ -196,8 +191,7 @@ impl DescribeScalingPlanResourcesOutput {
     ) -> std::option::Option<&[crate::model::ScalingPlanResource]> {
         self.scaling_plan_resources.as_deref()
     }
-    /// <p>The token required to get the next set of results. This value is <code>null</code> if
-    /// there are no more results to return.</p>
+    /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -226,12 +220,9 @@ pub mod describe_scaling_plan_resources_output {
         /// To override the contents of this collection use [`set_scaling_plan_resources`](Self::set_scaling_plan_resources).
         ///
         /// <p>Information about the scalable resources.</p>
-        pub fn scaling_plan_resources(
-            mut self,
-            input: impl Into<crate::model::ScalingPlanResource>,
-        ) -> Self {
+        pub fn scaling_plan_resources(mut self, input: crate::model::ScalingPlanResource) -> Self {
             let mut v = self.scaling_plan_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scaling_plan_resources = Some(v);
             self
         }
@@ -243,14 +234,12 @@ pub mod describe_scaling_plan_resources_output {
             self.scaling_plan_resources = input;
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to get the next set of results. This value is <code>null</code> if
-        /// there are no more results to return.</p>
+        /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -305,13 +294,11 @@ impl DeleteScalingPlanOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScalingPlanOutput {
-    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
-    /// you cannot have multiple scaling plan versions.</p>
+    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub scaling_plan_version: std::option::Option<i64>,
 }
 impl CreateScalingPlanOutput {
-    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
-    /// you cannot have multiple scaling plan versions.</p>
+    /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
     }
@@ -332,14 +319,12 @@ pub mod create_scaling_plan_output {
         pub(crate) scaling_plan_version: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
-        /// you cannot have multiple scaling plan versions.</p>
+        /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
         pub fn scaling_plan_version(mut self, input: i64) -> Self {
             self.scaling_plan_version = Some(input);
             self
         }
-        /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently,
-        /// you cannot have multiple scaling plan versions.</p>
+        /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self

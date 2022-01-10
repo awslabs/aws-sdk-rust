@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodeDeploy
@@ -294,6 +294,7 @@ where
     ///
     /// See [`ListApplicationRevisions`](crate::client::fluent_builders::ListApplicationRevisions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationRevisions::into_paginator).
     pub fn list_application_revisions(&self) -> fluent_builders::ListApplicationRevisions<C, M, R> {
         fluent_builders::ListApplicationRevisions::new(self.handle.clone())
     }
@@ -301,6 +302,7 @@ where
     ///
     /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
@@ -308,6 +310,7 @@ where
     ///
     /// See [`ListDeploymentConfigs`](crate::client::fluent_builders::ListDeploymentConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentConfigs::into_paginator).
     pub fn list_deployment_configs(&self) -> fluent_builders::ListDeploymentConfigs<C, M, R> {
         fluent_builders::ListDeploymentConfigs::new(self.handle.clone())
     }
@@ -315,6 +318,7 @@ where
     ///
     /// See [`ListDeploymentGroups`](crate::client::fluent_builders::ListDeploymentGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentGroups::into_paginator).
     pub fn list_deployment_groups(&self) -> fluent_builders::ListDeploymentGroups<C, M, R> {
         fluent_builders::ListDeploymentGroups::new(self.handle.clone())
     }
@@ -322,6 +326,7 @@ where
     ///
     /// See [`ListDeploymentInstances`](crate::client::fluent_builders::ListDeploymentInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentInstances::into_paginator).
     pub fn list_deployment_instances(&self) -> fluent_builders::ListDeploymentInstances<C, M, R> {
         fluent_builders::ListDeploymentInstances::new(self.handle.clone())
     }
@@ -329,6 +334,7 @@ where
     ///
     /// See [`ListDeployments`](crate::client::fluent_builders::ListDeployments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
     pub fn list_deployments(&self) -> fluent_builders::ListDeployments<C, M, R> {
         fluent_builders::ListDeployments::new(self.handle.clone())
     }
@@ -454,7 +460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddTagsToOnPremisesInstances`.
     ///
     /// <p>Adds tags to on-premises instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -499,10 +505,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsToOnPremisesInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -515,15 +521,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-        /// tags are not allowed.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-        /// tags are not allowed.</p>
+        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -536,8 +540,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
         /// <p>The names of the on-premises instances to which to add tags.</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>The names of the on-premises instances to which to add tags.</p>
@@ -551,9 +555,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetApplicationRevisions`.
     ///
-    /// <p>Gets information about one or more application revisions. The maximum number of
-    /// application revisions that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about one or more application revisions. The maximum number of application revisions that can be returned is 25.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetApplicationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -598,10 +601,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetApplicationRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -609,14 +612,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application about which to get revision
-        /// information.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application about which to get revision
-        /// information.</p>
+        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -628,16 +629,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
-        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-        /// about the application revisions, including type and location. The maximum number of
-        /// <code>RevisionLocation</code> objects you can specify is 25.</p>
-        pub fn revisions(mut self, inp: impl Into<crate::model::RevisionLocation>) -> Self {
-            self.inner = self.inner.revisions(inp);
+        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
+        pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revisions(input);
             self
         }
-        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-        /// about the application revisions, including type and location. The maximum number of
-        /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
         pub fn set_revisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -648,9 +645,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetApplications`.
     ///
-    /// <p>Gets information about one or more applications. The maximum number of applications
-    /// that can be returned is 100.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about one or more applications. The maximum number of applications that can be returned is 100.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -695,10 +691,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -710,14 +706,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
         ///
-        /// <p>A list of application names separated by spaces. The maximum number of application
-        /// names you can specify is 100.</p>
-        pub fn application_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_names(inp);
+        /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
+        pub fn application_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_names(input.into());
             self
         }
-        /// <p>A list of application names separated by spaces. The maximum number of application
-        /// names you can specify is 100.</p>
+        /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
         pub fn set_application_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -729,7 +723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetDeploymentGroups`.
     ///
     /// <p>Gets information about one or more deployment groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -774,10 +768,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetDeploymentGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -785,14 +779,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-        /// AWS account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -805,8 +797,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_deployment_group_names`](Self::set_deployment_group_names).
         ///
         /// <p>The names of the deployment groups.</p>
-        pub fn deployment_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_names(inp);
+        pub fn deployment_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_names(input.into());
             self
         }
         /// <p>The names of the deployment groups.</p>
@@ -821,14 +813,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetDeploymentInstances`.
     ///
     /// <note>
-    /// <p> This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code>
-    /// instead. </p>
+    /// <p> This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead. </p>
     /// </note>
-    /// <p> Returns an array of one or more instances associated with a deployment. This method
-    /// works with EC2/On-premises and AWS Lambda compute platforms. The newer
-    /// <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum
-    /// number of instances that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number of instances that can be returned is 25.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,10 +861,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetDeploymentInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -885,8 +873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -901,14 +889,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-        /// you can specify is 25.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-        /// you can specify is 25.</p>
+        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -919,9 +905,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetDeployments`.
     ///
-    /// <p>Gets information about one or more deployments. The maximum number of deployments that
-    /// can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,10 +951,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -981,14 +966,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
         ///
-        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-        /// you can specify is 25.</p>
-        pub fn deployment_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_ids(inp);
+        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+        pub fn deployment_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_ids(input.into());
             self
         }
-        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-        /// you can specify is 25.</p>
+        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
         pub fn set_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -999,35 +982,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetDeploymentTargets`.
     ///
-    /// <p> Returns an array of one or more targets associated with a deployment. This method
-    /// works with all compute types and should be used instead of the deprecated
-    /// <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can be
-    /// returned is 25.</p>
-    /// <p> The type of targets returned depends on the deployment's compute platform or
-    /// deployment method: </p>
+    /// <p> Returns an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can be returned is 25.</p>
+    /// <p> The type of targets returned depends on the deployment's compute platform or deployment method: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>EC2/On-premises</b>: Information about EC2 instance
-    /// targets. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AWS Lambda</b>: Information about Lambda functions
-    /// targets. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon ECS</b>: Information about Amazon ECS
-    /// service targets. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>CloudFormation</b>: Information about targets of
-    /// blue/green deployments initiated by a CloudFormation stack update.</p>
-    /// </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li>
+    /// <li> <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: Information about targets of blue/green deployments initiated by a CloudFormation stack update.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDeploymentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1072,10 +1035,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetDeploymentTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1084,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -1100,61 +1063,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
         ///
-        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-        /// determines the type of the targets and their formats. The maximum number of deployment
-        /// target IDs you can specify is 25.</p>
+        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li>
-        /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-        /// are EC2 or on-premises instances IDs, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-        /// the names of Lambda functions, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-        /// pairs of Amazon ECS clusters and services specified using the format
-        /// <code><clustername>:<servicename></code>. Their target type is
-        /// <code>ecsTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-        /// CloudFormation stack IDs. Their target type is
-        /// <code>cloudFormationTarget</code>. </p>
-        /// </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
-        pub fn target_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_ids(inp);
+        pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_ids(input.into());
             self
         }
-        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-        /// determines the type of the targets and their formats. The maximum number of deployment
-        /// target IDs you can specify is 25.</p>
+        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li>
-        /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-        /// are EC2 or on-premises instances IDs, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-        /// the names of Lambda functions, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-        /// pairs of Amazon ECS clusters and services specified using the format
-        /// <code><clustername>:<servicename></code>. Their target type is
-        /// <code>ecsTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-        /// CloudFormation stack IDs. Their target type is
-        /// <code>cloudFormationTarget</code>. </p>
-        /// </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
         pub fn set_target_ids(
             mut self,
@@ -1166,9 +1099,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetOnPremisesInstances`.
     ///
-    /// <p>Gets information about one or more on-premises instances. The maximum number of
-    /// on-premises instances that can be returned is 25.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be returned is 25.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1213,10 +1145,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetOnPremisesInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1228,14 +1160,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
-        /// <p>The names of the on-premises instances about which to get information. The maximum
-        /// number of instance names you can specify is 25.</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
-        /// <p>The names of the on-premises instances about which to get information. The maximum
-        /// number of instance names you can specify is 25.</p>
+        /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1246,12 +1176,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ContinueDeployment`.
     ///
-    /// <p>For a blue/green deployment, starts the process of rerouting traffic from instances in
-    /// the original environment to instances in the replacement environment without waiting for
-    /// a specified wait time to elapse. (Traffic rerouting, which is achieved by registering
-    /// instances in the replacement environment with the load balancer, can start as soon as
-    /// all instances have a status of Ready.) </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ContinueDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1296,10 +1222,10 @@ pub mod fluent_builders {
                 crate::input::ContinueDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1307,14 +1233,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-        /// traffic to the replacement environment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-        /// traffic to the replacement environment. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1322,18 +1246,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-        /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-        /// indicates that the traffic is shifted, but the original target is not terminated.
-        /// </p>
-        pub fn deployment_wait_type(mut self, inp: crate::model::DeploymentWaitType) -> Self {
-            self.inner = self.inner.deployment_wait_type(inp);
+        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
+        pub fn deployment_wait_type(mut self, input: crate::model::DeploymentWaitType) -> Self {
+            self.inner = self.inner.deployment_wait_type(input);
             self
         }
-        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-        /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-        /// indicates that the traffic is shifted, but the original target is not terminated.
-        /// </p>
+        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
         pub fn set_deployment_wait_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentWaitType>,
@@ -1345,7 +1263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1390,10 +1308,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1401,14 +1319,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or
-        /// AWS account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1416,14 +1332,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
-        pub fn compute_platform(mut self, inp: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(inp);
+        /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
-        /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -1435,16 +1349,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1456,7 +1366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// <p>Deploys an application revision through the specified deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1501,10 +1411,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1512,14 +1422,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1528,8 +1436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the deployment group.</p>
-        pub fn deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(inp);
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of the deployment group.</p>
@@ -1541,8 +1449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type and location of the revision to deploy. </p>
-        pub fn revision(mut self, inp: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(inp);
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p> The type and location of the revision to deploy. </p>
@@ -1553,20 +1461,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_revision(input);
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        /// <p>If not specified, the value configured in the deployment group is used as the default.
-        /// If the deployment group does not have a deployment configuration associated with it,
-        /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        /// <p>If not specified, the value configured in the deployment group is used as the default.
-        /// If the deployment group does not have a deployment configuration associated with it,
-        /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1575,8 +1477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A comment about the deployment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A comment about the deployment.</p>
@@ -1584,60 +1486,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-        /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-        /// the deployment continues to the next deployment lifecycle event. For example, if
-        /// <code>ApplicationStop</code> fails, the deployment continues with
-        /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-        /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-        /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-        ///
-        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-        /// instance, that deployment fails. If deployment to that instance is part of an overall
-        /// deployment and the number of healthy hosts is not less than the minimum number of
-        /// healthy hosts, then a deployment to the next instance is attempted. </p>
-        ///
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. </p>
-        ///
-        /// <p> If the cause of the failure is a script from the last successful deployment that will
-        /// never run successfully, create a new deployment and use
-        /// <code>ignoreApplicationStopFailures</code> to specify that the
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
-        pub fn ignore_application_stop_failures(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_application_stop_failures(inp);
+        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+        pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
+            self.inner = self.inner.ignore_application_stop_failures(input);
             self
         }
-        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-        /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-        /// the deployment continues to the next deployment lifecycle event. For example, if
-        /// <code>ApplicationStop</code> fails, the deployment continues with
-        /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-        /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-        /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-        ///
-        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-        /// instance, that deployment fails. If deployment to that instance is part of an overall
-        /// deployment and the number of healthy hosts is not less than the minimum number of
-        /// healthy hosts, then a deployment to the next instance is attempted. </p>
-        ///
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. </p>
-        ///
-        /// <p> If the cause of the failure is a script from the last successful deployment that will
-        /// never run successfully, create a new deployment and use
-        /// <code>ignoreApplicationStopFailures</code> to specify that the
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn set_ignore_application_stop_failures(
             mut self,
             input: std::option::Option<bool>,
@@ -1645,14 +1505,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ignore_application_stop_failures(input);
             self
         }
-        /// <p> Information about the instances that belong to the replacement environment in a
-        /// blue/green deployment. </p>
-        pub fn target_instances(mut self, inp: crate::model::TargetInstances) -> Self {
-            self.inner = self.inner.target_instances(inp);
+        /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
+        pub fn target_instances(mut self, input: crate::model::TargetInstances) -> Self {
+            self.inner = self.inner.target_instances(input);
             self
         }
-        /// <p> Information about the instances that belong to the replacement environment in a
-        /// blue/green deployment. </p>
+        /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
         pub fn set_target_instances(
             mut self,
             input: std::option::Option<crate::model::TargetInstances>,
@@ -1660,17 +1518,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_instances(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment is
-        /// created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            inp: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(inp);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment is
-        /// created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -1678,14 +1534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_rollback_configuration(input);
             self
         }
-        /// <p> Indicates whether to deploy to all instances or only to instances that are not
-        /// running the latest application revision. </p>
-        pub fn update_outdated_instances_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.update_outdated_instances_only(inp);
+        /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
+        pub fn update_outdated_instances_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.update_outdated_instances_only(input);
             self
         }
-        /// <p> Indicates whether to deploy to all instances or only to instances that are not
-        /// running the latest application revision. </p>
+        /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
         pub fn set_update_outdated_instances_only(
             mut self,
             input: std::option::Option<bool>,
@@ -1693,45 +1547,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_update_outdated_instances_only(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-        /// target location but weren't part of the previous successful deployment.</p>
-        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-        /// values:</p>
+        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-        /// is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>OVERWRITE: The version of the file from the application revision currently
-        /// being deployed replaces the version already on the instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>RETAIN: The version of the file already on the instance is kept and used as
-        /// part of the new deployment.</p>
-        /// </li>
+        /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+        /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+        /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
         /// </ul>
-        pub fn file_exists_behavior(mut self, inp: crate::model::FileExistsBehavior) -> Self {
-            self.inner = self.inner.file_exists_behavior(inp);
+        pub fn file_exists_behavior(mut self, input: crate::model::FileExistsBehavior) -> Self {
+            self.inner = self.inner.file_exists_behavior(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-        /// target location but weren't part of the previous successful deployment.</p>
-        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-        /// values:</p>
+        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-        /// is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>OVERWRITE: The version of the file from the application revision currently
-        /// being deployed replaces the version already on the instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>RETAIN: The version of the file already on the instance is kept and used as
-        /// part of the new deployment.</p>
-        /// </li>
+        /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+        /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+        /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
         /// </ul>
         pub fn set_file_exists_behavior(
             mut self,
@@ -1744,7 +1576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentConfig`.
     ///
     /// <p> Creates a deployment configuration. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1789,10 +1621,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1801,8 +1633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the deployment configuration to create.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The name of the deployment configuration to create.</p>
@@ -1813,48 +1645,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_config_name(input);
             self
         }
-        /// <p>The minimum number of healthy instances that should be available at any time during
-        /// the deployment. There are two parameters expected in the input: type and value.</p>
+        /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-        /// instances as an absolute value.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-        /// instances as a percentage of the total number of instances in the deployment. If
-        /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-        /// converts the percentage to the equivalent number of instances and rounds up
-        /// fractional instances.</p>
-        /// </li>
+        /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
-        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-        /// and a value of 95.</p>
-        pub fn minimum_healthy_hosts(mut self, inp: crate::model::MinimumHealthyHosts) -> Self {
-            self.inner = self.inner.minimum_healthy_hosts(inp);
+        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
+        pub fn minimum_healthy_hosts(mut self, input: crate::model::MinimumHealthyHosts) -> Self {
+            self.inner = self.inner.minimum_healthy_hosts(input);
             self
         }
-        /// <p>The minimum number of healthy instances that should be available at any time during
-        /// the deployment. There are two parameters expected in the input: type and value.</p>
+        /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-        /// instances as an absolute value.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-        /// instances as a percentage of the total number of instances in the deployment. If
-        /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-        /// converts the percentage to the equivalent number of instances and rounds up
-        /// fractional instances.</p>
-        /// </li>
+        /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
-        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-        /// and a value of 95.</p>
+        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
         pub fn set_minimum_healthy_hosts(
             mut self,
             input: std::option::Option<crate::model::MinimumHealthyHosts>,
@@ -1863,8 +1673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-        pub fn traffic_routing_config(mut self, inp: crate::model::TrafficRoutingConfig) -> Self {
-            self.inner = self.inner.traffic_routing_config(inp);
+        pub fn traffic_routing_config(mut self, input: crate::model::TrafficRoutingConfig) -> Self {
+            self.inner = self.inner.traffic_routing_config(input);
             self
         }
         /// <p>The configuration that specifies how the deployment traffic is routed.</p>
@@ -1875,14 +1685,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_traffic_routing_config(input);
             self
         }
-        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
-        pub fn compute_platform(mut self, inp: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(inp);
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
-        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -1894,7 +1702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentGroup`.
     ///
     /// <p>Creates a deployment group to which application revisions are deployed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1939,10 +1747,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1950,14 +1758,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1966,8 +1772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a new deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(inp);
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a new deployment group for the specified application.</p>
@@ -1978,32 +1784,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_group_name(input);
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined
-        /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-        /// you create by calling the create deployment configuration operation.</p>
-        /// <p>
-        /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-        /// is used if a configuration isn't specified for the deployment or deployment
-        /// group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-        /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined
-        /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-        /// you create by calling the create deployment configuration operation.</p>
-        /// <p>
-        /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-        /// is used if a configuration isn't specified for the deployment or deployment
-        /// group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-        /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2015,14 +1805,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
         ///
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-        /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
-        pub fn ec2_tag_filters(mut self, inp: impl Into<crate::model::Ec2TagFilter>) -> Self {
-            self.inner = self.inner.ec2_tag_filters(inp);
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
+            self.inner = self.inner.ec2_tag_filters(input);
             self
         }
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-        /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -2034,19 +1822,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
         ///
-        /// <p>The on-premises instance tags on which to filter. The deployment group includes
-        /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-        /// <code>OnPremisesTagSet</code>.</p>
-        pub fn on_premises_instance_tag_filters(
-            mut self,
-            inp: impl Into<crate::model::TagFilter>,
-        ) -> Self {
-            self.inner = self.inner.on_premises_instance_tag_filters(inp);
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
+        pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.on_premises_instance_tag_filters(input);
             self
         }
-        /// <p>The on-premises instance tags on which to filter. The deployment group includes
-        /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-        /// <code>OnPremisesTagSet</code>.</p>
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
         pub fn set_on_premises_instance_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2059,8 +1840,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
         /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
-        pub fn auto_scaling_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_groups(inp);
+        pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_groups(input.into());
             self
         }
         /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
@@ -2071,14 +1852,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_groups(input);
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-        /// user's behalf when interacting with AWS services.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(inp);
+        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-        /// user's behalf when interacting with AWS services.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2090,21 +1869,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to create when the deployment group is created. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-        /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
-        pub fn trigger_configurations(
-            mut self,
-            inp: impl Into<crate::model::TriggerConfig>,
-        ) -> Self {
-            self.inner = self.inner.trigger_configurations(inp);
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
+            self.inner = self.inner.trigger_configurations(input);
             self
         }
-        /// <p>Information about triggers to create when the deployment group is created. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-        /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -2112,14 +1882,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trigger_configurations(input);
             self
         }
-        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-        /// created.</p>
-        pub fn alarm_configuration(mut self, inp: crate::model::AlarmConfiguration) -> Self {
-            self.inner = self.inner.alarm_configuration(inp);
+        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
             self
         }
-        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-        /// created.</p>
+        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
         pub fn set_alarm_configuration(
             mut self,
             input: std::option::Option<crate::model::AlarmConfiguration>,
@@ -2127,17 +1895,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_configuration(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment
-        /// group is created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            inp: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(inp);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment
-        /// group is created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -2145,29 +1911,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_rollback_configuration(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
-            inp: crate::model::OutdatedInstancesStrategy,
+            input: crate::model::OutdatedInstancesStrategy,
         ) -> Self {
-            self.inner = self.inner.outdated_instances_strategy(inp);
+            self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -2175,14 +1931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outdated_instances_strategy(input);
             self
         }
-        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-        /// and whether to route deployment traffic behind a load balancer.</p>
-        pub fn deployment_style(mut self, inp: crate::model::DeploymentStyle) -> Self {
-            self.inner = self.inner.deployment_style(inp);
+        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
+        pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
+            self.inner = self.inner.deployment_style(input);
             self
         }
-        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-        /// and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -2193,9 +1947,9 @@ pub mod fluent_builders {
         /// <p>Information about blue/green deployment options for a deployment group.</p>
         pub fn blue_green_deployment_configuration(
             mut self,
-            inp: crate::model::BlueGreenDeploymentConfiguration,
+            input: crate::model::BlueGreenDeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.blue_green_deployment_configuration(inp);
+            self.inner = self.inner.blue_green_deployment_configuration(input);
             self
         }
         /// <p>Information about blue/green deployment options for a deployment group.</p>
@@ -2207,8 +1961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
-        pub fn load_balancer_info(mut self, inp: crate::model::LoadBalancerInfo) -> Self {
-            self.inner = self.inner.load_balancer_info(inp);
+        pub fn load_balancer_info(mut self, input: crate::model::LoadBalancerInfo) -> Self {
+            self.inner = self.inner.load_balancer_info(input);
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
@@ -2219,16 +1973,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_info(input);
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-        /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-        /// call as <code>ec2TagFilters</code>.</p>
-        pub fn ec2_tag_set(mut self, inp: crate::model::Ec2TagSet) -> Self {
-            self.inner = self.inner.ec2_tag_set(inp);
+        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+        pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
+            self.inner = self.inner.ec2_tag_set(input);
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-        /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-        /// call as <code>ec2TagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -2240,18 +1990,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
         ///
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
-        pub fn ecs_services(mut self, inp: impl Into<crate::model::EcsService>) -> Self {
-            self.inner = self.inner.ecs_services(inp);
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
+        pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
+            self.inner = self.inner.ecs_services(input);
             self
         }
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn set_ecs_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
@@ -2259,16 +2011,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecs_services(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-        /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
-        pub fn on_premises_tag_set(mut self, inp: crate::model::OnPremisesTagSet) -> Self {
-            self.inner = self.inner.on_premises_tag_set(inp);
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+        pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
+            self.inner = self.inner.on_premises_tag_set(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-        /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
         pub fn set_on_premises_tag_set(
             mut self,
             input: std::option::Option<crate::model::OnPremisesTagSet>,
@@ -2280,16 +2028,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2301,7 +2045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2346,10 +2090,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2357,14 +2101,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2375,12 +2117,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDeploymentConfig`.
     ///
-    /// <p>Deletes a deployment configuration.</p>
-    /// <note>
-    /// <p>A deployment configuration cannot be deleted if it is currently in use. Predefined
-    /// configurations cannot be deleted.</p>
+    /// <p>Deletes a deployment configuration.</p> <note>
+    /// <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2425,10 +2165,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeploymentConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2436,14 +2176,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2455,7 +2193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeploymentGroup`.
     ///
     /// <p>Deletes a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2500,10 +2238,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeploymentGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2511,14 +2249,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2527,8 +2263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(inp);
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
@@ -2543,7 +2279,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGitHubAccountToken`.
     ///
     /// <p>Deletes a GitHub account connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGitHubAccountToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2588,10 +2324,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGitHubAccountTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2600,8 +2336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the GitHub account connection to delete.</p>
-        pub fn token_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_name(inp);
+        pub fn token_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_name(input.into());
             self
         }
         /// <p>The name of the GitHub account connection to delete.</p>
@@ -2613,7 +2349,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcesByExternalId`.
     ///
     /// <p>Deletes resources linked to an external ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcesByExternalId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2658,10 +2394,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcesByExternalIdInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2669,14 +2405,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-        /// linked to one or more CodeDeploy resources.</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(inp);
+        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
-        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-        /// linked to one or more CodeDeploy resources.</p>
+        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_external_id(input);
             self
@@ -2685,7 +2419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterOnPremisesInstance`.
     ///
     /// <p>Deregisters an on-premises instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2730,10 +2464,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterOnPremisesInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2742,8 +2476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the on-premises instance to deregister.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p>The name of the on-premises instance to deregister.</p>
@@ -2758,7 +2492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Gets information about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2803,10 +2537,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2814,14 +2548,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2833,7 +2565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationRevision`.
     ///
     /// <p>Gets information about an application revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2878,10 +2610,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2890,8 +2622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application that corresponds to the revision.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application that corresponds to the revision.</p>
@@ -2903,8 +2635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the application revision to get, including type and location.</p>
-        pub fn revision(mut self, inp: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(inp);
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p>Information about the application revision to get, including type and location.</p>
@@ -2918,14 +2650,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
-    /// <p>Gets information about a deployment.</p>
-    /// <note>
-    /// <p> The <code>content</code> property of the <code>appSpecContent</code> object in
-    /// the returned revision is always null. Use <code>GetApplicationRevision</code> and
-    /// the <code>sha256</code> property of the returned <code>appSpecContent</code> object
-    /// to get the content of the deployment’s AppSpec file. </p>
+    /// <p>Gets information about a deployment.</p> <note>
+    /// <p> The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,10 +2698,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2982,8 +2710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
@@ -2998,7 +2726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentConfig`.
     ///
     /// <p>Gets information about a deployment configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3043,10 +2771,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3054,14 +2782,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3073,7 +2799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentGroup`.
     ///
     /// <p>Gets information about a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3118,10 +2844,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3129,14 +2855,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3145,8 +2869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(inp);
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
@@ -3161,7 +2885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentInstance`.
     ///
     /// <p>Gets information about an instance as part of a deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3206,10 +2930,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3218,8 +2942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3231,8 +2955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID of an instance in the deployment group. </p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p> The unique ID of an instance in the deployment group. </p>
@@ -3244,7 +2968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentTarget`.
     ///
     /// <p> Returns information about a deployment target. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3289,10 +3013,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3301,8 +3025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3314,8 +3038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID of a deployment target. </p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment target. </p>
@@ -3327,7 +3051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOnPremisesInstance`.
     ///
     /// <p> Gets information about an on-premises instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3372,10 +3096,10 @@ pub mod fluent_builders {
                 crate::input::GetOnPremisesInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3384,8 +3108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the on-premises instance about which to get information. </p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p> The name of the on-premises instance about which to get information. </p>
@@ -3400,7 +3124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationRevisions`.
     ///
     /// <p>Lists information about revisions for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3445,10 +3169,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3456,14 +3180,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account. </p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationRevisionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListApplicationRevisionsPaginator<C, M, R> {
+            crate::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account. </p>
+        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3473,48 +3203,22 @@ pub mod fluent_builders {
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>registerTime</code>: Sort by the time the revisions were registered with
-        /// AWS CodeDeploy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-        /// a deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+        /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
-        /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-        /// </p>
-        pub fn sort_by(mut self, inp: crate::model::ApplicationRevisionSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+        pub fn sort_by(mut self, input: crate::model::ApplicationRevisionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>registerTime</code>: Sort by the time the revisions were registered with
-        /// AWS CodeDeploy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-        /// a deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+        /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
-        /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-        /// </p>
+        /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ApplicationRevisionSortBy>,
@@ -3524,31 +3228,19 @@ pub mod fluent_builders {
         }
         /// <p> The order in which to sort the list results: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ascending</code>: ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>descending</code>: descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+        /// <li> <p> <code>descending</code>: descending order.</p> </li>
         /// </ul>
         /// <p>If not specified, the results are sorted in ascending order.</p>
         /// <p>If set to null, the results are sorted in an arbitrary order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p> The order in which to sort the list results: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ascending</code>: ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>descending</code>: descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+        /// <li> <p> <code>descending</code>: descending order.</p> </li>
         /// </ul>
         /// <p>If not specified, the results are sorted in ascending order.</p>
         /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -3561,8 +3253,8 @@ pub mod fluent_builders {
         }
         /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
         /// <p> If set to null, all of the user's buckets are searched. </p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(inp);
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input.into());
             self
         }
         /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
@@ -3571,14 +3263,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_bucket(input);
             self
         }
-        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-        /// </p>
-        pub fn s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(inp);
+        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
-        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-        /// </p>
+        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3586,45 +3276,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_key_prefix(input);
             self
         }
-        /// <p> Whether to list revisions based on whether the revision is the target revision of a
-        /// deployment group: </p>
+        /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>include</code>: List revisions that are target revisions of a deployment
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>exclude</code>: Do not list revisions that are target revisions of a
-        /// deployment group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code>: List all revisions.</p>
-        /// </li>
+        /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
         /// </ul>
-        pub fn deployed(mut self, inp: crate::model::ListStateFilterAction) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: crate::model::ListStateFilterAction) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
-        /// <p> Whether to list revisions based on whether the revision is the target revision of a
-        /// deployment group: </p>
+        /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>include</code>: List revisions that are target revisions of a deployment
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>exclude</code>: Do not list revisions that are target revisions of a
-        /// deployment group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code>: List all revisions.</p>
-        /// </li>
+        /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
         /// </ul>
         pub fn set_deployed(
             mut self,
@@ -3633,14 +3299,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployed(input);
             self
         }
-        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-        /// It can be used to return the next set of applications in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-        /// It can be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3649,7 +3313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists the applications registered with the IAM user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3694,10 +3358,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3705,14 +3369,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier returned from the previous list applications call. It can be used to
-        /// return the next set of applications in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator<C, M, R> {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list applications call. It can be used to
-        /// return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3721,7 +3389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentConfigs`.
     ///
     /// <p>Lists the deployment configurations with the IAM user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3766,10 +3434,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3777,14 +3445,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-        /// can be used to return the next set of deployment configurations in the list. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeploymentConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeploymentConfigsPaginator<C, M, R> {
+            crate::paginator::ListDeploymentConfigsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-        /// can be used to return the next set of deployment configurations in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3792,9 +3464,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentGroups`.
     ///
-    /// <p>Lists the deployment groups for an application registered with the IAM user or AWS
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the deployment groups for an application registered with the IAM user or AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3839,10 +3510,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3850,14 +3521,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeploymentGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeploymentGroupsPaginator<C, M, R> {
+            crate::paginator::ListDeploymentGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3865,14 +3540,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>An identifier returned from the previous list deployment groups call. It can be used
-        /// to return the next set of deployment groups in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployment groups call. It can be used
-        /// to return the next set of deployment groups in the list.</p>
+        /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3881,13 +3554,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentInstances`.
     ///
     /// <note>
-    /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because
-    /// it works with all compute types. <code>ListDeploymentInstances</code> throws an
-    /// exception if it is used with a compute platform other than EC2/On-premises or AWS
-    /// Lambda. </p>
+    /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or AWS Lambda. </p>
     /// </note>
     /// <p> Lists the instance for a deployment associated with the IAM user or AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3932,10 +3602,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3943,9 +3613,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeploymentInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeploymentInstancesPaginator<C, M, R> {
+            crate::paginator::ListDeploymentInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3956,14 +3632,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p>An identifier returned from the previous list deployment instances call. It can be
-        /// used to return the next set of deployment instances in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployment instances call. It can be
-        /// used to return the next set of deployment instances in the list.</p>
+        /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3974,70 +3648,25 @@ pub mod fluent_builders {
         ///
         /// <p>A subset of instances to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: Include those instances with pending deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InProgress</code>: Include those instances where deployments are still
-        /// in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include those instances with successful
-        /// deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include those instances with failed deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unknown</code>: Include those instances with deployments in an unknown
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+        /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+        /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+        /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
         /// </ul>
-        pub fn instance_status_filter(
-            mut self,
-            inp: impl Into<crate::model::InstanceStatus>,
-        ) -> Self {
-            self.inner = self.inner.instance_status_filter(inp);
+        pub fn instance_status_filter(mut self, input: crate::model::InstanceStatus) -> Self {
+            self.inner = self.inner.instance_status_filter(input);
             self
         }
         /// <p>A subset of instances to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: Include those instances with pending deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InProgress</code>: Include those instances where deployments are still
-        /// in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include those instances with successful
-        /// deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include those instances with failed deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unknown</code>: Include those instances with deployments in an unknown
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+        /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+        /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+        /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
         /// </ul>
         pub fn set_instance_status_filter(
             mut self,
@@ -4050,16 +3679,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_type_filter`](Self::set_instance_type_filter).
         ///
-        /// <p>The set of instances in a blue/green deployment, either those in the original
-        /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-        /// want to view instance information.</p>
-        pub fn instance_type_filter(mut self, inp: impl Into<crate::model::InstanceType>) -> Self {
-            self.inner = self.inner.instance_type_filter(inp);
+        /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
+        pub fn instance_type_filter(mut self, input: crate::model::InstanceType) -> Self {
+            self.inner = self.inner.instance_type_filter(input);
             self
         }
-        /// <p>The set of instances in a blue/green deployment, either those in the original
-        /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-        /// want to view instance information.</p>
+        /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
         pub fn set_instance_type_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceType>>,
@@ -4070,9 +3695,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
-    /// <p>Lists the deployments in a deployment group for an application registered with the IAM
-    /// user or AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the deployments in a deployment group for an application registered with the IAM user or AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4117,10 +3741,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4128,23 +3752,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        /// <note>
-        /// <p>If <code>applicationName</code> is specified, then
-        /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-        /// <code>deploymentGroupName</code> must not be specified. </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeploymentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeploymentsPaginator<C, M, R> {
+            crate::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        /// <note>
-        /// <p>If <code>applicationName</code> is specified, then
-        /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-        /// <code>deploymentGroupName</code> must not be specified. </p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
         pub fn set_application_name(
             mut self,
@@ -4153,21 +3775,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The name of a deployment group for the specified application.</p>
-        /// <note>
-        /// <p>If <code>deploymentGroupName</code> is specified, then
-        /// <code>applicationName</code> must be specified. If it is not specified, then
-        /// <code>applicationName</code> must not be specified. </p>
+        /// <p>The name of a deployment group for the specified application.</p> <note>
+        /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
         /// </note>
-        pub fn deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(inp);
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
-        /// <p>The name of a deployment group for the specified application.</p>
-        /// <note>
-        /// <p>If <code>deploymentGroupName</code> is specified, then
-        /// <code>applicationName</code> must be specified. If it is not specified, then
-        /// <code>applicationName</code> must not be specified. </p>
+        /// <p>The name of a deployment group for the specified application.</p> <note>
+        /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
         /// </note>
         pub fn set_deployment_group_name(
             mut self,
@@ -4176,14 +3792,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_group_name(input);
             self
         }
-        /// <p>The unique ID of an external resource for returning deployments linked to the external
-        /// resource.</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(inp);
+        /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
-        /// <p>The unique ID of an external resource for returning deployments linked to the external
-        /// resource.</p>
+        /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_external_id(input);
             self
@@ -4194,72 +3808,25 @@ pub mod fluent_builders {
         ///
         /// <p>A subset of deployments to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Created</code>: Include created deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code>: Include in-progress deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include successful deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stopped</code>: Include stopped deployments in the resulting
-        /// list.</p>
-        /// </li>
+        /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
         /// </ul>
-        pub fn include_only_statuses(
-            mut self,
-            inp: impl Into<crate::model::DeploymentStatus>,
-        ) -> Self {
-            self.inner = self.inner.include_only_statuses(inp);
+        pub fn include_only_statuses(mut self, input: crate::model::DeploymentStatus) -> Self {
+            self.inner = self.inner.include_only_statuses(input);
             self
         }
         /// <p>A subset of deployments to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Created</code>: Include created deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code>: Include in-progress deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include successful deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stopped</code>: Include stopped deployments in the resulting
-        /// list.</p>
-        /// </li>
+        /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
         /// </ul>
         pub fn set_include_only_statuses(
             mut self,
@@ -4269,8 +3836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-        pub fn create_time_range(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.create_time_range(inp);
+        pub fn create_time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.create_time_range(input);
             self
         }
         /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -4281,14 +3848,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_create_time_range(input);
             self
         }
-        /// <p>An identifier returned from the previous list deployments call. It can be used to
-        /// return the next set of deployments in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployments call. It can be used to
-        /// return the next set of deployments in the list.</p>
+        /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4297,7 +3862,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeploymentTargets`.
     ///
     /// <p> Returns an array of target IDs that are associated a deployment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4342,10 +3907,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4354,8 +3919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -4366,14 +3931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-        /// call. It can be used to return the next set of deployment targets in the list. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-        /// call. It can be used to return the next set of deployment targets in the list. </p>
+        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4384,41 +3947,21 @@ pub mod fluent_builders {
         ///
         /// <p> A key used to filter the returned targets. The two valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-        /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-        /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-        /// <code>Unknown</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-        /// string can be <code>Blue</code> or <code>Green</code>. </p>
-        /// </li>
+        /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+        /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
         /// </ul>
         pub fn target_filters(
             mut self,
-            k: impl Into<crate::model::TargetFilterName>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::TargetFilterName,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.target_filters(k, v);
             self
         }
         /// <p> A key used to filter the returned targets. The two valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-        /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-        /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-        /// <code>Unknown</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-        /// string can be <code>Blue</code> or <code>Green</code>. </p>
-        /// </li>
+        /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+        /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
         /// </ul>
         pub fn set_target_filters(
             mut self,
@@ -4436,7 +3979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGitHubAccountTokenNames`.
     ///
     /// <p>Lists the names of stored connections to GitHub accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGitHubAccountTokenNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4481,10 +4024,10 @@ pub mod fluent_builders {
                 crate::input::ListGitHubAccountTokenNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4492,14 +4035,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-        /// call. It can be used to return the next set of names in the list. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-        /// call. It can be used to return the next set of names in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4508,10 +4049,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOnPremisesInstances`.
     ///
     /// <p>Gets a list of names for one or more on-premises instances.</p>
-    /// <p>Unless otherwise specified, both registered and deregistered on-premises instance
-    /// names are listed. To list only registered or deregistered on-premises instance names,
-    /// use the registration status parameter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4556,10 +4095,10 @@ pub mod fluent_builders {
                 crate::input::ListOnPremisesInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4569,33 +4108,17 @@ pub mod fluent_builders {
         }
         /// <p>The registration status of the on-premises instances:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Registered</code>: Include registered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
+        /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+        /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
         /// </ul>
-        pub fn registration_status(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(inp);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>The registration status of the on-premises instances:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Registered</code>: Include registered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
+        /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+        /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
         /// </ul>
         pub fn set_registration_status(
             mut self,
@@ -4608,14 +4131,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
-        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-        /// returned.</p>
-        pub fn tag_filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.tag_filters(inp);
+        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filters(input);
             self
         }
-        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-        /// returned.</p>
+        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -4623,14 +4144,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filters(input);
             self
         }
-        /// <p>An identifier returned from the previous list on-premises instances call. It can be
-        /// used to return the next set of on-premises instances in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list on-premises instances call. It can be
-        /// used to return the next set of on-premises instances in the list.</p>
+        /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4638,9 +4157,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p> Returns a list of tags for the resource identified by a specified Amazon Resource
-    /// Name (ARN). Tags are used to organize and categorize your CodeDeploy resources. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy resources. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4685,10 +4203,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4696,28 +4214,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-        /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-        /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-        /// </p>
+        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-        /// be used to return the next set of applications in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-        /// be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4725,16 +4237,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLifecycleEventHookExecutionStatus`.
     ///
-    /// <p> Sets the result of a Lambda validation function. The function validates lifecycle
-    /// hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform. For
-    /// AWS Lambda deployments, the available lifecycle hooks are
-    /// <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS
-    /// deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
-    /// <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
-    /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda
-    /// validation functions return <code>Succeeded</code> or <code>Failed</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS compute platform. For AWS Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>, <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation functions return <code>Succeeded</code> or <code>Failed</code>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an AWS Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleEventHookExecutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4781,10 +4285,10 @@ pub mod fluent_builders {
                 crate::input::PutLifecycleEventHookExecutionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4792,14 +4296,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-        /// deployment lifecycle event. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
-        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-        /// deployment lifecycle event. </p>
+        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4807,17 +4309,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
         pub fn lifecycle_event_hook_execution_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.lifecycle_event_hook_execution_id(inp);
+            self.inner = self.inner.lifecycle_event_hook_execution_id(input.into());
             self
         }
-        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
         pub fn set_lifecycle_event_hook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4825,16 +4325,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_event_hook_execution_id(input);
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-        /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-        /// <code>status</code>.</p>
-        pub fn status(mut self, inp: crate::model::LifecycleEventStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+        pub fn status(mut self, input: crate::model::LifecycleEventStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-        /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-        /// <code>status</code>.</p>
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventStatus>,
@@ -4846,7 +4342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterApplicationRevision`.
     ///
     /// <p>Registers with AWS CodeDeploy a revision for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterApplicationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4891,10 +4387,10 @@ pub mod fluent_builders {
                 crate::input::RegisterApplicationRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4902,14 +4398,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4918,8 +4412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A comment about the revision.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A comment about the revision.</p>
@@ -4927,14 +4421,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Information about the application revision to register, including type and
-        /// location.</p>
-        pub fn revision(mut self, inp: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(inp);
+        /// <p>Information about the application revision to register, including type and location.</p>
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
-        /// <p>Information about the application revision to register, including type and
-        /// location.</p>
+        /// <p>Information about the application revision to register, including type and location.</p>
         pub fn set_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -4945,12 +4437,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterOnPremisesInstance`.
     ///
-    /// <p>Registers an on-premises instance.</p>
-    /// <note>
-    /// <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request.
-    /// You cannot use both.</p>
+    /// <p>Registers an on-premises instance.</p> <note>
+    /// <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterOnPremisesInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4995,10 +4485,10 @@ pub mod fluent_builders {
                 crate::input::RegisterOnPremisesInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5007,8 +4497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the on-premises instance to register.</p>
-        pub fn instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(inp);
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p>The name of the on-premises instance to register.</p>
@@ -5020,8 +4510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-        pub fn iam_session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_session_arn(inp);
+        pub fn iam_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_session_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
@@ -5033,8 +4523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
@@ -5046,7 +4536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTagsFromOnPremisesInstances`.
     ///
     /// <p>Removes one or more tags from one or more on-premises instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromOnPremisesInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5091,10 +4581,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsFromOnPremisesInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5107,8 +4597,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
@@ -5124,8 +4614,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
         /// <p>The names of the on-premises instances from which to remove tags.</p>
-        pub fn instance_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_names(inp);
+        pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_names(input.into());
             self
         }
         /// <p>The names of the on-premises instances from which to remove tags.</p>
@@ -5139,9 +4629,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SkipWaitTimeForInstanceTermination`.
     ///
-    /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating
-    /// instances immediately after the traffic routing is complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SkipWaitTimeForInstanceTermination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5188,10 +4677,10 @@ pub mod fluent_builders {
                 crate::input::SkipWaitTimeForInstanceTerminationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5199,14 +4688,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-        /// termination wait time. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-        /// termination wait time. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5218,7 +4705,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDeployment`.
     ///
     /// <p>Attempts to stop an ongoing deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5263,10 +4750,10 @@ pub mod fluent_builders {
                 crate::input::StopDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5275,8 +4762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -5287,14 +4774,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-        /// should be rolled back to the previous version of the application revision. </p>
-        pub fn auto_rollback_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_rollback_enabled(inp);
+        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+        pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_rollback_enabled(input);
             self
         }
-        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-        /// should be rolled back to the previous version of the application revision. </p>
+        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
         pub fn set_auto_rollback_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_rollback_enabled(input);
             self
@@ -5302,9 +4787,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p> Associates the list of tags in the input <code>Tags</code> parameter with the
-    /// resource identified by the <code>ResourceArn</code> input parameter. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the <code>ResourceArn</code> input parameter. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5349,10 +4833,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5361,8 +4845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
@@ -5374,14 +4858,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-        /// is identified by the <code>ResourceArn</code> input parameter. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-        /// is identified by the <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5392,10 +4874,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p> Disassociates a resource from a list of tags. The resource is identified by the
-    /// <code>ResourceArn</code> input parameter. The tags are identified by the list of
-    /// keys in the <code>TagKeys</code> input parameter. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input parameter. The tags are identified by the list of keys in the <code>TagKeys</code> input parameter. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5440,10 +4920,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5451,14 +4931,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-        /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-        /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5467,16 +4945,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-        /// by the keys are disassociated from the resource specified by the
-        /// <code>ResourceArn</code> input parameter. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-        /// by the keys are disassociated from the resource specified by the
-        /// <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5488,7 +4962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Changes the name of an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5533,10 +5007,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5545,8 +5019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current name of the application you want to change.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The current name of the application you want to change.</p>
@@ -5558,8 +5032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name to give the application.</p>
-        pub fn new_application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_application_name(inp);
+        pub fn new_application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_application_name(input.into());
             self
         }
         /// <p>The new name to give the application.</p>
@@ -5574,7 +5048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeploymentGroup`.
     ///
     /// <p>Changes information about a deployment group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeploymentGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5619,10 +5093,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeploymentGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5631,8 +5105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name that corresponds to the deployment group to update.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The application name that corresponds to the deployment group to update.</p>
@@ -5646,9 +5120,9 @@ pub mod fluent_builders {
         /// <p>The current name of the deployment group.</p>
         pub fn current_deployment_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.current_deployment_group_name(inp);
+            self.inner = self.inner.current_deployment_group_name(input.into());
             self
         }
         /// <p>The current name of the deployment group.</p>
@@ -5660,8 +5134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the deployment group, if you want to change it.</p>
-        pub fn new_deployment_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_deployment_group_name(inp);
+        pub fn new_deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_deployment_group_name(input.into());
             self
         }
         /// <p>The new name of the deployment group, if you want to change it.</p>
@@ -5673,8 +5147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
-        pub fn deployment_config_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(inp);
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
@@ -5689,16 +5163,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
         ///
-        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-        /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-        /// names.</p>
-        pub fn ec2_tag_filters(mut self, inp: impl Into<crate::model::Ec2TagFilter>) -> Self {
-            self.inner = self.inner.ec2_tag_filters(inp);
+        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+        pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
+            self.inner = self.inner.ec2_tag_filters(input);
             self
         }
-        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-        /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-        /// names.</p>
+        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -5710,19 +5180,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
         ///
-        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-        /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-        /// any tag names.</p>
-        pub fn on_premises_instance_tag_filters(
-            mut self,
-            inp: impl Into<crate::model::TagFilter>,
-        ) -> Self {
-            self.inner = self.inner.on_premises_instance_tag_filters(inp);
+        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+        pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.on_premises_instance_tag_filters(input);
             self
         }
-        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-        /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-        /// any tag names.</p>
+        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn set_on_premises_instance_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -5734,16 +5197,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-        /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-        /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
-        pub fn auto_scaling_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_groups(inp);
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_groups(input.into());
             self
         }
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-        /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-        /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5752,8 +5211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A replacement ARN for the service role, if you want to change it.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(inp);
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>A replacement ARN for the service role, if you want to change it.</p>
@@ -5768,21 +5227,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to change when the deployment group is updated. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-        /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
-        pub fn trigger_configurations(
-            mut self,
-            inp: impl Into<crate::model::TriggerConfig>,
-        ) -> Self {
-            self.inner = self.inner.trigger_configurations(inp);
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+        pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
+            self.inner = self.inner.trigger_configurations(input);
             self
         }
-        /// <p>Information about triggers to change when the deployment group is updated. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-        /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -5790,14 +5240,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trigger_configurations(input);
             self
         }
-        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-        /// is updated.</p>
-        pub fn alarm_configuration(mut self, inp: crate::model::AlarmConfiguration) -> Self {
-            self.inner = self.inner.alarm_configuration(inp);
+        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
             self
         }
-        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-        /// is updated.</p>
+        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
         pub fn set_alarm_configuration(
             mut self,
             input: std::option::Option<crate::model::AlarmConfiguration>,
@@ -5805,17 +5253,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_configuration(input);
             self
         }
-        /// <p>Information for an automatic rollback configuration that is added or changed when a
-        /// deployment group is updated.</p>
+        /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            inp: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(inp);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
-        /// <p>Information for an automatic rollback configuration that is added or changed when a
-        /// deployment group is updated.</p>
+        /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -5823,29 +5269,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_rollback_configuration(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
-            inp: crate::model::OutdatedInstancesStrategy,
+            input: crate::model::OutdatedInstancesStrategy,
         ) -> Self {
-            self.inner = self.inner.outdated_instances_strategy(inp);
+            self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -5853,14 +5289,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outdated_instances_strategy(input);
             self
         }
-        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-        /// run and whether to route deployment traffic behind a load balancer.</p>
-        pub fn deployment_style(mut self, inp: crate::model::DeploymentStyle) -> Self {
-            self.inner = self.inner.deployment_style(inp);
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+        pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
+            self.inner = self.inner.deployment_style(input);
             self
         }
-        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-        /// run and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -5871,9 +5305,9 @@ pub mod fluent_builders {
         /// <p>Information about blue/green deployment options for a deployment group.</p>
         pub fn blue_green_deployment_configuration(
             mut self,
-            inp: crate::model::BlueGreenDeploymentConfiguration,
+            input: crate::model::BlueGreenDeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.blue_green_deployment_configuration(inp);
+            self.inner = self.inner.blue_green_deployment_configuration(input);
             self
         }
         /// <p>Information about blue/green deployment options for a deployment group.</p>
@@ -5885,8 +5319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
-        pub fn load_balancer_info(mut self, inp: crate::model::LoadBalancerInfo) -> Self {
-            self.inner = self.inner.load_balancer_info(inp);
+        pub fn load_balancer_info(mut self, input: crate::model::LoadBalancerInfo) -> Self {
+            self.inner = self.inner.load_balancer_info(input);
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
@@ -5897,14 +5331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_info(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only EC2 instances identified by all the tag groups.</p>
-        pub fn ec2_tag_set(mut self, inp: crate::model::Ec2TagSet) -> Self {
-            self.inner = self.inner.ec2_tag_set(inp);
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+        pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
+            self.inner = self.inner.ec2_tag_set(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only EC2 instances identified by all the tag groups.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -5916,18 +5348,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
         ///
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
-        pub fn ecs_services(mut self, inp: impl Into<crate::model::EcsService>) -> Self {
-            self.inner = self.inner.ecs_services(inp);
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
+        pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
+            self.inner = self.inner.ecs_services(input);
             self
         }
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn set_ecs_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
@@ -5935,14 +5369,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecs_services(input);
             self
         }
-        /// <p>Information about an on-premises instance tag set. The deployment group includes only
-        /// on-premises instances identified by all the tag groups.</p>
-        pub fn on_premises_tag_set(mut self, inp: crate::model::OnPremisesTagSet) -> Self {
-            self.inner = self.inner.on_premises_tag_set(inp);
+        /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
+        pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
+            self.inner = self.inner.on_premises_tag_set(input);
             self
         }
-        /// <p>Information about an on-premises instance tag set. The deployment group includes only
-        /// on-premises instances identified by all the tag groups.</p>
+        /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
         pub fn set_on_premises_tag_set(
             mut self,
             input: std::option::Option<crate::model::OnPremisesTagSet>,
@@ -5952,6 +5384,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

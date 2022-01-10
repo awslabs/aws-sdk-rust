@@ -406,12 +406,9 @@ pub mod list_workspaces_output {
         /// To override the contents of this collection use [`set_workspace_summaries`](Self::set_workspace_summaries).
         ///
         /// <p>A list of objects that contain information about the workspaces.</p>
-        pub fn workspace_summaries(
-            mut self,
-            input: impl Into<crate::model::WorkspaceSummary>,
-        ) -> Self {
+        pub fn workspace_summaries(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspace_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspace_summaries = Some(v);
             self
         }
@@ -585,9 +582,9 @@ pub mod list_scenes_output {
         /// To override the contents of this collection use [`set_scene_summaries`](Self::set_scene_summaries).
         ///
         /// <p>A list of objects that contain information about the scenes.</p>
-        pub fn scene_summaries(mut self, input: impl Into<crate::model::SceneSummary>) -> Self {
+        pub fn scene_summaries(mut self, input: crate::model::SceneSummary) -> Self {
             let mut v = self.scene_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scene_summaries = Some(v);
             self
         }
@@ -668,9 +665,9 @@ pub mod list_entities_output {
         /// To override the contents of this collection use [`set_entity_summaries`](Self::set_entity_summaries).
         ///
         /// <p>A list of objects that contain information about the entities.</p>
-        pub fn entity_summaries(mut self, input: impl Into<crate::model::EntitySummary>) -> Self {
+        pub fn entity_summaries(mut self, input: crate::model::EntitySummary) -> Self {
             let mut v = self.entity_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_summaries = Some(v);
             self
         }
@@ -782,10 +779,10 @@ pub mod list_component_types_output {
         /// <p>A list of objects that contain information about the component types.</p>
         pub fn component_type_summaries(
             mut self,
-            input: impl Into<crate::model::ComponentTypeSummary>,
+            input: crate::model::ComponentTypeSummary,
         ) -> Self {
             let mut v = self.component_type_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_type_summaries = Some(v);
             self
         }
@@ -1218,15 +1215,13 @@ impl GetSceneOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueHistoryOutput {
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub property_values: std::option::Option<std::vec::Vec<crate::model::PropertyValueHistory>>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryOutput {
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::PropertyValueHistory]> {
         self.property_values.as_deref()
     }
@@ -1258,19 +1253,14 @@ pub mod get_property_value_history_output {
         ///
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
-        pub fn property_values(
-            mut self,
-            input: impl Into<crate::model::PropertyValueHistory>,
-        ) -> Self {
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+        pub fn property_values(mut self, input: crate::model::PropertyValueHistory) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyValueHistory>>,
@@ -1308,15 +1298,13 @@ impl GetPropertyValueHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPropertyValueOutput {
-    /// <p>An object that maps strings to the properties and latest property values in the response. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
     pub property_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyLatestValue>,
     >,
 }
 impl GetPropertyValueOutput {
-    /// <p>An object that maps strings to the properties and latest property values in the response. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
     pub fn property_values(
         &self,
     ) -> std::option::Option<
@@ -1347,20 +1335,18 @@ pub mod get_property_value_output {
         ///
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
-        /// <p>An object that maps strings to the properties and latest property values in the response. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
         pub fn property_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyLatestValue>,
+            v: crate::model::PropertyLatestValue,
         ) -> Self {
             let mut hash_map = self.property_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_values = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the properties and latest property values in the response. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_values(
             mut self,
             input: std::option::Option<
@@ -1401,8 +1387,7 @@ pub struct GetEntityOutput {
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the components in the entity. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub components: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentResponse>,
     >,
@@ -1440,8 +1425,7 @@ impl GetEntityOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the components in the entity. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn components(
         &self,
     ) -> std::option::Option<
@@ -1568,20 +1552,18 @@ pub mod get_entity_output {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentResponse>,
+            v: crate::model::ComponentResponse,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -1671,22 +1653,19 @@ impl GetEntityOutput {
 pub struct GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-    /// type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionResponse>,
     >,
     /// <p>The name of the parent component type that this component type extends.</p>
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An object that maps strings to the functions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionResponse>,
     >,
@@ -1698,8 +1677,7 @@ pub struct GetComponentTypeOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
     pub is_abstract: std::option::Option<bool>,
-    /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the
-    /// schema initializer has run.</p>
+    /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
     pub is_schema_initialized: std::option::Option<bool>,
     /// <p>The current status of the component type.</p>
     pub status: std::option::Option<crate::model::Status>,
@@ -1709,8 +1687,7 @@ impl GetComponentTypeOutput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-    /// type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(&self) -> std::option::Option<bool> {
         self.is_singleton
     }
@@ -1722,8 +1699,7 @@ impl GetComponentTypeOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         &self,
     ) -> std::option::Option<
@@ -1735,8 +1711,7 @@ impl GetComponentTypeOutput {
     pub fn extends_from(&self) -> std::option::Option<&[std::string::String]> {
         self.extends_from.as_deref()
     }
-    /// <p>An object that maps strings to the functions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(
         &self,
     ) -> std::option::Option<
@@ -1760,8 +1735,7 @@ impl GetComponentTypeOutput {
     pub fn is_abstract(&self) -> std::option::Option<bool> {
         self.is_abstract
     }
-    /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the
-    /// schema initializer has run.</p>
+    /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
     pub fn is_schema_initialized(&self) -> std::option::Option<bool> {
         self.is_schema_initialized
     }
@@ -1827,14 +1801,12 @@ pub mod get_component_type_output {
             self.workspace_id = input;
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn is_singleton(mut self, input: bool) -> Self {
             self.is_singleton = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.is_singleton = input;
             self
@@ -1866,20 +1838,18 @@ pub mod get_component_type_output {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionResponse>,
+            v: crate::model::PropertyDefinitionResponse,
         ) -> Self {
             let mut hash_map = self.property_definitions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_definitions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -1915,20 +1885,18 @@ pub mod get_component_type_output {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionResponse>,
+            v: crate::model::FunctionResponse,
         ) -> Self {
             let mut hash_map = self.functions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.functions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -1984,14 +1952,12 @@ pub mod get_component_type_output {
             self.is_abstract = input;
             self
         }
-        /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the
-        /// schema initializer has run.</p>
+        /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
         pub fn is_schema_initialized(mut self, input: bool) -> Self {
             self.is_schema_initialized = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the
-        /// schema initializer has run.</p>
+        /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
         pub fn set_is_schema_initialized(mut self, input: std::option::Option<bool>) -> Self {
             self.is_schema_initialized = input;
             self
@@ -2595,12 +2561,9 @@ pub mod batch_put_property_values_output {
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
         /// <p>Entries that caused errors in the batch put operation.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchPutPropertyErrorEntry>,
-        ) -> Self {
+        pub fn error_entries(mut self, input: crate::model::BatchPutPropertyErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }

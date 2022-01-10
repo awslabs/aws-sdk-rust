@@ -1082,7 +1082,7 @@ mod upload_archive_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
-        let expected_headers = &[("X-Amz-Glacier-Version", "2012-06-01")];
+        let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
@@ -1110,7 +1110,7 @@ mod upload_archive_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
-        let expected_headers = &[
+        let expected_headers = [
             (
                 "X-Amz-Content-Sha256",
                 "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
@@ -1150,7 +1150,7 @@ mod upload_archive_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
-        let expected_headers = &[("X-Amz-Glacier-Version", "2012-06-01")];
+        let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
@@ -1177,7 +1177,7 @@ mod upload_archive_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "POST");
         assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
-        let expected_headers = &[("X-Amz-Glacier-Version", "2012-06-01")];
+        let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
@@ -1247,7 +1247,7 @@ mod upload_multipart_part_request_test {
             http_request.uri().path(),
             "/foo/vaults/bar/multipart-uploads/baz"
         );
-        let expected_headers = &[
+        let expected_headers = [
             (
                 "X-Amz-Content-Sha256",
                 "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",

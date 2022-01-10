@@ -73,8 +73,6 @@ impl AssociateApplicationFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -150,6 +148,151 @@ impl std::error::Error for AssociateApplicationFleetError {
     }
 }
 
+/// Error type for the `AssociateApplicationToEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateApplicationToEntitlementError {
+    /// Kind of error that occurred.
+    pub kind: AssociateApplicationToEntitlementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateApplicationToEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateApplicationToEntitlementErrorKind {
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The requested limit exceeds the permitted limit for an account.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateApplicationToEntitlementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateApplicationToEntitlementErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            AssociateApplicationToEntitlementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateApplicationToEntitlementError {
+    fn code(&self) -> Option<&str> {
+        AssociateApplicationToEntitlementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateApplicationToEntitlementError {
+    /// Creates a new `AssociateApplicationToEntitlementError`.
+    pub fn new(
+        kind: AssociateApplicationToEntitlementErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateApplicationToEntitlementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateApplicationToEntitlementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateApplicationToEntitlementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateApplicationToEntitlementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateApplicationToEntitlementErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateApplicationToEntitlementErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateApplicationToEntitlementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateApplicationToEntitlementErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException(_inner) => {
+                Some(_inner)
+            }
+            AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            AssociateApplicationToEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `AssociateFleet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -221,8 +364,6 @@ impl AssociateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -363,8 +504,6 @@ impl BatchAssociateUserStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -477,8 +616,6 @@ impl BatchDisassociateUserStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -599,8 +736,6 @@ impl CopyImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -737,8 +872,6 @@ impl CreateAppBlockError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -868,8 +1001,6 @@ impl CreateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1010,8 +1141,6 @@ impl CreateDirectoryConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1085,6 +1214,132 @@ impl std::error::Error for CreateDirectoryConfigError {
             CreateDirectoryConfigErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
             CreateDirectoryConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateDirectoryConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateEntitlementError {
+    /// Kind of error that occurred.
+    pub kind: CreateEntitlementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateEntitlementErrorKind {
+    /// <p>The entitlement already exists.</p>
+    EntitlementAlreadyExistsException(crate::error::EntitlementAlreadyExistsException),
+    /// <p>The requested limit exceeds the permitted limit for an account.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateEntitlementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateEntitlementErrorKind::EntitlementAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateEntitlementErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateEntitlementErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            CreateEntitlementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateEntitlementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateEntitlementError {
+    fn code(&self) -> Option<&str> {
+        CreateEntitlementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateEntitlementError {
+    /// Creates a new `CreateEntitlementError`.
+    pub fn new(kind: CreateEntitlementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateEntitlementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateEntitlementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateEntitlementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateEntitlementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateEntitlementErrorKind::EntitlementAlreadyExistsException`.
+    pub fn is_entitlement_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEntitlementErrorKind::EntitlementAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEntitlementErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEntitlementErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEntitlementErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEntitlementErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateEntitlementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEntitlementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateEntitlementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateEntitlementErrorKind::EntitlementAlreadyExistsException(_inner) => Some(_inner),
+            CreateEntitlementErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateEntitlementErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            CreateEntitlementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1175,8 +1430,6 @@ impl CreateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1376,8 +1629,6 @@ impl CreateImageBuilderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1563,8 +1814,6 @@ impl CreateImageBuilderStreamingURLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1688,8 +1937,6 @@ impl CreateStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1836,8 +2083,6 @@ impl CreateStreamingURLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1975,8 +2220,6 @@ impl CreateUpdatedImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2129,8 +2372,6 @@ impl CreateUsageReportSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2254,8 +2495,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2384,8 +2623,6 @@ impl DeleteAppBlockError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2504,8 +2741,6 @@ impl DeleteApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2626,8 +2861,6 @@ impl DeleteDirectoryConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2669,6 +2902,132 @@ impl std::error::Error for DeleteDirectoryConfigError {
             DeleteDirectoryConfigErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteDirectoryConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteDirectoryConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEntitlementError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEntitlementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEntitlementErrorKind {
+    /// <p>An API error occurred. Wait a few minutes and try again.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEntitlementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEntitlementErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteEntitlementErrorKind::EntitlementNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEntitlementErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            DeleteEntitlementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEntitlementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEntitlementError {
+    fn code(&self) -> Option<&str> {
+        DeleteEntitlementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEntitlementError {
+    /// Creates a new `DeleteEntitlementError`.
+    pub fn new(kind: DeleteEntitlementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEntitlementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEntitlementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEntitlementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEntitlementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEntitlementErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEntitlementErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEntitlementErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEntitlementErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEntitlementErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEntitlementErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEntitlementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEntitlementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEntitlementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEntitlementErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteEntitlementErrorKind::EntitlementNotFoundException(_inner) => Some(_inner),
+            DeleteEntitlementErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            DeleteEntitlementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2735,8 +3094,6 @@ impl DeleteFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2852,8 +3209,6 @@ impl DeleteImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2974,8 +3329,6 @@ impl DeleteImageBuilderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3088,8 +3441,6 @@ impl DeleteImagePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3150,6 +3501,8 @@ pub struct DeleteStackError {
 pub enum DeleteStackErrorKind {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
@@ -3161,6 +3514,7 @@ impl std::fmt::Display for DeleteStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteStackErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            DeleteStackErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
             DeleteStackErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             DeleteStackErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteStackErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3197,8 +3551,6 @@ impl DeleteStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3226,6 +3578,13 @@ impl DeleteStackError {
             DeleteStackErrorKind::ConcurrentModificationException(_)
         )
     }
+    /// Returns `true` if the error kind is `DeleteStackErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackErrorKind::OperationNotPermittedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteStackErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteStackErrorKind::ResourceInUseException(_))
@@ -3242,6 +3601,7 @@ impl std::error::Error for DeleteStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteStackErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            DeleteStackErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
             DeleteStackErrorKind::ResourceInUseException(_inner) => Some(_inner),
             DeleteStackErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3315,8 +3675,6 @@ impl DeleteUsageReportSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3422,8 +3780,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3520,8 +3876,6 @@ impl DescribeAppBlocksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3633,8 +3987,6 @@ impl DescribeApplicationFleetAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3745,8 +4097,6 @@ impl DescribeApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3848,8 +4198,6 @@ impl DescribeDirectoryConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3883,6 +4231,121 @@ impl std::error::Error for DescribeDirectoryConfigsError {
         match &self.kind {
             DescribeDirectoryConfigsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeDirectoryConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeEntitlements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEntitlementsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEntitlementsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeEntitlements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEntitlementsErrorKind {
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeEntitlementsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEntitlementsErrorKind::EntitlementNotFoundException(_inner) => _inner.fmt(f),
+            DescribeEntitlementsErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            DescribeEntitlementsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeEntitlementsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEntitlementsError {
+    fn code(&self) -> Option<&str> {
+        DescribeEntitlementsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEntitlementsError {
+    /// Creates a new `DescribeEntitlementsError`.
+    pub fn new(kind: DescribeEntitlementsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEntitlementsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEntitlementsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEntitlementsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEntitlementsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEntitlementsErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEntitlementsErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEntitlementsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEntitlementsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEntitlementsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEntitlementsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEntitlementsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEntitlementsErrorKind::EntitlementNotFoundException(_inner) => Some(_inner),
+            DescribeEntitlementsErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            DescribeEntitlementsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeEntitlementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3943,8 +4406,6 @@ impl DescribeFleetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4038,8 +4499,6 @@ impl DescribeImageBuildersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4133,8 +4592,6 @@ impl DescribeImagePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4231,8 +4688,6 @@ impl DescribeImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4336,8 +4791,6 @@ impl DescribeSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4431,8 +4884,6 @@ impl DescribeStacksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4536,8 +4987,6 @@ impl DescribeUsageReportSubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4649,8 +5098,6 @@ impl DescribeUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4770,8 +5217,6 @@ impl DescribeUserStackAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4877,8 +5322,6 @@ impl DisableUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4984,8 +5427,6 @@ impl DisassociateApplicationFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5041,6 +5482,138 @@ impl std::error::Error for DisassociateApplicationFleetError {
                 Some(_inner)
             }
             DisassociateApplicationFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DisassociateApplicationFromEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisassociateApplicationFromEntitlementError {
+    /// Kind of error that occurred.
+    pub kind: DisassociateApplicationFromEntitlementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisassociateApplicationFromEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateApplicationFromEntitlementErrorKind {
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateApplicationFromEntitlementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException(
+                _inner,
+            ) => _inner.fmt(f),
+            DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisassociateApplicationFromEntitlementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisassociateApplicationFromEntitlementError {
+    fn code(&self) -> Option<&str> {
+        DisassociateApplicationFromEntitlementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateApplicationFromEntitlementError {
+    /// Creates a new `DisassociateApplicationFromEntitlementError`.
+    pub fn new(
+        kind: DisassociateApplicationFromEntitlementErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisassociateApplicationFromEntitlementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateApplicationFromEntitlementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisassociateApplicationFromEntitlementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateApplicationFromEntitlementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateApplicationFromEntitlementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException(
+                _inner,
+            ) => Some(_inner),
+            DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DisassociateApplicationFromEntitlementErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
         }
     }
 }
@@ -5110,8 +5683,6 @@ impl DisassociateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5232,8 +5803,6 @@ impl EnableUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5332,8 +5901,6 @@ impl ExpireSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5416,8 +5983,6 @@ impl ListAssociatedFleetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5500,8 +6065,6 @@ impl ListAssociatedStacksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5527,6 +6090,127 @@ impl std::error::Error for ListAssociatedStacksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListAssociatedStacksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListEntitledApplications` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListEntitledApplicationsError {
+    /// Kind of error that occurred.
+    pub kind: ListEntitledApplicationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListEntitledApplications` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListEntitledApplicationsErrorKind {
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListEntitledApplicationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListEntitledApplicationsErrorKind::EntitlementNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEntitledApplicationsErrorKind::OperationNotPermittedException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEntitledApplicationsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListEntitledApplicationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListEntitledApplicationsError {
+    fn code(&self) -> Option<&str> {
+        ListEntitledApplicationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListEntitledApplicationsError {
+    /// Creates a new `ListEntitledApplicationsError`.
+    pub fn new(kind: ListEntitledApplicationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListEntitledApplicationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListEntitledApplicationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListEntitledApplicationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListEntitledApplicationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListEntitledApplicationsErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitledApplicationsErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEntitledApplicationsErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitledApplicationsErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListEntitledApplicationsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitledApplicationsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListEntitledApplicationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListEntitledApplicationsErrorKind::EntitlementNotFoundException(_inner) => Some(_inner),
+            ListEntitledApplicationsErrorKind::OperationNotPermittedException(_inner) => {
+                Some(_inner)
+            }
+            ListEntitledApplicationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListEntitledApplicationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5587,8 +6271,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5703,8 +6385,6 @@ impl StartFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5860,8 +6540,6 @@ impl StartImageBuilderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5990,8 +6668,6 @@ impl StopFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6096,8 +6772,6 @@ impl StopImageBuilderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6213,8 +6887,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6321,8 +6993,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6422,8 +7092,6 @@ impl UpdateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6547,8 +7215,6 @@ impl UpdateDirectoryConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6614,6 +7280,132 @@ impl std::error::Error for UpdateDirectoryConfigError {
             UpdateDirectoryConfigErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateDirectoryConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateDirectoryConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateEntitlementError {
+    /// Kind of error that occurred.
+    pub kind: UpdateEntitlementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateEntitlement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateEntitlementErrorKind {
+    /// <p>An API error occurred. Wait a few minutes and try again.</p>
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateEntitlementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateEntitlementErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            UpdateEntitlementErrorKind::EntitlementNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEntitlementErrorKind::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            UpdateEntitlementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEntitlementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateEntitlementError {
+    fn code(&self) -> Option<&str> {
+        UpdateEntitlementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateEntitlementError {
+    /// Creates a new `UpdateEntitlementError`.
+    pub fn new(kind: UpdateEntitlementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateEntitlementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateEntitlementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateEntitlementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateEntitlementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateEntitlementErrorKind::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEntitlementErrorKind::ConcurrentModificationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEntitlementErrorKind::EntitlementNotFoundException`.
+    pub fn is_entitlement_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEntitlementErrorKind::EntitlementNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEntitlementErrorKind::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEntitlementErrorKind::OperationNotPermittedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateEntitlementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEntitlementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateEntitlementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateEntitlementErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
+            UpdateEntitlementErrorKind::EntitlementNotFoundException(_inner) => Some(_inner),
+            UpdateEntitlementErrorKind::OperationNotPermittedException(_inner) => Some(_inner),
+            UpdateEntitlementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateEntitlementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6704,8 +7496,6 @@ impl UpdateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6876,8 +7666,6 @@ impl UpdateImagePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7011,8 +7799,6 @@ impl UpdateStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7809,6 +8595,70 @@ impl RequestLimitExceededException {
     }
 }
 
+/// <p>The entitlement can't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntitlementNotFoundException {
+    /// <p>The error message in the exception.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EntitlementNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntitlementNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EntitlementNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EntitlementNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EntitlementNotFoundException")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EntitlementNotFoundException {}
+/// See [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
+pub mod entitlement_not_found_exception {
+    /// A builder for [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error message in the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message in the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
+        pub fn build(self) -> crate::error::EntitlementNotFoundException {
+            crate::error::EntitlementNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EntitlementNotFoundException {
+    /// Creates a new builder-style object to manufacture [`EntitlementNotFoundException`](crate::error::EntitlementNotFoundException)
+    pub fn builder() -> crate::error::entitlement_not_found_exception::Builder {
+        crate::error::entitlement_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>The specified resource already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7832,8 +8682,8 @@ impl ResourceAlreadyExistsException {
 impl std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceAlreadyExistsException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -7870,5 +8720,69 @@ impl ResourceAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ResourceAlreadyExistsException`](crate::error::ResourceAlreadyExistsException)
     pub fn builder() -> crate::error::resource_already_exists_exception::Builder {
         crate::error::resource_already_exists_exception::Builder::default()
+    }
+}
+
+/// <p>The entitlement already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EntitlementAlreadyExistsException {
+    /// <p>The error message in the exception.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for EntitlementAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EntitlementAlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl EntitlementAlreadyExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EntitlementAlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "EntitlementAlreadyExistsException")?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EntitlementAlreadyExistsException {}
+/// See [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
+pub mod entitlement_already_exists_exception {
+    /// A builder for [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error message in the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message in the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
+        pub fn build(self) -> crate::error::EntitlementAlreadyExistsException {
+            crate::error::EntitlementAlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl EntitlementAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`EntitlementAlreadyExistsException`](crate::error::EntitlementAlreadyExistsException)
+    pub fn builder() -> crate::error::entitlement_already_exists_exception::Builder {
+        crate::error::entitlement_already_exists_exception::Builder::default()
     }
 }

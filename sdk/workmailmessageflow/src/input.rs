@@ -35,7 +35,7 @@ pub mod get_raw_message_content_input {
 #[doc(hidden)]
 pub type GetRawMessageContentInputOperationOutputAlias = crate::operation::GetRawMessageContent;
 #[doc(hidden)]
-pub type GetRawMessageContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`GetRawMessageContent`](crate::operation::GetRawMessageContent)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl GetRawMessageContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRawMessageContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -136,7 +136,7 @@ impl GetRawMessageContentInput {
             "GetRawMessageContent",
             "workmailmessageflow",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -201,7 +201,7 @@ pub mod put_raw_message_content_input {
 #[doc(hidden)]
 pub type PutRawMessageContentInputOperationOutputAlias = crate::operation::PutRawMessageContent;
 #[doc(hidden)]
-pub type PutRawMessageContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRawMessageContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRawMessageContentInput {
     /// Consumes the builder and constructs an Operation<[`PutRawMessageContent`](crate::operation::PutRawMessageContent)>
     #[allow(clippy::let_and_return)]
@@ -212,7 +212,7 @@ impl PutRawMessageContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRawMessageContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +310,7 @@ impl PutRawMessageContentInput {
             "PutRawMessageContent",
             "workmailmessageflow",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

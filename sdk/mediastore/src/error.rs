@@ -12,8 +12,7 @@ pub struct CreateContainerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContainerErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The service is temporarily unavailable.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -62,8 +61,6 @@ impl CreateContainerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -127,8 +124,7 @@ pub struct DeleteContainerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -177,8 +173,6 @@ impl DeleteContainerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -242,8 +236,7 @@ pub struct DeleteContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -295,8 +288,6 @@ impl DeleteContainerPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -371,8 +362,7 @@ pub struct DeleteCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -424,8 +414,6 @@ impl DeleteCorsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -500,8 +488,7 @@ pub struct DeleteLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -553,8 +540,6 @@ impl DeleteLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -629,8 +614,7 @@ pub struct DeleteMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -682,8 +666,6 @@ impl DeleteMetricPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -804,8 +786,6 @@ impl DescribeContainerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -864,8 +844,7 @@ pub struct GetContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -917,8 +896,6 @@ impl GetContainerPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -993,8 +970,7 @@ pub struct GetCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1046,8 +1022,6 @@ impl GetCorsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1119,8 +1093,7 @@ pub struct GetLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1172,8 +1145,6 @@ impl GetLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1248,8 +1219,7 @@ pub struct GetMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1301,8 +1271,6 @@ impl GetMetricPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1417,8 +1385,6 @@ impl ListContainersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1466,8 +1432,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1516,8 +1481,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1584,8 +1547,7 @@ pub struct PutContainerPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutContainerPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1634,8 +1596,6 @@ impl PutContainerPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1702,8 +1662,7 @@ pub struct PutCorsPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutCorsPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1752,8 +1711,6 @@ impl PutCorsPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1817,8 +1774,7 @@ pub struct PutLifecyclePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecyclePolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1867,8 +1823,6 @@ impl PutLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1935,8 +1889,7 @@ pub struct PutMetricPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMetricPolicyErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -1985,8 +1938,6 @@ impl PutMetricPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2050,8 +2001,7 @@ pub struct StartAccessLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAccessLoggingErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2100,8 +2050,6 @@ impl StartAccessLoggingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2168,8 +2116,7 @@ pub struct StopAccessLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopAccessLoggingErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2218,8 +2165,6 @@ impl StopAccessLoggingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2286,8 +2231,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2336,8 +2280,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2398,8 +2340,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),
@@ -2448,8 +2389,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2628,8 +2567,7 @@ impl ContainerNotFoundException {
     }
 }
 
-/// <p>The container that you specified in the request already exists or is being
-/// updated.</p>
+/// <p>The container that you specified in the request already exists or is being updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerInUseException {

@@ -75,14 +75,8 @@ pub mod create_environment_input {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
             self.federation_mode = Some(input);
@@ -90,14 +84,8 @@ pub mod create_environment_input {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn set_federation_mode(
             mut self,
@@ -138,14 +126,8 @@ pub mod create_environment_input {
         ///
         /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
         /// </ul>
         pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.data_bundles.unwrap_or_default();
@@ -155,14 +137,8 @@ pub mod create_environment_input {
         }
         /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
         /// </ul>
         pub fn set_data_bundles(
             mut self,
@@ -194,7 +170,7 @@ pub mod create_environment_input {
 #[doc(hidden)]
 pub type CreateEnvironmentInputOperationOutputAlias = crate::operation::CreateEnvironment;
 #[doc(hidden)]
-pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -205,7 +181,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -285,7 +261,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -346,7 +322,7 @@ pub mod delete_environment_input {
 #[doc(hidden)]
 pub type DeleteEnvironmentInputOperationOutputAlias = crate::operation::DeleteEnvironment;
 #[doc(hidden)]
-pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -357,7 +333,7 @@ impl DeleteEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -451,7 +427,7 @@ impl DeleteEnvironmentInput {
             "DeleteEnvironment",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -504,7 +480,7 @@ pub mod get_environment_input {
 #[doc(hidden)]
 pub type GetEnvironmentInputOperationOutputAlias = crate::operation::GetEnvironment;
 #[doc(hidden)]
-pub type GetEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -515,7 +491,7 @@ impl GetEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -609,7 +585,7 @@ impl GetEnvironmentInput {
             "GetEnvironment",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -634,16 +610,12 @@ pub mod list_environments_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-        /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-        /// response object of the previous page call.</p>
+        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-        /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-        /// response object of the previous page call.</p>
+        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -675,7 +647,7 @@ pub mod list_environments_input {
 #[doc(hidden)]
 pub type ListEnvironmentsInputOperationOutputAlias = crate::operation::ListEnvironments;
 #[doc(hidden)]
-pub type ListEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -686,7 +658,7 @@ impl ListEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -777,7 +749,7 @@ impl ListEnvironmentsInput {
             "ListEnvironments",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -827,7 +799,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -838,7 +810,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -928,7 +900,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1007,7 +979,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1018,7 +990,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1113,7 +1085,7 @@ impl TagResourceInput {
             "TagResource",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1146,14 +1118,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN).</p>
+        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN).</p>
+        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1194,7 +1164,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1205,7 +1175,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1308,7 +1278,7 @@ impl UntagResourceInput {
             "UntagResource",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1371,14 +1341,8 @@ pub mod update_environment_input {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
             self.federation_mode = Some(input);
@@ -1386,14 +1350,8 @@ pub mod update_environment_input {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn set_federation_mode(
             mut self,
@@ -1435,7 +1393,7 @@ pub mod update_environment_input {
 #[doc(hidden)]
 pub type UpdateEnvironmentInputOperationOutputAlias = crate::operation::UpdateEnvironment;
 #[doc(hidden)]
-pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -1446,7 +1404,7 @@ impl UpdateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1546,7 +1504,7 @@ impl UpdateEnvironmentInput {
             "UpdateEnvironment",
             "finspace",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1581,14 +1539,8 @@ pub struct UpdateEnvironmentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-    /// </li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -1609,14 +1561,8 @@ impl UpdateEnvironmentInput {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-    /// </li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
         self.federation_mode.as_ref()
@@ -1644,15 +1590,13 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-    /// parameter is an Amazon Resource Name (ARN).</p>
+    /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-    /// parameter is an Amazon Resource Name (ARN).</p>
+    /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -1727,17 +1671,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
-    /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-    /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-    /// response object of the previous page call.</p>
+    /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: i32,
 }
 impl ListEnvironmentsInput {
-    /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-    /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-    /// response object of the previous page call.</p>
+    /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1812,14 +1752,8 @@ pub struct CreateEnvironmentInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-    /// </li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -1828,14 +1762,8 @@ pub struct CreateEnvironmentInput {
     pub superuser_parameters: std::option::Option<crate::model::SuperuserParameters>,
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-    /// </li>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
     pub data_bundles: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -1861,14 +1789,8 @@ impl CreateEnvironmentInput {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-    /// </li>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
     pub fn federation_mode(&self) -> std::option::Option<&crate::model::FederationMode> {
         self.federation_mode.as_ref()
@@ -1885,14 +1807,8 @@ impl CreateEnvironmentInput {
     }
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-    /// </li>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
     pub fn data_bundles(&self) -> std::option::Option<&[std::string::String]> {
         self.data_bundles.as_deref()

@@ -49,8 +49,7 @@ pub enum Error {
     ),
     /// <p>The Global datastore does not exist</p>
     GlobalReplicationGroupNotFoundFault(crate::error::GlobalReplicationGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnFault(crate::error::InvalidArnFault),
@@ -82,11 +81,9 @@ pub enum Error {
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>The operation was not performed because no changes were required.</p>
     NoOperationFault(crate::error::NoOperationFault),
-    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-    /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
+    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
     NodeGroupNotFoundFault(crate::error::NodeGroupNotFoundFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -120,13 +117,8 @@ pub enum Error {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -136,8 +128,7 @@ pub enum Error {
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p>The requested subnet is being used by another cache subnet group.</p>
     SubnetInUse(crate::error::SubnetInUse),
-    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-    /// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// <p>The requested tag was not found on this resource.</p>
     TagNotFoundFault(crate::error::TagNotFoundFault),

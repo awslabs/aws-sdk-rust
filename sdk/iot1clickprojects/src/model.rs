@@ -3,27 +3,23 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementTemplate {
-    /// <p>The default attributes (key/value pairs) to be applied to all placements using this
-    /// template.</p>
+    /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub default_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
-    /// (<a>PlacementTemplate</a>) template.</p>
+    /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub device_templates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>,
     >,
 }
 impl PlacementTemplate {
-    /// <p>The default attributes (key/value pairs) to be applied to all placements using this
-    /// template.</p>
+    /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub fn default_attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.default_attributes.as_ref()
     }
-    /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
-    /// (<a>PlacementTemplate</a>) template.</p>
+    /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub fn device_templates(
         &self,
     ) -> std::option::Option<
@@ -58,8 +54,7 @@ pub mod placement_template {
         ///
         /// To override the contents of this collection use [`set_default_attributes`](Self::set_default_attributes).
         ///
-        /// <p>The default attributes (key/value pairs) to be applied to all placements using this
-        /// template.</p>
+        /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
         pub fn default_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -70,8 +65,7 @@ pub mod placement_template {
             self.default_attributes = Some(hash_map);
             self
         }
-        /// <p>The default attributes (key/value pairs) to be applied to all placements using this
-        /// template.</p>
+        /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
         pub fn set_default_attributes(
             mut self,
             input: std::option::Option<
@@ -85,20 +79,18 @@ pub mod placement_template {
         ///
         /// To override the contents of this collection use [`set_device_templates`](Self::set_device_templates).
         ///
-        /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
-        /// (<a>PlacementTemplate</a>) template.</p>
+        /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
         pub fn device_templates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::DeviceTemplate>,
+            v: crate::model::DeviceTemplate,
         ) -> Self {
             let mut hash_map = self.device_templates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.device_templates = Some(hash_map);
             self
         }
-        /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
-        /// (<a>PlacementTemplate</a>) template.</p>
+        /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
         pub fn set_device_templates(
             mut self,
             input: std::option::Option<
@@ -124,14 +116,13 @@ impl PlacementTemplate {
     }
 }
 
-/// <p>An object representing a device for a placement template (see <a>PlacementTemplate</a>).</p>
+/// <p>An object representing a device for a placement template (see <code>PlacementTemplate</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceTemplate {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
     pub device_type: std::option::Option<std::string::String>,
-    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
-    /// the placement template.</p>
+    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
     pub callback_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -140,8 +131,7 @@ impl DeviceTemplate {
     pub fn device_type(&self) -> std::option::Option<&str> {
         self.device_type.as_deref()
     }
-    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
-    /// the placement template.</p>
+    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
     pub fn callback_overrides(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -183,8 +173,7 @@ pub mod device_template {
         ///
         /// To override the contents of this collection use [`set_callback_overrides`](Self::set_callback_overrides).
         ///
-        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
-        /// the placement template.</p>
+        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
         pub fn callback_overrides(
             mut self,
             k: impl Into<std::string::String>,
@@ -195,8 +184,7 @@ pub mod device_template {
             self.callback_overrides = Some(hash_map);
             self
         }
-        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
-        /// the placement template.</p>
+        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
         pub fn set_callback_overrides(
             mut self,
             input: std::option::Option<
@@ -222,8 +210,7 @@ impl DeviceTemplate {
     }
 }
 
-/// <p>An object providing summary information for a particular project for an associated AWS
-/// account and region.</p>
+/// <p>An object providing summary information for a particular project for an associated AWS account and region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectSummary {
@@ -233,8 +220,7 @@ pub struct ProjectSummary {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     pub tags:
@@ -253,8 +239,7 @@ impl ProjectSummary {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
@@ -325,14 +310,12 @@ pub mod project_summary {
             self.created_date = input;
             self
         }
-        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
-        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -394,9 +377,7 @@ pub struct PlacementSummary {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-    /// same.</p>
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementSummary {
@@ -412,9 +393,7 @@ impl PlacementSummary {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-    /// same.</p>
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
@@ -477,16 +456,12 @@ pub mod placement_summary {
             self.created_date = input;
             self
         }
-        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-        /// same.</p>
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
-        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-        /// same.</p>
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -512,8 +487,7 @@ impl PlacementSummary {
     }
 }
 
-/// <p>An object providing detailed information for a particular project associated with an AWS
-/// account and region.</p>
+/// <p>An object providing detailed information for a particular project associated with an AWS account and region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
@@ -525,8 +499,7 @@ pub struct ProjectDescription {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object describing the project's placement specifications.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
@@ -551,8 +524,7 @@ impl ProjectDescription {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-    /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
@@ -641,14 +613,12 @@ pub mod project_description {
             self.created_date = input;
             self
         }
-        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
-        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
-        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -728,9 +698,7 @@ pub struct PlacementDescription {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-    /// same.</p>
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PlacementDescription {
@@ -753,9 +721,7 @@ impl PlacementDescription {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-    /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-    /// same.</p>
+    /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
@@ -847,16 +813,12 @@ pub mod placement_description {
             self.created_date = input;
             self
         }
-        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-        /// same.</p>
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_date = Some(input);
             self
         }
-        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
-        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-        /// same.</p>
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

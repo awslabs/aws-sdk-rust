@@ -235,12 +235,9 @@ pub mod list_event_integrations_output {
         /// To override the contents of this collection use [`set_event_integrations`](Self::set_event_integrations).
         ///
         /// <p>The event integrations.</p>
-        pub fn event_integrations(
-            mut self,
-            input: impl Into<crate::model::EventIntegration>,
-        ) -> Self {
+        pub fn event_integrations(mut self, input: crate::model::EventIntegration) -> Self {
             let mut v = self.event_integrations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_integrations = Some(v);
             self
         }
@@ -329,10 +326,10 @@ pub mod list_event_integration_associations_output {
         /// <p>The event integration associations.</p>
         pub fn event_integration_associations(
             mut self,
-            input: impl Into<crate::model::EventIntegrationAssociation>,
+            input: crate::model::EventIntegrationAssociation,
         ) -> Self {
             let mut v = self.event_integration_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_integration_associations = Some(v);
             self
         }
@@ -415,12 +412,9 @@ pub mod list_data_integrations_output {
         /// To override the contents of this collection use [`set_data_integrations`](Self::set_data_integrations).
         ///
         /// <p>The DataIntegrations associated with this account.</p>
-        pub fn data_integrations(
-            mut self,
-            input: impl Into<crate::model::DataIntegrationSummary>,
-        ) -> Self {
+        pub fn data_integrations(mut self, input: crate::model::DataIntegrationSummary) -> Self {
             let mut v = self.data_integrations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_integrations = Some(v);
             self
         }
@@ -509,10 +503,10 @@ pub mod list_data_integration_associations_output {
         /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
         pub fn data_integration_associations(
             mut self,
-            input: impl Into<crate::model::DataIntegrationAssociationSummary>,
+            input: crate::model::DataIntegrationAssociationSummary,
         ) -> Self {
             let mut v = self.data_integration_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_integration_associations = Some(v);
             self
         }
@@ -1085,8 +1079,7 @@ pub struct CreateDataIntegrationOutput {
     /// <p>One or more tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDataIntegrationOutput {
@@ -1127,8 +1120,7 @@ impl CreateDataIntegrationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1268,14 +1260,12 @@ pub mod create_data_integration_output {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS App Runner
@@ -149,6 +149,7 @@ where
     ///
     /// See [`DescribeCustomDomains`](crate::client::fluent_builders::DescribeCustomDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCustomDomains::into_paginator).
     pub fn describe_custom_domains(&self) -> fluent_builders::DescribeCustomDomains<C, M, R> {
         fluent_builders::DescribeCustomDomains::new(self.handle.clone())
     }
@@ -170,6 +171,7 @@ where
     ///
     /// See [`ListAutoScalingConfigurations`](crate::client::fluent_builders::ListAutoScalingConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAutoScalingConfigurations::into_paginator).
     pub fn list_auto_scaling_configurations(
         &self,
     ) -> fluent_builders::ListAutoScalingConfigurations<C, M, R> {
@@ -179,6 +181,7 @@ where
     ///
     /// See [`ListConnections`](crate::client::fluent_builders::ListConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnections::into_paginator).
     pub fn list_connections(&self) -> fluent_builders::ListConnections<C, M, R> {
         fluent_builders::ListConnections::new(self.handle.clone())
     }
@@ -186,6 +189,7 @@ where
     ///
     /// See [`ListOperations`](crate::client::fluent_builders::ListOperations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
     pub fn list_operations(&self) -> fluent_builders::ListOperations<C, M, R> {
         fluent_builders::ListOperations::new(self.handle.clone())
     }
@@ -193,6 +197,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -257,11 +262,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateCustomDomain`.
     ///
     /// <p>Associate your own domain name with the App Runner subdomain URL of your App Runner service.</p>
-    /// <p>After you call <code>AssociateCustomDomain</code> and receive a successful response, use the information in the <a>CustomDomain</a> record
-    /// that's returned to add CNAME records to your Domain Name System (DNS). For each mapped domain name, add a mapping to the target App Runner subdomain and one or
-    /// more certificate validation records. App Runner then performs DNS validation to verify that you own or control the domain name that you associated. App Runner tracks
-    /// domain validity in a certificate stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager (ACM)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After you call <code>AssociateCustomDomain</code> and receive a successful response, use the information in the <code>CustomDomain</code> record that's returned to add CNAME records to your Domain Name System (DNS). For each mapped domain name, add a mapping to the target App Runner subdomain and one or more certificate validation records. App Runner then performs DNS validation to verify that you own or control the domain name that you associated. App Runner tracks domain validity in a certificate stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager (ACM)</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCustomDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -306,10 +308,10 @@ pub mod fluent_builders {
                 crate::input::AssociateCustomDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -318,8 +320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
@@ -327,32 +329,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_arn(input);
             self
         }
-        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-        /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-        /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-        /// </code> with the App Runner service in addition to the base
-        /// domain.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
-        pub fn enable_www_subdomain(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_www_subdomain(inp);
+        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn enable_www_subdomain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_www_subdomain(input);
             self
         }
-        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-        /// </code> with the App Runner service in addition to the base
-        /// domain.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_enable_www_subdomain(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_www_subdomain(input);
             self
@@ -360,16 +354,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAutoScalingConfiguration`.
     ///
-    /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource
-    /// when you create App Runner services that require non-default auto scaling settings. You can share an
-    /// auto scaling configuration across multiple services.</p>
-    /// <p>Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code> and different
-    /// <code>AutoScalingConfigurationRevision</code> values. When you create a service, you can set it to use the latest active revision of an auto scaling
-    /// configuration or a specific revision.</p>
-    /// <p>Configure a higher <code>MinSize</code> to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is
-    /// a higher minimal cost.</p>
+    /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create App Runner services that require non-default auto scaling settings. You can share an auto scaling configuration across multiple services.</p>
+    /// <p>Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values. When you create a service, you can set it to use the latest active revision of an auto scaling configuration or a specific revision.</p>
+    /// <p>Configure a higher <code>MinSize</code> to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
     /// <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is lower responsiveness during peak demand.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoScalingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -414,10 +403,10 @@ pub mod fluent_builders {
                 crate::input::CreateAutoScalingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -425,17 +414,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-        /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_name(inp);
+            self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-        /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -443,52 +430,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_configuration_name(input);
             self
         }
-        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-        /// up your service.</p>
-        /// <p>Default: <code>100</code>
-        /// </p>
-        pub fn max_concurrency(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrency(inp);
+        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+        /// <p>Default: <code>100</code> </p>
+        pub fn max_concurrency(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrency(input);
             self
         }
-        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-        /// up your service.</p>
-        /// <p>Default: <code>100</code>
-        /// </p>
+        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+        /// <p>Default: <code>100</code> </p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_concurrency(input);
             self
         }
-        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-        /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-        /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
         /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-        /// <p>Default: <code>1</code>
-        /// </p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        /// <p>Default: <code>1</code> </p>
+        pub fn min_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_size(input);
             self
         }
-        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-        /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-        /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
         /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-        /// <p>Default: <code>1</code>
-        /// </p>
+        /// <p>Default: <code>1</code> </p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_size(input);
             self
         }
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-        /// <p>Default: <code>25</code>
-        /// </p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        /// <p>Default: <code>25</code> </p>
+        pub fn max_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_size(input);
             self
         }
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-        /// <p>Default: <code>25</code>
-        /// </p>
+        /// <p>Default: <code>25</code> </p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
@@ -498,8 +473,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
@@ -513,11 +488,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
-    /// <p>Create an App Runner connection resource. App Runner requires a connection resource when you create App Runner services that access private repositories from
-    /// certain third-party providers. You can share a connection across multiple services.</p>
-    /// <p>A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process through the App Runner console before you
-    /// can use the connection.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create an App Runner connection resource. App Runner requires a connection resource when you create App Runner services that access private repositories from certain third-party providers. You can share a connection across multiple services.</p>
+    /// <p>A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process through the App Runner console before you can use the connection.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -562,10 +535,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -574,8 +547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-        pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(inp);
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -587,8 +560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source repository provider.</p>
-        pub fn provider_type(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(inp);
+        pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(input);
             self
         }
         /// <p>The source repository provider.</p>
@@ -604,8 +577,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
@@ -621,7 +594,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create an App Runner service. After the service is created, the action also automatically starts a deployment.</p>
     /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -666,10 +639,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -678,8 +651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -688,8 +661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
-        pub fn source_configuration(mut self, inp: crate::model::SourceConfiguration) -> Self {
-            self.inner = self.inner.source_configuration(inp);
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.inner = self.inner.source_configuration(input);
             self
         }
         /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
@@ -701,8 +674,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
-        pub fn instance_configuration(mut self, inp: crate::model::InstanceConfiguration) -> Self {
-            self.inner = self.inner.instance_configuration(inp);
+        pub fn instance_configuration(
+            mut self,
+            input: crate::model::InstanceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.instance_configuration(input);
             self
         }
         /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
@@ -718,8 +694,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
@@ -730,17 +706,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-        /// App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn encryption_configuration(
             mut self,
-            inp: crate::model::EncryptionConfiguration,
+            input: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.encryption_configuration(inp);
+            self.inner = self.inner.encryption_configuration(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-        /// App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -751,9 +725,9 @@ pub mod fluent_builders {
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
-            inp: crate::model::HealthCheckConfiguration,
+            input: crate::model::HealthCheckConfiguration,
         ) -> Self {
-            self.inner = self.inner.health_check_configuration(inp);
+            self.inner = self.inner.health_check_configuration(input);
             self
         }
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
@@ -764,17 +738,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-        /// associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(inp);
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-        /// associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -785,9 +757,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAutoScalingConfiguration`.
     ///
-    /// <p>Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest active revision. You can't delete a
-    /// configuration that's used by one or more App Runner services.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutoScalingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -832,10 +803,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAutoScalingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -844,22 +815,16 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(inp);
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,9 +835,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
-    /// <p>Delete an App Runner connection. You must first ensure that there are no running App Runner services that use this connection. If there are any, the
-    /// <code>DeleteConnection</code> action fails.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Delete an App Runner connection. You must first ensure that there are no running App Runner services that use this connection. If there are any, the <code>DeleteConnection</code> action fails.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,10 +881,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -929,8 +893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
@@ -945,9 +909,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Delete an App Runner service.</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-    /// call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,10 +955,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1004,8 +967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
@@ -1017,7 +980,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoScalingConfiguration`.
     ///
     /// <p>Return a full description of an App Runner automatic scaling configuration resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoScalingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1062,10 +1025,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAutoScalingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1074,24 +1037,16 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is
-        /// described.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(inp);
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is
-        /// described.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1103,7 +1058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomDomains`.
     ///
     /// <p>Return a description of custom domain names that are associated with an App Runner service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1148,10 +1103,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1159,9 +1114,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeCustomDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeCustomDomainsPaginator<C, M, R> {
+            crate::paginator::DescribeCustomDomainsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
@@ -1169,15 +1130,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_arn(input);
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -1185,8 +1144,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
@@ -1199,7 +1158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeService`.
     ///
     /// <p>Return a full description of an App Runner service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1244,10 +1203,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1256,8 +1215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
@@ -1269,10 +1228,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateCustomDomain`.
     ///
     /// <p>Disassociate a custom domain name from an App Runner service.</p>
-    /// <p>Certificates tracking domain validity are associated with a custom domain and are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS
-    /// Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this action. App Runner delays certificate deletion for
-    /// 30 days after a domain is disassociated from your service.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Certificates tracking domain validity are associated with a custom domain and are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this action. App Runner delays certificate deletion for 30 days after a domain is disassociated from your service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateCustomDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1317,10 +1274,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateCustomDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1329,8 +1286,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
@@ -1339,8 +1296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name that you want to disassociate from the App Runner service.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name that you want to disassociate from the App Runner service.</p>
@@ -1351,9 +1308,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAutoScalingConfigurations`.
     ///
-    /// <p>Returns a list of App Runner automatic scaling configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or
-    /// the revisions for all configurations in your account. You can optionally query only the latest revision of each requested name.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of App Runner automatic scaling configurations in your Amazon Web Services account. You can query the revisions for a specific configuration name or the revisions for all configurations in your account. You can optionally query only the latest revision of each requested name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAutoScalingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1398,10 +1354,10 @@ pub mod fluent_builders {
                 crate::input::ListAutoScalingConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1409,17 +1365,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-        /// returns revisions of all configurations.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAutoScalingConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAutoScalingConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListAutoScalingConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_name(inp);
+            self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-        /// returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1429,24 +1391,22 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
         /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
-        pub fn latest_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.latest_only(inp);
+        /// <p>Default: <code>false</code> </p>
+        pub fn latest_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.latest_only(input);
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
         /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_latest_only(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1455,15 +1415,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -1473,7 +1431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnections`.
     ///
     /// <p>Returns a list of App Runner connections that are associated with your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,10 +1476,10 @@ pub mod fluent_builders {
                 crate::input::ListConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1529,9 +1487,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConnectionsPaginator<C, M, R> {
+            crate::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
-        pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(inp);
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
@@ -1544,8 +1508,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
@@ -1554,15 +1518,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -1572,9 +1534,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOperations`.
     ///
     /// <p>Return a list of operations that occurred on an App Runner service.</p>
-    /// <p>The resulting list of <a>OperationSummary</a> objects is sorted in reverse chronological order. The first object on the list represents the
-    /// last started operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The resulting list of <code>OperationSummary</code> objects is sorted in reverse chronological order. The first object on the list represents the last started operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1619,10 +1580,10 @@ pub mod fluent_builders {
                 crate::input::ListOperationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1630,9 +1591,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOperationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListOperationsPaginator<C, M, R> {
+            crate::paginator::ListOperationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
@@ -1640,15 +1607,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_arn(input);
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -1656,8 +1621,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1670,7 +1635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Returns a list of running App Runner services in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1715,10 +1680,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1726,15 +1691,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -1742,8 +1711,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1756,7 +1725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags that are associated with for an App Runner resource. The response contains a list of tag key-value pairs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1801,10 +1770,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1814,8 +1783,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
@@ -1827,11 +1796,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PauseService`.
     ///
-    /// <p>Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is
-    /// removed).</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-    /// call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is removed).</p>
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PauseService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1876,10 +1843,10 @@ pub mod fluent_builders {
                 crate::input::PauseServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1888,8 +1855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
@@ -1901,9 +1868,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResumeService`.
     ///
     /// <p>Resume an active App Runner service. App Runner provisions compute capacity for the service.</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-    /// call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1948,10 +1914,10 @@ pub mod fluent_builders {
                 crate::input::ResumeServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1960,8 +1926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
@@ -1972,13 +1938,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDeployment`.
     ///
-    /// <p>Initiate a manual deployment of the latest commit in a source code repository or the latest image in a source image repository to an App Runner
-    /// service.</p>
-    /// <p>For a source code repository, App Runner retrieves the commit and builds a Docker image. For a source image repository, App Runner retrieves the latest Docker
-    /// image. In both cases, App Runner then deploys the new image to your service and starts a new container instance.</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-    /// call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Initiate a manual deployment of the latest commit in a source code repository or the latest image in a source image repository to an App Runner service.</p>
+    /// <p>For a source code repository, App Runner retrieves the commit and builds a Docker image. For a source image repository, App Runner retrieves the latest Docker image. In both cases, App Runner then deploys the new image to your service and starts a new container instance.</p>
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2023,10 +1986,10 @@ pub mod fluent_builders {
                 crate::input::StartDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2035,8 +1998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
@@ -2048,7 +2011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to, or update the tag values of, an App Runner resource. A tag is a key-value pair.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2093,10 +2056,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2106,8 +2069,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
@@ -2120,14 +2083,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-        /// associated with the resource, the value of the tag is updated.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-        /// associated with the resource, the value of the tag is updated.</p>
+        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2139,7 +2100,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove tags from an App Runner resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2184,10 +2145,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2197,8 +2158,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
@@ -2212,8 +2173,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys that you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys that you want to remove.</p>
@@ -2227,13 +2188,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateService`.
     ///
-    /// <p>Update an App Runner service. You can update the source configuration and instance configuration of the service. You can also update the ARN of the auto
-    /// scaling configuration resource that's associated with the service. However, you can't change the name or the encryption configuration of the service.
-    /// These can be set only when you create the service.</p>
-    /// <p>To update the tags applied to your service, use the separate actions <a>TagResource</a> and <a>UntagResource</a>.</p>
-    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a>ListOperations</a>
-    /// call to track the operation's progress.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Update an App Runner service. You can update the source configuration and instance configuration of the service. You can also update the ARN of the auto scaling configuration resource that's associated with the service. However, you can't change the name or the encryption configuration of the service. These can be set only when you create the service.</p>
+    /// <p>To update the tags applied to your service, use the separate actions <code>TagResource</code> and <code>UntagResource</code>.</p>
+    /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2278,10 +2236,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2290,8 +2248,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
-        pub fn service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(inp);
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -2300,19 +2258,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source configuration to apply to the App Runner service.</p>
-        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-        /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-        /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-        /// values to members of the structure that you include.</p>
-        pub fn source_configuration(mut self, inp: crate::model::SourceConfiguration) -> Self {
-            self.inner = self.inner.source_configuration(inp);
+        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.inner = self.inner.source_configuration(input);
             self
         }
         /// <p>The source configuration to apply to the App Runner service.</p>
-        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-        /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-        /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-        /// values to members of the structure that you include.</p>
+        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -2321,8 +2273,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
-        pub fn instance_configuration(mut self, inp: crate::model::InstanceConfiguration) -> Self {
-            self.inner = self.inner.instance_configuration(inp);
+        pub fn instance_configuration(
+            mut self,
+            input: crate::model::InstanceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.instance_configuration(input);
             self
         }
         /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
@@ -2336,9 +2291,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(inp);
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
@@ -2352,9 +2307,9 @@ pub mod fluent_builders {
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
-            inp: crate::model::HealthCheckConfiguration,
+            input: crate::model::HealthCheckConfiguration,
         ) -> Self {
-            self.inner = self.inner.health_check_configuration(inp);
+            self.inner = self.inner.health_check_configuration(input);
             self
         }
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
@@ -2367,6 +2322,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

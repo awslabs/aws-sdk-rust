@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The user has the required permissions, so the request would have succeeded,
-    /// but a dry run was performed.</p>
+    /// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
     DryRunOperationException(crate::error::DryRunOperationException),
     /// <p>An internal error occurred.</p>
     InternalError(crate::error::InternalError),
@@ -20,15 +19,13 @@ pub enum Error {
     ReplicationJobAlreadyExistsException(crate::error::ReplicationJobAlreadyExistsException),
     /// <p>The specified replication job does not exist.</p>
     ReplicationJobNotFoundException(crate::error::ReplicationJobNotFoundException),
-    /// <p>You have exceeded the number of on-demand replication runs you can request in a
-    /// 24-hour period.</p>
+    /// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
     ReplicationRunLimitExceededException(crate::error::ReplicationRunLimitExceededException),
     /// <p>The specified server cannot be replicated.</p>
     ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Kinesis Firehose
@@ -185,75 +185,21 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeliveryStream`.
     ///
     /// <p>Creates a Kinesis Data Firehose delivery stream.</p>
-    ///
     /// <p>By default, you can create up to 50 delivery streams per AWS Region.</p>
-    /// <p>This is an asynchronous operation that immediately returns. The initial status of the
-    /// delivery stream is <code>CREATING</code>. After the delivery stream is created, its status
-    /// is <code>ACTIVE</code> and it now accepts data. If the delivery stream creation fails, the
-    /// status transitions to <code>CREATING_FAILED</code>. Attempts to send data to a delivery
-    /// stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state
-    /// of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-    /// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status
-    /// doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it.
-    /// However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete
-    /// it.</p>
-    /// <p>A Kinesis Data Firehose delivery stream can be configured to receive records directly
-    /// from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it
-    /// can be configured to use an existing Kinesis stream as its source. To specify a Kinesis
-    /// data stream as input, set the <code>DeliveryStreamType</code> parameter to
-    /// <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon Resource Name
-    /// (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code>
-    /// parameter.</p>
-    /// <p>To create a delivery stream with server-side encryption (SSE) enabled, include <a>DeliveryStreamEncryptionConfigurationInput</a> in your request. This is
-    /// optional. You can also invoke <a>StartDeliveryStreamEncryption</a> to turn on
-    /// SSE for an existing delivery stream that doesn't have SSE enabled.</p>
-    /// <p>A delivery stream is configured with a single destination: Amazon S3, Amazon ES,
-    /// Amazon Redshift, or Splunk. You must specify only one of the following destination
-    /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>,
-    /// <code>S3DestinationConfiguration</code>,
-    /// <code>ElasticsearchDestinationConfiguration</code>,
-    /// <code>RedshiftDestinationConfiguration</code>, or
-    /// <code>SplunkDestinationConfiguration</code>.</p>
-    /// <p>When you specify <code>S3DestinationConfiguration</code>, you can also provide the
-    /// following optional values: BufferingHints, <code>EncryptionConfiguration</code>, and
-    /// <code>CompressionFormat</code>. By default, if no <code>BufferingHints</code> value is
-    /// provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes, whichever
-    /// condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some
-    /// cases where the service cannot adhere to these conditions strictly. For example, record
-    /// boundaries might be such that the size is a little over or under the configured buffering
-    /// size. By default, no encryption is performed. We strongly recommend that you enable
-    /// encryption to ensure secure data storage in Amazon S3.</p>
-    ///
+    /// <p>This is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. If the delivery stream creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <code>DescribeDeliveryStream</code>.</p>
+    /// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
+    /// <p>A Kinesis Data Firehose delivery stream can be configured to receive records directly from providers using <code>PutRecord</code> or <code>PutRecordBatch</code>, or it can be configured to use an existing Kinesis stream as its source. To specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code> parameter.</p>
+    /// <p>To create a delivery stream with server-side encryption (SSE) enabled, include <code>DeliveryStreamEncryptionConfigurationInput</code> in your request. This is optional. You can also invoke <code>StartDeliveryStreamEncryption</code> to turn on SSE for an existing delivery stream that doesn't have SSE enabled.</p>
+    /// <p>A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon Redshift, or Splunk. You must specify only one of the following destination configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>, <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>, or <code>SplunkDestinationConfiguration</code>.</p>
+    /// <p>When you specify <code>S3DestinationConfiguration</code>, you can also provide the following optional values: BufferingHints, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By default, if no <code>BufferingHints</code> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some cases where the service cannot adhere to these conditions strictly. For example, record boundaries might be such that the size is a little over or under the configured buffering size. By default, no encryption is performed. We strongly recommend that you enable encryption to ensure secure data storage in Amazon S3.</p>
     /// <p>A few notes about Amazon Redshift as a destination:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Redshift destination requires an S3 bucket as intermediate location.
-    /// Kinesis Data Firehose first delivers data to Amazon S3 and then uses
-    /// <code>COPY</code> syntax to load data into an Amazon Redshift table. This is
-    /// specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code>
-    /// parameter.</p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-    /// specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because
-    /// the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
-    /// support these compression formats.</p>
-    /// </li>
-    /// <li>
-    /// <p>We strongly recommend that you use the user name and password you provide
-    /// exclusively with Kinesis Data Firehose, and that the permissions for the account are
-    /// restricted for Amazon Redshift <code>INSERT</code> permissions.</p>
-    ///
-    /// </li>
+    /// <li> <p>An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis Data Firehose first delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.</p> </li>
+    /// <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p> </li>
+    /// <li> <p>We strongly recommend that you use the user name and password you provide exclusively with Kinesis Data Firehose, and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</p> </li>
     /// </ul>
-    /// <p>Kinesis Data Firehose assumes the IAM role that is configured as part of the
-    /// destination. The role should allow the Kinesis Data Firehose principal to assume the role,
-    /// and the role should have permissions that allow the service to deliver the data. For more
-    /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-    /// Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis Data
-    /// Firehose Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Kinesis Data Firehose assumes the IAM role that is configured as part of the destination. The role should allow the Kinesis Data Firehose principal to assume the role, and the role should have permissions that allow the service to deliver the data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -298,10 +244,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -309,16 +255,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same
-        /// AWS Region. If the delivery streams are in different accounts or different Regions, you can
-        /// have multiple delivery streams with the same name.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
-        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same
-        /// AWS Region. If the delivery streams are in different accounts or different Regions, you can
-        /// have multiple delivery streams with the same name.</p>
+        /// <p>The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
         pub fn set_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,37 +268,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>The delivery stream type. This parameter can be one of the following
-        /// values:</p>
+        /// <p>The delivery stream type. This parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DirectPut</code>: Provider applications access the delivery stream
-        /// directly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
-        /// stream as a source.</p>
-        /// </li>
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
         /// </ul>
-        pub fn delivery_stream_type(mut self, inp: crate::model::DeliveryStreamType) -> Self {
-            self.inner = self.inner.delivery_stream_type(inp);
+        pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
+            self.inner = self.inner.delivery_stream_type(input);
             self
         }
-        /// <p>The delivery stream type. This parameter can be one of the following
-        /// values:</p>
+        /// <p>The delivery stream type. This parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DirectPut</code>: Provider applications access the delivery stream
-        /// directly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
-        /// stream as a source.</p>
-        /// </li>
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
         /// </ul>
         pub fn set_delivery_stream_type(
             mut self,
@@ -365,17 +289,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_type(input);
             self
         }
-        /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon
-        /// Resource Name (ARN) and the role ARN for the source stream.</p>
+        /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
         pub fn kinesis_stream_source_configuration(
             mut self,
-            inp: crate::model::KinesisStreamSourceConfiguration,
+            input: crate::model::KinesisStreamSourceConfiguration,
         ) -> Self {
-            self.inner = self.inner.kinesis_stream_source_configuration(inp);
+            self.inner = self.inner.kinesis_stream_source_configuration(input);
             self
         }
-        /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon
-        /// Resource Name (ARN) and the role ARN for the source stream.</p>
+        /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
         pub fn set_kinesis_stream_source_configuration(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamSourceConfiguration>,
@@ -383,19 +305,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kinesis_stream_source_configuration(input);
             self
         }
-        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
-        /// Server-Side Encryption (SSE).</p>
+        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
         pub fn delivery_stream_encryption_configuration_input(
             mut self,
-            inp: crate::model::DeliveryStreamEncryptionConfigurationInput,
+            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
         ) -> Self {
             self.inner = self
                 .inner
-                .delivery_stream_encryption_configuration_input(inp);
+                .delivery_stream_encryption_configuration_input(input);
             self
         }
-        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
-        /// Server-Side Encryption (SSE).</p>
+        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
         pub fn set_delivery_stream_encryption_configuration_input(
             mut self,
             input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
@@ -405,17 +325,15 @@ pub mod fluent_builders {
                 .set_delivery_stream_encryption_configuration_input(input);
             self
         }
-        /// <p>[Deprecated]
-        /// The destination in Amazon S3. You can specify only one destination.</p>
+        /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
         pub fn s3_destination_configuration(
             mut self,
-            inp: crate::model::S3DestinationConfiguration,
+            input: crate::model::S3DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.s3_destination_configuration(inp);
+            self.inner = self.inner.s3_destination_configuration(input);
             self
         }
-        /// <p>[Deprecated]
-        /// The destination in Amazon S3. You can specify only one destination.</p>
+        /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
         pub fn set_s3_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfiguration>,
@@ -426,9 +344,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
         pub fn extended_s3_destination_configuration(
             mut self,
-            inp: crate::model::ExtendedS3DestinationConfiguration,
+            input: crate::model::ExtendedS3DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.extended_s3_destination_configuration(inp);
+            self.inner = self.inner.extended_s3_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
@@ -442,9 +360,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
         pub fn redshift_destination_configuration(
             mut self,
-            inp: crate::model::RedshiftDestinationConfiguration,
+            input: crate::model::RedshiftDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.redshift_destination_configuration(inp);
+            self.inner = self.inner.redshift_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
@@ -458,9 +376,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
         pub fn elasticsearch_destination_configuration(
             mut self,
-            inp: crate::model::ElasticsearchDestinationConfiguration,
+            input: crate::model::ElasticsearchDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.elasticsearch_destination_configuration(inp);
+            self.inner = self.inner.elasticsearch_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
@@ -476,11 +394,11 @@ pub mod fluent_builders {
         #[allow(missing_docs)] // documentation missing in model
         pub fn amazonopensearchservice_destination_configuration(
             mut self,
-            inp: crate::model::AmazonopensearchserviceDestinationConfiguration,
+            input: crate::model::AmazonopensearchserviceDestinationConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .amazonopensearchservice_destination_configuration(inp);
+                .amazonopensearchservice_destination_configuration(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -498,9 +416,9 @@ pub mod fluent_builders {
         /// <p>The destination in Splunk. You can specify only one destination.</p>
         pub fn splunk_destination_configuration(
             mut self,
-            inp: crate::model::SplunkDestinationConfiguration,
+            input: crate::model::SplunkDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.splunk_destination_configuration(inp);
+            self.inner = self.inner.splunk_destination_configuration(input);
             self
         }
         /// <p>The destination in Splunk. You can specify only one destination.</p>
@@ -511,17 +429,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_splunk_destination_configuration(input);
             self
         }
-        /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination.
-        /// You can specify only one destination.</p>
+        /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
         pub fn http_endpoint_destination_configuration(
             mut self,
-            inp: crate::model::HttpEndpointDestinationConfiguration,
+            input: crate::model::HttpEndpointDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.http_endpoint_destination_configuration(inp);
+            self.inner = self.inner.http_endpoint_destination_configuration(input);
             self
         }
-        /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination.
-        /// You can specify only one destination.</p>
+        /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
         pub fn set_http_endpoint_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::HttpEndpointDestinationConfiguration>,
@@ -535,23 +451,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can
-        /// define and assign to AWS resources. Tags are metadata. For example, you can add friendly
-        /// names and descriptions or other types of information that can help you distinguish the
-        /// delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-        /// Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-        ///
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can
-        /// define and assign to AWS resources. Tags are metadata. For example, you can add friendly
-        /// names and descriptions or other types of information that can help you distinguish the
-        /// delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-        /// Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-        ///
+        /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
         /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
         pub fn set_tags(
             mut self,
@@ -564,16 +470,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeliveryStream`.
     ///
     /// <p>Deletes a delivery stream and its data.</p>
-    /// <p>To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>. You can delete a delivery stream only if it is in one of the following states:
-    /// <code>ACTIVE</code>, <code>DELETING</code>, <code>CREATING_FAILED</code>, or
-    /// <code>DELETING_FAILED</code>. You can't delete a delivery stream that is in the
-    /// <code>CREATING</code> state. While the deletion request is in process, the delivery
-    /// stream is in the <code>DELETING</code> state.</p>
-    /// <p>While the delivery stream is in the <code>DELETING</code> state, the service might
-    /// continue to accept records, but it doesn't make any guarantees with respect to delivering
-    /// the data. Therefore, as a best practice, first stop any applications that are sending
-    /// records before you delete a delivery stream.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To check the state of a delivery stream, use <code>DescribeDeliveryStream</code>. You can delete a delivery stream only if it is in one of the following states: <code>ACTIVE</code>, <code>DELETING</code>, <code>CREATING_FAILED</code>, or <code>DELETING_FAILED</code>. You can't delete a delivery stream that is in the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.</p>
+    /// <p>While the delivery stream is in the <code>DELETING</code> state, the service might continue to accept records, but it doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, first stop any applications that are sending records before you delete a delivery stream.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -618,10 +517,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -630,8 +529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -642,25 +541,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose
-        /// is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire
-        /// the grant due to a customer error, such as when the CMK or the grant are in an invalid
-        /// state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
-        /// revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant
-        /// happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete
-        /// operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
         /// <p>The default value is false.</p>
-        pub fn allow_force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_force_delete(inp);
+        pub fn allow_force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_force_delete(input);
             self
         }
-        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose
-        /// is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire
-        /// the grant due to a customer error, such as when the CMK or the grant are in an invalid
-        /// state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
-        /// revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant
-        /// happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete
-        /// operation.</p>
+        /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
         /// <p>The default value is false.</p>
         pub fn set_allow_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_force_delete(input);
@@ -669,14 +556,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeliveryStream`.
     ///
-    /// <p>Describes the specified delivery stream and its status. For example, after your
-    /// delivery stream is created, call <code>DescribeDeliveryStream</code> to see whether the
-    /// delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it. </p>
-    /// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status
-    /// doesn't change, and you can't invoke <a>CreateDeliveryStream</a> again on it.
-    /// However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
-    /// If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <a>DeleteDeliveryStream</a> again but with <a>DeleteDeliveryStreamInput$AllowForceDelete</a> set to true.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the specified delivery stream and its status. For example, after your delivery stream is created, call <code>DescribeDeliveryStream</code> to see whether the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it. </p>
+    /// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it. If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <code>DeleteDeliveryStream</code> again but with <code>DeleteDeliveryStreamInput$AllowForceDelete</code> set to true.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -721,10 +603,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -733,8 +615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -745,29 +627,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>The limit on the number of destinations to return. You can have one destination per
-        /// delivery stream.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The limit on the number of destinations to return. You can have one destination per
-        /// delivery stream.</p>
+        /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The ID of the destination to start returning the destination information. Kinesis
-        /// Data Firehose supports one destination per delivery stream.</p>
+        /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
         pub fn exclusive_start_destination_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_destination_id(inp);
+            self.inner = self.inner.exclusive_start_destination_id(input.into());
             self
         }
-        /// <p>The ID of the destination to start returning the destination information. Kinesis
-        /// Data Firehose supports one destination per delivery stream.</p>
+        /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
         pub fn set_exclusive_start_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -779,14 +657,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeliveryStreams`.
     ///
     /// <p>Lists your delivery streams in alphabetical order of their names.</p>
-    /// <p>The number of delivery streams might be too large to return using a single call to
-    /// <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned,
-    /// using the <code>Limit</code> parameter. To determine whether there are more delivery
-    /// streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If
-    /// there are more delivery streams to list, you can request them by calling this operation
-    /// again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name
-    /// of the last delivery stream returned in the last call.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The number of delivery streams might be too large to return using a single call to <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request them by calling this operation again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last delivery stream returned in the last call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliveryStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -831,10 +703,10 @@ pub mod fluent_builders {
                 crate::input::ListDeliveryStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -843,8 +715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
@@ -854,38 +726,20 @@ pub mod fluent_builders {
         }
         /// <p>The delivery stream type. This can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DirectPut</code>: Provider applications access the delivery stream
-        /// directly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
-        /// stream as a source.</p>
-        /// </li>
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
         /// </ul>
-        /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all
-        /// types are returned.</p>
-        pub fn delivery_stream_type(mut self, inp: crate::model::DeliveryStreamType) -> Self {
-            self.inner = self.inner.delivery_stream_type(inp);
+        /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
+        pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
+            self.inner = self.inner.delivery_stream_type(input);
             self
         }
         /// <p>The delivery stream type. This can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DirectPut</code>: Provider applications access the delivery stream
-        /// directly.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
-        /// stream as a source.</p>
-        /// </li>
+        /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+        /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
         /// </ul>
-        /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all
-        /// types are returned.</p>
+        /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
         pub fn set_delivery_stream_type(
             mut self,
             input: std::option::Option<crate::model::DeliveryStreamType>,
@@ -893,21 +747,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_type(input);
             self
         }
-        /// <p>The list of delivery streams returned by this call to
-        /// <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes
-        /// alphabetically immediately after the name you specify in
-        /// <code>ExclusiveStartDeliveryStreamName</code>.</p>
+        /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
         pub fn exclusive_start_delivery_stream_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_delivery_stream_name(inp);
+            self.inner = self
+                .inner
+                .exclusive_start_delivery_stream_name(input.into());
             self
         }
-        /// <p>The list of delivery streams returned by this call to
-        /// <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes
-        /// alphabetically immediately after the name you specify in
-        /// <code>ExclusiveStartDeliveryStreamName</code>.</p>
+        /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
         pub fn set_exclusive_start_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -918,9 +768,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForDeliveryStream`.
     ///
-    /// <p>Lists the tags for the specified delivery stream. This operation has a limit of five
-    /// transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the tags for the specified delivery stream. This operation has a limit of five transactions per second per account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -965,10 +814,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -977,8 +826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream whose tags you want to list.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream whose tags you want to list.</p>
@@ -989,16 +838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If you set this parameter,
-        /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after
-        /// <code>ExclusiveStartTagKey</code>.</p>
-        pub fn exclusive_start_tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_tag_key(inp);
+        /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
+        pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_tag_key(input.into());
             self
         }
-        /// <p>The key to use as the starting point for the list of tags. If you set this parameter,
-        /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after
-        /// <code>ExclusiveStartTagKey</code>.</p>
+        /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
         pub fn set_exclusive_start_tag_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1006,18 +851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclusive_start_tag_key(input);
             self
         }
-        /// <p>The number of tags to return. If this number is less than the total number of tags
-        /// associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code>
-        /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last
-        /// key in the response. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The number of tags to return. If this number is less than the total number of tags
-        /// associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code>
-        /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last
-        /// key in the response. </p>
+        /// <p>The number of tags to return. If this number is less than the total number of tags associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code> in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -1025,39 +864,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRecord`.
     ///
-    /// <p>Writes a single data record into an Amazon Kinesis Data Firehose delivery stream. To
-    /// write multiple data records into a delivery stream, use <a>PutRecordBatch</a>.
-    /// Applications using these operations are referred to as producers.</p>
-    /// <p>By default, each delivery stream can take in up to 2,000 transactions per second,
-    /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
-    /// <a>PutRecordBatch</a>, the limits are an aggregate across these two
-    /// operations for each delivery stream. For more information about limits and how to request
-    /// an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-    /// Kinesis Data Firehose Limits</a>. </p>
-    /// <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000
-    /// KiB in size, and any kind of data. For example, it can be a segment from a log file,
-    /// geographic location data, website clickstream data, and so on.</p>
-    /// <p>Kinesis Data Firehose buffers records before delivering them to the destination. To
-    /// disambiguate the data blobs at the destination, a common solution is to use delimiters in
-    /// the data, such as a newline (<code>\n</code>) or some other character unique within the
-    /// data. This allows the consumer application to parse individual data items when reading the
-    /// data from the destination.</p>
-    /// <p>The <code>PutRecord</code> operation returns a <code>RecordId</code>, which is a
-    /// unique string assigned to each record. Producer applications can use this ID for purposes
-    /// such as auditability and investigation.</p>
-    /// <p>If the <code>PutRecord</code> operation throws a
-    /// <code>ServiceUnavailableException</code>, back off and retry. If the exception persists,
-    /// it is possible that the throughput limits have been exceeded for the delivery stream. </p>
-    /// <p>Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they
-    /// are added to a delivery stream as it tries to send the records to the destination. If the
-    /// destination is unreachable for more than 24 hours, the data is no longer
-    /// available.</p>
-    ///
-    /// <important>
-    /// <p>Don't concatenate two or more base64 strings to form the data fields of your records.
-    /// Instead, concatenate the raw data, then perform base64 encoding.</p>
+    /// <p>Writes a single data record into an Amazon Kinesis Data Firehose delivery stream. To write multiple data records into a delivery stream, use <code>PutRecordBatch</code>. Applications using these operations are referred to as producers.</p>
+    /// <p>By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5 MB per second. If you use <code>PutRecord</code> and <code>PutRecordBatch</code>, the limits are an aggregate across these two operations for each delivery stream. For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>. </p>
+    /// <p>You must specify the name of the delivery stream and the data record when using <code>PutRecord</code>. The data record consists of a data blob that can be up to 1,000 KiB in size, and any kind of data. For example, it can be a segment from a log file, geographic location data, website clickstream data, and so on.</p>
+    /// <p>Kinesis Data Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\n</code>) or some other character unique within the data. This allows the consumer application to parse individual data items when reading the data from the destination.</p>
+    /// <p>The <code>PutRecord</code> operation returns a <code>RecordId</code>, which is a unique string assigned to each record. Producer applications can use this ID for purposes such as auditability and investigation.</p>
+    /// <p>If the <code>PutRecord</code> operation throws a <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream. </p>
+    /// <p>Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they are added to a delivery stream as it tries to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p> <important>
+    /// <p>Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the raw data, then perform base64 encoding.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1102,10 +918,10 @@ pub mod fluent_builders {
                 crate::input::PutRecordInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1114,8 +930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1127,8 +943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The record.</p>
-        pub fn record(mut self, inp: crate::model::Record) -> Self {
-            self.inner = self.inner.record(inp);
+        pub fn record(mut self, input: crate::model::Record) -> Self {
+            self.inner = self.inner.record(input);
             self
         }
         /// <p>The record.</p>
@@ -1139,58 +955,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRecordBatch`.
     ///
-    /// <p>Writes multiple data records into a delivery stream in a single call, which can
-    /// achieve higher throughput per producer than when writing single records. To write single
-    /// data records into a delivery stream, use <a>PutRecord</a>. Applications using
-    /// these operations are referred to as producers.</p>
-    /// <p>For information about service quota, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
-    /// Quota</a>.</p>
-    /// <p>Each <a>PutRecordBatch</a> request supports up to 500 records. Each record
-    /// in the request can be as large as 1,000 KB (before base64 encoding), up to a limit of 4 MB
-    /// for the entire request. These limits cannot be changed.</p>
-    /// <p>You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record consists of a data blob that can be up to 1,000
-    /// KB in size, and any kind of data. For example, it could be a segment from a log file,
-    /// geographic location data, website clickstream data, and so on.</p>
-    /// <p>Kinesis Data Firehose buffers records before delivering them to the destination. To
-    /// disambiguate the data blobs at the destination, a common solution is to use delimiters in
-    /// the data, such as a newline (<code>\n</code>) or some other character unique within the
-    /// data. This allows the consumer application to parse individual data items when reading the
-    /// data from the destination.</p>
-    /// <p>The <a>PutRecordBatch</a> response includes a count of failed records,
-    /// <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>.
-    /// Even if the <a>PutRecordBatch</a> call succeeds, the value of
-    /// <code>FailedPutCount</code> may be greater than 0, indicating that there are records for
-    /// which the operation didn't succeed. Each entry in the <code>RequestResponses</code> array
-    /// provides additional information about the processed record. It directly correlates with a
-    /// record in the request array using the same ordering, from the top to the bottom. The
-    /// response array always includes the same number of records as the request array.
-    /// <code>RequestResponses</code> includes both successfully and unsuccessfully processed
-    /// records. Kinesis Data Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does not stop the processing
-    /// of subsequent records. </p>
-    /// <p>A successfully processed record includes a <code>RecordId</code> value, which is
-    /// unique for the record. An unsuccessfully processed record includes <code>ErrorCode</code>
-    /// and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error,
-    /// and is one of the following values: <code>ServiceUnavailableException</code> or
-    /// <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed
-    /// information about the error.</p>
-    /// <p>If there is an internal server error or a timeout, the write might have completed or
-    /// it might have failed. If <code>FailedPutCount</code> is greater than 0, retry the request,
-    /// resending only those records that might have failed processing. This minimizes the possible
-    /// duplicate records and also reduces the total bytes sent (and corresponding charges). We
-    /// recommend that you handle any duplicates at the destination.</p>
-    /// <p>If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>,
-    /// back off and retry. If the exception persists, it is possible that the throughput limits
-    /// have been exceeded for the delivery stream.</p>
-    ///
-    /// <p>Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they
-    /// are added to a delivery stream as it attempts to send the records to the destination. If
-    /// the destination is unreachable for more than 24 hours, the data is no longer
-    /// available.</p>
-    /// <important>
-    /// <p>Don't concatenate two or more base64 strings to form the data fields of your records.
-    /// Instead, concatenate the raw data, then perform base64 encoding.</p>
+    /// <p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <code>PutRecord</code>. Applications using these operations are referred to as producers.</p>
+    /// <p>For information about service quota, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Quota</a>.</p>
+    /// <p>Each <code>PutRecordBatch</code> request supports up to 500 records. Each record in the request can be as large as 1,000 KB (before base64 encoding), up to a limit of 4 MB for the entire request. These limits cannot be changed.</p>
+    /// <p>You must specify the name of the delivery stream and the data record when using <code>PutRecord</code>. The data record consists of a data blob that can be up to 1,000 KB in size, and any kind of data. For example, it could be a segment from a log file, geographic location data, website clickstream data, and so on.</p>
+    /// <p>Kinesis Data Firehose buffers records before delivering them to the destination. To disambiguate the data blobs at the destination, a common solution is to use delimiters in the data, such as a newline (<code>\n</code>) or some other character unique within the data. This allows the consumer application to parse individual data items when reading the data from the destination.</p>
+    /// <p>The <code>PutRecordBatch</code> response includes a count of failed records, <code>FailedPutCount</code>, and an array of responses, <code>RequestResponses</code>. Even if the <code>PutRecordBatch</code> call succeeds, the value of <code>FailedPutCount</code> may be greater than 0, indicating that there are records for which the operation didn't succeed. Each entry in the <code>RequestResponses</code> array provides additional information about the processed record. It directly correlates with a record in the request array using the same ordering, from the top to the bottom. The response array always includes the same number of records as the request array. <code>RequestResponses</code> includes both successfully and unsuccessfully processed records. Kinesis Data Firehose tries to process all records in each <code>PutRecordBatch</code> request. A single record failure does not stop the processing of subsequent records. </p>
+    /// <p>A successfully processed record includes a <code>RecordId</code> value, which is unique for the record. An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code> reflects the type of error, and is one of the following values: <code>ServiceUnavailableException</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed information about the error.</p>
+    /// <p>If there is an internal server error or a timeout, the write might have completed or it might have failed. If <code>FailedPutCount</code> is greater than 0, retry the request, resending only those records that might have failed processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and corresponding charges). We recommend that you handle any duplicates at the destination.</p>
+    /// <p>If <code>PutRecordBatch</code> throws <code>ServiceUnavailableException</code>, back off and retry. If the exception persists, it is possible that the throughput limits have been exceeded for the delivery stream.</p>
+    /// <p>Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they are added to a delivery stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24 hours, the data is no longer available.</p> <important>
+    /// <p>Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the raw data, then perform base64 encoding.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRecordBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1235,10 +1012,10 @@ pub mod fluent_builders {
                 crate::input::PutRecordBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1247,8 +1024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1264,8 +1041,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>One or more records.</p>
-        pub fn records(mut self, inp: impl Into<crate::model::Record>) -> Self {
-            self.inner = self.inner.records(inp);
+        pub fn records(mut self, input: crate::model::Record) -> Self {
+            self.inner = self.inner.records(input);
             self
         }
         /// <p>One or more records.</p>
@@ -1280,42 +1057,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDeliveryStreamEncryption`.
     ///
     /// <p>Enables server-side encryption (SSE) for the delivery stream. </p>
-    /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data
-    /// Firehose first sets the encryption status of the stream to <code>ENABLING</code>, and then
-    /// to <code>ENABLED</code>. The encryption status of a delivery stream is the
-    /// <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>.
-    /// If the operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You
-    /// can continue to read and write data to your delivery stream while the encryption status is
-    /// <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds after
-    /// the encryption status changes to <code>ENABLED</code> before all records written to the
-    /// delivery stream are encrypted. To find out whether a record or a batch of records was
-    /// encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and
-    /// <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p>
-    /// <p>To check the encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-    /// <p>Even if encryption is currently enabled for a delivery stream, you can still invoke this
-    /// operation on it to change the ARN of the CMK or both its type and ARN. If you invoke this
-    /// method to change the CMK, and the old CMK is of type <code>CUSTOMER_MANAGED_CMK</code>,
-    /// Kinesis Data Firehose schedules the grant it had on the old CMK for retirement. If the new
-    /// CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose creates a grant
-    /// that enables it to use the new CMK to encrypt and decrypt data and to manage the
-    /// grant.</p>
-    /// <p>If a delivery stream already has encryption enabled and then you invoke this operation
-    /// to change the ARN of the CMK or both its type and ARN and you get
-    /// <code>ENABLING_FAILED</code>, this only means that the attempt to change the CMK failed.
-    /// In this case, encryption remains enabled with the old CMK.</p>
-    /// <p>If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you
-    /// can invoke this operation again with a valid CMK. The CMK must be enabled and the key
-    /// policy mustn't explicitly deny the permission for Kinesis Data Firehose to invoke KMS
-    /// encrypt and decrypt operations.</p>
-    /// <p>You can enable SSE for a delivery stream only if it's a delivery stream that uses
-    /// <code>DirectPut</code> as its source. </p>
-    /// <p>The <code>StartDeliveryStreamEncryption</code> and
-    /// <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls
-    /// per delivery stream per 24 hours. For example, you reach the limit if you call
-    /// <code>StartDeliveryStreamEncryption</code> 13 times and
-    /// <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a
-    /// 24-hour period.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the encryption status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. The encryption status of a delivery stream is the <code>Status</code> property in <code>DeliveryStreamEncryptionConfiguration</code>. If the operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You can continue to read and write data to your delivery stream while the encryption status is <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the response elements <code>PutRecordOutput$Encrypted</code> and <code>PutRecordBatchOutput$Encrypted</code>, respectively.</p>
+    /// <p>To check the encryption status of a delivery stream, use <code>DescribeDeliveryStream</code>.</p>
+    /// <p>Even if encryption is currently enabled for a delivery stream, you can still invoke this operation on it to change the ARN of the CMK or both its type and ARN. If you invoke this method to change the CMK, and the old CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement. If the new CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose creates a grant that enables it to use the new CMK to encrypt and decrypt data and to manage the grant.</p>
+    /// <p>If a delivery stream already has encryption enabled and then you invoke this operation to change the ARN of the CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>, this only means that the attempt to change the CMK failed. In this case, encryption remains enabled with the old CMK.</p>
+    /// <p>If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation again with a valid CMK. The CMK must be enabled and the key policy mustn't explicitly deny the permission for Kinesis Data Firehose to invoke KMS encrypt and decrypt operations.</p>
+    /// <p>You can enable SSE for a delivery stream only if it's a delivery stream that uses <code>DirectPut</code> as its source. </p>
+    /// <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeliveryStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1360,10 +1109,10 @@ pub mod fluent_builders {
                 crate::input::StartDeliveryStreamEncryptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1371,14 +1120,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the delivery stream for which you want to enable server-side encryption
-        /// (SSE).</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
-        /// <p>The name of the delivery stream for which you want to enable server-side encryption
-        /// (SSE).</p>
+        /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
         pub fn set_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1386,19 +1133,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
-        /// Server-Side Encryption (SSE).</p>
+        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
         pub fn delivery_stream_encryption_configuration_input(
             mut self,
-            inp: crate::model::DeliveryStreamEncryptionConfigurationInput,
+            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
         ) -> Self {
             self.inner = self
                 .inner
-                .delivery_stream_encryption_configuration_input(inp);
+                .delivery_stream_encryption_configuration_input(input);
             self
         }
-        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
-        /// Server-Side Encryption (SSE).</p>
+        /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
         pub fn set_delivery_stream_encryption_configuration_input(
             mut self,
             input: std::option::Option<crate::model::DeliveryStreamEncryptionConfigurationInput>,
@@ -1412,26 +1157,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDeliveryStreamEncryption`.
     ///
     /// <p>Disables server-side encryption (SSE) for the delivery stream. </p>
-    /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data
-    /// Firehose first sets the encryption status of the stream to <code>DISABLING</code>, and then
-    /// to <code>DISABLED</code>. You can continue to read and write data to your stream while its
-    /// status is <code>DISABLING</code>. It can take up to 5 seconds after the encryption status
-    /// changes to <code>DISABLED</code> before all records written to the delivery stream are no
-    /// longer subject to encryption. To find out whether a record or a batch of records was
-    /// encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and
-    /// <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p>
-    /// <p>To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>. </p>
-    /// <p>If SSE is enabled using a customer managed CMK and then you invoke
-    /// <code>StopDeliveryStreamEncryption</code>, Kinesis Data Firehose schedules the related
-    /// KMS grant for retirement and then retires it after it ensures that it is finished
-    /// delivering records to the destination.</p>
-    /// <p>The <code>StartDeliveryStreamEncryption</code> and
-    /// <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls
-    /// per delivery stream per 24 hours. For example, you reach the limit if you call
-    /// <code>StartDeliveryStreamEncryption</code> 13 times and
-    /// <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a
-    /// 24-hour period.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the encryption status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the response elements <code>PutRecordOutput$Encrypted</code> and <code>PutRecordBatchOutput$Encrypted</code>, respectively.</p>
+    /// <p>To check the encryption state of a delivery stream, use <code>DescribeDeliveryStream</code>. </p>
+    /// <p>If SSE is enabled using a customer managed CMK and then you invoke <code>StopDeliveryStreamEncryption</code>, Kinesis Data Firehose schedules the related KMS grant for retirement and then retires it after it ensures that it is finished delivering records to the destination.</p>
+    /// <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDeliveryStreamEncryption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1476,10 +1206,10 @@ pub mod fluent_builders {
                 crate::input::StopDeliveryStreamEncryptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1487,14 +1217,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the delivery stream for which you want to disable server-side encryption
-        /// (SSE).</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
-        /// <p>The name of the delivery stream for which you want to disable server-side encryption
-        /// (SSE).</p>
+        /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
         pub fn set_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1505,16 +1233,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagDeliveryStream`.
     ///
-    /// <p>Adds or updates tags for the specified delivery stream. A tag is a key-value pair
-    /// that you can define and assign to AWS resources. If you specify a tag that already exists,
-    /// the tag value is replaced with the value that you specify in the request. Tags are
-    /// metadata. For example, you can add friendly names and descriptions or other types of
-    /// information that can help you distinguish the delivery stream. For more information about
-    /// tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-    /// Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
+    /// <p>Adds or updates tags for the specified delivery stream. A tag is a key-value pair that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
     /// <p>Each delivery stream can have up to 50 tags. </p>
     /// <p>This operation has a limit of five transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1559,10 +1281,10 @@ pub mod fluent_builders {
                 crate::input::TagDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1571,8 +1293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream to which you want to add the tags.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream to which you want to add the tags.</p>
@@ -1588,8 +1310,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key-value pairs to use to create the tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of key-value pairs to use to create the tags.</p>
@@ -1603,11 +1325,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagDeliveryStream`.
     ///
-    /// <p>Removes tags from the specified delivery stream. Removed tags are deleted, and you
-    /// can't recover them after this operation successfully completes.</p>
+    /// <p>Removes tags from the specified delivery stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p>
     /// <p>If you specify a tag that doesn't exist, the operation ignores it.</p>
     /// <p>This operation has a limit of five transactions per second per account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagDeliveryStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1652,10 +1373,10 @@ pub mod fluent_builders {
                 crate::input::UntagDeliveryStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1664,8 +1385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1680,14 +1401,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys. Each corresponding tag is removed from the delivery
-        /// stream.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of tag keys. Each corresponding tag is removed from the delivery
-        /// stream.</p>
+        /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1699,30 +1418,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDestination`.
     ///
     /// <p>Updates the specified destination of the specified delivery stream.</p>
-    ///
-    /// <p>Use this operation to change the destination type (for example, to replace the Amazon
-    /// S3 destination with Amazon Redshift) or change the parameters associated with a destination
-    /// (for example, to change the bucket name of the Amazon S3 destination). The update might not
-    /// occur immediately. The target delivery stream remains active while the configurations are
-    /// updated, so data writes to the delivery stream can continue during this process. The
-    /// updated configurations are usually effective within a few minutes.</p>
-    /// <p>Switching between Amazon ES and other services is not supported. For an Amazon ES
-    /// destination, you can only update to another Amazon ES destination.</p>
-    /// <p>If the destination type is the same, Kinesis Data Firehose merges the configuration
-    /// parameters specified with the destination configuration that already exists on the delivery
-    /// stream. If any of the parameters are not specified in the call, the existing values are
-    /// retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified, then the existing
-    /// <code>EncryptionConfiguration</code> is maintained on the destination.</p>
-    /// <p>If the destination type is not the same, for example, changing the destination from
-    /// Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any parameters. In this
-    /// case, all parameters must be specified.</p>
-    ///
-    /// <p>Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-    /// conditions and conflicting merges. This is a required field, and the service updates the
-    /// configuration only if the existing configuration has a version ID that matches. After the
-    /// update is applied successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
-    /// <code>CurrentDeliveryStreamVersionId</code> in the next call.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Use this operation to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a destination (for example, to change the bucket name of the Amazon S3 destination). The update might not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are usually effective within a few minutes.</p>
+    /// <p>Switching between Amazon ES and other services is not supported. For an Amazon ES destination, you can only update to another Amazon ES destination.</p>
+    /// <p>If the destination type is the same, Kinesis Data Firehose merges the configuration parameters specified with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the call, the existing values are retained. For example, in the Amazon S3 destination, if <code>EncryptionConfiguration</code> is not specified, then the existing <code>EncryptionConfiguration</code> is maintained on the destination.</p>
+    /// <p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any parameters. In this case, all parameters must be specified.</p>
+    /// <p>Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field, and the service updates the configuration only if the existing configuration has a version ID that matches. After the update is applied successfully, the version ID is updated, and can be retrieved using <code>DescribeDeliveryStream</code>. Use the new version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1767,10 +1468,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1779,8 +1480,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(inp);
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1791,23 +1492,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_stream_name(input);
             self
         }
-        /// <p>Obtain this value from the <code>VersionId</code> result of <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-        /// perform conditional operations. For example, if there is an interleaving update and this
-        /// value is null, then the update destination fails. After the update is successful, the
-        /// <code>VersionId</code> value is updated. The service then performs a merge of the old
-        /// configuration with the new configuration.</p>
+        /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
         pub fn current_delivery_stream_version_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.current_delivery_stream_version_id(inp);
+            self.inner = self.inner.current_delivery_stream_version_id(input.into());
             self
         }
-        /// <p>Obtain this value from the <code>VersionId</code> result of <a>DeliveryStreamDescription</a>. This value is required, and helps the service
-        /// perform conditional operations. For example, if there is an interleaving update and this
-        /// value is null, then the update destination fails. After the update is successful, the
-        /// <code>VersionId</code> value is updated. The service then performs a merge of the old
-        /// configuration with the new configuration.</p>
+        /// <p>Obtain this value from the <code>VersionId</code> result of <code>DeliveryStreamDescription</code>. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <code>VersionId</code> value is updated. The service then performs a merge of the old configuration with the new configuration.</p>
         pub fn set_current_delivery_stream_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1816,8 +1509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the destination.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(input.into());
             self
         }
         /// <p>The ID of the destination.</p>
@@ -1829,8 +1522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-        pub fn s3_destination_update(mut self, inp: crate::model::S3DestinationUpdate) -> Self {
-            self.inner = self.inner.s3_destination_update(inp);
+        pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
+            self.inner = self.inner.s3_destination_update(input);
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
@@ -1844,9 +1537,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon S3.</p>
         pub fn extended_s3_destination_update(
             mut self,
-            inp: crate::model::ExtendedS3DestinationUpdate,
+            input: crate::model::ExtendedS3DestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.extended_s3_destination_update(inp);
+            self.inner = self.inner.extended_s3_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon S3.</p>
@@ -1860,9 +1553,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
         pub fn redshift_destination_update(
             mut self,
-            inp: crate::model::RedshiftDestinationUpdate,
+            input: crate::model::RedshiftDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.redshift_destination_update(inp);
+            self.inner = self.inner.redshift_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
@@ -1876,9 +1569,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon ES.</p>
         pub fn elasticsearch_destination_update(
             mut self,
-            inp: crate::model::ElasticsearchDestinationUpdate,
+            input: crate::model::ElasticsearchDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.elasticsearch_destination_update(inp);
+            self.inner = self.inner.elasticsearch_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon ES.</p>
@@ -1892,9 +1585,9 @@ pub mod fluent_builders {
         #[allow(missing_docs)] // documentation missing in model
         pub fn amazonopensearchservice_destination_update(
             mut self,
-            inp: crate::model::AmazonopensearchserviceDestinationUpdate,
+            input: crate::model::AmazonopensearchserviceDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.amazonopensearchservice_destination_update(inp);
+            self.inner = self.inner.amazonopensearchservice_destination_update(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1910,9 +1603,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Splunk.</p>
         pub fn splunk_destination_update(
             mut self,
-            inp: crate::model::SplunkDestinationUpdate,
+            input: crate::model::SplunkDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.splunk_destination_update(inp);
+            self.inner = self.inner.splunk_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Splunk.</p>
@@ -1926,9 +1619,9 @@ pub mod fluent_builders {
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>
         pub fn http_endpoint_destination_update(
             mut self,
-            inp: crate::model::HttpEndpointDestinationUpdate,
+            input: crate::model::HttpEndpointDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.http_endpoint_destination_update(inp);
+            self.inner = self.inner.http_endpoint_destination_update(input);
             self
         }
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>
@@ -1941,6 +1634,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

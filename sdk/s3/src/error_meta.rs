@@ -3,13 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The requested bucket name is not available. The bucket namespace is shared by all users
-    /// of the system. Select a different name and try again.</p>
+    /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
-    /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error
-    /// in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you
-    /// re-create an existing bucket that you already own in the North Virginia Region, Amazon S3
-    /// returns 200 OK and resets the bucket access control lists (ACLs).</p>
+    /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
     /// <p>Object is archived and inaccessible until restored.</p>
     InvalidObjectState(crate::error::InvalidObjectState),
@@ -23,8 +19,7 @@ pub enum Error {
     NotFound(crate::error::NotFound),
     /// <p>This action is not allowed against this storage tier.</p>
     ObjectAlreadyInActiveTierError(crate::error::ObjectAlreadyInActiveTierError),
-    /// <p>The source object of the COPY action is not in the active tier and is only stored in
-    /// Amazon S3 Glacier.</p>
+    /// <p>The source object of the COPY action is not in the active tier and is only stored in Amazon S3 Glacier.</p>
     ObjectNotInActiveTierError(crate::error::ObjectNotInActiveTierError),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -176,12 +176,9 @@ pub mod get_pending_job_executions_output {
         /// To override the contents of this collection use [`set_in_progress_jobs`](Self::set_in_progress_jobs).
         ///
         /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-        pub fn in_progress_jobs(
-            mut self,
-            input: impl Into<crate::model::JobExecutionSummary>,
-        ) -> Self {
+        pub fn in_progress_jobs(mut self, input: crate::model::JobExecutionSummary) -> Self {
             let mut v = self.in_progress_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.in_progress_jobs = Some(v);
             self
         }
@@ -198,9 +195,9 @@ pub mod get_pending_job_executions_output {
         /// To override the contents of this collection use [`set_queued_jobs`](Self::set_queued_jobs).
         ///
         /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-        pub fn queued_jobs(mut self, input: impl Into<crate::model::JobExecutionSummary>) -> Self {
+        pub fn queued_jobs(mut self, input: crate::model::JobExecutionSummary) -> Self {
             let mut v = self.queued_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queued_jobs = Some(v);
             self
         }

@@ -863,6 +863,13 @@ pub fn deser_operation_crate_operation_describe_organization_resource_collection
                             )?,
                         );
                     }
+                    "Tags" => {
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_list_com_amazonaws_devopsguru_tag_healths(
+                                tokens,
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

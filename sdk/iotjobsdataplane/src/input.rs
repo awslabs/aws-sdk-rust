@@ -42,14 +42,12 @@ pub mod describe_job_execution_input {
             self.include_job_document = input;
             self
         }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-        /// the latest job execution is returned.</p>
+        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-        /// the latest job execution is returned.</p>
+        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
@@ -73,7 +71,7 @@ pub mod describe_job_execution_input {
 #[doc(hidden)]
 pub type DescribeJobExecutionInputOperationOutputAlias = crate::operation::DescribeJobExecution;
 #[doc(hidden)]
-pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobExecution`](crate::operation::DescribeJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -84,7 +82,7 @@ impl DescribeJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -214,7 +212,7 @@ impl DescribeJobExecutionInput {
             "DescribeJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -265,7 +263,7 @@ pub mod get_pending_job_executions_input {
 pub type GetPendingJobExecutionsInputOperationOutputAlias =
     crate::operation::GetPendingJobExecutions;
 #[doc(hidden)]
-pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPendingJobExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPendingJobExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`GetPendingJobExecutions`](crate::operation::GetPendingJobExecutions)>
     #[allow(clippy::let_and_return)]
@@ -276,7 +274,7 @@ impl GetPendingJobExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPendingJobExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -366,7 +364,7 @@ impl GetPendingJobExecutionsInput {
             "GetPendingJobExecutions",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -408,8 +406,7 @@ pub mod start_next_pending_job_execution_input {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-        /// statusDetails are unchanged.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -420,8 +417,7 @@ pub mod start_next_pending_job_execution_input {
             self.status_details = Some(hash_map);
             self
         }
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-        /// statusDetails are unchanged.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -431,24 +427,12 @@ pub mod start_next_pending_job_execution_input {
             self.status_details = input;
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-        /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
             self.step_timeout_in_minutes = Some(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-        /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.step_timeout_in_minutes = input;
             self
@@ -472,7 +456,8 @@ pub mod start_next_pending_job_execution_input {
 pub type StartNextPendingJobExecutionInputOperationOutputAlias =
     crate::operation::StartNextPendingJobExecution;
 #[doc(hidden)]
-pub type StartNextPendingJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartNextPendingJobExecutionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartNextPendingJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartNextPendingJobExecution`](crate::operation::StartNextPendingJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -483,7 +468,7 @@ impl StartNextPendingJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartNextPendingJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -584,7 +569,7 @@ impl StartNextPendingJobExecutionInput {
             "StartNextPendingJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -646,14 +631,12 @@ pub mod update_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-        /// on every update.</p>
+        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
         pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-        /// on every update.</p>
+        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -665,8 +648,7 @@ pub mod update_job_execution_input {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged.</p>
+        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -677,8 +659,7 @@ pub mod update_job_execution_input {
             self.status_details = Some(hash_map);
             self
         }
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged.</p>
+        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -688,54 +669,32 @@ pub mod update_job_execution_input {
             self.status_details = input;
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-        /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
             self.step_timeout_in_minutes = Some(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-        /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.step_timeout_in_minutes = input;
             self
         }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-        /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-        /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-        /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-        /// the job execution status data.)</p>
+        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-        /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-        /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-        /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-        /// the job execution status data.)</p>
+        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
         }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-        /// false.</p>
+        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
         pub fn include_job_execution_state(mut self, input: bool) -> Self {
             self.include_job_execution_state = Some(input);
             self
         }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-        /// false.</p>
+        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
         pub fn set_include_job_execution_state(mut self, input: std::option::Option<bool>) -> Self {
             self.include_job_execution_state = input;
             self
@@ -784,7 +743,7 @@ pub mod update_job_execution_input {
 #[doc(hidden)]
 pub type UpdateJobExecutionInputOperationOutputAlias = crate::operation::UpdateJobExecution;
 #[doc(hidden)]
-pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobExecution`](crate::operation::UpdateJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -795,7 +754,7 @@ impl UpdateJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -911,7 +870,7 @@ impl UpdateJobExecutionInput {
             "UpdateJobExecution",
             "iotjobsdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -942,29 +901,16 @@ pub struct UpdateJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing associated with the device.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-    /// on every update.</p>
+    /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged.</p>
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-    /// execution status is not set to a terminal state before this timer expires, or before the
-    /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-    /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-    /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-    /// this timeout has no effect on that job execution timeout which may have been specified when
-    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub step_timeout_in_minutes: std::option::Option<i64>,
-    /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-    /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-    /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-    /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-    /// the job execution status data.)</p>
+    /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-    /// false.</p>
+    /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
     pub include_job_execution_state: std::option::Option<bool>,
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
     pub include_job_document: std::option::Option<bool>,
@@ -980,39 +926,26 @@ impl UpdateJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-    /// on every update.</p>
+    /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged.</p>
+    /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn status_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.status_details.as_ref()
     }
-    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-    /// execution status is not set to a terminal state before this timer expires, or before the
-    /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-    /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-    /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-    /// this timeout has no effect on that job execution timeout which may have been specified when
-    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub fn step_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.step_timeout_in_minutes
     }
-    /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-    /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-    /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-    /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-    /// the job execution status data.)</p>
+    /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-    /// false.</p>
+    /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
     pub fn include_job_execution_state(&self) -> std::option::Option<bool> {
         self.include_job_execution_state
     }
@@ -1050,17 +983,10 @@ impl std::fmt::Debug for UpdateJobExecutionInput {
 pub struct StartNextPendingJobExecutionInput {
     /// <p>The name of the thing associated with the device.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-    /// statusDetails are unchanged.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-    /// execution status is not set to a terminal state before this timer expires, or before the
-    /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-    /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-    /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-    /// this timeout has no effect on that job execution timeout which may have been specified when
-    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub step_timeout_in_minutes: std::option::Option<i64>,
 }
 impl StartNextPendingJobExecutionInput {
@@ -1068,21 +994,14 @@ impl StartNextPendingJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-    /// statusDetails are unchanged.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
     pub fn status_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.status_details.as_ref()
     }
-    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-    /// execution status is not set to a terminal state before this timer expires, or before the
-    /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-    /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-    /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-    /// this timeout has no effect on that job execution timeout which may have been specified when
-    /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
     pub fn step_timeout_in_minutes(&self) -> std::option::Option<i64> {
         self.step_timeout_in_minutes
     }
@@ -1128,8 +1047,7 @@ pub struct DescribeJobExecutionInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
     pub include_job_document: std::option::Option<bool>,
-    /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-    /// the latest job execution is returned.</p>
+    /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub execution_number: std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {
@@ -1145,8 +1063,7 @@ impl DescribeJobExecutionInput {
     pub fn include_job_document(&self) -> std::option::Option<bool> {
         self.include_job_document
     }
-    /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-    /// the latest job execution is returned.</p>
+    /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }

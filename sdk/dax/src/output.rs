@@ -201,9 +201,9 @@ pub mod untag_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag keys that have been removed from the cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -262,9 +262,9 @@ pub mod tag_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags that are associated with the DAX resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -349,8 +349,7 @@ impl RebootNodeOutput {
 pub struct ListTagsOutput {
     /// <p>A list of tags currently associated with the DAX cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
-    /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+    /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -358,8 +357,7 @@ impl ListTagsOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
-    /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+    /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -387,9 +385,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags currently associated with the DAX cluster.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -401,14 +399,12 @@ pub mod list_tags_output {
             self.tags = input;
             self
         }
-        /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
-        /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+        /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If this value is present, there are additional results to be displayed.  To retrieve them, call
-        /// <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
+        /// <p>If this value is present, there are additional results to be displayed. To retrieve them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -489,7 +485,7 @@ impl IncreaseReplicationFactorOutput {
 pub struct DescribeSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
+    /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
     pub subnet_groups: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
 }
 impl DescribeSubnetGroupsOutput {
@@ -497,7 +493,7 @@ impl DescribeSubnetGroupsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
+    /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
     pub fn subnet_groups(&self) -> std::option::Option<&[crate::model::SubnetGroup]> {
         self.subnet_groups.as_deref()
     }
@@ -534,14 +530,14 @@ pub mod describe_subnet_groups_output {
         ///
         /// To override the contents of this collection use [`set_subnet_groups`](Self::set_subnet_groups).
         ///
-        /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
-        pub fn subnet_groups(mut self, input: impl Into<crate::model::SubnetGroup>) -> Self {
+        /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
+        pub fn subnet_groups(mut self, input: crate::model::SubnetGroup) -> Self {
             let mut v = self.subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_groups = Some(v);
             self
         }
-        /// <p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>
+        /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
         pub fn set_subnet_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetGroup>>,
@@ -571,7 +567,7 @@ impl DescribeSubnetGroupsOutput {
 pub struct DescribeParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
+    /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl DescribeParametersOutput {
@@ -579,7 +575,7 @@ impl DescribeParametersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
+    /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
@@ -616,14 +612,14 @@ pub mod describe_parameters_output {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>
+        /// <p>A list of parameters within a parameter group. Each element in the list represents one parameter.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -653,7 +649,7 @@ impl DescribeParametersOutput {
 pub struct DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
+    /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
 }
 impl DescribeParameterGroupsOutput {
@@ -661,7 +657,7 @@ impl DescribeParameterGroupsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
+    /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
     pub fn parameter_groups(&self) -> std::option::Option<&[crate::model::ParameterGroup]> {
         self.parameter_groups.as_deref()
     }
@@ -699,14 +695,14 @@ pub mod describe_parameter_groups_output {
         ///
         /// To override the contents of this collection use [`set_parameter_groups`](Self::set_parameter_groups).
         ///
-        /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
-        pub fn parameter_groups(mut self, input: impl Into<crate::model::ParameterGroup>) -> Self {
+        /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
+        pub fn parameter_groups(mut self, input: crate::model::ParameterGroup) -> Self {
             let mut v = self.parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_groups = Some(v);
             self
         }
-        /// <p>An array of parameter groups.  Each element in the array represents one parameter group.</p>
+        /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
         pub fn set_parameter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterGroup>>,
@@ -736,7 +732,7 @@ impl DescribeParameterGroupsOutput {
 pub struct DescribeEventsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of events.  Each element in the array represents one event.</p>
+    /// <p>An array of events. Each element in the array represents one event.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
@@ -744,7 +740,7 @@ impl DescribeEventsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of events.  Each element in the array represents one event.</p>
+    /// <p>An array of events. Each element in the array represents one event.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
@@ -781,14 +777,14 @@ pub mod describe_events_output {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>An array of events.  Each element in the array represents one event.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        /// <p>An array of events. Each element in the array represents one event.</p>
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p>An array of events.  Each element in the array represents one event.</p>
+        /// <p>An array of events. Each element in the array represents one event.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -818,7 +814,7 @@ impl DescribeEventsOutput {
 pub struct DescribeDefaultParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
+    /// <p>A list of parameters. Each element in the list represents one parameter.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
 }
 impl DescribeDefaultParametersOutput {
@@ -826,7 +822,7 @@ impl DescribeDefaultParametersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
+    /// <p>A list of parameters. Each element in the list represents one parameter.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
@@ -863,14 +859,14 @@ pub mod describe_default_parameters_output {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        /// <p>A list of parameters. Each element in the list represents one parameter.</p>
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of parameters.  Each element in the list represents one parameter.</p>
+        /// <p>A list of parameters. Each element in the list represents one parameter.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -900,8 +896,7 @@ impl DescribeDefaultParametersOutput {
 pub struct DescribeClustersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The descriptions of your DAX clusters, in response to a
-    /// <i>DescribeClusters</i> request.</p>
+    /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
 impl DescribeClustersOutput {
@@ -909,8 +904,7 @@ impl DescribeClustersOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The descriptions of your DAX clusters, in response to a
-    /// <i>DescribeClusters</i> request.</p>
+    /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
     pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
         self.clusters.as_deref()
     }
@@ -947,16 +941,14 @@ pub mod describe_clusters_output {
         ///
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
-        /// <p>The descriptions of your DAX clusters, in response to a
-        /// <i>DescribeClusters</i> request.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
-        /// <p>The descriptions of your DAX clusters, in response to a
-        /// <i>DescribeClusters</i> request.</p>
+        /// <p>The descriptions of your DAX clusters, in response to a <i>DescribeClusters</i> request.</p>
         pub fn set_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
@@ -984,13 +976,11 @@ impl DescribeClustersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSubnetGroupOutput {
-    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet
-    /// group).</p>
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
     pub deletion_message: std::option::Option<std::string::String>,
 }
 impl DeleteSubnetGroupOutput {
-    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet
-    /// group).</p>
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
     pub fn deletion_message(&self) -> std::option::Option<&str> {
         self.deletion_message.as_deref()
     }
@@ -1011,14 +1001,12 @@ pub mod delete_subnet_group_output {
         pub(crate) deletion_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet
-        /// group).</p>
+        /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
         pub fn deletion_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_message = Some(input.into());
             self
         }
-        /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet
-        /// group).</p>
+        /// <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
         pub fn set_deletion_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1045,13 +1033,11 @@ impl DeleteSubnetGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParameterGroupOutput {
-    /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter
-    /// group).</p>
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     pub deletion_message: std::option::Option<std::string::String>,
 }
 impl DeleteParameterGroupOutput {
-    /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter
-    /// group).</p>
+    /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     pub fn deletion_message(&self) -> std::option::Option<&str> {
         self.deletion_message.as_deref()
     }
@@ -1072,14 +1058,12 @@ pub mod delete_parameter_group_output {
         pub(crate) deletion_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter
-        /// group).</p>
+        /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
         pub fn deletion_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_message = Some(input.into());
             self
         }
-        /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter
-        /// group).</p>
+        /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
         pub fn set_deletion_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1160,13 +1144,11 @@ impl DeleteClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseReplicationFactorOutput {
-    /// <p>A description of the DAX cluster, after you have decreased its replication
-    /// factor.</p>
+    /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
     pub cluster: std::option::Option<crate::model::Cluster>,
 }
 impl DecreaseReplicationFactorOutput {
-    /// <p>A description of the DAX cluster, after you have decreased its replication
-    /// factor.</p>
+    /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
     }
@@ -1187,14 +1169,12 @@ pub mod decrease_replication_factor_output {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
     }
     impl Builder {
-        /// <p>A description of the DAX cluster, after you have decreased its replication
-        /// factor.</p>
+        /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
         pub fn cluster(mut self, input: crate::model::Cluster) -> Self {
             self.cluster = Some(input);
             self
         }
-        /// <p>A description of the DAX cluster, after you have decreased its replication
-        /// factor.</p>
+        /// <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
         pub fn set_cluster(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
             self.cluster = input;
             self
@@ -1218,13 +1198,11 @@ impl DecreaseReplicationFactorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSubnetGroupOutput {
-    /// <p>Represents the output of a <i>CreateSubnetGroup</i>
-    /// operation.</p>
+    /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
     pub subnet_group: std::option::Option<crate::model::SubnetGroup>,
 }
 impl CreateSubnetGroupOutput {
-    /// <p>Represents the output of a <i>CreateSubnetGroup</i>
-    /// operation.</p>
+    /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
     pub fn subnet_group(&self) -> std::option::Option<&crate::model::SubnetGroup> {
         self.subnet_group.as_ref()
     }
@@ -1245,14 +1223,12 @@ pub mod create_subnet_group_output {
         pub(crate) subnet_group: std::option::Option<crate::model::SubnetGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of a <i>CreateSubnetGroup</i>
-        /// operation.</p>
+        /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
         pub fn subnet_group(mut self, input: crate::model::SubnetGroup) -> Self {
             self.subnet_group = Some(input);
             self
         }
-        /// <p>Represents the output of a <i>CreateSubnetGroup</i>
-        /// operation.</p>
+        /// <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
         pub fn set_subnet_group(
             mut self,
             input: std::option::Option<crate::model::SubnetGroup>,
@@ -1279,13 +1255,11 @@ impl CreateSubnetGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupOutput {
-    /// <p>Represents the output of a <i>CreateParameterGroup</i>
-    /// action.</p>
+    /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
     pub parameter_group: std::option::Option<crate::model::ParameterGroup>,
 }
 impl CreateParameterGroupOutput {
-    /// <p>Represents the output of a <i>CreateParameterGroup</i>
-    /// action.</p>
+    /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
     pub fn parameter_group(&self) -> std::option::Option<&crate::model::ParameterGroup> {
         self.parameter_group.as_ref()
     }
@@ -1306,14 +1280,12 @@ pub mod create_parameter_group_output {
         pub(crate) parameter_group: std::option::Option<crate::model::ParameterGroup>,
     }
     impl Builder {
-        /// <p>Represents the output of a <i>CreateParameterGroup</i>
-        /// action.</p>
+        /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
         pub fn parameter_group(mut self, input: crate::model::ParameterGroup) -> Self {
             self.parameter_group = Some(input);
             self
         }
-        /// <p>Represents the output of a <i>CreateParameterGroup</i>
-        /// action.</p>
+        /// <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
         pub fn set_parameter_group(
             mut self,
             input: std::option::Option<crate::model::ParameterGroup>,

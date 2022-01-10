@@ -23,12 +23,12 @@ pub mod cancel_image_creation_input {
             self.image_build_version_arn = input;
             self
         }
-        /// <p>The idempotency token used to make this request idempotent.</p>
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The idempotency token used to make this request idempotent.</p>
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -50,7 +50,7 @@ pub mod cancel_image_creation_input {
 #[doc(hidden)]
 pub type CancelImageCreationInputOperationOutputAlias = crate::operation::CancelImageCreation;
 #[doc(hidden)]
-pub type CancelImageCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelImageCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelImageCreationInput {
     /// Consumes the builder and constructs an Operation<[`CancelImageCreation`](crate::operation::CancelImageCreation)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl CancelImageCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelImageCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -144,7 +144,7 @@ impl CancelImageCreationInput {
             "CancelImageCreation",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -198,35 +198,41 @@ pub mod create_component_input {
             self.name = input;
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -245,14 +251,12 @@ pub mod create_component_input {
             self.description = input;
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_description = Some(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -274,18 +278,14 @@ pub mod create_component_input {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         ///
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -293,30 +293,22 @@ pub mod create_component_input {
             self.supported_os_versions = input;
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -392,7 +384,7 @@ pub mod create_component_input {
 #[doc(hidden)]
 pub type CreateComponentInputOperationOutputAlias = crate::operation::CreateComponent;
 #[doc(hidden)]
-pub type CreateComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponent`](crate::operation::CreateComponent)>
     #[allow(clippy::let_and_return)]
@@ -403,7 +395,7 @@ impl CreateComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -486,7 +478,7 @@ impl CreateComponentInput {
             "CreateComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -569,35 +561,41 @@ pub mod create_container_recipe_input {
             self.description = input;
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -611,12 +609,9 @@ pub mod create_container_recipe_input {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>Components for build and test that are included in the container recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -808,7 +803,7 @@ pub mod create_container_recipe_input {
 #[doc(hidden)]
 pub type CreateContainerRecipeInputOperationOutputAlias = crate::operation::CreateContainerRecipe;
 #[doc(hidden)]
-pub type CreateContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainerRecipe`](crate::operation::CreateContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -819,7 +814,7 @@ impl CreateContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -904,7 +899,7 @@ impl CreateContainerRecipeInput {
             "CreateContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -967,9 +962,9 @@ pub mod create_distribution_configuration_input {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p> The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }
@@ -1037,7 +1032,8 @@ pub mod create_distribution_configuration_input {
 pub type CreateDistributionConfigurationInputOperationOutputAlias =
     crate::operation::CreateDistributionConfiguration;
 #[doc(hidden)]
-pub type CreateDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionConfiguration`](crate::operation::CreateDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1048,7 +1044,7 @@ impl CreateDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1132,7 +1128,7 @@ impl CreateDistributionConfigurationInput {
             "CreateDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1174,14 +1170,12 @@ pub mod create_image_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_recipe_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1202,8 +1196,7 @@ pub mod create_image_input {
             self.container_recipe_arn = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1211,8 +1204,7 @@ pub mod create_image_input {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1220,8 +1212,7 @@ pub mod create_image_input {
             self.distribution_configuration_arn = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1229,8 +1220,7 @@ pub mod create_image_input {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1254,16 +1244,12 @@ pub mod create_image_input {
             self.image_tests_configuration = input;
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1329,7 +1315,7 @@ pub mod create_image_input {
 #[doc(hidden)]
 pub type CreateImageInputOperationOutputAlias = crate::operation::CreateImage;
 #[doc(hidden)]
-pub type CreateImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateImage`](crate::operation::CreateImage)>
     #[allow(clippy::let_and_return)]
@@ -1340,7 +1326,7 @@ impl CreateImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1422,7 +1408,7 @@ impl CreateImageInput {
             "CreateImage",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1488,14 +1474,12 @@ pub mod create_image_pipeline_input {
             self.description = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_recipe_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1516,8 +1500,7 @@ pub mod create_image_pipeline_input {
             self.container_recipe_arn = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1525,8 +1508,7 @@ pub mod create_image_pipeline_input {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1534,8 +1516,7 @@ pub mod create_image_pipeline_input {
             self.infrastructure_configuration_arn = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1543,8 +1524,7 @@ pub mod create_image_pipeline_input {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1568,16 +1548,12 @@ pub mod create_image_pipeline_input {
             self.image_tests_configuration = input;
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1670,7 +1646,7 @@ pub mod create_image_pipeline_input {
 #[doc(hidden)]
 pub type CreateImagePipelineInputOperationOutputAlias = crate::operation::CreateImagePipeline;
 #[doc(hidden)]
-pub type CreateImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateImagePipeline`](crate::operation::CreateImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -1681,7 +1657,7 @@ impl CreateImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1764,7 +1740,7 @@ impl CreateImagePipelineInput {
             "CreateImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1830,35 +1806,41 @@ pub mod create_image_recipe_input {
             self.description = input;
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -1872,12 +1854,9 @@ pub mod create_image_recipe_input {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>The components of the image recipe.</p>
-        pub fn components(
-            mut self,
-            input: impl Into<crate::model::ComponentConfiguration>,
-        ) -> Self {
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -1889,22 +1868,12 @@ pub mod create_image_recipe_input {
             self.components = input;
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_image = Some(input.into());
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_image = input;
             self
@@ -1916,10 +1885,10 @@ pub mod create_image_recipe_input {
         /// <p>The block device mappings of the image recipe.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -2020,7 +1989,7 @@ pub mod create_image_recipe_input {
 #[doc(hidden)]
 pub type CreateImageRecipeInputOperationOutputAlias = crate::operation::CreateImageRecipe;
 #[doc(hidden)]
-pub type CreateImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageRecipe`](crate::operation::CreateImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -2031,7 +2000,7 @@ impl CreateImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2114,7 +2083,7 @@ impl CreateImageRecipeInput {
             "CreateImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2188,18 +2157,14 @@ pub mod create_infrastructure_configuration_input {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2259,28 +2224,22 @@ pub mod create_infrastructure_configuration_input {
             self.logging = input;
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_pair = Some(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
             self.terminate_instance_on_failure = Some(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -2288,12 +2247,16 @@ pub mod create_infrastructure_configuration_input {
             self.terminate_instance_on_failure = input;
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2326,8 +2289,7 @@ pub mod create_infrastructure_configuration_input {
             self.resource_tags = input;
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn instance_metadata_options(
             mut self,
             input: crate::model::InstanceMetadataOptions,
@@ -2335,8 +2297,7 @@ pub mod create_infrastructure_configuration_input {
             self.instance_metadata_options = Some(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn set_instance_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -2409,7 +2370,8 @@ pub mod create_infrastructure_configuration_input {
 pub type CreateInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::CreateInfrastructureConfiguration;
 #[doc(hidden)]
-pub type CreateInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInfrastructureConfiguration`](crate::operation::CreateInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2420,7 +2382,7 @@ impl CreateInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2505,7 +2467,7 @@ impl CreateInfrastructureConfigurationInput {
             "CreateInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2569,7 +2531,7 @@ pub mod delete_component_input {
 #[doc(hidden)]
 pub type DeleteComponentInputOperationOutputAlias = crate::operation::DeleteComponent;
 #[doc(hidden)]
-pub type DeleteComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComponent`](crate::operation::DeleteComponent)>
     #[allow(clippy::let_and_return)]
@@ -2580,7 +2542,7 @@ impl DeleteComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2668,7 +2630,7 @@ impl DeleteComponentInput {
             "DeleteComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2721,7 +2683,7 @@ pub mod delete_container_recipe_input {
 #[doc(hidden)]
 pub type DeleteContainerRecipeInputOperationOutputAlias = crate::operation::DeleteContainerRecipe;
 #[doc(hidden)]
-pub type DeleteContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerRecipe`](crate::operation::DeleteContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -2732,7 +2694,7 @@ impl DeleteContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2820,7 +2782,7 @@ impl DeleteContainerRecipeInput {
             "DeleteContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2877,7 +2839,8 @@ pub mod delete_distribution_configuration_input {
 pub type DeleteDistributionConfigurationInputOperationOutputAlias =
     crate::operation::DeleteDistributionConfiguration;
 #[doc(hidden)]
-pub type DeleteDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistributionConfiguration`](crate::operation::DeleteDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2888,7 +2851,7 @@ impl DeleteDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2976,7 +2939,7 @@ impl DeleteDistributionConfigurationInput {
             "DeleteDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3029,7 +2992,7 @@ pub mod delete_image_input {
 #[doc(hidden)]
 pub type DeleteImageInputOperationOutputAlias = crate::operation::DeleteImage;
 #[doc(hidden)]
-pub type DeleteImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImage`](crate::operation::DeleteImage)>
     #[allow(clippy::let_and_return)]
@@ -3040,7 +3003,7 @@ impl DeleteImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3128,7 +3091,7 @@ impl DeleteImageInput {
             "DeleteImage",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3181,7 +3144,7 @@ pub mod delete_image_pipeline_input {
 #[doc(hidden)]
 pub type DeleteImagePipelineInputOperationOutputAlias = crate::operation::DeleteImagePipeline;
 #[doc(hidden)]
-pub type DeleteImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImagePipeline`](crate::operation::DeleteImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -3192,7 +3155,7 @@ impl DeleteImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3280,7 +3243,7 @@ impl DeleteImagePipelineInput {
             "DeleteImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3333,7 +3296,7 @@ pub mod delete_image_recipe_input {
 #[doc(hidden)]
 pub type DeleteImageRecipeInputOperationOutputAlias = crate::operation::DeleteImageRecipe;
 #[doc(hidden)]
-pub type DeleteImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImageRecipe`](crate::operation::DeleteImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -3344,7 +3307,7 @@ impl DeleteImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3432,7 +3395,7 @@ impl DeleteImageRecipeInput {
             "DeleteImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3489,7 +3452,8 @@ pub mod delete_infrastructure_configuration_input {
 pub type DeleteInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::DeleteInfrastructureConfiguration;
 #[doc(hidden)]
-pub type DeleteInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInfrastructureConfiguration`](crate::operation::DeleteInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3500,7 +3464,7 @@ impl DeleteInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3589,7 +3553,7 @@ impl DeleteInfrastructureConfigurationInput {
             "DeleteInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3613,8 +3577,7 @@ pub mod get_component_input {
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
         pub fn component_build_version_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3622,8 +3585,7 @@ pub mod get_component_input {
             self.component_build_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
         pub fn set_component_build_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3647,7 +3609,7 @@ pub mod get_component_input {
 #[doc(hidden)]
 pub type GetComponentInputOperationOutputAlias = crate::operation::GetComponent;
 #[doc(hidden)]
-pub type GetComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetComponent`](crate::operation::GetComponent)>
     #[allow(clippy::let_and_return)]
@@ -3658,7 +3620,7 @@ impl GetComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3746,7 +3708,7 @@ impl GetComponentInput {
             "GetComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3799,7 +3761,7 @@ pub mod get_component_policy_input {
 #[doc(hidden)]
 pub type GetComponentPolicyInputOperationOutputAlias = crate::operation::GetComponentPolicy;
 #[doc(hidden)]
-pub type GetComponentPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetComponentPolicy`](crate::operation::GetComponentPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3810,7 +3772,7 @@ impl GetComponentPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComponentPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3898,7 +3860,7 @@ impl GetComponentPolicyInput {
             "GetComponentPolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3951,7 +3913,7 @@ pub mod get_container_recipe_input {
 #[doc(hidden)]
 pub type GetContainerRecipeInputOperationOutputAlias = crate::operation::GetContainerRecipe;
 #[doc(hidden)]
-pub type GetContainerRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipe`](crate::operation::GetContainerRecipe)>
     #[allow(clippy::let_and_return)]
@@ -3962,7 +3924,7 @@ impl GetContainerRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4050,7 +4012,7 @@ impl GetContainerRecipeInput {
             "GetContainerRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4104,7 +4066,7 @@ pub mod get_container_recipe_policy_input {
 pub type GetContainerRecipePolicyInputOperationOutputAlias =
     crate::operation::GetContainerRecipePolicy;
 #[doc(hidden)]
-pub type GetContainerRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerRecipePolicy`](crate::operation::GetContainerRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4115,7 +4077,7 @@ impl GetContainerRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4203,7 +4165,7 @@ impl GetContainerRecipePolicyInput {
             "GetContainerRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4227,8 +4189,7 @@ pub mod get_distribution_configuration_input {
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4236,8 +4197,7 @@ pub mod get_distribution_configuration_input {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4262,7 +4222,8 @@ pub mod get_distribution_configuration_input {
 pub type GetDistributionConfigurationInputOperationOutputAlias =
     crate::operation::GetDistributionConfiguration;
 #[doc(hidden)]
-pub type GetDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfiguration`](crate::operation::GetDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4273,7 +4234,7 @@ impl GetDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4361,7 +4322,7 @@ impl GetDistributionConfigurationInput {
             "GetDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4412,7 +4373,7 @@ pub mod get_image_input {
 #[doc(hidden)]
 pub type GetImageInputOperationOutputAlias = crate::operation::GetImage;
 #[doc(hidden)]
-pub type GetImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetImage`](crate::operation::GetImage)>
     #[allow(clippy::let_and_return)]
@@ -4423,7 +4384,7 @@ impl GetImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4509,7 +4470,7 @@ impl GetImageInput {
                     "GetImage",
                     "imagebuilder",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4562,7 +4523,7 @@ pub mod get_image_pipeline_input {
 #[doc(hidden)]
 pub type GetImagePipelineInputOperationOutputAlias = crate::operation::GetImagePipeline;
 #[doc(hidden)]
-pub type GetImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePipeline`](crate::operation::GetImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -4573,7 +4534,7 @@ impl GetImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4661,7 +4622,7 @@ impl GetImagePipelineInput {
             "GetImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4711,7 +4672,7 @@ pub mod get_image_policy_input {
 #[doc(hidden)]
 pub type GetImagePolicyInputOperationOutputAlias = crate::operation::GetImagePolicy;
 #[doc(hidden)]
-pub type GetImagePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImagePolicy`](crate::operation::GetImagePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4722,7 +4683,7 @@ impl GetImagePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImagePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4807,7 +4768,7 @@ impl GetImagePolicyInput {
             "GetImagePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4860,7 +4821,7 @@ pub mod get_image_recipe_input {
 #[doc(hidden)]
 pub type GetImageRecipeInputOperationOutputAlias = crate::operation::GetImageRecipe;
 #[doc(hidden)]
-pub type GetImageRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipeInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipe`](crate::operation::GetImageRecipe)>
     #[allow(clippy::let_and_return)]
@@ -4871,7 +4832,7 @@ impl GetImageRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImageRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4959,7 +4920,7 @@ impl GetImageRecipeInput {
             "GetImageRecipe",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5012,7 +4973,7 @@ pub mod get_image_recipe_policy_input {
 #[doc(hidden)]
 pub type GetImageRecipePolicyInputOperationOutputAlias = crate::operation::GetImageRecipePolicy;
 #[doc(hidden)]
-pub type GetImageRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetImageRecipePolicy`](crate::operation::GetImageRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -5023,7 +4984,7 @@ impl GetImageRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImageRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5111,7 +5072,7 @@ impl GetImageRecipePolicyInput {
             "GetImageRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5135,8 +5096,7 @@ pub mod get_infrastructure_configuration_input {
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -5144,8 +5104,7 @@ pub mod get_infrastructure_configuration_input {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5170,7 +5129,8 @@ pub mod get_infrastructure_configuration_input {
 pub type GetInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::GetInfrastructureConfiguration;
 #[doc(hidden)]
-pub type GetInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetInfrastructureConfiguration`](crate::operation::GetInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5181,7 +5141,7 @@ impl GetInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5269,7 +5229,7 @@ impl GetInfrastructureConfigurationInput {
             "GetInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5316,29 +5276,39 @@ pub mod import_component_input {
             self.name = input;
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -5357,14 +5327,12 @@ pub mod import_component_input {
             self.description = input;
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_description = Some(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5372,14 +5340,12 @@ pub mod import_component_input {
             self.change_description = input;
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
@@ -5407,30 +5373,22 @@ pub mod import_component_input {
             self.platform = input;
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -5507,7 +5465,7 @@ pub mod import_component_input {
 #[doc(hidden)]
 pub type ImportComponentInputOperationOutputAlias = crate::operation::ImportComponent;
 #[doc(hidden)]
-pub type ImportComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportComponentInput {
     /// Consumes the builder and constructs an Operation<[`ImportComponent`](crate::operation::ImportComponent)>
     #[allow(clippy::let_and_return)]
@@ -5518,7 +5476,7 @@ impl ImportComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5601,7 +5559,7 @@ impl ImportComponentInput {
             "ImportComponent",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5621,6 +5579,295 @@ impl ImportComponentInput {
     /// Creates a new builder-style object to manufacture [`ImportComponentInput`](crate::input::ImportComponentInput)
     pub fn builder() -> crate::input::import_component_input::Builder {
         crate::input::import_component_input::Builder::default()
+    }
+}
+
+/// See [`ImportVmImageInput`](crate::input::ImportVmImageInput)
+pub mod import_vm_image_input {
+    /// A builder for [`ImportVmImageInput`](crate::input::ImportVmImageInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) semantic_version: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) platform: std::option::Option<crate::model::Platform>,
+        pub(crate) os_version: std::option::Option<std::string::String>,
+        pub(crate) vm_import_task_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the base image that is created by the import process.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the base image that is created by the import process.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </note>
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.semantic_version = Some(input.into());
+            self
+        }
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </note>
+        pub fn set_semantic_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.semantic_version = input;
+            self
+        }
+        /// <p>The description for the base image that is created by the import process.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description for the base image that is created by the import process.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The operating system platform for the imported VM.</p>
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.platform = Some(input);
+            self
+        }
+        /// <p>The operating system platform for the imported VM.</p>
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.platform = input;
+            self
+        }
+        /// <p>The operating system version for the imported VM.</p>
+        pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_version = Some(input.into());
+            self
+        }
+        /// <p>The operating system version for the imported VM.</p>
+        pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.os_version = input;
+            self
+        }
+        /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+        pub fn vm_import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vm_import_task_id = Some(input.into());
+            self
+        }
+        /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+        pub fn set_vm_import_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vm_import_task_id = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that are attached to the import resources.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>Tags that are attached to the import resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportVmImageInput`](crate::input::ImportVmImageInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ImportVmImageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ImportVmImageInput {
+                name: self.name,
+                semantic_version: self.semantic_version,
+                description: self.description,
+                platform: self.platform,
+                os_version: self.os_version,
+                vm_import_task_id: self.vm_import_task_id,
+                tags: self.tags,
+                client_token: self.client_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportVmImageInputOperationOutputAlias = crate::operation::ImportVmImage;
+#[doc(hidden)]
+pub type ImportVmImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ImportVmImageInput {
+    /// Consumes the builder and constructs an Operation<[`ImportVmImage`](crate::operation::ImportVmImage)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportVmImage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ImportVmImageInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ImportVmImage").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ImportVmImageInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ImportVmImageInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_token.is_none() {
+            self.client_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_import_vm_image(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportVmImage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportVmImage",
+            "imagebuilder",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ImportVmImageInput`](crate::input::ImportVmImageInput)
+    pub fn builder() -> crate::input::import_vm_image_input::Builder {
+        crate::input::import_vm_image_input::Builder::default()
     }
 }
 
@@ -5658,14 +5905,12 @@ pub mod list_component_build_versions_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5689,7 +5934,7 @@ pub mod list_component_build_versions_input {
 pub type ListComponentBuildVersionsInputOperationOutputAlias =
     crate::operation::ListComponentBuildVersions;
 #[doc(hidden)]
-pub type ListComponentBuildVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponentBuildVersions`](crate::operation::ListComponentBuildVersions)>
     #[allow(clippy::let_and_return)]
@@ -5700,7 +5945,7 @@ impl ListComponentBuildVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponentBuildVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5781,7 +6026,7 @@ impl ListComponentBuildVersionsInput {
             "ListComponentBuildVersions",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5817,18 +6062,12 @@ pub mod list_components_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.owner = input;
             self
@@ -5839,75 +6078,27 @@ pub mod list_components_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5936,14 +6127,12 @@ pub mod list_components_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5968,7 +6157,7 @@ pub mod list_components_input {
 #[doc(hidden)]
 pub type ListComponentsInputOperationOutputAlias = crate::operation::ListComponents;
 #[doc(hidden)]
-pub type ListComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListComponents`](crate::operation::ListComponents)>
     #[allow(clippy::let_and_return)]
@@ -5979,7 +6168,7 @@ impl ListComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6059,7 +6248,7 @@ impl ListComponentsInput {
             "ListComponents",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6110,55 +6299,23 @@ pub mod list_container_recipes_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6206,7 +6363,7 @@ pub mod list_container_recipes_input {
 #[doc(hidden)]
 pub type ListContainerRecipesInputOperationOutputAlias = crate::operation::ListContainerRecipes;
 #[doc(hidden)]
-pub type ListContainerRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContainerRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainerRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListContainerRecipes`](crate::operation::ListContainerRecipes)>
     #[allow(clippy::let_and_return)]
@@ -6217,7 +6374,7 @@ impl ListContainerRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContainerRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6299,7 +6456,7 @@ impl ListContainerRecipesInput {
             "ListContainerRecipes",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6338,9 +6495,9 @@ pub mod list_distribution_configurations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6362,14 +6519,12 @@ pub mod list_distribution_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6393,7 +6548,8 @@ pub mod list_distribution_configurations_input {
 pub type ListDistributionConfigurationsInputOperationOutputAlias =
     crate::operation::ListDistributionConfigurations;
 #[doc(hidden)]
-pub type ListDistributionConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionConfigurations`](crate::operation::ListDistributionConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -6404,7 +6560,7 @@ impl ListDistributionConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6485,7 +6641,7 @@ impl ListDistributionConfigurationsInput {
             "ListDistributionConfigurations",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6539,65 +6695,25 @@ pub mod list_image_build_versions_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6616,14 +6732,12 @@ pub mod list_image_build_versions_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6647,7 +6761,7 @@ pub mod list_image_build_versions_input {
 #[doc(hidden)]
 pub type ListImageBuildVersionsInputOperationOutputAlias = crate::operation::ListImageBuildVersions;
 #[doc(hidden)]
-pub type ListImageBuildVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImageBuildVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageBuildVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListImageBuildVersions`](crate::operation::ListImageBuildVersions)>
     #[allow(clippy::let_and_return)]
@@ -6658,7 +6772,7 @@ impl ListImageBuildVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImageBuildVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6740,7 +6854,7 @@ impl ListImageBuildVersionsInput {
             "ListImageBuildVersions",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6825,7 +6939,7 @@ pub mod list_image_packages_input {
 #[doc(hidden)]
 pub type ListImagePackagesInputOperationOutputAlias = crate::operation::ListImagePackages;
 #[doc(hidden)]
-pub type ListImagePackagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePackages`](crate::operation::ListImagePackages)>
     #[allow(clippy::let_and_return)]
@@ -6836,7 +6950,7 @@ impl ListImagePackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePackages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6916,7 +7030,7 @@ impl ListImagePackagesInput {
             "ListImagePackages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6970,35 +7084,19 @@ pub mod list_image_pipeline_images_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7017,14 +7115,12 @@ pub mod list_image_pipeline_images_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7049,7 +7145,7 @@ pub mod list_image_pipeline_images_input {
 pub type ListImagePipelineImagesInputOperationOutputAlias =
     crate::operation::ListImagePipelineImages;
 #[doc(hidden)]
-pub type ListImagePipelineImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePipelineImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelineImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelineImages`](crate::operation::ListImagePipelineImages)>
     #[allow(clippy::let_and_return)]
@@ -7060,7 +7156,7 @@ impl ListImagePipelineImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePipelineImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7142,7 +7238,7 @@ impl ListImagePipelineImagesInput {
             "ListImagePipelineImages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7182,75 +7278,27 @@ pub mod list_image_pipelines_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7269,14 +7317,12 @@ pub mod list_image_pipelines_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7299,7 +7345,7 @@ pub mod list_image_pipelines_input {
 #[doc(hidden)]
 pub type ListImagePipelinesInputOperationOutputAlias = crate::operation::ListImagePipelines;
 #[doc(hidden)]
-pub type ListImagePipelinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagePipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagePipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListImagePipelines`](crate::operation::ListImagePipelines)>
     #[allow(clippy::let_and_return)]
@@ -7310,7 +7356,7 @@ impl ListImagePipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImagePipelines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7390,7 +7436,7 @@ impl ListImagePipelinesInput {
             "ListImagePipelines",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7425,18 +7471,12 @@ pub mod list_image_recipes_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.owner = input;
             self
@@ -7447,45 +7487,21 @@ pub mod list_image_recipes_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7504,14 +7520,12 @@ pub mod list_image_recipes_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7535,7 +7549,7 @@ pub mod list_image_recipes_input {
 #[doc(hidden)]
 pub type ListImageRecipesInputOperationOutputAlias = crate::operation::ListImageRecipes;
 #[doc(hidden)]
-pub type ListImageRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImageRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImageRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListImageRecipes`](crate::operation::ListImageRecipes)>
     #[allow(clippy::let_and_return)]
@@ -7546,7 +7560,7 @@ impl ListImageRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImageRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7626,7 +7640,7 @@ impl ListImageRecipesInput {
             "ListImageRecipes",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7663,18 +7677,12 @@ pub mod list_images_input {
         pub(crate) include_deprecated: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn owner(mut self, input: crate::model::Ownership) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.owner = input;
             self
@@ -7685,65 +7693,25 @@ pub mod list_images_input {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7772,14 +7740,12 @@ pub mod list_images_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7815,7 +7781,7 @@ pub mod list_images_input {
 #[doc(hidden)]
 pub type ListImagesInputOperationOutputAlias = crate::operation::ListImages;
 #[doc(hidden)]
-pub type ListImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListImages`](crate::operation::ListImages)>
     #[allow(clippy::let_and_return)]
@@ -7826,7 +7792,7 @@ impl ListImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7905,7 +7871,7 @@ impl ListImagesInput {
             "ListImages",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7944,9 +7910,9 @@ pub mod list_infrastructure_configurations_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7968,14 +7934,12 @@ pub mod list_infrastructure_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7999,7 +7963,8 @@ pub mod list_infrastructure_configurations_input {
 pub type ListInfrastructureConfigurationsInputOperationOutputAlias =
     crate::operation::ListInfrastructureConfigurations;
 #[doc(hidden)]
-pub type ListInfrastructureConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInfrastructureConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListInfrastructureConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInfrastructureConfigurations`](crate::operation::ListInfrastructureConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -8010,7 +7975,7 @@ impl ListInfrastructureConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInfrastructureConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8091,7 +8056,7 @@ impl ListInfrastructureConfigurationsInput {
             "ListInfrastructureConfigurations",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8149,7 +8114,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8160,7 +8125,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8250,7 +8215,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8315,7 +8280,7 @@ pub mod put_component_policy_input {
 #[doc(hidden)]
 pub type PutComponentPolicyInputOperationOutputAlias = crate::operation::PutComponentPolicy;
 #[doc(hidden)]
-pub type PutComponentPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutComponentPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutComponentPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutComponentPolicy`](crate::operation::PutComponentPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8326,7 +8291,7 @@ impl PutComponentPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutComponentPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8406,7 +8371,7 @@ impl PutComponentPolicyInput {
             "PutComponentPolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8480,7 +8445,7 @@ pub mod put_container_recipe_policy_input {
 pub type PutContainerRecipePolicyInputOperationOutputAlias =
     crate::operation::PutContainerRecipePolicy;
 #[doc(hidden)]
-pub type PutContainerRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutContainerRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerRecipePolicy`](crate::operation::PutContainerRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8491,7 +8456,7 @@ impl PutContainerRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutContainerRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8573,7 +8538,7 @@ impl PutContainerRecipePolicyInput {
             "PutContainerRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8643,7 +8608,7 @@ pub mod put_image_policy_input {
 #[doc(hidden)]
 pub type PutImagePolicyInputOperationOutputAlias = crate::operation::PutImagePolicy;
 #[doc(hidden)]
-pub type PutImagePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutImagePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImagePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImagePolicy`](crate::operation::PutImagePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8654,7 +8619,7 @@ impl PutImagePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutImagePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8734,7 +8699,7 @@ impl PutImagePolicyInput {
             "PutImagePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8807,7 +8772,7 @@ pub mod put_image_recipe_policy_input {
 #[doc(hidden)]
 pub type PutImageRecipePolicyInputOperationOutputAlias = crate::operation::PutImageRecipePolicy;
 #[doc(hidden)]
-pub type PutImageRecipePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutImageRecipePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageRecipePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutImageRecipePolicy`](crate::operation::PutImageRecipePolicy)>
     #[allow(clippy::let_and_return)]
@@ -8818,7 +8783,7 @@ impl PutImageRecipePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutImageRecipePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8900,7 +8865,7 @@ impl PutImageRecipePolicyInput {
             "PutImageRecipePolicy",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8974,7 +8939,7 @@ pub mod start_image_pipeline_execution_input {
 pub type StartImagePipelineExecutionInputOperationOutputAlias =
     crate::operation::StartImagePipelineExecution;
 #[doc(hidden)]
-pub type StartImagePipelineExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImagePipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImagePipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartImagePipelineExecution`](crate::operation::StartImagePipelineExecution)>
     #[allow(clippy::let_and_return)]
@@ -8985,7 +8950,7 @@ impl StartImagePipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImagePipelineExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9069,7 +9034,7 @@ impl StartImagePipelineExecutionInput {
             "StartImagePipelineExecution",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9156,7 +9121,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9167,7 +9132,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9262,7 +9227,7 @@ impl TagResourceInput {
             "TagResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9341,7 +9306,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9352,7 +9317,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9455,7 +9420,7 @@ impl UntagResourceInput {
             "UntagResource",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9513,9 +9478,9 @@ pub mod update_distribution_configuration_input {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p>The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
             let mut v = self.distributions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.distributions = Some(v);
             self
         }
@@ -9557,7 +9522,8 @@ pub mod update_distribution_configuration_input {
 pub type UpdateDistributionConfigurationInputOperationOutputAlias =
     crate::operation::UpdateDistributionConfiguration;
 #[doc(hidden)]
-pub type UpdateDistributionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDistributionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDistributionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistributionConfiguration`](crate::operation::UpdateDistributionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9568,7 +9534,7 @@ impl UpdateDistributionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDistributionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9652,7 +9618,7 @@ impl UpdateDistributionConfigurationInput {
             "UpdateDistributionConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9718,14 +9684,12 @@ pub mod update_image_pipeline_input {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_recipe_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9746,8 +9710,7 @@ pub mod update_image_pipeline_input {
             self.container_recipe_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -9755,8 +9718,7 @@ pub mod update_image_pipeline_input {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9764,8 +9726,7 @@ pub mod update_image_pipeline_input {
             self.infrastructure_configuration_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -9773,8 +9734,7 @@ pub mod update_image_pipeline_input {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9798,16 +9758,12 @@ pub mod update_image_pipeline_input {
             self.image_tests_configuration = input;
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -9874,7 +9830,7 @@ pub mod update_image_pipeline_input {
 #[doc(hidden)]
 pub type UpdateImagePipelineInputOperationOutputAlias = crate::operation::UpdateImagePipeline;
 #[doc(hidden)]
-pub type UpdateImagePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateImagePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateImagePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImagePipeline`](crate::operation::UpdateImagePipeline)>
     #[allow(clippy::let_and_return)]
@@ -9885,7 +9841,7 @@ impl UpdateImagePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateImagePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9968,7 +9924,7 @@ impl UpdateImagePipelineInput {
             "UpdateImagePipeline",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10015,8 +9971,7 @@ pub mod update_infrastructure_configuration_input {
             std::option::Option<crate::model::InstanceMetadataOptions>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -10024,8 +9979,7 @@ pub mod update_infrastructure_configuration_input {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10047,18 +10001,14 @@ pub mod update_infrastructure_configuration_input {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10118,28 +10068,22 @@ pub mod update_infrastructure_configuration_input {
             self.logging = input;
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_pair = Some(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
             self.terminate_instance_on_failure = Some(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -10147,12 +10091,16 @@ pub mod update_infrastructure_configuration_input {
             self.terminate_instance_on_failure = input;
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10195,26 +10143,10 @@ pub mod update_infrastructure_configuration_input {
             self.resource_tags = input;
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn instance_metadata_options(
             mut self,
@@ -10223,26 +10155,10 @@ pub mod update_infrastructure_configuration_input {
             self.instance_metadata_options = Some(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn set_instance_metadata_options(
             mut self,
@@ -10280,7 +10196,8 @@ pub mod update_infrastructure_configuration_input {
 pub type UpdateInfrastructureConfigurationInputOperationOutputAlias =
     crate::operation::UpdateInfrastructureConfiguration;
 #[doc(hidden)]
-pub type UpdateInfrastructureConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInfrastructureConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInfrastructureConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInfrastructureConfiguration`](crate::operation::UpdateInfrastructureConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10291,7 +10208,7 @@ impl UpdateInfrastructureConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInfrastructureConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10376,7 +10293,7 @@ impl UpdateInfrastructureConfigurationInput {
             "UpdateInfrastructureConfiguration",
             "imagebuilder",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10403,14 +10320,11 @@ impl UpdateInfrastructureConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInfrastructureConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more
-    /// instance types to use for this build. The service will pick one of these instance types based
-    /// on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
@@ -10420,46 +10334,28 @@ pub struct UpdateInfrastructureConfigurationInput {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-    /// the instance used to create your image.</p>
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub key_pair: std::option::Option<std::string::String>,
-    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-    /// or test phase of your workflow fails.</p>
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub terminate_instance_on_failure: std::option::Option<bool>,
-    /// <p>The SNS topic on which to send image build events.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// </note>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-    /// use to launch EC2 build and test instances. For more information about instance metadata
-    /// options, see one of the following links:</p>
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i>
-    /// <i>Amazon EC2 User Guide</i>
-    /// </i>
-    /// for Linux instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i>
-    /// <i>Amazon EC2 Windows Guide</i>
-    /// </i>
-    /// for Windows instances.</p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
 }
 impl UpdateInfrastructureConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
@@ -10467,9 +10363,7 @@ impl UpdateInfrastructureConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more
-    /// instance types to use for this build. The service will pick one of these instance types based
-    /// on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
@@ -10489,18 +10383,17 @@ impl UpdateInfrastructureConfigurationInput {
     pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
         self.logging.as_ref()
     }
-    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-    /// the instance used to create your image.</p>
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub fn key_pair(&self) -> std::option::Option<&str> {
         self.key_pair.as_deref()
     }
-    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-    /// or test phase of your workflow fails.</p>
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The SNS topic on which to send image build events.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// </note>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -10515,26 +10408,10 @@ impl UpdateInfrastructureConfigurationInput {
     {
         self.resource_tags.as_ref()
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-    /// use to launch EC2 build and test instances. For more information about instance metadata
-    /// options, see one of the following links:</p>
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i>
-    /// <i>Amazon EC2 User Guide</i>
-    /// </i>
-    /// for Linux instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i>
-    /// <i>Amazon EC2 Windows Guide</i>
-    /// </i>
-    /// for Windows instances.</p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
     /// </ul>
     pub fn instance_metadata_options(
         &self,
@@ -10576,22 +10453,17 @@ pub struct UpdateImagePipelineInput {
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The description of the image pipeline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-    /// updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-    /// build images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-    /// configure and distribute images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p>The image test configuration of the image pipeline.</p>
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p>The schedule of the image pipeline.</p>
     pub schedule: std::option::Option<crate::model::Schedule>,
@@ -10609,8 +10481,7 @@ impl UpdateImagePipelineInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-    /// updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
     pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
@@ -10618,13 +10489,11 @@ impl UpdateImagePipelineInput {
     pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-    /// build images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-    /// configure and distribute images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -10634,9 +10503,7 @@ impl UpdateImagePipelineInput {
     ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
@@ -10954,8 +10821,7 @@ pub struct ListInfrastructureConfigurationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInfrastructureConfigurationsInput {
@@ -10967,8 +10833,7 @@ impl ListInfrastructureConfigurationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10987,85 +10852,38 @@ impl std::fmt::Debug for ListInfrastructureConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInput {
-    /// <p>The owner defines which images you want to list. By default, this request will only show
-    /// images owned by your account. You can use this field to specify if you want to view images
-    /// owned by yourself, by Amazon, or those images that have been shared with you by other
-    /// customers.</p>
+    /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>osVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Includes deprecated images in the response list.</p>
     pub include_deprecated: std::option::Option<bool>,
 }
 impl ListImagesInput {
-    /// <p>The owner defines which images you want to list. By default, this request will only show
-    /// images owned by your account. You can use this field to specify if you want to view images
-    /// owned by yourself, by Amazon, or those images that have been shared with you by other
-    /// customers.</p>
+    /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
         self.owner.as_ref()
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>osVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11078,8 +10896,7 @@ impl ListImagesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11105,61 +10922,30 @@ impl std::fmt::Debug for ListImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImageRecipesInput {
-    /// <p>The owner defines which image recipes you want to list. By default, this request will only
-    /// show image recipes owned by your account. You can use this field to specify if you want to
-    /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-    /// with you by other customers.</p>
+    /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>parentImage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageRecipesInput {
-    /// <p>The owner defines which image recipes you want to list. By default, this request will only
-    /// show image recipes owned by your account. You can use this field to specify if you want to
-    /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-    /// with you by other customers.</p>
+    /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
         self.owner.as_ref()
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>parentImage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11168,8 +10954,7 @@ impl ListImageRecipesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11191,77 +10976,28 @@ impl std::fmt::Debug for ListImageRecipesInput {
 pub struct ListImagePipelinesInput {
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>description</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>distributionConfigurationArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>imageRecipeArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>infrastructureConfigurationArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+    /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>status</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelinesInput {
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>description</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>distributionConfigurationArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>imageRecipeArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>infrastructureConfigurationArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+    /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+    /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>status</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11270,8 +11006,7 @@ impl ListImagePipelinesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11294,22 +11029,13 @@ pub struct ListImagePipelineImagesInput {
     pub image_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelineImagesInput {
@@ -11319,16 +11045,8 @@ impl ListImagePipelineImagesInput {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11337,8 +11055,7 @@ impl ListImagePipelineImagesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11397,37 +11114,16 @@ pub struct ListImageBuildVersionsInput {
     pub image_version_arn: std::option::Option<std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>osVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageBuildVersionsInput {
@@ -11437,31 +11133,11 @@ impl ListImageBuildVersionsInput {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>osVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11470,8 +11146,7 @@ impl ListImageBuildVersionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11495,8 +11170,7 @@ pub struct ListDistributionConfigurationsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDistributionConfigurationsInput {
@@ -11508,8 +11182,7 @@ impl ListDistributionConfigurationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11532,26 +11205,10 @@ pub struct ListContainerRecipesInput {
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>containerType</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>parentImage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>containerType</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results to return in the list.</p>
@@ -11566,26 +11223,10 @@ impl ListContainerRecipesInput {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>containerType</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>parentImage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>containerType</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11614,93 +11255,38 @@ impl std::fmt::Debug for ListContainerRecipesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComponentsInput {
-    /// <p>The owner defines which components you want to list. By default, this request will only
-    /// show components owned by your account. You can use this field to specify if you want to view
-    /// components owned by yourself, by Amazon, or those components that have been shared with you by
-    /// other customers.</p>
+    /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>description</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>supportedOsVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Returns the list of component build versions for the specified name.</p>
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
-    /// <p>The owner defines which components you want to list. By default, this request will only
-    /// show components owned by your account. You can use this field to specify if you want to view
-    /// components owned by yourself, by Amazon, or those components that have been shared with you by
-    /// other customers.</p>
+    /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Ownership> {
         self.owner.as_ref()
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>description</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>name</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>supportedOsVersion</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>version</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11713,8 +11299,7 @@ impl ListComponentsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11739,8 +11324,7 @@ pub struct ListComponentBuildVersionsInput {
     pub component_version_arn: std::option::Option<std::string::String>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentBuildVersionsInput {
@@ -11752,8 +11336,7 @@ impl ListComponentBuildVersionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-    /// truncated response.</p>
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11771,39 +11354,142 @@ impl std::fmt::Debug for ListComponentBuildVersionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportVmImageInput {
+    /// <p>The name of the base image that is created by the import process.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub semantic_version: std::option::Option<std::string::String>,
+    /// <p>The description for the base image that is created by the import process.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The operating system platform for the imported VM.</p>
+    pub platform: std::option::Option<crate::model::Platform>,
+    /// <p>The operating system version for the imported VM.</p>
+    pub os_version: std::option::Option<std::string::String>,
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    pub vm_import_task_id: std::option::Option<std::string::String>,
+    /// <p>Tags that are attached to the import resources.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl ImportVmImageInput {
+    /// <p>The name of the base image that is created by the import process.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn semantic_version(&self) -> std::option::Option<&str> {
+        self.semantic_version.as_deref()
+    }
+    /// <p>The description for the base image that is created by the import process.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The operating system platform for the imported VM.</p>
+    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+        self.platform.as_ref()
+    }
+    /// <p>The operating system version for the imported VM.</p>
+    pub fn os_version(&self) -> std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    pub fn vm_import_task_id(&self) -> std::option::Option<&str> {
+        self.vm_import_task_id.as_deref()
+    }
+    /// <p>Tags that are attached to the import resources.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    pub fn client_token(&self) -> std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportVmImageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportVmImageInput");
+        formatter.field("name", &self.name);
+        formatter.field("semantic_version", &self.semantic_version);
+        formatter.field("description", &self.description);
+        formatter.field("platform", &self.platform);
+        formatter.field("os_version", &self.os_version);
+        formatter.field("vm_import_task_id", &self.vm_import_task_id);
+        formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportComponentInput {
     /// <p> The name of the component.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The change description of the component. Describes what change has been made in this
-    /// version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     pub change_description: std::option::Option<std::string::String>,
-    /// <p>The type of the component denotes whether the component is used to build the image, or only
-    /// to test it.</p>
+    /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The format of the resource that you want to import as a component.</p>
     pub format: std::option::Option<crate::model::ComponentFormat>,
     /// <p>The platform of the component.</p>
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-    /// <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub data: std::option::Option<std::string::String>,
-    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-    /// component.</p>
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub uri: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -11818,15 +11504,20 @@ impl ImportComponentInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
@@ -11835,13 +11526,11 @@ impl ImportComponentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description of the component. Describes what change has been made in this
-    /// version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The type of the component denotes whether the component is used to build the image, or only
-    /// to test it.</p>
+    /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentType> {
         self.r#type.as_ref()
     }
@@ -11853,15 +11542,11 @@ impl ImportComponentInput {
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-    /// <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
     }
-    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-    /// component.</p>
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -11904,13 +11589,11 @@ impl std::fmt::Debug for ImportComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInfrastructureConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-    /// retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetInfrastructureConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-    /// retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
@@ -12035,13 +11718,11 @@ impl std::fmt::Debug for GetImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDistributionConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-    /// retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl GetDistributionConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-    /// retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -12124,13 +11805,11 @@ impl std::fmt::Debug for GetComponentPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-    /// "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-    /// "/\d+$" suffix.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
     pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
         self.component_build_version_arn.as_deref()
     }
@@ -12310,9 +11989,7 @@ pub struct CreateInfrastructureConfigurationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more
-    /// instance types to use for this build. The service will pick one of these instance types based
-    /// on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
@@ -12322,20 +11999,18 @@ pub struct CreateInfrastructureConfigurationInput {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-    /// the instance used to create your image.</p>
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub key_pair: std::option::Option<std::string::String>,
-    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-    /// or test phase of your workflow fails.</p>
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub terminate_instance_on_failure: std::option::Option<bool>,
-    /// <p>The SNS topic on which to send image build events.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// </note>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub resource_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The instance metadata options that you can set for the HTTP requests that
-    /// pipeline builds use to launch EC2 build and test instances.</p>
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
     pub instance_metadata_options: std::option::Option<crate::model::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     pub tags:
@@ -12352,9 +12027,7 @@ impl CreateInfrastructureConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more
-    /// instance types to use for this build. The service will pick one of these instance types based
-    /// on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
     pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
@@ -12374,18 +12047,17 @@ impl CreateInfrastructureConfigurationInput {
     pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
         self.logging.as_ref()
     }
-    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-    /// the instance used to create your image.</p>
+    /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub fn key_pair(&self) -> std::option::Option<&str> {
         self.key_pair.as_deref()
     }
-    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-    /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-    /// or test phase of your workflow fails.</p>
+    /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn terminate_instance_on_failure(&self) -> std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The SNS topic on which to send image build events.</p>
+    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// </note>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -12396,8 +12068,7 @@ impl CreateInfrastructureConfigurationInput {
     {
         self.resource_tags.as_ref()
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that
-    /// pipeline builds use to launch EC2 build and test instances.</p>
+    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
     pub fn instance_metadata_options(
         &self,
     ) -> std::option::Option<&crate::model::InstanceMetadataOptions> {
@@ -12447,28 +12118,26 @@ pub struct CreateImageRecipeInput {
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image recipe.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The components of the image recipe.</p>
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-    /// image or an AMI ID. The format for the ARN follows this example:
-    /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-    /// You can provide the specific version that you want to use, or you can use a wildcard in
-    /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-    /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
     pub block_device_mappings:
@@ -12493,18 +12162,21 @@ impl CreateImageRecipeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
@@ -12513,12 +12185,7 @@ impl CreateImageRecipeInput {
     pub fn components(&self) -> std::option::Option<&[crate::model::ComponentConfiguration]> {
         self.components.as_deref()
     }
-    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-    /// image or an AMI ID. The format for the ARN follows this example:
-    /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-    /// You can provide the specific version that you want to use, or you can use a wildcard in
-    /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-    /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
     pub fn parent_image(&self) -> std::option::Option<&str> {
         self.parent_image.as_deref()
     }
@@ -12578,22 +12245,17 @@ pub struct CreateImagePipelineInput {
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image pipeline.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-    /// created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-    /// build images created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-    /// configure and distribute images created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The image test configuration of the image pipeline.</p>
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p> The schedule of the image pipeline.</p>
     pub schedule: std::option::Option<crate::model::Schedule>,
@@ -12614,8 +12276,7 @@ impl CreateImagePipelineInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-    /// created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
     pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
@@ -12623,13 +12284,11 @@ impl CreateImagePipelineInput {
     pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-    /// build images created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-    /// configure and distribute images created by this image pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -12639,9 +12298,7 @@ impl CreateImagePipelineInput {
     ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
@@ -12697,22 +12354,17 @@ impl std::fmt::Debug for CreateImagePipelineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateImageInput {
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-    /// configured, tested, and assessed.</p>
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     pub image_recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
     pub container_recipe_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-    /// configures the outputs of your pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-    /// environment in which your image will be built and tested.</p>
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
     /// <p> The image tests configuration of the image.</p>
     pub image_tests_configuration: std::option::Option<crate::model::ImageTestsConfiguration>,
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub enhanced_image_metadata_enabled: std::option::Option<bool>,
     /// <p> The tags of the image.</p>
     pub tags:
@@ -12721,8 +12373,7 @@ pub struct CreateImageInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateImageInput {
-    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-    /// configured, tested, and assessed.</p>
+    /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
     pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
@@ -12730,13 +12381,11 @@ impl CreateImageInput {
     pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-    /// configures the outputs of your pipeline.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-    /// environment in which your image will be built and tested.</p>
+    /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
@@ -12746,9 +12395,7 @@ impl CreateImageInput {
     ) -> std::option::Option<&crate::model::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
-    /// <p> Collects additional information about the image being created, including the operating
-    /// system (OS) version and package list. This information is used to enhance the overall
-    /// experience of using EC2 Image Builder. Enabled by default.</p>
+    /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(&self) -> std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
@@ -12851,18 +12498,21 @@ pub struct CreateContainerRecipeInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the container recipe.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>Components for build and test that are included in the container recipe.</p>
@@ -12904,18 +12554,21 @@ impl CreateContainerRecipeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
@@ -13005,38 +12658,34 @@ impl std::fmt::Debug for CreateContainerRecipeInput {
 pub struct CreateComponentInput {
     /// <p>The name of the component.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The change description of the component. Describes what change has been made in this
-    /// version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     pub change_description: std::option::Option<std::string::String>,
     /// <p>The platform of the component.</p>
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p> The operating system (OS) version supported by the component. If the OS information is
-    /// available, a prefix match is performed against the base image OS version during image recipe
-    /// creation.</p>
+    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-    /// <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub data: std::option::Option<std::string::String>,
-    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-    /// component.</p>
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub uri: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -13051,18 +12700,21 @@ impl CreateComponentInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-    /// build number to the fourth node.</p>
-    /// <p>
-    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-    /// a date, such as 2021.01.01.</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(&self) -> std::option::Option<&str> {
         self.semantic_version.as_deref()
@@ -13071,8 +12723,7 @@ impl CreateComponentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description of the component. Describes what change has been made in this
-    /// version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(&self) -> std::option::Option<&str> {
         self.change_description.as_deref()
     }
@@ -13080,21 +12731,15 @@ impl CreateComponentInput {
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
-    /// <p> The operating system (OS) version supported by the component. If the OS information is
-    /// available, a prefix match is performed against the base image OS version during image recipe
-    /// creation.</p>
+    /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
     pub fn supported_os_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_os_versions.as_deref()
     }
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-    /// <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
     }
-    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-    /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-    /// component.</p>
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -13138,7 +12783,7 @@ impl std::fmt::Debug for CreateComponentInput {
 pub struct CancelImageCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
     pub image_build_version_arn: std::option::Option<std::string::String>,
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CancelImageCreationInput {
@@ -13146,7 +12791,7 @@ impl CancelImageCreationInput {
     pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
-    /// <p>The idempotency token used to make this request idempotent.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Application Migration Service
@@ -135,6 +135,7 @@ where
     ///
     /// See [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
     pub fn describe_job_log_items(&self) -> fluent_builders::DescribeJobLogItems<C, M, R> {
         fluent_builders::DescribeJobLogItems::new(self.handle.clone())
     }
@@ -142,6 +143,7 @@ where
     ///
     /// See [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
     pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs<C, M, R> {
         fluent_builders::DescribeJobs::new(self.handle.clone())
     }
@@ -149,6 +151,7 @@ where
     ///
     /// See [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
     pub fn describe_replication_configuration_templates(
         &self,
     ) -> fluent_builders::DescribeReplicationConfigurationTemplates<C, M, R> {
@@ -158,6 +161,7 @@ where
     ///
     /// See [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
     pub fn describe_source_servers(&self) -> fluent_builders::DescribeSourceServers<C, M, R> {
         fluent_builders::DescribeSourceServers::new(self.handle.clone())
     }
@@ -165,6 +169,7 @@ where
     ///
     /// See [`DescribeVcenterClients`](crate::client::fluent_builders::DescribeVcenterClients) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeVcenterClients::into_paginator).
     pub fn describe_vcenter_clients(&self) -> fluent_builders::DescribeVcenterClients<C, M, R> {
         fluent_builders::DescribeVcenterClients::new(self.handle.clone())
     }
@@ -316,7 +321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ChangeServerLifeCycleState`.
     ///
     /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChangeServerLifeCycleState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -361,10 +366,10 @@ pub mod fluent_builders {
                 crate::input::ChangeServerLifeCycleStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -373,8 +378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
@@ -388,9 +393,9 @@ pub mod fluent_builders {
         /// <p>The request to change the source server migration lifecycle state.</p>
         pub fn life_cycle(
             mut self,
-            inp: crate::model::ChangeServerLifeCycleStateSourceServerLifecycle,
+            input: crate::model::ChangeServerLifeCycleStateSourceServerLifecycle,
         ) -> Self {
-            self.inner = self.inner.life_cycle(inp);
+            self.inner = self.inner.life_cycle(input);
             self
         }
         /// <p>The request to change the source server migration lifecycle state.</p>
@@ -407,7 +412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationConfigurationTemplate`.
     ///
     /// <p>Creates a new ReplicationConfigurationTemplate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -454,10 +459,10 @@ pub mod fluent_builders {
                 crate::input::CreateReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -466,8 +471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -479,8 +484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
@@ -498,9 +503,11 @@ pub mod fluent_builders {
         /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>Request to configure the Replication Server Secuirity group ID during Replication Settings template creation.</p>
@@ -516,9 +523,9 @@ pub mod fluent_builders {
         /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
@@ -530,8 +537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
@@ -545,9 +552,9 @@ pub mod fluent_builders {
         /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
@@ -563,9 +570,9 @@ pub mod fluent_builders {
         /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
@@ -577,8 +584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
@@ -590,8 +597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
@@ -599,15 +606,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bandwidth_throttling(input);
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
-        /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
+        /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
         pub fn set_data_plane_routing(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
@@ -616,8 +623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to create Public IP during Replication Settings template creation.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Request to create Public IP during Replication Settings template creation.</p>
@@ -635,7 +642,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>Request to configure Staiging Area tags during Replication Settings template creation.</p>
@@ -658,7 +665,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Request to configure tags during Replication Settings template creation.</p>
@@ -675,7 +682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes a single Job by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -720,10 +727,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -732,8 +739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to delete Job from service by Job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>Request to delete Job from service by Job ID.</p>
@@ -745,7 +752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationConfigurationTemplate`.
     ///
     /// <p>Deletes a single Replication Configuration Template by ID</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -792,10 +799,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -806,9 +813,11 @@ pub mod fluent_builders {
         /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
@@ -823,7 +832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceServer`.
     ///
     /// <p>Deletes a single source server by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -868,10 +877,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSourceServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -880,8 +889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to delete Source Server from service by Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to delete Source Server from service by Server ID.</p>
@@ -896,7 +905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVcenterClient`.
     ///
     /// <p>Deletes a single vCenter client by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVcenterClient<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -941,10 +950,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVcenterClientInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -953,8 +962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of resource to be deleted.</p>
-        pub fn vcenter_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vcenter_client_id(inp);
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vcenter_client_id(input.into());
             self
         }
         /// <p>ID of resource to be deleted.</p>
@@ -969,7 +978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobLogItems`.
     ///
     /// <p>Retrieves detailed Job log with paging.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobLogItems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1014,10 +1023,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobLogItemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1025,9 +1034,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobLogItemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeJobLogItemsPaginator<C, M, R> {
+            crate::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Request to describe Job log job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>Request to describe Job log job ID.</p>
@@ -1036,8 +1051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log item maximum results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Job log item maximum results.</p>
@@ -1046,8 +1061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log next token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Job log next token.</p>
@@ -1059,7 +1074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobs`.
     ///
     /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are normaly created by the StartTest, StartCutover, and TerminateTargetInstances APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1104,10 +1119,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1115,9 +1130,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeJobsPaginator<C, M, R> {
+            crate::paginator::DescribeJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Request to describe Job log filters.</p>
-        pub fn filters(mut self, inp: crate::model::DescribeJobsRequestFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DescribeJobsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Request to describe Job log filters.</p>
@@ -1129,8 +1150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log by max results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Job log by max results.</p>
@@ -1139,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job logby next token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Job logby next token.</p>
@@ -1152,7 +1173,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
     ///
     /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationConfigurationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1199,16 +1220,27 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationConfigurationTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationConfigurationTemplatesPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationConfigurationTemplatesPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `replicationConfigurationTemplateIDs`.
         ///
@@ -1217,9 +1249,11 @@ pub mod fluent_builders {
         /// <p>Request to describe Replication Configuration template by template IDs.</p>
         pub fn replication_configuration_template_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_i_ds(input.into());
             self
         }
         /// <p>Request to describe Replication Configuration template by template IDs.</p>
@@ -1233,8 +1267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Replication Configuration template by max results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Replication Configuration template by max results.</p>
@@ -1243,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -1256,7 +1290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceServers`.
     ///
     /// <p>Retrieves all SourceServers or multiple SourceServers by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1301,10 +1335,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSourceServersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1312,9 +1346,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSourceServersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSourceServersPaginator<C, M, R> {
+            crate::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
+        }
         /// <p>Request to filter Source Servers list.</p>
-        pub fn filters(mut self, inp: crate::model::DescribeSourceServersRequestFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DescribeSourceServersRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Request to filter Source Servers list.</p>
@@ -1326,8 +1366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to filter Source Servers list by maximum results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -1336,8 +1376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to filter Source Servers list by next token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to filter Source Servers list by next token.</p>
@@ -1349,7 +1389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVcenterClients`.
     ///
     /// <p>Lists all vCenter clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVcenterClients<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1394,10 +1434,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVcenterClientsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1405,9 +1445,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeVcenterClientsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeVcenterClientsPaginator<C, M, R> {
+            crate::paginator::DescribeVcenterClientsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
@@ -1416,8 +1462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
@@ -1429,7 +1475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisconnectFromService`.
     ///
     /// <p>Disconnects specific Source Servers from Application Migration Service. Data replication is stopped immediately. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the agent on the source server has not been prevented from communciating with the Application Migration Service service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectFromService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1474,10 +1520,10 @@ pub mod fluent_builders {
                 crate::input::DisconnectFromServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1486,8 +1532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to disconnect Source Server from service by Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to disconnect Source Server from service by Server ID.</p>
@@ -1502,7 +1548,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FinalizeCutover`.
     ///
     /// <p>Finalizes the cutover immediately for specific Source Servers. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. The AWS Replication Agent will receive a command to uninstall itself (within 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDurationwill be nullified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FinalizeCutover<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1547,10 +1593,10 @@ pub mod fluent_builders {
                 crate::input::FinalizeCutoverInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1559,8 +1605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to finalize Cutover by Soure Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to finalize Cutover by Soure Server ID.</p>
@@ -1575,7 +1621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLaunchConfiguration`.
     ///
     /// <p>Lists all LaunchConfigurations available, filtered by Source Server IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1620,10 +1666,10 @@ pub mod fluent_builders {
                 crate::input::GetLaunchConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1632,8 +1678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to get Launch Configuration information by Source Server ID.</p>
@@ -1648,7 +1694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReplicationConfiguration`.
     ///
     /// <p>Lists all ReplicationConfigurations, filtered by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1693,10 +1739,10 @@ pub mod fluent_builders {
                 crate::input::GetReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1705,8 +1751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to get Replication Configuaration by Source Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to get Replication Configuaration by Source Server ID.</p>
@@ -1721,7 +1767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitializeService`.
     ///
     /// <p>Initialize Application Migration Service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,10 +1812,10 @@ pub mod fluent_builders {
                 crate::input::InitializeServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1781,7 +1827,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for your Application Migration Service resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1826,10 +1872,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1838,8 +1884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>List tags for resource request by ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>List tags for resource request by ARN.</p>
@@ -1851,7 +1897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MarkAsArchived`.
     ///
     /// <p>Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle.state which equals DISCONNECTED or CUTOVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MarkAsArchived<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,10 +1942,10 @@ pub mod fluent_builders {
                 crate::input::MarkAsArchivedInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1908,8 +1954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Mark as archived by Source Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Mark as archived by Source Server ID.</p>
@@ -1924,7 +1970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryDataReplication`.
     ///
     /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for specified SourceServer IDs, regardless of when the previous initiation started. This command will not work if the SourceServer is not stalled or is in a DISCONNECTED or STOPPED state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryDataReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1969,10 +2015,10 @@ pub mod fluent_builders {
                 crate::input::RetryDataReplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1981,8 +2027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Retry data replication for Source Server ID.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Retry data replication for Source Server ID.</p>
@@ -1997,7 +2043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartCutover`.
     ///
     /// <p>Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state property to CUTTING_OVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCutover<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2042,10 +2088,10 @@ pub mod fluent_builders {
                 crate::input::StartCutoverInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2058,8 +2104,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
         ///
         /// <p>Start Cutover by Source Server IDs.</p>
-        pub fn source_server_i_ds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_i_ds(inp);
+        pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_i_ds(input.into());
             self
         }
         /// <p>Start Cutover by Source Server IDs.</p>
@@ -2080,7 +2126,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Start Cutover by Tags.</p>
@@ -2097,7 +2143,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartReplication`.
     ///
     /// <p>Starts replication on source server by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2142,10 +2188,10 @@ pub mod fluent_builders {
                 crate::input::StartReplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2154,8 +2200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of source server on which to start replication.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>ID of source server on which to start replication.</p>
@@ -2170,7 +2216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartTest`.
     ///
     /// <p>Lauches a Test Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state property to TESTING.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2215,10 +2261,10 @@ pub mod fluent_builders {
                 crate::input::StartTestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2231,8 +2277,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
         ///
         /// <p>Start Test for Source Server IDs.</p>
-        pub fn source_server_i_ds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_i_ds(inp);
+        pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_i_ds(input.into());
             self
         }
         /// <p>Start Test for Source Server IDs.</p>
@@ -2253,7 +2299,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Start Test by Tags.</p>
@@ -2270,7 +2316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2315,10 +2361,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2327,8 +2373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Tag resource by ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Tag resource by ARN.</p>
@@ -2346,7 +2392,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tag resource by Tags.</p>
@@ -2363,7 +2409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TerminateTargetInstances`.
     ///
     /// <p>Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateTargetInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2408,10 +2454,10 @@ pub mod fluent_builders {
                 crate::input::TerminateTargetInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2424,8 +2470,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
         ///
         /// <p>Terminate Target instance by Source Server IDs.</p>
-        pub fn source_server_i_ds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_i_ds(inp);
+        pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_i_ds(input.into());
             self
         }
         /// <p>Terminate Target instance by Source Server IDs.</p>
@@ -2446,7 +2492,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Terminate Target instance by Tags.</p>
@@ -2463,7 +2509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified set of tags from the specified set of Application Migration Service resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2508,10 +2554,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2520,8 +2566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Untag resource by ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Untag resource by ARN.</p>
@@ -2534,8 +2580,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Untag resource by Keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Untag resource by Keys.</p>
@@ -2550,7 +2596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
     ///
     /// <p>Updates multiple LaunchConfigurations by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2595,10 +2641,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLaunchConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2607,8 +2653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Update Launch configuration by Source Server ID request.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -2620,8 +2666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration name request.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Update Launch configuration name request.</p>
@@ -2630,8 +2676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration launch disposition request.</p>
-        pub fn launch_disposition(mut self, inp: crate::model::LaunchDisposition) -> Self {
-            self.inner = self.inner.launch_disposition(inp);
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
             self
         }
         /// <p>Update Launch configuration launch disposition request.</p>
@@ -2645,9 +2691,9 @@ pub mod fluent_builders {
         /// <p>Update Launch configuration Target instance right sizing request.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
-            inp: crate::model::TargetInstanceTypeRightSizingMethod,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
         ) -> Self {
-            self.inner = self.inner.target_instance_type_right_sizing_method(inp);
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
             self
         }
         /// <p>Update Launch configuration Target instance right sizing request.</p>
@@ -2661,8 +2707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration copy Private IP request.</p>
-        pub fn copy_private_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_private_ip(inp);
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
             self
         }
         /// <p>Update Launch configuration copy Private IP request.</p>
@@ -2671,8 +2717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration copy Tags request.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>Update Launch configuration copy Tags request.</p>
@@ -2681,8 +2727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration licensing request.</p>
-        pub fn licensing(mut self, inp: crate::model::Licensing) -> Self {
-            self.inner = self.inner.licensing(inp);
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
             self
         }
         /// <p>Update Launch configuration licensing request.</p>
@@ -2697,7 +2743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
     ///
     /// <p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2742,10 +2788,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReplicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2754,8 +2800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Update replication configuration Source Server ID request.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Update replication configuration Source Server ID request.</p>
@@ -2767,8 +2813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration name request.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Update replication configuration name request.</p>
@@ -2777,8 +2823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration Staging Area subnet request.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Update replication configuration Staging Area subnet request.</p>
@@ -2790,8 +2836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
@@ -2809,9 +2855,11 @@ pub mod fluent_builders {
         /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
@@ -2827,9 +2875,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration Replication Server instance type request.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Update replication configuration Replication Server instance type request.</p>
@@ -2841,8 +2889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration use dedicated Replication Server request.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Update replication configuration use dedicated Replication Server request.</p>
@@ -2856,9 +2904,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration use default large Staging Disk type request.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Update replication configuration use default large Staging Disk type request.</p>
@@ -2878,9 +2926,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration replicated disks request.</p>
         pub fn replicated_disks(
             mut self,
-            inp: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
-            self.inner = self.inner.replicated_disks(inp);
+            self.inner = self.inner.replicated_disks(input);
             self
         }
         /// <p>Update replication configuration replicated disks request.</p>
@@ -2896,9 +2944,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration EBS encryption request.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Update replication configuration EBS encryption request.</p>
@@ -2910,8 +2958,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration EBS encryption key ARN request.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Update replication configuration EBS encryption key ARN request.</p>
@@ -2923,8 +2971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration bandwidth throttling request.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Update replication configuration bandwidth throttling request.</p>
@@ -2935,9 +2983,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration data plane routing request.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>Update replication configuration data plane routing request.</p>
@@ -2949,8 +2997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration create Public IP request.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Update replication configuration create Public IP request.</p>
@@ -2968,7 +3016,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>Update replication configuration Staging Area Tags request.</p>
@@ -2985,7 +3033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
     ///
     /// <p>Updates multiple ReplicationConfigurationTemplates by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReplicationConfigurationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3032,10 +3080,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReplicationConfigurationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3046,9 +3094,11 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template template ID request.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_configuration_template_id(inp);
+            self.inner = self
+                .inner
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>Update replication configuration template template ID request.</p>
@@ -3060,8 +3110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template ARN request.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Update replication configuration template ARN request.</p>
@@ -3070,8 +3120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template Staging Area subnet ID request.</p>
-        pub fn staging_area_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(inp);
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Update replication configuration template Staging Area subnet ID request.</p>
@@ -3083,8 +3133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
-        pub fn associate_default_security_group(mut self, inp: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(inp);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
@@ -3102,9 +3152,11 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
         pub fn replication_servers_security_groups_i_ds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_servers_security_groups_i_ds(inp);
+            self.inner = self
+                .inner
+                .replication_servers_security_groups_i_ds(input.into());
             self
         }
         /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
@@ -3120,9 +3172,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template Replication Server instance type request.</p>
         pub fn replication_server_instance_type(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_server_instance_type(inp);
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Update replication configuration template Replication Server instance type request.</p>
@@ -3134,8 +3186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template use dedicated Replication Server request.</p>
-        pub fn use_dedicated_replication_server(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(inp);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Update replication configuration template use dedicated Replication Server request.</p>
@@ -3149,9 +3201,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template use default large Staging Disk type request.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            inp: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(inp);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Update replication configuration template use default large Staging Disk type request.</p>
@@ -3167,9 +3219,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template EBS encryption request.</p>
         pub fn ebs_encryption(
             mut self,
-            inp: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(inp);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Update replication configuration template EBS encryption request.</p>
@@ -3181,8 +3233,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template EBS encryption key ARN request.</p>
-        pub fn ebs_encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(inp);
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Update replication configuration template EBS encryption key ARN request.</p>
@@ -3194,8 +3246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template bandwidth throttling request.</p>
-        pub fn bandwidth_throttling(mut self, inp: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(inp);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Update replication configuration template bandwidth throttling request.</p>
@@ -3206,9 +3258,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template data plane routing request.</p>
         pub fn data_plane_routing(
             mut self,
-            inp: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(inp);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>Update replication configuration template data plane routing request.</p>
@@ -3220,8 +3272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template create Public IP request.</p>
-        pub fn create_public_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_public_ip(inp);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Update replication configuration template create Public IP request.</p>
@@ -3239,7 +3291,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.staging_area_tags(k, v);
+            self.inner = self.inner.staging_area_tags(k.into(), v.into());
             self
         }
         /// <p>Update replication configuration template Staging Area Tags request.</p>
@@ -3256,7 +3308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSourceServerReplicationType`.
     ///
     /// <p>Updates source server Replication Type by ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSourceServerReplicationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3301,10 +3353,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSourceServerReplicationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3313,8 +3365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of source server on which to update replication type.</p>
-        pub fn source_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(inp);
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>ID of source server on which to update replication type.</p>
@@ -3326,8 +3378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Replication type to which to update source server.</p>
-        pub fn replication_type(mut self, inp: crate::model::ReplicationType) -> Self {
-            self.inner = self.inner.replication_type(inp);
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.inner = self.inner.replication_type(input);
             self
         }
         /// <p>Replication type to which to update source server.</p>
@@ -3340,6 +3392,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

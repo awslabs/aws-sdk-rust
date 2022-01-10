@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Returned if there is insufficient capacity to process this expedited request. This
-    /// error only applies to expedited retrievals and not to standard or bulk
-    /// retrievals.</p>
+    /// <p>Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.</p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
     /// <p>Returned if a parameter of the request is incorrectly specified.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -13,14 +11,11 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),
-    /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate
-    /// limit. For more information about data retrieval policies,</p>
+    /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
     PolicyEnforcedException(crate::error::PolicyEnforcedException),
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the
-    /// upload.</p>
+    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
     RequestTimeoutException(crate::error::RequestTimeoutException),
-    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
-    /// exist.</p>
+    /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),

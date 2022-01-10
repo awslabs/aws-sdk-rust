@@ -3,24 +3,17 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try
-    /// again.</p>
+    /// <p>You do not have sufficient permissions to perform this action. Check the error message and try again.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for
-    /// more details.</p>
+    /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request failed due to an unknown error on the server side.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for
-    /// more details.</p>
+    /// <p>The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more details.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service
-    /// Quotas</a> and try your request again.</p>
+    /// <p>The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice ID Service Quotas</a> and try your request again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">
-    /// Amazon Connect Voice ID Service API throttling quotas
-    /// </a> and try your request again.</p>
+    /// <p>The request was denied due to request throttling. Please slow down your request rate. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"> Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed one or more validations; check the error message for more details.</p>
     ValidationException(crate::error::ValidationException),

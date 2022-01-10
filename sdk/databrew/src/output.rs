@@ -854,8 +854,7 @@ impl ListTagsForResourceOutput {
 pub struct ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
     pub schedules: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulesOutput {
@@ -863,8 +862,7 @@ impl ListSchedulesOutput {
     pub fn schedules(&self) -> std::option::Option<&[crate::model::Schedule]> {
         self.schedules.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -892,9 +890,9 @@ pub mod list_schedules_output {
         /// To override the contents of this collection use [`set_schedules`](Self::set_schedules).
         ///
         /// <p>A list of schedules that are defined.</p>
-        pub fn schedules(mut self, input: impl Into<crate::model::Schedule>) -> Self {
+        pub fn schedules(mut self, input: crate::model::Schedule) -> Self {
             let mut v = self.schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schedules = Some(v);
             self
         }
@@ -906,14 +904,12 @@ pub mod list_schedules_output {
             self.schedules = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -940,8 +936,7 @@ impl ListSchedulesOutput {
 pub struct ListRulesetsOutput {
     /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
     pub rulesets: std::option::Option<std::vec::Vec<crate::model::RulesetItem>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesetsOutput {
@@ -949,8 +944,7 @@ impl ListRulesetsOutput {
     pub fn rulesets(&self) -> std::option::Option<&[crate::model::RulesetItem]> {
         self.rulesets.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -978,9 +972,9 @@ pub mod list_rulesets_output {
         /// To override the contents of this collection use [`set_rulesets`](Self::set_rulesets).
         ///
         /// <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
-        pub fn rulesets(mut self, input: impl Into<crate::model::RulesetItem>) -> Self {
+        pub fn rulesets(mut self, input: crate::model::RulesetItem) -> Self {
             let mut v = self.rulesets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rulesets = Some(v);
             self
         }
@@ -992,14 +986,12 @@ pub mod list_rulesets_output {
             self.rulesets = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1024,15 +1016,13 @@ impl ListRulesetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecipeVersionsOutput {
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of versions for the specified recipe.</p>
     pub recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
 }
 impl ListRecipeVersionsOutput {
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1059,14 +1049,12 @@ pub mod list_recipe_versions_output {
         pub(crate) recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
     }
     impl Builder {
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1076,9 +1064,9 @@ pub mod list_recipe_versions_output {
         /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
         ///
         /// <p>A list of versions for the specified recipe.</p>
-        pub fn recipes(mut self, input: impl Into<crate::model::Recipe>) -> Self {
+        pub fn recipes(mut self, input: crate::model::Recipe) -> Self {
             let mut v = self.recipes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipes = Some(v);
             self
         }
@@ -1112,8 +1100,7 @@ impl ListRecipeVersionsOutput {
 pub struct ListRecipesOutput {
     /// <p>A list of recipes that are defined.</p>
     pub recipes: std::option::Option<std::vec::Vec<crate::model::Recipe>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecipesOutput {
@@ -1121,8 +1108,7 @@ impl ListRecipesOutput {
     pub fn recipes(&self) -> std::option::Option<&[crate::model::Recipe]> {
         self.recipes.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1150,9 +1136,9 @@ pub mod list_recipes_output {
         /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
         ///
         /// <p>A list of recipes that are defined.</p>
-        pub fn recipes(mut self, input: impl Into<crate::model::Recipe>) -> Self {
+        pub fn recipes(mut self, input: crate::model::Recipe) -> Self {
             let mut v = self.recipes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recipes = Some(v);
             self
         }
@@ -1164,14 +1150,12 @@ pub mod list_recipes_output {
             self.recipes = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1198,8 +1182,7 @@ impl ListRecipesOutput {
 pub struct ListProjectsOutput {
     /// <p>A list of projects that are defined .</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -1207,8 +1190,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::Project]> {
         self.projects.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1236,9 +1218,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>A list of projects that are defined .</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -1250,14 +1232,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1284,8 +1264,7 @@ impl ListProjectsOutput {
 pub struct ListJobsOutput {
     /// <p>A list of jobs that are defined.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -1293,8 +1272,7 @@ impl ListJobsOutput {
     pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
         self.jobs.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1322,9 +1300,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of jobs that are defined.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1336,14 +1314,12 @@ pub mod list_jobs_output {
             self.jobs = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1370,8 +1346,7 @@ impl ListJobsOutput {
 pub struct ListJobRunsOutput {
     /// <p>A list of job runs that have occurred for the specified job.</p>
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobRunsOutput {
@@ -1379,8 +1354,7 @@ impl ListJobRunsOutput {
     pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRun]> {
         self.job_runs.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1408,9 +1382,9 @@ pub mod list_job_runs_output {
         /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
         ///
         /// <p>A list of job runs that have occurred for the specified job.</p>
-        pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
+        pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_runs = Some(v);
             self
         }
@@ -1422,14 +1396,12 @@ pub mod list_job_runs_output {
             self.job_runs = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1456,8 +1428,7 @@ impl ListJobRunsOutput {
 pub struct ListDatasetsOutput {
     /// <p>A list of datasets that are defined.</p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -1465,8 +1436,7 @@ impl ListDatasetsOutput {
     pub fn datasets(&self) -> std::option::Option<&[crate::model::Dataset]> {
         self.datasets.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1494,9 +1464,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>A list of datasets that are defined.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::Dataset>) -> Self {
+        pub fn datasets(mut self, input: crate::model::Dataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -1508,14 +1478,12 @@ pub mod list_datasets_output {
             self.datasets = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1552,9 +1520,7 @@ pub struct DescribeScheduleOutput {
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
-    /// more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the
-    /// <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this schedule.</p>
     pub tags:
@@ -1587,9 +1553,7 @@ impl DescribeScheduleOutput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
-    /// more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the
-    /// <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(&self) -> std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -1717,16 +1681,12 @@ pub mod describe_schedule_output {
             self.resource_arn = input;
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
-        /// more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the
-        /// <i>Glue DataBrew Developer Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.cron_expression = Some(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For
-        /// more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the
-        /// <i>Glue DataBrew Developer Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1800,11 +1760,9 @@ pub struct DescribeRulesetOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
-    /// associated with.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>A list of rules that are defined with the ruleset. A rule includes one
-    /// or more checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The date and time that the ruleset was created.</p>
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -1829,13 +1787,11 @@ impl DescribeRulesetOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
-    /// associated with.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>A list of rules that are defined with the ruleset. A rule includes one
-    /// or more checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
@@ -1923,14 +1879,12 @@ pub mod describe_ruleset_output {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
-        /// associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is
-        /// associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -1939,16 +1893,14 @@ pub mod describe_ruleset_output {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one
-        /// or more checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one
-        /// or more checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -2086,8 +2038,7 @@ pub struct DescribeRecipeOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-    /// the conditions under which the action should succeed.</p>
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
     pub tags:
@@ -2134,8 +2085,7 @@ impl DescribeRecipeOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-    /// the conditions under which the action should succeed.</p>
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
         self.steps.as_deref()
     }
@@ -2303,16 +2253,14 @@ pub mod describe_recipe_output {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::RecipeStep>) -> Self {
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -2415,29 +2363,18 @@ pub struct DescribeProjectOutput {
     pub recipe_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub sample: std::option::Option<crate::model::Sample>,
-    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-    /// DataBrew runs the job.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONING</code> - allocating resources for the session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INITIALIZING</code> - getting the session ready for first use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ASSIGNED</code> - the session is ready for use.</p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
     pub session_status: std::option::Option<crate::model::SessionStatus>,
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
@@ -2478,13 +2415,11 @@ impl DescribeProjectOutput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
         self.sample.as_ref()
     }
-    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-    /// DataBrew runs the job.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2497,18 +2432,9 @@ impl DescribeProjectOutput {
     }
     /// <p>Describes the current state of the session:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONING</code> - allocating resources for the session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INITIALIZING</code> - getting the session ready for first use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ASSIGNED</code> - the session is ready for use.</p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
     pub fn session_status(&self) -> std::option::Option<&crate::model::SessionStatus> {
         self.session_status.as_ref()
@@ -2655,26 +2581,22 @@ pub mod describe_project_output {
             self.resource_arn = input;
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
             self.sample = Some(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.sample = input;
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-        /// DataBrew runs the job.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-        /// DataBrew runs the job.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2706,18 +2628,9 @@ pub mod describe_project_output {
         }
         /// <p>Describes the current state of the session:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONING</code> - allocating resources for the session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INITIALIZING</code> - getting the session ready for first use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASSIGNED</code> - the session is ready for use.</p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+        /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+        /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
         /// </ul>
         pub fn session_status(mut self, input: crate::model::SessionStatus) -> Self {
             self.session_status = Some(input);
@@ -2725,18 +2638,9 @@ pub mod describe_project_output {
         }
         /// <p>Describes the current state of the session:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONING</code> - allocating resources for the session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INITIALIZING</code> - getting the session ready for first use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASSIGNED</code> - the session is ready for use.</p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+        /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+        /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
         /// </ul>
         pub fn set_session_status(
             mut self,
@@ -2812,9 +2716,7 @@ pub struct DescribeJobRunOutput {
     pub execution_time: i32,
     /// <p>The name of the job being processed during this run.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub validation_configurations:
@@ -2825,15 +2727,13 @@ pub struct DescribeJobRunOutput {
     pub state: std::option::Option<crate::model::JobRunState>,
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
-    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages
-    /// when it runs.</p>
+    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>One or more output artifacts from a job run.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-    /// <p>Represents a list of JDBC database output objects which defines the output
-    /// destination for a DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
@@ -2841,10 +2741,7 @@ pub struct DescribeJobRunOutput {
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run began.</p>
     pub started_on: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed. If a JobSample value is not provided, the default value
-    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-    /// size parameter.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl DescribeJobRunOutput {
@@ -2872,9 +2769,7 @@ impl DescribeJobRunOutput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn profile_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ProfileConfiguration> {
@@ -2898,8 +2793,7 @@ impl DescribeJobRunOutput {
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
-    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages
-    /// when it runs.</p>
+    /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -2911,8 +2805,7 @@ impl DescribeJobRunOutput {
     pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output
-    /// destination for a DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
@@ -2928,10 +2821,7 @@ impl DescribeJobRunOutput {
     pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed. If a JobSample value is not provided, the default value
-    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-    /// size parameter.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
         self.job_sample.as_ref()
     }
@@ -3057,16 +2947,12 @@ pub mod describe_job_run_output {
             self.job_name = input;
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn profile_configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.profile_configuration = Some(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_profile_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -3081,10 +2967,10 @@ pub mod describe_job_run_output {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -3129,14 +3015,12 @@ pub mod describe_job_run_output {
             self.log_subscription = input;
             self
         }
-        /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages
-        /// when it runs.</p>
+        /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages
-        /// when it runs.</p>
+        /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3149,9 +3033,9 @@ pub mod describe_job_run_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more output artifacts from a job run.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3168,12 +3052,9 @@ pub mod describe_job_run_output {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -3189,16 +3070,14 @@ pub mod describe_job_run_output {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output
-        /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output
-        /// destination for a DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -3242,18 +3121,12 @@ pub mod describe_job_run_output {
             self.started_on = input;
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.job_sample = Some(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -3304,36 +3177,20 @@ pub struct DescribeJobOutput {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The dataset that the job acts upon.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-    /// S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROFILE</code> - The job analyzes the dataset to determine its size,
-    /// data types, data distribution, and more.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RECIPE</code> - The job applies one or more transformations to a
-    /// dataset.</p>
-    /// </li>
+    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
+    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::JobType>,
     /// <p>The identifier (user name) of the user who last modified the job.</p>
@@ -3342,8 +3199,7 @@ pub struct DescribeJobOutput {
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
-    /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
@@ -3351,14 +3207,11 @@ pub struct DescribeJobOutput {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-    /// <p>Represents a list of JDBC database output objects which defines the output
-    /// destination for a DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>The DataBrew project associated with this job.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub validation_configurations:
@@ -3367,17 +3220,14 @@ pub struct DescribeJobOutput {
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-    /// DataBrew runs the job.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl DescribeJobOutput {
@@ -3393,22 +3243,14 @@ impl DescribeJobOutput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-    /// S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -3419,16 +3261,8 @@ impl DescribeJobOutput {
     }
     /// <p>The job type, which must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROFILE</code> - The job analyzes the dataset to determine its size,
-    /// data types, data distribution, and more.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RECIPE</code> - The job applies one or more transformations to a
-    /// dataset.</p>
-    /// </li>
+    /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
+    /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::JobType> {
         self.r#type.as_ref()
@@ -3445,8 +3279,7 @@ impl DescribeJobOutput {
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
-    /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
     pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
@@ -3462,8 +3295,7 @@ impl DescribeJobOutput {
     pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output
-    /// destination for a DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
@@ -3471,9 +3303,7 @@ impl DescribeJobOutput {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn profile_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ProfileConfiguration> {
@@ -3493,8 +3323,7 @@ impl DescribeJobOutput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-    /// DataBrew runs the job.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -3505,13 +3334,11 @@ impl DescribeJobOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
     pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
         self.job_sample.as_ref()
     }
@@ -3616,14 +3443,12 @@ pub mod describe_job_output {
             self.dataset_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3633,15 +3458,8 @@ pub mod describe_job_output {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
@@ -3649,15 +3467,8 @@ pub mod describe_job_output {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -3678,16 +3489,8 @@ pub mod describe_job_output {
         }
         /// <p>The job type, which must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROFILE</code> - The job analyzes the dataset to determine its size,
-        /// data types, data distribution, and more.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECIPE</code> - The job applies one or more transformations to a
-        /// dataset.</p>
-        /// </li>
+        /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
+        /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::JobType) -> Self {
             self.r#type = Some(input);
@@ -3695,16 +3498,8 @@ pub mod describe_job_output {
         }
         /// <p>The job type, which must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROFILE</code> - The job analyzes the dataset to determine its size,
-        /// data types, data distribution, and more.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECIPE</code> - The job applies one or more transformations to a
-        /// dataset.</p>
-        /// </li>
+        /// <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>
+        /// <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.r#type = input;
@@ -3749,14 +3544,12 @@ pub mod describe_job_output {
             self.log_subscription = input;
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -3776,9 +3569,9 @@ pub mod describe_job_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -3795,12 +3588,9 @@ pub mod describe_job_output {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -3816,16 +3606,14 @@ pub mod describe_job_output {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output
-        /// destination for a DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output
-        /// destination for a DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -3843,16 +3631,12 @@ pub mod describe_job_output {
             self.project_name = input;
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn profile_configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.profile_configuration = Some(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_profile_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -3867,10 +3651,10 @@ pub mod describe_job_output {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -3905,14 +3689,12 @@ pub mod describe_job_output {
             self.resource_arn = input;
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-        /// DataBrew runs the job.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
-        /// DataBrew runs the job.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3942,26 +3724,22 @@ pub mod describe_job_output {
             self.tags = input;
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.job_sample = Some(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -4017,24 +3795,19 @@ pub struct DescribeDatasetOutput {
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the dataset.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The file format of a dataset that is created from an Amazon S3 file
-    /// or folder.</p>
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub format: std::option::Option<crate::model::InputFormat>,
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub format_options: std::option::Option<crate::model::FormatOptions>,
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub input: std::option::Option<crate::model::Input>,
     /// <p>The date and time that the dataset was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
-    /// <p>The location of the data for this dataset, Amazon S3 or the
-    /// Glue Data Catalog.</p>
+    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
     pub source: std::option::Option<crate::model::Source>,
-    /// <p>A set of options that defines how DataBrew interprets an Amazon S3
-    /// path of the dataset.</p>
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub path_options: std::option::Option<crate::model::PathOptions>,
     /// <p>Metadata tags associated with this dataset.</p>
     pub tags:
@@ -4055,18 +3828,15 @@ impl DescribeDatasetOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The file format of a dataset that is created from an Amazon S3 file
-    /// or folder.</p>
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
         self.format.as_ref()
     }
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
         self.format_options.as_ref()
     }
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
     }
@@ -4078,13 +3848,11 @@ impl DescribeDatasetOutput {
     pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
-    /// <p>The location of the data for this dataset, Amazon S3 or the
-    /// Glue Data Catalog.</p>
+    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::Source> {
         self.source.as_ref()
     }
-    /// <p>A set of options that defines how DataBrew interprets an Amazon S3
-    /// path of the dataset.</p>
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
         self.path_options.as_ref()
     }
@@ -4173,26 +3941,22 @@ pub mod describe_dataset_output {
             self.name = input;
             self
         }
-        /// <p>The file format of a dataset that is created from an Amazon S3 file
-        /// or folder.</p>
+        /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
         pub fn format(mut self, input: crate::model::InputFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The file format of a dataset that is created from an Amazon S3 file
-        /// or folder.</p>
+        /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::InputFormat>) -> Self {
             self.format = input;
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
             self.format_options = Some(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -4200,14 +3964,12 @@ pub mod describe_dataset_output {
             self.format_options = input;
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.input = Some(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -4238,26 +4000,22 @@ pub mod describe_dataset_output {
             self.last_modified_by = input;
             self
         }
-        /// <p>The location of the data for this dataset, Amazon S3 or the
-        /// Glue Data Catalog.</p>
+        /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The location of the data for this dataset, Amazon S3 or the
-        /// Glue Data Catalog.</p>
+        /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
         }
-        /// <p>A set of options that defines how DataBrew interprets an Amazon S3
-        /// path of the dataset.</p>
+        /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
         pub fn path_options(mut self, input: crate::model::PathOptions) -> Self {
             self.path_options = Some(input);
             self
         }
-        /// <p>A set of options that defines how DataBrew interprets an Amazon S3
-        /// path of the dataset.</p>
+        /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
         pub fn set_path_options(
             mut self,
             input: std::option::Option<crate::model::PathOptions>,
@@ -5079,9 +4837,9 @@ pub mod batch_delete_recipe_version_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::RecipeVersionErrorDetail>) -> Self {
+        pub fn errors(mut self, input: crate::model::RecipeVersionErrorDetail) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

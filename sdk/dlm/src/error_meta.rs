@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),

@@ -16,16 +16,13 @@ pub enum AddTagsToCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>An input parameter was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-    /// cannot specify a tag value that begins with <code>aws:</code>.</p>
+    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The request was denied
-    /// because it exceeded a quota.</p>
+    /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
@@ -76,8 +73,6 @@ impl AddTagsToCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -178,11 +173,9 @@ pub struct DeleteCertificateError {
 pub enum DeleteCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the
-    /// association and try again.</p>
+    /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -227,8 +220,6 @@ impl DeleteCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -297,8 +288,7 @@ pub struct DescribeCertificateError {
 pub enum DescribeCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -342,8 +332,6 @@ impl DescribeCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -404,11 +392,9 @@ pub struct ExportCertificateError {
 pub enum ExportCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The certificate request is in process and the certificate in your account has not yet been
-    /// issued.</p>
+    /// <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -453,8 +439,6 @@ impl ExportCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -521,11 +505,9 @@ pub struct GetAccountConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountConfigurationErrorKind {
-    /// <p>You do not have access
-    /// required to perform this action.</p>
+    /// <p>You do not have access required to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request was denied
-    /// because it exceeded a quota.</p>
+    /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -569,8 +551,6 @@ impl GetAccountConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -631,11 +611,9 @@ pub struct GetCertificateError {
 pub enum GetCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The certificate request is in process and the certificate in your account has not yet been
-    /// issued.</p>
+    /// <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -680,8 +658,6 @@ impl GetCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -749,13 +725,11 @@ pub enum ImportCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>An input parameter was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-    /// cannot specify a tag value that begins with <code>aws:</code>.</p>
+    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>An ACM quota has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
     TagPolicyException(crate::error::TagPolicyException),
@@ -808,8 +782,6 @@ impl ImportCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -951,8 +923,6 @@ impl ListCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1005,8 +975,7 @@ pub struct ListTagsForCertificateError {
 pub enum ListTagsForCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1050,8 +1019,6 @@ impl ListTagsForCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1110,18 +1077,13 @@ pub struct PutAccountConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccountConfigurationErrorKind {
-    /// <p>You do not have access
-    /// required to perform this action.</p>
+    /// <p>You do not have access required to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You are trying to
-    /// update a resource or configuration that is already being created or updated. Wait for the
-    /// previous operation to finish and try again.</p>
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request was denied
-    /// because it exceeded a quota.</p>
+    /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The supplied input
-    /// failed to satisfy constraints of an Amazon Web Services service.</p>
+    /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1167,8 +1129,6 @@ impl PutAccountConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1247,16 +1207,13 @@ pub enum RemoveTagsFromCertificateErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>An input parameter was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-    /// cannot specify a tag value that begins with <code>aws:</code>.</p>
+    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The request was denied
-    /// because it exceeded a quota.</p>
+    /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1304,8 +1261,6 @@ impl RemoveTagsFromCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1398,8 +1353,7 @@ pub struct RenewCertificateError {
 pub enum RenewCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1443,8 +1397,6 @@ impl RenewCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1505,13 +1457,11 @@ pub struct RequestCertificateError {
 pub enum RequestCertificateErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>One or more values in the <a>DomainValidationOption</a> structure is
-    /// incorrect.</p>
+    /// <p>One or more values in the <code>DomainValidationOption</code> structure is incorrect.</p>
     InvalidDomainValidationOptionsException(crate::error::InvalidDomainValidationOptionsException),
     /// <p>An input parameter was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-    /// cannot specify a tag value that begins with <code>aws:</code>.</p>
+    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>An ACM quota has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1568,8 +1518,6 @@ impl RequestCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1672,13 +1620,11 @@ pub struct ResendValidationEmailError {
 pub enum ResendValidationEmailErrorKind {
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>One or more values in the <a>DomainValidationOption</a> structure is
-    /// incorrect.</p>
+    /// <p>One or more values in the <code>DomainValidationOption</code> structure is incorrect.</p>
     InvalidDomainValidationOptionsException(crate::error::InvalidDomainValidationOptionsException),
     /// <p>Processing has reached an invalid state.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1726,8 +1672,6 @@ impl ResendValidationEmailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1810,8 +1754,7 @@ pub enum UpdateCertificateOptionsErrorKind {
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>An ACM quota has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1857,8 +1800,6 @@ impl UpdateCertificateOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1920,8 +1861,7 @@ impl std::error::Error for UpdateCertificateOptionsError {
     }
 }
 
-/// <p>The specified certificate cannot be found in the caller's account or the caller's account
-/// cannot be found.</p>
+/// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2177,8 +2117,7 @@ impl InvalidArnException {
     }
 }
 
-/// <p>One or more values in the <a>DomainValidationOption</a> structure is
-/// incorrect.</p>
+/// <p>One or more values in the <code>DomainValidationOption</code> structure is incorrect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDomainValidationOptionsException {
@@ -2370,8 +2309,7 @@ impl TagPolicyException {
     }
 }
 
-/// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-/// cannot specify a tag value that begins with <code>aws:</code>.</p>
+/// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
@@ -2499,8 +2437,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>The request was denied
-/// because it exceeded a quota.</p>
+/// <p>The request was denied because it exceeded a quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -2564,8 +2501,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>The supplied input
-/// failed to satisfy constraints of an Amazon Web Services service.</p>
+/// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -2629,9 +2565,7 @@ impl ValidationException {
     }
 }
 
-/// <p>You are trying to
-/// update a resource or configuration that is already being created or updated. Wait for the
-/// previous operation to finish and try again.</p>
+/// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -2695,8 +2629,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You do not have access
-/// required to perform this action.</p>
+/// <p>You do not have access required to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -2824,8 +2757,7 @@ impl InvalidArgsException {
     }
 }
 
-/// <p>The certificate request is in process and the certificate in your account has not yet been
-/// issued.</p>
+/// <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestInProgressException {
@@ -2889,8 +2821,7 @@ impl RequestInProgressException {
     }
 }
 
-/// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the
-/// association and try again.</p>
+/// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {

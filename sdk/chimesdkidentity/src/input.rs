@@ -50,9 +50,9 @@ pub mod create_app_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -83,7 +83,7 @@ pub mod create_app_instance_input {
 #[doc(hidden)]
 pub type CreateAppInstanceInputOperationOutputAlias = crate::operation::CreateAppInstance;
 #[doc(hidden)]
-pub type CreateAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstance`](crate::operation::CreateAppInstance)>
     #[allow(clippy::let_and_return)]
@@ -94,7 +94,7 @@ impl CreateAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -177,7 +177,7 @@ impl CreateAppInstanceInput {
             "CreateAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -253,7 +253,7 @@ pub mod create_app_instance_admin_input {
 #[doc(hidden)]
 pub type CreateAppInstanceAdminInputOperationOutputAlias = crate::operation::CreateAppInstanceAdmin;
 #[doc(hidden)]
-pub type CreateAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceAdmin`](crate::operation::CreateAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
@@ -264,7 +264,7 @@ impl CreateAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstanceAdmin,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -366,7 +366,7 @@ impl CreateAppInstanceAdminInput {
             "CreateAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -467,9 +467,9 @@ pub mod create_app_instance_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -502,7 +502,7 @@ pub mod create_app_instance_user_input {
 #[doc(hidden)]
 pub type CreateAppInstanceUserInputOperationOutputAlias = crate::operation::CreateAppInstanceUser;
 #[doc(hidden)]
-pub type CreateAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceUser`](crate::operation::CreateAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -513,7 +513,7 @@ impl CreateAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -598,7 +598,7 @@ impl CreateAppInstanceUserInput {
             "CreateAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -659,7 +659,7 @@ pub mod delete_app_instance_input {
 #[doc(hidden)]
 pub type DeleteAppInstanceInputOperationOutputAlias = crate::operation::DeleteAppInstance;
 #[doc(hidden)]
-pub type DeleteAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstance`](crate::operation::DeleteAppInstance)>
     #[allow(clippy::let_and_return)]
@@ -670,7 +670,7 @@ impl DeleteAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -764,7 +764,7 @@ impl DeleteAppInstanceInput {
             "DeleteAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -832,7 +832,7 @@ pub mod delete_app_instance_admin_input {
 #[doc(hidden)]
 pub type DeleteAppInstanceAdminInputOperationOutputAlias = crate::operation::DeleteAppInstanceAdmin;
 #[doc(hidden)]
-pub type DeleteAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceAdmin`](crate::operation::DeleteAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
@@ -843,7 +843,7 @@ impl DeleteAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstanceAdmin,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -953,7 +953,7 @@ impl DeleteAppInstanceAdminInput {
             "DeleteAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1006,7 +1006,7 @@ pub mod delete_app_instance_user_input {
 #[doc(hidden)]
 pub type DeleteAppInstanceUserInputOperationOutputAlias = crate::operation::DeleteAppInstanceUser;
 #[doc(hidden)]
-pub type DeleteAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceUser`](crate::operation::DeleteAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -1017,7 +1017,7 @@ impl DeleteAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1111,7 +1111,7 @@ impl DeleteAppInstanceUserInput {
             "DeleteAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1177,7 +1177,8 @@ pub mod deregister_app_instance_user_endpoint_input {
 pub type DeregisterAppInstanceUserEndpointInputOperationOutputAlias =
     crate::operation::DeregisterAppInstanceUserEndpoint;
 #[doc(hidden)]
-pub type DeregisterAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterAppInstanceUserEndpointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterAppInstanceUserEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterAppInstanceUserEndpoint`](crate::operation::DeregisterAppInstanceUserEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1188,7 +1189,7 @@ impl DeregisterAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterAppInstanceUserEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1298,7 +1299,7 @@ impl DeregisterAppInstanceUserEndpointInput {
             "DeregisterAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1351,7 +1352,7 @@ pub mod describe_app_instance_input {
 #[doc(hidden)]
 pub type DescribeAppInstanceInputOperationOutputAlias = crate::operation::DescribeAppInstance;
 #[doc(hidden)]
-pub type DescribeAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstance`](crate::operation::DescribeAppInstance)>
     #[allow(clippy::let_and_return)]
@@ -1362,7 +1363,7 @@ impl DescribeAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1456,7 +1457,7 @@ impl DescribeAppInstanceInput {
             "DescribeAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1525,7 +1526,7 @@ pub mod describe_app_instance_admin_input {
 pub type DescribeAppInstanceAdminInputOperationOutputAlias =
     crate::operation::DescribeAppInstanceAdmin;
 #[doc(hidden)]
-pub type DescribeAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppInstanceAdminInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceAdmin`](crate::operation::DescribeAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
@@ -1536,7 +1537,7 @@ impl DescribeAppInstanceAdminInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceAdmin,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1646,7 +1647,7 @@ impl DescribeAppInstanceAdminInput {
             "DescribeAppInstanceAdmin",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1700,7 +1701,7 @@ pub mod describe_app_instance_user_input {
 pub type DescribeAppInstanceUserInputOperationOutputAlias =
     crate::operation::DescribeAppInstanceUser;
 #[doc(hidden)]
-pub type DescribeAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceUser`](crate::operation::DescribeAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -1711,7 +1712,7 @@ impl DescribeAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1805,7 +1806,7 @@ impl DescribeAppInstanceUserInput {
             "DescribeAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1871,7 +1872,8 @@ pub mod describe_app_instance_user_endpoint_input {
 pub type DescribeAppInstanceUserEndpointInputOperationOutputAlias =
     crate::operation::DescribeAppInstanceUserEndpoint;
 #[doc(hidden)]
-pub type DescribeAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppInstanceUserEndpointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppInstanceUserEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceUserEndpoint`](crate::operation::DescribeAppInstanceUserEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1882,7 +1884,7 @@ impl DescribeAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppInstanceUserEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1992,7 +1994,7 @@ impl DescribeAppInstanceUserEndpointInput {
             "DescribeAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2046,7 +2048,8 @@ pub mod get_app_instance_retention_settings_input {
 pub type GetAppInstanceRetentionSettingsInputOperationOutputAlias =
     crate::operation::GetAppInstanceRetentionSettings;
 #[doc(hidden)]
-pub type GetAppInstanceRetentionSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppInstanceRetentionSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAppInstanceRetentionSettings`](crate::operation::GetAppInstanceRetentionSettings)>
     #[allow(clippy::let_and_return)]
@@ -2057,7 +2060,7 @@ impl GetAppInstanceRetentionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppInstanceRetentionSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2151,7 +2154,7 @@ impl GetAppInstanceRetentionSettingsInput {
             "GetAppInstanceRetentionSettings",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2200,14 +2203,12 @@ pub mod list_app_instance_admins_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2230,7 +2231,7 @@ pub mod list_app_instance_admins_input {
 #[doc(hidden)]
 pub type ListAppInstanceAdminsInputOperationOutputAlias = crate::operation::ListAppInstanceAdmins;
 #[doc(hidden)]
-pub type ListAppInstanceAdminsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppInstanceAdminsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstanceAdminsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceAdmins`](crate::operation::ListAppInstanceAdmins)>
     #[allow(clippy::let_and_return)]
@@ -2241,7 +2242,7 @@ impl ListAppInstanceAdminsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceAdmins,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2353,7 @@ impl ListAppInstanceAdminsInput {
             "ListAppInstanceAdmins",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2387,14 +2388,12 @@ pub mod list_app_instances_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2416,7 +2415,7 @@ pub mod list_app_instances_input {
 #[doc(hidden)]
 pub type ListAppInstancesInputOperationOutputAlias = crate::operation::ListAppInstances;
 #[doc(hidden)]
-pub type ListAppInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstances`](crate::operation::ListAppInstances)>
     #[allow(clippy::let_and_return)]
@@ -2427,7 +2426,7 @@ impl ListAppInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2518,7 +2517,7 @@ impl ListAppInstancesInput {
             "ListAppInstances",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2596,7 +2595,8 @@ pub mod list_app_instance_user_endpoints_input {
 pub type ListAppInstanceUserEndpointsInputOperationOutputAlias =
     crate::operation::ListAppInstanceUserEndpoints;
 #[doc(hidden)]
-pub type ListAppInstanceUserEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppInstanceUserEndpointsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstanceUserEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceUserEndpoints`](crate::operation::ListAppInstanceUserEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -2607,7 +2607,7 @@ impl ListAppInstanceUserEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceUserEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2718,7 +2718,7 @@ impl ListAppInstanceUserEndpointsInput {
             "ListAppInstanceUserEndpoints",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2795,7 +2795,7 @@ pub mod list_app_instance_users_input {
 #[doc(hidden)]
 pub type ListAppInstanceUsersInputOperationOutputAlias = crate::operation::ListAppInstanceUsers;
 #[doc(hidden)]
-pub type ListAppInstanceUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppInstanceUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppInstanceUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceUsers`](crate::operation::ListAppInstanceUsers)>
     #[allow(clippy::let_and_return)]
@@ -2806,7 +2806,7 @@ impl ListAppInstanceUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppInstanceUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2903,7 +2903,7 @@ impl ListAppInstanceUsersInput {
             "ListAppInstanceUsers",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2953,7 +2953,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2964,7 +2964,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3049,7 +3049,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3122,7 +3122,8 @@ pub mod put_app_instance_retention_settings_input {
 pub type PutAppInstanceRetentionSettingsInputOperationOutputAlias =
     crate::operation::PutAppInstanceRetentionSettings;
 #[doc(hidden)]
-pub type PutAppInstanceRetentionSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppInstanceRetentionSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutAppInstanceRetentionSettings`](crate::operation::PutAppInstanceRetentionSettings)>
     #[allow(clippy::let_and_return)]
@@ -3133,7 +3134,7 @@ impl PutAppInstanceRetentionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppInstanceRetentionSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3234,7 +3235,7 @@ impl PutAppInstanceRetentionSettingsInput {
             "PutAppInstanceRetentionSettings",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3297,18 +3298,9 @@ pub mod register_app_instance_user_endpoint_input {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
@@ -3317,18 +3309,9 @@ pub mod register_app_instance_user_endpoint_input {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn set_type(
@@ -3374,14 +3357,12 @@ pub mod register_app_instance_user_endpoint_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.allow_messages = Some(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -3412,7 +3393,8 @@ pub mod register_app_instance_user_endpoint_input {
 pub type RegisterAppInstanceUserEndpointInputOperationOutputAlias =
     crate::operation::RegisterAppInstanceUserEndpoint;
 #[doc(hidden)]
-pub type RegisterAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterAppInstanceUserEndpointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterAppInstanceUserEndpointInput {
     /// Consumes the builder and constructs an Operation<[`RegisterAppInstanceUserEndpoint`](crate::operation::RegisterAppInstanceUserEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -3423,7 +3405,7 @@ impl RegisterAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterAppInstanceUserEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3527,7 +3509,7 @@ impl RegisterAppInstanceUserEndpointInput {
             "RegisterAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3575,9 +3557,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3606,7 +3588,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3617,7 +3599,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3705,7 +3687,7 @@ impl TagResourceInput {
             "TagResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3784,7 +3766,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3795,7 +3777,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3883,7 +3865,7 @@ impl UntagResourceInput {
             "UntagResource",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3968,7 +3950,7 @@ pub mod update_app_instance_input {
 #[doc(hidden)]
 pub type UpdateAppInstanceInputOperationOutputAlias = crate::operation::UpdateAppInstance;
 #[doc(hidden)]
-pub type UpdateAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstance`](crate::operation::UpdateAppInstance)>
     #[allow(clippy::let_and_return)]
@@ -3979,7 +3961,7 @@ impl UpdateAppInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4079,7 +4061,7 @@ impl UpdateAppInstanceInput {
             "UpdateAppInstance",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4164,7 +4146,7 @@ pub mod update_app_instance_user_input {
 #[doc(hidden)]
 pub type UpdateAppInstanceUserInputOperationOutputAlias = crate::operation::UpdateAppInstanceUser;
 #[doc(hidden)]
-pub type UpdateAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInstanceUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstanceUser`](crate::operation::UpdateAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -4175,7 +4157,7 @@ impl UpdateAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4277,7 +4259,7 @@ impl UpdateAppInstanceUserInput {
             "UpdateAppInstanceUser",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4345,14 +4327,12 @@ pub mod update_app_instance_user_endpoint_input {
             self.name = input;
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.allow_messages = Some(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -4380,7 +4360,8 @@ pub mod update_app_instance_user_endpoint_input {
 pub type UpdateAppInstanceUserEndpointInputOperationOutputAlias =
     crate::operation::UpdateAppInstanceUserEndpoint;
 #[doc(hidden)]
-pub type UpdateAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInstanceUserEndpointInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInstanceUserEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstanceUserEndpoint`](crate::operation::UpdateAppInstanceUserEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -4391,7 +4372,7 @@ impl UpdateAppInstanceUserEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAppInstanceUserEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4508,7 +4489,7 @@ impl UpdateAppInstanceUserEndpointInput {
             "UpdateAppInstanceUserEndpoint",
             "chimesdkidentity",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4541,8 +4522,7 @@ pub struct UpdateAppInstanceUserEndpointInput {
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl UpdateAppInstanceUserEndpointInput {
@@ -4558,8 +4538,7 @@ impl UpdateAppInstanceUserEndpointInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
@@ -4711,18 +4690,9 @@ pub struct RegisterAppInstanceUserEndpointInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-    /// </li>
+    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
@@ -4732,8 +4702,7 @@ pub struct RegisterAppInstanceUserEndpointInput {
     pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
     /// <p>The idempotency token for each client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl RegisterAppInstanceUserEndpointInput {
@@ -4747,18 +4716,9 @@ impl RegisterAppInstanceUserEndpointInput {
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-    /// </li>
+    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
@@ -4776,8 +4736,7 @@ impl RegisterAppInstanceUserEndpointInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
@@ -4927,8 +4886,7 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
 pub struct ListAppInstancesInput {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API requests until you reach the maximum number of
-    /// <code>AppInstances</code>.</p>
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesInput {
@@ -4936,8 +4894,7 @@ impl ListAppInstancesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API requests until you reach the maximum number of
-    /// <code>AppInstances</code>.</p>
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4959,8 +4916,7 @@ pub struct ListAppInstanceAdminsInput {
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of administrators that you want to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsInput {
@@ -4972,8 +4928,7 @@ impl ListAppInstanceAdminsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

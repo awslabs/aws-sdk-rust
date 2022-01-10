@@ -39,7 +39,7 @@ pub mod activate_anomaly_detector_input {
 pub type ActivateAnomalyDetectorInputOperationOutputAlias =
     crate::operation::ActivateAnomalyDetector;
 #[doc(hidden)]
-pub type ActivateAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ActivateAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`ActivateAnomalyDetector`](crate::operation::ActivateAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +50,7 @@ impl ActivateAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ActivateAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -132,7 +132,7 @@ impl ActivateAnomalyDetectorInput {
             "ActivateAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -194,7 +194,7 @@ pub mod back_test_anomaly_detector_input {
 pub type BackTestAnomalyDetectorInputOperationOutputAlias =
     crate::operation::BackTestAnomalyDetector;
 #[doc(hidden)]
-pub type BackTestAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BackTestAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BackTestAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BackTestAnomalyDetector`](crate::operation::BackTestAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -205,7 +205,7 @@ impl BackTestAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BackTestAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -287,7 +287,7 @@ impl BackTestAnomalyDetectorInput {
             "BackTestAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -428,7 +428,7 @@ pub mod create_alert_input {
 #[doc(hidden)]
 pub type CreateAlertInputOperationOutputAlias = crate::operation::CreateAlert;
 #[doc(hidden)]
-pub type CreateAlertInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAlertInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAlertInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlert`](crate::operation::CreateAlert)>
     #[allow(clippy::let_and_return)]
@@ -439,7 +439,7 @@ impl CreateAlertInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlert,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -518,7 +518,7 @@ impl CreateAlertInput {
             "CreateAlert",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -657,7 +657,7 @@ pub mod create_anomaly_detector_input {
 #[doc(hidden)]
 pub type CreateAnomalyDetectorInputOperationOutputAlias = crate::operation::CreateAnomalyDetector;
 #[doc(hidden)]
-pub type CreateAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnomalyDetector`](crate::operation::CreateAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +668,7 @@ impl CreateAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -750,7 +750,7 @@ impl CreateAnomalyDetectorInput {
             "CreateAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -838,9 +838,9 @@ pub mod create_metric_set_input {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>A list of metrics that the dataset will contain.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }
@@ -981,7 +981,7 @@ pub mod create_metric_set_input {
 #[doc(hidden)]
 pub type CreateMetricSetInputOperationOutputAlias = crate::operation::CreateMetricSet;
 #[doc(hidden)]
-pub type CreateMetricSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMetricSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMetricSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateMetricSet`](crate::operation::CreateMetricSet)>
     #[allow(clippy::let_and_return)]
@@ -992,7 +992,7 @@ impl CreateMetricSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMetricSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1072,7 +1072,7 @@ impl CreateMetricSetInput {
             "CreateMetricSet",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1130,7 +1130,7 @@ pub mod delete_alert_input {
 #[doc(hidden)]
 pub type DeleteAlertInputOperationOutputAlias = crate::operation::DeleteAlert;
 #[doc(hidden)]
-pub type DeleteAlertInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAlertInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlertInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlert`](crate::operation::DeleteAlert)>
     #[allow(clippy::let_and_return)]
@@ -1141,7 +1141,7 @@ impl DeleteAlertInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlert,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1220,7 +1220,7 @@ impl DeleteAlertInput {
             "DeleteAlert",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1281,7 +1281,7 @@ pub mod delete_anomaly_detector_input {
 #[doc(hidden)]
 pub type DeleteAnomalyDetectorInputOperationOutputAlias = crate::operation::DeleteAnomalyDetector;
 #[doc(hidden)]
-pub type DeleteAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyDetector`](crate::operation::DeleteAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -1292,7 +1292,7 @@ impl DeleteAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1374,7 +1374,7 @@ impl DeleteAnomalyDetectorInput {
             "DeleteAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1432,7 +1432,7 @@ pub mod describe_alert_input {
 #[doc(hidden)]
 pub type DescribeAlertInputOperationOutputAlias = crate::operation::DescribeAlert;
 #[doc(hidden)]
-pub type DescribeAlertInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAlertInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlertInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlert`](crate::operation::DescribeAlert)>
     #[allow(clippy::let_and_return)]
@@ -1443,7 +1443,7 @@ impl DescribeAlertInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlert,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1522,7 +1522,7 @@ impl DescribeAlertInput {
             "DescribeAlert",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1620,7 +1620,8 @@ pub mod describe_anomaly_detection_executions_input {
 pub type DescribeAnomalyDetectionExecutionsInputOperationOutputAlias =
     crate::operation::DescribeAnomalyDetectionExecutions;
 #[doc(hidden)]
-pub type DescribeAnomalyDetectionExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAnomalyDetectionExecutionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnomalyDetectionExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomalyDetectionExecutions`](crate::operation::DescribeAnomalyDetectionExecutions)>
     #[allow(clippy::let_and_return)]
@@ -1631,7 +1632,7 @@ impl DescribeAnomalyDetectionExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAnomalyDetectionExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1713,7 +1714,7 @@ impl DescribeAnomalyDetectionExecutionsInput {
             "DescribeAnomalyDetectionExecutions",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1775,7 +1776,7 @@ pub mod describe_anomaly_detector_input {
 pub type DescribeAnomalyDetectorInputOperationOutputAlias =
     crate::operation::DescribeAnomalyDetector;
 #[doc(hidden)]
-pub type DescribeAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomalyDetector`](crate::operation::DescribeAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -1786,7 +1787,7 @@ impl DescribeAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1868,7 +1869,7 @@ impl DescribeAnomalyDetectorInput {
             "DescribeAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1929,7 +1930,7 @@ pub mod describe_metric_set_input {
 #[doc(hidden)]
 pub type DescribeMetricSetInputOperationOutputAlias = crate::operation::DescribeMetricSet;
 #[doc(hidden)]
-pub type DescribeMetricSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMetricSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMetricSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMetricSet`](crate::operation::DescribeMetricSet)>
     #[allow(clippy::let_and_return)]
@@ -1940,7 +1941,7 @@ impl DescribeMetricSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMetricSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2020,7 +2021,7 @@ impl DescribeMetricSetInput {
             "DescribeMetricSet",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2096,7 +2097,7 @@ pub mod get_anomaly_group_input {
 #[doc(hidden)]
 pub type GetAnomalyGroupInputOperationOutputAlias = crate::operation::GetAnomalyGroup;
 #[doc(hidden)]
-pub type GetAnomalyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnomalyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnomalyGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetAnomalyGroup`](crate::operation::GetAnomalyGroup)>
     #[allow(clippy::let_and_return)]
@@ -2107,7 +2108,7 @@ impl GetAnomalyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2187,7 +2188,7 @@ impl GetAnomalyGroupInput {
             "GetAnomalyGroup",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2291,7 +2292,7 @@ pub mod get_feedback_input {
 #[doc(hidden)]
 pub type GetFeedbackInputOperationOutputAlias = crate::operation::GetFeedback;
 #[doc(hidden)]
-pub type GetFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`GetFeedback`](crate::operation::GetFeedback)>
     #[allow(clippy::let_and_return)]
@@ -2302,7 +2303,7 @@ impl GetFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2381,7 +2382,7 @@ impl GetFeedbackInput {
             "GetFeedback",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2442,7 +2443,7 @@ pub mod get_sample_data_input {
 #[doc(hidden)]
 pub type GetSampleDataInputOperationOutputAlias = crate::operation::GetSampleData;
 #[doc(hidden)]
-pub type GetSampleDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSampleDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSampleDataInput {
     /// Consumes the builder and constructs an Operation<[`GetSampleData`](crate::operation::GetSampleData)>
     #[allow(clippy::let_and_return)]
@@ -2453,7 +2454,7 @@ impl GetSampleDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSampleData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2533,7 +2534,7 @@ impl GetSampleDataInput {
             "GetSampleData",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2580,14 +2581,12 @@ pub mod list_alerts_input {
             self.anomaly_detector_arn = input;
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2620,7 +2619,7 @@ pub mod list_alerts_input {
 #[doc(hidden)]
 pub type ListAlertsInputOperationOutputAlias = crate::operation::ListAlerts;
 #[doc(hidden)]
-pub type ListAlertsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAlertsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlertsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlerts`](crate::operation::ListAlerts)>
     #[allow(clippy::let_and_return)]
@@ -2631,7 +2630,7 @@ impl ListAlertsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlerts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2710,7 +2709,7 @@ impl ListAlertsInput {
             "ListAlerts",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2753,14 +2752,12 @@ pub mod list_anomaly_detectors_input {
             self.max_results = input;
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2782,7 +2779,7 @@ pub mod list_anomaly_detectors_input {
 #[doc(hidden)]
 pub type ListAnomalyDetectorsInputOperationOutputAlias = crate::operation::ListAnomalyDetectors;
 #[doc(hidden)]
-pub type ListAnomalyDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnomalyDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnomalyDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListAnomalyDetectors`](crate::operation::ListAnomalyDetectors)>
     #[allow(clippy::let_and_return)]
@@ -2793,7 +2790,7 @@ impl ListAnomalyDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnomalyDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2875,7 +2872,7 @@ impl ListAnomalyDetectorsInput {
             "ListAnomalyDetectors",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2895,6 +2892,215 @@ impl ListAnomalyDetectorsInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsInput`](crate::input::ListAnomalyDetectorsInput)
     pub fn builder() -> crate::input::list_anomaly_detectors_input::Builder {
         crate::input::list_anomaly_detectors_input::Builder::default()
+    }
+}
+
+/// See [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+pub mod list_anomaly_group_related_metrics_input {
+    /// A builder for [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
+        pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
+        pub(crate) relationship_type_filter: std::option::Option<crate::model::RelationshipType>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anomaly_detector_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anomaly_detector_arn = input;
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anomaly_group_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn set_anomaly_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anomaly_group_id = input;
+            self
+        }
+        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+        pub fn relationship_type_filter(mut self, input: crate::model::RelationshipType) -> Self {
+            self.relationship_type_filter = Some(input);
+            self
+        }
+        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+        pub fn set_relationship_type_filter(
+            mut self,
+            input: std::option::Option<crate::model::RelationshipType>,
+        ) -> Self {
+            self.relationship_type_filter = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAnomalyGroupRelatedMetricsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAnomalyGroupRelatedMetricsInput {
+                anomaly_detector_arn: self.anomaly_detector_arn,
+                anomaly_group_id: self.anomaly_group_id,
+                relationship_type_filter: self.relationship_type_filter,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAnomalyGroupRelatedMetricsInputOperationOutputAlias =
+    crate::operation::ListAnomalyGroupRelatedMetrics;
+#[doc(hidden)]
+pub type ListAnomalyGroupRelatedMetricsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListAnomalyGroupRelatedMetricsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAnomalyGroupRelatedMetrics`](crate::operation::ListAnomalyGroupRelatedMetrics)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAnomalyGroupRelatedMetrics,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListAnomalyGroupRelatedMetricsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/ListAnomalyGroupRelatedMetrics").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAnomalyGroupRelatedMetricsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAnomalyGroupRelatedMetricsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_anomaly_group_related_metrics(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAnomalyGroupRelatedMetrics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAnomalyGroupRelatedMetrics",
+            "lookoutmetrics",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+    pub fn builder() -> crate::input::list_anomaly_group_related_metrics_input::Builder {
+        crate::input::list_anomaly_group_related_metrics_input::Builder::default()
     }
 }
 
@@ -2973,7 +3179,7 @@ pub mod list_anomaly_group_summaries_input {
 pub type ListAnomalyGroupSummariesInputOperationOutputAlias =
     crate::operation::ListAnomalyGroupSummaries;
 #[doc(hidden)]
-pub type ListAnomalyGroupSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnomalyGroupSummariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnomalyGroupSummariesInput {
     /// Consumes the builder and constructs an Operation<[`ListAnomalyGroupSummaries`](crate::operation::ListAnomalyGroupSummaries)>
     #[allow(clippy::let_and_return)]
@@ -2984,7 +3190,7 @@ impl ListAnomalyGroupSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnomalyGroupSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3066,7 +3272,7 @@ impl ListAnomalyGroupSummariesInput {
             "ListAnomalyGroupSummaries",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3179,7 +3385,7 @@ pub mod list_anomaly_group_time_series_input {
 pub type ListAnomalyGroupTimeSeriesInputOperationOutputAlias =
     crate::operation::ListAnomalyGroupTimeSeries;
 #[doc(hidden)]
-pub type ListAnomalyGroupTimeSeriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnomalyGroupTimeSeriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnomalyGroupTimeSeriesInput {
     /// Consumes the builder and constructs an Operation<[`ListAnomalyGroupTimeSeries`](crate::operation::ListAnomalyGroupTimeSeries)>
     #[allow(clippy::let_and_return)]
@@ -3190,7 +3396,7 @@ impl ListAnomalyGroupTimeSeriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnomalyGroupTimeSeries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3271,7 +3477,7 @@ impl ListAnomalyGroupTimeSeriesInput {
             "ListAnomalyGroupTimeSeries",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3328,16 +3534,12 @@ pub mod list_metric_sets_input {
             self.max_results = input;
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3360,7 +3562,7 @@ pub mod list_metric_sets_input {
 #[doc(hidden)]
 pub type ListMetricSetsInputOperationOutputAlias = crate::operation::ListMetricSets;
 #[doc(hidden)]
-pub type ListMetricSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMetricSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMetricSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetricSets`](crate::operation::ListMetricSets)>
     #[allow(clippy::let_and_return)]
@@ -3371,7 +3573,7 @@ impl ListMetricSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMetricSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3653,7 @@ impl ListMetricSetsInput {
             "ListMetricSets",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3509,7 +3711,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3520,7 +3722,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3610,7 +3812,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3682,7 +3884,7 @@ pub mod put_feedback_input {
 #[doc(hidden)]
 pub type PutFeedbackInputOperationOutputAlias = crate::operation::PutFeedback;
 #[doc(hidden)]
-pub type PutFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`PutFeedback`](crate::operation::PutFeedback)>
     #[allow(clippy::let_and_return)]
@@ -3693,7 +3895,7 @@ impl PutFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3772,7 +3974,7 @@ impl PutFeedbackInput {
             "PutFeedback",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3821,9 +4023,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3834,9 +4034,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3863,7 +4061,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3874,7 +4072,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3969,7 +4167,7 @@ impl TagResourceInput {
             "TagResource",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4048,7 +4246,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4059,7 +4257,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4162,7 +4360,7 @@ impl UntagResourceInput {
             "UntagResource",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4264,7 +4462,7 @@ pub mod update_anomaly_detector_input {
 #[doc(hidden)]
 pub type UpdateAnomalyDetectorInputOperationOutputAlias = crate::operation::UpdateAnomalyDetector;
 #[doc(hidden)]
-pub type UpdateAnomalyDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAnomalyDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnomalyDetector`](crate::operation::UpdateAnomalyDetector)>
     #[allow(clippy::let_and_return)]
@@ -4275,7 +4473,7 @@ impl UpdateAnomalyDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalyDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4357,7 +4555,7 @@ impl UpdateAnomalyDetectorInput {
             "UpdateAnomalyDetector",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4427,9 +4625,9 @@ pub mod update_metric_set_input {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>The metric list.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }
@@ -4532,7 +4730,7 @@ pub mod update_metric_set_input {
 #[doc(hidden)]
 pub type UpdateMetricSetInputOperationOutputAlias = crate::operation::UpdateMetricSet;
 #[doc(hidden)]
-pub type UpdateMetricSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMetricSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMetricSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMetricSet`](crate::operation::UpdateMetricSet)>
     #[allow(clippy::let_and_return)]
@@ -4543,7 +4741,7 @@ impl UpdateMetricSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMetricSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4623,7 +4821,7 @@ impl UpdateMetricSetInput {
             "UpdateMetricSet",
             "lookoutmetrics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4797,9 +4995,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The resource's Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-    /// symbols: <code>_.:/=+@-</code>
-    /// </p>
+    /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4808,9 +5004,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-    /// symbols: <code>_.:/=+@-</code>
-    /// </p>
+    /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4890,9 +5084,7 @@ pub struct ListMetricSetsInput {
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricSetsInput {
@@ -4904,9 +5096,7 @@ impl ListMetricSetsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the result of the previous request was truncated, the response includes a
-    /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-    /// request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5015,11 +5205,59 @@ impl std::fmt::Debug for ListAnomalyGroupSummariesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAnomalyGroupRelatedMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub anomaly_detector_arn: std::option::Option<std::string::String>,
+    /// <p>The ID of the anomaly group.</p>
+    pub anomaly_group_id: std::option::Option<std::string::String>,
+    /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+    pub relationship_type_filter: std::option::Option<crate::model::RelationshipType>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomalyGroupRelatedMetricsInput {
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+        self.anomaly_detector_arn.as_deref()
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+    pub fn relationship_type_filter(&self) -> std::option::Option<&crate::model::RelationshipType> {
+        self.relationship_type_filter.as_ref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAnomalyGroupRelatedMetricsInput");
+        formatter.field("anomaly_detector_arn", &self.anomaly_detector_arn);
+        formatter.field("anomaly_group_id", &self.anomaly_group_id);
+        formatter.field("relationship_type_filter", &self.relationship_type_filter);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyDetectorsInput {
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyDetectorsInput {
@@ -5027,8 +5265,7 @@ impl ListAnomalyDetectorsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5048,8 +5285,7 @@ impl std::fmt::Debug for ListAnomalyDetectorsInput {
 pub struct ListAlertsInput {
     /// <p>The ARN of the alert's detector.</p>
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
-    /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that will be displayed by the request.</p>
     pub max_results: std::option::Option<i32>,
@@ -5059,8 +5295,7 @@ impl ListAlertsInput {
     pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
     }
-    /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-    /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

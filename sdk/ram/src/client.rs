@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Resource Access Manager
@@ -160,6 +160,7 @@ where
     ///
     /// See [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
     pub fn get_resource_policies(&self) -> fluent_builders::GetResourcePolicies<C, M, R> {
         fluent_builders::GetResourcePolicies::new(self.handle.clone())
     }
@@ -167,6 +168,7 @@ where
     ///
     /// See [`GetResourceShareAssociations`](crate::client::fluent_builders::GetResourceShareAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShareAssociations::into_paginator).
     pub fn get_resource_share_associations(
         &self,
     ) -> fluent_builders::GetResourceShareAssociations<C, M, R> {
@@ -176,6 +178,7 @@ where
     ///
     /// See [`GetResourceShareInvitations`](crate::client::fluent_builders::GetResourceShareInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShareInvitations::into_paginator).
     pub fn get_resource_share_invitations(
         &self,
     ) -> fluent_builders::GetResourceShareInvitations<C, M, R> {
@@ -185,6 +188,7 @@ where
     ///
     /// See [`GetResourceShares`](crate::client::fluent_builders::GetResourceShares) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShares::into_paginator).
     pub fn get_resource_shares(&self) -> fluent_builders::GetResourceShares<C, M, R> {
         fluent_builders::GetResourceShares::new(self.handle.clone())
     }
@@ -192,6 +196,7 @@ where
     ///
     /// See [`ListPendingInvitationResources`](crate::client::fluent_builders::ListPendingInvitationResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPendingInvitationResources::into_paginator).
     pub fn list_pending_invitation_resources(
         &self,
     ) -> fluent_builders::ListPendingInvitationResources<C, M, R> {
@@ -201,6 +206,7 @@ where
     ///
     /// See [`ListPermissions`](crate::client::fluent_builders::ListPermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
     pub fn list_permissions(&self) -> fluent_builders::ListPermissions<C, M, R> {
         fluent_builders::ListPermissions::new(self.handle.clone())
     }
@@ -208,6 +214,7 @@ where
     ///
     /// See [`ListPrincipals`](crate::client::fluent_builders::ListPrincipals) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrincipals::into_paginator).
     pub fn list_principals(&self) -> fluent_builders::ListPrincipals<C, M, R> {
         fluent_builders::ListPrincipals::new(self.handle.clone())
     }
@@ -215,6 +222,7 @@ where
     ///
     /// See [`ListResources`](crate::client::fluent_builders::ListResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
     }
@@ -222,6 +230,7 @@ where
     ///
     /// See [`ListResourceSharePermissions`](crate::client::fluent_builders::ListResourceSharePermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceSharePermissions::into_paginator).
     pub fn list_resource_share_permissions(
         &self,
     ) -> fluent_builders::ListResourceSharePermissions<C, M, R> {
@@ -231,6 +240,7 @@ where
     ///
     /// See [`ListResourceTypes`](crate::client::fluent_builders::ListResourceTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceTypes::into_paginator).
     pub fn list_resource_types(&self) -> fluent_builders::ListResourceTypes<C, M, R> {
         fluent_builders::ListResourceTypes::new(self.handle.clone())
     }
@@ -284,8 +294,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptResourceShareInvitation`.
     ///
-    /// <p>Accepts an invitation to a resource share from another Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Accepts an invitation to a resource share from another Amazon Web Services account. After you accept the invitation, the resources included in the resource share are available to interact with in the relevant Amazon Web Services Management Consoles and tools.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptResourceShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -330,10 +340,10 @@ pub mod fluent_builders {
                 crate::input::AcceptResourceShareInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -341,15 +351,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -357,12 +367,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_invitation_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -370,8 +382,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateResourceShare`.
     ///
-    /// <p>Associates the specified resource share with the specified principals and resources.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified list of principals and list of resources to a resource share. Principals that already have access to this resource share immediately receive access to the added resources. Newly added principals immediately receive access to the resources shared in this resource share. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -416,10 +428,10 @@ pub mod fluent_builders {
                 crate::input::AssociateResourceShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -427,12 +439,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -444,12 +456,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -461,55 +473,33 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+        /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+        /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -518,12 +508,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principals(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -531,8 +523,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateResourceSharePermission`.
     ///
-    /// <p>Associates a permission with a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds or replaces the RAM permission for a resource type included in a resource share. You can have exactly one permission associated with each resource type in the resource share. You can add a new RAM permission only if there are currently no resources of that resource type currently in the resource share.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateResourceSharePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -577,10 +569,10 @@ pub mod fluent_builders {
                 crate::input::AssociateResourceSharePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -588,12 +580,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -601,14 +593,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+        pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -616,36 +606,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_arn(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
-        pub fn replace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.replace(inp);
+        /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+        /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+        /// </note>
+        pub fn replace(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+        /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+        /// </note>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The version of the RAM permissions to associate with the resource share.</p>
-        pub fn permission_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.permission_version(inp);
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
+        pub fn permission_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.permission_version(input);
             self
         }
-        /// <p>The version of the RAM permissions to associate with the resource share.</p>
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_permission_version(input);
             self
@@ -653,15 +645,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourceShare`.
     ///
-    /// <p>Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs) for the
-    /// resources you want to share. You must also specify who you want to share the resources
-    /// with, and the permissions that you grant them.</p>
-    /// <note>
-    /// <p>Sharing a resource makes it available for use by principals outside of the
-    /// Amazon Web Services account that created the resource. Sharing doesn't change any permissions or
-    /// quotas that apply to the resource in the account that created it.</p>
+    /// <p>Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with, and the permissions to grant those principals.</p> <note>
+    /// <p>Sharing a resource makes it available for use by principals outside of the Amazon Web Services account that created the resource. Sharing doesn't change any permissions or quotas that apply to the resource in the account that created it.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -706,10 +693,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -717,12 +704,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name of the resource share.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -731,12 +718,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The ARNs of the resources to associate with the resource share.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The ARNs of the resources to associate with the resource share.</p>
+        /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -748,55 +735,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -809,12 +772,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -822,24 +785,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
-        pub fn allow_external_principals(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_external_principals(inp);
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
+        pub fn allow_external_principals(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_external_principals(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_external_principals(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -848,18 +811,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
-        pub fn permission_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arns(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
+        pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
         pub fn set_permission_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -870,8 +827,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourceShare`.
     ///
-    /// <p>Deletes the specified resource share.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified resource share. This doesn't delete any of the resources that were associated with the resource share; it only stops the sharing of those resources outside of the Amazon Web Services account that created them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -916,10 +873,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -927,12 +884,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -940,12 +897,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -954,7 +913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateResourceShare`.
     ///
     /// <p>Disassociates the specified principals or resources from the specified resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -999,10 +958,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateResourceShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1010,12 +969,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1027,12 +986,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1044,12 +1003,32 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals.</p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>The principals.</p>
+        /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1057,12 +1036,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principals(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1070,8 +1051,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateResourceSharePermission`.
     ///
-    /// <p>Disassociates an RAM permission from a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates an RAM permission from a resource share. Permission changes take effect immediately. You can remove a RAM permission from a resource share only if there are currently no resources of the relevant resource type currently attached to the resource share.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateResourceSharePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1118,10 +1099,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateResourceSharePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1129,12 +1110,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1142,12 +1123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
+        pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1155,12 +1136,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1168,9 +1151,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableSharingWithAwsOrganization`.
     ///
-    /// <p>Enables resource sharing within your organization in Organizations.</p>
-    /// <p>The caller must be the master account for the organization.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables resource sharing within your organization in Organizations. Calling this operation enables RAM to retrieve information about the organization and its structure. This lets you share resources with all of the accounts in an organization by specifying the organization's ID, or all of the accounts in an organizational unit (OU) by specifying the OU's ID. Until you enable sharing within the organization, you can specify only individual Amazon Web Services accounts, or for supported resource types, IAM users and roles.</p>
+    /// <p>You must call this operation from an IAM user or role in the organization's management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSharingWithAwsOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1215,10 +1198,10 @@ pub mod fluent_builders {
                 crate::input::EnableSharingWithAwsOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,7 +1213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPermission`.
     ///
     /// <p>Gets the contents of an RAM permission in JSON format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1275,10 +1258,10 @@ pub mod fluent_builders {
                 crate::input::GetPermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1286,12 +1269,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+        pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1299,12 +1282,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_arn(input);
             self
         }
-        /// <p>The identifier for the version of the permission.</p>
-        pub fn permission_version(mut self, inp: i32) -> Self {
-            self.inner = self.inner.permission_version(inp);
+        /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
+        pub fn permission_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.permission_version(input);
             self
         }
-        /// <p>The identifier for the version of the permission.</p>
+        /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_permission_version(input);
             self
@@ -1312,8 +1295,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourcePolicies`.
     ///
-    /// <p>Gets the policies for the specified resources that you own and have shared.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the resource policies for the specified resources that you own and have shared.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1358,10 +1341,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1369,16 +1352,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcePoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourcePoliciesPaginator<C, M, R> {
+            crate::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `resourceArns`.
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1386,34 +1375,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arns(input);
             self
         }
-        /// <p>The principal.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        /// <p>Specifies the principal.</p>
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies the principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1421,8 +1408,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceShareAssociations`.
     ///
-    /// <p>Gets the resources or principals for the resource shares that you own.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the resource and principal associations for resource shares that you own.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShareAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1467,10 +1454,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceShareAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1478,16 +1465,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
-        pub fn association_type(mut self, inp: crate::model::ResourceShareAssociationType) -> Self {
-            self.inner = self.inner.association_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceShareAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetResourceShareAssociationsPaginator<C, M, R> {
+            crate::paginator::GetResourceShareAssociationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+        /// <ul>
+        /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+        /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+        /// </ul>
+        pub fn association_type(
+            mut self,
+            input: crate::model::ResourceShareAssociationType,
+        ) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+        /// <ul>
+        /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+        /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+        /// </ul>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -1499,12 +1501,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1512,39 +1514,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>The association status.</p>
+        /// <p>Specifies that you want to retrieve only associations with this status.</p>
         pub fn association_status(
             mut self,
-            inp: crate::model::ResourceShareAssociationStatus,
+            input: crate::model::ResourceShareAssociationStatus,
         ) -> Self {
-            self.inner = self.inner.association_status(inp);
+            self.inner = self.inner.association_status(input);
             self
         }
-        /// <p>The association status.</p>
+        /// <p>Specifies that you want to retrieve only associations with this status.</p>
         pub fn set_association_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationStatus>,
@@ -1552,24 +1554,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_status(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1577,8 +1577,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceShareInvitations`.
     ///
-    /// <p>Gets the invitations that you have received for resource shares.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves details about invitations that you have received for resource shares.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1623,10 +1623,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceShareInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1634,19 +1634,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceShareInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetResourceShareInvitationsPaginator<C, M, R> {
+            crate::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `resourceShareInvitationArns`.
         ///
         /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
         pub fn resource_share_invitation_arns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arns(inp);
+            self.inner = self.inner.resource_share_invitation_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
         pub fn set_resource_share_invitation_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1658,12 +1666,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1671,24 +1679,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1696,8 +1702,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceShares`.
     ///
-    /// <p>Gets the resource shares that you own or the resource shares that are shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves details about the resource shares that you own or that are shared with you.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1742,10 +1748,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceSharesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1753,16 +1759,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceSharesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourceSharesPaginator<C, M, R> {
+            crate::paginator::GetResourceSharesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `resourceShareArns`.
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1770,12 +1782,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The status of the resource share.</p>
-        pub fn resource_share_status(mut self, inp: crate::model::ResourceShareStatus) -> Self {
-            self.inner = self.inner.resource_share_status(inp);
+        /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
+        pub fn resource_share_status(mut self, input: crate::model::ResourceShareStatus) -> Self {
+            self.inner = self.inner.resource_share_status(input);
             self
         }
-        /// <p>The status of the resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
         pub fn set_resource_share_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareStatus>,
@@ -1783,12 +1795,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_status(input);
             self
         }
-        /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
+        pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -1796,12 +1816,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_owner(input);
             self
         }
-        /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1810,12 +1830,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
-        /// <p>One or more tag filters.</p>
-        pub fn tag_filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.tag_filters(inp);
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filters(input);
             self
         }
-        /// <p>One or more tag filters.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -1823,36 +1843,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tag_filters(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
-        pub fn permission_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_arn(inp);
+        /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+        pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1863,9 +1879,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPendingInvitationResources`.
     ///
-    /// <p>Lists the resources in a resource share that is shared with you but that the invitation is still
-    /// pending for.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPendingInvitationResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1910,10 +1925,10 @@ pub mod fluent_builders {
                 crate::input::ListPendingInvitationResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1921,15 +1936,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPendingInvitationResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPendingInvitationResourcesPaginator<C, M, R> {
+            crate::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1937,33 +1960,59 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_invitation_arn(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.inner = self.inner.resource_region_scope(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_region_scope(input);
             self
         }
     }
     /// Fluent builder constructing a request to `ListPermissions`.
     ///
-    /// <p>Lists the RAM permissions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of available RAM permissions that you can use for the supported resource types. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2008,10 +2057,10 @@ pub mod fluent_builders {
                 crate::input::ListPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2019,14 +2068,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPermissionsPaginator<C, M, R> {
+            crate::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2034,24 +2087,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2059,9 +2110,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPrincipals`.
     ///
-    /// <p>Lists the principals that you have shared resources with or that have shared resources
-    /// with you.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the principals that you are sharing resources with or that are sharing resources with you.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2106,10 +2156,10 @@ pub mod fluent_builders {
                 crate::input::ListPrincipalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2117,12 +2167,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPrincipalsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPrincipalsPaginator<C, M, R> {
+            crate::paginator::ListPrincipalsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
+        pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -2130,12 +2194,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_owner(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+        /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2144,12 +2208,32 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals.</p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        /// <p>Specifies that you want to list information for only the listed principals.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>The principals.</p>
+        /// <p>Specifies that you want to list information for only the listed principals.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2157,16 +2241,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principals(input);
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+        /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+        /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2178,12 +2260,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2191,24 +2273,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2216,9 +2296,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResources`.
     ///
-    /// <p>Lists the resources that you added to a resource shares or the resources that are shared with
-    /// you.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the resources that you added to a resource shares or the resources that are shared with you.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2263,10 +2342,10 @@ pub mod fluent_builders {
                 crate::input::ListResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2274,12 +2353,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of owner.</p>
-        pub fn resource_owner(mut self, inp: crate::model::ResourceOwner) -> Self {
-            self.inner = self.inner.resource_owner(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourcesPaginator<C, M, R> {
+            crate::paginator::ListResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
+        pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
+            self.inner = self.inner.resource_owner(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -2287,26 +2380,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_owner(input);
             self
         }
-        /// <p>The principal.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+        /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+        /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2318,12 +2409,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2335,12 +2426,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
-        pub fn resource_share_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arns(inp);
+        /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+        pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2348,33 +2439,59 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.inner = self.inner.resource_region_scope(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_region_scope(input);
             self
         }
     }
     /// Fluent builder constructing a request to `ListResourceSharePermissions`.
     ///
     /// <p>Lists the RAM permissions that are associated with a resource share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceSharePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2419,10 +2536,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceSharePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2430,12 +2547,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceSharePermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListResourceSharePermissionsPaginator<C, M, R> {
+            crate::paginator::ListResourceSharePermissionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2443,24 +2568,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2468,8 +2591,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceTypes`.
     ///
-    /// <p>Lists the shareable resource types supported by RAM.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the resource types that can be shared by RAM.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2514,10 +2637,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2525,45 +2648,66 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceTypesPaginator<C, M, R> {
+            crate::paginator::ListResourceTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.inner = self.inner.resource_region_scope(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_region_scope(input);
             self
         }
     }
     /// Fluent builder constructing a request to `PromoteResourceShareCreatedFromPolicy`.
     ///
-    /// <p>Resource shares that were created by attaching a policy to a resource are visible only
-    /// to the resource share owner, and the resource share cannot be modified in RAM.</p>
-    ///
-    /// <p>Use this API action to promote the resource share. When you promote the resource
-    /// share, it becomes:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Visible to all principals that it is shared with.</p>
-    /// </li>
-    /// <li>
-    /// <p>Modifiable in RAM.</p>
-    /// </li>
-    /// </ul>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you attach a resource-based permission policy to a resource, it automatically creates a resource share. However, resource shares created this way are visible only to the resource share owner, and the resource share can't be modified in RAM.</p>
+    /// <p>You can use this operation to promote the resource share to a full RAM resource share. When you promote a resource share, you can then manage the resource share in RAM and it becomes visible to all of the principals you shared it with.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PromoteResourceShareCreatedFromPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2610,10 +2754,10 @@ pub mod fluent_builders {
                 crate::input::PromoteResourceShareCreatedFromPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2621,12 +2765,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2638,7 +2782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectResourceShareInvitation`.
     ///
     /// <p>Rejects an invitation to a resource share from another Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectResourceShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2683,10 +2827,10 @@ pub mod fluent_builders {
                 crate::input::RejectResourceShareInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2694,15 +2838,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
         pub fn resource_share_invitation_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_share_invitation_arn(inp);
+            self.inner = self.inner.resource_share_invitation_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2710,12 +2854,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_invitation_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2723,8 +2869,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds the specified tags to the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified tag keys and values to the specified resource share. The tags are attached only to the resource share, not to the resources that are in the resource share.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2769,10 +2915,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2780,12 +2926,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2797,12 +2943,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2813,8 +2959,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the specified tags from the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified tag key and value pairs from the specified resource share.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2859,10 +3005,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2870,12 +3016,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2887,12 +3033,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tag keys of the tags to remove.</p>
+        /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2903,8 +3049,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResourceShare`.
     ///
-    /// <p>Updates the specified resource share that you own.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies some of the properties of the specified resource share.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2949,10 +3095,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2960,12 +3106,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
-        pub fn resource_share_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_share_arn(inp);
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+        pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_share_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2973,40 +3119,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The name of the resource share.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>If specified, the new name that you want to attach to the resource share.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>If specified, the new name that you want to attach to the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
-        pub fn allow_external_principals(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_external_principals(inp);
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
+        pub fn allow_external_principals(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_external_principals(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_external_principals(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -83,12 +83,9 @@ impl EncryptionInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p>
-    /// TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p>
-    /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p>
-    /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub client_broker: std::option::Option<crate::model::ClientBroker>,
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
@@ -97,12 +94,9 @@ pub struct EncryptionInTransit {
 }
 impl EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-    /// <p>
-    /// TLS means that client-broker communication is enabled with TLS only.</p>
-    /// <p>
-    /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-    /// <p>
-    /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn client_broker(&self) -> std::option::Option<&crate::model::ClientBroker> {
         self.client_broker.as_ref()
@@ -132,24 +126,18 @@ pub mod encryption_in_transit {
     }
     impl Builder {
         /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-        /// <p>
-        /// TLS means that client-broker communication is enabled with TLS only.</p>
-        /// <p>
-        /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-        /// <p>
-        /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+        /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
+        /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+        /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
         /// <p>The default value is TLS_PLAINTEXT.</p>
         pub fn client_broker(mut self, input: crate::model::ClientBroker) -> Self {
             self.client_broker = Some(input);
             self
         }
         /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
-        /// <p>
-        /// TLS means that client-broker communication is enabled with TLS only.</p>
-        /// <p>
-        /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
-        /// <p>
-        /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+        /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
+        /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+        /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
         /// <p>The default value is TLS_PLAINTEXT.</p>
         pub fn set_client_broker(
             mut self,
@@ -3125,9 +3113,9 @@ pub mod serverless {
         /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
         ///
         /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+        pub fn vpc_configs(mut self, input: crate::model::VpcConfig) -> Self {
             let mut v = self.vpc_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configs = Some(v);
             self
         }
@@ -3649,8 +3637,7 @@ pub struct BrokerNodeGroupInfo {
     pub broker_az_distribution: std::option::Option<crate::model::BrokerAzDistribution>,
     /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
     pub client_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3671,8 +3658,7 @@ impl BrokerNodeGroupInfo {
     pub fn client_subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.client_subnets.as_deref()
     }
-    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-    /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+    /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -3749,14 +3735,12 @@ pub mod broker_node_group_info {
             self.client_subnets = input;
             self
         }
-        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
-        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
+        /// <p>The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5111,12 +5095,9 @@ pub mod cluster_operation_info {
         /// To override the contents of this collection use [`set_operation_steps`](Self::set_operation_steps).
         ///
         /// <p>Steps completed during the operation.</p>
-        pub fn operation_steps(
-            mut self,
-            input: impl Into<crate::model::ClusterOperationStep>,
-        ) -> Self {
+        pub fn operation_steps(mut self, input: crate::model::ClusterOperationStep) -> Self {
             let mut v = self.operation_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operation_steps = Some(v);
             self
         }
@@ -5312,12 +5293,9 @@ pub mod mutable_cluster_info {
         /// To override the contents of this collection use [`set_broker_ebs_volume_info`](Self::set_broker_ebs_volume_info).
         ///
         /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-        pub fn broker_ebs_volume_info(
-            mut self,
-            input: impl Into<crate::model::BrokerEbsVolumeInfo>,
-        ) -> Self {
+        pub fn broker_ebs_volume_info(mut self, input: crate::model::BrokerEbsVolumeInfo) -> Self {
             let mut v = self.broker_ebs_volume_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_ebs_volume_info = Some(v);
             self
         }
@@ -5814,9 +5792,9 @@ pub mod serverless_request {
         /// To override the contents of this collection use [`set_vpc_configs`](Self::set_vpc_configs).
         ///
         /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-        pub fn vpc_configs(mut self, input: impl Into<crate::model::VpcConfig>) -> Self {
+        pub fn vpc_configs(mut self, input: crate::model::VpcConfig) -> Self {
             let mut v = self.vpc_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_configs = Some(v);
             self
         }

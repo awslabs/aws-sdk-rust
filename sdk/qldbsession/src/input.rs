@@ -16,20 +16,14 @@ pub mod send_command_input {
         pub(crate) fetch_page: std::option::Option<crate::model::FetchPageRequest>,
     }
     impl Builder {
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_token = Some(input.into());
             self
         }
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37,14 +31,12 @@ pub mod send_command_input {
             self.session_token = input;
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
         pub fn start_session(mut self, input: crate::model::StartSessionRequest) -> Self {
             self.start_session = Some(input);
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
         pub fn set_start_session(
             mut self,
             input: std::option::Option<crate::model::StartSessionRequest>,
@@ -153,7 +145,7 @@ pub mod send_command_input {
 #[doc(hidden)]
 pub type SendCommandInputOperationOutputAlias = crate::operation::SendCommand;
 #[doc(hidden)]
-pub type SendCommandInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendCommandInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendCommandInput {
     /// Consumes the builder and constructs an Operation<[`SendCommand`](crate::operation::SendCommand)>
     #[allow(clippy::let_and_return)]
@@ -164,7 +156,7 @@ impl SendCommandInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendCommand,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -248,7 +240,7 @@ impl SendCommandInput {
             "SendCommand",
             "qldbsession",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -275,14 +267,10 @@ impl SendCommandInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCommandInput {
-    /// <p>Specifies the session token for the current command. A session token is constant
-    /// throughout the life of the session.</p>
-    /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-    /// <code>SessionToken</code> is required for every subsequent command that is issued during
-    /// the current session.</p>
+    /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+    /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub session_token: std::option::Option<std::string::String>,
-    /// <p>Command to start a new session. A session token is obtained as part of the
-    /// response.</p>
+    /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
     pub start_session: std::option::Option<crate::model::StartSessionRequest>,
     /// <p>Command to start a new transaction.</p>
     pub start_transaction: std::option::Option<crate::model::StartTransactionRequest>,
@@ -298,16 +286,12 @@ pub struct SendCommandInput {
     pub fetch_page: std::option::Option<crate::model::FetchPageRequest>,
 }
 impl SendCommandInput {
-    /// <p>Specifies the session token for the current command. A session token is constant
-    /// throughout the life of the session.</p>
-    /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-    /// <code>SessionToken</code> is required for every subsequent command that is issued during
-    /// the current session.</p>
+    /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+    /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
     }
-    /// <p>Command to start a new session. A session token is obtained as part of the
-    /// response.</p>
+    /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
     pub fn start_session(&self) -> std::option::Option<&crate::model::StartSessionRequest> {
         self.start_session.as_ref()
     }

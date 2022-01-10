@@ -35,7 +35,7 @@ pub mod associate_member_input {
 #[doc(hidden)]
 pub type AssociateMemberInputOperationOutputAlias = crate::operation::AssociateMember;
 #[doc(hidden)]
-pub type AssociateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMemberInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMember`](crate::operation::AssociateMember)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl AssociateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -126,7 +126,7 @@ impl AssociateMemberInput {
             "AssociateMember",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -187,7 +187,7 @@ pub mod batch_get_account_status_input {
 #[doc(hidden)]
 pub type BatchGetAccountStatusInputOperationOutputAlias = crate::operation::BatchGetAccountStatus;
 #[doc(hidden)]
-pub type BatchGetAccountStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetAccountStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetAccountStatusInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetAccountStatus`](crate::operation::BatchGetAccountStatus)>
     #[allow(clippy::let_and_return)]
@@ -198,7 +198,7 @@ impl BatchGetAccountStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetAccountStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -280,7 +280,7 @@ impl BatchGetAccountStatusInput {
             "BatchGetAccountStatus",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -347,7 +347,7 @@ pub mod batch_get_free_trial_info_input {
 #[doc(hidden)]
 pub type BatchGetFreeTrialInfoInputOperationOutputAlias = crate::operation::BatchGetFreeTrialInfo;
 #[doc(hidden)]
-pub type BatchGetFreeTrialInfoInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetFreeTrialInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetFreeTrialInfoInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetFreeTrialInfo`](crate::operation::BatchGetFreeTrialInfo)>
     #[allow(clippy::let_and_return)]
@@ -358,7 +358,7 @@ impl BatchGetFreeTrialInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetFreeTrialInfo,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -440,7 +440,7 @@ impl BatchGetFreeTrialInfoInput {
             "BatchGetFreeTrialInfo",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -498,7 +498,7 @@ pub mod cancel_findings_report_input {
 #[doc(hidden)]
 pub type CancelFindingsReportInputOperationOutputAlias = crate::operation::CancelFindingsReport;
 #[doc(hidden)]
-pub type CancelFindingsReportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelFindingsReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelFindingsReportInput {
     /// Consumes the builder and constructs an Operation<[`CancelFindingsReport`](crate::operation::CancelFindingsReport)>
     #[allow(clippy::let_and_return)]
@@ -509,7 +509,7 @@ impl CancelFindingsReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelFindingsReport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -591,7 +591,7 @@ impl CancelFindingsReportInput {
             "CancelFindingsReport",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -665,16 +665,12 @@ pub mod create_filter_input {
             self.filter_criteria = input;
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -724,7 +720,7 @@ pub mod create_filter_input {
 #[doc(hidden)]
 pub type CreateFilterInputOperationOutputAlias = crate::operation::CreateFilter;
 #[doc(hidden)]
-pub type CreateFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateFilter`](crate::operation::CreateFilter)>
     #[allow(clippy::let_and_return)]
@@ -735,7 +731,7 @@ impl CreateFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -814,7 +810,7 @@ impl CreateFilterInput {
             "CreateFilter",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -905,7 +901,7 @@ pub mod create_findings_report_input {
 #[doc(hidden)]
 pub type CreateFindingsReportInputOperationOutputAlias = crate::operation::CreateFindingsReport;
 #[doc(hidden)]
-pub type CreateFindingsReportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFindingsReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFindingsReportInput {
     /// Consumes the builder and constructs an Operation<[`CreateFindingsReport`](crate::operation::CreateFindingsReport)>
     #[allow(clippy::let_and_return)]
@@ -916,7 +912,7 @@ impl CreateFindingsReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFindingsReport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -998,7 +994,7 @@ impl CreateFindingsReportInput {
             "CreateFindingsReport",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1054,7 +1050,7 @@ pub mod delete_filter_input {
 #[doc(hidden)]
 pub type DeleteFilterInputOperationOutputAlias = crate::operation::DeleteFilter;
 #[doc(hidden)]
-pub type DeleteFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFilter`](crate::operation::DeleteFilter)>
     #[allow(clippy::let_and_return)]
@@ -1065,7 +1061,7 @@ impl DeleteFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1144,7 +1140,7 @@ impl DeleteFilterInput {
             "DeleteFilter",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1189,7 +1185,8 @@ pub mod describe_organization_configuration_input {
 pub type DescribeOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfiguration;
 #[doc(hidden)]
-pub type DescribeOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfiguration`](crate::operation::DescribeOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1200,7 +1197,7 @@ impl DescribeOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1275,7 +1272,7 @@ impl DescribeOrganizationConfigurationInput {
             "DescribeOrganizationConfiguration",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1319,9 +1316,9 @@ pub mod disable_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to disable.</p>
-        pub fn resource_types(mut self, input: impl Into<crate::model::ResourceScanType>) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -1348,7 +1345,7 @@ pub mod disable_input {
 #[doc(hidden)]
 pub type DisableInputOperationOutputAlias = crate::operation::Disable;
 #[doc(hidden)]
-pub type DisableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableInput {
     /// Consumes the builder and constructs an Operation<[`Disable`](crate::operation::Disable)>
     #[allow(clippy::let_and_return)]
@@ -1359,7 +1356,7 @@ impl DisableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Disable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1436,7 +1433,7 @@ impl DisableInput {
                     "Disable",
                     "inspector2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1498,7 +1495,8 @@ pub mod disable_delegated_admin_account_input {
 pub type DisableDelegatedAdminAccountInputOperationOutputAlias =
     crate::operation::DisableDelegatedAdminAccount;
 #[doc(hidden)]
-pub type DisableDelegatedAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableDelegatedAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDelegatedAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisableDelegatedAdminAccount`](crate::operation::DisableDelegatedAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -1509,7 +1507,7 @@ impl DisableDelegatedAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDelegatedAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1590,7 +1588,7 @@ impl DisableDelegatedAdminAccountInput {
             "DisableDelegatedAdminAccount",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1648,7 +1646,7 @@ pub mod disassociate_member_input {
 #[doc(hidden)]
 pub type DisassociateMemberInputOperationOutputAlias = crate::operation::DisassociateMember;
 #[doc(hidden)]
-pub type DisassociateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMemberInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMember`](crate::operation::DisassociateMember)>
     #[allow(clippy::let_and_return)]
@@ -1659,7 +1657,7 @@ impl DisassociateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1739,7 +1737,7 @@ impl DisassociateMemberInput {
             "DisassociateMember",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1792,9 +1790,9 @@ pub mod enable_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource scan types you want to enable.</p>
-        pub fn resource_types(mut self, input: impl Into<crate::model::ResourceScanType>) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceScanType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -1832,7 +1830,7 @@ pub mod enable_input {
 #[doc(hidden)]
 pub type EnableInputOperationOutputAlias = crate::operation::Enable;
 #[doc(hidden)]
-pub type EnableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableInput {
     /// Consumes the builder and constructs an Operation<[`Enable`](crate::operation::Enable)>
     #[allow(clippy::let_and_return)]
@@ -1843,7 +1841,7 @@ impl EnableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Enable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1923,7 +1921,7 @@ impl EnableInput {
                     "Enable",
                     "inspector2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1997,7 +1995,7 @@ pub mod enable_delegated_admin_account_input {
 pub type EnableDelegatedAdminAccountInputOperationOutputAlias =
     crate::operation::EnableDelegatedAdminAccount;
 #[doc(hidden)]
-pub type EnableDelegatedAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableDelegatedAdminAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDelegatedAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`EnableDelegatedAdminAccount`](crate::operation::EnableDelegatedAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -2008,7 +2006,7 @@ impl EnableDelegatedAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDelegatedAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2092,7 +2090,7 @@ impl EnableDelegatedAdminAccountInput {
             "EnableDelegatedAdminAccount",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2137,7 +2135,7 @@ pub mod get_delegated_admin_account_input {
 pub type GetDelegatedAdminAccountInputOperationOutputAlias =
     crate::operation::GetDelegatedAdminAccount;
 #[doc(hidden)]
-pub type GetDelegatedAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDelegatedAdminAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDelegatedAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetDelegatedAdminAccount`](crate::operation::GetDelegatedAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -2148,7 +2146,7 @@ impl GetDelegatedAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDelegatedAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2222,7 +2220,7 @@ impl GetDelegatedAdminAccountInput {
             "GetDelegatedAdminAccount",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2273,7 +2271,7 @@ pub mod get_findings_report_status_input {
 pub type GetFindingsReportStatusInputOperationOutputAlias =
     crate::operation::GetFindingsReportStatus;
 #[doc(hidden)]
-pub type GetFindingsReportStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsReportStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsReportStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsReportStatus`](crate::operation::GetFindingsReportStatus)>
     #[allow(clippy::let_and_return)]
@@ -2284,7 +2282,7 @@ impl GetFindingsReportStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsReportStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2366,7 +2364,7 @@ impl GetFindingsReportStatusInput {
             "GetFindingsReportStatus",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2422,7 +2420,7 @@ pub mod get_member_input {
 #[doc(hidden)]
 pub type GetMemberInputOperationOutputAlias = crate::operation::GetMember;
 #[doc(hidden)]
-pub type GetMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetMember`](crate::operation::GetMember)>
     #[allow(clippy::let_and_return)]
@@ -2433,7 +2431,7 @@ impl GetMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2510,7 +2508,7 @@ impl GetMemberInput {
                     "GetMember",
                     "inspector2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2564,18 +2562,12 @@ pub mod list_account_permissions_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2598,7 +2590,7 @@ pub mod list_account_permissions_input {
 #[doc(hidden)]
 pub type ListAccountPermissionsInputOperationOutputAlias = crate::operation::ListAccountPermissions;
 #[doc(hidden)]
-pub type ListAccountPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountPermissions`](crate::operation::ListAccountPermissions)>
     #[allow(clippy::let_and_return)]
@@ -2609,7 +2601,7 @@ impl ListAccountPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2691,7 +2683,7 @@ impl ListAccountPermissionsInput {
             "ListAccountPermissions",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2735,30 +2727,22 @@ pub mod list_coverage_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -2784,7 +2768,7 @@ pub mod list_coverage_input {
 #[doc(hidden)]
 pub type ListCoverageInputOperationOutputAlias = crate::operation::ListCoverage;
 #[doc(hidden)]
-pub type ListCoverageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCoverageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoverageInput {
     /// Consumes the builder and constructs an Operation<[`ListCoverage`](crate::operation::ListCoverage)>
     #[allow(clippy::let_and_return)]
@@ -2795,7 +2779,7 @@ impl ListCoverageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCoverage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2874,7 +2858,7 @@ impl ListCoverageInput {
             "ListCoverage",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2908,14 +2892,12 @@ pub mod list_coverage_statistics_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -2933,18 +2915,12 @@ pub mod list_coverage_statistics_input {
             self.group_by = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2967,7 +2943,7 @@ pub mod list_coverage_statistics_input {
 #[doc(hidden)]
 pub type ListCoverageStatisticsInputOperationOutputAlias = crate::operation::ListCoverageStatistics;
 #[doc(hidden)]
-pub type ListCoverageStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCoverageStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCoverageStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`ListCoverageStatistics`](crate::operation::ListCoverageStatistics)>
     #[allow(clippy::let_and_return)]
@@ -2978,7 +2954,7 @@ impl ListCoverageStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCoverageStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3060,7 +3036,7 @@ impl ListCoverageStatisticsInput {
             "ListCoverageStatistics",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3103,18 +3079,12 @@ pub mod list_delegated_admin_accounts_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3137,7 +3107,7 @@ pub mod list_delegated_admin_accounts_input {
 pub type ListDelegatedAdminAccountsInputOperationOutputAlias =
     crate::operation::ListDelegatedAdminAccounts;
 #[doc(hidden)]
-pub type ListDelegatedAdminAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDelegatedAdminAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDelegatedAdminAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListDelegatedAdminAccounts`](crate::operation::ListDelegatedAdminAccounts)>
     #[allow(clippy::let_and_return)]
@@ -3148,7 +3118,7 @@ impl ListDelegatedAdminAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDelegatedAdminAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3229,7 +3199,7 @@ impl ListDelegatedAdminAccountsInput {
             "ListDelegatedAdminAccounts",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3296,18 +3266,12 @@ pub mod list_filters_input {
             self.action = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3341,7 +3305,7 @@ pub mod list_filters_input {
 #[doc(hidden)]
 pub type ListFiltersInputOperationOutputAlias = crate::operation::ListFilters;
 #[doc(hidden)]
-pub type ListFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListFilters`](crate::operation::ListFilters)>
     #[allow(clippy::let_and_return)]
@@ -3352,7 +3316,7 @@ impl ListFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3431,7 +3395,7 @@ impl ListFiltersInput {
             "ListFilters",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3480,18 +3444,12 @@ pub mod list_finding_aggregations_input {
             self.aggregation_type = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3511,9 +3469,9 @@ pub mod list_finding_aggregations_input {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-        pub fn account_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn account_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_ids = Some(v);
             self
         }
@@ -3559,7 +3517,7 @@ pub mod list_finding_aggregations_input {
 pub type ListFindingAggregationsInputOperationOutputAlias =
     crate::operation::ListFindingAggregations;
 #[doc(hidden)]
-pub type ListFindingAggregationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingAggregationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingAggregationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingAggregations`](crate::operation::ListFindingAggregations)>
     #[allow(clippy::let_and_return)]
@@ -3570,7 +3528,7 @@ impl ListFindingAggregationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindingAggregations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3652,7 +3610,7 @@ impl ListFindingAggregationsInput {
             "ListFindingAggregations",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3697,18 +3655,12 @@ pub mod list_findings_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3758,7 +3710,7 @@ pub mod list_findings_input {
 #[doc(hidden)]
 pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
 #[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(clippy::let_and_return)]
@@ -3769,7 +3721,7 @@ impl ListFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3848,7 +3800,7 @@ impl ListFindingsInput {
             "ListFindings",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3882,14 +3834,12 @@ pub mod list_members_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn only_associated(mut self, input: bool) -> Self {
             self.only_associated = Some(input);
             self
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.only_associated = input;
             self
@@ -3904,18 +3854,12 @@ pub mod list_members_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3938,7 +3882,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -3949,7 +3893,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4028,7 +3972,7 @@ impl ListMembersInput {
             "ListMembers",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4086,7 +4030,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4097,7 +4041,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4187,7 +4131,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4223,18 +4167,12 @@ pub mod list_usage_totals_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4276,7 +4214,7 @@ pub mod list_usage_totals_input {
 #[doc(hidden)]
 pub type ListUsageTotalsInputOperationOutputAlias = crate::operation::ListUsageTotals;
 #[doc(hidden)]
-pub type ListUsageTotalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsageTotalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsageTotalsInput {
     /// Consumes the builder and constructs an Operation<[`ListUsageTotals`](crate::operation::ListUsageTotals)>
     #[allow(clippy::let_and_return)]
@@ -4287,7 +4225,7 @@ impl ListUsageTotalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsageTotals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4367,7 +4305,7 @@ impl ListUsageTotalsInput {
             "ListUsageTotals",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4454,7 +4392,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4465,7 +4403,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4560,7 +4498,7 @@ impl TagResourceInput {
             "TagResource",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4639,7 +4577,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4650,7 +4588,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4753,7 +4691,7 @@ impl UntagResourceInput {
             "UntagResource",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4857,7 +4795,7 @@ pub mod update_filter_input {
 #[doc(hidden)]
 pub type UpdateFilterInputOperationOutputAlias = crate::operation::UpdateFilter;
 #[doc(hidden)]
-pub type UpdateFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFilter`](crate::operation::UpdateFilter)>
     #[allow(clippy::let_and_return)]
@@ -4868,7 +4806,7 @@ impl UpdateFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4947,7 +4885,7 @@ impl UpdateFilterInput {
             "UpdateFilter",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5009,7 +4947,8 @@ pub mod update_organization_configuration_input {
 pub type UpdateOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::UpdateOrganizationConfiguration;
 #[doc(hidden)]
-pub type UpdateOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOrganizationConfiguration`](crate::operation::UpdateOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5020,7 +4959,7 @@ impl UpdateOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5101,7 +5040,7 @@ impl UpdateOrganizationConfigurationInput {
             "UpdateOrganizationConfiguration",
             "inspector2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5260,10 +5199,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListUsageTotalsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5273,10 +5209,7 @@ impl ListUsageTotalsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5320,20 +5253,15 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
-    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-    /// list all members within the organization if <code>False</code>.</p>
+    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     pub only_associated: std::option::Option<bool>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
-    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-    /// list all members within the organization if <code>False</code>.</p>
+    /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
     pub fn only_associated(&self) -> std::option::Option<bool> {
         self.only_associated
     }
@@ -5341,10 +5269,7 @@ impl ListMembersInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5365,10 +5290,7 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListFindingsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Details on the filters to apply to your finding results.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
@@ -5380,10 +5302,7 @@ impl ListFindingsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5413,10 +5332,7 @@ impl std::fmt::Debug for ListFindingsInput {
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -5430,10 +5346,7 @@ impl ListFindingAggregationsInput {
     pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
         self.aggregation_type.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5470,10 +5383,7 @@ pub struct ListFiltersInput {
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action the filter applies to matched findings.</p>
     pub action: std::option::Option<crate::model::FilterAction>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -5487,10 +5397,7 @@ impl ListFiltersInput {
     pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
         self.action.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5516,10 +5423,7 @@ impl std::fmt::Debug for ListFiltersInput {
 pub struct ListDelegatedAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdminAccountsInput {
@@ -5527,10 +5431,7 @@ impl ListDelegatedAdminAccountsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5548,20 +5449,15 @@ impl std::fmt::Debug for ListDelegatedAdminAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoverageStatisticsInput {
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
     /// <p>The value to group the results by.</p>
     pub group_by: std::option::Option<crate::model::GroupKey>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCoverageStatisticsInput {
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -5569,10 +5465,7 @@ impl ListCoverageStatisticsInput {
     pub fn group_by(&self) -> std::option::Option<&crate::model::GroupKey> {
         self.group_by.as_ref()
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5593,13 +5486,9 @@ impl std::fmt::Debug for ListCoverageStatisticsInput {
 pub struct ListCoverageInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub filter_criteria: std::option::Option<crate::model::CoverageFilterCriteria>,
 }
 impl ListCoverageInput {
@@ -5607,15 +5496,11 @@ impl ListCoverageInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An object that contains details on the filters to apply to the coverage data for your
-    /// environment.</p>
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -5638,10 +5523,7 @@ pub struct ListAccountPermissionsInput {
     pub service: std::option::Option<crate::model::Service>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountPermissionsInput {
@@ -5653,10 +5535,7 @@ impl ListAccountPermissionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value
-    /// of this parameter to null for the first request to a list action. For subsequent calls, use
-    /// the <code>NextToken</code> value returned from the previous request to continue listing
-    /// results after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5940,9 +5819,7 @@ pub struct CreateFilterInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-    /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-    /// allowed.</p>
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of tags for the filter.</p>
     pub tags:
@@ -5961,9 +5838,7 @@ impl CreateFilterInput {
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
-    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-    /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-    /// allowed.</p>
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }

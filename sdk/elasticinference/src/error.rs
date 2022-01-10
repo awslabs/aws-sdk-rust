@@ -12,17 +12,11 @@ pub struct DescribeAcceleratorOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAcceleratorOfferingsErrorKind {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -69,8 +63,6 @@ impl DescribeAcceleratorOfferingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -139,17 +131,11 @@ pub struct DescribeAcceleratorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAcceleratorsErrorKind {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -194,8 +180,6 @@ impl DescribeAcceleratorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -262,9 +246,7 @@ pub struct DescribeAcceleratorTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAcceleratorTypesErrorKind {
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -307,8 +289,6 @@ impl DescribeAcceleratorTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -359,17 +339,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -414,8 +388,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -482,17 +454,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -537,8 +503,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -599,17 +563,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -654,8 +612,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -706,9 +662,7 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p>
-/// Raised when the requested resource cannot be found.
-/// </p>
+/// <p> Raised when the requested resource cannot be found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -772,9 +726,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>
-/// Raised when an unexpected error occurred during request processing.
-/// </p>
+/// <p> Raised when an unexpected error occurred during request processing. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -838,9 +790,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>
-/// Raised when a malformed input has been provided to the API.
-/// </p>
+/// <p> Raised when a malformed input has been provided to the API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {

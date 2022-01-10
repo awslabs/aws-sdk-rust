@@ -11,7 +11,5 @@ pub use chain::CredentialsProviderChain;
 mod credential_fn;
 pub use credential_fn::provide_credentials_fn;
 
-#[cfg(any(feature = "meta", feature = "default-provider"))]
 pub mod lazy_caching;
-#[cfg(any(feature = "meta", feature = "default-provider"))]
 pub use lazy_caching::LazyCachingCredentialsProvider;

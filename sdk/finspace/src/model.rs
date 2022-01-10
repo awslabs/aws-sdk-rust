@@ -21,8 +21,7 @@ pub struct Environment {
     pub sage_maker_studio_domain_url: std::option::Option<std::string::String>,
     /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
-    /// environment.</p>
+    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
     pub dedicated_service_account_id: std::option::Option<std::string::String>,
     /// <p>The authentication mode for the environment.</p>
     pub federation_mode: std::option::Option<crate::model::FederationMode>,
@@ -66,8 +65,7 @@ impl Environment {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
-    /// environment.</p>
+    /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
     pub fn dedicated_service_account_id(&self) -> std::option::Option<&str> {
         self.dedicated_service_account_id.as_deref()
     }
@@ -237,8 +235,7 @@ pub mod environment {
             self.kms_key_id = input;
             self
         }
-        /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
-        /// environment.</p>
+        /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
         pub fn dedicated_service_account_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -246,8 +243,7 @@ pub mod environment {
             self.dedicated_service_account_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
-        /// environment.</p>
+        /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
         pub fn set_dedicated_service_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -315,17 +311,13 @@ pub struct FederationParameters {
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
     pub saml_metadata_url: std::option::Option<std::string::String>,
-    /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
-    /// (IdP).</p>
+    /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
     pub application_call_back_url: std::option::Option<std::string::String>,
     /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
     pub federation_urn: std::option::Option<std::string::String>,
     /// <p>Name of the identity provider (IdP).</p>
     pub federation_provider_name: std::option::Option<std::string::String>,
-    /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
-    /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
-    /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
-    /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+    /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
     pub attribute_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -338,8 +330,7 @@ impl FederationParameters {
     pub fn saml_metadata_url(&self) -> std::option::Option<&str> {
         self.saml_metadata_url.as_deref()
     }
-    /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
-    /// (IdP).</p>
+    /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
     pub fn application_call_back_url(&self) -> std::option::Option<&str> {
         self.application_call_back_url.as_deref()
     }
@@ -351,10 +342,7 @@ impl FederationParameters {
     pub fn federation_provider_name(&self) -> std::option::Option<&str> {
         self.federation_provider_name.as_deref()
     }
-    /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
-    /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
-    /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
-    /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+    /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
     pub fn attribute_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -416,14 +404,12 @@ pub mod federation_parameters {
             self.saml_metadata_url = input;
             self
         }
-        /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
-        /// (IdP).</p>
+        /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
         pub fn application_call_back_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_call_back_url = Some(input.into());
             self
         }
-        /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
-        /// (IdP).</p>
+        /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration (IdP).</p>
         pub fn set_application_call_back_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -461,10 +447,7 @@ pub mod federation_parameters {
         ///
         /// To override the contents of this collection use [`set_attribute_map`](Self::set_attribute_map).
         ///
-        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
-        /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
-        /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
-        /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
         pub fn attribute_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -475,10 +458,7 @@ pub mod federation_parameters {
             self.attribute_map = Some(hash_map);
             self
         }
-        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
-        /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
-        /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
-        /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
+        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to the attribute definition in which user email is set. For example, name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>. Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
         pub fn set_attribute_map(
             mut self,
             input: std::option::Option<

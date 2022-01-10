@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon WorkLink
@@ -217,6 +217,7 @@ where
     ///
     /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
@@ -224,6 +225,7 @@ where
     ///
     /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -231,6 +233,7 @@ where
     ///
     /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
@@ -245,6 +248,7 @@ where
     ///
     /// See [`ListWebsiteAuthorizationProviders`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::into_paginator).
     pub fn list_website_authorization_providers(
         &self,
     ) -> fluent_builders::ListWebsiteAuthorizationProviders<C, M, R> {
@@ -254,6 +258,7 @@ where
     ///
     /// See [`ListWebsiteCertificateAuthorities`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::into_paginator).
     pub fn list_website_certificate_authorities(
         &self,
     ) -> fluent_builders::ListWebsiteCertificateAuthorities<C, M, R> {
@@ -356,7 +361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDomain`.
     ///
     /// <p>Specifies a domain to be associated to Amazon WorkLink.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -401,10 +406,10 @@ pub mod fluent_builders {
                 crate::input::AssociateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -413,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -423,8 +428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fully qualified domain name (FQDN).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN).</p>
@@ -433,8 +438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to display.</p>
@@ -443,8 +448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-        pub fn acm_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acm_certificate_arn(inp);
+        pub fn acm_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acm_certificate_arn(input.into());
             self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
@@ -459,7 +464,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWebsiteAuthorizationProvider`.
     ///
     /// <p>Associates a website authorization provider with a specified fleet. This is used to authorize users against associated websites in the company network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteAuthorizationProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -506,10 +511,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWebsiteAuthorizationProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -518,8 +523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -530,9 +535,9 @@ pub mod fluent_builders {
         /// <p>The authorization provider type.</p>
         pub fn authorization_provider_type(
             mut self,
-            inp: crate::model::AuthorizationProviderType,
+            input: crate::model::AuthorizationProviderType,
         ) -> Self {
-            self.inner = self.inner.authorization_provider_type(inp);
+            self.inner = self.inner.authorization_provider_type(input);
             self
         }
         /// <p>The authorization provider type.</p>
@@ -543,14 +548,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorization_provider_type(input);
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -558,9 +561,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateWebsiteCertificateAuthority`.
     ///
-    /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS
-    /// certificates used by associated websites within the company network.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -607,10 +609,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWebsiteCertificateAuthorityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -619,8 +621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -629,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The root certificate of the CA.</p>
-        pub fn certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(inp);
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The root certificate of the CA.</p>
@@ -639,8 +641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The certificate name to display.</p>
@@ -651,9 +653,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers
-    /// associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -698,10 +699,10 @@ pub mod fluent_builders {
                 crate::input::CreateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -710,8 +711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -720,8 +721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -729,14 +730,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
-        pub fn optimize_for_end_user_location(mut self, inp: bool) -> Self {
-            self.inner = self.inner.optimize_for_end_user_location(inp);
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+        pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
+            self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -754,7 +753,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
@@ -771,7 +770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes a fleet. Prevents users from accessing previously associated websites. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -816,10 +815,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -828,8 +827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -841,7 +840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAuditStreamConfiguration`.
     ///
     /// <p>Describes the configuration for delivering audit streams to the customer account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAuditStreamConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -886,10 +885,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAuditStreamConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -898,8 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -910,9 +909,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCompanyNetworkConfiguration`.
     ///
-    /// <p>Describes the networking configuration to access the internal websites associated with
-    /// the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the networking configuration to access the internal websites associated with the specified fleet.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompanyNetworkConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -959,10 +957,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCompanyNetworkConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -971,8 +969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -984,7 +982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
     /// <p>Provides information about a user's device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1029,10 +1027,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1041,8 +1039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1051,8 +1049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a registered user's device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>A unique identifier for a registered user's device.</p>
@@ -1064,7 +1062,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDevicePolicyConfiguration`.
     ///
     /// <p>Describes the device policy configuration for the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevicePolicyConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1109,10 +1107,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDevicePolicyConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1121,8 +1119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1134,7 +1132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>Provides information about the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1179,10 +1177,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1191,8 +1189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1201,8 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -1213,9 +1211,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetMetadata`.
     ///
-    /// <p>Provides basic information for the specified fleet, excluding identity provider,
-    /// networking, and device configuration details.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1260,10 +1257,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1272,8 +1269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -1285,7 +1282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIdentityProviderConfiguration`.
     ///
     /// <p>Describes the identity provider configuration of the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityProviderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1332,10 +1329,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIdentityProviderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1344,8 +1341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1357,7 +1354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWebsiteCertificateAuthority`.
     ///
     /// <p>Provides information about the certificate authority.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1404,10 +1401,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWebsiteCertificateAuthorityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1416,8 +1413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1426,8 +1423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the certificate authority.</p>
-        pub fn website_ca_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_ca_id(inp);
+        pub fn website_ca_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_ca_id(input.into());
             self
         }
         /// <p>A unique identifier for the certificate authority.</p>
@@ -1442,7 +1439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDomain`.
     ///
     /// <p>Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon WorkLink. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1487,10 +1484,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1499,8 +1496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1509,8 +1506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -1521,10 +1518,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateWebsiteAuthorizationProvider`.
     ///
-    /// <p>Disassociates a website authorization provider from a specified fleet. After the
-    /// disassociation, users can't load any associated websites that require this authorization
-    /// provider.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load any associated websites that require this authorization provider.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteAuthorizationProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1571,10 +1566,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWebsiteAuthorizationProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1583,8 +1578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1593,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
-        pub fn authorization_provider_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_provider_id(inp);
+        pub fn authorization_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_provider_id(input.into());
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
@@ -1609,7 +1604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWebsiteCertificateAuthority`.
     ///
     /// <p>Removes a certificate authority (CA).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1656,10 +1651,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWebsiteCertificateAuthorityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1668,8 +1663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1678,8 +1673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the CA.</p>
-        pub fn website_ca_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_ca_id(inp);
+        pub fn website_ca_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_ca_id(input.into());
             self
         }
         /// <p>A unique identifier for the CA.</p>
@@ -1694,7 +1689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Retrieves a list of devices registered with the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,10 +1734,10 @@ pub mod fluent_builders {
                 crate::input::ListDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1750,9 +1745,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevicesPaginator<C, M, R> {
+            crate::paginator::ListDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1760,21 +1761,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_arn(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -1786,7 +1785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Retrieves a list of domains associated to a specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1831,10 +1830,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1842,9 +1841,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator<C, M, R> {
+            crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1852,21 +1857,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_arn(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -1878,7 +1881,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFleets`.
     ///
     /// <p>Retrieves a list of fleets for the current account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1923,10 +1926,10 @@ pub mod fluent_builders {
                 crate::input::ListFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1934,21 +1937,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFleetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFleetsPaginator<C, M, R> {
+            crate::paginator::ListFleetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -1960,7 +1967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2005,10 +2012,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2017,8 +2024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2030,7 +2037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebsiteAuthorizationProviders`.
     ///
     /// <p>Retrieves a list of website authorization providers associated with a specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteAuthorizationProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2075,10 +2082,10 @@ pub mod fluent_builders {
                 crate::input::ListWebsiteAuthorizationProvidersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2086,9 +2093,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWebsiteAuthorizationProvidersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListWebsiteAuthorizationProvidersPaginator<C, M, R> {
+            crate::paginator::ListWebsiteAuthorizationProvidersPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2097,8 +2115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -2107,8 +2125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -2119,9 +2137,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWebsiteCertificateAuthorities`.
     ///
-    /// <p>Retrieves a list of certificate authorities added for the current account and
-    /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of certificate authorities added for the current account and Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteCertificateAuthorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2166,10 +2183,10 @@ pub mod fluent_builders {
                 crate::input::ListWebsiteCertificateAuthoritiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2177,9 +2194,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWebsiteCertificateAuthoritiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListWebsiteCertificateAuthoritiesPaginator<C, M, R> {
+            crate::paginator::ListWebsiteCertificateAuthoritiesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2188,8 +2216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -2197,14 +2225,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2213,7 +2239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreDomainAccess`.
     ///
     /// <p>Moves a domain to ACTIVE status if it was in the INACTIVE status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreDomainAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2258,10 +2284,10 @@ pub mod fluent_builders {
                 crate::input::RestoreDomainAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2270,8 +2296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2280,8 +2306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2293,7 +2319,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeDomainAccess`.
     ///
     /// <p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeDomainAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2338,10 +2364,10 @@ pub mod fluent_builders {
                 crate::input::RevokeDomainAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2350,8 +2376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2360,8 +2386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2372,9 +2398,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SignOutUser`.
     ///
-    /// <p>Signs the user out from all of their devices. The user can sign in again if they have
-    /// valid credentials.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Signs the user out from all of their devices. The user can sign in again if they have valid credentials.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignOutUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2419,10 +2444,10 @@ pub mod fluent_builders {
                 crate::input::SignOutUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2431,8 +2456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2441,8 +2466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The name of the user.</p>
@@ -2454,7 +2479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2499,10 +2524,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2511,8 +2536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2530,7 +2555,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource. A tag is a key-value pair.</p>
@@ -2547,7 +2572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,10 +2617,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2604,8 +2629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2618,8 +2643,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -2634,7 +2659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAuditStreamConfiguration`.
     ///
     /// <p>Updates the audit stream configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuditStreamConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2679,10 +2704,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAuditStreamConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2691,8 +2716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2701,8 +2726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
-        pub fn audit_stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.audit_stream_arn(inp);
+        pub fn audit_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.audit_stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
@@ -2717,7 +2742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCompanyNetworkConfiguration`.
     ///
     /// <p>Updates the company network configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCompanyNetworkConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2762,10 +2787,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCompanyNetworkConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2774,8 +2799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2784,8 +2809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC with connectivity to associated websites.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The VPC with connectivity to associated websites.</p>
@@ -2798,8 +2823,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
@@ -2815,8 +2840,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>The security groups associated with access to the provided subnets.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>The security groups associated with access to the provided subnets.</p>
@@ -2831,7 +2856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevicePolicyConfiguration`.
     ///
     /// <p>Updates the device policy configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePolicyConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2876,10 +2901,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDevicePolicyConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2888,8 +2913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2898,8 +2923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-        pub fn device_ca_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_ca_certificate(inp);
+        pub fn device_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_ca_certificate(input.into());
             self
         }
         /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
@@ -2914,7 +2939,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainMetadata`.
     ///
     /// <p>Updates domain metadata, such as DisplayName.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2959,10 +2984,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2971,8 +2996,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2981,8 +3006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2991,8 +3016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to display.</p>
@@ -3004,7 +3029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFleetMetadata`.
     ///
     /// <p>Updates fleet metadata, such as DisplayName.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3049,10 +3074,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFleetMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3061,8 +3086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -3071,8 +3096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
@@ -3080,14 +3105,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
-        pub fn optimize_for_end_user_location(mut self, inp: bool) -> Self {
-            self.inner = self.inner.optimize_for_end_user_location(inp);
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+        pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
+            self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -3099,7 +3122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProviderConfiguration`.
     ///
     /// <p>Updates the identity provider configuration for the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProviderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3146,10 +3169,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIdentityProviderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3158,8 +3181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(inp);
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -3168,8 +3191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identity provider.</p>
-        pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
-            self.inner = self.inner.identity_provider_type(inp);
+        pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
+            self.inner = self.inner.identity_provider_type(input);
             self
         }
         /// <p>The type of identity provider.</p>
@@ -3180,17 +3203,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_provider_type(input);
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn identity_provider_saml_metadata(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_saml_metadata(inp);
+            self.inner = self.inner.identity_provider_saml_metadata(input.into());
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn set_identity_provider_saml_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3200,6 +3221,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

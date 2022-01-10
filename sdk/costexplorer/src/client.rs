@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Cost Explorer Service
@@ -238,6 +238,7 @@ where
     ///
     /// See [`GetSavingsPlansCoverage`](crate::client::fluent_builders::GetSavingsPlansCoverage) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSavingsPlansCoverage::into_paginator).
     pub fn get_savings_plans_coverage(&self) -> fluent_builders::GetSavingsPlansCoverage<C, M, R> {
         fluent_builders::GetSavingsPlansCoverage::new(self.handle.clone())
     }
@@ -263,6 +264,7 @@ where
     ///
     /// See [`GetSavingsPlansUtilizationDetails`](crate::client::fluent_builders::GetSavingsPlansUtilizationDetails) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSavingsPlansUtilizationDetails::into_paginator).
     pub fn get_savings_plans_utilization_details(
         &self,
     ) -> fluent_builders::GetSavingsPlansUtilizationDetails<C, M, R> {
@@ -286,6 +288,7 @@ where
     ///
     /// See [`ListCostCategoryDefinitions`](crate::client::fluent_builders::ListCostCategoryDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCostCategoryDefinitions::into_paginator).
     pub fn list_cost_category_definitions(
         &self,
     ) -> fluent_builders::ListCostCategoryDefinitions<C, M, R> {
@@ -334,9 +337,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAnomalyMonitor`.
     ///
-    /// <p>Creates a new cost anomaly detection monitor with the requested type and monitor
-    /// specification. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new cost anomaly detection monitor with the requested type and monitor specification. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -381,10 +383,10 @@ pub mod fluent_builders {
                 crate::input::CreateAnomalyMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -393,8 +395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cost anomaly detection monitor object that you want to create.</p>
-        pub fn anomaly_monitor(mut self, inp: crate::model::AnomalyMonitor) -> Self {
-            self.inner = self.inner.anomaly_monitor(inp);
+        pub fn anomaly_monitor(mut self, input: crate::model::AnomalyMonitor) -> Self {
+            self.inner = self.inner.anomaly_monitor(input);
             self
         }
         /// <p>The cost anomaly detection monitor object that you want to create.</p>
@@ -408,10 +410,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAnomalySubscription`.
     ///
-    /// <p>Adds a subscription to a cost anomaly detection monitor. You can use each subscription to
-    /// define subscribers with email or SNS notifications. Email subscribers can set a dollar
-    /// threshold and a time frequency for receiving notifications. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving notifications. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -456,10 +456,10 @@ pub mod fluent_builders {
                 crate::input::CreateAnomalySubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -468,8 +468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cost anomaly subscription object that you want to create. </p>
-        pub fn anomaly_subscription(mut self, inp: crate::model::AnomalySubscription) -> Self {
-            self.inner = self.inner.anomaly_subscription(inp);
+        pub fn anomaly_subscription(mut self, input: crate::model::AnomalySubscription) -> Self {
+            self.inner = self.inner.anomaly_subscription(input);
             self
         }
         /// <p>The cost anomaly subscription object that you want to create. </p>
@@ -484,7 +484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCostCategoryDefinition`.
     ///
     /// <p>Creates a new Cost Category with the requested name and rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -529,10 +529,10 @@ pub mod fluent_builders {
                 crate::input::CreateCostCategoryDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -541,8 +541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the Cost Category.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the Cost Category.</p>
@@ -551,8 +551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
-        pub fn rule_version(mut self, inp: crate::model::CostCategoryRuleVersion) -> Self {
-            self.inner = self.inner.rule_version(inp);
+        pub fn rule_version(mut self, input: crate::model::CostCategoryRuleVersion) -> Self {
+            self.inner = self.inner.rule_version(input);
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -567,14 +567,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The Cost Category rules used to categorize costs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::CostCategoryRule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The Cost Category rules used to categorize costs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
+        /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
@@ -582,14 +580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The
-        /// default value for the cost category.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(inp);
+        /// <p>The default value for the cost category.</p>
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(input.into());
             self
         }
-        /// <p>The
-        /// default value for the cost category.</p>
+        /// <p>The default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -601,19 +597,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
         ///
-        /// <p>
-        /// The split charge rules used to allocate your charges between your Cost Category values.
-        /// </p>
+        /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
         pub fn split_charge_rules(
             mut self,
-            inp: impl Into<crate::model::CostCategorySplitChargeRule>,
+            input: crate::model::CostCategorySplitChargeRule,
         ) -> Self {
-            self.inner = self.inner.split_charge_rules(inp);
+            self.inner = self.inner.split_charge_rules(input);
             self
         }
-        /// <p>
-        /// The split charge rules used to allocate your charges between your Cost Category values.
-        /// </p>
+        /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
         pub fn set_split_charge_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
@@ -625,7 +617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalyMonitor`.
     ///
     /// <p>Deletes a cost anomaly monitor. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -670,10 +662,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnomalyMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -682,8 +674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
-        pub fn monitor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(inp);
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
@@ -695,7 +687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalySubscription`.
     ///
     /// <p>Deletes a cost anomaly subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -740,10 +732,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnomalySubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -752,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
@@ -768,7 +760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCostCategoryDefinition`.
     ///
     /// <p>Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost Category.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -813,10 +805,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCostCategoryDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -824,16 +816,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
-        pub fn cost_category_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(inp);
+        /// <p> The unique identifier for your Cost Category. </p>
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -846,7 +834,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.</p>
     /// <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -891,10 +879,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCostCategoryDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -902,16 +890,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
-        pub fn cost_category_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(inp);
+        /// <p> The unique identifier for your Cost Category. </p>
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -919,16 +903,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cost_category_arn(input);
             self
         }
-        /// <p>
-        /// The date when the Cost Category was effective.
-        /// </p>
-        pub fn effective_on(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.effective_on(inp);
+        /// <p> The date when the Cost Category was effective. </p>
+        pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.effective_on(input.into());
             self
         }
-        /// <p>
-        /// The date when the Cost Category was effective.
-        /// </p>
+        /// <p> The date when the Cost Category was effective. </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_effective_on(input);
             self
@@ -936,9 +916,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAnomalies`.
     ///
-    /// <p>Retrieves all of the cost anomalies detected on your account during the time period that's
-    /// specified by the <code>DateInterval</code> object. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves all of the cost anomalies detected on your account during the time period that's specified by the <code>DateInterval</code> object. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -983,10 +962,10 @@ pub mod fluent_builders {
                 crate::input::GetAnomaliesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -994,26 +973,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
-        /// Resource Name (ARN). </p>
-        pub fn monitor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(inp);
+        /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
-        /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
-        /// Resource Name (ARN). </p>
+        /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_monitor_arn(input);
             self
         }
-        /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object
-        /// will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-        pub fn date_interval(mut self, inp: crate::model::AnomalyDateInterval) -> Self {
-            self.inner = self.inner.date_interval(inp);
+        /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
+        pub fn date_interval(mut self, input: crate::model::AnomalyDateInterval) -> Self {
+            self.inner = self.inner.date_interval(input);
             self
         }
-        /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object
-        /// will have an <code>AnomalyEndDate</code> in the specified time range. </p>
+        /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
         pub fn set_date_interval(
             mut self,
             input: std::option::Option<crate::model::AnomalyDateInterval>,
@@ -1022,8 +997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-        pub fn feedback(mut self, inp: crate::model::AnomalyFeedbackType) -> Self {
-            self.inner = self.inner.feedback(inp);
+        pub fn feedback(mut self, input: crate::model::AnomalyFeedbackType) -> Self {
+            self.inner = self.inner.feedback(input);
             self
         }
         /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
@@ -1034,16 +1009,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feedback(input);
             self
         }
-        /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you
-        /// can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated
-        /// dollar impact greater than 200. </p>
-        pub fn total_impact(mut self, inp: crate::model::TotalImpactFilter) -> Self {
-            self.inner = self.inner.total_impact(inp);
+        /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
+        pub fn total_impact(mut self, input: crate::model::TotalImpactFilter) -> Self {
+            self.inner = self.inner.total_impact(input);
             self
         }
-        /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you
-        /// can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated
-        /// dollar impact greater than 200. </p>
+        /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
         pub fn set_total_impact(
             mut self,
             input: std::option::Option<crate::model::TotalImpactFilter>,
@@ -1051,14 +1022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_total_impact(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1067,8 +1036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
@@ -1079,9 +1048,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAnomalyMonitors`.
     ///
-    /// <p>Retrieves the cost anomaly monitor definitions for your account. You can filter using a
-    /// list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalyMonitors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1126,10 +1094,10 @@ pub mod fluent_builders {
                 crate::input::GetAnomalyMonitorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1142,8 +1110,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
         ///
         /// <p>A list of cost anomaly monitor ARNs. </p>
-        pub fn monitor_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn_list(inp);
+        pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn_list(input.into());
             self
         }
         /// <p>A list of cost anomaly monitor ARNs. </p>
@@ -1154,14 +1122,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn_list(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1170,8 +1136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries that a paginated response contains. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries that a paginated response contains. </p>
@@ -1182,9 +1148,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAnomalySubscriptions`.
     ///
-    /// <p>Retrieves the cost anomaly subscription objects for your account. You can filter using a
-    /// list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalySubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1229,10 +1194,10 @@ pub mod fluent_builders {
                 crate::input::GetAnomalySubscriptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1245,8 +1210,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscription_arn_list`](Self::set_subscription_arn_list).
         ///
         /// <p>A list of cost anomaly subscription ARNs. </p>
-        pub fn subscription_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn_list(inp);
+        pub fn subscription_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn_list(input.into());
             self
         }
         /// <p>A list of cost anomaly subscription ARNs. </p>
@@ -1258,8 +1223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Cost anomaly monitor ARNs. </p>
-        pub fn monitor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(inp);
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>Cost anomaly monitor ARNs. </p>
@@ -1267,14 +1232,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1283,8 +1246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
@@ -1295,13 +1258,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCostAndUsage`.
     ///
-    /// <p>Retrieves cost and usage metrics for your account. You can specify which cost and
-    /// usage-related metric that you want the request to return. For example, you can specify
-    /// <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group your
-    /// data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific
-    /// time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p>
+    /// <p>Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p>
     /// <p>For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostAndUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1346,10 +1305,10 @@ pub mod fluent_builders {
                 crate::input::GetCostAndUsageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1357,20 +1316,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
-        /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
-        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
-        /// usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
-        /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
-        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
-        /// usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -1378,14 +1329,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
-        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -1393,18 +1342,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_granularity(input);
             self
         }
-        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
-        /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
-        /// to define any combination of dimension filters. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
-        /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
-        /// to define any combination of dimension filters. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -1413,40 +1356,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see
-        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
-        /// appear on some line items in my bill?</a>. </p>
-        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
-        /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
-        /// <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking into account the units. For example, if you aggregate
-        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
-        /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
-        /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
-        /// <p>
-        /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        /// <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
-        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see
-        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
-        /// appear on some line items in my bill?</a>. </p>
-        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
-        /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
-        /// <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking into account the units. For example, if you aggregate
-        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
-        /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
-        /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
-        /// <p>
-        /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
+        /// <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1458,22 +1381,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
-        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
-        /// cost categories, or any two group by types.</p>
-        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
-        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-        /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
-        /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
+        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+        /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
-        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
-        /// cost categories, or any two group by types.</p>
-        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
-        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
-        /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
-        /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
+        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
+        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+        /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -1482,8 +1399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -1497,15 +1414,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCostAndUsageWithResources`.
     ///
-    /// <p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and
-    /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that
-    /// you want the request to return. You can also filter and group your data by various dimensions,
-    /// such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list
-    /// of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p>
-    /// <note>
+    /// <p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p> <note>
     /// <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostAndUsageWithResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1550,10 +1462,10 @@ pub mod fluent_builders {
                 crate::input::GetCostAndUsageWithResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1561,14 +1473,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -1576,16 +1486,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-        /// <code>Granularity</code> isn't set, the response object doesn't include the
-        /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
-        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
-        /// <code>Granularity</code> isn't set, the response object doesn't include the
-        /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -1593,24 +1499,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_granularity(input);
             self
         }
-        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify
-        /// <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
-        /// with that account's usage of that service. You can nest <code>Expression</code> objects to
-        /// define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-        /// <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify
-        /// <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
-        /// with that account's usage of that service. You can nest <code>Expression</code> objects to
-        /// define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-        /// <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -1619,44 +1515,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>Which metrics are returned in the query. For more information about blended and
-        /// unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does
-        /// the "blended" annotation appear on some line items in my bill?</a>. </p>
-        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
-        /// <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
-        /// <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-        /// <code>UsageQuantity</code>. </p>
-        /// <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking the units into account. For example, if you aggregate
-        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
-        /// Amazon EC2 compute hours and data transfer are measured in different units (for example, hours
-        /// vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
-        /// <p>
-        /// <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
-        /// <p>Which metrics are returned in the query. For more information about blended and
-        /// unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does
-        /// the "blended" annotation appear on some line items in my bill?</a>. </p>
-        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
-        /// <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
-        /// <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-        /// <code>UsageQuantity</code>. </p>
-        /// <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking the units into account. For example, if you aggregate
-        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
-        /// Amazon EC2 compute hours and data transfer are measured in different units (for example, hours
-        /// vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
-        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
-        /// <p>
-        /// <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
+        /// <p> <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1669,8 +1541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
@@ -1682,8 +1554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -1697,11 +1569,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCostCategories`.
     ///
-    /// <p>Retrieves an array of Cost Category names and values incurred cost.</p>
-    /// <note>
+    /// <p>Retrieves an array of Cost Category names and values incurred cost.</p> <note>
     /// <p>If some Cost Category names and values are not associated with any cost, they will not be returned by this API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1746,10 +1617,10 @@ pub mod fluent_builders {
                 crate::input::GetCostCategoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1759,8 +1630,8 @@ pub mod fluent_builders {
         }
         /// <p>The value that you want to search the filter values for.</p>
         /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(inp);
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search the filter values for.</p>
@@ -1773,8 +1644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time period of the request. </p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period of the request. </p>
@@ -1786,8 +1657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the Cost Category.</p>
-        pub fn cost_category_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_name(inp);
+        pub fn cost_category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_name(input.into());
             self
         }
         /// <p>The unique name of the Cost Category.</p>
@@ -1800,117 +1671,27 @@ pub mod fluent_builders {
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
-        /// </note>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
-        /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
@@ -1923,86 +1704,30 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, inp: impl Into<crate::model::SortDefinition>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
@@ -2014,22 +1739,22 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-        /// <p>The maximum number of objects that to be returned for this request.  If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
-        /// <p>The maximum number of objects that to be returned for this request.  If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>The maximum number of objects that to be returned for this request. If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
@@ -2044,7 +1769,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCostForecast`.
     ///
     /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2089,10 +1814,10 @@ pub mod fluent_builders {
                 crate::input::GetCostForecastInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2101,8 +1826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
@@ -2113,51 +1838,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see
-        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
-        /// appear on some line items in my bill?</a>. </p>
+        /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
         /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMORTIZED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>BLENDED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_AMORTIZED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_UNBLENDED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>UNBLENDED_COST</p>
-        /// </li>
+        /// <li> <p>AMORTIZED_COST</p> </li>
+        /// <li> <p>BLENDED_COST</p> </li>
+        /// <li> <p>NET_AMORTIZED_COST</p> </li>
+        /// <li> <p>NET_UNBLENDED_COST</p> </li>
+        /// <li> <p>UNBLENDED_COST</p> </li>
         /// </ul>
-        pub fn metric(mut self, inp: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric(inp);
+        pub fn metric(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric(input);
             self
         }
-        /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see
-        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
-        /// appear on some line items in my bill?</a>. </p>
+        /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>. </p>
         /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMORTIZED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>BLENDED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_AMORTIZED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_UNBLENDED_COST</p>
-        /// </li>
-        /// <li>
-        /// <p>UNBLENDED_COST</p>
-        /// </li>
+        /// <li> <p>AMORTIZED_COST</p> </li>
+        /// <li> <p>BLENDED_COST</p> </li>
+        /// <li> <p>NET_AMORTIZED_COST</p> </li>
+        /// <li> <p>NET_UNBLENDED_COST</p> </li>
+        /// <li> <p>UNBLENDED_COST</p> </li>
         /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.inner = self.inner.set_metric(input);
@@ -2165,8 +1866,8 @@ pub mod fluent_builders {
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
         /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
@@ -2179,261 +1880,71 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AZ</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PURCHASE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECORD_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TENANCY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCOPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLATFORM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBSCRIPTION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGAL_ENTITY_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPLOYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DATABASE_ENGINE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BILLING_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESERVATION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AZ</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+        /// <li> <p> <code>OPERATION</code> </p> </li>
+        /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+        /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+        /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+        /// <li> <p> <code>TENANCY</code> </p> </li>
+        /// <li> <p> <code>SCOPE</code> </p> </li>
+        /// <li> <p> <code>PLATFORM</code> </p> </li>
+        /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+        /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+        /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+        /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+        /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
         /// </ul>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AZ</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PURCHASE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECORD_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TENANCY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCOPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLATFORM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBSCRIPTION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGAL_ENTITY_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPLOYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DATABASE_ENGINE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BILLING_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESERVATION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AZ</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+        /// <li> <p> <code>OPERATION</code> </p> </li>
+        /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+        /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+        /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+        /// <li> <p> <code>TENANCY</code> </p> </li>
+        /// <li> <p> <code>SCOPE</code> </p> </li>
+        /// <li> <p> <code>PLATFORM</code> </p> </li>
+        /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+        /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+        /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+        /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+        /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
         /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
-        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
-        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-        pub fn prediction_interval_level(mut self, inp: i32) -> Self {
-            self.inner = self.inner.prediction_interval_level(inp);
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        pub fn prediction_interval_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.prediction_interval_level(input);
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
-        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
-        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_prediction_interval_level(input);
             self
@@ -2442,7 +1953,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDimensionValues`.
     ///
     /// <p>Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDimensionValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2487,10 +1998,10 @@ pub mod fluent_builders {
                 crate::input::GetDimensionValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2499,8 +2010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value that you want to search the filter values for.</p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(inp);
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search the filter values for.</p>
@@ -2511,20 +2022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_string(input);
             self
         }
-        /// <p>The start date and end date for retrieving the dimension values. The start date is
-        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
-        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
-        /// usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>The start date and end date for retrieving the dimension values. The start date is
-        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
-        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
-        /// usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -2532,18 +2035,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
-        /// For more information, see <code>Context</code>.
-        ///
-        /// </p>
-        pub fn dimension(mut self, inp: crate::model::Dimension) -> Self {
-            self.inner = self.inner.dimension(inp);
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
+        pub fn dimension(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimension(input);
             self
         }
-        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
-        /// For more information, see <code>Context</code>.
-        ///
-        /// </p>
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. </p>
         pub fn set_dimension(
             mut self,
             input: std::option::Option<crate::model::Dimension>,
@@ -2551,237 +2048,91 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dimension(input);
             self
         }
-        /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>.
-        /// The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
-        /// can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>,
-        /// the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-        /// Instances and Standard Reserved Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-        /// includes a unit attribute. Examples include GB and Hrs.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-        /// operation includes a unit attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-        /// </li>
-        /// <li>
-        /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-        /// </li>
-        /// <li>
-        /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-        /// </li>
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
         /// </ul>
-        pub fn context(mut self, inp: crate::model::Context) -> Self {
-            self.inner = self.inner.context(inp);
+        pub fn context(mut self, input: crate::model::Context) -> Self {
+            self.inner = self.inner.context(input);
             self
         }
-        /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>.
-        /// The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
-        /// can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>,
-        /// the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-        /// Instances and Standard Reserved Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-        /// includes a unit attribute. Examples include GB and Hrs.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-        /// operation includes a unit attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-        /// </li>
-        /// <li>
-        /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-        /// </li>
-        /// <li>
-        /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-        /// </li>
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
         /// </ul>
         pub fn set_context(mut self, input: std::option::Option<crate::model::Context>) -> Self {
             self.inner = self.inner.set_context(input);
@@ -2789,117 +2140,27 @@ pub mod fluent_builders {
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
-        /// </note>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
-        /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
@@ -2912,86 +2173,30 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, inp: impl Into<crate::model::SortDefinition>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
@@ -3004,8 +2209,8 @@ pub mod fluent_builders {
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
@@ -3015,8 +2220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -3030,49 +2235,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReservationCoverage`.
     ///
-    /// <p>Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or
-    /// Amazon Redshift usage is covered by a reservation. An organization's management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions.
-    /// For any time period, you can filter data about reservation usage by the following dimensions:</p>
+    /// <p>Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about reservation usage by the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ</p>
-    /// </li>
-    /// <li>
-    /// <p>CACHE_ENGINE</p>
-    /// </li>
-    /// <li>
-    /// <p>DATABASE_ENGINE</p>
-    /// </li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p>
-    /// </li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM</p>
-    /// </li>
-    /// <li>
-    /// <p>REGION</p>
-    /// </li>
-    /// <li>
-    /// <p>SERVICE</p>
-    /// </li>
-    /// <li>
-    /// <p>TAG</p>
-    /// </li>
-    /// <li>
-    /// <p>TENANCY</p>
-    /// </li>
+    /// <li> <p>AZ</p> </li>
+    /// <li> <p>CACHE_ENGINE</p> </li>
+    /// <li> <p>DATABASE_ENGINE</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+    /// <li> <p>INSTANCE_TYPE</p> </li>
+    /// <li> <p>LINKED_ACCOUNT</p> </li>
+    /// <li> <p>OPERATING_SYSTEM</p> </li>
+    /// <li> <p>PLATFORM</p> </li>
+    /// <li> <p>REGION</p> </li>
+    /// <li> <p>SERVICE</p> </li>
+    /// <li> <p>TAG</p> </li>
+    /// <li> <p>TENANCY</p> </li>
     /// </ul>
     /// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3117,10 +2296,10 @@ pub mod fluent_builders {
                 crate::input::GetReservationCoverageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3128,16 +2307,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data
-        /// for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data
-        /// for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -3151,73 +2326,33 @@ pub mod fluent_builders {
         ///
         /// <p>You can group the data by the following attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DATABASE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>You can group the data by the following attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DATABASE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
         pub fn set_group_by(
             mut self,
@@ -3227,16 +2362,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
-        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
-        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
@@ -3247,98 +2380,42 @@ pub mod fluent_builders {
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DATABASE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>SERVICE</p> </li>
+        /// <li> <p>TAG</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetReservationCoverage</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.
-        /// If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
         /// <p>Cost category is also supported.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DATABASE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>SERVICE</p> </li>
+        /// <li> <p>TAG</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetReservationCoverage</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.
-        /// If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
         /// <p>Cost category is also supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
@@ -3351,8 +2428,8 @@ pub mod fluent_builders {
         ///
         /// <p>The measurement that you want your reservation coverage reported in.</p>
         /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
         /// <p>The measurement that you want your reservation coverage reported in.</p>
@@ -3365,8 +2442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -3380,118 +2457,36 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoverageHoursPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReservedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalRunningHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoverageNormalizedUnitsPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReservedNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalRunningNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Time</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>OnDemandCost</code> </p> </li>
+        /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+        /// <li> <p> <code>OnDemandHours</code> </p> </li>
+        /// <li> <p> <code>ReservedHours</code> </p> </li>
+        /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+        /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+        /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>Time</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoverageHoursPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReservedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalRunningHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoverageNormalizedUnitsPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReservedNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalRunningNormalizedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Time</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>OnDemandCost</code> </p> </li>
+        /// <li> <p> <code>CoverageHoursPercentage</code> </p> </li>
+        /// <li> <p> <code>OnDemandHours</code> </p> </li>
+        /// <li> <p> <code>ReservedHours</code> </p> </li>
+        /// <li> <p> <code>TotalRunningHours</code> </p> </li>
+        /// <li> <p> <code>CoverageNormalizedUnitsPercentage</code> </p> </li>
+        /// <li> <p> <code>OnDemandNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>ReservedNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>TotalRunningNormalizedUnits</code> </p> </li>
+        /// <li> <p> <code>Time</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
@@ -3501,8 +2496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -3513,17 +2508,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReservationPurchaseRecommendation`.
     ///
-    /// <p>Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs.
-    /// Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>
-    /// <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage
-    /// into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations
-    /// in each category of usage to identify the best number of each type of RI to purchase to maximize your estimated savings. </p>
-    /// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region
-    /// and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance
-    /// in an instance family. This makes it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units
-    /// so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code>
-    /// because that is the smallest size instance in the c4 instance family.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>
+    /// <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of RI to purchase to maximize your estimated savings. </p>
+    /// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationPurchaseRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3570,10 +2558,10 @@ pub mod fluent_builders {
                 crate::input::GetReservationPurchaseRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3582,8 +2570,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID that is associated with the recommendation. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID that is associated with the recommendation. </p>
@@ -3592,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The specific service that you want recommendations for.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The specific service that you want recommendations for.</p>
@@ -3603,125 +2591,35 @@ pub mod fluent_builders {
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
-        /// </note>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
-        /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-        pub fn account_scope(mut self, inp: crate::model::AccountScope) -> Self {
-            self.inner = self.inner.account_scope(inp);
+        pub fn account_scope(mut self, input: crate::model::AccountScope) -> Self {
+            self.inner = self.inner.account_scope(input);
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -3733,8 +2631,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
-        pub fn lookback_period_in_days(mut self, inp: crate::model::LookbackPeriodInDays) -> Self {
-            self.inner = self.inner.lookback_period_in_days(inp);
+        pub fn lookback_period_in_days(
+            mut self,
+            input: crate::model::LookbackPeriodInDays,
+        ) -> Self {
+            self.inner = self.inner.lookback_period_in_days(input);
             self
         }
         /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
@@ -3746,8 +2647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reservation term that you want recommendations for.</p>
-        pub fn term_in_years(mut self, inp: crate::model::TermInYears) -> Self {
-            self.inner = self.inner.term_in_years(inp);
+        pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
+            self.inner = self.inner.term_in_years(input);
             self
         }
         /// <p>The reservation term that you want recommendations for.</p>
@@ -3759,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reservation purchase option that you want recommendations for.</p>
-        pub fn payment_option(mut self, inp: crate::model::PaymentOption) -> Self {
-            self.inner = self.inner.payment_option(inp);
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(input);
             self
         }
         /// <p>The reservation purchase option that you want recommendations for.</p>
@@ -3772,8 +2673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
-        pub fn service_specification(mut self, inp: crate::model::ServiceSpecification) -> Self {
-            self.inner = self.inner.service_specification(inp);
+        pub fn service_specification(mut self, input: crate::model::ServiceSpecification) -> Self {
+            self.inner = self.inner.service_specification(input);
             self
         }
         /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
@@ -3785,8 +2686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -3795,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -3810,10 +2711,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReservationUtilization`.
     ///
-    /// <p>Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts.
-    /// You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible
-    /// dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReservationUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3858,10 +2757,10 @@ pub mod fluent_builders {
                 crate::input::GetReservationUtilizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3869,14 +2768,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -3889,8 +2786,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
@@ -3901,17 +2798,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-        /// If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
-        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
-        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-        /// If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
@@ -3922,281 +2815,89 @@ pub mod fluent_builders {
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>SERVICE</p> </li>
+        /// <li> <p>SCOPE</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetReservationUtilization</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to
-        /// only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY</p>
-        /// </li>
+        /// <li> <p>AZ</p> </li>
+        /// <li> <p>CACHE_ENGINE</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION</p> </li>
+        /// <li> <p>INSTANCE_TYPE</p> </li>
+        /// <li> <p>LINKED_ACCOUNT</p> </li>
+        /// <li> <p>OPERATING_SYSTEM</p> </li>
+        /// <li> <p>PLATFORM</p> </li>
+        /// <li> <p>REGION</p> </li>
+        /// <li> <p>SERVICE</p> </li>
+        /// <li> <p>SCOPE</p> </li>
+        /// <li> <p>TENANCY</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetReservationUtilization</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to
-        /// only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
-        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentageInUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PurchasedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PurchasedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalActualHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalActualUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCostOfRIHoursUsed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetRISavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalPotentialRISavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedUpfrontFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedRecurringFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalAmortizedFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RICostForUnusedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealizedSavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnrealizedSavings</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>UtilizationPercentageInUnits</code> </p> </li>
+        /// <li> <p> <code>PurchasedHours</code> </p> </li>
+        /// <li> <p> <code>PurchasedUnits</code> </p> </li>
+        /// <li> <p> <code>TotalActualHours</code> </p> </li>
+        /// <li> <p> <code>TotalActualUnits</code> </p> </li>
+        /// <li> <p> <code>UnusedHours</code> </p> </li>
+        /// <li> <p> <code>UnusedUnits</code> </p> </li>
+        /// <li> <p> <code>OnDemandCostOfRIHoursUsed</code> </p> </li>
+        /// <li> <p> <code>NetRISavings</code> </p> </li>
+        /// <li> <p> <code>TotalPotentialRISavings</code> </p> </li>
+        /// <li> <p> <code>AmortizedUpfrontFee</code> </p> </li>
+        /// <li> <p> <code>AmortizedRecurringFee</code> </p> </li>
+        /// <li> <p> <code>TotalAmortizedFee</code> </p> </li>
+        /// <li> <p> <code>RICostForUnusedHours</code> </p> </li>
+        /// <li> <p> <code>RealizedSavings</code> </p> </li>
+        /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
-        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentageInUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PurchasedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PurchasedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalActualHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalActualUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedUnits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCostOfRIHoursUsed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetRISavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalPotentialRISavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedUpfrontFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedRecurringFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalAmortizedFee</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RICostForUnusedHours</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RealizedSavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnrealizedSavings</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>UtilizationPercentageInUnits</code> </p> </li>
+        /// <li> <p> <code>PurchasedHours</code> </p> </li>
+        /// <li> <p> <code>PurchasedUnits</code> </p> </li>
+        /// <li> <p> <code>TotalActualHours</code> </p> </li>
+        /// <li> <p> <code>TotalActualUnits</code> </p> </li>
+        /// <li> <p> <code>UnusedHours</code> </p> </li>
+        /// <li> <p> <code>UnusedUnits</code> </p> </li>
+        /// <li> <p> <code>OnDemandCostOfRIHoursUsed</code> </p> </li>
+        /// <li> <p> <code>NetRISavings</code> </p> </li>
+        /// <li> <p> <code>TotalPotentialRISavings</code> </p> </li>
+        /// <li> <p> <code>AmortizedUpfrontFee</code> </p> </li>
+        /// <li> <p> <code>AmortizedRecurringFee</code> </p> </li>
+        /// <li> <p> <code>TotalAmortizedFee</code> </p> </li>
+        /// <li> <p> <code>RICostForUnusedHours</code> </p> </li>
+        /// <li> <p> <code>RealizedSavings</code> </p> </li>
+        /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
@@ -4206,8 +2907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4219,8 +2920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -4231,17 +2932,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRightsizingRecommendation`.
     ///
-    /// <p>Creates recommendations that
-    /// help you save cost
-    /// by identifying idle and underutilized Amazon EC2 instances.</p>
-    /// <p>Recommendations are generated to either downsize or terminate instances, along with
-    /// providing savings detail and metrics. For details on calculation and function, see
-    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
-    /// Your Cost with Rightsizing
-    /// Recommendations</a>
-    /// in the <i>Billing and Cost Management User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.</p>
+    /// <p>Recommendations are generated to either downsize or terminate instances, along with providing savings detail and metrics. For details on calculation and function, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRightsizingRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4286,10 +2979,10 @@ pub mod fluent_builders {
                 crate::input::GetRightsizingRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4299,139 +2992,41 @@ pub mod fluent_builders {
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
-        /// </note>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
-        /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-        /// recommendations for instances within the same instance families or across different instance
-        /// families. You can also choose to view your estimated savings associated with recommendations
-        /// with consideration of existing Savings Plans or RI benefits, or
-        /// neither. </p>
+        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn configuration(
             mut self,
-            inp: crate::model::RightsizingRecommendationConfiguration,
+            input: crate::model::RightsizingRecommendationConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(inp);
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-        /// recommendations for instances within the same instance families or across different instance
-        /// families. You can also choose to view your estimated savings associated with recommendations
-        /// with consideration of existing Savings Plans or RI benefits, or
-        /// neither. </p>
+        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
@@ -4439,21 +3034,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is
-        /// "<code>AmazonEC2</code>".</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
-        /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is
-        /// "<code>AmazonEC2</code>".</p>
+        /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -4462,8 +3055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -4479,29 +3072,13 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LINKED_ACCOUNT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REGION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTANCE_FAMILY</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansCoverage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4546,10 +3123,10 @@ pub mod fluent_builders {
                 crate::input::GetSavingsPlansCoverageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4557,9 +3134,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSavingsPlansCoveragePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetSavingsPlansCoveragePaginator<C, M, R> {
+            crate::paginator::GetSavingsPlansCoveragePaginator::new(self.handle, self.inner)
+        }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -4575,8 +3158,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
         /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
-        pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
-            self.inner = self.inner.group_by(inp);
+        pub fn group_by(mut self, input: crate::model::GroupDefinition) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
@@ -4589,8 +3172,8 @@ pub mod fluent_builders {
         }
         /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
         /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
@@ -4604,63 +3187,25 @@ pub mod fluent_builders {
         }
         /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansCoverage</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>Cost category is also supported.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansCoverage</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>Cost category is also supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
@@ -4671,8 +3216,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
         /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
         /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
@@ -4684,8 +3229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4694,8 +3239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -4706,88 +3251,30 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SpendCoveredBySavingsPlan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoveragePercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceFamily</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Service</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
+        /// <li> <p> <code>OnDemandCost</code> </p> </li>
+        /// <li> <p> <code>CoveragePercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCost</code> </p> </li>
+        /// <li> <p> <code>InstanceFamily</code> </p> </li>
+        /// <li> <p> <code>Region</code> </p> </li>
+        /// <li> <p> <code>Service</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SpendCoveredBySavingsPlan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OnDemandCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CoveragePercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceFamily</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Service</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
+        /// <li> <p> <code>OnDemandCost</code> </p> </li>
+        /// <li> <p> <code>CoveragePercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCost</code> </p> </li>
+        /// <li> <p> <code>InstanceFamily</code> </p> </li>
+        /// <li> <p> <code>Region</code> </p> </li>
+        /// <li> <p> <code>Service</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
@@ -4800,7 +3287,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSavingsPlansPurchaseRecommendation`.
     ///
     /// <p>Retrieves your request parameters, Savings Plan Recommendations Summary and Details. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansPurchaseRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4847,10 +3334,10 @@ pub mod fluent_builders {
                 crate::input::GetSavingsPlansPurchaseRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4859,8 +3346,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Savings Plans recommendation type requested.</p>
-        pub fn savings_plans_type(mut self, inp: crate::model::SupportedSavingsPlansType) -> Self {
-            self.inner = self.inner.savings_plans_type(inp);
+        pub fn savings_plans_type(
+            mut self,
+            input: crate::model::SupportedSavingsPlansType,
+        ) -> Self {
+            self.inner = self.inner.savings_plans_type(input);
             self
         }
         /// <p>The Savings Plans recommendation type requested.</p>
@@ -4871,16 +3361,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_savings_plans_type(input);
             self
         }
-        /// <p>The savings plan recommendation term used to
-        /// generate these
-        /// recommendations.</p>
-        pub fn term_in_years(mut self, inp: crate::model::TermInYears) -> Self {
-            self.inner = self.inner.term_in_years(inp);
+        /// <p>The savings plan recommendation term used to generate these recommendations.</p>
+        pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
+            self.inner = self.inner.term_in_years(input);
             self
         }
-        /// <p>The savings plan recommendation term used to
-        /// generate these
-        /// recommendations.</p>
+        /// <p>The savings plan recommendation term used to generate these recommendations.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -4889,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The payment option used to generate these recommendations.</p>
-        pub fn payment_option(mut self, inp: crate::model::PaymentOption) -> Self {
-            self.inner = self.inner.payment_option(inp);
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(input);
             self
         }
         /// <p>The payment option used to generate these recommendations.</p>
@@ -4902,8 +3388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-        pub fn account_scope(mut self, inp: crate::model::AccountScope) -> Self {
-            self.inner = self.inner.account_scope(inp);
+        pub fn account_scope(mut self, input: crate::model::AccountScope) -> Self {
+            self.inner = self.inner.account_scope(input);
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -4915,8 +3401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4928,8 +3414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -4938,8 +3424,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lookback period used to generate the recommendation.</p>
-        pub fn lookback_period_in_days(mut self, inp: crate::model::LookbackPeriodInDays) -> Self {
-            self.inner = self.inner.lookback_period_in_days(inp);
+        pub fn lookback_period_in_days(
+            mut self,
+            input: crate::model::LookbackPeriodInDays,
+        ) -> Self {
+            self.inner = self.inner.lookback_period_in_days(input);
             self
         }
         /// <p>The lookback period used to generate the recommendation.</p>
@@ -4950,30 +3439,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lookback_period_in_days(input);
             self
         }
-        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
-        /// dimension. To filter your recommendations by Account ID, specify <code>Key</code> as
-        /// <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for
-        /// which you want to see Savings Plans purchase recommendations.</p>
-        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
-        /// <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
-        /// With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and
-        /// <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for
-        /// which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-        /// <code>OR</code> operators are not supported.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
+        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
-        /// dimension. To filter your recommendations by Account ID, specify <code>Key</code> as
-        /// <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for
-        /// which you want to see Savings Plans purchase recommendations.</p>
-        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
-        /// <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
-        /// With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and
-        /// <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for
-        /// which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
-        /// <code>OR</code> operators are not supported.</p>
+        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.</p>
+        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -4981,11 +3454,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSavingsPlansUtilization`.
     ///
-    /// <p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity. Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-    /// <note>
+    /// <p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity. Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note>
     /// <p>You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5030,10 +3502,10 @@ pub mod fluent_builders {
                 crate::input::GetSavingsPlansUtilizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5042,8 +3514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -5056,8 +3528,8 @@ pub mod fluent_builders {
         }
         /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
         /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
@@ -5069,84 +3541,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_granularity(input);
             self
         }
-        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLANS_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansUtilization</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLANS_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansUtilization</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p> <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -5154,68 +3572,26 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetSavings</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCommitment</code> </p> </li>
+        /// <li> <p> <code>UsedCommitment</code> </p> </li>
+        /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+        /// <li> <p> <code>NetSavings</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetSavings</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCommitment</code> </p> </li>
+        /// <li> <p> <code>UsedCommitment</code> </p> </li>
+        /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+        /// <li> <p> <code>NetSavings</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
@@ -5227,12 +3603,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSavingsPlansUtilizationDetails`.
     ///
-    /// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-    /// <note>
-    /// <p>
-    /// <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p>
+    /// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note>
+    /// <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSavingsPlansUtilizationDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5277,10 +3651,10 @@ pub mod fluent_builders {
                 crate::input::GetSavingsPlansUtilizationDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5288,9 +3662,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetSavingsPlansUtilizationDetailsPaginator<C, M, R> {
+            crate::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -5301,74 +3686,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansUtilizationDetails</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>GetSavingsPlansUtilizationDetails</code> uses the same
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
-        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
+        /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
@@ -5378,8 +3717,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_type`](Self::set_data_type).
         ///
         /// <p>The data type.</p>
-        pub fn data_type(mut self, inp: impl Into<crate::model::SavingsPlansDataType>) -> Self {
-            self.inner = self.inner.data_type(inp);
+        pub fn data_type(mut self, input: crate::model::SavingsPlansDataType) -> Self {
+            self.inner = self.inner.data_type(input);
             self
         }
         /// <p>The data type.</p>
@@ -5391,8 +3730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -5401,8 +3740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -5411,92 +3750,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value by which you want to sort the data.</p>
-        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetSavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedRecurringCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedUpfrontCommitment</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCommitment</code> </p> </li>
+        /// <li> <p> <code>UsedCommitment</code> </p> </li>
+        /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+        /// <li> <p> <code>NetSavings</code> </p> </li>
+        /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
+        /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
-        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UtilizationPercentage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TotalCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnusedCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetSavings</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedRecurringCommitment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedUpfrontCommitment</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>UtilizationPercentage</code> </p> </li>
+        /// <li> <p> <code>TotalCommitment</code> </p> </li>
+        /// <li> <p> <code>UsedCommitment</code> </p> </li>
+        /// <li> <p> <code>UnusedCommitment</code> </p> </li>
+        /// <li> <p> <code>NetSavings</code> </p> </li>
+        /// <li> <p> <code>AmortizedRecurringCommitment</code> </p> </li>
+        /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
         /// </ul>
-        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
@@ -5509,7 +3788,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5554,10 +3833,10 @@ pub mod fluent_builders {
                 crate::input::GetTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5566,8 +3845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value that you want to search for.</p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(inp);
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search for.</p>
@@ -5578,14 +3857,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_string(input);
             self
         }
-        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5594,8 +3871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key of the tag that you want to return values for.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(inp);
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(input.into());
             self
         }
         /// <p>The key of the tag that you want to return values for.</p>
@@ -5605,117 +3882,27 @@ pub mod fluent_builders {
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
-        /// </note>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
         /// <ul>
-        /// <li>
-        /// <p>Simple dimension values - You can set the dimension name and values for the
-        /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
-        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
-        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
-        /// example is as follows:</p>
-        /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
-        /// } }</code>
-        /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
-        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
-        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
-        /// lines. </p>
-        /// </li>
-        /// <li>
-        /// <p>Compound dimension values with logical operations - You can use multiple
-        /// <code>Expression</code> types and the logical operators
-        /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. By doing this, you can filter on more
-        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
-        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that is as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
-        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
-        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
-        /// ["DataTransfer"] }}} ] } </code>
-        /// </p>
-        /// <note>
-        /// <p>Because each <code>Expression</code> can have only one operator, the
-        /// service returns an error if more than one is specified. The following
-        /// example shows an <code>Expression</code> object that creates an
-        /// error.</p>
-        /// </note>
-        /// <p>
-        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
-        /// "Values": [ "DataTransfer" ] } } </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-        /// and tags. NOT operators aren't supported. Dimensions are also limited to
-        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-        /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
-        /// supported. AND and OR aren't supported. Dimensions are limited to
-        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li>
+        /// <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p>
+        /// </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li>
+        /// </ul> <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
@@ -5728,86 +3915,30 @@ pub mod fluent_builders {
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
-        pub fn sort_by(mut self, inp: impl Into<crate::model::SortDefinition>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
         /// <p>The key represents cost and usage metrics. The following values are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BlendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetAmortizedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NetUnblendedCost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UsageQuantity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NormalizedUsageAmount</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BlendedCost</code> </p> </li>
+        /// <li> <p> <code>UnblendedCost</code> </p> </li>
+        /// <li> <p> <code>AmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetAmortizedCost</code> </p> </li>
+        /// <li> <p> <code>NetUnblendedCost</code> </p> </li>
+        /// <li> <p> <code>UsageQuantity</code> </p> </li>
+        /// <li> <p> <code>NormalizedUsageAmount</code> </p> </li>
         /// </ul>
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
@@ -5820,8 +3951,8 @@ pub mod fluent_builders {
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
@@ -5831,8 +3962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(inp);
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -5847,7 +3978,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageForecast`.
     ///
     /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5892,10 +4023,10 @@ pub mod fluent_builders {
                 crate::input::GetUsageForecastInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5903,14 +4034,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-        pub fn time_period(mut self, inp: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(inp);
+        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
-        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
+        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5921,26 +4050,18 @@ pub mod fluent_builders {
         /// <p>Which metric Cost Explorer uses to create your forecast.</p>
         /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>USAGE_QUANTITY</p>
-        /// </li>
-        /// <li>
-        /// <p>NORMALIZED_USAGE_AMOUNT</p>
-        /// </li>
+        /// <li> <p>USAGE_QUANTITY</p> </li>
+        /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
         /// </ul>
-        pub fn metric(mut self, inp: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric(inp);
+        pub fn metric(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric(input);
             self
         }
         /// <p>Which metric Cost Explorer uses to create your forecast.</p>
         /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>USAGE_QUANTITY</p>
-        /// </li>
-        /// <li>
-        /// <p>NORMALIZED_USAGE_AMOUNT</p>
-        /// </li>
+        /// <li> <p>USAGE_QUANTITY</p> </li>
+        /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
         /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.inner = self.inner.set_metric(input);
@@ -5948,8 +4069,8 @@ pub mod fluent_builders {
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
         /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, inp: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(inp);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
@@ -5962,261 +4083,71 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AZ</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PURCHASE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECORD_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TENANCY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCOPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLATFORM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBSCRIPTION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGAL_ENTITY_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPLOYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DATABASE_ENGINE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BILLING_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESERVATION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AZ</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+        /// <li> <p> <code>OPERATION</code> </p> </li>
+        /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+        /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+        /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+        /// <li> <p> <code>TENANCY</code> </p> </li>
+        /// <li> <p> <code>SCOPE</code> </p> </li>
+        /// <li> <p> <code>PLATFORM</code> </p> </li>
+        /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+        /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+        /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+        /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+        /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
         /// </ul>
-        pub fn filter(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AZ</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LINKED_ACCOUNT_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PURCHASE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REGION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USAGE_TYPE_GROUP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RECORD_TYPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TENANCY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SCOPE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PLATFORM</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBSCRIPTION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LEGAL_ENTITY_NAME</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPLOYMENT_OPTION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DATABASE_ENGINE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_TYPE_FAMILY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BILLING_ENTITY</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESERVATION_ID</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SAVINGS_PLAN_ARN</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AZ</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+        /// <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li>
+        /// <li> <p> <code>OPERATION</code> </p> </li>
+        /// <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+        /// <li> <p> <code>REGION</code> </p> </li>
+        /// <li> <p> <code>SERVICE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE</code> </p> </li>
+        /// <li> <p> <code>USAGE_TYPE_GROUP</code> </p> </li>
+        /// <li> <p> <code>RECORD_TYPE</code> </p> </li>
+        /// <li> <p> <code>OPERATING_SYSTEM</code> </p> </li>
+        /// <li> <p> <code>TENANCY</code> </p> </li>
+        /// <li> <p> <code>SCOPE</code> </p> </li>
+        /// <li> <p> <code>PLATFORM</code> </p> </li>
+        /// <li> <p> <code>SUBSCRIPTION_ID</code> </p> </li>
+        /// <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li>
+        /// <li> <p> <code>DEPLOYMENT_OPTION</code> </p> </li>
+        /// <li> <p> <code>DATABASE_ENGINE</code> </p> </li>
+        /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
+        /// <li> <p> <code>BILLING_ENTITY</code> </p> </li>
+        /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
+        /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
         /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
-        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
-        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-        pub fn prediction_interval_level(mut self, inp: i32) -> Self {
-            self.inner = self.inner.prediction_interval_level(inp);
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        pub fn prediction_interval_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.prediction_interval_level(input);
             self
         }
-        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
-        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
-        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_prediction_interval_level(input);
             self
@@ -6225,7 +4156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCostCategoryDefinitions`.
     ///
     /// <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCostCategoryDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6270,10 +4201,10 @@ pub mod fluent_builders {
                 crate::input::ListCostCategoryDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6281,37 +4212,37 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The date when the Cost Category was effective.
-        /// </p>
-        pub fn effective_on(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.effective_on(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCostCategoryDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCostCategoryDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListCostCategoryDefinitionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The date when the Cost Category was effective. </p>
+        pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.effective_on(input.into());
             self
         }
-        /// <p>
-        /// The date when the Cost Category was effective.
-        /// </p>
+        /// <p> The date when the Cost Category was effective. </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_effective_on(input);
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The number of entries a paginated response contains. </p>
@@ -6323,7 +4254,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ProvideAnomalyFeedback`.
     ///
     /// <p>Modifies the feedback property of a given cost anomaly. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvideAnomalyFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6368,10 +4299,10 @@ pub mod fluent_builders {
                 crate::input::ProvideAnomalyFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6380,8 +4311,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cost anomaly ID. </p>
-        pub fn anomaly_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_id(inp);
+        pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_id(input.into());
             self
         }
         /// <p>A cost anomaly ID. </p>
@@ -6390,8 +4321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-        pub fn feedback(mut self, inp: crate::model::AnomalyFeedbackType) -> Self {
-            self.inner = self.inner.feedback(inp);
+        pub fn feedback(mut self, input: crate::model::AnomalyFeedbackType) -> Self {
+            self.inner = self.inner.feedback(input);
             self
         }
         /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
@@ -6405,9 +4336,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAnomalyMonitor`.
     ///
-    /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and
-    /// doesn'tt change anomalies detected in the past. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn'tt change anomalies detected in the past. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalyMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6452,10 +4382,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAnomalyMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6464,8 +4394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
-        pub fn monitor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(inp);
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
@@ -6474,8 +4404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the cost anomaly monitor. </p>
-        pub fn monitor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_name(inp);
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_name(input.into());
             self
         }
         /// <p>The new name for the cost anomaly monitor. </p>
@@ -6487,7 +4417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnomalySubscription`.
     ///
     /// <p>Updates an existing cost anomaly monitor subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalySubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6532,10 +4462,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAnomalySubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6544,8 +4474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
@@ -6557,8 +4487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The update to the threshold value for receiving notifications. </p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.threshold(input);
             self
         }
         /// <p>The update to the threshold value for receiving notifications. </p>
@@ -6567,8 +4497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The update to the frequency value that subscribers receive notifications. </p>
-        pub fn frequency(mut self, inp: crate::model::AnomalySubscriptionFrequency) -> Self {
-            self.inner = self.inner.frequency(inp);
+        pub fn frequency(mut self, input: crate::model::AnomalySubscriptionFrequency) -> Self {
+            self.inner = self.inner.frequency(input);
             self
         }
         /// <p>The update to the frequency value that subscribers receive notifications. </p>
@@ -6584,8 +4514,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
         ///
         /// <p>A list of cost anomaly monitor ARNs. </p>
-        pub fn monitor_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn_list(inp);
+        pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn_list(input.into());
             self
         }
         /// <p>A list of cost anomaly monitor ARNs. </p>
@@ -6601,8 +4531,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>The update to the subscriber list. </p>
-        pub fn subscribers(mut self, inp: impl Into<crate::model::Subscriber>) -> Self {
-            self.inner = self.inner.subscribers(inp);
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscribers(input);
             self
         }
         /// <p>The update to the subscriber list. </p>
@@ -6614,8 +4544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the subscription. </p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The new name of the subscription. </p>
@@ -6630,7 +4560,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCostCategoryDefinition`.
     ///
     /// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCostCategoryDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6675,10 +4605,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCostCategoryDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6687,8 +4617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for your Cost Category.</p>
-        pub fn cost_category_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(inp);
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
         /// <p>The unique identifier for your Cost Category.</p>
@@ -6700,8 +4630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
-        pub fn rule_version(mut self, inp: crate::model::CostCategoryRuleVersion) -> Self {
-            self.inner = self.inner.rule_version(inp);
+        pub fn rule_version(mut self, input: crate::model::CostCategoryRuleVersion) -> Self {
+            self.inner = self.inner.rule_version(input);
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -6716,14 +4646,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::CostCategoryRule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+        pub fn rules(mut self, input: crate::model::CostCategoryRule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
@@ -6731,14 +4659,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The
-        /// default value for the cost category.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(inp);
+        /// <p>The default value for the cost category.</p>
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(input.into());
             self
         }
-        /// <p>The
-        /// default value for the cost category.</p>
+        /// <p>The default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6750,19 +4676,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
         ///
-        /// <p>
-        /// The split charge rules used to allocate your charges between your Cost Category values.
-        /// </p>
+        /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
         pub fn split_charge_rules(
             mut self,
-            inp: impl Into<crate::model::CostCategorySplitChargeRule>,
+            input: crate::model::CostCategorySplitChargeRule,
         ) -> Self {
-            self.inner = self.inner.split_charge_rules(inp);
+            self.inner = self.inner.split_charge_rules(input);
             self
         }
-        /// <p>
-        /// The split charge rules used to allocate your charges between your Cost Category values.
-        /// </p>
+        /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
         pub fn set_split_charge_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
@@ -6772,6 +4694,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -50,7 +50,7 @@ pub mod cancel_job_run_input {
 #[doc(hidden)]
 pub type CancelJobRunInputOperationOutputAlias = crate::operation::CancelJobRun;
 #[doc(hidden)]
-pub type CancelJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelJobRun`](crate::operation::CancelJobRun)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl CancelJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -171,7 +171,7 @@ impl CancelJobRunInput {
             "CancelJobRun",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -308,8 +308,7 @@ pub mod create_managed_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -320,8 +319,7 @@ pub mod create_managed_endpoint_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -355,7 +353,7 @@ pub mod create_managed_endpoint_input {
 #[doc(hidden)]
 pub type CreateManagedEndpointInputOperationOutputAlias = crate::operation::CreateManagedEndpoint;
 #[doc(hidden)]
-pub type CreateManagedEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateManagedEndpoint`](crate::operation::CreateManagedEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -366,7 +364,7 @@ impl CreateManagedEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateManagedEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -471,7 +469,7 @@ impl CreateManagedEndpointInput {
             "CreateManagedEndpoint",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -585,7 +583,7 @@ pub mod create_virtual_cluster_input {
 #[doc(hidden)]
 pub type CreateVirtualClusterInputOperationOutputAlias = crate::operation::CreateVirtualCluster;
 #[doc(hidden)]
-pub type CreateVirtualClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualCluster`](crate::operation::CreateVirtualCluster)>
     #[allow(clippy::let_and_return)]
@@ -596,7 +594,7 @@ impl CreateVirtualClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -681,7 +679,7 @@ impl CreateVirtualClusterInput {
             "CreateVirtualCluster",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -754,7 +752,7 @@ pub mod delete_managed_endpoint_input {
 #[doc(hidden)]
 pub type DeleteManagedEndpointInputOperationOutputAlias = crate::operation::DeleteManagedEndpoint;
 #[doc(hidden)]
-pub type DeleteManagedEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteManagedEndpoint`](crate::operation::DeleteManagedEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -765,7 +763,7 @@ impl DeleteManagedEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteManagedEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -875,7 +873,7 @@ impl DeleteManagedEndpointInput {
             "DeleteManagedEndpoint",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -923,7 +921,7 @@ pub mod delete_virtual_cluster_input {
 #[doc(hidden)]
 pub type DeleteVirtualClusterInputOperationOutputAlias = crate::operation::DeleteVirtualCluster;
 #[doc(hidden)]
-pub type DeleteVirtualClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualCluster`](crate::operation::DeleteVirtualCluster)>
     #[allow(clippy::let_and_return)]
@@ -934,7 +932,7 @@ impl DeleteVirtualClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1023,7 +1021,7 @@ impl DeleteVirtualClusterInput {
             "DeleteVirtualCluster",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1088,7 +1086,7 @@ pub mod describe_job_run_input {
 #[doc(hidden)]
 pub type DescribeJobRunInputOperationOutputAlias = crate::operation::DescribeJobRun;
 #[doc(hidden)]
-pub type DescribeJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(clippy::let_and_return)]
@@ -1099,7 +1097,7 @@ impl DescribeJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1209,7 +1207,7 @@ impl DescribeJobRunInput {
             "DescribeJobRun",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1275,7 +1273,7 @@ pub mod describe_managed_endpoint_input {
 pub type DescribeManagedEndpointInputOperationOutputAlias =
     crate::operation::DescribeManagedEndpoint;
 #[doc(hidden)]
-pub type DescribeManagedEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeManagedEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeManagedEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedEndpoint`](crate::operation::DescribeManagedEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1286,7 +1284,7 @@ impl DescribeManagedEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeManagedEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1396,7 +1394,7 @@ impl DescribeManagedEndpointInput {
             "DescribeManagedEndpoint",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1444,7 +1442,7 @@ pub mod describe_virtual_cluster_input {
 #[doc(hidden)]
 pub type DescribeVirtualClusterInputOperationOutputAlias = crate::operation::DescribeVirtualCluster;
 #[doc(hidden)]
-pub type DescribeVirtualClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualCluster`](crate::operation::DescribeVirtualCluster)>
     #[allow(clippy::let_and_return)]
@@ -1455,7 +1453,7 @@ impl DescribeVirtualClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1544,7 +1542,7 @@ impl DescribeVirtualClusterInput {
             "DescribeVirtualCluster",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1628,9 +1626,9 @@ pub mod list_job_runs_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the job run.</p>
-        pub fn states(mut self, input: impl Into<crate::model::JobRunState>) -> Self {
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -1684,7 +1682,7 @@ pub mod list_job_runs_input {
 #[doc(hidden)]
 pub type ListJobRunsInputOperationOutputAlias = crate::operation::ListJobRuns;
 #[doc(hidden)]
-pub type ListJobRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(clippy::let_and_return)]
@@ -1695,7 +1693,7 @@ impl ListJobRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1832,7 +1830,7 @@ impl ListJobRunsInput {
             "ListJobRuns",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1925,9 +1923,9 @@ pub mod list_managed_endpoints_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the managed endpoints.</p>
-        pub fn states(mut self, input: impl Into<crate::model::EndpointState>) -> Self {
+        pub fn states(mut self, input: crate::model::EndpointState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -1981,7 +1979,7 @@ pub mod list_managed_endpoints_input {
 #[doc(hidden)]
 pub type ListManagedEndpointsInputOperationOutputAlias = crate::operation::ListManagedEndpoints;
 #[doc(hidden)]
-pub type ListManagedEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListManagedEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedEndpoints`](crate::operation::ListManagedEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -1992,7 +1990,7 @@ impl ListManagedEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2131,7 +2129,7 @@ impl ListManagedEndpointsInput {
             "ListManagedEndpoints",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2181,7 +2179,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2192,7 +2190,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2282,7 +2280,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2373,9 +2371,9 @@ pub mod list_virtual_clusters_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the requested virtual clusters.</p>
-        pub fn states(mut self, input: impl Into<crate::model::VirtualClusterState>) -> Self {
+        pub fn states(mut self, input: crate::model::VirtualClusterState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -2429,7 +2427,7 @@ pub mod list_virtual_clusters_input {
 #[doc(hidden)]
 pub type ListVirtualClustersInputOperationOutputAlias = crate::operation::ListVirtualClusters;
 #[doc(hidden)]
-pub type ListVirtualClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualClusters`](crate::operation::ListVirtualClusters)>
     #[allow(clippy::let_and_return)]
@@ -2440,7 +2438,7 @@ impl ListVirtualClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2566,7 +2564,7 @@ impl ListVirtualClustersInput {
             "ListVirtualClusters",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2736,7 +2734,7 @@ pub mod start_job_run_input {
 #[doc(hidden)]
 pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
 #[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(clippy::let_and_return)]
@@ -2747,7 +2745,7 @@ impl StartJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2849,7 +2847,7 @@ impl StartJobRunInput {
             "StartJobRun",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2936,7 +2934,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2947,7 +2945,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3042,7 +3040,7 @@ impl TagResourceInput {
             "TagResource",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3121,7 +3119,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3132,7 +3130,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3235,7 +3233,7 @@ impl UntagResourceInput {
             "UntagResource",
             "emrcontainers",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3790,8 +3788,7 @@ pub struct CreateManagedEndpointInput {
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The client idempotency token for this create call.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The tags of the managed endpoint.
-    /// </p>
+    /// <p>The tags of the managed endpoint. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3830,8 +3827,7 @@ impl CreateManagedEndpointInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The tags of the managed endpoint.
-    /// </p>
+    /// <p>The tags of the managed endpoint. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

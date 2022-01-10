@@ -136,25 +136,10 @@ pub struct UpdateAlarmModelOutput {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
@@ -177,25 +162,10 @@ impl UpdateAlarmModelOutput {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
@@ -279,25 +249,10 @@ pub mod update_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
@@ -305,25 +260,10 @@ pub mod update_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -529,9 +469,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -562,8 +502,7 @@ impl ListTagsForResourceOutput {
 pub struct ListInputsOutput {
     /// <p>Summary information about the inputs.</p>
     pub input_summaries: std::option::Option<std::vec::Vec<crate::model::InputSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputsOutput {
@@ -571,8 +510,7 @@ impl ListInputsOutput {
     pub fn input_summaries(&self) -> std::option::Option<&[crate::model::InputSummary]> {
         self.input_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -600,9 +538,9 @@ pub mod list_inputs_output {
         /// To override the contents of this collection use [`set_input_summaries`](Self::set_input_summaries).
         ///
         /// <p>Summary information about the inputs.</p>
-        pub fn input_summaries(mut self, input: impl Into<crate::model::InputSummary>) -> Self {
+        pub fn input_summaries(mut self, input: crate::model::InputSummary) -> Self {
             let mut v = self.input_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_summaries = Some(v);
             self
         }
@@ -614,14 +552,12 @@ pub mod list_inputs_output {
             self.input_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -646,27 +582,17 @@ impl ListInputsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputRoutingsOutput {
-    /// <p>
-    /// Summary information about the routed resources.
-    /// </p>
+    /// <p> Summary information about the routed resources. </p>
     pub routed_resources: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
-    /// <p>
-    /// The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.
-    /// </p>
+    /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputRoutingsOutput {
-    /// <p>
-    /// Summary information about the routed resources.
-    /// </p>
+    /// <p> Summary information about the routed resources. </p>
     pub fn routed_resources(&self) -> std::option::Option<&[crate::model::RoutedResource]> {
         self.routed_resources.as_deref()
     }
-    /// <p>
-    /// The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.
-    /// </p>
+    /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -694,18 +620,14 @@ pub mod list_input_routings_output {
         ///
         /// To override the contents of this collection use [`set_routed_resources`](Self::set_routed_resources).
         ///
-        /// <p>
-        /// Summary information about the routed resources.
-        /// </p>
-        pub fn routed_resources(mut self, input: impl Into<crate::model::RoutedResource>) -> Self {
+        /// <p> Summary information about the routed resources. </p>
+        pub fn routed_resources(mut self, input: crate::model::RoutedResource) -> Self {
             let mut v = self.routed_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routed_resources = Some(v);
             self
         }
-        /// <p>
-        /// Summary information about the routed resources.
-        /// </p>
+        /// <p> Summary information about the routed resources. </p>
         pub fn set_routed_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoutedResource>>,
@@ -713,18 +635,12 @@ pub mod list_input_routings_output {
             self.routed_resources = input;
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -752,8 +668,7 @@ pub struct ListDetectorModelVersionsOutput {
     /// <p>Summary information about the detector model versions.</p>
     pub detector_model_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::DetectorModelVersionSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelVersionsOutput {
@@ -763,8 +678,7 @@ impl ListDetectorModelVersionsOutput {
     ) -> std::option::Option<&[crate::model::DetectorModelVersionSummary]> {
         self.detector_model_version_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -798,10 +712,10 @@ pub mod list_detector_model_versions_output {
         /// <p>Summary information about the detector model versions.</p>
         pub fn detector_model_version_summaries(
             mut self,
-            input: impl Into<crate::model::DetectorModelVersionSummary>,
+            input: crate::model::DetectorModelVersionSummary,
         ) -> Self {
             let mut v = self.detector_model_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_model_version_summaries = Some(v);
             self
         }
@@ -813,14 +727,12 @@ pub mod list_detector_model_versions_output {
             self.detector_model_version_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -848,8 +760,7 @@ pub struct ListDetectorModelsOutput {
     /// <p>Summary information about the detector models.</p>
     pub detector_model_summaries:
         std::option::Option<std::vec::Vec<crate::model::DetectorModelSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorModelsOutput {
@@ -859,8 +770,7 @@ impl ListDetectorModelsOutput {
     ) -> std::option::Option<&[crate::model::DetectorModelSummary]> {
         self.detector_model_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -891,10 +801,10 @@ pub mod list_detector_models_output {
         /// <p>Summary information about the detector models.</p>
         pub fn detector_model_summaries(
             mut self,
-            input: impl Into<crate::model::DetectorModelSummary>,
+            input: crate::model::DetectorModelSummary,
         ) -> Self {
             let mut v = self.detector_model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_model_summaries = Some(v);
             self
         }
@@ -906,14 +816,12 @@ pub mod list_detector_models_output {
             self.detector_model_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -941,8 +849,7 @@ pub struct ListAlarmModelVersionsOutput {
     /// <p>A list that summarizes each alarm model version.</p>
     pub alarm_model_version_summaries:
         std::option::Option<std::vec::Vec<crate::model::AlarmModelVersionSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmModelVersionsOutput {
@@ -952,8 +859,7 @@ impl ListAlarmModelVersionsOutput {
     ) -> std::option::Option<&[crate::model::AlarmModelVersionSummary]> {
         self.alarm_model_version_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -987,10 +893,10 @@ pub mod list_alarm_model_versions_output {
         /// <p>A list that summarizes each alarm model version.</p>
         pub fn alarm_model_version_summaries(
             mut self,
-            input: impl Into<crate::model::AlarmModelVersionSummary>,
+            input: crate::model::AlarmModelVersionSummary,
         ) -> Self {
             let mut v = self.alarm_model_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_model_version_summaries = Some(v);
             self
         }
@@ -1002,14 +908,12 @@ pub mod list_alarm_model_versions_output {
             self.alarm_model_version_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1036,8 +940,7 @@ impl ListAlarmModelVersionsOutput {
 pub struct ListAlarmModelsOutput {
     /// <p>A list that summarizes each alarm model.</p>
     pub alarm_model_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmModelSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmModelsOutput {
@@ -1045,8 +948,7 @@ impl ListAlarmModelsOutput {
     pub fn alarm_model_summaries(&self) -> std::option::Option<&[crate::model::AlarmModelSummary]> {
         self.alarm_model_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1075,12 +977,9 @@ pub mod list_alarm_models_output {
         /// To override the contents of this collection use [`set_alarm_model_summaries`](Self::set_alarm_model_summaries).
         ///
         /// <p>A list that summarizes each alarm model.</p>
-        pub fn alarm_model_summaries(
-            mut self,
-            input: impl Into<crate::model::AlarmModelSummary>,
-        ) -> Self {
+        pub fn alarm_model_summaries(mut self, input: crate::model::AlarmModelSummary) -> Self {
             let mut v = self.alarm_model_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_model_summaries = Some(v);
             self
         }
@@ -1092,14 +991,12 @@ pub mod list_alarm_models_output {
             self.alarm_model_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1126,8 +1023,7 @@ impl ListAlarmModelsOutput {
 pub struct GetDetectorModelAnalysisResultsOutput {
     /// <p>Contains information about one or more analysis results.</p>
     pub analysis_results: std::option::Option<std::vec::Vec<crate::model::AnalysisResult>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDetectorModelAnalysisResultsOutput {
@@ -1135,8 +1031,7 @@ impl GetDetectorModelAnalysisResultsOutput {
     pub fn analysis_results(&self) -> std::option::Option<&[crate::model::AnalysisResult]> {
         self.analysis_results.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1165,9 +1060,9 @@ pub mod get_detector_model_analysis_results_output {
         /// To override the contents of this collection use [`set_analysis_results`](Self::set_analysis_results).
         ///
         /// <p>Contains information about one or more analysis results.</p>
-        pub fn analysis_results(mut self, input: impl Into<crate::model::AnalysisResult>) -> Self {
+        pub fn analysis_results(mut self, input: crate::model::AnalysisResult) -> Self {
             let mut v = self.analysis_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_results = Some(v);
             self
         }
@@ -1179,14 +1074,12 @@ pub mod get_detector_model_analysis_results_output {
             self.analysis_results = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1322,40 +1215,18 @@ impl DescribeInputOutput {
 pub struct DescribeDetectorModelAnalysisOutput {
     /// <p>The status of the analysis activity. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take
-    /// several minutes to complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
-    /// later.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AnalysisStatus>,
 }
 impl DescribeDetectorModelAnalysisOutput {
     /// <p>The status of the analysis activity. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take
-    /// several minutes to complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
-    /// later.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AnalysisStatus> {
         self.status.as_ref()
@@ -1379,20 +1250,9 @@ pub mod describe_detector_model_analysis_output {
     impl Builder {
         /// <p>The status of the analysis activity. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take
-        /// several minutes to complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
-        /// later.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
+        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AnalysisStatus) -> Self {
             self.status = Some(input);
@@ -1400,20 +1260,9 @@ pub mod describe_detector_model_analysis_output {
         }
         /// <p>The status of the analysis activity. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take
-        /// several minutes to complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
-        /// later.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
+        /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1508,30 +1357,13 @@ pub struct DescribeAlarmModelOutput {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
-    /// <p>
-    /// Contains information about the status of the alarm model.
-    /// </p>
+    /// <p> Contains information about the status of the alarm model. </p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
@@ -1539,9 +1371,7 @@ pub struct DescribeAlarmModelOutput {
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>An input attribute used as a key to create an alarm.
-    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-    /// associated with this key to the alarm.</p>
+    /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub severity: std::option::Option<i32>,
@@ -1573,32 +1403,15 @@ impl DescribeAlarmModelOutput {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// Contains information about the status of the alarm model.
-    /// </p>
+    /// <p> Contains information about the status of the alarm model. </p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -1614,9 +1427,7 @@ impl DescribeAlarmModelOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>An input attribute used as a key to create an alarm.
-    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-    /// associated with this key to the alarm.</p>
+    /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -1739,25 +1550,10 @@ pub mod describe_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
@@ -1765,25 +1561,10 @@ pub mod describe_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1792,16 +1573,12 @@ pub mod describe_alarm_model_output {
             self.status = input;
             self
         }
-        /// <p>
-        /// Contains information about the status of the alarm model.
-        /// </p>
+        /// <p> Contains information about the status of the alarm model. </p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_message = Some(input.into());
             self
         }
-        /// <p>
-        /// Contains information about the status of the alarm model.
-        /// </p>
+        /// <p> Contains information about the status of the alarm model. </p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,16 +1622,12 @@ pub mod describe_alarm_model_output {
             self.role_arn = input;
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2177,25 +1950,10 @@ pub struct CreateAlarmModelOutput {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AlarmModelVersionStatus>,
 }
@@ -2218,25 +1976,10 @@ impl CreateAlarmModelOutput {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-    /// Activating an alarm model can take up to a few minutes.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-    /// Check your alarm model information and update the alarm model.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-    /// and try again.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AlarmModelVersionStatus> {
         self.status.as_ref()
@@ -2320,25 +2063,10 @@ pub mod create_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AlarmModelVersionStatus) -> Self {
             self.status = Some(input);
@@ -2346,25 +2074,10 @@ pub mod create_alarm_model_output {
         }
         /// <p>The status of the alarm model. The status can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
-        /// Activating an alarm model can take up to a few minutes.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
-        /// Check your alarm model information and update the alarm model.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
-        /// and try again.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
+        /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
+        /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,

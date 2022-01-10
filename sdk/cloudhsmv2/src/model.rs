@@ -72,12 +72,7 @@ impl Tag {
     }
 }
 
-/// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-/// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and
-/// <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region
-/// additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-/// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is
-/// pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+/// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Backup {
@@ -91,17 +86,13 @@ pub struct Backup {
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time when the backup was copied from a source backup.</p>
     pub copy_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: std::option::Option<bool>,
-    /// <p>The AWS Region that contains the source backup from which the new backup was
-    /// copied.</p>
+    /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
     pub source_region: std::option::Option<std::string::String>,
-    /// <p>The identifier (ID) of the source backup from which the new backup was
-    /// copied.</p>
+    /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub source_backup: std::option::Option<std::string::String>,
-    /// <p>The identifier (ID) of the cluster containing the source backup from which the new
-    /// backup was copied.</p>
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub source_cluster: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup will be permanently deleted.</p>
     pub delete_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -129,23 +120,19 @@ impl Backup {
     pub fn copy_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.copy_timestamp.as_ref()
     }
-    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn never_expires(&self) -> std::option::Option<bool> {
         self.never_expires
     }
-    /// <p>The AWS Region that contains the source backup from which the new backup was
-    /// copied.</p>
+    /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
     pub fn source_region(&self) -> std::option::Option<&str> {
         self.source_region.as_deref()
     }
-    /// <p>The identifier (ID) of the source backup from which the new backup was
-    /// copied.</p>
+    /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub fn source_backup(&self) -> std::option::Option<&str> {
         self.source_backup.as_deref()
     }
-    /// <p>The identifier (ID) of the cluster containing the source backup from which the new
-    /// backup was copied.</p>
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn source_cluster(&self) -> std::option::Option<&str> {
         self.source_cluster.as_deref()
     }
@@ -253,26 +240,22 @@ pub mod backup {
             self.copy_timestamp = input;
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn never_expires(mut self, input: bool) -> Self {
             self.never_expires = Some(input);
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn set_never_expires(mut self, input: std::option::Option<bool>) -> Self {
             self.never_expires = input;
             self
         }
-        /// <p>The AWS Region that contains the source backup from which the new backup was
-        /// copied.</p>
+        /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_region = Some(input.into());
             self
         }
-        /// <p>The AWS Region that contains the source backup from which the new backup was
-        /// copied.</p>
+        /// <p>The AWS Region that contains the source backup from which the new backup was copied.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -280,14 +263,12 @@ pub mod backup {
             self.source_region = input;
             self
         }
-        /// <p>The identifier (ID) of the source backup from which the new backup was
-        /// copied.</p>
+        /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
         pub fn source_backup(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_backup = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the source backup from which the new backup was
-        /// copied.</p>
+        /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
         pub fn set_source_backup(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -295,14 +276,12 @@ pub mod backup {
             self.source_backup = input;
             self
         }
-        /// <p>The identifier (ID) of the cluster containing the source backup from which the new
-        /// backup was copied.</p>
+        /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
         pub fn source_cluster(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_cluster = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster containing the source backup from which the new
-        /// backup was copied.</p>
+        /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
         pub fn set_source_cluster(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -328,9 +307,9 @@ pub mod backup {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags for the backup.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -450,8 +429,7 @@ pub struct Cluster {
     pub pre_co_password: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the cluster's security group.</p>
     pub security_group: std::option::Option<std::string::String>,
-    /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
-    /// when the cluster was created from a backup.</p>
+    /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
     pub source_backup_id: std::option::Option<std::string::String>,
     /// <p>The cluster's state.</p>
     pub state: std::option::Option<crate::model::ClusterState>,
@@ -460,8 +438,7 @@ pub struct Cluster {
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     pub subnet_mapping:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
-    /// cluster.</p>
+    /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub certificates: std::option::Option<crate::model::Certificates>,
@@ -503,8 +480,7 @@ impl Cluster {
     pub fn security_group(&self) -> std::option::Option<&str> {
         self.security_group.as_deref()
     }
-    /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
-    /// when the cluster was created from a backup.</p>
+    /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
     pub fn source_backup_id(&self) -> std::option::Option<&str> {
         self.source_backup_id.as_deref()
     }
@@ -523,8 +499,7 @@ impl Cluster {
     {
         self.subnet_mapping.as_ref()
     }
-    /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
-    /// cluster.</p>
+    /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -641,9 +616,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_hsms`](Self::set_hsms).
         ///
         /// <p>Contains information about the HSMs in the cluster.</p>
-        pub fn hsms(mut self, input: impl Into<crate::model::Hsm>) -> Self {
+        pub fn hsms(mut self, input: crate::model::Hsm) -> Self {
             let mut v = self.hsms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsms = Some(v);
             self
         }
@@ -691,14 +666,12 @@ pub mod cluster {
             self.security_group = input;
             self
         }
-        /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
-        /// when the cluster was created from a backup.</p>
+        /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
         pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_backup_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
-        /// when the cluster was created from a backup.</p>
+        /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
         pub fn set_source_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -754,14 +727,12 @@ pub mod cluster {
             self.subnet_mapping = input;
             self
         }
-        /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
-        /// cluster.</p>
+        /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
-        /// cluster.</p>
+        /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -784,9 +755,9 @@ pub mod cluster {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags for the cluster.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -831,8 +802,7 @@ impl Cluster {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificates {
-    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
-    /// state is <code>UNINITIALIZED</code>.</p>
+    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     pub cluster_csr: std::option::Option<std::string::String>,
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
     pub hsm_certificate: std::option::Option<std::string::String>,
@@ -840,13 +810,11 @@ pub struct Certificates {
     pub aws_hardware_certificate: std::option::Option<std::string::String>,
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
     pub manufacturer_hardware_certificate: std::option::Option<std::string::String>,
-    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
-    /// the cluster's owner.</p>
+    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub cluster_certificate: std::option::Option<std::string::String>,
 }
 impl Certificates {
-    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
-    /// state is <code>UNINITIALIZED</code>.</p>
+    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
     pub fn cluster_csr(&self) -> std::option::Option<&str> {
         self.cluster_csr.as_deref()
     }
@@ -862,8 +830,7 @@ impl Certificates {
     pub fn manufacturer_hardware_certificate(&self) -> std::option::Option<&str> {
         self.manufacturer_hardware_certificate.as_deref()
     }
-    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
-    /// the cluster's owner.</p>
+    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub fn cluster_certificate(&self) -> std::option::Option<&str> {
         self.cluster_certificate.as_deref()
     }
@@ -895,14 +862,12 @@ pub mod certificates {
         pub(crate) cluster_certificate: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
-        /// state is <code>UNINITIALIZED</code>.</p>
+        /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
         pub fn cluster_csr(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_csr = Some(input.into());
             self
         }
-        /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
-        /// state is <code>UNINITIALIZED</code>.</p>
+        /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
         pub fn set_cluster_csr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_csr = input;
             self
@@ -949,14 +914,12 @@ pub mod certificates {
             self.manufacturer_hardware_certificate = input;
             self
         }
-        /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
-        /// the cluster's owner.</p>
+        /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
         pub fn cluster_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_certificate = Some(input.into());
             self
         }
-        /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
-        /// the cluster's owner.</p>
+        /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
         pub fn set_cluster_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1076,8 +1039,7 @@ impl AsRef<str> for ClusterState {
     }
 }
 
-/// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM
-/// cluster.</p>
+/// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Hsm {
@@ -1347,15 +1309,13 @@ impl AsRef<str> for HsmState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRetentionPolicy {
-    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
-    /// the number of days to retain backups.</p>
+    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     pub r#type: std::option::Option<crate::model::BackupRetentionType>,
     /// <p>Use a value between 7 - 379.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl BackupRetentionPolicy {
-    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
-    /// the number of days to retain backups.</p>
+    /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::BackupRetentionType> {
         self.r#type.as_ref()
     }
@@ -1382,14 +1342,12 @@ pub mod backup_retention_policy {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
-        /// the number of days to retain backups.</p>
+        /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
         pub fn r#type(mut self, input: crate::model::BackupRetentionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
-        /// the number of days to retain backups.</p>
+        /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::BackupRetentionType>,
@@ -1525,7 +1483,7 @@ impl AsRef<str> for BackupPolicy {
     }
 }
 
-/// <p>Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.</p>
+/// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationBackup {

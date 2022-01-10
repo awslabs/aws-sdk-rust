@@ -5,6 +5,8 @@
 
 //! Useful runtime-agnostic future implementations.
 
+pub mod fn_stream;
 pub mod never;
 pub mod now_or_later;
+pub mod rendezvous;
 pub mod timeout;

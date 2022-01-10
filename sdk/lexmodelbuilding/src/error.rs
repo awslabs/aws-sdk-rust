@@ -12,23 +12,17 @@ pub struct CreateBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -76,8 +70,6 @@ impl CreateBotVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -162,23 +154,17 @@ pub struct CreateIntentVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIntentVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -226,8 +212,6 @@ impl CreateIntentVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -318,23 +302,17 @@ pub struct CreateSlotTypeVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSlotTypeVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -382,8 +360,6 @@ impl CreateSlotTypeVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -474,36 +450,21 @@ pub struct DeleteBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -551,8 +512,6 @@ impl DeleteBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -625,36 +584,21 @@ pub struct DeleteBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotAliasErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -702,8 +646,6 @@ impl DeleteBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -785,19 +727,15 @@ pub struct DeleteBotChannelAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotChannelAssociationErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -844,8 +782,6 @@ impl DeleteBotChannelAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -928,36 +864,21 @@ pub struct DeleteBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1005,8 +926,6 @@ impl DeleteBotVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1091,36 +1010,21 @@ pub struct DeleteIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntentErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1168,8 +1072,6 @@ impl DeleteIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1245,36 +1147,21 @@ pub struct DeleteIntentVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntentVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1322,8 +1209,6 @@ impl DeleteIntentVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1414,36 +1299,21 @@ pub struct DeleteSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1491,8 +1361,6 @@ impl DeleteSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1574,36 +1442,21 @@ pub struct DeleteSlotTypeVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotTypeVersionErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1651,8 +1504,6 @@ impl DeleteSlotTypeVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1743,16 +1594,13 @@ pub struct DeleteUtterancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUtterancesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1798,8 +1646,6 @@ impl DeleteUtterancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1871,16 +1717,13 @@ pub struct GetBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1926,8 +1769,6 @@ impl GetBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1990,16 +1831,13 @@ pub struct GetBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotAliasErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2045,8 +1883,6 @@ impl GetBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2112,9 +1948,7 @@ pub struct GetBotAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotAliasesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -2163,8 +1997,6 @@ impl GetBotAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2228,16 +2060,13 @@ pub struct GetBotChannelAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotChannelAssociationErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2283,8 +2112,6 @@ impl GetBotChannelAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2359,9 +2186,7 @@ pub struct GetBotChannelAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotChannelAssociationsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -2410,8 +2235,6 @@ impl GetBotChannelAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2478,16 +2301,13 @@ pub struct GetBotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2533,8 +2353,6 @@ impl GetBotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2597,16 +2415,13 @@ pub struct GetBotVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBotVersionsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2652,8 +2467,6 @@ impl GetBotVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2722,16 +2535,13 @@ pub struct GetBuiltinIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBuiltinIntentErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2777,8 +2587,6 @@ impl GetBuiltinIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2850,9 +2658,7 @@ pub struct GetBuiltinIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBuiltinIntentsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -2901,8 +2707,6 @@ impl GetBuiltinIntentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2969,9 +2773,7 @@ pub struct GetBuiltinSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBuiltinSlotTypesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3020,8 +2822,6 @@ impl GetBuiltinSlotTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3088,16 +2888,13 @@ pub struct GetExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetExportErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3143,8 +2940,6 @@ impl GetExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3207,16 +3002,13 @@ pub struct GetImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetImportErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3262,8 +3054,6 @@ impl GetImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3326,16 +3116,13 @@ pub struct GetIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntentErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3381,8 +3168,6 @@ impl GetIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3445,16 +3230,13 @@ pub struct GetIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntentsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3500,8 +3282,6 @@ impl GetIntentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3564,16 +3344,13 @@ pub struct GetIntentVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntentVersionsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3619,8 +3396,6 @@ impl GetIntentVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3692,16 +3467,13 @@ pub struct GetMigrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMigrationErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3747,8 +3519,6 @@ impl GetMigrationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3814,9 +3584,7 @@ pub struct GetMigrationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMigrationsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -3865,8 +3633,6 @@ impl GetMigrationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3930,16 +3696,13 @@ pub struct GetSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSlotTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3985,8 +3748,6 @@ impl GetSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4052,16 +3813,13 @@ pub struct GetSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSlotTypesErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4107,8 +3865,6 @@ impl GetSlotTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4174,16 +3930,13 @@ pub struct GetSlotTypeVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSlotTypeVersionsErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4229,8 +3982,6 @@ impl GetSlotTypeVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4305,9 +4056,7 @@ pub struct GetUtterancesViewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUtterancesViewErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -4356,8 +4105,6 @@ impl GetUtterancesViewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4424,16 +4171,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4479,8 +4223,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4555,20 +4297,15 @@ pub struct PutBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBotErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4615,8 +4352,6 @@ impl PutBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4684,20 +4419,15 @@ pub struct PutBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBotAliasErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4744,8 +4474,6 @@ impl PutBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4819,20 +4547,15 @@ pub struct PutIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutIntentErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4879,8 +4602,6 @@ impl PutIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4951,20 +4672,15 @@ pub struct PutSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSlotTypeErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5011,8 +4727,6 @@ impl PutSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5086,9 +4800,7 @@ pub struct StartImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -5137,8 +4849,6 @@ impl StartImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5199,19 +4909,15 @@ pub struct StartMigrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMigrationErrorKind {
-    /// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs
-    /// required to migrate your bot.</p>
+    /// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required to migrate your bot.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5258,8 +4964,6 @@ impl StartMigrationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5336,19 +5040,15 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5395,8 +5095,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5467,19 +5165,15 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5526,8 +5220,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5588,8 +5280,7 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p>The resource specified in the request was not found. Check the
-/// resource and try again.</p>
+/// <p>The resource specified in the request was not found. Check the resource and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -5805,8 +5496,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p> There was a conflict processing the request. Try your request
-/// again. </p>
+/// <p> There was a conflict processing the request. Try your request again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -5870,9 +5560,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The request is not well formed. For example, a value is invalid or
-/// a required field is missing. Check the field values, and try
-/// again.</p>
+/// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
@@ -5936,8 +5624,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs
-/// required to migrate your bot.</p>
+/// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required to migrate your bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -6001,9 +5688,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p> The checksum of the resource that you are trying to change does
-/// not match the checksum in the request. Check the resource's checksum and
-/// try again.</p>
+/// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -6067,30 +5752,17 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p>The resource that you are attempting to delete is referred to by
-/// another resource. Use this information to remove references to the
-/// resource that you are trying to delete.</p>
-/// <p>The body of the exception contains a JSON object that describes the
-/// resource.</p>
-/// <p>
-/// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-/// INTENT,</code>
-/// </p>
-/// <p>
-/// <code>"resourceReference": {</code>
-/// </p>
-/// <p>
-/// <code>"name": <i>string</i>, "version":
-/// <i>string</i> } }</code>
-/// </p>
+/// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+/// <p>The body of the exception contains a JSON object that describes the resource.</p>
+/// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+/// <p> <code>"resourceReference": {</code> </p>
+/// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub reference_type: std::option::Option<crate::model::ReferenceType>,
-    /// <p>Describes the resource that refers to the resource that you are
-    /// attempting to delete. This object is returned as part of the
-    /// <code>ResourceInUseException</code> exception. </p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub example_reference: std::option::Option<crate::model::ResourceReference>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
@@ -6100,9 +5772,7 @@ impl ResourceInUseException {
     pub fn reference_type(&self) -> std::option::Option<&crate::model::ReferenceType> {
         self.reference_type.as_ref()
     }
-    /// <p>Describes the resource that refers to the resource that you are
-    /// attempting to delete. This object is returned as part of the
-    /// <code>ResourceInUseException</code> exception. </p>
+    /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
     pub fn example_reference(&self) -> std::option::Option<&crate::model::ResourceReference> {
         self.example_reference.as_ref()
     }
@@ -6156,16 +5826,12 @@ pub mod resource_in_use_exception {
             self.reference_type = input;
             self
         }
-        /// <p>Describes the resource that refers to the resource that you are
-        /// attempting to delete. This object is returned as part of the
-        /// <code>ResourceInUseException</code> exception. </p>
+        /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
         pub fn example_reference(mut self, input: crate::model::ResourceReference) -> Self {
             self.example_reference = Some(input);
             self
         }
-        /// <p>Describes the resource that refers to the resource that you are
-        /// attempting to delete. This object is returned as part of the
-        /// <code>ResourceInUseException</code> exception. </p>
+        /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
         pub fn set_example_reference(
             mut self,
             input: std::option::Option<crate::model::ResourceReference>,

@@ -14,12 +14,9 @@ pub struct AddLayerVersionPermissionError {
 pub enum AddLayerVersionPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -82,8 +79,6 @@ impl AddLayerVersionPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -188,12 +183,9 @@ pub struct AddPermissionError {
 pub enum AddPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -250,8 +242,6 @@ impl AddPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -402,8 +392,6 @@ impl CreateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -531,8 +519,6 @@ impl CreateCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -650,8 +636,6 @@ impl CreateEventSourceMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -738,14 +722,11 @@ pub struct CreateFunctionError {
 pub enum CreateFunctionErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -806,8 +787,6 @@ impl CreateFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -971,8 +950,6 @@ impl DeleteAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1098,8 +1075,6 @@ impl DeleteCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1178,8 +1153,7 @@ pub struct DeleteEventSourceMappingError {
 pub enum DeleteEventSourceMappingErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-    /// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1234,8 +1208,6 @@ impl DeleteEventSourceMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1375,8 +1347,6 @@ impl DeleteFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1527,8 +1497,6 @@ impl DeleteFunctionCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1686,8 +1654,6 @@ impl DeleteFunctionConcurrencyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1838,8 +1804,6 @@ impl DeleteFunctionEventInvokeConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1976,8 +1940,6 @@ impl DeleteLayerVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2099,8 +2061,6 @@ impl DeleteProvisionedConcurrencyConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2237,8 +2197,6 @@ impl GetAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2346,8 +2304,6 @@ impl GetAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2462,8 +2418,6 @@ impl GetCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2582,8 +2536,6 @@ impl GetEventSourceMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2710,8 +2662,6 @@ impl GetFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2841,8 +2791,6 @@ impl GetFunctionCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2975,8 +2923,6 @@ impl GetFunctionConcurrencyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3105,8 +3051,6 @@ impl GetFunctionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3241,8 +3185,6 @@ impl GetFunctionEventInvokeConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3373,8 +3315,6 @@ impl GetLayerVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3498,8 +3438,6 @@ impl GetLayerVersionByArnError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3626,8 +3564,6 @@ impl GetLayerVersionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3754,8 +3690,6 @@ impl GetPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3893,8 +3827,6 @@ impl GetProvisionedConcurrencyConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3993,8 +3925,7 @@ pub struct InvokeError {
 pub enum InvokeErrorKind {
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::error::Ec2AccessDeniedException),
-    /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
-    /// for the Lambda function.</p>
+    /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
     Ec2ThrottledException(crate::error::Ec2ThrottledException),
     /// <p>Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
     Ec2UnexpectedException(crate::error::Ec2UnexpectedException),
@@ -4004,11 +3935,9 @@ pub enum InvokeErrorKind {
     EfsMountConnectivityException(crate::error::EfsMountConnectivityException),
     /// <p>The function couldn't mount the configured file system due to a permission or configuration issue.</p>
     EfsMountFailureException(crate::error::EfsMountFailureException),
-    /// <p>The function was able to make a network connection to the configured file system, but the mount operation
-    /// timed out.</p>
+    /// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
     EfsMountTimeoutException(crate::error::EfsMountTimeoutException),
-    /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
-    /// function configuration, because the limit for network interfaces has been reached.</p>
+    /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
     EniLimitReachedException(crate::error::EniLimitReachedException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4022,32 +3951,25 @@ pub enum InvokeErrorKind {
     InvalidSubnetIdException(crate::error::InvalidSubnetIdException),
     /// <p>Lambda could not unzip the deployment package.</p>
     InvalidZipFileException(crate::error::InvalidZipFileException),
-    /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
-    /// function's KMS permissions.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
-    /// function's KMS key settings.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for
-    /// Decrypt. Check the function's KMS key settings.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's
-    /// KMS key settings. </p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
+    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
     RequestTooLargeException(crate::error::RequestTooLargeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
-    /// reestablish and try again.</p>
+    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
-    /// has no available IP addresses.</p>
+    /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
     SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -4119,8 +4041,6 @@ impl InvokeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4366,8 +4286,6 @@ impl InvokeAsyncError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4496,8 +4414,6 @@ impl ListAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4617,8 +4533,6 @@ impl ListCodeSigningConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4731,8 +4645,6 @@ impl ListEventSourceMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4870,8 +4782,6 @@ impl ListFunctionEventInvokeConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5001,8 +4911,6 @@ impl ListFunctionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5122,8 +5030,6 @@ impl ListFunctionsByCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5243,8 +5149,6 @@ impl ListLayersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5357,8 +5261,6 @@ impl ListLayerVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5491,8 +5393,6 @@ impl ListProvisionedConcurrencyConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5625,8 +5525,6 @@ impl ListTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5746,8 +5644,6 @@ impl ListVersionsByFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5822,8 +5718,7 @@ pub struct PublishLayerVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishLayerVersionErrorKind {
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5878,8 +5773,6 @@ impl PublishLayerVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5962,14 +5855,11 @@ pub struct PublishVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishVersionErrorKind {
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -6026,8 +5916,6 @@ impl PublishVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6191,8 +6079,6 @@ impl PutFunctionCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6348,8 +6234,6 @@ impl PutFunctionConcurrencyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6495,8 +6379,6 @@ impl PutFunctionEventInvokeConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6651,8 +6533,6 @@ impl PutProvisionedConcurrencyConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6745,9 +6625,7 @@ pub struct RemoveLayerVersionPermissionError {
 pub enum RemoveLayerVersionPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6808,8 +6686,6 @@ impl RemoveLayerVersionPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6900,9 +6776,7 @@ pub struct RemovePermissionError {
 pub enum RemovePermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6955,8 +6829,6 @@ impl RemovePermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7091,8 +6963,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7227,8 +7097,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7310,9 +7178,7 @@ pub struct UpdateAliasError {
 pub enum UpdateAliasErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -7368,8 +7234,6 @@ impl UpdateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7508,8 +7372,6 @@ impl UpdateCodeSigningConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7582,8 +7444,7 @@ pub enum UpdateEventSourceMappingErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-    /// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7639,8 +7500,6 @@ impl UpdateEventSourceMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7735,20 +7594,15 @@ pub struct UpdateFunctionCodeError {
 pub enum UpdateFunctionCodeErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -7810,8 +7664,6 @@ impl UpdateFunctionCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7933,17 +7785,13 @@ pub struct UpdateFunctionConfigurationError {
 pub enum UpdateFunctionConfigurationErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -8016,8 +7864,6 @@ impl UpdateFunctionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8208,8 +8054,6 @@ impl UpdateFunctionEventInvokeConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8756,9 +8600,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-/// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-/// resource.</p>
+/// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -8843,8 +8685,7 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-/// fails, even if code signing policy is set to WARN.</p>
+/// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCodeSignatureException {
@@ -8929,8 +8770,7 @@ impl InvalidCodeSignatureException {
     }
 }
 
-/// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-/// is set to ENFORCE. Lambda blocks the deployment. </p>
+/// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeVerificationFailedException {
@@ -9100,8 +8940,7 @@ impl CodeSigningConfigNotFoundException {
     }
 }
 
-/// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-/// </p>
+/// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeStorageExceededException {
@@ -9186,8 +9025,7 @@ impl CodeStorageExceededException {
     }
 }
 
-/// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-/// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+/// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -9527,8 +9365,7 @@ impl UnsupportedMediaTypeException {
     }
 }
 
-/// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
-/// has no available IP addresses.</p>
+/// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetIpAddressLimitReachedException {
@@ -9616,8 +9453,7 @@ impl SubnetIpAddressLimitReachedException {
     }
 }
 
-/// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
-/// reestablish and try again.</p>
+/// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
@@ -9702,8 +9538,7 @@ impl ResourceNotReadyException {
     }
 }
 
-/// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
+/// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTooLargeException {
@@ -9788,8 +9623,7 @@ impl RequestTooLargeException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's
-/// KMS key settings. </p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
@@ -9874,8 +9708,7 @@ impl KmsNotFoundException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for
-/// Decrypt. Check the function's KMS key settings.</p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
@@ -9960,8 +9793,7 @@ impl KmsInvalidStateException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
-/// function's KMS key settings.</p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
@@ -10046,8 +9878,7 @@ impl KmsDisabledException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
-/// function's KMS permissions.</p>
+/// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
@@ -10390,8 +10221,7 @@ impl InvalidSecurityGroupIdException {
     }
 }
 
-/// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
-/// function configuration, because the limit for network interfaces has been reached.</p>
+/// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EniLimitReachedException {
@@ -10476,8 +10306,7 @@ impl EniLimitReachedException {
     }
 }
 
-/// <p>The function was able to make a network connection to the configured file system, but the mount operation
-/// timed out.</p>
+/// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsMountTimeoutException {
@@ -10927,8 +10756,7 @@ impl Ec2UnexpectedException {
     }
 }
 
-/// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
-/// for the Lambda function.</p>
+/// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ThrottledException {
@@ -11183,8 +11011,7 @@ impl ProvisionedConcurrencyConfigNotFoundException {
     }
 }
 
-/// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-/// </p>
+/// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyLengthExceededException {

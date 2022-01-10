@@ -14,8 +14,7 @@ pub struct BatchGetRecordError {
 pub enum BatchGetRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
@@ -65,8 +64,6 @@ impl BatchGetRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -131,8 +128,7 @@ pub struct DeleteRecordError {
 pub enum DeleteRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
@@ -182,8 +178,6 @@ impl DeleteRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -248,8 +242,7 @@ pub struct GetRecordError {
 pub enum GetRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>A resource that is required to perform an action was not found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
@@ -302,8 +295,6 @@ impl GetRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -373,8 +364,7 @@ pub struct PutRecordError {
 pub enum PutRecordErrorKind {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::error::AccessForbidden),
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalFailure(crate::error::InternalFailure),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailable(crate::error::ServiceUnavailable),
@@ -424,8 +414,6 @@ impl PutRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -603,8 +591,7 @@ impl ServiceUnavailable {
     }
 }
 
-/// <p>An internal failure occurred. Try your request again. If the problem
-/// persists, contact AWS customer support.</p>
+/// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailure {

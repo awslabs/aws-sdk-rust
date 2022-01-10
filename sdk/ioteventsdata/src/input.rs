@@ -17,10 +17,10 @@ pub mod batch_acknowledge_alarm_input {
         /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
         pub fn acknowledge_action_requests(
             mut self,
-            input: impl Into<crate::model::AcknowledgeAlarmActionRequest>,
+            input: crate::model::AcknowledgeAlarmActionRequest,
         ) -> Self {
             let mut v = self.acknowledge_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.acknowledge_action_requests = Some(v);
             self
         }
@@ -48,7 +48,7 @@ pub mod batch_acknowledge_alarm_input {
 #[doc(hidden)]
 pub type BatchAcknowledgeAlarmInputOperationOutputAlias = crate::operation::BatchAcknowledgeAlarm;
 #[doc(hidden)]
-pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchAcknowledgeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAcknowledgeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchAcknowledgeAlarm`](crate::operation::BatchAcknowledgeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -59,7 +59,7 @@ impl BatchAcknowledgeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAcknowledgeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -141,7 +141,7 @@ impl BatchAcknowledgeAlarmInput {
             "BatchAcknowledgeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -181,10 +181,10 @@ pub mod batch_disable_alarm_input {
         /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
         pub fn disable_action_requests(
             mut self,
-            input: impl Into<crate::model::DisableAlarmActionRequest>,
+            input: crate::model::DisableAlarmActionRequest,
         ) -> Self {
             let mut v = self.disable_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disable_action_requests = Some(v);
             self
         }
@@ -212,7 +212,7 @@ pub mod batch_disable_alarm_input {
 #[doc(hidden)]
 pub type BatchDisableAlarmInputOperationOutputAlias = crate::operation::BatchDisableAlarm;
 #[doc(hidden)]
-pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableAlarm`](crate::operation::BatchDisableAlarm)>
     #[allow(clippy::let_and_return)]
@@ -223,7 +223,7 @@ impl BatchDisableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisableAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl BatchDisableAlarmInput {
             "BatchDisableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -343,10 +343,10 @@ pub mod batch_enable_alarm_input {
         /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
         pub fn enable_action_requests(
             mut self,
-            input: impl Into<crate::model::EnableAlarmActionRequest>,
+            input: crate::model::EnableAlarmActionRequest,
         ) -> Self {
             let mut v = self.enable_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enable_action_requests = Some(v);
             self
         }
@@ -374,7 +374,7 @@ pub mod batch_enable_alarm_input {
 #[doc(hidden)]
 pub type BatchEnableAlarmInputOperationOutputAlias = crate::operation::BatchEnableAlarm;
 #[doc(hidden)]
-pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchEnableAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEnableAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableAlarm`](crate::operation::BatchEnableAlarm)>
     #[allow(clippy::let_and_return)]
@@ -385,7 +385,7 @@ impl BatchEnableAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEnableAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -465,7 +465,7 @@ impl BatchEnableAlarmInput {
             "BatchEnableAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -501,18 +501,14 @@ pub mod batch_put_message_input {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -536,7 +532,7 @@ pub mod batch_put_message_input {
 #[doc(hidden)]
 pub type BatchPutMessageInputOperationOutputAlias = crate::operation::BatchPutMessage;
 #[doc(hidden)]
-pub type BatchPutMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchPutMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(clippy::let_and_return)]
@@ -547,7 +543,7 @@ impl BatchPutMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -627,7 +623,7 @@ impl BatchPutMessageInput {
             "BatchPutMessage",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -667,10 +663,10 @@ pub mod batch_reset_alarm_input {
         /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
         pub fn reset_action_requests(
             mut self,
-            input: impl Into<crate::model::ResetAlarmActionRequest>,
+            input: crate::model::ResetAlarmActionRequest,
         ) -> Self {
             let mut v = self.reset_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reset_action_requests = Some(v);
             self
         }
@@ -698,7 +694,7 @@ pub mod batch_reset_alarm_input {
 #[doc(hidden)]
 pub type BatchResetAlarmInputOperationOutputAlias = crate::operation::BatchResetAlarm;
 #[doc(hidden)]
-pub type BatchResetAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchResetAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchResetAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchResetAlarm`](crate::operation::BatchResetAlarm)>
     #[allow(clippy::let_and_return)]
@@ -709,7 +705,7 @@ impl BatchResetAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchResetAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -789,7 +785,7 @@ impl BatchResetAlarmInput {
             "BatchResetAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -829,10 +825,10 @@ pub mod batch_snooze_alarm_input {
         /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
         pub fn snooze_action_requests(
             mut self,
-            input: impl Into<crate::model::SnoozeAlarmActionRequest>,
+            input: crate::model::SnoozeAlarmActionRequest,
         ) -> Self {
             let mut v = self.snooze_action_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snooze_action_requests = Some(v);
             self
         }
@@ -860,7 +856,7 @@ pub mod batch_snooze_alarm_input {
 #[doc(hidden)]
 pub type BatchSnoozeAlarmInputOperationOutputAlias = crate::operation::BatchSnoozeAlarm;
 #[doc(hidden)]
-pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchSnoozeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchSnoozeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`BatchSnoozeAlarm`](crate::operation::BatchSnoozeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -871,7 +867,7 @@ impl BatchSnoozeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchSnoozeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -951,7 +947,7 @@ impl BatchSnoozeAlarmInput {
             "BatchSnoozeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -989,9 +985,9 @@ pub mod batch_update_detector_input {
         /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
         ///
         /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-        pub fn detectors(mut self, input: impl Into<crate::model::UpdateDetectorRequest>) -> Self {
+        pub fn detectors(mut self, input: crate::model::UpdateDetectorRequest) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detectors = Some(v);
             self
         }
@@ -1019,7 +1015,7 @@ pub mod batch_update_detector_input {
 #[doc(hidden)]
 pub type BatchUpdateDetectorInputOperationOutputAlias = crate::operation::BatchUpdateDetector;
 #[doc(hidden)]
-pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateDetector`](crate::operation::BatchUpdateDetector)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +1026,7 @@ impl BatchUpdateDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1110,7 +1106,7 @@ impl BatchUpdateDetectorInput {
             "BatchUpdateDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1156,14 +1152,12 @@ pub mod describe_alarm_input {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1185,7 +1179,7 @@ pub mod describe_alarm_input {
 #[doc(hidden)]
 pub type DescribeAlarmInputOperationOutputAlias = crate::operation::DescribeAlarm;
 #[doc(hidden)]
-pub type DescribeAlarmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAlarmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarm`](crate::operation::DescribeAlarm)>
     #[allow(clippy::let_and_return)]
@@ -1196,7 +1190,7 @@ impl DescribeAlarmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlarm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1301,7 +1295,7 @@ impl DescribeAlarmInput {
             "DescribeAlarm",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1326,14 +1320,12 @@ pub mod describe_detector_input {
         pub(crate) key_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1341,14 +1333,12 @@ pub mod describe_detector_input {
             self.detector_model_name = input;
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1370,7 +1360,7 @@ pub mod describe_detector_input {
 #[doc(hidden)]
 pub type DescribeDetectorInputOperationOutputAlias = crate::operation::DescribeDetector;
 #[doc(hidden)]
-pub type DescribeDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(clippy::let_and_return)]
@@ -1381,7 +1371,7 @@ impl DescribeDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1486,7 +1476,7 @@ impl DescribeDetectorInput {
             "DescribeDetector",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1563,7 +1553,7 @@ pub mod list_alarms_input {
 #[doc(hidden)]
 pub type ListAlarmsInputOperationOutputAlias = crate::operation::ListAlarms;
 #[doc(hidden)]
-pub type ListAlarmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAlarmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlarms`](crate::operation::ListAlarms)>
     #[allow(clippy::let_and_return)]
@@ -1574,7 +1564,7 @@ impl ListAlarmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlarms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1685,7 +1675,7 @@ impl ListAlarmsInput {
             "ListAlarms",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1774,7 +1764,7 @@ pub mod list_detectors_input {
 #[doc(hidden)]
 pub type ListDetectorsInputOperationOutputAlias = crate::operation::ListDetectors;
 #[doc(hidden)]
-pub type ListDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
     #[allow(clippy::let_and_return)]
@@ -1785,7 +1775,7 @@ impl ListDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1899,7 +1889,7 @@ impl ListDetectorsInput {
             "ListDetectors",
             "ioteventsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1995,21 +1985,17 @@ impl std::fmt::Debug for ListAlarmsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorInput {
-    /// <p>The name of the detector model whose detectors (instances) you want information
-    /// about.</p>
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     pub detector_model_name: std::option::Option<std::string::String>,
-    /// <p>A filter used to limit results to detectors (instances) created because of the given key
-    /// ID.</p>
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorInput {
-    /// <p>The name of the detector model whose detectors (instances) you want information
-    /// about.</p>
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
-    /// <p>A filter used to limit results to detectors (instances) created because of the given key
-    /// ID.</p>
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -2029,8 +2015,7 @@ impl std::fmt::Debug for DescribeDetectorInput {
 pub struct DescribeAlarmInput {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmInput {
@@ -2038,8 +2023,7 @@ impl DescribeAlarmInput {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -2126,15 +2110,11 @@ impl std::fmt::Debug for BatchResetAlarmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageInput {
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-    /// "string", "inputName": "string", "payload": "string"}'</code>
-    /// </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-    /// "string", "inputName": "string", "payload": "string"}'</code>
-    /// </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }

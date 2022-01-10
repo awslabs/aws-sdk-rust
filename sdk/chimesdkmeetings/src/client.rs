@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Chime SDK Meetings
@@ -145,6 +145,7 @@ where
     ///
     /// See [`ListAttendees`](crate::client::fluent_builders::ListAttendees) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
     pub fn list_attendees(&self) -> fluent_builders::ListAttendees<C, M, R> {
         fluent_builders::ListAttendees::new(self.handle.clone())
     }
@@ -175,9 +176,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchCreateAttendee`.
     ///
-    /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -222,10 +222,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreateAttendeeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -234,8 +234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
@@ -248,11 +248,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(
-            mut self,
-            inp: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
-            self.inner = self.inner.attendees(inp);
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
+            self.inner = self.inner.attendees(input);
             self
         }
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -266,13 +263,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAttendee`.
     ///
-    /// <p>
-    /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -317,10 +309,10 @@ pub mod fluent_builders {
                 crate::input::CreateAttendeeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -329,8 +321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting.</p>
@@ -339,8 +331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn external_user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_user_id(inp);
+        pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_user_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
@@ -354,14 +346,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeeting`.
     ///
-    /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,10 +392,10 @@ pub mod fluent_builders {
                 crate::input::CreateMeetingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -418,8 +404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -431,98 +417,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
-        pub fn media_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(inp);
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(inp);
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -534,8 +442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(inp);
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -549,9 +457,9 @@ pub mod fluent_builders {
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
         pub fn notifications_configuration(
             mut self,
-            inp: crate::model::NotificationsConfiguration,
+            input: crate::model::NotificationsConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(inp);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -563,8 +471,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(mut self, inp: crate::model::MeetingFeaturesConfiguration) -> Self {
-            self.inner = self.inner.meeting_features(inp);
+        pub fn meeting_features(
+            mut self,
+            input: crate::model::MeetingFeaturesConfiguration,
+        ) -> Self {
+            self.inner = self.inner.meeting_features(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -578,14 +489,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
     ///
-    /// <p>
-    /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingWithAttendees<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -630,10 +535,10 @@ pub mod fluent_builders {
                 crate::input::CreateMeetingWithAttendeesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -642,8 +547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -655,8 +560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        pub fn media_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(inp);
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
@@ -665,8 +570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(inp);
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -678,8 +583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(inp);
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -691,8 +596,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-        pub fn meeting_features(mut self, inp: crate::model::MeetingFeaturesConfiguration) -> Self {
-            self.inner = self.inner.meeting_features(inp);
+        pub fn meeting_features(
+            mut self,
+            input: crate::model::MeetingFeaturesConfiguration,
+        ) -> Self {
+            self.inner = self.inner.meeting_features(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -706,9 +614,9 @@ pub mod fluent_builders {
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
         pub fn notifications_configuration(
             mut self,
-            inp: crate::model::NotificationsConfiguration,
+            input: crate::model::NotificationsConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(inp);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -724,11 +632,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(
-            mut self,
-            inp: impl Into<crate::model::CreateAttendeeRequestItem>,
-        ) -> Self {
-            self.inner = self.inner.attendees(inp);
+        pub fn attendees(mut self, input: crate::model::CreateAttendeeRequestItem) -> Self {
+            self.inner = self.inner.attendees(input);
             self
         }
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -742,11 +647,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAttendee`.
     ///
-    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-    /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -791,10 +693,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAttendeeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -803,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -813,8 +715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(inp);
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -825,11 +727,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMeeting`.
     ///
-    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from
-    /// joining the meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-    /// <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,10 +773,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMeetingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -886,8 +785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -898,12 +797,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttendee`.
     ///
-    /// <p>
-    /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttendee<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -948,10 +843,10 @@ pub mod fluent_builders {
                 crate::input::GetAttendeeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -960,8 +855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -970,8 +865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(inp);
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -982,10 +877,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMeeting`.
     ///
-    /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMeeting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1030,10 +923,10 @@ pub mod fluent_builders {
                 crate::input::GetMeetingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1042,8 +935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1054,12 +947,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAttendees`.
     ///
-    /// <p>
-    /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttendees<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1104,10 +993,10 @@ pub mod fluent_builders {
                 crate::input::ListAttendeesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1115,9 +1004,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAttendeesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAttendeesPaginator<C, M, R> {
+            crate::paginator::ListAttendeesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1126,8 +1021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -1136,8 +1031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -1149,7 +1044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMeetingTranscription`.
     ///
     /// <p>Starts transcription for the specified <code>meetingId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMeetingTranscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1194,10 +1089,10 @@ pub mod fluent_builders {
                 crate::input::StartMeetingTranscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1206,8 +1101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
@@ -1215,17 +1110,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_meeting_id(input);
             self
         }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or
-        /// <code>EngineTranscribeMedicalSettings</code>.</p>
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn transcription_configuration(
             mut self,
-            inp: crate::model::TranscriptionConfiguration,
+            input: crate::model::TranscriptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.transcription_configuration(inp);
+            self.inner = self.inner.transcription_configuration(input);
             self
         }
-        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or
-        /// <code>EngineTranscribeMedicalSettings</code>.</p>
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn set_transcription_configuration(
             mut self,
             input: std::option::Option<crate::model::TranscriptionConfiguration>,
@@ -1237,7 +1130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMeetingTranscription`.
     ///
     /// <p>Stops transcription for the specified <code>meetingId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMeetingTranscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1282,10 +1175,10 @@ pub mod fluent_builders {
                 crate::input::StopMeetingTranscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1294,8 +1187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
-        pub fn meeting_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(inp);
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
@@ -1305,6 +1198,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -15,14 +15,12 @@ pub mod create_lifecycle_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30,14 +28,12 @@ pub mod create_lifecycle_policy_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-        /// supported.</p>
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -113,7 +109,7 @@ pub mod create_lifecycle_policy_input {
 #[doc(hidden)]
 pub type CreateLifecyclePolicyInputOperationOutputAlias = crate::operation::CreateLifecyclePolicy;
 #[doc(hidden)]
-pub type CreateLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateLifecyclePolicy`](crate::operation::CreateLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -124,7 +120,7 @@ impl CreateLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +202,7 @@ impl CreateLifecyclePolicyInput {
             "CreateLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -264,7 +260,7 @@ pub mod delete_lifecycle_policy_input {
 #[doc(hidden)]
 pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
 #[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -275,7 +271,7 @@ impl DeleteLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +361,7 @@ impl DeleteLifecyclePolicyInput {
             "DeleteLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -431,12 +427,9 @@ pub mod get_lifecycle_policies_input {
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
         /// <p>The resource type.</p>
-        pub fn resource_types(
-            mut self,
-            input: impl Into<crate::model::ResourceTypeValues>,
-        ) -> Self {
+        pub fn resource_types(mut self, input: crate::model::ResourceTypeValues) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
@@ -512,7 +505,7 @@ pub mod get_lifecycle_policies_input {
 #[doc(hidden)]
 pub type GetLifecyclePoliciesInputOperationOutputAlias = crate::operation::GetLifecyclePolicies;
 #[doc(hidden)]
-pub type GetLifecyclePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicies`](crate::operation::GetLifecyclePolicies)>
     #[allow(clippy::let_and_return)]
@@ -523,7 +516,7 @@ impl GetLifecyclePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -631,7 +624,7 @@ impl GetLifecyclePoliciesInput {
             "GetLifecyclePolicies",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -681,7 +674,7 @@ pub mod get_lifecycle_policy_input {
 #[doc(hidden)]
 pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
 #[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -692,7 +685,7 @@ impl GetLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -782,7 +775,7 @@ impl GetLifecyclePolicyInput {
             "GetLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -832,7 +825,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -843,7 +836,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -933,7 +926,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1012,7 +1005,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1023,7 +1016,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1118,7 +1111,7 @@ impl TagResourceInput {
             "TagResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1197,7 +1190,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1208,7 +1201,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1311,7 +1304,7 @@ impl UntagResourceInput {
             "UntagResource",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1349,14 +1342,12 @@ pub mod update_lifecycle_policy_input {
             self.policy_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-        /// the lifecycle policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1387,14 +1378,12 @@ pub mod update_lifecycle_policy_input {
             self.description = input;
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn policy_details(mut self, input: crate::model::PolicyDetails) -> Self {
             self.policy_details = Some(input);
             self
         }
-        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-        /// resource type.</p>
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -1422,7 +1411,7 @@ pub mod update_lifecycle_policy_input {
 #[doc(hidden)]
 pub type UpdateLifecyclePolicyInputOperationOutputAlias = crate::operation::UpdateLifecyclePolicy;
 #[doc(hidden)]
-pub type UpdateLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLifecyclePolicy`](crate::operation::UpdateLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1433,7 +1422,7 @@ impl UpdateLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1531,7 +1520,7 @@ impl UpdateLifecyclePolicyInput {
             "UpdateLifecyclePolicy",
             "dlm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1560,15 +1549,13 @@ impl UpdateLifecyclePolicyInput {
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
     /// <p>A description of the lifecycle policy.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-    /// resource type.</p>
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
 }
 impl UpdateLifecyclePolicyInput {
@@ -1576,8 +1563,7 @@ impl UpdateLifecyclePolicyInput {
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
@@ -1589,8 +1575,7 @@ impl UpdateLifecyclePolicyInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
-    /// resource type.</p>
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub fn policy_details(&self) -> std::option::Option<&crate::model::PolicyDetails> {
         self.policy_details.as_ref()
     }
@@ -1789,11 +1774,9 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLifecyclePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-    /// supported.</p>
+    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub state: std::option::Option<crate::model::SettablePolicyStateValues>,
@@ -1804,13 +1787,11 @@ pub struct CreateLifecyclePolicyInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLifecyclePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
-    /// the lifecycle policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
-    /// supported.</p>
+    /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }

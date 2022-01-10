@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateS3ResourcesOutput {
-    /// <p>The S3 resources whose classification types can't be updated. An error code and an
-    /// error message are provided for each failed item. </p>
+    /// <p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl UpdateS3ResourcesOutput {
-    /// <p>The S3 resources whose classification types can't be updated. An error code and an
-    /// error message are provided for each failed item. </p>
+    /// <p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>
     pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
         self.failed_s3_resources.as_deref()
     }
@@ -35,19 +33,14 @@ pub mod update_s3_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed_s3_resources`](Self::set_failed_s3_resources).
         ///
-        /// <p>The S3 resources whose classification types can't be updated. An error code and an
-        /// error message are provided for each failed item. </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        /// <p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }
-        /// <p>The S3 resources whose classification types can't be updated. An error code and an
-        /// error message are provided for each failed item. </p>
+        /// <p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>
         pub fn set_failed_s3_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
@@ -76,10 +69,7 @@ impl UpdateS3ResourcesOutput {
 pub struct ListS3ResourcesOutput {
     /// <p>A list of the associated S3 resources returned by the action.</p>
     pub s3_resources: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
-    /// <p>When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-    /// null. </p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListS3ResourcesOutput {
@@ -87,10 +77,7 @@ impl ListS3ResourcesOutput {
     pub fn s3_resources(&self) -> std::option::Option<&[crate::model::S3ResourceClassification]> {
         self.s3_resources.as_deref()
     }
-    /// <p>When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-    /// null. </p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -119,12 +106,9 @@ pub mod list_s3_resources_output {
         /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
         ///
         /// <p>A list of the associated S3 resources returned by the action.</p>
-        pub fn s3_resources(
-            mut self,
-            input: impl Into<crate::model::S3ResourceClassification>,
-        ) -> Self {
+        pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
             let mut v = self.s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.s3_resources = Some(v);
             self
         }
@@ -136,18 +120,12 @@ pub mod list_s3_resources_output {
             self.s3_resources = input;
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-        /// null. </p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-        /// null. </p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -172,25 +150,17 @@ impl ListS3ResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsOutput {
-    /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
-    /// Macie Classic administrator account is also included in this list. </p>
+    /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list. </p>
     pub member_accounts: std::option::Option<std::vec::Vec<crate::model::MemberAccount>>,
-    /// <p>When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-    /// null. </p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMemberAccountsOutput {
-    /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
-    /// Macie Classic administrator account is also included in this list. </p>
+    /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list. </p>
     pub fn member_accounts(&self) -> std::option::Option<&[crate::model::MemberAccount]> {
         self.member_accounts.as_deref()
     }
-    /// <p>When a response is generated, if there is more data to be listed, this parameter is
-    /// present in the response and contains the value to use for the nextToken parameter in a
-    /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-    /// null. </p>
+    /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -217,16 +187,14 @@ pub mod list_member_accounts_output {
         ///
         /// To override the contents of this collection use [`set_member_accounts`](Self::set_member_accounts).
         ///
-        /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
-        /// Macie Classic administrator account is also included in this list. </p>
-        pub fn member_accounts(mut self, input: impl Into<crate::model::MemberAccount>) -> Self {
+        /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list. </p>
+        pub fn member_accounts(mut self, input: crate::model::MemberAccount) -> Self {
             let mut v = self.member_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.member_accounts = Some(v);
             self
         }
-        /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current
-        /// Macie Classic administrator account is also included in this list. </p>
+        /// <p>A list of the Amazon Macie Classic member accounts returned by the action. The current Macie Classic administrator account is also included in this list. </p>
         pub fn set_member_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberAccount>>,
@@ -234,18 +202,12 @@ pub mod list_member_accounts_output {
             self.member_accounts = input;
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-        /// null. </p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter in a
-        /// subsequent pagination request. If there is no more data to be listed, this parameter is set to
-        /// null. </p>
+        /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -270,15 +232,11 @@ impl ListMemberAccountsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateS3ResourcesOutput {
-    /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
-    /// Macie Classic. An error code and an error message are provided for each failed item.
-    /// </p>
+    /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl DisassociateS3ResourcesOutput {
-    /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
-    /// Macie Classic. An error code and an error message are provided for each failed item.
-    /// </p>
+    /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
         self.failed_s3_resources.as_deref()
     }
@@ -304,21 +262,14 @@ pub mod disassociate_s3_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed_s3_resources`](Self::set_failed_s3_resources).
         ///
-        /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
-        /// Macie Classic. An error code and an error message are provided for each failed item.
-        /// </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }
-        /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon
-        /// Macie Classic. An error code and an error message are provided for each failed item.
-        /// </p>
+        /// <p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
         pub fn set_failed_s3_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
@@ -375,13 +326,11 @@ impl DisassociateMemberAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateS3ResourcesOutput {
-    /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
-    /// an error message are provided for each failed item. </p>
+    /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,
 }
 impl AssociateS3ResourcesOutput {
-    /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
-    /// an error message are provided for each failed item. </p>
+    /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::model::FailedS3Resource]> {
         self.failed_s3_resources.as_deref()
     }
@@ -407,19 +356,14 @@ pub mod associate_s3_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed_s3_resources`](Self::set_failed_s3_resources).
         ///
-        /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
-        /// an error message are provided for each failed item. </p>
-        pub fn failed_s3_resources(
-            mut self,
-            input: impl Into<crate::model::FailedS3Resource>,
-        ) -> Self {
+        /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+        pub fn failed_s3_resources(mut self, input: crate::model::FailedS3Resource) -> Self {
             let mut v = self.failed_s3_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_s3_resources = Some(v);
             self
         }
-        /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and
-        /// an error message are provided for each failed item. </p>
+        /// <p>S3 resources that couldn't be associated with Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
         pub fn set_failed_s3_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedS3Resource>>,

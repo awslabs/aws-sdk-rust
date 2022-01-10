@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Glue DataBrew
@@ -236,6 +236,7 @@ where
     ///
     /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
@@ -243,6 +244,7 @@ where
     ///
     /// See [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobRuns::into_paginator).
     pub fn list_job_runs(&self) -> fluent_builders::ListJobRuns<C, M, R> {
         fluent_builders::ListJobRuns::new(self.handle.clone())
     }
@@ -250,6 +252,7 @@ where
     ///
     /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
@@ -257,6 +260,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -264,6 +268,7 @@ where
     ///
     /// See [`ListRecipes`](crate::client::fluent_builders::ListRecipes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecipes::into_paginator).
     pub fn list_recipes(&self) -> fluent_builders::ListRecipes<C, M, R> {
         fluent_builders::ListRecipes::new(self.handle.clone())
     }
@@ -271,6 +276,7 @@ where
     ///
     /// See [`ListRecipeVersions`](crate::client::fluent_builders::ListRecipeVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecipeVersions::into_paginator).
     pub fn list_recipe_versions(&self) -> fluent_builders::ListRecipeVersions<C, M, R> {
         fluent_builders::ListRecipeVersions::new(self.handle.clone())
     }
@@ -278,6 +284,7 @@ where
     ///
     /// See [`ListRulesets`](crate::client::fluent_builders::ListRulesets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRulesets::into_paginator).
     pub fn list_rulesets(&self) -> fluent_builders::ListRulesets<C, M, R> {
         fluent_builders::ListRulesets::new(self.handle.clone())
     }
@@ -285,6 +292,7 @@ where
     ///
     /// See [`ListSchedules`](crate::client::fluent_builders::ListSchedules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchedules::into_paginator).
     pub fn list_schedules(&self) -> fluent_builders::ListSchedules<C, M, R> {
         fluent_builders::ListSchedules::new(self.handle.clone())
     }
@@ -407,47 +415,23 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteRecipeVersion`.
     ///
     /// <p>Deletes one or more versions of a recipe at a time.</p>
-    ///
     /// <p>The entire request will be rejected if:</p>
     /// <ul>
-    /// <li>
-    /// <p>The recipe does not exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is an invalid version identifier in the list of versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list is empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list size exceeds 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list contains duplicate entries.</p>
-    /// </li>
+    /// <li> <p>The recipe does not exist.</p> </li>
+    /// <li> <p>There is an invalid version identifier in the list of versions.</p> </li>
+    /// <li> <p>The version list is empty.</p> </li>
+    /// <li> <p>The version list size exceeds 50.</p> </li>
+    /// <li> <p>The version list contains duplicate entries.</p> </li>
     /// </ul>
-    ///
     /// <p>The request will complete successfully, but with partial failures, if:</p>
     /// <ul>
-    /// <li>
-    /// <p>A version does not exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>A version is being used by a job.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specify <code>LATEST_WORKING</code>, but it's being used by a
-    /// project.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version fails to be deleted.</p>
-    /// </li>
+    /// <li> <p>A version does not exist.</p> </li>
+    /// <li> <p>A version is being used by a job.</p> </li>
+    /// <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li>
+    /// <li> <p>The version fails to be deleted.</p> </li>
     /// </ul>
-    /// <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
-    /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
-    /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as
-    /// partial failure in the response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteRecipeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -492,10 +476,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteRecipeVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -504,8 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the recipe whose versions are to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe whose versions are to be deleted.</p>
@@ -517,16 +501,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
         ///
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
-        pub fn recipe_versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_versions(inp);
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+        pub fn recipe_versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_versions(input.into());
             self
         }
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -538,7 +518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
     /// <p>Creates a new DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -583,10 +563,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -594,21 +574,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-        pub fn format(mut self, inp: crate::model::InputFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::InputFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
@@ -616,14 +594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
-        pub fn format_options(mut self, inp: crate::model::FormatOptions) -> Self {
-            self.inner = self.inner.format_options(inp);
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+        pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
+            self.inner = self.inner.format_options(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -631,21 +607,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format_options(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
-        pub fn input(mut self, inp: crate::model::Input) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+        pub fn input(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.inner = self.inner.set_input(input);
             self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-        pub fn path_options(mut self, inp: crate::model::PathOptions) -> Self {
-            self.inner = self.inner.path_options(inp);
+        pub fn path_options(mut self, input: crate::model::PathOptions) -> Self {
+            self.inner = self.inner.path_options(input);
             self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
@@ -666,7 +640,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this dataset.</p>
@@ -683,7 +657,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfileJob`.
     ///
     /// <p>Creates a new job to analyze a dataset and create its data profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfileJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -728,10 +702,10 @@ pub mod fluent_builders {
                 crate::input::CreateProfileJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -740,8 +714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset that this job is to act upon.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset that this job is to act upon.</p>
@@ -749,14 +723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
-        pub fn encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -766,31 +738,17 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
-        pub fn encryption_mode(mut self, inp: crate::model::EncryptionMode) -> Self {
-            self.inner = self.inner.encryption_mode(inp);
+        pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
+            self.inner = self.inner.encryption_mode(input);
             self
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -799,26 +757,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_mode(input);
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
-        pub fn log_subscription(mut self, inp: crate::model::LogSubscription) -> Self {
-            self.inner = self.inner.log_subscription(inp);
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+        pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
+            self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -827,8 +781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
@@ -837,8 +791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
@@ -846,14 +800,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
-        pub fn output_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.output_location(inp);
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -861,16 +813,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
-        pub fn configuration(mut self, inp: crate::model::ProfileConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+        pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -885,9 +833,9 @@ pub mod fluent_builders {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            inp: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
-            self.inner = self.inner.validation_configurations(inp);
+            self.inner = self.inner.validation_configurations(input);
             self
         }
         /// <p>List of validation configurations that are applied to the profile job.</p>
@@ -898,14 +846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_validation_configurations(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -920,7 +866,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this job.</p>
@@ -933,30 +879,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
-        pub fn job_sample(mut self, inp: crate::model::JobSample) -> Self {
-            self.inner = self.inner.job_sample(inp);
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+        pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
+            self.inner = self.inner.job_sample(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -968,7 +906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a new DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1013,10 +951,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1025,8 +963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing dataset to associate this project with.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of an existing dataset to associate this project with.</p>
@@ -1034,21 +972,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The name of an existing recipe to associate with the project.</p>
-        pub fn recipe_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_name(inp);
+        pub fn recipe_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_name(input.into());
             self
         }
         /// <p>The name of an existing recipe to associate with the project.</p>
@@ -1056,26 +992,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_name(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
-        pub fn sample(mut self, inp: crate::model::Sample) -> Self {
-            self.inner = self.inner.sample(inp);
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+        pub fn sample(mut self, input: crate::model::Sample) -> Self {
+            self.inner = self.inner.sample(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.inner = self.inner.set_sample(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1090,7 +1022,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this project.</p>
@@ -1107,7 +1039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecipe`.
     ///
     /// <p>Creates a new DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1152,10 +1084,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1164,8 +1096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description for the recipe.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the recipe.</p>
@@ -1173,14 +1105,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1189,14 +1119,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
-        pub fn steps(mut self, inp: impl Into<crate::model::RecipeStep>) -> Self {
-            self.inner = self.inner.steps(inp);
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
+            self.inner = self.inner.steps(input);
             self
         }
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -1214,7 +1142,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this recipe.</p>
@@ -1231,7 +1159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecipeJob`.
     ///
     /// <p>Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecipeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1276,10 +1204,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecipeJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1288,8 +1216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset that this job processes.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset that this job processes.</p>
@@ -1297,14 +1225,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
-        pub fn encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1314,29 +1240,17 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
-        pub fn encryption_mode(mut self, inp: crate::model::EncryptionMode) -> Self {
-            self.inner = self.inner.encryption_mode(inp);
+        pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
+            self.inner = self.inner.encryption_mode(input);
             self
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -1345,26 +1259,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_mode(input);
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
-        pub fn log_subscription(mut self, inp: crate::model::LogSubscription) -> Self {
-            self.inner = self.inner.log_subscription(inp);
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+        pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
+            self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -1372,21 +1282,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
@@ -1399,8 +1307,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>One or more artifacts that represent the output from running the job.</p>
@@ -1416,11 +1324,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            inp: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
-            self.inner = self.inner.data_catalog_outputs(inp);
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
+            self.inner = self.inner.data_catalog_outputs(input);
             self
         }
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
@@ -1435,14 +1340,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
-        pub fn database_outputs(mut self, inp: impl Into<crate::model::DatabaseOutput>) -> Self {
-            self.inner = self.inner.database_outputs(inp);
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
+            self.inner = self.inner.database_outputs(input);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -1450,21 +1353,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_outputs(input);
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
             self
         }
         /// <p>Represents the name and version of a DataBrew recipe.</p>
-        pub fn recipe_reference(mut self, inp: crate::model::RecipeReference) -> Self {
-            self.inner = self.inner.recipe_reference(inp);
+        pub fn recipe_reference(mut self, input: crate::model::RecipeReference) -> Self {
+            self.inner = self.inner.recipe_reference(input);
             self
         }
         /// <p>Represents the name and version of a DataBrew recipe.</p>
@@ -1475,14 +1376,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_reference(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1497,7 +1396,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this job.</p>
@@ -1510,14 +1409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
@@ -1525,9 +1422,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRuleset`.
     ///
-    /// <p>Creates a new ruleset that can be used in a profile job to validate
-    /// the data quality of a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1572,10 +1468,10 @@ pub mod fluent_builders {
                 crate::input::CreateRulesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1583,21 +1479,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The description of the ruleset.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the ruleset.</p>
@@ -1605,14 +1499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -1621,14 +1513,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1646,7 +1536,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to the ruleset.</p>
@@ -1662,9 +1552,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchedule`.
     ///
-    /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
-    /// date and time, or at regular intervals.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1709,10 +1598,10 @@ pub mod fluent_builders {
                 crate::input::CreateScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1725,8 +1614,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_names`](Self::set_job_names).
         ///
         /// <p>The name or names of one or more jobs to be run.</p>
-        pub fn job_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_names(inp);
+        pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_names(input.into());
             self
         }
         /// <p>The name or names of one or more jobs to be run.</p>
@@ -1737,18 +1626,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_names(input);
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
-        pub fn cron_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cron_expression(inp);
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+        pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cron_expression(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1766,7 +1649,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata tags to apply to this schedule.</p>
@@ -1779,14 +1662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1795,7 +1676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes a dataset from DataBrew.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1840,10 +1721,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1852,8 +1733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the dataset to be deleted.</p>
@@ -1865,7 +1746,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p>Deletes the specified DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1910,10 +1791,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1922,8 +1803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to be deleted.</p>
@@ -1935,7 +1816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes an existing DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1980,10 +1861,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1992,8 +1873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project to be deleted.</p>
@@ -2005,7 +1886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecipeVersion`.
     ///
     /// <p>Deletes a single version of a DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecipeVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2050,10 +1931,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecipeVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2062,8 +1943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the recipe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe.</p>
@@ -2071,16 +1952,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
-        pub fn recipe_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_version(inp);
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+        pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2092,7 +1969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleset`.
     ///
     /// <p>Deletes a ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2137,10 +2014,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRulesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2149,8 +2026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ruleset to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ruleset to be deleted.</p>
@@ -2162,7 +2039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchedule`.
     ///
     /// <p>Deletes the specified DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2207,10 +2084,10 @@ pub mod fluent_builders {
                 crate::input::DeleteScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2219,8 +2096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the schedule to be deleted.</p>
@@ -2232,7 +2109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Returns the definition of a specific DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2277,10 +2154,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2289,8 +2166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the dataset to be described.</p>
@@ -2302,7 +2179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJob`.
     ///
     /// <p>Returns the definition of a specific DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2347,10 +2224,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2359,8 +2236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to be described.</p>
@@ -2372,7 +2249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobRun`.
     ///
     /// <p>Represents one run of a DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2417,10 +2294,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2429,8 +2306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job being processed during this run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job being processed during this run.</p>
@@ -2439,8 +2316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the job run.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The unique identifier of the job run.</p>
@@ -2452,7 +2329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Returns the definition of a specific DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2497,10 +2374,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2509,8 +2386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project to be described.</p>
@@ -2521,9 +2398,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRecipe`.
     ///
-    /// <p>Returns the definition of a specific DataBrew recipe corresponding to a particular
-    /// version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the definition of a specific DataBrew recipe corresponding to a particular version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2568,10 +2444,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2580,8 +2456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the recipe to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe to be described.</p>
@@ -2589,14 +2465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
-        pub fn recipe_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_version(inp);
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+        pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2608,7 +2482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleset`.
     ///
     /// <p>Retrieves detailed information about the ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2653,10 +2527,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRulesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2665,8 +2539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ruleset to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ruleset to be described.</p>
@@ -2678,7 +2552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchedule`.
     ///
     /// <p>Returns the definition of a specific DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2723,10 +2597,10 @@ pub mod fluent_builders {
                 crate::input::DescribeScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2735,8 +2609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to be described.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the schedule to be described.</p>
@@ -2748,7 +2622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Lists all of the DataBrew datasets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2793,10 +2667,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2804,9 +2678,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetsPaginator<C, M, R> {
+            crate::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -2815,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -2828,7 +2708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobRuns`.
     ///
     /// <p>Lists all of the previous runs of a particular DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2873,10 +2753,10 @@ pub mod fluent_builders {
                 crate::input::ListJobRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2884,9 +2764,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobRunsPaginator<C, M, R> {
+            crate::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the job.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job.</p>
@@ -2895,8 +2781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -2905,8 +2791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -2918,7 +2804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Lists all of the DataBrew jobs that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2963,10 +2849,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2974,21 +2860,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsPaginator<C, M, R> {
+            crate::paginator::ListJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -2996,28 +2886,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
             self
@@ -3026,7 +2910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists all of the DataBrew projects that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3071,10 +2955,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3082,9 +2966,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3093,8 +2983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -3106,7 +2996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecipes`.
     ///
     /// <p>Lists all of the DataBrew recipes that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3151,10 +3041,10 @@ pub mod fluent_builders {
                 crate::input::ListRecipesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3162,9 +3052,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecipesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecipesPaginator<C, M, R> {
+            crate::paginator::ListRecipesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -3173,8 +3069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3182,22 +3078,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
-        pub fn recipe_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_version(inp);
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
+        pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3208,9 +3096,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecipeVersions`.
     ///
-    /// <p>Lists the versions of a particular DataBrew recipe, except for
-    /// <code>LATEST_WORKING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipeVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3255,10 +3142,10 @@ pub mod fluent_builders {
                 crate::input::ListRecipeVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3266,9 +3153,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecipeVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecipeVersionsPaginator<C, M, R> {
+            crate::paginator::ListRecipeVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -3277,8 +3170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3287,8 +3180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the recipe for which to return version information.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe for which to return version information.</p>
@@ -3299,9 +3192,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRulesets`.
     ///
-    /// <p>List all rulesets available in the current account or rulesets associated
-    /// with a specific resource (dataset).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all rulesets available in the current account or rulesets associated with a specific resource (dataset).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRulesets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3346,10 +3238,10 @@ pub mod fluent_builders {
                 crate::input::ListRulesetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3357,21 +3249,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRulesetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRulesetsPaginator<C, M, R> {
+            crate::paginator::ListRulesetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -3379,16 +3275,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3397,7 +3289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchedules`.
     ///
     /// <p>Lists the DataBrew schedules that are defined.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3442,10 +3334,10 @@ pub mod fluent_builders {
                 crate::input::ListSchedulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3453,9 +3345,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchedulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchedulesPaginator<C, M, R> {
+            crate::paginator::ListSchedulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the job that these schedules apply to.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job that these schedules apply to.</p>
@@ -3464,8 +3362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request. </p>
@@ -3474,8 +3372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3487,7 +3385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all the tags for a DataBrew resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3532,10 +3430,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3543,14 +3441,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3559,7 +3455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishRecipe`.
     ///
     /// <p>Publishes a new version of a DataBrew recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3604,10 +3500,10 @@ pub mod fluent_builders {
                 crate::input::PublishRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3616,8 +3512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description of the recipe to be published, for this version of the recipe.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the recipe to be published, for this version of the recipe.</p>
@@ -3626,8 +3522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the recipe to be published.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe to be published.</p>
@@ -3638,9 +3534,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendProjectSessionAction`.
     ///
-    /// <p>Performs a recipe step within an interactive DataBrew session that's currently
-    /// open.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs a recipe step within an interactive DataBrew session that's currently open.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendProjectSessionAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3685,10 +3580,10 @@ pub mod fluent_builders {
                 crate::input::SendProjectSessionActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3697,8 +3592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
-        pub fn preview(mut self, inp: bool) -> Self {
-            self.inner = self.inner.preview(inp);
+        pub fn preview(mut self, input: bool) -> Self {
+            self.inner = self.inner.preview(input);
             self
         }
         /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
@@ -3707,8 +3602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project to apply the action to.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project to apply the action to.</p>
@@ -3717,8 +3612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
-        pub fn recipe_step(mut self, inp: crate::model::RecipeStep) -> Self {
-            self.inner = self.inner.recipe_step(inp);
+        pub fn recipe_step(mut self, input: crate::model::RecipeStep) -> Self {
+            self.inner = self.inner.recipe_step(input);
             self
         }
         /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
@@ -3729,28 +3624,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_step(input);
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
-        pub fn step_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.step_index(inp);
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
+        pub fn step_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.step_index(input);
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
         pub fn set_step_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_step_index(input);
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
-        pub fn client_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_session_id(inp);
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
+        pub fn client_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_session_id(input.into());
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
         pub fn set_client_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3759,8 +3648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the data being transformed during an action.</p>
-        pub fn view_frame(mut self, inp: crate::model::ViewFrame) -> Self {
-            self.inner = self.inner.view_frame(inp);
+        pub fn view_frame(mut self, input: crate::model::ViewFrame) -> Self {
+            self.inner = self.inner.view_frame(input);
             self
         }
         /// <p>Represents the data being transformed during an action.</p>
@@ -3775,7 +3664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJobRun`.
     ///
     /// <p>Runs a DataBrew job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3820,10 +3709,10 @@ pub mod fluent_builders {
                 crate::input::StartJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3832,8 +3721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job to be run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to be run.</p>
@@ -3844,9 +3733,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartProjectSession`.
     ///
-    /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
-    /// project.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew project.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartProjectSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3891,10 +3779,10 @@ pub mod fluent_builders {
                 crate::input::StartProjectSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3903,8 +3791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to act upon.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project to act upon.</p>
@@ -3912,14 +3800,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
-        pub fn assume_control(mut self, inp: bool) -> Self {
-            self.inner = self.inner.assume_control(inp);
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
+        pub fn assume_control(mut self, input: bool) -> Self {
+            self.inner = self.inner.assume_control(input);
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
         pub fn set_assume_control(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_assume_control(input);
             self
@@ -3928,7 +3814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopJobRun`.
     ///
     /// <p>Stops a particular run of a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3973,10 +3859,10 @@ pub mod fluent_builders {
                 crate::input::StopJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3985,8 +3871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job to be stopped.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to be stopped.</p>
@@ -3995,8 +3881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the job run to be stopped.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the job run to be stopped.</p>
@@ -4007,9 +3893,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or
-    /// schedule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4054,10 +3939,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4065,16 +3950,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4089,7 +3970,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
@@ -4106,7 +3987,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes metadata tags from a DataBrew resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4151,10 +4032,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4162,14 +4043,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4179,8 +4058,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
@@ -4195,7 +4074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Modifies the definition of an existing DataBrew dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4240,10 +4119,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4252,8 +4131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the dataset to be updated.</p>
@@ -4262,8 +4141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-        pub fn format(mut self, inp: crate::model::InputFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::InputFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
@@ -4271,14 +4150,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
-        pub fn format_options(mut self, inp: crate::model::FormatOptions) -> Self {
-            self.inner = self.inner.format_options(inp);
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+        pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
+            self.inner = self.inner.format_options(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -4286,21 +4163,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format_options(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
-        pub fn input(mut self, inp: crate::model::Input) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+        pub fn input(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.inner = self.inner.set_input(input);
             self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-        pub fn path_options(mut self, inp: crate::model::PathOptions) -> Self {
-            self.inner = self.inner.path_options(inp);
+        pub fn path_options(mut self, input: crate::model::PathOptions) -> Self {
+            self.inner = self.inner.path_options(input);
             self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
@@ -4315,7 +4190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProfileJob`.
     ///
     /// <p>Modifies the definition of an existing profile job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfileJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4360,10 +4235,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProfileJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4371,16 +4246,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
-        pub fn configuration(mut self, inp: crate::model::ProfileConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+        pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -4388,14 +4259,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
-        pub fn encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4405,31 +4274,17 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
-        pub fn encryption_mode(mut self, inp: crate::model::EncryptionMode) -> Self {
-            self.inner = self.inner.encryption_mode(inp);
+        pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
+            self.inner = self.inner.encryption_mode(input);
             self
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -4439,8 +4294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the job to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to be updated.</p>
@@ -4448,14 +4303,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
-        pub fn log_subscription(mut self, inp: crate::model::LogSubscription) -> Self {
-            self.inner = self.inner.log_subscription(inp);
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+        pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
+            self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -4463,21 +4316,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
@@ -4485,14 +4336,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
-        pub fn output_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.output_location(inp);
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -4507,9 +4356,9 @@ pub mod fluent_builders {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            inp: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
-            self.inner = self.inner.validation_configurations(inp);
+            self.inner = self.inner.validation_configurations(input);
             self
         }
         /// <p>List of validation configurations that are applied to the profile job.</p>
@@ -4520,42 +4369,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_validation_configurations(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
-        pub fn job_sample(mut self, inp: crate::model::JobSample) -> Self {
-            self.inner = self.inner.job_sample(inp);
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+        pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
+            self.inner = self.inner.job_sample(input);
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -4567,7 +4406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Modifies the definition of an existing DataBrew project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4612,10 +4451,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4623,21 +4462,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
-        pub fn sample(mut self, inp: crate::model::Sample) -> Self {
-            self.inner = self.inner.sample(inp);
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+        pub fn sample(mut self, input: crate::model::Sample) -> Self {
+            self.inner = self.inner.sample(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.inner = self.inner.set_sample(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
@@ -4646,8 +4483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project to be updated.</p>
@@ -4658,9 +4495,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRecipe`.
     ///
-    /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew
-    /// recipe.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4705,10 +4541,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4717,8 +4553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description of the recipe.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the recipe.</p>
@@ -4727,8 +4563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the recipe to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the recipe to be updated.</p>
@@ -4740,14 +4576,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
-        pub fn steps(mut self, inp: impl Into<crate::model::RecipeStep>) -> Self {
-            self.inner = self.inner.steps(inp);
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
+            self.inner = self.inner.steps(input);
             self
         }
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -4759,7 +4593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecipeJob`.
     ///
     /// <p>Modifies the definition of an existing DataBrew recipe job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecipeJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4804,10 +4638,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRecipeJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4815,14 +4649,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
-        pub fn encryption_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+        pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4832,29 +4664,17 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
-        pub fn encryption_mode(mut self, inp: crate::model::EncryptionMode) -> Self {
-            self.inner = self.inner.encryption_mode(inp);
+        pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
+            self.inner = self.inner.encryption_mode(input);
             self
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -4864,8 +4684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the job to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job to update.</p>
@@ -4873,14 +4693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
-        pub fn log_subscription(mut self, inp: crate::model::LogSubscription) -> Self {
-            self.inner = self.inner.log_subscription(inp);
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+        pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
+            self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -4888,21 +4706,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
@@ -4915,8 +4731,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job. </p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>One or more artifacts that represent the output from running the job. </p>
@@ -4932,11 +4748,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            inp: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
-            self.inner = self.inner.data_catalog_outputs(inp);
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
+            self.inner = self.inner.data_catalog_outputs(input);
             self
         }
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
@@ -4951,14 +4764,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, inp: impl Into<crate::model::DatabaseOutput>) -> Self {
-            self.inner = self.inner.database_outputs(inp);
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
+            self.inner = self.inner.database_outputs(input);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -4966,26 +4777,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_outputs(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
@@ -4994,7 +4801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRuleset`.
     ///
     /// <p>Updates specified ruleset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5039,10 +4846,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRulesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5051,8 +4858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ruleset to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ruleset to be updated.</p>
@@ -5061,8 +4868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the ruleset.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the ruleset.</p>
@@ -5074,14 +4881,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -5093,7 +4898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSchedule`.
     ///
     /// <p>Modifies the definition of an existing DataBrew schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5138,10 +4943,10 @@ pub mod fluent_builders {
                 crate::input::UpdateScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5154,8 +4959,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_names`](Self::set_job_names).
         ///
         /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-        pub fn job_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_names(inp);
+        pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_names(input.into());
             self
         }
         /// <p>The name or names of one or more jobs to be run for this schedule.</p>
@@ -5166,18 +4971,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_names(input);
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
-        pub fn cron_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cron_expression(inp);
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+        pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cron_expression(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5186,8 +4985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schedule to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the schedule to update.</p>
@@ -5197,6 +4996,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

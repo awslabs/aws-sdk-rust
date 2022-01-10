@@ -11,14 +11,13 @@
 //!
 //! <p>The Health API provides programmatic access to the Health information that
 //! appears in the <a href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You
-//! can use the API operations to get information about events that might affect your Amazon Web Services
-//! services and resources.</p>
+//! can use the API operations to get information about events that might affect your Amazon Web Services services and resources.</p>
 //! <note>
 //! <ul>
 //! <li>
-//! <p>You must have a Business or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the
-//! Health API. If you call the Health API from an Amazon Web Services account that
-//! doesn't have a Business or Enterprise Support plan, you receive a
+//! <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health
+//! API. If you call the Health API from an Amazon Web Services account that
+//! doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a
 //! <code>SubscriptionRequiredException</code> error.</p>
 //! </li>
 //! <li>
@@ -88,6 +87,8 @@ pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Generated accessors for nested fields
+mod lens;
 pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
@@ -98,6 +99,8 @@ mod operation_deser;
 mod operation_ser;
 /// Output structures for operations.
 pub mod output;
+/// Paginators for the service
+pub mod paginator;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::byte_stream::ByteStream;

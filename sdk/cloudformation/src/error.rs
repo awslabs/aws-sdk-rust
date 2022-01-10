@@ -58,8 +58,6 @@ impl ActivateTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -163,8 +161,6 @@ impl BatchDescribeTypeConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -268,8 +264,6 @@ impl CancelUpdateStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -363,8 +357,6 @@ impl ContinueUpdateRollbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -417,12 +409,10 @@ pub struct CreateChangeSetError {
 pub enum CreateChangeSetErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The template contains resources with capabilities that weren't specified in the
-    /// Capabilities parameter.</p>
+    /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -467,8 +457,6 @@ impl CreateChangeSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -537,12 +525,10 @@ pub struct CreateStackError {
 pub enum CreateStackErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The template contains resources with capabilities that weren't specified in the
-    /// Capabilities parameter.</p>
+    /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
@@ -590,8 +576,6 @@ impl CreateStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -663,18 +647,15 @@ pub enum CreateStackInstancesErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -724,8 +705,6 @@ impl CreateStackInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -821,8 +800,7 @@ pub enum CreateStackSetErrorKind {
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::error::CreatedButModifiedException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified name is already in use.</p>
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
@@ -869,8 +847,6 @@ impl CreateStackSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -983,8 +959,6 @@ impl DeactivateTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1040,9 +1014,7 @@ pub struct DeleteChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChangeSetErrorKind {
-    /// <p>The specified change set can't be used to update the stack. For example, the change set
-    /// status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-    /// <code>UPDATE_IN_PROGRESS</code>.</p>
+    /// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1085,8 +1057,6 @@ impl DeleteChangeSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1180,8 +1150,6 @@ impl DeleteStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1236,13 +1204,11 @@ pub enum DeleteStackInstancesErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1291,8 +1257,6 @@ impl DeleteStackInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1377,12 +1341,9 @@ pub struct DeleteStackSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStackSetErrorKind {
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// <p>You can't yet delete this stack set, because it still contains one or more stack
-    /// instances. Delete all stack instances from the stack set before deleting the stack
-    /// set.</p>
+    /// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
     StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1426,8 +1387,6 @@ impl DeleteStackSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1532,8 +1491,6 @@ impl DeregisterTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1629,8 +1586,6 @@ impl DescribeAccountLimitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1673,8 +1628,7 @@ pub struct DescribeChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChangeSetErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
-    /// use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1717,8 +1671,6 @@ impl DescribeChangeSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1812,8 +1764,6 @@ impl DescribePublisherError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1907,8 +1857,6 @@ impl DescribeStackDriftDetectionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1991,8 +1939,6 @@ impl DescribeStackEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2081,8 +2027,6 @@ impl DescribeStackInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2181,8 +2125,6 @@ impl DescribeStackResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2265,8 +2207,6 @@ impl DescribeStackResourceDriftsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2349,8 +2289,6 @@ impl DescribeStackResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2433,8 +2371,6 @@ impl DescribeStacksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2520,8 +2456,6 @@ impl DescribeStackSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2618,8 +2552,6 @@ impl DescribeStackSetOperationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2724,8 +2656,6 @@ impl DescribeTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2821,8 +2751,6 @@ impl DescribeTypeRegistrationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2913,8 +2841,6 @@ impl DetectStackDriftError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2997,8 +2923,6 @@ impl DetectStackResourceDriftError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3043,8 +2967,7 @@ pub struct DetectStackSetDriftError {
 pub enum DetectStackSetDriftErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
@@ -3091,8 +3014,6 @@ impl DetectStackSetDriftError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3199,8 +3120,6 @@ impl EstimateTemplateCostError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3243,15 +3162,11 @@ pub struct ExecuteChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteChangeSetErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
-    /// use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
-    /// <p>The template contains resources with capabilities that weren't specified in the
-    /// Capabilities parameter.</p>
+    /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
-    /// <p>The specified change set can't be used to update the stack. For example, the change set
-    /// status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-    /// <code>UPDATE_IN_PROGRESS</code>.</p>
+    /// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
@@ -3299,8 +3214,6 @@ impl ExecuteChangeSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3415,8 +3328,6 @@ impl GetStackPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3459,8 +3370,7 @@ pub struct GetTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTemplateErrorKind {
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
-    /// use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3503,8 +3413,6 @@ impl GetTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3598,8 +3506,6 @@ impl GetTemplateSummaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3653,21 +3559,17 @@ pub enum ImportStacksToStackSetErrorKind {
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in
-    /// input.</p>
+    /// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in input.</p>
     StackNotFoundException(crate::error::StackNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3718,8 +3620,6 @@ impl ImportStacksToStackSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3860,8 +3760,6 @@ impl ListChangeSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3944,8 +3842,6 @@ impl ListExportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4028,8 +3924,6 @@ impl ListImportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4115,8 +4009,6 @@ impl ListStackInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4207,8 +4099,6 @@ impl ListStackResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4291,8 +4181,6 @@ impl ListStacksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4385,8 +4273,6 @@ impl ListStackSetOperationResultsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4492,8 +4378,6 @@ impl ListStackSetOperationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4584,8 +4468,6 @@ impl ListStackSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4671,8 +4553,6 @@ impl ListTypeRegistrationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4766,8 +4646,6 @@ impl ListTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4858,8 +4736,6 @@ impl ListTypeVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4956,8 +4832,6 @@ impl PublishTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5010,11 +4884,9 @@ pub struct RecordHandlerProgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RecordHandlerProgressErrorKind {
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-    /// users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-    /// users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
     OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5062,8 +4934,6 @@ impl RecordHandlerProgressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5167,8 +5037,6 @@ impl RegisterPublisherError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5262,8 +5130,6 @@ impl RegisterTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5354,8 +5220,6 @@ impl RollbackStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5446,8 +5310,6 @@ impl SetStackPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5536,8 +5398,6 @@ impl SetTypeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5642,8 +5502,6 @@ impl SetTypeDefaultVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5742,8 +5600,6 @@ impl SignalResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5835,8 +5691,6 @@ impl StopStackSetOperationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5949,8 +5803,6 @@ impl TestTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6003,8 +5855,7 @@ pub struct UpdateStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStackErrorKind {
-    /// <p>The template contains resources with capabilities that weren't specified in the
-    /// Capabilities parameter.</p>
+    /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
@@ -6050,8 +5901,6 @@ impl UpdateStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6114,15 +5963,13 @@ pub enum UpdateStackInstancesErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack instance doesn't exist.</p>
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6172,8 +6019,6 @@ impl UpdateStackInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6270,15 +6115,13 @@ pub enum UpdateStackSetErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified stack instance doesn't exist.</p>
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6326,8 +6169,6 @@ impl UpdateStackSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6458,8 +6299,6 @@ impl UpdateTerminationProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6542,8 +6381,6 @@ impl ValidateTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6573,8 +6410,7 @@ impl std::error::Error for ValidateTemplateError {
     }
 }
 
-/// <p>Another operation has been performed on this stack set since the specified operation was
-/// performed. </p>
+/// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaleRequestException {
@@ -6766,8 +6602,7 @@ impl StackInstanceNotFoundException {
     }
 }
 
-/// <p>Another operation is currently in progress for this stack set. Only one operation can be
-/// performed for a stack set at a given time.</p>
+/// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationInProgressException {
@@ -7023,8 +6858,7 @@ impl TokenAlreadyExistsException {
     }
 }
 
-/// <p>The template contains resources with capabilities that weren't specified in the
-/// Capabilities parameter.</p>
+/// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapabilitiesException {
@@ -7280,8 +7114,7 @@ impl OperationNotFoundException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-/// users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationStatusCheckFailedException {
@@ -7345,8 +7178,7 @@ impl OperationStatusCheckFailedException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-/// users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {
@@ -7410,8 +7242,7 @@ impl InvalidStateTransitionException {
     }
 }
 
-/// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in
-/// input.</p>
+/// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackNotFoundException {
@@ -7476,8 +7307,7 @@ impl StackNotFoundException {
 }
 
 /// <p>The quota for the resource has already been reached.</p>
-/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-/// the <i>CloudFormation User Guide</i>.</p>
+/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7541,8 +7371,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
-/// use the <code>ListChangeSets</code> action.</p>
+/// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSetNotFoundException {
@@ -7606,9 +7435,7 @@ impl ChangeSetNotFoundException {
     }
 }
 
-/// <p>The specified change set can't be used to update the stack. For example, the change set
-/// status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-/// <code>UPDATE_IN_PROGRESS</code>.</p>
+/// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidChangeSetStatusException {
@@ -7672,9 +7499,7 @@ impl InvalidChangeSetStatusException {
     }
 }
 
-/// <p>You can't yet delete this stack set, because it still contains one or more stack
-/// instances. Delete all stack instances from the stack set before deleting the stack
-/// set.</p>
+/// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetNotEmptyException {

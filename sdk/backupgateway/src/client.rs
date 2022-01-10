@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Backup Gateway
@@ -135,6 +135,7 @@ where
     ///
     /// See [`ListGateways`](crate::client::fluent_builders::ListGateways) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
     pub fn list_gateways(&self) -> fluent_builders::ListGateways<C, M, R> {
         fluent_builders::ListGateways::new(self.handle.clone())
     }
@@ -142,6 +143,7 @@ where
     ///
     /// See [`ListHypervisors`](crate::client::fluent_builders::ListHypervisors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHypervisors::into_paginator).
     pub fn list_hypervisors(&self) -> fluent_builders::ListHypervisors<C, M, R> {
         fluent_builders::ListHypervisors::new(self.handle.clone())
     }
@@ -156,6 +158,7 @@ where
     ///
     /// See [`ListVirtualMachines`](crate::client::fluent_builders::ListVirtualMachines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMachines::into_paginator).
     pub fn list_virtual_machines(&self) -> fluent_builders::ListVirtualMachines<C, M, R> {
         fluent_builders::ListVirtualMachines::new(self.handle.clone())
     }
@@ -214,9 +217,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateGatewayToServer`.
     ///
-    /// <p>Associates a backup gateway with your server. After you complete the association process,
-    /// you can back up and restore your VMs through the gateway.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateGatewayToServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -261,10 +263,10 @@ pub mod fluent_builders {
                 crate::input::AssociateGatewayToServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -272,21 +274,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
-        pub fn server_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_arn(inp);
+        pub fn server_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
@@ -297,9 +297,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGateway`.
     ///
-    /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server
-    /// using the <code>AssociateGatewayToServer</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server using the <code>AssociateGatewayToServer</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -344,10 +343,10 @@ pub mod fluent_builders {
                 crate::input::CreateGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -356,8 +355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The activation key of the created gateway.</p>
-        pub fn activation_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_key(inp);
+        pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_key(input.into());
             self
         }
         /// <p>The activation key of the created gateway.</p>
@@ -369,8 +368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the created gateway.</p>
-        pub fn gateway_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_display_name(inp);
+        pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_display_name(input.into());
             self
         }
         /// <p>The display name of the created gateway.</p>
@@ -382,8 +381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of created gateway.</p>
-        pub fn gateway_type(mut self, inp: crate::model::GatewayType) -> Self {
-            self.inner = self.inner.gateway_type(inp);
+        pub fn gateway_type(mut self, input: crate::model::GatewayType) -> Self {
+            self.inner = self.inner.gateway_type(input);
             self
         }
         /// <p>The type of created gateway.</p>
@@ -399,8 +398,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
@@ -415,7 +414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGateway`.
     ///
     /// <p>Deletes a backup gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -460,10 +459,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -472,8 +471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
@@ -485,7 +484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHypervisor`.
     ///
     /// <p>Deletes a hypervisor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHypervisor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -530,10 +529,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHypervisorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -542,8 +541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-        pub fn hypervisor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hypervisor_arn(inp);
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
@@ -557,9 +556,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateGatewayFromServer`.
     ///
-    /// <p>Disassociates a backup gateway from the specified server. After the disassociation process
-    /// finishes, the gateway can no longer access the virtual machines on the server.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates a backup gateway from the specified server. After the disassociation process finishes, the gateway can no longer access the virtual machines on the server.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateGatewayFromServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -604,10 +602,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateGatewayFromServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -616,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
@@ -629,7 +627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportHypervisorConfiguration`.
     ///
     /// <p>Connect to a hypervisor by importing its configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportHypervisorConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -674,10 +672,10 @@ pub mod fluent_builders {
                 crate::input::ImportHypervisorConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -686,8 +684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the hypervisor.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hypervisor.</p>
@@ -695,21 +693,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+        pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self
         }
         /// <p>The username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the hypervisor.</p>
@@ -718,8 +714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the hypervisor.</p>
@@ -728,8 +724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Key Management Service for the hypervisor.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The Key Management Service for the hypervisor.</p>
@@ -742,8 +738,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the hypervisor configuration to import.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags of the hypervisor configuration to import.</p>
@@ -758,7 +754,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGateways`.
     ///
     /// <p>Lists backup gateways owned by an Amazon Web Services account in an Amazon Web Services Region. The returned list is ordered by gateway Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -803,10 +799,10 @@ pub mod fluent_builders {
                 crate::input::ListGatewaysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -814,9 +810,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGatewaysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGatewaysPaginator<C, M, R> {
+            crate::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of gateways to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of gateways to list.</p>
@@ -824,18 +826,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -844,7 +840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHypervisors`.
     ///
     /// <p>Lists your hypervisors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHypervisors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -889,10 +885,10 @@ pub mod fluent_builders {
                 crate::input::ListHypervisorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -900,9 +896,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHypervisorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHypervisorsPaginator<C, M, R> {
+            crate::paginator::ListHypervisorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of hypervisors to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of hypervisors to list.</p>
@@ -910,18 +912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -929,9 +925,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags applied to the resource identified by its Amazon Resource Name
-    /// (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the tags applied to the resource identified by its Amazon Resource Name (ARN).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -976,10 +971,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -988,8 +983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
@@ -1001,7 +996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualMachines`.
     ///
     /// <p>Lists your virtual machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1046,10 +1041,10 @@ pub mod fluent_builders {
                 crate::input::ListVirtualMachinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1057,9 +1052,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVirtualMachinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVirtualMachinesPaginator<C, M, R> {
+            crate::paginator::ListVirtualMachinesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of virtual machines to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of virtual machines to list.</p>
@@ -1067,18 +1068,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1087,7 +1082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
     ///
     /// <p>Set the maintenance start time for a gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMaintenanceStartTime<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1132,10 +1127,10 @@ pub mod fluent_builders {
                 crate::input::PutMaintenanceStartTimeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1143,21 +1138,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
         /// <p>The hour of the day to start maintenance on a gateway.</p>
-        pub fn hour_of_day(mut self, inp: i32) -> Self {
-            self.inner = self.inner.hour_of_day(inp);
+        pub fn hour_of_day(mut self, input: i32) -> Self {
+            self.inner = self.inner.hour_of_day(input);
             self
         }
         /// <p>The hour of the day to start maintenance on a gateway.</p>
@@ -1166,8 +1159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minute of the hour to start maintenance on a gateway.</p>
-        pub fn minute_of_hour(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minute_of_hour(inp);
+        pub fn minute_of_hour(mut self, input: i32) -> Self {
+            self.inner = self.inner.minute_of_hour(input);
             self
         }
         /// <p>The minute of the hour to start maintenance on a gateway.</p>
@@ -1176,8 +1169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The day of the week to start maintenance on a gateway.</p>
-        pub fn day_of_week(mut self, inp: i32) -> Self {
-            self.inner = self.inner.day_of_week(inp);
+        pub fn day_of_week(mut self, input: i32) -> Self {
+            self.inner = self.inner.day_of_week(input);
             self
         }
         /// <p>The day of the week to start maintenance on a gateway.</p>
@@ -1187,8 +1180,8 @@ pub mod fluent_builders {
         }
         /// <p>The day of the month start maintenance on a gateway.</p>
         /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
-        pub fn day_of_month(mut self, inp: i32) -> Self {
-            self.inner = self.inner.day_of_month(inp);
+        pub fn day_of_month(mut self, input: i32) -> Self {
+            self.inner = self.inner.day_of_month(input);
             self
         }
         /// <p>The day of the month start maintenance on a gateway.</p>
@@ -1201,7 +1194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tag the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1246,10 +1239,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1258,8 +1251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
@@ -1272,8 +1265,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to assign to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to assign to the resource.</p>
@@ -1287,9 +1280,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TestHypervisorConfiguration`.
     ///
-    /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the
-    /// hypervisor and its resources.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestHypervisorConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,10 +1326,10 @@ pub mod fluent_builders {
                 crate::input::TestHypervisorConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1346,8 +1338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
@@ -1355,21 +1347,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+        pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self
         }
         /// <p>The username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the hypervisor.</p>
@@ -1378,8 +1368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the hypervisor.</p>
@@ -1391,7 +1381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1436,10 +1426,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1448,8 +1438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
@@ -1462,8 +1452,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys specifying which tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys specifying which tags to remove.</p>
@@ -1477,9 +1467,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayInformation`.
     ///
-    /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name
-    /// (ARN) of the gateway in your request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name (ARN) of the gateway in your request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1524,10 +1513,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGatewayInformationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1536,8 +1525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-        pub fn gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(inp);
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
@@ -1546,8 +1535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated display name of the gateway.</p>
-        pub fn gateway_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_display_name(inp);
+        pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_display_name(input.into());
             self
         }
         /// <p>The updated display name of the gateway.</p>
@@ -1561,10 +1550,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHypervisor`.
     ///
-    /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which
-    /// hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your
-    /// request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHypervisor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1609,10 +1596,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHypervisorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1621,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-        pub fn hypervisor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hypervisor_arn(inp);
+        pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hypervisor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
@@ -1633,21 +1620,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hypervisor_arn(input);
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
-        pub fn host(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host(inp);
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+        pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self
         }
         /// <p>The updated username for the hypervisor.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The updated username for the hypervisor.</p>
@@ -1656,8 +1641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated password for the hypervisor.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The updated password for the hypervisor.</p>
@@ -1667,6 +1652,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

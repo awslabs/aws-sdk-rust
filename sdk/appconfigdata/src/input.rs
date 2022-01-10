@@ -38,7 +38,7 @@ pub mod get_latest_configuration_input {
 #[doc(hidden)]
 pub type GetLatestConfigurationInputOperationOutputAlias = crate::operation::GetLatestConfiguration;
 #[doc(hidden)]
-pub type GetLatestConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLatestConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLatestConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLatestConfiguration`](crate::operation::GetLatestConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl GetLatestConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLatestConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -137,7 +137,7 @@ impl GetLatestConfigurationInput {
             "GetLatestConfiguration",
             "appconfigdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -206,16 +206,12 @@ pub mod start_configuration_session_input {
             self.configuration_profile_identifier = input;
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
             self.required_minimum_poll_interval_in_seconds = Some(input);
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn set_required_minimum_poll_interval_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -244,7 +240,7 @@ pub mod start_configuration_session_input {
 pub type StartConfigurationSessionInputOperationOutputAlias =
     crate::operation::StartConfigurationSession;
 #[doc(hidden)]
-pub type StartConfigurationSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartConfigurationSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigurationSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigurationSession`](crate::operation::StartConfigurationSession)>
     #[allow(clippy::let_and_return)]
@@ -255,7 +251,7 @@ impl StartConfigurationSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigurationSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -337,7 +333,7 @@ impl StartConfigurationSessionInput {
             "StartConfigurationSession",
             "appconfigdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -370,9 +366,7 @@ pub struct StartConfigurationSessionInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub configuration_profile_identifier: std::option::Option<std::string::String>,
-    /// <p>The interval at which your client will poll for configuration. If provided, the service
-    /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-    /// client poll intervals are not enforced.</p>
+    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
     pub required_minimum_poll_interval_in_seconds: std::option::Option<i32>,
 }
 impl StartConfigurationSessionInput {
@@ -388,9 +382,7 @@ impl StartConfigurationSessionInput {
     pub fn configuration_profile_identifier(&self) -> std::option::Option<&str> {
         self.configuration_profile_identifier.as_deref()
     }
-    /// <p>The interval at which your client will poll for configuration. If provided, the service
-    /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-    /// client poll intervals are not enforced.</p>
+    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
     pub fn required_minimum_poll_interval_in_seconds(&self) -> std::option::Option<i32> {
         self.required_minimum_poll_interval_in_seconds
     }

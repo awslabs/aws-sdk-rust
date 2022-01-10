@@ -7258,6 +7258,11 @@ pub fn deser_operation_crate_operation_describe_pipeline(
                             crate::json_deser::deser_structure_crate_model_user_context(tokens)?,
                         );
                     }
+                    "ParallelismConfiguration" => {
+                        builder = builder.set_parallelism_configuration(
+                            crate::json_deser::deser_structure_crate_model_parallelism_configuration(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -7434,6 +7439,11 @@ pub fn deser_operation_crate_operation_describe_pipeline_execution(
                     "LastModifiedBy" => {
                         builder = builder.set_last_modified_by(
                             crate::json_deser::deser_structure_crate_model_user_context(tokens)?,
+                        );
+                    }
+                    "ParallelismConfiguration" => {
+                        builder = builder.set_parallelism_configuration(
+                            crate::json_deser::deser_structure_crate_model_parallelism_configuration(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -19611,6 +19621,51 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_parallelism_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::ParallelismConfiguration>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::ParallelismConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MaxParallelExecutionSteps" => {
+                                builder = builder.set_max_parallel_execution_steps(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_pipeline_experiment_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PipelineExperimentConfig>, aws_smithy_json::deserialize::Error>
@@ -25312,6 +25367,15 @@ where
                             }
                             "TargetAttributeName" => {
                                 builder = builder.set_target_attribute_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ContentType" => {
+                                builder = builder.set_content_type(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -34906,6 +34970,24 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "StepDisplayName" => {
+                                builder = builder.set_step_display_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StepDescription" => {
+                                builder = builder.set_step_description(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "StartTime" => {
                                 builder = builder.set_start_time(
                                     aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -34937,6 +35019,14 @@ where
                             "CacheHitResult" => {
                                 builder = builder.set_cache_hit_result(
                                     crate::json_deser::deser_structure_crate_model_cache_hit_result(tokens)?
+                                );
+                            }
+                            "AttemptCount" => {
+                                builder = builder.set_attempt_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             "FailureReason" => {
@@ -39877,6 +39967,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_clarify_check_step_metadata(tokens)?
                                 );
                             }
+                            "EMR" => {
+                                builder = builder.set_emr(
+                                    crate::json_deser::deser_structure_crate_model_emr_step_metadata(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -41180,6 +41275,11 @@ where
                                     )?,
                                 );
                             }
+                            "ParallelismConfiguration" => {
+                                builder = builder.set_parallelism_configuration(
+                                    crate::json_deser::deser_structure_crate_model_parallelism_configuration(tokens)?
+                                );
+                            }
                             "Tags" => {
                                 builder = builder.set_tags(
                                     crate::json_deser::deser_list_com_amazonaws_sagemaker_tag_list(
@@ -41315,6 +41415,11 @@ where
                                     crate::json_deser::deser_structure_crate_model_user_context(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "ParallelismConfiguration" => {
+                                builder = builder.set_parallelism_configuration(
+                                    crate::json_deser::deser_structure_crate_model_parallelism_configuration(tokens)?
                                 );
                             }
                             "PipelineParameters" => {
@@ -44231,6 +44336,79 @@ where
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(
                                         tokens.next(),
                                     )?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_emr_step_metadata<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::EmrStepMetadata>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::EmrStepMetadata::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ClusterId" => {
+                                builder = builder.set_cluster_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StepId" => {
+                                builder = builder.set_step_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "StepName" => {
+                                builder = builder.set_step_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "LogFilePath" => {
+                                builder = builder.set_log_file_path(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

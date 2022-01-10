@@ -3012,6 +3012,23 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "senderControlPort" => {
+                                builder = builder.set_sender_control_port(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "senderIpAddress" => {
+                                builder = builder.set_sender_ip_address(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "sourceArn" => {
                                 builder = builder.set_source_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -3729,6 +3746,23 @@ where
                             }
                             "remoteId" => {
                                 builder = builder.set_remote_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "senderControlPort" => {
+                                builder = builder.set_sender_control_port(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "senderIpAddress" => {
+                                builder = builder.set_sender_ip_address(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

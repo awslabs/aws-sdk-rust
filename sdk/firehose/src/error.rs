@@ -14,11 +14,7 @@ pub struct CreateDeliveryStreamError {
 pub enum CreateDeliveryStreamErrorKind {
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start
-    /// or stop delivery stream encryption fails. This happens when the KMS service throws one of
-    /// the following exception types: <code>AccessDeniedException</code>,
-    /// <code>InvalidStateException</code>, <code>DisabledException</code>, or
-    /// <code>NotFoundException</code>.</p>
+    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::error::InvalidKmsResourceException),
     /// <p>You have already reached the limit for a requested resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -68,8 +64,6 @@ impl CreateDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -190,8 +184,6 @@ impl DeleteDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -293,8 +285,6 @@ impl DescribeDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -385,8 +375,6 @@ impl ListDeliveryStreamsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -478,8 +466,6 @@ impl ListTagsForDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -548,18 +534,11 @@ pub struct PutRecordError {
 pub enum PutRecordErrorKind {
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start
-    /// or stop delivery stream encryption fails. This happens when the KMS service throws one of
-    /// the following exception types: <code>AccessDeniedException</code>,
-    /// <code>InvalidStateException</code>, <code>DisabledException</code>, or
-    /// <code>NotFoundException</code>.</p>
+    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::error::InvalidKmsResourceException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The service is unavailable. Back off and retry the operation. If you continue to see
-    /// the exception, throughput limits for the delivery stream may have been exceeded. For more
-    /// information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
-    /// Limits</a>.</p>
+    /// <p>The service is unavailable. Back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -605,8 +584,6 @@ impl PutRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -677,18 +654,11 @@ pub struct PutRecordBatchError {
 pub enum PutRecordBatchErrorKind {
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start
-    /// or stop delivery stream encryption fails. This happens when the KMS service throws one of
-    /// the following exception types: <code>AccessDeniedException</code>,
-    /// <code>InvalidStateException</code>, <code>DisabledException</code>, or
-    /// <code>NotFoundException</code>.</p>
+    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::error::InvalidKmsResourceException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The service is unavailable. Back off and retry the operation. If you continue to see
-    /// the exception, throughput limits for the delivery stream may have been exceeded. For more
-    /// information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
-    /// Limits</a>.</p>
+    /// <p>The service is unavailable. Back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -734,8 +704,6 @@ impl PutRecordBatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -812,11 +780,7 @@ pub struct StartDeliveryStreamEncryptionError {
 pub enum StartDeliveryStreamEncryptionErrorKind {
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start
-    /// or stop delivery stream encryption fails. This happens when the KMS service throws one of
-    /// the following exception types: <code>AccessDeniedException</code>,
-    /// <code>InvalidStateException</code>, <code>DisabledException</code>, or
-    /// <code>NotFoundException</code>.</p>
+    /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::error::InvalidKmsResourceException),
     /// <p>You have already reached the limit for a requested resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -878,8 +842,6 @@ impl StartDeliveryStreamEncryptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1024,8 +986,6 @@ impl StopDeliveryStreamEncryptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1154,8 +1114,6 @@ impl TagDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1282,8 +1240,6 @@ impl UntagDeliveryStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1358,8 +1314,7 @@ pub struct UpdateDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDestinationErrorKind {
-    /// <p>Another modification has already happened. Fetch <code>VersionId</code> again and use
-    /// it to update the destination.</p>
+    /// <p>Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified input parameter has a value that is not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1411,8 +1366,6 @@ impl UpdateDestinationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1666,8 +1619,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>Another modification has already happened. Fetch <code>VersionId</code> again and use
-/// it to update the destination.</p>
+/// <p>Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -1795,11 +1747,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start
-/// or stop delivery stream encryption fails. This happens when the KMS service throws one of
-/// the following exception types: <code>AccessDeniedException</code>,
-/// <code>InvalidStateException</code>, <code>DisabledException</code>, or
-/// <code>NotFoundException</code>.</p>
+/// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsResourceException {
@@ -1887,10 +1835,7 @@ impl InvalidKmsResourceException {
     }
 }
 
-/// <p>The service is unavailable. Back off and retry the operation. If you continue to see
-/// the exception, throughput limits for the delivery stream may have been exceeded. For more
-/// information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
-/// Limits</a>.</p>
+/// <p>The service is unavailable. Back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {

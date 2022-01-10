@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS MediaTailor
@@ -217,6 +217,7 @@ where
     ///
     /// See [`GetChannelSchedule`](crate::client::fluent_builders::GetChannelSchedule) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetChannelSchedule::into_paginator).
     pub fn get_channel_schedule(&self) -> fluent_builders::GetChannelSchedule<C, M, R> {
         fluent_builders::GetChannelSchedule::new(self.handle.clone())
     }
@@ -238,6 +239,7 @@ where
     ///
     /// See [`ListAlerts`](crate::client::fluent_builders::ListAlerts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts<C, M, R> {
         fluent_builders::ListAlerts::new(self.handle.clone())
     }
@@ -245,6 +247,7 @@ where
     ///
     /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
@@ -252,6 +255,7 @@ where
     ///
     /// See [`ListPlaybackConfigurations`](crate::client::fluent_builders::ListPlaybackConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackConfigurations::into_paginator).
     pub fn list_playback_configurations(
         &self,
     ) -> fluent_builders::ListPlaybackConfigurations<C, M, R> {
@@ -261,6 +265,7 @@ where
     ///
     /// See [`ListPrefetchSchedules`](crate::client::fluent_builders::ListPrefetchSchedules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrefetchSchedules::into_paginator).
     pub fn list_prefetch_schedules(&self) -> fluent_builders::ListPrefetchSchedules<C, M, R> {
         fluent_builders::ListPrefetchSchedules::new(self.handle.clone())
     }
@@ -268,6 +273,7 @@ where
     ///
     /// See [`ListSourceLocations`](crate::client::fluent_builders::ListSourceLocations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSourceLocations::into_paginator).
     pub fn list_source_locations(&self) -> fluent_builders::ListSourceLocations<C, M, R> {
         fluent_builders::ListSourceLocations::new(self.handle.clone())
     }
@@ -282,6 +288,7 @@ where
     ///
     /// See [`ListVodSources`](crate::client::fluent_builders::ListVodSources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVodSources::into_paginator).
     pub fn list_vod_sources(&self) -> fluent_builders::ListVodSources<C, M, R> {
         fluent_builders::ListVodSources::new(self.handle.clone())
     }
@@ -360,7 +367,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureLogsForPlaybackConfiguration`.
     ///
     /// <p>Configures Amazon CloudWatch log settings for a playback configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogsForPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,10 +414,10 @@ pub mod fluent_builders {
                 crate::input::ConfigureLogsForPlaybackConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -418,19 +425,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
-        pub fn percent_enabled(mut self, inp: i32) -> Self {
-            self.inner = self.inner.percent_enabled(inp);
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: 0 - 100</p>
+        pub fn percent_enabled(mut self, input: i32) -> Self {
+            self.inner = self.inner.percent_enabled(input);
             self
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: 0 - 100</p>
         pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_percent_enabled(input);
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -445,7 +457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -490,10 +502,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -502,8 +514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -512,8 +524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
-        pub fn filler_slate(mut self, inp: crate::model::SlateSource) -> Self {
-            self.inner = self.inner.filler_slate(inp);
+        pub fn filler_slate(mut self, input: crate::model::SlateSource) -> Self {
+            self.inner = self.inner.filler_slate(input);
             self
         }
         /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
@@ -529,8 +541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::RequestOutputItem>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>The channel's output properties.</p>
@@ -541,12 +553,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outputs(input);
             self
         }
-        /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-        pub fn playback_mode(mut self, inp: crate::model::PlaybackMode) -> Self {
-            self.inner = self.inner.playback_mode(inp);
+        /// <p>The type of playback mode to use for this channel.</p>
+        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        pub fn playback_mode(mut self, input: crate::model::PlaybackMode) -> Self {
+            self.inner = self.inner.playback_mode(input);
             self
         }
-        /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p>The type of playback mode to use for this channel.</p>
+        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn set_playback_mode(
             mut self,
             input: std::option::Option<crate::model::PlaybackMode>,
@@ -564,7 +580,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the channel.</p>
@@ -581,7 +597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
     ///
     /// <p>Creates a new prefetch schedule for the specified playback configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -626,10 +642,10 @@ pub mod fluent_builders {
                 crate::input::CreatePrefetchScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -638,8 +654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-        pub fn consumption(mut self, inp: crate::model::PrefetchConsumption) -> Self {
-            self.inner = self.inner.consumption(inp);
+        pub fn consumption(mut self, input: crate::model::PrefetchConsumption) -> Self {
+            self.inner = self.inner.consumption(input);
             self
         }
         /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
@@ -651,8 +667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -661,8 +677,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -674,8 +693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-        pub fn retrieval(mut self, inp: crate::model::PrefetchRetrieval) -> Self {
-            self.inner = self.inner.retrieval(inp);
+        pub fn retrieval(mut self, input: crate::model::PrefetchRetrieval) -> Self {
+            self.inner = self.inner.retrieval(input);
             self
         }
         /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
@@ -687,8 +706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input.into());
             self
         }
         /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
@@ -700,7 +719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProgram`.
     ///
     /// <p>Creates a program.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -745,10 +764,10 @@ pub mod fluent_builders {
                 crate::input::CreateProgramInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -761,8 +780,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
         ///
         /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, inp: impl Into<crate::model::AdBreak>) -> Self {
-            self.inner = self.inner.ad_breaks(inp);
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
+            self.inner = self.inner.ad_breaks(input);
             self
         }
         /// <p>The ad break configuration settings.</p>
@@ -774,8 +793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -784,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -794,8 +813,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule configuration settings.</p>
-        pub fn schedule_configuration(mut self, inp: crate::model::ScheduleConfiguration) -> Self {
-            self.inner = self.inner.schedule_configuration(inp);
+        pub fn schedule_configuration(
+            mut self,
+            input: crate::model::ScheduleConfiguration,
+        ) -> Self {
+            self.inner = self.inner.schedule_configuration(input);
             self
         }
         /// <p>The schedule configuration settings.</p>
@@ -807,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the source location.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The name of the source location.</p>
@@ -820,8 +842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that's used to refer to a VOD source.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(input.into());
             self
         }
         /// <p>The name that's used to refer to a VOD source.</p>
@@ -836,7 +858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSourceLocation`.
     ///
     /// <p>Creates a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -881,10 +903,10 @@ pub mod fluent_builders {
                 crate::input::CreateSourceLocationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -893,8 +915,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-        pub fn access_configuration(mut self, inp: crate::model::AccessConfiguration) -> Self {
-            self.inner = self.inner.access_configuration(inp);
+        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
+            self.inner = self.inner.access_configuration(input);
             self
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -908,9 +930,9 @@ pub mod fluent_builders {
         /// <p>The optional configuration for the server that serves segments.</p>
         pub fn default_segment_delivery_configuration(
             mut self,
-            inp: crate::model::DefaultSegmentDeliveryConfiguration,
+            input: crate::model::DefaultSegmentDeliveryConfiguration,
         ) -> Self {
-            self.inner = self.inner.default_segment_delivery_configuration(inp);
+            self.inner = self.inner.default_segment_delivery_configuration(input);
             self
         }
         /// <p>The optional configuration for the server that serves segments.</p>
@@ -922,8 +944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source's HTTP package configurations.</p>
-        pub fn http_configuration(mut self, inp: crate::model::HttpConfiguration) -> Self {
-            self.inner = self.inner.http_configuration(inp);
+        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
+            self.inner = self.inner.http_configuration(input);
             self
         }
         /// <p>The source's HTTP package configurations.</p>
@@ -935,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -957,7 +979,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the source location.</p>
@@ -974,7 +996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVodSource`.
     ///
     /// <p>Creates name for a specific VOD source in a source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1019,10 +1041,10 @@ pub mod fluent_builders {
                 crate::input::CreateVodSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1037,9 +1059,9 @@ pub mod fluent_builders {
         /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
         pub fn http_package_configurations(
             mut self,
-            inp: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
-            self.inner = self.inner.http_package_configurations(inp);
+            self.inner = self.inner.http_package_configurations(input);
             self
         }
         /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
@@ -1051,8 +1073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1073,7 +1095,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the VOD source.</p>
@@ -1087,8 +1109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(input.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -1103,7 +1125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// <p>Deletes a channel. You must stop the channel before it can be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1148,10 +1170,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1160,8 +1182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1173,7 +1195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannelPolicy`.
     ///
     /// <p>Deletes a channel's IAM policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1218,10 +1240,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,8 +1252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1243,7 +1265,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePlaybackConfiguration`.
     ///
     /// <p>Deletes the playback configuration for the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1288,10 +1310,10 @@ pub mod fluent_builders {
                 crate::input::DeletePlaybackConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1300,8 +1322,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -1313,7 +1335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePrefetchSchedule`.
     ///
     /// <p>Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1358,10 +1380,10 @@ pub mod fluent_builders {
                 crate::input::DeletePrefetchScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1370,8 +1392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -1380,8 +1402,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -1396,7 +1421,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProgram`.
     ///
     /// <p>Deletes a specific program on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1441,10 +1466,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProgramInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1453,8 +1478,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1463,8 +1488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -1476,7 +1501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceLocation`.
     ///
     /// <p>Deletes a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1521,10 +1546,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSourceLocationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1533,8 +1558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1549,7 +1574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVodSource`.
     ///
     /// <p>Deletes a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1594,10 +1619,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVodSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1606,8 +1631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1619,8 +1644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(input.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -1635,7 +1660,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// <p>Describes the properties of a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1680,10 +1705,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1692,8 +1717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1705,7 +1730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProgram`.
     ///
     /// <p>Retrieves the properties of the requested program.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProgram<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,10 +1775,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProgramInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1762,8 +1787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -1772,8 +1797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the program you are working on.</p>
-        pub fn program_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.program_name(inp);
+        pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.program_name(input.into());
             self
         }
         /// <p>The identifier for the program you are working on.</p>
@@ -1785,7 +1810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSourceLocation`.
     ///
     /// <p>Retrieves the properties of the requested source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1830,10 +1855,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSourceLocationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1842,8 +1867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1858,7 +1883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVodSource`.
     ///
     /// <p>Provides details about a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1903,10 +1928,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVodSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1915,8 +1940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1928,8 +1953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(input.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -1944,7 +1969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannelPolicy`.
     ///
     /// <p>Retrieves information about a channel's IAM policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1989,10 +2014,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2001,8 +2026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2014,7 +2039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannelSchedule`.
     ///
     /// <p>Retrieves information about your channel's schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,10 +2084,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2070,9 +2095,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetChannelSchedulePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetChannelSchedulePaginator<C, M, R> {
+            crate::paginator::GetChannelSchedulePaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2081,8 +2112,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
-        pub fn duration_minutes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration_minutes(inp);
+        pub fn duration_minutes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration_minutes(input.into());
             self
         }
         /// <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
@@ -2094,8 +2125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2104,8 +2135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2117,7 +2148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPlaybackConfiguration`.
     ///
     /// <p>Returns the playback configuration for the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2162,10 +2193,10 @@ pub mod fluent_builders {
                 crate::input::GetPlaybackConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2174,8 +2205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -2187,7 +2218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPrefetchSchedule`.
     ///
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPrefetchSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2232,10 +2263,10 @@ pub mod fluent_builders {
                 crate::input::GetPrefetchScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2244,8 +2275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -2254,8 +2285,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -2270,7 +2304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlerts`.
     ///
     /// <p>Returns a list of alerts for the given resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2315,10 +2349,10 @@ pub mod fluent_builders {
                 crate::input::ListAlertsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2326,9 +2360,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAlertsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAlertsPaginator<C, M, R> {
+            crate::paginator::ListAlertsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2337,8 +2377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2347,8 +2387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2360,7 +2400,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// <p>Retrieves a list of channels that are associated with this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,10 +2445,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2416,9 +2456,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelsPaginator<C, M, R> {
+            crate::paginator::ListChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2427,8 +2473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2440,7 +2486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPlaybackConfigurations`.
     ///
     /// <p>Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you can use to retrieve the next pageful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaybackConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2485,10 +2531,10 @@ pub mod fluent_builders {
                 crate::input::ListPlaybackConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2496,9 +2542,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPlaybackConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPlaybackConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListPlaybackConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of records to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of records to return.</p>
@@ -2507,8 +2561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -2520,7 +2574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrefetchSchedules`.
     ///
     /// <p>Creates a new prefetch schedule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrefetchSchedules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2565,10 +2619,10 @@ pub mod fluent_builders {
                 crate::input::ListPrefetchSchedulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2576,9 +2630,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPrefetchSchedulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPrefetchSchedulesPaginator<C, M, R> {
+            crate::paginator::ListPrefetchSchedulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
@@ -2586,19 +2646,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The name of the playback configuration.</p>
-        pub fn playback_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.playback_configuration_name(inp);
+        pub fn playback_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.playback_configuration_name(input.into());
             self
         }
         /// <p>The name of the playback configuration.</p>
@@ -2610,8 +2679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input.into());
             self
         }
         /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
@@ -2623,7 +2692,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSourceLocations`.
     ///
     /// <p>Retrieves a list of source locations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSourceLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2668,10 +2737,10 @@ pub mod fluent_builders {
                 crate::input::ListSourceLocationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2679,9 +2748,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSourceLocationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSourceLocationsPaginator<C, M, R> {
+            crate::paginator::ListSourceLocationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2690,8 +2765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2703,7 +2778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified playback configuration resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2748,10 +2823,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2760,8 +2835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -2773,7 +2848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVodSources`.
     ///
     /// <p>Lists all the VOD sources in a source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVodSources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2818,10 +2893,10 @@ pub mod fluent_builders {
                 crate::input::ListVodSourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2829,9 +2904,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVodSourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVodSourcesPaginator<C, M, R> {
+            crate::paginator::ListVodSourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
@@ -2840,8 +2921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
@@ -2850,8 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -2866,7 +2947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutChannelPolicy`.
     ///
     /// <p>Creates an IAM policy for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2911,10 +2992,10 @@ pub mod fluent_builders {
                 crate::input::PutChannelPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2923,8 +3004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -2933,8 +3014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>Adds an IAM role that determines the permissions of your channel.</p>
@@ -2946,7 +3027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutPlaybackConfiguration`.
     ///
     /// <p>Adds a new playback configuration to AWS Elemental MediaTailor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPlaybackConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2991,10 +3072,10 @@ pub mod fluent_builders {
                 crate::input::PutPlaybackConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3003,8 +3084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-        pub fn ad_decision_server_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ad_decision_server_url(inp);
+        pub fn ad_decision_server_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ad_decision_server_url(input.into());
             self
         }
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -3016,8 +3097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
-        pub fn avail_suppression(mut self, inp: crate::model::AvailSuppression) -> Self {
-            self.inner = self.inner.avail_suppression(inp);
+        pub fn avail_suppression(mut self, input: crate::model::AvailSuppression) -> Self {
+            self.inner = self.inner.avail_suppression(input);
             self
         }
         /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
@@ -3029,8 +3110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
-        pub fn bumper(mut self, inp: crate::model::Bumper) -> Self {
-            self.inner = self.inner.bumper(inp);
+        pub fn bumper(mut self, input: crate::model::Bumper) -> Self {
+            self.inner = self.inner.bumper(input);
             self
         }
         /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
@@ -3039,8 +3120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
-        pub fn cdn_configuration(mut self, inp: crate::model::CdnConfiguration) -> Self {
-            self.inner = self.inner.cdn_configuration(inp);
+        pub fn cdn_configuration(mut self, input: crate::model::CdnConfiguration) -> Self {
+            self.inner = self.inner.cdn_configuration(input);
             self
         }
         /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
@@ -3059,9 +3140,9 @@ pub mod fluent_builders {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aliases(k, v);
+            self.inner = self.inner.configuration_aliases(k.into(), v);
             self
         }
         /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
@@ -3078,8 +3159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for DASH content.</p>
-        pub fn dash_configuration(mut self, inp: crate::model::DashConfigurationForPut) -> Self {
-            self.inner = self.inner.dash_configuration(inp);
+        pub fn dash_configuration(mut self, input: crate::model::DashConfigurationForPut) -> Self {
+            self.inner = self.inner.dash_configuration(input);
             self
         }
         /// <p>The configuration for DASH content.</p>
@@ -3093,9 +3174,9 @@ pub mod fluent_builders {
         /// <p>The configuration for pre-roll ad insertion.</p>
         pub fn live_pre_roll_configuration(
             mut self,
-            inp: crate::model::LivePreRollConfiguration,
+            input: crate::model::LivePreRollConfiguration,
         ) -> Self {
-            self.inner = self.inner.live_pre_roll_configuration(inp);
+            self.inner = self.inner.live_pre_roll_configuration(input);
             self
         }
         /// <p>The configuration for pre-roll ad insertion.</p>
@@ -3109,9 +3190,9 @@ pub mod fluent_builders {
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
         pub fn manifest_processing_rules(
             mut self,
-            inp: crate::model::ManifestProcessingRules,
+            input: crate::model::ManifestProcessingRules,
         ) -> Self {
-            self.inner = self.inner.manifest_processing_rules(inp);
+            self.inner = self.inner.manifest_processing_rules(input);
             self
         }
         /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
@@ -3123,8 +3204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the playback configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The identifier for the playback configuration.</p>
@@ -3133,8 +3214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-        pub fn personalization_threshold_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.personalization_threshold_seconds(inp);
+        pub fn personalization_threshold_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.personalization_threshold_seconds(input);
             self
         }
         /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
@@ -3146,8 +3227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
-        pub fn slate_ad_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slate_ad_url(inp);
+        pub fn slate_ad_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slate_ad_url(input.into());
             self
         }
         /// <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
@@ -3165,7 +3246,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the playback configuration.</p>
@@ -3179,8 +3260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
-        pub fn transcode_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transcode_profile_name(inp);
+        pub fn transcode_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transcode_profile_name(input.into());
             self
         }
         /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
@@ -3192,8 +3273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
-        pub fn video_content_source_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.video_content_source_url(inp);
+        pub fn video_content_source_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.video_content_source_url(input.into());
             self
         }
         /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
@@ -3208,7 +3289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartChannel`.
     ///
     /// <p>Starts a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3253,10 +3334,10 @@ pub mod fluent_builders {
                 crate::input::StartChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3265,8 +3346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3278,7 +3359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopChannel`.
     ///
     /// <p>Stops a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3323,10 +3404,10 @@ pub mod fluent_builders {
                 crate::input::StopChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3335,8 +3416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3348,7 +3429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to the specified playback configuration resource. You can specify one or more tags to add.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3393,10 +3474,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3405,8 +3486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -3424,7 +3505,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A comma-separated list of tag key:value pairs.</p>
@@ -3441,7 +3522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified playback configuration resource. You can specify one or more tags to remove.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3486,10 +3567,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3498,8 +3579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
@@ -3512,8 +3593,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
@@ -3528,7 +3609,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Updates an existing channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3573,10 +3654,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3585,8 +3666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the channel you are working on.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The identifier for the channel you are working on.</p>
@@ -3599,8 +3680,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::RequestOutputItem>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>The channel's output properties.</p>
@@ -3615,7 +3696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSourceLocation`.
     ///
     /// <p>Updates a source location on a specific channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSourceLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3660,10 +3741,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSourceLocationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3672,8 +3753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-        pub fn access_configuration(mut self, inp: crate::model::AccessConfiguration) -> Self {
-            self.inner = self.inner.access_configuration(inp);
+        pub fn access_configuration(mut self, input: crate::model::AccessConfiguration) -> Self {
+            self.inner = self.inner.access_configuration(input);
             self
         }
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -3687,9 +3768,9 @@ pub mod fluent_builders {
         /// <p>The optional configuration for the host server that serves segments.</p>
         pub fn default_segment_delivery_configuration(
             mut self,
-            inp: crate::model::DefaultSegmentDeliveryConfiguration,
+            input: crate::model::DefaultSegmentDeliveryConfiguration,
         ) -> Self {
-            self.inner = self.inner.default_segment_delivery_configuration(inp);
+            self.inner = self.inner.default_segment_delivery_configuration(input);
             self
         }
         /// <p>The optional configuration for the host server that serves segments.</p>
@@ -3701,8 +3782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The HTTP configuration for the source location.</p>
-        pub fn http_configuration(mut self, inp: crate::model::HttpConfiguration) -> Self {
-            self.inner = self.inner.http_configuration(inp);
+        pub fn http_configuration(mut self, input: crate::model::HttpConfiguration) -> Self {
+            self.inner = self.inner.http_configuration(input);
             self
         }
         /// <p>The HTTP configuration for the source location.</p>
@@ -3714,8 +3795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -3730,7 +3811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVodSource`.
     ///
     /// <p>Updates a specific VOD source in a specific source location.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVodSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3775,10 +3856,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVodSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3793,9 +3874,9 @@ pub mod fluent_builders {
         /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
         pub fn http_package_configurations(
             mut self,
-            inp: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
-            self.inner = self.inner.http_package_configurations(inp);
+            self.inner = self.inner.http_package_configurations(input);
             self
         }
         /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
@@ -3807,8 +3888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
-        pub fn source_location_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_name(inp);
+        pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_name(input.into());
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -3820,8 +3901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
-        pub fn vod_source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vod_source_name(inp);
+        pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vod_source_name(input.into());
             self
         }
         /// <p>The identifier for the VOD source you are working on.</p>
@@ -3834,6 +3915,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

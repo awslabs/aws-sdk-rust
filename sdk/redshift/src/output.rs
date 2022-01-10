@@ -527,13 +527,11 @@ impl ResumeClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromClusterSnapshotOutput {
-    /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
-    /// operation.</p>
+    /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     pub table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
 }
 impl RestoreTableFromClusterSnapshotOutput {
-    /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
-    /// operation.</p>
+    /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
     pub fn table_restore_status(&self) -> std::option::Option<&crate::model::TableRestoreStatus> {
         self.table_restore_status.as_ref()
     }
@@ -554,14 +552,12 @@ pub mod restore_table_from_cluster_snapshot_output {
         pub(crate) table_restore_status: std::option::Option<crate::model::TableRestoreStatus>,
     }
     impl Builder {
-        /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
-        /// operation.</p>
+        /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
         pub fn table_restore_status(mut self, input: crate::model::TableRestoreStatus) -> Self {
             self.table_restore_status = Some(input);
             self
         }
-        /// <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
-        /// operation.</p>
+        /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
         pub fn set_table_restore_status(
             mut self,
             input: std::option::Option<crate::model::TableRestoreStatus>,
@@ -698,9 +694,7 @@ impl ResizeClusterOutput {
 pub struct ResetClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>The status of the parameter group. For example, if you made a change to a parameter
-    /// group name-value pair, then the change could be pending a reboot of an associated
-    /// cluster.</p>
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub parameter_group_status: std::option::Option<std::string::String>,
 }
 impl ResetClusterParameterGroupOutput {
@@ -708,9 +702,7 @@ impl ResetClusterParameterGroupOutput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>The status of the parameter group. For example, if you made a change to a parameter
-    /// group name-value pair, then the change could be pending a reboot of an associated
-    /// cluster.</p>
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn parameter_group_status(&self) -> std::option::Option<&str> {
         self.parameter_group_status.as_deref()
     }
@@ -746,16 +738,12 @@ pub mod reset_cluster_parameter_group_output {
             self.parameter_group_name = input;
             self
         }
-        /// <p>The status of the parameter group. For example, if you made a change to a parameter
-        /// group name-value pair, then the change could be pending a reboot of an associated
-        /// cluster.</p>
+        /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
         pub fn parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_group_status = Some(input.into());
             self
         }
-        /// <p>The status of the parameter group. For example, if you made a change to a parameter
-        /// group name-value pair, then the change could be pending a reboot of an associated
-        /// cluster.</p>
+        /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
         pub fn set_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -787,11 +775,13 @@ pub struct RejectDataShareOutput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub managed_by: std::option::Option<std::string::String>,
 }
 impl RejectDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -802,7 +792,7 @@ impl RejectDataShareOutput {
     pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
@@ -811,6 +801,10 @@ impl RejectDataShareOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl std::fmt::Debug for RejectDataShareOutput {
@@ -823,6 +817,7 @@ impl std::fmt::Debug for RejectDataShareOutput {
             &self.allow_publicly_accessible_consumers,
         );
         formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.field("managed_by", &self.managed_by);
         formatter.finish()
     }
 }
@@ -837,6 +832,7 @@ pub mod reject_data_share_output {
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
         pub(crate) data_share_associations:
             std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -862,12 +858,12 @@ pub mod reject_data_share_output {
             self.producer_arn = input;
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
             self.allow_publicly_accessible_consumers = Some(input);
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn set_allow_publicly_accessible_consumers(
             mut self,
             input: std::option::Option<bool>,
@@ -882,10 +878,10 @@ pub mod reject_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -897,6 +893,16 @@ pub mod reject_data_share_output {
             self.data_share_associations = input;
             self
         }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.managed_by = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RejectDataShareOutput`](crate::output::RejectDataShareOutput)
         pub fn build(self) -> crate::output::RejectDataShareOutput {
             crate::output::RejectDataShareOutput {
@@ -906,6 +912,7 @@ pub mod reject_data_share_output {
                     .allow_publicly_accessible_consumers
                     .unwrap_or_default(),
                 data_share_associations: self.data_share_associations,
+                managed_by: self.managed_by,
             }
         }
     }
@@ -975,13 +982,11 @@ impl RebootClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedNodeOfferingOutput {
-    /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
-    /// offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
     pub reserved_node: std::option::Option<crate::model::ReservedNode>,
 }
 impl PurchaseReservedNodeOfferingOutput {
-    /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
-    /// offerings. </p>
+    /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
     pub fn reserved_node(&self) -> std::option::Option<&crate::model::ReservedNode> {
         self.reserved_node.as_ref()
     }
@@ -1002,14 +1007,12 @@ pub mod purchase_reserved_node_offering_output {
         pub(crate) reserved_node: std::option::Option<crate::model::ReservedNode>,
     }
     impl Builder {
-        /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
-        /// offerings. </p>
+        /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
         pub fn reserved_node(mut self, input: crate::model::ReservedNode) -> Self {
             self.reserved_node = Some(input);
             self
         }
-        /// <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
-        /// offerings. </p>
+        /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
         pub fn set_reserved_node(
             mut self,
             input: std::option::Option<crate::model::ReservedNode>,
@@ -1104,18 +1107,9 @@ pub struct ModifyUsageLimitOutput {
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>log</b> - To log an event in a system table. The default is log.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-    /// </li>
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
@@ -1148,18 +1142,9 @@ impl ModifyUsageLimitOutput {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>log</b> - To log an event in a system table. The default is log.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-    /// </li>
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
     pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
         self.breach_action.as_ref()
@@ -1276,18 +1261,9 @@ pub mod modify_usage_limit_output {
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>log</b> - To log an event in a system table. The default is log.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-        /// </li>
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
         /// </ul>
         pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
             self.breach_action = Some(input);
@@ -1295,18 +1271,9 @@ pub mod modify_usage_limit_output {
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>log</b> - To log an event in a system table. The default is log.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-        /// </li>
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
         /// </ul>
         pub fn set_breach_action(
             mut self,
@@ -1320,9 +1287,9 @@ pub mod modify_usage_limit_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1356,8 +1323,7 @@ impl ModifyUsageLimitOutput {
     }
 }
 
-/// <p>Describes a snapshot schedule. You can set a regular interval for creating
-/// snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
+/// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifySnapshotScheduleOutput {
@@ -1488,9 +1454,9 @@ pub mod modify_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1507,9 +1473,9 @@ pub mod modify_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -1538,10 +1504,10 @@ pub mod modify_snapshot_schedule_output {
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
         pub fn associated_clusters(
             mut self,
-            input: impl Into<crate::model::ClusterAssociatedToSchedule>,
+            input: crate::model::ClusterAssociatedToSchedule,
         ) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_clusters = Some(v);
             self
         }
@@ -1628,8 +1594,7 @@ impl ModifySnapshotCopyRetentionPeriodOutput {
     }
 }
 
-/// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule.
-/// For information about which API operations can be scheduled, see  <a>ScheduledActionType</a>. </p>
+/// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <code>ScheduledActionType</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyScheduledActionOutput {
@@ -1638,22 +1603,11 @@ pub struct ModifyScheduledActionOutput {
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The IAM role to assume to run the scheduled action.
-    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-    ///
-    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The description of the scheduled action. </p>
     pub scheduled_action_description: std::option::Option<std::string::String>,
@@ -1676,24 +1630,13 @@ impl ModifyScheduledActionOutput {
     pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
         self.target_action.as_ref()
     }
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The IAM role to assume to run the scheduled action.
-    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-    ///
-    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -1781,48 +1724,26 @@ pub mod modify_scheduled_action_output {
             self.target_action = input;
             self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-        /// Schedule invocations must be separated by at least one hour.</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
         /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-        /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-        /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-        /// Schedule invocations must be separated by at least one hour.</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
         /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-        /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-        /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
-        /// <p>The IAM role to assume to run the scheduled action.
-        /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-        /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-        ///
-        /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role to assume to run the scheduled action.
-        /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-        /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-        ///
-        /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -1861,9 +1782,9 @@ pub mod modify_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -2191,10 +2112,10 @@ pub mod modify_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -2390,9 +2311,7 @@ impl ModifyClusterSnapshotOutput {
 pub struct ModifyClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>The status of the parameter group. For example, if you made a change to a parameter
-    /// group name-value pair, then the change could be pending a reboot of an associated
-    /// cluster.</p>
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub parameter_group_status: std::option::Option<std::string::String>,
 }
 impl ModifyClusterParameterGroupOutput {
@@ -2400,9 +2319,7 @@ impl ModifyClusterParameterGroupOutput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>The status of the parameter group. For example, if you made a change to a parameter
-    /// group name-value pair, then the change could be pending a reboot of an associated
-    /// cluster.</p>
+    /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn parameter_group_status(&self) -> std::option::Option<&str> {
         self.parameter_group_status.as_deref()
     }
@@ -2438,16 +2355,12 @@ pub mod modify_cluster_parameter_group_output {
             self.parameter_group_name = input;
             self
         }
-        /// <p>The status of the parameter group. For example, if you made a change to a parameter
-        /// group name-value pair, then the change could be pending a reboot of an associated
-        /// cluster.</p>
+        /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
         pub fn parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_group_status = Some(input.into());
             self
         }
-        /// <p>The status of the parameter group. For example, if you made a change to a parameter
-        /// group name-value pair, then the change could be pending a reboot of an associated
-        /// cluster.</p>
+        /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
         pub fn set_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2839,28 +2752,18 @@ impl ModifyAquaConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservedNodeExchangeOfferingsOutput {
-    /// <p>An optional parameter that specifies the starting point for returning a set of
-    /// response records. When the results of a <code>GetReservedNodeExchangeOfferings</code>
-    /// request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the
-    /// marker field of the response. You can retrieve the next set of response records by
-    /// providing the returned marker value in the marker parameter and retrying the request.
-    /// </p>
+    /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
+    /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
 }
 impl GetReservedNodeExchangeOfferingsOutput {
-    /// <p>An optional parameter that specifies the starting point for returning a set of
-    /// response records. When the results of a <code>GetReservedNodeExchangeOfferings</code>
-    /// request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the
-    /// marker field of the response. You can retrieve the next set of response records by
-    /// providing the returned marker value in the marker parameter and retrying the request.
-    /// </p>
+    /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
+    /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
     pub fn reserved_node_offerings(
         &self,
     ) -> std::option::Option<&[crate::model::ReservedNodeOffering]> {
@@ -2886,22 +2789,12 @@ pub mod get_reserved_node_exchange_offerings_output {
             std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
     }
     impl Builder {
-        /// <p>An optional parameter that specifies the starting point for returning a set of
-        /// response records. When the results of a <code>GetReservedNodeExchangeOfferings</code>
-        /// request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the
-        /// marker field of the response. You can retrieve the next set of response records by
-        /// providing the returned marker value in the marker parameter and retrying the request.
-        /// </p>
+        /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point for returning a set of
-        /// response records. When the results of a <code>GetReservedNodeExchangeOfferings</code>
-        /// request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the
-        /// marker field of the response. You can retrieve the next set of response records by
-        /// providing the returned marker value in the marker parameter and retrying the request.
-        /// </p>
+        /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2910,17 +2803,17 @@ pub mod get_reserved_node_exchange_offerings_output {
         ///
         /// To override the contents of this collection use [`set_reserved_node_offerings`](Self::set_reserved_node_offerings).
         ///
-        /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
+        /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
         pub fn reserved_node_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedNodeOffering>,
+            input: crate::model::ReservedNodeOffering,
         ) -> Self {
             let mut v = self.reserved_node_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_offerings = Some(v);
             self
         }
-        /// <p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>
+        /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
         pub fn set_reserved_node_offerings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
@@ -2950,10 +2843,7 @@ impl GetReservedNodeExchangeOfferingsOutput {
 pub struct GetReservedNodeExchangeConfigurationOptionsOutput {
     /// <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>the configuration options for the reserved-node
-    /// exchange. These options include information about the source reserved node and target reserved
-    /// node. Details include the node type, the price, the node count, and the offering
-    /// type.</p>
+    /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     pub reserved_node_configuration_option_list:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeConfigurationOption>>,
 }
@@ -2962,10 +2852,7 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>the configuration options for the reserved-node
-    /// exchange. These options include information about the source reserved node and target reserved
-    /// node. Details include the node type, the price, the node count, and the offering
-    /// type.</p>
+    /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
     pub fn reserved_node_configuration_option_list(
         &self,
     ) -> std::option::Option<&[crate::model::ReservedNodeConfigurationOption]> {
@@ -3008,25 +2895,19 @@ pub mod get_reserved_node_exchange_configuration_options_output {
         ///
         /// To override the contents of this collection use [`set_reserved_node_configuration_option_list`](Self::set_reserved_node_configuration_option_list).
         ///
-        /// <p>the configuration options for the reserved-node
-        /// exchange. These options include information about the source reserved node and target reserved
-        /// node. Details include the node type, the price, the node count, and the offering
-        /// type.</p>
+        /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
         pub fn reserved_node_configuration_option_list(
             mut self,
-            input: impl Into<crate::model::ReservedNodeConfigurationOption>,
+            input: crate::model::ReservedNodeConfigurationOption,
         ) -> Self {
             let mut v = self
                 .reserved_node_configuration_option_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_configuration_option_list = Some(v);
             self
         }
-        /// <p>the configuration options for the reserved-node
-        /// exchange. These options include information about the source reserved node and target reserved
-        /// node. Details include the node type, the price, the node count, and the offering
-        /// type.</p>
+        /// <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
         pub fn set_reserved_node_configuration_option_list(
             mut self,
             input: std::option::Option<
@@ -3054,36 +2935,23 @@ impl GetReservedNodeExchangeConfigurationOptionsOutput {
     }
 }
 
-/// <p>Temporary credentials with authorization to log on to an Amazon Redshift database.
-/// </p>
+/// <p>Temporary credentials with authorization to log on to an Amazon Redshift database. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetClusterCredentialsOutput {
-    /// <p>A database user name that is authorized to log on to the database
-    /// <code>DbName</code> using the password <code>DbPassword</code>. If the specified
-    /// DbUser exists in the database, the new user name has the same database privileges as the
-    /// the user named in DbUser. By default, the user is added to PUBLIC. If the
-    /// <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-    /// listed groups for any sessions created using these credentials.</p>
+    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     pub db_user: std::option::Option<std::string::String>,
-    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code>
-    /// to log on to the database <code>DbName</code>. </p>
+    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     pub db_password: std::option::Option<std::string::String>,
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetClusterCredentialsOutput {
-    /// <p>A database user name that is authorized to log on to the database
-    /// <code>DbName</code> using the password <code>DbPassword</code>. If the specified
-    /// DbUser exists in the database, the new user name has the same database privileges as the
-    /// the user named in DbUser. By default, the user is added to PUBLIC. If the
-    /// <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-    /// listed groups for any sessions created using these credentials.</p>
+    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
-    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code>
-    /// to log on to the database <code>DbName</code>. </p>
+    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
@@ -3112,34 +2980,22 @@ pub mod get_cluster_credentials_output {
         pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A database user name that is authorized to log on to the database
-        /// <code>DbName</code> using the password <code>DbPassword</code>. If the specified
-        /// DbUser exists in the database, the new user name has the same database privileges as the
-        /// the user named in DbUser. By default, the user is added to PUBLIC. If the
-        /// <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-        /// listed groups for any sessions created using these credentials.</p>
+        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_user = Some(input.into());
             self
         }
-        /// <p>A database user name that is authorized to log on to the database
-        /// <code>DbName</code> using the password <code>DbPassword</code>. If the specified
-        /// DbUser exists in the database, the new user name has the same database privileges as the
-        /// the user named in DbUser. By default, the user is added to PUBLIC. If the
-        /// <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-        /// listed groups for any sessions created using these credentials.</p>
+        /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
         }
-        /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code>
-        /// to log on to the database <code>DbName</code>. </p>
+        /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
         pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_password = Some(input.into());
             self
         }
-        /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code>
-        /// to log on to the database <code>DbName</code>. </p>
+        /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
         pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_password = input;
             self
@@ -3232,8 +3088,7 @@ impl EnableSnapshotCopyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableLoggingOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -3247,8 +3102,7 @@ pub struct EnableLoggingOutput {
     pub last_failure_message: std::option::Option<std::string::String>,
 }
 impl EnableLoggingOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(&self) -> bool {
         self.logging_enabled
     }
@@ -3304,14 +3158,12 @@ pub mod enable_logging_output {
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn logging_enabled(mut self, input: bool) -> Self {
             self.logging_enabled = Some(input);
             self
         }
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn set_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.logging_enabled = input;
             self
@@ -3406,11 +3258,13 @@ pub struct DisassociateDataShareConsumerOutput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub managed_by: std::option::Option<std::string::String>,
 }
 impl DisassociateDataShareConsumerOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -3421,7 +3275,7 @@ impl DisassociateDataShareConsumerOutput {
     pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
@@ -3430,6 +3284,10 @@ impl DisassociateDataShareConsumerOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl std::fmt::Debug for DisassociateDataShareConsumerOutput {
@@ -3442,6 +3300,7 @@ impl std::fmt::Debug for DisassociateDataShareConsumerOutput {
             &self.allow_publicly_accessible_consumers,
         );
         formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.field("managed_by", &self.managed_by);
         formatter.finish()
     }
 }
@@ -3456,6 +3315,7 @@ pub mod disassociate_data_share_consumer_output {
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
         pub(crate) data_share_associations:
             std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -3481,12 +3341,12 @@ pub mod disassociate_data_share_consumer_output {
             self.producer_arn = input;
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
             self.allow_publicly_accessible_consumers = Some(input);
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn set_allow_publicly_accessible_consumers(
             mut self,
             input: std::option::Option<bool>,
@@ -3501,10 +3361,10 @@ pub mod disassociate_data_share_consumer_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -3516,6 +3376,16 @@ pub mod disassociate_data_share_consumer_output {
             self.data_share_associations = input;
             self
         }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.managed_by = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput)
         pub fn build(self) -> crate::output::DisassociateDataShareConsumerOutput {
             crate::output::DisassociateDataShareConsumerOutput {
@@ -3525,6 +3395,7 @@ pub mod disassociate_data_share_consumer_output {
                     .allow_publicly_accessible_consumers
                     .unwrap_or_default(),
                 data_share_associations: self.data_share_associations,
+                managed_by: self.managed_by,
             }
         }
     }
@@ -3594,8 +3465,7 @@ impl DisableSnapshotCopyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableLoggingOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -3609,8 +3479,7 @@ pub struct DisableLoggingOutput {
     pub last_failure_message: std::option::Option<std::string::String>,
 }
 impl DisableLoggingOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(&self) -> bool {
         self.logging_enabled
     }
@@ -3666,14 +3535,12 @@ pub mod disable_logging_output {
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn logging_enabled(mut self, input: bool) -> Self {
             self.logging_enabled = Some(input);
             self
         }
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn set_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.logging_enabled = input;
             self
@@ -3764,27 +3631,17 @@ impl DisableLoggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsageLimitsOutput {
-    /// <p>Contains the output from the <a>DescribeUsageLimits</a>
-    /// action. </p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub usage_limits: std::option::Option<std::vec::Vec<crate::model::UsageLimit>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsageLimitsOutput {
-    /// <p>Contains the output from the <a>DescribeUsageLimits</a>
-    /// action. </p>
+    /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
     pub fn usage_limits(&self) -> std::option::Option<&[crate::model::UsageLimit]> {
         self.usage_limits.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3811,16 +3668,14 @@ pub mod describe_usage_limits_output {
         ///
         /// To override the contents of this collection use [`set_usage_limits`](Self::set_usage_limits).
         ///
-        /// <p>Contains the output from the <a>DescribeUsageLimits</a>
-        /// action. </p>
-        pub fn usage_limits(mut self, input: impl Into<crate::model::UsageLimit>) -> Self {
+        /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
+        pub fn usage_limits(mut self, input: crate::model::UsageLimit) -> Self {
             let mut v = self.usage_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_limits = Some(v);
             self
         }
-        /// <p>Contains the output from the <a>DescribeUsageLimits</a>
-        /// action. </p>
+        /// <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
         pub fn set_usage_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageLimit>>,
@@ -3828,20 +3683,12 @@ pub mod describe_usage_limits_output {
             self.usage_limits = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3868,11 +3715,7 @@ impl DescribeUsageLimitsOutput {
 pub struct DescribeTagsOutput {
     /// <p>A list of tags with their associated resources.</p>
     pub tagged_resources: std::option::Option<std::vec::Vec<crate::model::TaggedResource>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTagsOutput {
@@ -3880,11 +3723,7 @@ impl DescribeTagsOutput {
     pub fn tagged_resources(&self) -> std::option::Option<&[crate::model::TaggedResource]> {
         self.tagged_resources.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -3913,9 +3752,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tagged_resources`](Self::set_tagged_resources).
         ///
         /// <p>A list of tags with their associated resources.</p>
-        pub fn tagged_resources(mut self, input: impl Into<crate::model::TaggedResource>) -> Self {
+        pub fn tagged_resources(mut self, input: crate::model::TaggedResource) -> Self {
             let mut v = self.tagged_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tagged_resources = Some(v);
             self
         }
@@ -3927,20 +3766,12 @@ pub mod describe_tags_output {
             self.tagged_resources = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3968,7 +3799,7 @@ pub struct DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
     pub table_restore_status_details:
         std::option::Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
-    /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
+    /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTableRestoreStatusOutput {
@@ -3978,7 +3809,7 @@ impl DescribeTableRestoreStatusOutput {
     ) -> std::option::Option<&[crate::model::TableRestoreStatus]> {
         self.table_restore_status_details.as_deref()
     }
-    /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
+    /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -4012,10 +3843,10 @@ pub mod describe_table_restore_status_output {
         /// <p>A list of status details for one or more table restore requests.</p>
         pub fn table_restore_status_details(
             mut self,
-            input: impl Into<crate::model::TableRestoreStatus>,
+            input: crate::model::TableRestoreStatus,
         ) -> Self {
             let mut v = self.table_restore_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_restore_status_details = Some(v);
             self
         }
@@ -4027,12 +3858,12 @@ pub mod describe_table_restore_status_output {
             self.table_restore_status_details = input;
             self
         }
-        /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
+        /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.</p>
+        /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4148,11 +3979,7 @@ impl DescribeStorageOutput {
 pub struct DescribeSnapshotSchedulesOutput {
     /// <p>A list of SnapshotSchedules.</p>
     pub snapshot_schedules: std::option::Option<std::vec::Vec<crate::model::SnapshotSchedule>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>marker</code> parameter
-    /// and retrying the command. If the <code>marker</code> field is empty, all response
-    /// records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotSchedulesOutput {
@@ -4160,11 +3987,7 @@ impl DescribeSnapshotSchedulesOutput {
     pub fn snapshot_schedules(&self) -> std::option::Option<&[crate::model::SnapshotSchedule]> {
         self.snapshot_schedules.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>marker</code> parameter
-    /// and retrying the command. If the <code>marker</code> field is empty, all response
-    /// records have been retrieved for the request.</p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -4193,12 +4016,9 @@ pub mod describe_snapshot_schedules_output {
         /// To override the contents of this collection use [`set_snapshot_schedules`](Self::set_snapshot_schedules).
         ///
         /// <p>A list of SnapshotSchedules.</p>
-        pub fn snapshot_schedules(
-            mut self,
-            input: impl Into<crate::model::SnapshotSchedule>,
-        ) -> Self {
+        pub fn snapshot_schedules(mut self, input: crate::model::SnapshotSchedule) -> Self {
             let mut v = self.snapshot_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_schedules = Some(v);
             self
         }
@@ -4210,20 +4030,12 @@ pub mod describe_snapshot_schedules_output {
             self.snapshot_schedules = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>marker</code> parameter
-        /// and retrying the command. If the <code>marker</code> field is empty, all response
-        /// records have been retrieved for the request.</p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>marker</code> parameter
-        /// and retrying the command. If the <code>marker</code> field is empty, all response
-        /// records have been retrieved for the request.</p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4248,24 +4060,14 @@ impl DescribeSnapshotSchedulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotCopyGrantsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
     pub snapshot_copy_grants: std::option::Option<std::vec::Vec<crate::model::SnapshotCopyGrant>>,
 }
 impl DescribeSnapshotCopyGrantsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
@@ -4294,23 +4096,13 @@ pub mod describe_snapshot_copy_grants_output {
             std::option::Option<std::vec::Vec<crate::model::SnapshotCopyGrant>>,
     }
     impl Builder {
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
@@ -4321,12 +4113,9 @@ pub mod describe_snapshot_copy_grants_output {
         /// To override the contents of this collection use [`set_snapshot_copy_grants`](Self::set_snapshot_copy_grants).
         ///
         /// <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
-        pub fn snapshot_copy_grants(
-            mut self,
-            input: impl Into<crate::model::SnapshotCopyGrant>,
-        ) -> Self {
+        pub fn snapshot_copy_grants(mut self, input: crate::model::SnapshotCopyGrant) -> Self {
             let mut v = self.snapshot_copy_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_copy_grants = Some(v);
             self
         }
@@ -4358,23 +4147,13 @@ impl DescribeSnapshotCopyGrantsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeScheduledActions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>List of retrieved scheduled actions. </p>
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
 }
 impl DescribeScheduledActionsOutput {
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeScheduledActions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -4402,22 +4181,12 @@ pub mod describe_scheduled_actions_output {
             std::option::Option<std::vec::Vec<crate::model::ScheduledAction>>,
     }
     impl Builder {
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeScheduledActions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeScheduledActions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4427,12 +4196,9 @@ pub mod describe_scheduled_actions_output {
         /// To override the contents of this collection use [`set_scheduled_actions`](Self::set_scheduled_actions).
         ///
         /// <p>List of retrieved scheduled actions. </p>
-        pub fn scheduled_actions(
-            mut self,
-            input: impl Into<crate::model::ScheduledAction>,
-        ) -> Self {
+        pub fn scheduled_actions(mut self, input: crate::model::ScheduledAction) -> Self {
             let mut v = self.scheduled_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_actions = Some(v);
             self
         }
@@ -4464,20 +4230,15 @@ impl DescribeScheduledActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResizeOutput {
-    /// <p>The node type that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The node type that the cluster will have after the resize operation is complete.</p>
     pub target_node_type: std::option::Option<std::string::String>,
-    /// <p>The number of nodes that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub target_number_of_nodes: std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-    /// </p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub target_cluster_type: std::option::Option<std::string::String>,
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-    /// </p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
@@ -4488,31 +4249,17 @@ pub struct DescribeResizeOutput {
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
     pub import_tables_not_started: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The average rate of the resize operation over the last few minutes, measured in
-    /// megabytes per second. After the resize operation completes, this value shows the average
-    /// rate of the entire resize operation.</p>
+    /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub avg_resize_rate_in_mega_bytes_per_second: std::option::Option<f64>,
-    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-    /// operation began.</p>
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
     pub total_resize_data_in_mega_bytes: std::option::Option<i64>,
-    /// <p>While the resize operation is in progress, this value shows the current amount of
-    /// data, in megabytes, that has been processed so far. When the resize operation is
-    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-    /// before resize).</p>
+    /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
     pub progress_in_mega_bytes: std::option::Option<i64>,
-    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-    /// resize operation completes, this value shows the total actual time, in seconds, for the
-    /// resize operation.</p>
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
     pub elapsed_time_in_seconds: std::option::Option<i64>,
-    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-    /// This value is calculated based on the average resize rate and the estimated amount of
-    /// data remaining to be processed. Once the resize operation is complete, this value will
-    /// be 0.</p>
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub estimated_time_to_completion_in_seconds: std::option::Option<i64>,
-    /// <p>An enum with possible values of <code>ClassicResize</code> and
-    /// <code>ElasticResize</code>. These values describe the type of resize operation being
-    /// performed. </p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub resize_type: std::option::Option<std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
     pub message: std::option::Option<std::string::String>,
@@ -4523,26 +4270,21 @@ pub struct DescribeResizeOutput {
     pub data_transfer_progress_percent: std::option::Option<f64>,
 }
 impl DescribeResizeOutput {
-    /// <p>The node type that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The node type that the cluster will have after the resize operation is complete.</p>
     pub fn target_node_type(&self) -> std::option::Option<&str> {
         self.target_node_type.as_deref()
     }
-    /// <p>The number of nodes that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub fn target_number_of_nodes(&self) -> std::option::Option<i32> {
         self.target_number_of_nodes
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-    /// </p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn target_cluster_type(&self) -> std::option::Option<&str> {
         self.target_cluster_type.as_deref()
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-    /// </p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -4561,41 +4303,27 @@ impl DescribeResizeOutput {
     pub fn import_tables_not_started(&self) -> std::option::Option<&[std::string::String]> {
         self.import_tables_not_started.as_deref()
     }
-    /// <p>The average rate of the resize operation over the last few minutes, measured in
-    /// megabytes per second. After the resize operation completes, this value shows the average
-    /// rate of the entire resize operation.</p>
+    /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub fn avg_resize_rate_in_mega_bytes_per_second(&self) -> std::option::Option<f64> {
         self.avg_resize_rate_in_mega_bytes_per_second
     }
-    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-    /// operation began.</p>
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
     pub fn total_resize_data_in_mega_bytes(&self) -> std::option::Option<i64> {
         self.total_resize_data_in_mega_bytes
     }
-    /// <p>While the resize operation is in progress, this value shows the current amount of
-    /// data, in megabytes, that has been processed so far. When the resize operation is
-    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-    /// before resize).</p>
+    /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
     pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
         self.progress_in_mega_bytes
     }
-    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-    /// resize operation completes, this value shows the total actual time, in seconds, for the
-    /// resize operation.</p>
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
     pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
         self.elapsed_time_in_seconds
     }
-    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-    /// This value is calculated based on the average resize rate and the estimated amount of
-    /// data remaining to be processed. Once the resize operation is complete, this value will
-    /// be 0.</p>
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub fn estimated_time_to_completion_in_seconds(&self) -> std::option::Option<i64> {
         self.estimated_time_to_completion_in_seconds
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and
-    /// <code>ElasticResize</code>. These values describe the type of resize operation being
-    /// performed. </p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn resize_type(&self) -> std::option::Option<&str> {
         self.resize_type.as_deref()
     }
@@ -4673,14 +4401,12 @@ pub mod describe_resize_output {
         pub(crate) data_transfer_progress_percent: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The node type that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The node type that the cluster will have after the resize operation is complete.</p>
         pub fn target_node_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_node_type = Some(input.into());
             self
         }
-        /// <p>The node type that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The node type that the cluster will have after the resize operation is complete.</p>
         pub fn set_target_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4688,28 +4414,24 @@ pub mod describe_resize_output {
             self.target_node_type = input;
             self
         }
-        /// <p>The number of nodes that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
         pub fn target_number_of_nodes(mut self, input: i32) -> Self {
             self.target_number_of_nodes = Some(input);
             self
         }
-        /// <p>The number of nodes that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
         pub fn set_target_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.target_number_of_nodes = input;
             self
         }
         /// <p>The cluster type after the resize operation is complete.</p>
-        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-        /// </p>
+        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
         pub fn target_cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_cluster_type = Some(input.into());
             self
         }
         /// <p>The cluster type after the resize operation is complete.</p>
-        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-        /// </p>
+        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
         pub fn set_target_cluster_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4718,17 +4440,13 @@ pub mod describe_resize_output {
             self
         }
         /// <p>The status of the resize operation.</p>
-        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-        /// </p>
+        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
         /// <p>The status of the resize operation.</p>
-        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-        /// </p>
+        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4796,16 +4514,12 @@ pub mod describe_resize_output {
             self.import_tables_not_started = input;
             self
         }
-        /// <p>The average rate of the resize operation over the last few minutes, measured in
-        /// megabytes per second. After the resize operation completes, this value shows the average
-        /// rate of the entire resize operation.</p>
+        /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
         pub fn avg_resize_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
             self.avg_resize_rate_in_mega_bytes_per_second = Some(input);
             self
         }
-        /// <p>The average rate of the resize operation over the last few minutes, measured in
-        /// megabytes per second. After the resize operation completes, this value shows the average
-        /// rate of the entire resize operation.</p>
+        /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
         pub fn set_avg_resize_rate_in_mega_bytes_per_second(
             mut self,
             input: std::option::Option<f64>,
@@ -4813,14 +4527,12 @@ pub mod describe_resize_output {
             self.avg_resize_rate_in_mega_bytes_per_second = input;
             self
         }
-        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-        /// operation began.</p>
+        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
         pub fn total_resize_data_in_mega_bytes(mut self, input: i64) -> Self {
             self.total_resize_data_in_mega_bytes = Some(input);
             self
         }
-        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-        /// operation began.</p>
+        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
         pub fn set_total_resize_data_in_mega_bytes(
             mut self,
             input: std::option::Option<i64>,
@@ -4828,50 +4540,32 @@ pub mod describe_resize_output {
             self.total_resize_data_in_mega_bytes = input;
             self
         }
-        /// <p>While the resize operation is in progress, this value shows the current amount of
-        /// data, in megabytes, that has been processed so far. When the resize operation is
-        /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-        /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-        /// before resize).</p>
+        /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
         pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
             self.progress_in_mega_bytes = Some(input);
             self
         }
-        /// <p>While the resize operation is in progress, this value shows the current amount of
-        /// data, in megabytes, that has been processed so far. When the resize operation is
-        /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-        /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-        /// before resize).</p>
+        /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
         pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.progress_in_mega_bytes = input;
             self
         }
-        /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-        /// resize operation completes, this value shows the total actual time, in seconds, for the
-        /// resize operation.</p>
+        /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
             self.elapsed_time_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-        /// resize operation completes, this value shows the total actual time, in seconds, for the
-        /// resize operation.</p>
+        /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.elapsed_time_in_seconds = input;
             self
         }
-        /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-        /// This value is calculated based on the average resize rate and the estimated amount of
-        /// data remaining to be processed. Once the resize operation is complete, this value will
-        /// be 0.</p>
+        /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
         pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
             self.estimated_time_to_completion_in_seconds = Some(input);
             self
         }
-        /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-        /// This value is calculated based on the average resize rate and the estimated amount of
-        /// data remaining to be processed. Once the resize operation is complete, this value will
-        /// be 0.</p>
+        /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
         pub fn set_estimated_time_to_completion_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -4879,16 +4573,12 @@ pub mod describe_resize_output {
             self.estimated_time_to_completion_in_seconds = input;
             self
         }
-        /// <p>An enum with possible values of <code>ClassicResize</code> and
-        /// <code>ElasticResize</code>. These values describe the type of resize operation being
-        /// performed. </p>
+        /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
         pub fn resize_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resize_type = Some(input.into());
             self
         }
-        /// <p>An enum with possible values of <code>ClassicResize</code> and
-        /// <code>ElasticResize</code>. These values describe the type of resize operation being
-        /// performed. </p>
+        /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
         pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resize_type = input;
             self
@@ -4967,21 +4657,13 @@ impl DescribeResizeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodesOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The list of <code>ReservedNode</code> objects.</p>
     pub reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
 }
 impl DescribeReservedNodesOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5008,20 +4690,12 @@ pub mod describe_reserved_nodes_output {
         pub(crate) reserved_nodes: std::option::Option<std::vec::Vec<crate::model::ReservedNode>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5031,9 +4705,9 @@ pub mod describe_reserved_nodes_output {
         /// To override the contents of this collection use [`set_reserved_nodes`](Self::set_reserved_nodes).
         ///
         /// <p>The list of <code>ReservedNode</code> objects.</p>
-        pub fn reserved_nodes(mut self, input: impl Into<crate::model::ReservedNode>) -> Self {
+        pub fn reserved_nodes(mut self, input: crate::model::ReservedNode) -> Self {
             let mut v = self.reserved_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_nodes = Some(v);
             self
         }
@@ -5065,22 +4739,14 @@ impl DescribeReservedNodesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeOfferingsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
     pub reserved_node_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
 }
 impl DescribeReservedNodeOfferingsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5110,20 +4776,12 @@ pub mod describe_reserved_node_offerings_output {
             std::option::Option<std::vec::Vec<crate::model::ReservedNodeOffering>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5135,10 +4793,10 @@ pub mod describe_reserved_node_offerings_output {
         /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
         pub fn reserved_node_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedNodeOffering>,
+            input: crate::model::ReservedNodeOffering,
         ) -> Self {
             let mut v = self.reserved_node_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_offerings = Some(v);
             self
         }
@@ -5170,16 +4828,14 @@ impl DescribeReservedNodeOfferingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedNodeExchangeStatusOutput {
-    /// <p>The details of the reserved-node exchange request, including the status, request
-    /// time, source reserved-node identifier, and additional details.</p>
+    /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
     pub reserved_node_exchange_status_details:
         std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReservedNodeExchangeStatusOutput {
-    /// <p>The details of the reserved-node exchange request, including the status, request
-    /// time, source reserved-node identifier, and additional details.</p>
+    /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
     pub fn reserved_node_exchange_status_details(
         &self,
     ) -> std::option::Option<&[crate::model::ReservedNodeExchangeStatus]> {
@@ -5216,21 +4872,19 @@ pub mod describe_reserved_node_exchange_status_output {
         ///
         /// To override the contents of this collection use [`set_reserved_node_exchange_status_details`](Self::set_reserved_node_exchange_status_details).
         ///
-        /// <p>The details of the reserved-node exchange request, including the status, request
-        /// time, source reserved-node identifier, and additional details.</p>
+        /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
         pub fn reserved_node_exchange_status_details(
             mut self,
-            input: impl Into<crate::model::ReservedNodeExchangeStatus>,
+            input: crate::model::ReservedNodeExchangeStatus,
         ) -> Self {
             let mut v = self
                 .reserved_node_exchange_status_details
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_node_exchange_status_details = Some(v);
             self
         }
-        /// <p>The details of the reserved-node exchange request, including the status, request
-        /// time, source reserved-node identifier, and additional details.</p>
+        /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
         pub fn set_reserved_node_exchange_status_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservedNodeExchangeStatus>>,
@@ -5307,10 +4961,10 @@ pub mod describe_partners_output {
         /// <p>A list of partner integrations.</p>
         pub fn partner_integration_info_list(
             mut self,
-            input: impl Into<crate::model::PartnerIntegrationInfo>,
+            input: crate::model::PartnerIntegrationInfo,
         ) -> Self {
             let mut v = self.partner_integration_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_integration_info_list = Some(v);
             self
         }
@@ -5337,35 +4991,24 @@ impl DescribePartnersOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeOrderableClusterOptions</a>
-/// action. </p>
+/// <p>Contains the output from the <code>DescribeOrderableClusterOptions</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableClusterOptionsOutput {
-    /// <p>An <code>OrderableClusterOption</code> structure containing information about
-    /// orderable options for the cluster.</p>
+    /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
     pub orderable_cluster_options:
         std::option::Option<std::vec::Vec<crate::model::OrderableClusterOption>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableClusterOptionsOutput {
-    /// <p>An <code>OrderableClusterOption</code> structure containing information about
-    /// orderable options for the cluster.</p>
+    /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
     pub fn orderable_cluster_options(
         &self,
     ) -> std::option::Option<&[crate::model::OrderableClusterOption]> {
         self.orderable_cluster_options.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5393,19 +5036,17 @@ pub mod describe_orderable_cluster_options_output {
         ///
         /// To override the contents of this collection use [`set_orderable_cluster_options`](Self::set_orderable_cluster_options).
         ///
-        /// <p>An <code>OrderableClusterOption</code> structure containing information about
-        /// orderable options for the cluster.</p>
+        /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
         pub fn orderable_cluster_options(
             mut self,
-            input: impl Into<crate::model::OrderableClusterOption>,
+            input: crate::model::OrderableClusterOption,
         ) -> Self {
             let mut v = self.orderable_cluster_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orderable_cluster_options = Some(v);
             self
         }
-        /// <p>An <code>OrderableClusterOption</code> structure containing information about
-        /// orderable options for the cluster.</p>
+        /// <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
         pub fn set_orderable_cluster_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderableClusterOption>>,
@@ -5413,20 +5054,12 @@ pub mod describe_orderable_cluster_options_output {
             self.orderable_cluster_options = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5454,11 +5087,7 @@ pub struct DescribeNodeConfigurationOptionsOutput {
     /// <p>A list of valid node configurations.</p>
     pub node_configuration_option_list:
         std::option::Option<std::vec::Vec<crate::model::NodeConfigurationOption>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeNodeConfigurationOptionsOutput {
@@ -5468,11 +5097,7 @@ impl DescribeNodeConfigurationOptionsOutput {
     ) -> std::option::Option<&[crate::model::NodeConfigurationOption]> {
         self.node_configuration_option_list.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5506,10 +5131,10 @@ pub mod describe_node_configuration_options_output {
         /// <p>A list of valid node configurations.</p>
         pub fn node_configuration_option_list(
             mut self,
-            input: impl Into<crate::model::NodeConfigurationOption>,
+            input: crate::model::NodeConfigurationOption,
         ) -> Self {
             let mut v = self.node_configuration_option_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_configuration_option_list = Some(v);
             self
         }
@@ -5521,20 +5146,12 @@ pub mod describe_node_configuration_options_output {
             self.node_configuration_option_list = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5559,8 +5176,7 @@ impl DescribeNodeConfigurationOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoggingStatusOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub logging_enabled: bool,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -5574,8 +5190,7 @@ pub struct DescribeLoggingStatusOutput {
     pub last_failure_message: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingStatusOutput {
-    /// <p>
-    /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
     pub fn logging_enabled(&self) -> bool {
         self.logging_enabled
     }
@@ -5631,14 +5246,12 @@ pub mod describe_logging_status_output {
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn logging_enabled(mut self, input: bool) -> Self {
             self.logging_enabled = Some(input);
             self
         }
-        /// <p>
-        /// <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+        /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
         pub fn set_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.logging_enabled = input;
             self
@@ -5729,21 +5342,13 @@ impl DescribeLoggingStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmConfigurationsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>HsmConfiguration</code> objects.</p>
     pub hsm_configurations: std::option::Option<std::vec::Vec<crate::model::HsmConfiguration>>,
 }
 impl DescribeHsmConfigurationsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5771,20 +5376,12 @@ pub mod describe_hsm_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::HsmConfiguration>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5794,12 +5391,9 @@ pub mod describe_hsm_configurations_output {
         /// To override the contents of this collection use [`set_hsm_configurations`](Self::set_hsm_configurations).
         ///
         /// <p>A list of <code>HsmConfiguration</code> objects.</p>
-        pub fn hsm_configurations(
-            mut self,
-            input: impl Into<crate::model::HsmConfiguration>,
-        ) -> Self {
+        pub fn hsm_configurations(mut self, input: crate::model::HsmConfiguration) -> Self {
             let mut v = self.hsm_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsm_configurations = Some(v);
             self
         }
@@ -5831,28 +5425,18 @@ impl DescribeHsmConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmClientCertificatesOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift
-    /// clusters to store and retrieve database encryption keys in an HSM.</p>
+    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     pub hsm_client_certificates:
         std::option::Option<std::vec::Vec<crate::model::HsmClientCertificate>>,
 }
 impl DescribeHsmClientCertificatesOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift
-    /// clusters to store and retrieve database encryption keys in an HSM.</p>
+    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     pub fn hsm_client_certificates(
         &self,
     ) -> std::option::Option<&[crate::model::HsmClientCertificate]> {
@@ -5878,20 +5462,12 @@ pub mod describe_hsm_client_certificates_output {
             std::option::Option<std::vec::Vec<crate::model::HsmClientCertificate>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5900,19 +5476,17 @@ pub mod describe_hsm_client_certificates_output {
         ///
         /// To override the contents of this collection use [`set_hsm_client_certificates`](Self::set_hsm_client_certificates).
         ///
-        /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift
-        /// clusters to store and retrieve database encryption keys in an HSM.</p>
+        /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
         pub fn hsm_client_certificates(
             mut self,
-            input: impl Into<crate::model::HsmClientCertificate>,
+            input: crate::model::HsmClientCertificate,
         ) -> Self {
             let mut v = self.hsm_client_certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hsm_client_certificates = Some(v);
             self
         }
-        /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift
-        /// clusters to store and retrieve database encryption keys in an HSM.</p>
+        /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
         pub fn set_hsm_client_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HsmClientCertificate>>,
@@ -5940,22 +5514,14 @@ impl DescribeHsmClientCertificatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5985,20 +5551,12 @@ pub mod describe_event_subscriptions_output {
             std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6008,12 +5566,9 @@ pub mod describe_event_subscriptions_output {
         /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
         ///
         /// <p>A list of event subscriptions.</p>
-        pub fn event_subscriptions_list(
-            mut self,
-            input: impl Into<crate::model::EventSubscription>,
-        ) -> Self {
+        pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_subscriptions_list = Some(v);
             self
         }
@@ -6045,21 +5600,13 @@ impl DescribeEventSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Event</code> instances. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6086,20 +5633,12 @@ pub mod describe_events_output {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6109,9 +5648,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of <code>Event</code> instances. </p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -6179,10 +5718,10 @@ pub mod describe_event_categories_output {
         /// <p>A list of event categories descriptions.</p>
         pub fn event_categories_map_list(
             mut self,
-            input: impl Into<crate::model::EventCategoriesMap>,
+            input: crate::model::EventCategoriesMap,
         ) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_categories_map_list = Some(v);
             self
         }
@@ -6216,10 +5755,7 @@ pub struct DescribeEndpointAuthorizationOutput {
     /// <p>The authorizations to an endpoint.</p>
     pub endpoint_authorization_list:
         std::option::Option<std::vec::Vec<crate::model::EndpointAuthorization>>,
-    /// <p>An optional pagination token provided by a previous
-    /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by the
-    /// <code>MaxRecords</code> parameter.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAuthorizationOutput {
@@ -6229,10 +5765,7 @@ impl DescribeEndpointAuthorizationOutput {
     ) -> std::option::Option<&[crate::model::EndpointAuthorization]> {
         self.endpoint_authorization_list.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous
-    /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by the
-    /// <code>MaxRecords</code> parameter.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6266,10 +5799,10 @@ pub mod describe_endpoint_authorization_output {
         /// <p>The authorizations to an endpoint.</p>
         pub fn endpoint_authorization_list(
             mut self,
-            input: impl Into<crate::model::EndpointAuthorization>,
+            input: crate::model::EndpointAuthorization,
         ) -> Self {
             let mut v = self.endpoint_authorization_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_authorization_list = Some(v);
             self
         }
@@ -6281,18 +5814,12 @@ pub mod describe_endpoint_authorization_output {
             self.endpoint_authorization_list = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous
-        /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by the
-        /// <code>MaxRecords</code> parameter.</p>
+        /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous
-        /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by the
-        /// <code>MaxRecords</code> parameter.</p>
+        /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6319,10 +5846,7 @@ impl DescribeEndpointAuthorizationOutput {
 pub struct DescribeEndpointAccessOutput {
     /// <p>The list of endpoints with access to the cluster.</p>
     pub endpoint_access_list: std::option::Option<std::vec::Vec<crate::model::EndpointAccess>>,
-    /// <p>An optional pagination token provided by a previous
-    /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by the
-    /// <code>MaxRecords</code> parameter.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointAccessOutput {
@@ -6330,10 +5854,7 @@ impl DescribeEndpointAccessOutput {
     pub fn endpoint_access_list(&self) -> std::option::Option<&[crate::model::EndpointAccess]> {
         self.endpoint_access_list.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous
-    /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
-    /// response includes only records beyond the marker, up to the value specified by the
-    /// <code>MaxRecords</code> parameter.</p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6362,12 +5883,9 @@ pub mod describe_endpoint_access_output {
         /// To override the contents of this collection use [`set_endpoint_access_list`](Self::set_endpoint_access_list).
         ///
         /// <p>The list of endpoints with access to the cluster.</p>
-        pub fn endpoint_access_list(
-            mut self,
-            input: impl Into<crate::model::EndpointAccess>,
-        ) -> Self {
+        pub fn endpoint_access_list(mut self, input: crate::model::EndpointAccess) -> Self {
             let mut v = self.endpoint_access_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_access_list = Some(v);
             self
         }
@@ -6379,18 +5897,12 @@ pub mod describe_endpoint_access_output {
             self.endpoint_access_list = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous
-        /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by the
-        /// <code>MaxRecords</code> parameter.</p>
+        /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous
-        /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
-        /// response includes only records beyond the marker, up to the value specified by the
-        /// <code>MaxRecords</code> parameter.</p>
+        /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6483,12 +5995,7 @@ impl DescribeDefaultClusterParametersOutput {
 pub struct DescribeDataSharesForProducerOutput {
     /// <p>Shows the results of datashares available for producers.</p>
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForProducerOutput {
@@ -6496,12 +6003,7 @@ impl DescribeDataSharesForProducerOutput {
     pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
         self.data_shares.as_deref()
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6529,9 +6031,9 @@ pub mod describe_data_shares_for_producer_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>Shows the results of datashares available for producers.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6543,22 +6045,12 @@ pub mod describe_data_shares_for_producer_output {
             self.data_shares = input;
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6585,12 +6077,7 @@ impl DescribeDataSharesForProducerOutput {
 pub struct DescribeDataSharesForConsumerOutput {
     /// <p>Shows the results of datashares available for consumers.</p>
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesForConsumerOutput {
@@ -6598,12 +6085,7 @@ impl DescribeDataSharesForConsumerOutput {
     pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
         self.data_shares.as_deref()
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response
-    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-    /// <code>Marker</code> field of the response. You can retrieve the next set of response
-    /// records by providing the returned marker value in the <code>Marker</code> parameter and
-    /// retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6631,9 +6113,9 @@ pub mod describe_data_shares_for_consumer_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>Shows the results of datashares available for consumers.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6645,22 +6127,12 @@ pub mod describe_data_shares_for_consumer_output {
             self.data_shares = input;
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter and
-        /// retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6687,7 +6159,7 @@ impl DescribeDataSharesForConsumerOutput {
 pub struct DescribeDataSharesOutput {
     /// <p>The results returned from describing datashares.</p>
     pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDataSharesOutput {
@@ -6695,7 +6167,7 @@ impl DescribeDataSharesOutput {
     pub fn data_shares(&self) -> std::option::Option<&[crate::model::DataShare]> {
         self.data_shares.as_deref()
     }
-    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6723,9 +6195,9 @@ pub mod describe_data_shares_output {
         /// To override the contents of this collection use [`set_data_shares`](Self::set_data_shares).
         ///
         /// <p>The results returned from describing datashares.</p>
-        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+        pub fn data_shares(mut self, input: crate::model::DataShare) -> Self {
             let mut v = self.data_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_shares = Some(v);
             self
         }
@@ -6737,12 +6209,12 @@ pub mod describe_data_shares_output {
             self.data_shares = input;
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6763,26 +6235,17 @@ impl DescribeDataSharesOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusterVersions</a> action.
-/// </p>
+/// <p>Contains the output from the <code>DescribeClusterVersions</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterVersionsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>Version</code> elements. </p>
     pub cluster_versions: std::option::Option<std::vec::Vec<crate::model::ClusterVersion>>,
 }
 impl DescribeClusterVersionsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6810,20 +6273,12 @@ pub mod describe_cluster_versions_output {
             std::option::Option<std::vec::Vec<crate::model::ClusterVersion>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6833,9 +6288,9 @@ pub mod describe_cluster_versions_output {
         /// To override the contents of this collection use [`set_cluster_versions`](Self::set_cluster_versions).
         ///
         /// <p>A list of <code>Version</code> elements. </p>
-        pub fn cluster_versions(mut self, input: impl Into<crate::model::ClusterVersion>) -> Self {
+        pub fn cluster_versions(mut self, input: crate::model::ClusterVersion) -> Self {
             let mut v = self.cluster_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_versions = Some(v);
             self
         }
@@ -6867,23 +6322,17 @@ impl DescribeClusterVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterTracksOutput {
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
-    /// operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
     pub maintenance_tracks: std::option::Option<std::vec::Vec<crate::model::MaintenanceTrack>>,
-    /// <p>The starting point to return a set of response tracklist records. You can retrieve the
-    /// next set of response records by providing the returned marker value in the
-    /// <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterTracksOutput {
-    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
-    /// operation. </p>
+    /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
     pub fn maintenance_tracks(&self) -> std::option::Option<&[crate::model::MaintenanceTrack]> {
         self.maintenance_tracks.as_deref()
     }
-    /// <p>The starting point to return a set of response tracklist records. You can retrieve the
-    /// next set of response records by providing the returned marker value in the
-    /// <code>Marker</code> parameter and retrying the request.</p>
+    /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6911,19 +6360,14 @@ pub mod describe_cluster_tracks_output {
         ///
         /// To override the contents of this collection use [`set_maintenance_tracks`](Self::set_maintenance_tracks).
         ///
-        /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
-        /// operation. </p>
-        pub fn maintenance_tracks(
-            mut self,
-            input: impl Into<crate::model::MaintenanceTrack>,
-        ) -> Self {
+        /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+        pub fn maintenance_tracks(mut self, input: crate::model::MaintenanceTrack) -> Self {
             let mut v = self.maintenance_tracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_tracks = Some(v);
             self
         }
-        /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code>
-        /// operation. </p>
+        /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
         pub fn set_maintenance_tracks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceTrack>>,
@@ -6931,16 +6375,12 @@ pub mod describe_cluster_tracks_output {
             self.maintenance_tracks = input;
             self
         }
-        /// <p>The starting point to return a set of response tracklist records. You can retrieve the
-        /// next set of response records by providing the returned marker value in the
-        /// <code>Marker</code> parameter and retrying the request.</p>
+        /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The starting point to return a set of response tracklist records. You can retrieve the
-        /// next set of response records by providing the returned marker value in the
-        /// <code>Marker</code> parameter and retrying the request.</p>
+        /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6961,30 +6401,21 @@ impl DescribeClusterTracksOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
-/// </p>
+/// <p>Contains the output from the <code>DescribeClusterSubnetGroups</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSubnetGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
+    /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     pub cluster_subnet_groups: std::option::Option<std::vec::Vec<crate::model::ClusterSubnetGroup>>,
 }
 impl DescribeClusterSubnetGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
+    /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     pub fn cluster_subnet_groups(
         &self,
     ) -> std::option::Option<&[crate::model::ClusterSubnetGroup]> {
@@ -7010,20 +6441,12 @@ pub mod describe_cluster_subnet_groups_output {
             std::option::Option<std::vec::Vec<crate::model::ClusterSubnetGroup>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7032,17 +6455,14 @@ pub mod describe_cluster_subnet_groups_output {
         ///
         /// To override the contents of this collection use [`set_cluster_subnet_groups`](Self::set_cluster_subnet_groups).
         ///
-        /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
-        pub fn cluster_subnet_groups(
-            mut self,
-            input: impl Into<crate::model::ClusterSubnetGroup>,
-        ) -> Self {
+        /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
+        pub fn cluster_subnet_groups(mut self, input: crate::model::ClusterSubnetGroup) -> Self {
             let mut v = self.cluster_subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_subnet_groups = Some(v);
             self
         }
-        /// <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
+        /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
         pub fn set_cluster_subnet_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSubnetGroup>>,
@@ -7066,30 +6486,21 @@ impl DescribeClusterSubnetGroupsOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusterSnapshots</a> action.
-/// </p>
+/// <p>Contains the output from the <code>DescribeClusterSnapshots</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSnapshotsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>Snapshot</a> instances. </p>
+    /// <p>A list of <code>Snapshot</code> instances. </p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeClusterSnapshotsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>Snapshot</a> instances. </p>
+    /// <p>A list of <code>Snapshot</code> instances. </p>
     pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
@@ -7112,20 +6523,12 @@ pub mod describe_cluster_snapshots_output {
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7134,14 +6537,14 @@ pub mod describe_cluster_snapshots_output {
         ///
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
-        /// <p>A list of <a>Snapshot</a> instances. </p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        /// <p>A list of <code>Snapshot</code> instances. </p>
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
-        /// <p>A list of <a>Snapshot</a> instances. </p>
+        /// <p>A list of <code>Snapshot</code> instances. </p>
         pub fn set_snapshots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
@@ -7169,26 +6572,18 @@ impl DescribeClusterSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterSecurityGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
+    /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
     pub cluster_security_groups:
         std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroup>>,
 }
 impl DescribeClusterSecurityGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
+    /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
     pub fn cluster_security_groups(
         &self,
     ) -> std::option::Option<&[crate::model::ClusterSecurityGroup]> {
@@ -7214,20 +6609,12 @@ pub mod describe_cluster_security_groups_output {
             std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroup>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7236,17 +6623,17 @@ pub mod describe_cluster_security_groups_output {
         ///
         /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
         ///
-        /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
+        /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
         pub fn cluster_security_groups(
             mut self,
-            input: impl Into<crate::model::ClusterSecurityGroup>,
+            input: crate::model::ClusterSecurityGroup,
         ) -> Self {
             let mut v = self.cluster_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_security_groups = Some(v);
             self
         }
-        /// <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
+        /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
         pub fn set_cluster_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSecurityGroup>>,
@@ -7270,31 +6657,21 @@ impl DescribeClusterSecurityGroupsOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusters</a> action. </p>
+/// <p>Contains the output from the <code>DescribeClusters</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
-    /// </p>
+    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
     pub clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
 }
 impl DescribeClustersOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
-    /// </p>
+    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
     pub fn clusters(&self) -> std::option::Option<&[crate::model::Cluster]> {
         self.clusters.as_deref()
     }
@@ -7317,20 +6694,12 @@ pub mod describe_clusters_output {
         pub(crate) clusters: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7339,16 +6708,14 @@ pub mod describe_clusters_output {
         ///
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
-        /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
-        /// </p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
-        /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster.
-        /// </p>
+        /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
         pub fn set_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
@@ -7372,32 +6739,21 @@ impl DescribeClustersOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusterParameters</a> action.
-/// </p>
+/// <p>Contains the output from the <code>DescribeClusterParameters</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParametersOutput {
-    /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
-    /// of one cluster parameter group. </p>
+    /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeClusterParametersOutput {
-    /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
-    /// of one cluster parameter group. </p>
+    /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7424,16 +6780,14 @@ pub mod describe_cluster_parameters_output {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
-        /// of one cluster parameter group. </p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <a>Parameter</a> instances. Each instance lists the parameters
-        /// of one cluster parameter group. </p>
+        /// <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -7441,20 +6795,12 @@ pub mod describe_cluster_parameters_output {
             self.parameters = input;
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7475,32 +6821,21 @@ impl DescribeClusterParametersOutput {
     }
 }
 
-/// <p>Contains the output from the <a>DescribeClusterParameterGroups</a>
-/// action. </p>
+/// <p>Contains the output from the <code>DescribeClusterParameterGroups</code> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterParameterGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
-    /// describes one cluster parameter group. </p>
+    /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     pub parameter_groups: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroup>>,
 }
 impl DescribeClusterParameterGroupsOutput {
-    /// <p>A value that indicates the starting point for the next set of response records in a
-    /// subsequent request. If a value is returned in a response, you can retrieve the next set
-    /// of records by providing this returned marker value in the <code>Marker</code> parameter
-    /// and retrying the command. If the <code>Marker</code> field is empty, all response
-    /// records have been retrieved for the request. </p>
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
-    /// describes one cluster parameter group. </p>
+    /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     pub fn parameter_groups(&self) -> std::option::Option<&[crate::model::ClusterParameterGroup]> {
         self.parameter_groups.as_deref()
     }
@@ -7524,20 +6859,12 @@ pub mod describe_cluster_parameter_groups_output {
             std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroup>>,
     }
     impl Builder {
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A value that indicates the starting point for the next set of response records in a
-        /// subsequent request. If a value is returned in a response, you can retrieve the next set
-        /// of records by providing this returned marker value in the <code>Marker</code> parameter
-        /// and retrying the command. If the <code>Marker</code> field is empty, all response
-        /// records have been retrieved for the request. </p>
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7546,19 +6873,14 @@ pub mod describe_cluster_parameter_groups_output {
         ///
         /// To override the contents of this collection use [`set_parameter_groups`](Self::set_parameter_groups).
         ///
-        /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
-        /// describes one cluster parameter group. </p>
-        pub fn parameter_groups(
-            mut self,
-            input: impl Into<crate::model::ClusterParameterGroup>,
-        ) -> Self {
+        /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
+        pub fn parameter_groups(mut self, input: crate::model::ClusterParameterGroup) -> Self {
             let mut v = self.parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_groups = Some(v);
             self
         }
-        /// <p>A list of <a>ClusterParameterGroup</a> instances. Each instance
-        /// describes one cluster parameter group. </p>
+        /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
         pub fn set_parameter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterParameterGroup>>,
@@ -7586,19 +6908,13 @@ impl DescribeClusterParameterGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterDbRevisionsOutput {
-    /// <p>A string representing the starting point for the next set of revisions. If a value is
-    /// returned in a response, you can retrieve the next set of revisions by providing the
-    /// value in the <code>marker</code> parameter and retrying the command. If the
-    /// <code>marker</code> field is empty, all revisions have already been returned.</p>
+    /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of revisions.</p>
     pub cluster_db_revisions: std::option::Option<std::vec::Vec<crate::model::ClusterDbRevision>>,
 }
 impl DescribeClusterDbRevisionsOutput {
-    /// <p>A string representing the starting point for the next set of revisions. If a value is
-    /// returned in a response, you can retrieve the next set of revisions by providing the
-    /// value in the <code>marker</code> parameter and retrying the command. If the
-    /// <code>marker</code> field is empty, all revisions have already been returned.</p>
+    /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7626,18 +6942,12 @@ pub mod describe_cluster_db_revisions_output {
             std::option::Option<std::vec::Vec<crate::model::ClusterDbRevision>>,
     }
     impl Builder {
-        /// <p>A string representing the starting point for the next set of revisions. If a value is
-        /// returned in a response, you can retrieve the next set of revisions by providing the
-        /// value in the <code>marker</code> parameter and retrying the command. If the
-        /// <code>marker</code> field is empty, all revisions have already been returned.</p>
+        /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A string representing the starting point for the next set of revisions. If a value is
-        /// returned in a response, you can retrieve the next set of revisions by providing the
-        /// value in the <code>marker</code> parameter and retrying the command. If the
-        /// <code>marker</code> field is empty, all revisions have already been returned.</p>
+        /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7647,12 +6957,9 @@ pub mod describe_cluster_db_revisions_output {
         /// To override the contents of this collection use [`set_cluster_db_revisions`](Self::set_cluster_db_revisions).
         ///
         /// <p>A list of revisions.</p>
-        pub fn cluster_db_revisions(
-            mut self,
-            input: impl Into<crate::model::ClusterDbRevision>,
-        ) -> Self {
+        pub fn cluster_db_revisions(mut self, input: crate::model::ClusterDbRevision) -> Self {
             let mut v = self.cluster_db_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_db_revisions = Some(v);
             self
         }
@@ -7720,10 +7027,10 @@ pub mod describe_authentication_profiles_output {
         /// <p>The list of authentication profiles.</p>
         pub fn authentication_profiles(
             mut self,
-            input: impl Into<crate::model::AuthenticationProfile>,
+            input: crate::model::AuthenticationProfile,
         ) -> Self {
             let mut v = self.authentication_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authentication_profiles = Some(v);
             self
         }
@@ -7785,12 +7092,9 @@ pub mod describe_account_attributes_output {
         /// To override the contents of this collection use [`set_account_attributes`](Self::set_account_attributes).
         ///
         /// <p>A list of attributes assigned to an account.</p>
-        pub fn account_attributes(
-            mut self,
-            input: impl Into<crate::model::AccountAttribute>,
-        ) -> Self {
+        pub fn account_attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_attributes = Some(v);
             self
         }
@@ -8343,10 +7647,10 @@ pub mod delete_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -8664,11 +7968,13 @@ pub struct DeauthorizeDataShareOutput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub managed_by: std::option::Option<std::string::String>,
 }
 impl DeauthorizeDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -8679,7 +7985,7 @@ impl DeauthorizeDataShareOutput {
     pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
@@ -8688,6 +7994,10 @@ impl DeauthorizeDataShareOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl std::fmt::Debug for DeauthorizeDataShareOutput {
@@ -8700,6 +8010,7 @@ impl std::fmt::Debug for DeauthorizeDataShareOutput {
             &self.allow_publicly_accessible_consumers,
         );
         formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.field("managed_by", &self.managed_by);
         formatter.finish()
     }
 }
@@ -8714,6 +8025,7 @@ pub mod deauthorize_data_share_output {
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
         pub(crate) data_share_associations:
             std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -8739,12 +8051,12 @@ pub mod deauthorize_data_share_output {
             self.producer_arn = input;
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
             self.allow_publicly_accessible_consumers = Some(input);
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn set_allow_publicly_accessible_consumers(
             mut self,
             input: std::option::Option<bool>,
@@ -8759,10 +8071,10 @@ pub mod deauthorize_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -8774,6 +8086,16 @@ pub mod deauthorize_data_share_output {
             self.data_share_associations = input;
             self
         }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.managed_by = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput)
         pub fn build(self) -> crate::output::DeauthorizeDataShareOutput {
             crate::output::DeauthorizeDataShareOutput {
@@ -8783,6 +8105,7 @@ pub mod deauthorize_data_share_output {
                     .allow_publicly_accessible_consumers
                     .unwrap_or_default(),
                 data_share_associations: self.data_share_associations,
+                managed_by: self.managed_by,
             }
         }
     }
@@ -8812,18 +8135,9 @@ pub struct CreateUsageLimitOutput {
     pub period: std::option::Option<crate::model::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>log</b> - To log an event in a system table. The default is log.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-    /// </li>
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
     pub breach_action: std::option::Option<crate::model::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
@@ -8856,18 +8170,9 @@ impl CreateUsageLimitOutput {
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>log</b> - To log an event in a system table. The default is log.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-    /// </li>
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
     pub fn breach_action(&self) -> std::option::Option<&crate::model::UsageLimitBreachAction> {
         self.breach_action.as_ref()
@@ -8984,18 +8289,9 @@ pub mod create_usage_limit_output {
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>log</b> - To log an event in a system table. The default is log.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-        /// </li>
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
         /// </ul>
         pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
             self.breach_action = Some(input);
@@ -9003,18 +8299,9 @@ pub mod create_usage_limit_output {
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>log</b> - To log an event in a system table. The default is log.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>emit-metric</b> - To emit CloudWatch metrics.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>disable</b> - To disable the feature until the next usage period begins.</p>
-        /// </li>
+        /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+        /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+        /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
         /// </ul>
         pub fn set_breach_action(
             mut self,
@@ -9028,9 +8315,9 @@ pub mod create_usage_limit_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9094,8 +8381,7 @@ impl CreateTagsOutput {
     }
 }
 
-/// <p>Describes a snapshot schedule. You can set a regular interval for creating
-/// snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
+/// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotScheduleOutput {
@@ -9226,9 +8512,9 @@ pub mod create_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An optional set of tags describing the schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9245,9 +8531,9 @@ pub mod create_snapshot_schedule_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p></p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -9276,10 +8562,10 @@ pub mod create_snapshot_schedule_output {
         /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
         pub fn associated_clusters(
             mut self,
-            input: impl Into<crate::model::ClusterAssociatedToSchedule>,
+            input: crate::model::ClusterAssociatedToSchedule,
         ) -> Self {
             let mut v = self.associated_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_clusters = Some(v);
             self
         }
@@ -9316,25 +8602,13 @@ impl CreateSnapshotScheduleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotCopyGrantOutput {
-    /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-    /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
-    /// region.</p>
-    /// <p>
-    /// For more information about managing snapshot copy grants, go to
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>
+    /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub snapshot_copy_grant: std::option::Option<crate::model::SnapshotCopyGrant>,
 }
 impl CreateSnapshotCopyGrantOutput {
-    /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-    /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
-    /// region.</p>
-    /// <p>
-    /// For more information about managing snapshot copy grants, go to
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>
+    /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn snapshot_copy_grant(&self) -> std::option::Option<&crate::model::SnapshotCopyGrant> {
         self.snapshot_copy_grant.as_ref()
     }
@@ -9355,26 +8629,14 @@ pub mod create_snapshot_copy_grant_output {
         pub(crate) snapshot_copy_grant: std::option::Option<crate::model::SnapshotCopyGrant>,
     }
     impl Builder {
-        /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-        /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
-        /// region.</p>
-        /// <p>
-        /// For more information about managing snapshot copy grants, go to
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>
+        /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn snapshot_copy_grant(mut self, input: crate::model::SnapshotCopyGrant) -> Self {
             self.snapshot_copy_grant = Some(input);
             self
         }
-        /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-        /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
-        /// region.</p>
-        /// <p>
-        /// For more information about managing snapshot copy grants, go to
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>
+        /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn set_snapshot_copy_grant(
             mut self,
             input: std::option::Option<crate::model::SnapshotCopyGrant>,
@@ -9397,8 +8659,7 @@ impl CreateSnapshotCopyGrantOutput {
     }
 }
 
-/// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule.
-/// For information about which API operations can be scheduled, see  <a>ScheduledActionType</a>. </p>
+/// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <code>ScheduledActionType</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledActionOutput {
@@ -9407,22 +8668,11 @@ pub struct CreateScheduledActionOutput {
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>
     /// <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
     pub target_action: std::option::Option<crate::model::ScheduledActionType>,
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>The IAM role to assume to run the scheduled action.
-    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-    ///
-    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The description of the scheduled action. </p>
     pub scheduled_action_description: std::option::Option<std::string::String>,
@@ -9445,24 +8695,13 @@ impl CreateScheduledActionOutput {
     pub fn target_action(&self) -> std::option::Option<&crate::model::ScheduledActionType> {
         self.target_action.as_ref()
     }
-    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-    /// Schedule invocations must be separated by at least one hour.</p>
+    /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-    /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-    /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>The IAM role to assume to run the scheduled action.
-    /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-    /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-    ///
-    /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -9550,48 +8789,26 @@ pub mod create_scheduled_action_output {
             self.target_action = input;
             self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-        /// Schedule invocations must be separated by at least one hour.</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
         /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-        /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-        /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-        /// Schedule invocations must be separated by at least one hour.</p>
+        /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
         /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
-        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>".
-        /// For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-        /// in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+        /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
-        /// <p>The IAM role to assume to run the scheduled action.
-        /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-        /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-        ///
-        /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role to assume to run the scheduled action.
-        /// This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action.
-        /// This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-        ///
-        /// For more information about the IAM role to use with the Amazon Redshift scheduler, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a>
-        /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// </p>
+        /// <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -9630,9 +8847,9 @@ pub mod create_scheduled_action_output {
         /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
         ///
         /// <p>List of times when the scheduled action will run. </p>
-        pub fn next_invocations(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.next_invocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.next_invocations = Some(v);
             self
         }
@@ -9697,15 +8914,11 @@ impl CreateScheduledActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmConfigurationOutput {
-    /// <p>Returns information about an HSM configuration, which is an object that describes
-    /// to Amazon Redshift clusters the information they require to connect to an HSM where they can
-    /// store database encryption keys.</p>
+    /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
     pub hsm_configuration: std::option::Option<crate::model::HsmConfiguration>,
 }
 impl CreateHsmConfigurationOutput {
-    /// <p>Returns information about an HSM configuration, which is an object that describes
-    /// to Amazon Redshift clusters the information they require to connect to an HSM where they can
-    /// store database encryption keys.</p>
+    /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
     pub fn hsm_configuration(&self) -> std::option::Option<&crate::model::HsmConfiguration> {
         self.hsm_configuration.as_ref()
     }
@@ -9726,16 +8939,12 @@ pub mod create_hsm_configuration_output {
         pub(crate) hsm_configuration: std::option::Option<crate::model::HsmConfiguration>,
     }
     impl Builder {
-        /// <p>Returns information about an HSM configuration, which is an object that describes
-        /// to Amazon Redshift clusters the information they require to connect to an HSM where they can
-        /// store database encryption keys.</p>
+        /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
         pub fn hsm_configuration(mut self, input: crate::model::HsmConfiguration) -> Self {
             self.hsm_configuration = Some(input);
             self
         }
-        /// <p>Returns information about an HSM configuration, which is an object that describes
-        /// to Amazon Redshift clusters the information they require to connect to an HSM where they can
-        /// store database encryption keys.</p>
+        /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
         pub fn set_hsm_configuration(
             mut self,
             input: std::option::Option<crate::model::HsmConfiguration>,
@@ -9762,15 +8971,11 @@ impl CreateHsmConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmClientCertificateOutput {
-    /// <p>Returns information about an HSM client certificate. The certificate is stored in a
-    /// secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data
-    /// files.</p>
+    /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
     pub hsm_client_certificate: std::option::Option<crate::model::HsmClientCertificate>,
 }
 impl CreateHsmClientCertificateOutput {
-    /// <p>Returns information about an HSM client certificate. The certificate is stored in a
-    /// secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data
-    /// files.</p>
+    /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
     pub fn hsm_client_certificate(
         &self,
     ) -> std::option::Option<&crate::model::HsmClientCertificate> {
@@ -9793,16 +8998,12 @@ pub mod create_hsm_client_certificate_output {
         pub(crate) hsm_client_certificate: std::option::Option<crate::model::HsmClientCertificate>,
     }
     impl Builder {
-        /// <p>Returns information about an HSM client certificate. The certificate is stored in a
-        /// secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data
-        /// files.</p>
+        /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
         pub fn hsm_client_certificate(mut self, input: crate::model::HsmClientCertificate) -> Self {
             self.hsm_client_certificate = Some(input);
             self
         }
-        /// <p>Returns information about an HSM client certificate. The certificate is stored in a
-        /// secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data
-        /// files.</p>
+        /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
         pub fn set_hsm_client_certificate(
             mut self,
             input: std::option::Option<crate::model::HsmClientCertificate>,
@@ -10092,10 +9293,10 @@ pub mod create_endpoint_access_output {
         /// <p>The security groups associated with the endpoint.</p>
         pub fn vpc_security_groups(
             mut self,
-            input: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: crate::model::VpcSecurityGroupMembership,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_security_groups = Some(v);
             self
         }
@@ -10580,20 +9781,15 @@ impl CopyClusterSnapshotOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelResizeOutput {
-    /// <p>The node type that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The node type that the cluster will have after the resize operation is complete.</p>
     pub target_node_type: std::option::Option<std::string::String>,
-    /// <p>The number of nodes that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub target_number_of_nodes: std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-    /// </p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub target_cluster_type: std::option::Option<std::string::String>,
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-    /// </p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
@@ -10604,31 +9800,17 @@ pub struct CancelResizeOutput {
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
     pub import_tables_not_started: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The average rate of the resize operation over the last few minutes, measured in
-    /// megabytes per second. After the resize operation completes, this value shows the average
-    /// rate of the entire resize operation.</p>
+    /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub avg_resize_rate_in_mega_bytes_per_second: std::option::Option<f64>,
-    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-    /// operation began.</p>
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
     pub total_resize_data_in_mega_bytes: std::option::Option<i64>,
-    /// <p>While the resize operation is in progress, this value shows the current amount of
-    /// data, in megabytes, that has been processed so far. When the resize operation is
-    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-    /// before resize).</p>
+    /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
     pub progress_in_mega_bytes: std::option::Option<i64>,
-    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-    /// resize operation completes, this value shows the total actual time, in seconds, for the
-    /// resize operation.</p>
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
     pub elapsed_time_in_seconds: std::option::Option<i64>,
-    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-    /// This value is calculated based on the average resize rate and the estimated amount of
-    /// data remaining to be processed. Once the resize operation is complete, this value will
-    /// be 0.</p>
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub estimated_time_to_completion_in_seconds: std::option::Option<i64>,
-    /// <p>An enum with possible values of <code>ClassicResize</code> and
-    /// <code>ElasticResize</code>. These values describe the type of resize operation being
-    /// performed. </p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub resize_type: std::option::Option<std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
     pub message: std::option::Option<std::string::String>,
@@ -10639,26 +9821,21 @@ pub struct CancelResizeOutput {
     pub data_transfer_progress_percent: std::option::Option<f64>,
 }
 impl CancelResizeOutput {
-    /// <p>The node type that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The node type that the cluster will have after the resize operation is complete.</p>
     pub fn target_node_type(&self) -> std::option::Option<&str> {
         self.target_node_type.as_deref()
     }
-    /// <p>The number of nodes that the cluster will have after the resize operation is
-    /// complete.</p>
+    /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub fn target_number_of_nodes(&self) -> std::option::Option<i32> {
         self.target_number_of_nodes
     }
     /// <p>The cluster type after the resize operation is complete.</p>
-    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-    /// </p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
     pub fn target_cluster_type(&self) -> std::option::Option<&str> {
         self.target_cluster_type.as_deref()
     }
     /// <p>The status of the resize operation.</p>
-    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-    /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-    /// </p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -10677,41 +9854,27 @@ impl CancelResizeOutput {
     pub fn import_tables_not_started(&self) -> std::option::Option<&[std::string::String]> {
         self.import_tables_not_started.as_deref()
     }
-    /// <p>The average rate of the resize operation over the last few minutes, measured in
-    /// megabytes per second. After the resize operation completes, this value shows the average
-    /// rate of the entire resize operation.</p>
+    /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub fn avg_resize_rate_in_mega_bytes_per_second(&self) -> std::option::Option<f64> {
         self.avg_resize_rate_in_mega_bytes_per_second
     }
-    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-    /// operation began.</p>
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
     pub fn total_resize_data_in_mega_bytes(&self) -> std::option::Option<i64> {
         self.total_resize_data_in_mega_bytes
     }
-    /// <p>While the resize operation is in progress, this value shows the current amount of
-    /// data, in megabytes, that has been processed so far. When the resize operation is
-    /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-    /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-    /// before resize).</p>
+    /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
     pub fn progress_in_mega_bytes(&self) -> std::option::Option<i64> {
         self.progress_in_mega_bytes
     }
-    /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-    /// resize operation completes, this value shows the total actual time, in seconds, for the
-    /// resize operation.</p>
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
     pub fn elapsed_time_in_seconds(&self) -> std::option::Option<i64> {
         self.elapsed_time_in_seconds
     }
-    /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-    /// This value is calculated based on the average resize rate and the estimated amount of
-    /// data remaining to be processed. Once the resize operation is complete, this value will
-    /// be 0.</p>
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub fn estimated_time_to_completion_in_seconds(&self) -> std::option::Option<i64> {
         self.estimated_time_to_completion_in_seconds
     }
-    /// <p>An enum with possible values of <code>ClassicResize</code> and
-    /// <code>ElasticResize</code>. These values describe the type of resize operation being
-    /// performed. </p>
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn resize_type(&self) -> std::option::Option<&str> {
         self.resize_type.as_deref()
     }
@@ -10789,14 +9952,12 @@ pub mod cancel_resize_output {
         pub(crate) data_transfer_progress_percent: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The node type that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The node type that the cluster will have after the resize operation is complete.</p>
         pub fn target_node_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_node_type = Some(input.into());
             self
         }
-        /// <p>The node type that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The node type that the cluster will have after the resize operation is complete.</p>
         pub fn set_target_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10804,28 +9965,24 @@ pub mod cancel_resize_output {
             self.target_node_type = input;
             self
         }
-        /// <p>The number of nodes that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
         pub fn target_number_of_nodes(mut self, input: i32) -> Self {
             self.target_number_of_nodes = Some(input);
             self
         }
-        /// <p>The number of nodes that the cluster will have after the resize operation is
-        /// complete.</p>
+        /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
         pub fn set_target_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.target_number_of_nodes = input;
             self
         }
         /// <p>The cluster type after the resize operation is complete.</p>
-        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-        /// </p>
+        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
         pub fn target_cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_cluster_type = Some(input.into());
             self
         }
         /// <p>The cluster type after the resize operation is complete.</p>
-        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code>
-        /// </p>
+        /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
         pub fn set_target_cluster_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10834,17 +9991,13 @@ pub mod cancel_resize_output {
             self
         }
         /// <p>The status of the resize operation.</p>
-        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-        /// </p>
+        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
         /// <p>The status of the resize operation.</p>
-        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code> | <code>CANCELLING</code>
-        /// </p>
+        /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -10912,16 +10065,12 @@ pub mod cancel_resize_output {
             self.import_tables_not_started = input;
             self
         }
-        /// <p>The average rate of the resize operation over the last few minutes, measured in
-        /// megabytes per second. After the resize operation completes, this value shows the average
-        /// rate of the entire resize operation.</p>
+        /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
         pub fn avg_resize_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
             self.avg_resize_rate_in_mega_bytes_per_second = Some(input);
             self
         }
-        /// <p>The average rate of the resize operation over the last few minutes, measured in
-        /// megabytes per second. After the resize operation completes, this value shows the average
-        /// rate of the entire resize operation.</p>
+        /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
         pub fn set_avg_resize_rate_in_mega_bytes_per_second(
             mut self,
             input: std::option::Option<f64>,
@@ -10929,14 +10078,12 @@ pub mod cancel_resize_output {
             self.avg_resize_rate_in_mega_bytes_per_second = input;
             self
         }
-        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-        /// operation began.</p>
+        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
         pub fn total_resize_data_in_mega_bytes(mut self, input: i64) -> Self {
             self.total_resize_data_in_mega_bytes = Some(input);
             self
         }
-        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize
-        /// operation began.</p>
+        /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
         pub fn set_total_resize_data_in_mega_bytes(
             mut self,
             input: std::option::Option<i64>,
@@ -10944,50 +10091,32 @@ pub mod cancel_resize_output {
             self.total_resize_data_in_mega_bytes = input;
             self
         }
-        /// <p>While the resize operation is in progress, this value shows the current amount of
-        /// data, in megabytes, that has been processed so far. When the resize operation is
-        /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-        /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-        /// before resize).</p>
+        /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
         pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
             self.progress_in_mega_bytes = Some(input);
             self
         }
-        /// <p>While the resize operation is in progress, this value shows the current amount of
-        /// data, in megabytes, that has been processed so far. When the resize operation is
-        /// complete, this value shows the total amount of data, in megabytes, on the cluster, which
-        /// may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-        /// before resize).</p>
+        /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
         pub fn set_progress_in_mega_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.progress_in_mega_bytes = input;
             self
         }
-        /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-        /// resize operation completes, this value shows the total actual time, in seconds, for the
-        /// resize operation.</p>
+        /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
         pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
             self.elapsed_time_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of seconds that have elapsed since the resize operation began. After the
-        /// resize operation completes, this value shows the total actual time, in seconds, for the
-        /// resize operation.</p>
+        /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
         pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.elapsed_time_in_seconds = input;
             self
         }
-        /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-        /// This value is calculated based on the average resize rate and the estimated amount of
-        /// data remaining to be processed. Once the resize operation is complete, this value will
-        /// be 0.</p>
+        /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
         pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
             self.estimated_time_to_completion_in_seconds = Some(input);
             self
         }
-        /// <p>The estimated time remaining, in seconds, until the resize operation is complete.
-        /// This value is calculated based on the average resize rate and the estimated amount of
-        /// data remaining to be processed. Once the resize operation is complete, this value will
-        /// be 0.</p>
+        /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
         pub fn set_estimated_time_to_completion_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -10995,16 +10124,12 @@ pub mod cancel_resize_output {
             self.estimated_time_to_completion_in_seconds = input;
             self
         }
-        /// <p>An enum with possible values of <code>ClassicResize</code> and
-        /// <code>ElasticResize</code>. These values describe the type of resize operation being
-        /// performed. </p>
+        /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
         pub fn resize_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resize_type = Some(input.into());
             self
         }
-        /// <p>An enum with possible values of <code>ClassicResize</code> and
-        /// <code>ElasticResize</code>. These values describe the type of resize operation being
-        /// performed. </p>
+        /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
         pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resize_type = input;
             self
@@ -11140,9 +10265,9 @@ pub mod batch_modify_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of any errors returned.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::SnapshotErrorMessage>) -> Self {
+        pub fn errors(mut self, input: crate::model::SnapshotErrorMessage) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11231,9 +10356,9 @@ pub mod batch_delete_cluster_snapshots_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>A list of any errors returned.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::SnapshotErrorMessage>) -> Self {
+        pub fn errors(mut self, input: crate::model::SnapshotErrorMessage) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -11550,11 +10675,13 @@ pub struct AuthorizeDataShareOutput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub managed_by: std::option::Option<std::string::String>,
 }
 impl AuthorizeDataShareOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -11565,7 +10692,7 @@ impl AuthorizeDataShareOutput {
     pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
@@ -11574,6 +10701,10 @@ impl AuthorizeDataShareOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl std::fmt::Debug for AuthorizeDataShareOutput {
@@ -11586,6 +10717,7 @@ impl std::fmt::Debug for AuthorizeDataShareOutput {
             &self.allow_publicly_accessible_consumers,
         );
         formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.field("managed_by", &self.managed_by);
         formatter.finish()
     }
 }
@@ -11600,6 +10732,7 @@ pub mod authorize_data_share_output {
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
         pub(crate) data_share_associations:
             std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -11625,12 +10758,12 @@ pub mod authorize_data_share_output {
             self.producer_arn = input;
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
             self.allow_publicly_accessible_consumers = Some(input);
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn set_allow_publicly_accessible_consumers(
             mut self,
             input: std::option::Option<bool>,
@@ -11645,10 +10778,10 @@ pub mod authorize_data_share_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -11660,6 +10793,16 @@ pub mod authorize_data_share_output {
             self.data_share_associations = input;
             self
         }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.managed_by = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput)
         pub fn build(self) -> crate::output::AuthorizeDataShareOutput {
             crate::output::AuthorizeDataShareOutput {
@@ -11669,6 +10812,7 @@ pub mod authorize_data_share_output {
                     .allow_publicly_accessible_consumers
                     .unwrap_or_default(),
                 data_share_associations: self.data_share_associations,
+                managed_by: self.managed_by,
             }
         }
     }
@@ -11747,11 +10891,13 @@ pub struct AssociateDataShareConsumerOutput {
     pub data_share_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: std::option::Option<std::string::String>,
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: bool,
     /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
     pub data_share_associations:
         std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub managed_by: std::option::Option<std::string::String>,
 }
 impl AssociateDataShareConsumerOutput {
     /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -11762,7 +10908,7 @@ impl AssociateDataShareConsumerOutput {
     pub fn producer_arn(&self) -> std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
-    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(&self) -> bool {
         self.allow_publicly_accessible_consumers
     }
@@ -11771,6 +10917,10 @@ impl AssociateDataShareConsumerOutput {
         &self,
     ) -> std::option::Option<&[crate::model::DataShareAssociation]> {
         self.data_share_associations.as_deref()
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn managed_by(&self) -> std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl std::fmt::Debug for AssociateDataShareConsumerOutput {
@@ -11783,6 +10933,7 @@ impl std::fmt::Debug for AssociateDataShareConsumerOutput {
             &self.allow_publicly_accessible_consumers,
         );
         formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.field("managed_by", &self.managed_by);
         formatter.finish()
     }
 }
@@ -11797,6 +10948,7 @@ pub mod associate_data_share_consumer_output {
         pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
         pub(crate) data_share_associations:
             std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        pub(crate) managed_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
@@ -11822,12 +10974,12 @@ pub mod associate_data_share_consumer_output {
             self.producer_arn = input;
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
             self.allow_publicly_accessible_consumers = Some(input);
             self
         }
-        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
         pub fn set_allow_publicly_accessible_consumers(
             mut self,
             input: std::option::Option<bool>,
@@ -11842,10 +10994,10 @@ pub mod associate_data_share_consumer_output {
         /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
         pub fn data_share_associations(
             mut self,
-            input: impl Into<crate::model::DataShareAssociation>,
+            input: crate::model::DataShareAssociation,
         ) -> Self {
             let mut v = self.data_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_share_associations = Some(v);
             self
         }
@@ -11857,6 +11009,16 @@ pub mod associate_data_share_consumer_output {
             self.data_share_associations = input;
             self
         }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.managed_by = Some(input.into());
+            self
+        }
+        /// <p>The identifier of a datashare to show its managing entity.</p>
+        pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput)
         pub fn build(self) -> crate::output::AssociateDataShareConsumerOutput {
             crate::output::AssociateDataShareConsumerOutput {
@@ -11866,6 +11028,7 @@ pub mod associate_data_share_consumer_output {
                     .allow_publicly_accessible_consumers
                     .unwrap_or_default(),
                 data_share_associations: self.data_share_associations,
+                managed_by: self.managed_by,
             }
         }
     }

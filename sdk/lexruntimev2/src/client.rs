@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Lex Runtime V2
@@ -130,20 +130,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSession`.
     ///
     /// <p>Removes session information for a specified bot, alias, and user ID. </p>
-    /// <p>You can use this operation to restart a conversation with a bot.
-    /// When you remove a session, the entire history of the session is removed
-    /// so that you can start again.</p>
-    /// <p>You don't need to delete a session. Sessions have a time limit and
-    /// will expire. Set the session time limit when you create the bot. The
-    /// default is 5 minutes, but you can specify anything between 1 minute and
-    /// 24 hours.</p>
-    /// <p>If you specify a bot or alias ID that doesn't exist, you receive a
-    /// <code>BadRequestException.</code>
-    /// </p>
-    /// <p>If the locale doesn't exist in the bot, or if the locale hasn't been
-    /// enables for the alias, you receive a
-    /// <code>BadRequestException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can use this operation to restart a conversation with a bot. When you remove a session, the entire history of the session is removed so that you can start again.</p>
+    /// <p>You don't need to delete a session. Sessions have a time limit and will expire. Set the session time limit when you create the bot. The default is 5 minutes, but you can specify anything between 1 minute and 24 hours.</p>
+    /// <p>If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code> </p>
+    /// <p>If the locale doesn't exist in the bot, or if the locale hasn't been enables for the alias, you receive a <code>BadRequestException</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -188,10 +179,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -200,8 +191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the session data.</p>
@@ -209,21 +200,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -232,8 +221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session to delete.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session to delete.</p>
@@ -244,16 +233,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSession`.
     ///
-    /// <p>Returns session information for a specified bot, alias, and
-    /// user.</p>
-    /// <p>For example, you can use this operation to retrieve session
-    /// information for a user that has left a long-running session in
-    /// use.</p>
-    /// <p>If the bot, alias, or session identifier doesn't exist, Amazon Lex V2
-    /// returns a <code>BadRequestException</code>. If the locale doesn't exist
-    /// or is not enabled for the alias, you receive a
-    /// <code>BadRequestException</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns session information for a specified bot, alias, and user.</p>
+    /// <p>For example, you can use this operation to retrieve session information for a user that has left a long-running session in use.</p>
+    /// <p>If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>. If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -298,10 +281,10 @@ pub mod fluent_builders {
                 crate::input::GetSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -310,8 +293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the session data.</p>
@@ -319,21 +302,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that contains the session
-        /// data.</p>
+        /// <p>The alias identifier in use for the bot that contains the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -342,8 +323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session to return.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session to return.</p>
@@ -354,10 +335,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSession`.
     ///
-    /// <p>Creates a new session or modifies an existing session with an Amazon Lex V2
-    /// bot. Use this operation to enable your application to set the state of
-    /// the bot.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new session or modifies an existing session with an Amazon Lex V2 bot. Use this operation to enable your application to set the state of the bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -402,10 +381,10 @@ pub mod fluent_builders {
                 crate::input::PutSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -414,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that receives the session data.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that receives the session data.</p>
@@ -423,21 +402,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The alias identifier of the bot that receives the session
-        /// data.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The alias identifier of the bot that receives the session data.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The alias identifier of the bot that receives the session
-        /// data.</p>
+        /// <p>The alias identifier of the bot that receives the session data.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -446,8 +423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session that receives the session data.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session that receives the session data.</p>
@@ -459,14 +436,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>A list of messages to send to the user. Messages are sent in the
-        /// order that they are defined in the list.</p>
-        pub fn messages(mut self, inp: impl Into<crate::model::Message>) -> Self {
-            self.inner = self.inner.messages(inp);
+        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
+            self.inner = self.inner.messages(input);
             self
         }
-        /// <p>A list of messages to send to the user. Messages are sent in the
-        /// order that they are defined in the list.</p>
+        /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -474,18 +449,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_messages(input);
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
-        pub fn session_state(mut self, inp: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(inp);
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.session_state(input);
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<crate::model::SessionState>,
@@ -497,24 +466,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
         ///
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn request_attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_attributes(k, v);
+            self.inner = self.inner.request_attributes(k.into(), v.into());
             self
         }
-        /// <p>Request-specific information passed between Amazon Lex V2 and the client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<
@@ -524,25 +487,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_attributes(input);
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech depending on the value of this parameter. </p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
         /// </ul>
-        pub fn response_content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(inp);
+        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_content_type(input.into());
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech depending on the value of this parameter. </p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
         /// </ul>
         pub fn set_response_content_type(
             mut self,
@@ -554,38 +509,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RecognizeText`.
     ///
-    /// <p>Sends user input to Amazon Lex V2. Client applications use this API to send
-    /// requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input
-    /// using the machine learning model that it build for the bot.</p>
-    /// <p>In response, Amazon Lex V2 returns the next message to convey to the user
-    /// and an optional response card to display.</p>
-    /// <p>If the optional post-fulfillment response is specified, the messages
-    /// are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
+    /// <p>Sends user input to Amazon Lex V2. Client applications use this API to send requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the machine learning model that it build for the bot.</p>
+    /// <p>In response, Amazon Lex V2 returns the next message to convey to the user and an optional response card to display.</p>
+    /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Success message</b> - Returned if
-    /// the Lambda function completes successfully and the intent state is
-    /// fulfilled or ready fulfillment if the message is present.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed message</b> - The failed
-    /// message is returned if the Lambda function throws an exception or
-    /// if the Lambda function returns a failed intent state without a
-    /// message.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Timeout message</b> - If you
-    /// don't configure a timeout message and a timeout, and the Lambda
-    /// function doesn't return within 30 seconds, the timeout message is
-    /// returned. If you configure a timeout, the timeout message is
-    /// returned when the period times out. </p>
-    /// </li>
+    /// <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li>
+    /// <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li>
+    /// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecognizeText<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -630,10 +563,10 @@ pub mod fluent_builders {
                 crate::input::RecognizeTextInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -642,8 +575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that processes the request.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that processes the request.</p>
@@ -651,21 +584,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The alias identifier in use for the bot that processes the
-        /// request.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The alias identifier in use for the bot that processes the request.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that processes the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that processes the request.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -673,21 +604,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The identifier of the user session that is having the
-        /// conversation.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        /// <p>The identifier of the user session that is having the conversation.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p>The identifier of the user session that is having the
-        /// conversation.</p>
+        /// <p>The identifier of the user session that is having the conversation.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
         /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(inp);
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
@@ -696,8 +625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current state of the dialog between the user and the bot.</p>
-        pub fn session_state(mut self, inp: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(inp);
+        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.session_state(input);
             self
         }
         /// <p>The current state of the dialog between the user and the bot.</p>
@@ -712,24 +641,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
         ///
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn request_attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_attributes(k, v);
+            self.inner = self.inner.request_attributes(k.into(), v.into());
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<
@@ -742,67 +665,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RecognizeUtterance`.
     ///
-    /// <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use
-    /// this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2
-    /// interprets the user input using the machine learning model built for
-    /// the bot.</p>
-    /// <p>The following request fields must be compressed with gzip and then
-    /// base64 encoded before you send them to Amazon Lex V2. </p>
+    /// <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.</p>
+    /// <p>The following request fields must be compressed with gzip and then base64 encoded before you send them to Amazon Lex V2. </p>
     /// <ul>
-    /// <li>
-    /// <p>requestAttributes</p>
-    /// </li>
-    /// <li>
-    /// <p>sessionState</p>
-    /// </li>
+    /// <li> <p>requestAttributes</p> </li>
+    /// <li> <p>sessionState</p> </li>
     /// </ul>
-    /// <p>The following response fields are compressed using gzip and then
-    /// base64 encoded by Amazon Lex V2. Before you can use these fields, you must
-    /// decode and decompress them. </p>
+    /// <p>The following response fields are compressed using gzip and then base64 encoded by Amazon Lex V2. Before you can use these fields, you must decode and decompress them. </p>
     /// <ul>
-    /// <li>
-    /// <p>inputTranscript</p>
-    /// </li>
-    /// <li>
-    /// <p>interpretations</p>
-    /// </li>
-    /// <li>
-    /// <p>messages</p>
-    /// </li>
-    /// <li>
-    /// <p>requestAttributes</p>
-    /// </li>
-    /// <li>
-    /// <p>sessionState</p>
-    /// </li>
+    /// <li> <p>inputTranscript</p> </li>
+    /// <li> <p>interpretations</p> </li>
+    /// <li> <p>messages</p> </li>
+    /// <li> <p>requestAttributes</p> </li>
+    /// <li> <p>sessionState</p> </li>
     /// </ul>
-    /// <p>The example contains a Java application that compresses and encodes
-    /// a Java object to send to Amazon Lex V2, and a second that decodes and
-    /// decompresses a response from Amazon Lex V2.</p>
-    /// <p>If the optional post-fulfillment response is specified, the messages
-    /// are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
+    /// <p>The example contains a Java application that compresses and encodes a Java object to send to Amazon Lex V2, and a second that decodes and decompresses a response from Amazon Lex V2.</p>
+    /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Success message</b> - Returned if
-    /// the Lambda function completes successfully and the intent state is
-    /// fulfilled or ready fulfillment if the message is present.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed message</b> - The failed
-    /// message is returned if the Lambda function throws an exception or
-    /// if the Lambda function returns a failed intent state without a
-    /// message.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Timeout message</b> - If you
-    /// don't configure a timeout message and a timeout, and the Lambda
-    /// function doesn't return within 30 seconds, the timeout message is
-    /// returned. If you configure a timeout, the timeout message is
-    /// returned when the period times out. </p>
-    /// </li>
+    /// <li> <p> <b>Success message</b> - Returned if the Lambda function completes successfully and the intent state is fulfilled or ready fulfillment if the message is present.</p> </li>
+    /// <li> <p> <b>Failed message</b> - The failed message is returned if the Lambda function throws an exception or if the Lambda function returns a failed intent state without a message.</p> </li>
+    /// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
     #[derive(std::fmt::Debug)]
@@ -850,10 +732,10 @@ pub mod fluent_builders {
                 crate::input::RecognizeUtteranceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -862,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that should receive the request.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that should receive the request.</p>
@@ -871,21 +753,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The alias identifier in use for the bot that should receive the
-        /// request.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The alias identifier in use for the bot that should receive the request.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The alias identifier in use for the bot that should receive the
-        /// request.</p>
+        /// <p>The alias identifier in use for the bot that should receive the request.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -894,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session in use.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session in use.</p>
@@ -903,22 +783,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip
-        /// and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn session_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_state(inp);
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+        pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_state(input.into());
             self
         }
-        /// <p>Sets the state of the session with the user. You can use this to set
-        /// the current intent, attributes, context, and dialog action. Use the
-        /// dialog action to determine the next step that Amazon Lex V2 should use in the
-        /// conversation with the user.</p>
-        /// <p>The <code>sessionState</code> field must be compressed using gzip
-        /// and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+        /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn set_session_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -926,24 +798,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_state(input);
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes for prefix
-        /// <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using
-        /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn request_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_attributes(inp);
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+        pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_attributes(input.into());
             self
         }
-        /// <p>Request-specific information passed between the client application
-        /// and Amazon Lex V2 </p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes for prefix
-        /// <code>x-amz-lex:</code>.</p>
-        /// <p>The <code>requestAttributes</code> field must be compressed using
-        /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+        /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
+        /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -951,81 +815,43 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_attributes(input);
             self
         }
-        /// <p>Indicates the format for audio input or that the content is text.
-        /// The header must start with one of the following prefixes:</p>
+        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte
-        /// order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn request_content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_content_type(inp);
+        pub fn request_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_content_type(input.into());
             self
         }
-        /// <p>Indicates the format for audio input or that the content is text.
-        /// The header must start with one of the following prefixes:</p>
+        /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte
-        /// order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_request_content_type(
             mut self,
@@ -1034,91 +860,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_request_content_type(input);
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech based on the <code>responseContentType</code> value.</p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-        /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-        /// using the configuration that you specified in the
-        /// <code>requestContentType</code> parameter. For example, if you
-        /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-        /// speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-        /// format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm (16 KHz)</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm (16 KHz)</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn response_content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(inp);
+        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_content_type(input.into());
             self
         }
-        /// <p>The message that Amazon Lex V2 returns in the response can be either text or
-        /// speech based on the <code>responseContentType</code> value.</p>
+        /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns
-        /// speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-        /// using the configuration that you specified in the
-        /// <code>requestContentType</code> parameter. For example, if you
-        /// specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns
-        /// speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
-        /// format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm (16 KHz)</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm (16 KHz)</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_response_content_type(
             mut self,
@@ -1127,14 +899,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_content_type(input);
             self
         }
-        /// <p>User input in PCM or Opus audio format or text format as described
-        /// in the <code>requestContentType</code> parameter.</p>
-        pub fn input_stream(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.input_stream(inp);
+        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
+        pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.input_stream(input);
             self
         }
-        /// <p>User input in PCM or Opus audio format or text format as described
-        /// in the <code>requestContentType</code> parameter.</p>
+        /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
         pub fn set_input_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1144,6 +914,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -5,6 +5,10 @@
 pub enum Error {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>The entitlement already exists.</p>
+    EntitlementAlreadyExistsException(crate::error::EntitlementAlreadyExistsException),
+    /// <p>The entitlement can't be found.</p>
+    EntitlementNotFoundException(crate::error::EntitlementNotFoundException),
     /// <p>The image can't be updated because it's not compatible for updates.</p>
     IncompatibleImageException(crate::error::IncompatibleImageException),
     /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
@@ -34,6 +38,8 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::EntitlementAlreadyExistsException(inner) => inner.fmt(f),
+            Error::EntitlementNotFoundException(inner) => inner.fmt(f),
             Error::IncompatibleImageException(inner) => inner.fmt(f),
             Error::InvalidAccountStatusException(inner) => inner.fmt(f),
             Error::InvalidParameterCombinationException(inner) => inner.fmt(f),
@@ -65,6 +71,30 @@ where
                 crate::error::AssociateApplicationFleetErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
                 crate::error::AssociateApplicationFleetErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::AssociateApplicationFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::AssociateApplicationToEntitlementError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::AssociateApplicationToEntitlementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AssociateApplicationToEntitlementErrorKind::EntitlementNotFoundException(inner) => Error::EntitlementNotFoundException(inner),
+                crate::error::AssociateApplicationToEntitlementErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::AssociateApplicationToEntitlementErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+                crate::error::AssociateApplicationToEntitlementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::AssociateApplicationToEntitlementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -254,6 +284,35 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::CreateDirectoryConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateEntitlementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateEntitlementError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateEntitlementErrorKind::EntitlementAlreadyExistsException(
+                    inner,
+                ) => Error::EntitlementAlreadyExistsException(inner),
+                crate::error::CreateEntitlementErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateEntitlementErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::CreateEntitlementErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateEntitlementErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -602,6 +661,35 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEntitlementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteEntitlementError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteEntitlementErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteEntitlementErrorKind::EntitlementNotFoundException(inner) => {
+                    Error::EntitlementNotFoundException(inner)
+                }
+                crate::error::DeleteEntitlementErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::DeleteEntitlementErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteEntitlementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -708,6 +796,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteStackErrorKind::ConcurrentModificationException(inner) => {
                     Error::ConcurrentModificationException(inner)
+                }
+                crate::error::DeleteStackErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
                 }
                 crate::error::DeleteStackErrorKind::ResourceInUseException(inner) => {
                     Error::ResourceInUseException(inner)
@@ -842,6 +933,33 @@ where
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
                 crate::error::DescribeDirectoryConfigsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEntitlementsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeEntitlementsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeEntitlementsErrorKind::EntitlementNotFoundException(
+                    inner,
+                ) => Error::EntitlementNotFoundException(inner),
+                crate::error::DescribeEntitlementsErrorKind::OperationNotPermittedException(
+                    inner,
+                ) => Error::OperationNotPermittedException(inner),
+                crate::error::DescribeEntitlementsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeEntitlementsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1059,6 +1177,33 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::DisassociateApplicationFromEntitlementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisassociateApplicationFromEntitlementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisassociateApplicationFromEntitlementErrorKind::EntitlementNotFoundException(inner) => Error::EntitlementNotFoundException(inner),
+                crate::error::DisassociateApplicationFromEntitlementErrorKind::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+                crate::error::DisassociateApplicationFromEntitlementErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DisassociateApplicationFromEntitlementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1149,6 +1294,33 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListAssociatedStacksErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEntitledApplicationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListEntitledApplicationsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListEntitledApplicationsErrorKind::EntitlementNotFoundException(
+                    inner,
+                ) => Error::EntitlementNotFoundException(inner),
+                crate::error::ListEntitledApplicationsErrorKind::OperationNotPermittedException(
+                    inner,
+                ) => Error::OperationNotPermittedException(inner),
+                crate::error::ListEntitledApplicationsErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::ListEntitledApplicationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1380,6 +1552,35 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateDirectoryConfigErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEntitlementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateEntitlementError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateEntitlementErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::UpdateEntitlementErrorKind::EntitlementNotFoundException(inner) => {
+                    Error::EntitlementNotFoundException(inner)
+                }
+                crate::error::UpdateEntitlementErrorKind::OperationNotPermittedException(inner) => {
+                    Error::OperationNotPermittedException(inner)
+                }
+                crate::error::UpdateEntitlementErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateEntitlementErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

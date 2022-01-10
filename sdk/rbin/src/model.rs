@@ -294,21 +294,17 @@ impl AsRef<str> for ResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionPeriod {
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using
-    /// the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub retention_period_value: std::option::Option<i32>,
-    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code>
-    /// is supported.</p>
+    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub retention_period_unit: std::option::Option<crate::model::RetentionPeriodUnit>,
 }
 impl RetentionPeriod {
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using
-    /// the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
     pub fn retention_period_value(&self) -> std::option::Option<i32> {
         self.retention_period_value
     }
-    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code>
-    /// is supported.</p>
+    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn retention_period_unit(&self) -> std::option::Option<&crate::model::RetentionPeriodUnit> {
         self.retention_period_unit.as_ref()
     }
@@ -331,26 +327,22 @@ pub mod retention_period {
         pub(crate) retention_period_unit: std::option::Option<crate::model::RetentionPeriodUnit>,
     }
     impl Builder {
-        /// <p>The period value for which the retention rule is to retain resources. The period is measured using
-        /// the unit specified for <b>RetentionPeriodUnit</b>.</p>
+        /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
         pub fn retention_period_value(mut self, input: i32) -> Self {
             self.retention_period_value = Some(input);
             self
         }
-        /// <p>The period value for which the retention rule is to retain resources. The period is measured using
-        /// the unit specified for <b>RetentionPeriodUnit</b>.</p>
+        /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
         pub fn set_retention_period_value(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_value = input;
             self
         }
-        /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code>
-        /// is supported.</p>
+        /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
         pub fn retention_period_unit(mut self, input: crate::model::RetentionPeriodUnit) -> Self {
             self.retention_period_unit = Some(input);
             self
         }
-        /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code>
-        /// is supported.</p>
+        /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
         pub fn set_retention_period_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriodUnit>,

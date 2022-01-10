@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon DevOps Guru
@@ -147,6 +147,7 @@ where
     ///
     /// See [`DescribeOrganizationResourceCollectionHealth`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationResourceCollectionHealth::into_paginator).
     pub fn describe_organization_resource_collection_health(
         &self,
     ) -> fluent_builders::DescribeOrganizationResourceCollectionHealth<C, M, R> {
@@ -156,6 +157,7 @@ where
     ///
     /// See [`DescribeResourceCollectionHealth`](crate::client::fluent_builders::DescribeResourceCollectionHealth) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeResourceCollectionHealth::into_paginator).
     pub fn describe_resource_collection_health(
         &self,
     ) -> fluent_builders::DescribeResourceCollectionHealth<C, M, R> {
@@ -174,6 +176,7 @@ where
     ///
     /// See [`GetCostEstimation`](crate::client::fluent_builders::GetCostEstimation) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCostEstimation::into_paginator).
     pub fn get_cost_estimation(&self) -> fluent_builders::GetCostEstimation<C, M, R> {
         fluent_builders::GetCostEstimation::new(self.handle.clone())
     }
@@ -181,6 +184,7 @@ where
     ///
     /// See [`GetResourceCollection`](crate::client::fluent_builders::GetResourceCollection) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceCollection::into_paginator).
     pub fn get_resource_collection(&self) -> fluent_builders::GetResourceCollection<C, M, R> {
         fluent_builders::GetResourceCollection::new(self.handle.clone())
     }
@@ -188,6 +192,7 @@ where
     ///
     /// See [`ListAnomaliesForInsight`](crate::client::fluent_builders::ListAnomaliesForInsight) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomaliesForInsight::into_paginator).
     pub fn list_anomalies_for_insight(&self) -> fluent_builders::ListAnomaliesForInsight<C, M, R> {
         fluent_builders::ListAnomaliesForInsight::new(self.handle.clone())
     }
@@ -195,6 +200,7 @@ where
     ///
     /// See [`ListEvents`](crate::client::fluent_builders::ListEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEvents::into_paginator).
     pub fn list_events(&self) -> fluent_builders::ListEvents<C, M, R> {
         fluent_builders::ListEvents::new(self.handle.clone())
     }
@@ -202,6 +208,7 @@ where
     ///
     /// See [`ListInsights`](crate::client::fluent_builders::ListInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInsights::into_paginator).
     pub fn list_insights(&self) -> fluent_builders::ListInsights<C, M, R> {
         fluent_builders::ListInsights::new(self.handle.clone())
     }
@@ -209,6 +216,7 @@ where
     ///
     /// See [`ListNotificationChannels`](crate::client::fluent_builders::ListNotificationChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotificationChannels::into_paginator).
     pub fn list_notification_channels(&self) -> fluent_builders::ListNotificationChannels<C, M, R> {
         fluent_builders::ListNotificationChannels::new(self.handle.clone())
     }
@@ -216,6 +224,7 @@ where
     ///
     /// See [`ListOrganizationInsights`](crate::client::fluent_builders::ListOrganizationInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationInsights::into_paginator).
     pub fn list_organization_insights(&self) -> fluent_builders::ListOrganizationInsights<C, M, R> {
         fluent_builders::ListOrganizationInsights::new(self.handle.clone())
     }
@@ -223,6 +232,7 @@ where
     ///
     /// See [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendations::into_paginator).
     pub fn list_recommendations(&self) -> fluent_builders::ListRecommendations<C, M, R> {
         fluent_builders::ListRecommendations::new(self.handle.clone())
     }
@@ -246,6 +256,7 @@ where
     ///
     /// See [`SearchInsights`](crate::client::fluent_builders::SearchInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchInsights::into_paginator).
     pub fn search_insights(&self) -> fluent_builders::SearchInsights<C, M, R> {
         fluent_builders::SearchInsights::new(self.handle.clone())
     }
@@ -253,6 +264,7 @@ where
     ///
     /// See [`SearchOrganizationInsights`](crate::client::fluent_builders::SearchOrganizationInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchOrganizationInsights::into_paginator).
     pub fn search_organization_insights(
         &self,
     ) -> fluent_builders::SearchOrganizationInsights<C, M, R> {
@@ -290,16 +302,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddNotificationChannel`.
     ///
-    /// <p> Adds a notification channel to DevOps Guru. A notification channel is used to notify you
-    /// about important DevOps Guru events, such as when an insight is generated. </p>
-    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
-    /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
-    /// for cross account Amazon SNS topics</a>.</p>
-    /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions
-    /// to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for
-    /// Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated. </p>
+    /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p>
+    /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -344,10 +350,10 @@ pub mod fluent_builders {
                 crate::input::AddNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -355,16 +361,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-        pub fn config(mut self, inp: crate::model::NotificationChannelConfig) -> Self {
-            self.inner = self.inner.config(inp);
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        pub fn config(mut self, input: crate::model::NotificationChannelConfig) -> Self {
+            self.inner = self.inner.config(input);
             self
         }
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
         pub fn set_config(
             mut self,
             input: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -375,10 +377,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountHealth`.
     ///
-    /// <p> Returns the number of open reactive insights, the number of open proactive insights,
-    /// and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the
-    /// health of operations in your Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -423,10 +423,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -437,10 +437,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountOverview`.
     ///
-    /// <p> For the time range passed in, returns the number of open reactive insight that were
-    /// created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all
-    /// closed reactive insights. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountOverview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -485,10 +483,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountOverviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -496,16 +494,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
-        pub fn from_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time(inp);
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -513,16 +507,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_time(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
-        pub fn to_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time(inp);
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -534,7 +524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomaly`.
     ///
     /// <p> Returns details about an anomaly that you specify using its ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomaly<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -579,10 +569,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAnomalyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -591,8 +581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the anomaly. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the anomaly. </p>
@@ -601,8 +591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the member account.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the member account.</p>
@@ -613,9 +603,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFeedback`.
     ///
-    /// <p> Returns the most recent feedback submitted in the current Amazon Web Services account and Region.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the most recent feedback submitted in the current Amazon Web Services account and Region. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -660,10 +649,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -672,8 +661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the insight for which the feedback was provided. </p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the insight for which the feedback was provided. </p>
@@ -685,7 +674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInsight`.
     ///
     /// <p> Returns details about an insight that you specify using its ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -730,10 +719,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -742,8 +731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the insight. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the insight. </p>
@@ -752,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the member account in the organization.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the member account in the organization.</p>
@@ -764,9 +753,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationHealth`.
     ///
-    /// <p>Returns active insights, predictive insights, and resource hours analyzed in last
-    /// hour.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns active insights, predictive insights, and resource hours analyzed in last hour.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -811,10 +799,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -827,8 +815,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The ID of the Amazon Web Services account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account.</p>
@@ -844,8 +832,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
         /// <p>The ID of the organizational unit.</p>
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_ids(inp);
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(input.into());
             self
         }
         /// <p>The ID of the organizational unit.</p>
@@ -859,9 +847,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationOverview`.
     ///
-    /// <p>Returns an overview of your organization's history based on the specified time range.
-    /// The overview includes the total reactive and proactive insights.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an overview of your organization's history based on the specified time range. The overview includes the total reactive and proactive insights.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationOverview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -906,10 +893,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationOverviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -917,16 +904,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
-        pub fn from_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time(inp);
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -934,16 +917,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_time(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
-        pub fn to_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time(inp);
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -956,8 +935,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The ID of the Amazon Web Services account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account.</p>
@@ -973,8 +952,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
         /// <p>The ID of the organizational unit.</p>
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_ids(inp);
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(input.into());
             self
         }
         /// <p>The ID of the organizational unit.</p>
@@ -988,10 +967,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationResourceCollectionHealth`.
     ///
-    /// <p>Provides an overview of your system's health. If additional member accounts are part
-    /// of your organization, you can filter those accounts using the <code>AccountIds</code>
-    /// field.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides an overview of your system's health. If additional member accounts are part of your organization, you can filter those accounts using the <code>AccountIds</code> field.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationResourceCollectionHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1038,10 +1015,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationResourceCollectionHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1049,21 +1026,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrganizationResourceCollectionHealthPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrganizationResourceCollectionHealthPaginator<C, M, R>
+        {
+            crate::paginator::DescribeOrganizationResourceCollectionHealthPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn organization_resource_collection_type(
             mut self,
-            inp: crate::model::OrganizationResourceCollectionType,
+            input: crate::model::OrganizationResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.organization_resource_collection_type(inp);
+            self.inner = self.inner.organization_resource_collection_type(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_organization_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
@@ -1076,8 +1059,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The ID of the Amazon Web Services account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account.</p>
@@ -1093,8 +1076,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
         /// <p>The ID of the organizational unit.</p>
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_ids(inp);
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(input.into());
             self
         }
         /// <p>The ID of the organizational unit.</p>
@@ -1105,26 +1088,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organizational_unit_ids(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1132,12 +1111,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResourceCollectionHealth`.
     ///
-    /// <p> Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR)
-    /// for all closed insights in resource collections in your account. You specify the type of
-    /// Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourceCollectionHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1182,10 +1157,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResourceCollectionHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1193,21 +1168,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeResourceCollectionHealthPaginator<C, M, R> {
+            crate::paginator::DescribeResourceCollectionHealthPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
-            inp: crate::model::ResourceCollectionType,
+            input: crate::model::ResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.resource_collection_type(inp);
+            self.inner = self.inner.resource_collection_type(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1215,14 +1195,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_collection_type(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1230,10 +1208,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeServiceIntegration`.
     ///
-    /// <p> Returns the integration status of services that are integrated with DevOps Guru.
-    /// The one service that can be integrated with DevOps Guru
-    /// is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1278,10 +1254,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1292,12 +1268,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCostEstimation`.
     ///
-    /// <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources.
-    /// For more information,
-    /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your
-    /// Amazon DevOps Guru costs</a> and
-    /// <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCostEstimation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,10 +1314,10 @@ pub mod fluent_builders {
                 crate::input::GetCostEstimationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1353,14 +1325,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCostEstimationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCostEstimationPaginator<C, M, R> {
+            crate::paginator::GetCostEstimationPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1368,11 +1344,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceCollection`.
     ///
-    /// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type.
-    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1417,10 +1390,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceCollectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1428,17 +1401,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceCollectionPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourceCollectionPaginator<C, M, R> {
+            crate::paginator::GetResourceCollectionPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
-            inp: crate::model::ResourceCollectionType,
+            input: crate::model::ResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.resource_collection_type(inp);
+            self.inner = self.inner.resource_collection_type(input);
             self
         }
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1446,14 +1423,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_collection_type(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1461,9 +1436,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAnomaliesForInsight`.
     ///
-    /// <p> Returns a list of the anomalies that belong to an insight that you specify using its
-    /// ID. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of the anomalies that belong to an insight that you specify using its ID. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomaliesForInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1508,10 +1482,10 @@ pub mod fluent_builders {
                 crate::input::ListAnomaliesForInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1519,9 +1493,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomaliesForInsightPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnomaliesForInsightPaginator<C, M, R> {
+            crate::paginator::ListAnomaliesForInsightPaginator::new(self.handle, self.inner)
+        }
         /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
@@ -1529,14 +1509,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_insight_id(input);
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
-        pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(inp);
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -1544,33 +1522,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_range(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -1581,9 +1555,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEvents`.
     ///
-    /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru.
-    /// You can use filters to specify which events are returned. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1628,10 +1601,10 @@ pub mod fluent_builders {
                 crate::input::ListEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1639,14 +1612,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
-        pub fn filters(mut self, inp: crate::model::ListEventsFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEventsPaginator<C, M, R> {
+            crate::paginator::ListEventsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
+        pub fn filters(mut self, input: crate::model::ListEventsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ListEventsFilters>,
@@ -1654,33 +1631,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -1691,10 +1664,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInsights`.
     ///
-    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are
-    /// returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or
-    /// <code>ANY</code>). </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,10 +1710,10 @@ pub mod fluent_builders {
                 crate::input::ListInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1750,14 +1721,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
-        pub fn status_filter(mut self, inp: crate::model::ListInsightsStatusFilter) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInsightsPaginator<C, M, R> {
+            crate::paginator::ListInsightsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+        pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -1765,26 +1740,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_filter(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1792,11 +1763,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotificationChannels`.
     ///
-    /// <p> Returns a list of notification channels configured for DevOps Guru. Each notification
-    /// channel is used to notify you when DevOps Guru generates an insight that contains information
-    /// about how to improve your operations. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotificationChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1841,10 +1809,10 @@ pub mod fluent_builders {
                 crate::input::ListNotificationChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1852,14 +1820,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotificationChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListNotificationChannelsPaginator<C, M, R> {
+            crate::paginator::ListNotificationChannelsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1868,7 +1842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationInsights`.
     ///
     /// <p>Returns a list of insights associated with the account or OU Id.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1913,10 +1887,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1924,14 +1898,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
-        pub fn status_filter(mut self, inp: crate::model::ListInsightsStatusFilter) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationInsightsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationInsightsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+        pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -1939,14 +1919,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_filter(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1956,8 +1934,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -1973,8 +1951,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
         /// <p>The ID of the organizational unit.</p>
-        pub fn organizational_unit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_ids(inp);
+        pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_ids(input.into());
             self
         }
         /// <p>The ID of the organizational unit.</p>
@@ -1985,14 +1963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organizational_unit_ids(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2000,9 +1976,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecommendations`.
     ///
-    /// <p> Returns a list of a specified insight's recommendations. Each recommendation includes
-    /// a list of related metrics and a list of related events. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2047,10 +2022,10 @@ pub mod fluent_builders {
                 crate::input::ListRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2058,9 +2033,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The ID of the requested insight. </p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the requested insight. </p>
@@ -2068,21 +2049,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_insight_id(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A locale that specifies the language to use for recommendations.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>A locale that specifies the language to use for recommendations.</p>
@@ -2091,8 +2070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -2104,7 +2083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFeedback`.
     ///
     /// <p> Collects customer feedback about the specified insight. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2149,10 +2128,10 @@ pub mod fluent_builders {
                 crate::input::PutFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2161,8 +2140,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The feedback from customers is about the recommendations in this insight. </p>
-        pub fn insight_feedback(mut self, inp: crate::model::InsightFeedback) -> Self {
-            self.inner = self.inner.insight_feedback(inp);
+        pub fn insight_feedback(mut self, input: crate::model::InsightFeedback) -> Self {
+            self.inner = self.inner.insight_feedback(input);
             self
         }
         /// <p> The feedback from customers is about the recommendations in this insight. </p>
@@ -2176,10 +2155,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveNotificationChannel`.
     ///
-    /// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify
-    /// you when DevOps Guru generates an insight that contains information about how to improve your
-    /// operations. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2224,10 +2201,10 @@ pub mod fluent_builders {
                 crate::input::RemoveNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2236,8 +2213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the notification channel to be removed. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the notification channel to be removed. </p>
@@ -2248,15 +2225,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchInsights`.
     ///
-    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are
-    /// returned by their start time, one or more statuses (<code>ONGOING</code>,
-    /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities
-    /// (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type
-    /// (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
-    /// <p> Use the <code>Filters</code> parameter to specify status and severity search
-    /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
-    /// <code>PROACTIVE</code> in your search. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2301,10 +2272,10 @@ pub mod fluent_builders {
                 crate::input::SearchInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2312,14 +2283,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
-        pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchInsightsPaginator<C, M, R> {
+            crate::paginator::SearchInsightsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -2327,14 +2302,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_range(input);
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
-        pub fn filters(mut self, inp: crate::model::SearchInsightsFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+        pub fn filters(mut self, input: crate::model::SearchInsightsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchInsightsFilters>,
@@ -2342,38 +2315,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
-        pub fn r#type(mut self, inp: crate::model::InsightType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+        pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -2381,15 +2348,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchOrganizationInsights`.
     ///
-    /// <p> Returns a list of insights in your organization. You can specify which insights are
-    /// returned by their start time, one or more statuses (<code>ONGOING</code>,
-    /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities
-    /// (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type
-    /// (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
-    /// <p> Use the <code>Filters</code> parameter to specify status and severity search
-    /// parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or
-    /// <code>PROACTIVE</code> in your search. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchOrganizationInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2434,10 +2395,10 @@ pub mod fluent_builders {
                 crate::input::SearchOrganizationInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2445,13 +2406,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchOrganizationInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::SearchOrganizationInsightsPaginator<C, M, R> {
+            crate::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `AccountIds`.
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -2462,14 +2431,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_ids(input);
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
-        pub fn start_time_range(mut self, inp: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(inp);
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -2477,14 +2444,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_range(input);
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
-        pub fn filters(mut self, inp: crate::model::SearchOrganizationInsightsFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+        pub fn filters(mut self, input: crate::model::SearchOrganizationInsightsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
@@ -2492,38 +2457,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
-        pub fn r#type(mut self, inp: crate::model::InsightType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+        pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -2531,9 +2490,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCostEstimation`.
     ///
-    /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services
-    /// resources.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services resources.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCostEstimation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2578,10 +2536,10 @@ pub mod fluent_builders {
                 crate::input::StartCostEstimationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2592,9 +2550,9 @@ pub mod fluent_builders {
         /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn resource_collection(
             mut self,
-            inp: crate::model::CostEstimationResourceCollectionFilter,
+            input: crate::model::CostEstimationResourceCollectionFilter,
         ) -> Self {
-            self.inner = self.inner.resource_collection(inp);
+            self.inner = self.inner.resource_collection(input);
             self
         }
         /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
@@ -2606,8 +2564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to identify each cost estimate request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to identify each cost estimate request.</p>
@@ -2618,12 +2576,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResourceCollection`.
     ///
-    /// <p> Updates the collection of resources that DevOps Guru analyzes.
-    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for
-    /// you to use DevOps Guru. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceCollection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2668,10 +2622,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceCollectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2679,14 +2633,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
-        pub fn action(mut self, inp: crate::model::UpdateResourceCollectionAction) -> Self {
-            self.inner = self.inner.action(inp);
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+        pub fn action(mut self, input: crate::model::UpdateResourceCollectionAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -2697,9 +2649,9 @@ pub mod fluent_builders {
         /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn resource_collection(
             mut self,
-            inp: crate::model::UpdateResourceCollectionFilter,
+            input: crate::model::UpdateResourceCollectionFilter,
         ) -> Self {
-            self.inner = self.inner.resource_collection(inp);
+            self.inner = self.inner.resource_collection(input);
             self
         }
         /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
@@ -2713,10 +2665,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateServiceIntegration`.
     ///
-    /// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The
-    /// one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create
-    /// an OpsItem for each generated insight. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2761,10 +2711,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2772,17 +2722,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
-            inp: crate::model::UpdateServiceIntegrationConfig,
+            input: crate::model::UpdateServiceIntegrationConfig,
         ) -> Self {
-            self.inner = self.inner.service_integration(inp);
+            self.inner = self.inner.service_integration(input);
             self
         }
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
@@ -2792,6 +2740,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

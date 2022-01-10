@@ -254,9 +254,9 @@ pub mod get_lifecycle_policies_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>Summary information about the lifecycle policies.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::LifecyclePolicySummary>) -> Self {
+        pub fn policies(mut self, input: crate::model::LifecyclePolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }

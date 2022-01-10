@@ -79,8 +79,6 @@ impl AddCustomRoutingEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -189,8 +187,7 @@ pub enum AdvertiseByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -241,8 +238,6 @@ impl AdvertiseByoipCidrError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -373,8 +368,6 @@ impl AllowCustomRoutingTrafficError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -484,8 +477,6 @@ impl CreateAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -613,8 +604,6 @@ impl CreateCustomRoutingAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -776,8 +765,6 @@ impl CreateCustomRoutingEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -961,8 +948,6 @@ impl CreateCustomRoutingListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1112,8 +1097,6 @@ impl CreateEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1269,8 +1252,6 @@ impl CreateListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1357,8 +1338,7 @@ pub enum DeleteAcceleratorErrorKind {
     AcceleratorNotDisabledException(crate::error::AcceleratorNotDisabledException),
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-    /// accelerator before you can delete it.</p>
+    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1409,8 +1389,6 @@ impl DeleteAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1497,8 +1475,7 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     AcceleratorNotDisabledException(crate::error::AcceleratorNotDisabledException),
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-    /// accelerator before you can delete it.</p>
+    /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1562,8 +1539,6 @@ impl DeleteCustomRoutingAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1714,8 +1689,6 @@ impl DeleteCustomRoutingEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1788,8 +1761,7 @@ pub struct DeleteCustomRoutingListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomRoutingListenerErrorKind {
-    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-    /// from a listener before you can delete it.</p>
+    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -1847,8 +1819,6 @@ impl DeleteCustomRoutingListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1976,8 +1946,6 @@ impl DeleteEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2044,8 +2012,7 @@ pub struct DeleteListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteListenerErrorKind {
-    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-    /// from a listener before you can delete it.</p>
+    /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2097,8 +2064,6 @@ impl DeleteListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2221,8 +2186,6 @@ impl DenyCustomRoutingTrafficError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2287,8 +2250,7 @@ pub enum DeprovisionByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -2339,8 +2301,6 @@ impl DeprovisionByoipCidrError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2472,8 +2432,6 @@ impl DescribeAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2598,8 +2556,6 @@ impl DescribeAcceleratorAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2730,8 +2686,6 @@ impl DescribeCustomRoutingAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2862,8 +2816,6 @@ impl DescribeCustomRoutingAcceleratorAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2996,8 +2948,6 @@ impl DescribeCustomRoutingEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3128,8 +3078,6 @@ impl DescribeCustomRoutingListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3251,8 +3199,6 @@ impl DescribeEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3368,8 +3314,6 @@ impl DescribeListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3485,8 +3429,6 @@ impl ListAcceleratorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3605,8 +3547,6 @@ impl ListByoipCidrsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3739,8 +3679,6 @@ impl ListCustomRoutingAcceleratorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3876,8 +3814,6 @@ impl ListCustomRoutingEndpointGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4016,8 +3952,6 @@ impl ListCustomRoutingListenersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4164,8 +4098,6 @@ impl ListCustomRoutingPortMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4321,8 +4253,6 @@ impl ListCustomRoutingPortMappingsByDestinationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4459,8 +4389,6 @@ impl ListEndpointGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4587,8 +4515,6 @@ impl ListListenersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4712,8 +4638,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4782,8 +4706,7 @@ pub struct ProvisionByoipCidrError {
 pub enum ProvisionByoipCidrErrorKind {
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -4836,8 +4759,6 @@ impl ProvisionByoipCidrError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4986,8 +4907,6 @@ impl RemoveCustomRoutingEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5133,8 +5052,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5250,8 +5167,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5367,8 +5282,6 @@ impl UpdateAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5491,8 +5404,6 @@ impl UpdateAcceleratorAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5629,8 +5540,6 @@ impl UpdateCustomRoutingAcceleratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5766,8 +5675,6 @@ impl UpdateCustomRoutingAcceleratorAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5913,8 +5820,6 @@ impl UpdateCustomRoutingListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6054,8 +5959,6 @@ impl UpdateEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6193,8 +6096,6 @@ impl UpdateListenerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6281,8 +6182,7 @@ pub enum WithdrawByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified was not found or is incorrect.</p>
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
-    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-    /// incorrect for this action.</p>
+    /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
     /// <p>There was an internal error for AWS Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
@@ -6333,8 +6233,6 @@ impl WithdrawByoipCidrError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6532,8 +6430,7 @@ impl InternalServiceErrorException {
     }
 }
 
-/// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
-/// incorrect for this action.</p>
+/// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectCidrStateException {
@@ -7237,8 +7134,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
-/// from a listener before you can delete it.</p>
+/// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedEndpointGroupFoundException {
@@ -7302,8 +7198,7 @@ impl AssociatedEndpointGroupFoundException {
     }
 }
 
-/// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
-/// accelerator before you can delete it.</p>
+/// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatedListenerFoundException {

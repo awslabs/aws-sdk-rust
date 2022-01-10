@@ -3,16 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),

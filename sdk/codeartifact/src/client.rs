@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for CodeArtifact
@@ -239,6 +239,7 @@ where
     ///
     /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -246,6 +247,7 @@ where
     ///
     /// See [`ListPackages`](crate::client::fluent_builders::ListPackages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackages::into_paginator).
     pub fn list_packages(&self) -> fluent_builders::ListPackages<C, M, R> {
         fluent_builders::ListPackages::new(self.handle.clone())
     }
@@ -253,6 +255,7 @@ where
     ///
     /// See [`ListPackageVersionAssets`](crate::client::fluent_builders::ListPackageVersionAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackageVersionAssets::into_paginator).
     pub fn list_package_version_assets(
         &self,
     ) -> fluent_builders::ListPackageVersionAssets<C, M, R> {
@@ -271,6 +274,7 @@ where
     ///
     /// See [`ListPackageVersions`](crate::client::fluent_builders::ListPackageVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackageVersions::into_paginator).
     pub fn list_package_versions(&self) -> fluent_builders::ListPackageVersions<C, M, R> {
         fluent_builders::ListPackageVersions::new(self.handle.clone())
     }
@@ -278,6 +282,7 @@ where
     ///
     /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
@@ -285,6 +290,7 @@ where
     ///
     /// See [`ListRepositoriesInDomain`](crate::client::fluent_builders::ListRepositoriesInDomain) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositoriesInDomain::into_paginator).
     pub fn list_repositories_in_domain(
         &self,
     ) -> fluent_builders::ListRepositoriesInDomain<C, M, R> {
@@ -356,12 +362,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateExternalConnection`.
     ///
-    /// <p>Adds an existing external connection to a repository. One external connection is allowed
-    /// per repository.</p>
-    /// <note>
+    /// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note>
     /// <p>A repository can have one or more upstream repositories, or an external connection.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateExternalConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,10 +410,10 @@ pub mod fluent_builders {
                 crate::input::AssociateExternalConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -418,8 +422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the repository.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the repository.</p>
@@ -427,109 +431,47 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository to which the external connection is added.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository to which the external connection is added. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository to which the external connection is added.
-        /// </p>
+        /// <p> The name of the repository to which the external connection is added. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The name of the external connection to add to the repository. The following values are supported:
-        /// </p>
+        /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>public:npmjs</code> - for the npm public repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:pypi</code> - for the Python Package Index.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-central</code> - for Maven Central.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-googleandroid</code> - for the Google Android repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
         /// </ul>
-        pub fn external_connection(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_connection(inp);
+        pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_connection(input.into());
             self
         }
-        /// <p>
-        /// The name of the external connection to add to the repository. The following values are supported:
-        /// </p>
+        /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>public:npmjs</code> - for the npm public repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:pypi</code> - for the Python Package Index.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-central</code> - for Maven Central.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-googleandroid</code> - for the Google Android repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>
+        /// <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>
+        /// <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>
+        /// <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>
+        /// <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>
+        /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
         /// </ul>
         pub fn set_external_connection(
             mut self,
@@ -541,15 +483,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CopyPackageVersions`.
     ///
-    /// <p>
-    /// Copies package versions from one repository to another repository in the same domain.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-    /// </p>
+    /// <p> Copies package versions from one repository to another repository in the same domain. </p> <note>
+    /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyPackageVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -594,10 +531,10 @@ pub mod fluent_builders {
                 crate::input::CopyPackageVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -605,46 +542,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the source and destination repositories.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the source and destination repositories. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the source and destination repositories.
-        /// </p>
+        /// <p> The name of the domain that contains the source and destination repositories. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions to copy.
-        /// </p>
-        pub fn source_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_repository(inp);
+        /// <p> The name of the repository that contains the package versions to copy. </p>
+        pub fn source_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions to copy.
-        /// </p>
+        /// <p> The name of the repository that contains the package versions to copy. </p>
         pub fn set_source_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -652,16 +575,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_repository(input);
             self
         }
-        /// <p>
-        /// The name of the repository into which package versions are copied.
-        /// </p>
-        pub fn destination_repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_repository(inp);
+        /// <p> The name of the repository into which package versions are copied. </p>
+        pub fn destination_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository into which package versions are copied.
-        /// </p>
+        /// <p> The name of the repository into which package versions are copied. </p>
         pub fn set_destination_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -669,49 +588,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_repository(input);
             self
         }
-        /// <p>
-        /// The format of the package that is copied. The valid package types are:
-        /// </p>
+        /// <p> The format of the package that is copied. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the package that is copied. The valid package types are:
-        /// </p>
+        /// <p> The format of the package that is copied. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -720,68 +611,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package that is copied.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package that is copied. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that is copied.
-        /// </p>
+        /// <p> The name of the package that is copied. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -790,25 +645,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>
-        /// The versions of the package to copy.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-        /// </p>
+        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
-        /// <p>
-        /// The versions of the package to copy.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-        /// </p>
+        /// <p> The versions of the package to copy. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn set_versions(
             mut self,
@@ -821,31 +666,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
-        /// <p>
-        /// A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation
-        /// succeeds if the specified versions in the source repository match the specified package version revision.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-        /// </p>
+        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn version_revisions(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
-        /// <p>
-        /// A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation
-        /// succeeds if the specified versions in the source repository match the specified package version revision.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-        /// </p>
+        /// <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>
+        /// <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>
         /// </note>
         pub fn set_version_revisions(
             mut self,
@@ -856,38 +689,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_revisions(input);
             self
         }
-        /// <p>
-        /// Set to true to overwrite a package version that already exists in the destination repository.
-        /// If set to false and the package version already exists in the destination repository,
-        /// the package version is returned in the <code>failedVersions</code> field of the response with
-        /// an <code>ALREADY_EXISTS</code> error code.
-        /// </p>
-        pub fn allow_overwrite(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_overwrite(inp);
+        /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
+        pub fn allow_overwrite(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_overwrite(input);
             self
         }
-        /// <p>
-        /// Set to true to overwrite a package version that already exists in the destination repository.
-        /// If set to false and the package version already exists in the destination repository,
-        /// the package version is returned in the <code>failedVersions</code> field of the response with
-        /// an <code>ALREADY_EXISTS</code> error code.
-        /// </p>
+        /// <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
         pub fn set_allow_overwrite(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_overwrite(input);
             self
         }
-        /// <p> Set to true to copy packages from repositories that are upstream from the source
-        /// repository to the destination repository. The default setting is false. For more information,
-        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
-        /// upstream repositories</a>. </p>
-        pub fn include_from_upstream(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_from_upstream(inp);
+        /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        pub fn include_from_upstream(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_from_upstream(input);
             self
         }
-        /// <p> Set to true to copy packages from repositories that are upstream from the source
-        /// repository to the destination repository. The default setting is false. For more information,
-        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with
-        /// upstream repositories</a>. </p>
+        /// <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_include_from_upstream(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_from_upstream(input);
             self
@@ -895,18 +712,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>
-    /// Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an
-    /// organization. You can use a domain to apply permissions across many
-    /// repositories owned by different AWS accounts. An asset is stored only once
-    /// in a domain, even if it's in multiple repositories.
-    /// </p>
-    ///
-    /// <p>Although you can have multiple domains, we recommend a single production domain that contains all
-    /// published artifacts so that your development teams can find and share packages. You can use a second
-    /// pre-production domain to test changes to the production domain configuration.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different AWS accounts. An asset is stored only once in a domain, even if it's in multiple repositories. </p>
+    /// <p>Although you can have multiple domains, we recommend a single production domain that contains all published artifacts so that your development teams can find and share packages. You can use a second pre-production domain to test changes to the production domain configuration. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -951,10 +759,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -962,47 +770,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the
-        /// same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do
-        /// not use sensitive information in a domain name because it is publicly discoverable. </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the
-        /// same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do
-        /// not use sensitive information in a domain name because it is publicly discoverable. </p>
+        /// <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain.
-        /// An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key
-        /// alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have
-        /// <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption
-        /// key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i>
-        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions
-        /// Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
-        /// <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your
-        /// domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric
-        /// keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
         /// </important>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain.
-        /// An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key
-        /// alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have
-        /// <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption
-        /// key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i>
-        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions
-        /// Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
-        /// <important>
-        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your
-        /// domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric
-        /// keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>
+        /// <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>
         /// </important>
         pub fn set_encryption_key(
             mut self,
@@ -1016,8 +802,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the domain.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tag key-value pairs for the domain.</p>
@@ -1031,10 +817,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
-    /// <p>
-    /// Creates a repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,10 +863,10 @@ pub mod fluent_builders {
                 crate::input::CreateRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1090,39 +874,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the created repository.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the created repository. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the created repository.
-        /// </p>
+        /// <p> The name of the domain that contains the created repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
         /// <p> The name of the repository to create. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository to create. </p>
@@ -1130,16 +904,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A description of the created repository.
-        /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p> A description of the created repository. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>
-        /// A description of the created repository.
-        /// </p>
+        /// <p> A description of the created repository. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1148,16 +918,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
-        /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, inp: impl Into<crate::model::UpstreamRepository>) -> Self {
-            self.inner = self.inner.upstreams(inp);
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
+            self.inner = self.inner.upstreams(input);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
-        /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
@@ -1170,8 +936,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tag key-value pairs for the repository.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tag key-value pairs for the repository.</p>
@@ -1185,11 +951,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>
-    /// Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain
-    /// with repositories, first delete its repositories.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain with repositories, first delete its repositories. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1234,10 +997,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1245,32 +1008,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain to delete.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain to delete. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain to delete.
-        /// </p>
+        /// <p> The name of the domain to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -1278,10 +1031,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomainPermissionsPolicy`.
     ///
-    /// <p>
-    /// Deletes the resource policy set on a domain.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes the resource policy set on a domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1326,10 +1077,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1337,48 +1088,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain associated with the resource policy to be deleted.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain associated with the resource policy to be deleted. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain associated with the resource policy to be deleted.
-        /// </p>
+        /// <p> The name of the domain associated with the resource policy to be deleted. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which
-        /// prevents others from overwriting your changes to the domain's resource policy.
-        /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+        pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(input.into());
             self
         }
-        /// <p>
-        /// The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which
-        /// prevents others from overwriting your changes to the domain's resource policy.
-        /// </p>
+        /// <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
         pub fn set_policy_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1389,12 +1124,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePackageVersions`.
     ///
-    /// <p> Deletes one or more versions of a package. A deleted package version cannot be restored
-    /// in your repository. If you want to remove a package version from your repository and be able
-    /// to restore it later, set its status to <code>Archived</code>. Archived packages cannot be
-    /// downloaded from a repository and don't show up with list package APIs (for example,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>), but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes one or more versions of a package. A deleted package version cannot be restored in your repository. If you want to remove a package version from your repository and be able to restore it later, set its status to <code>Archived</code>. Archived packages cannot be downloaded from a repository and don't show up with list package APIs (for example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>), but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackageVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1439,10 +1170,10 @@ pub mod fluent_builders {
                 crate::input::DeletePackageVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1450,93 +1181,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the package to delete.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the package to delete. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the package to delete.
-        /// </p>
+        /// <p> The name of the domain that contains the package to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions to delete.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that contains the package versions to delete. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions to delete.
-        /// </p>
+        /// <p> The name of the repository that contains the package versions to delete. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The format of the package versions to delete. The valid values are:
-        /// </p>
+        /// <p> The format of the package versions to delete. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the package versions to delete. The valid values are:
-        /// </p>
+        /// <p> The format of the package versions to delete. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -1545,68 +1234,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package with the versions to delete.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package with the versions to delete. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package with the versions to delete.
-        /// </p>
+        /// <p> The name of the package with the versions to delete. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -1615,16 +1268,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>
-        /// An array of strings that specify the versions of the package to delete.
-        /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        /// <p> An array of strings that specify the versions of the package to delete. </p>
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
-        /// <p>
-        /// An array of strings that specify the versions of the package to delete.
-        /// </p>
+        /// <p> An array of strings that specify the versions of the package to delete. </p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1632,69 +1281,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_versions(input);
             self
         }
-        /// <p>
-        /// The expected status of the package version to delete. Valid values are:
-        /// </p>
+        /// <p> The expected status of the package version to delete. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(input);
             self
         }
-        /// <p>
-        /// The expected status of the package version to delete. Valid values are:
-        /// </p>
+        /// <p> The expected status of the package version to delete. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
         pub fn set_expected_status(
             mut self,
@@ -1706,10 +1311,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRepository`.
     ///
-    /// <p>
-    /// Deletes a repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1754,10 +1357,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1765,39 +1368,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository to delete.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository to delete. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository to delete.
-        /// </p>
+        /// <p> The name of the domain that contains the repository to delete. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
         /// <p> The name of the repository to delete. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository to delete. </p>
@@ -1808,17 +1401,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRepositoryPermissionsPolicy`.
     ///
-    /// <p>
-    /// Deletes the resource policy that is set on a repository. After a resource policy is deleted, the
-    /// permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate.
-    /// </p>
-    /// <important>
-    /// <p>
-    /// Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, AWS users, roles, and accounts lose permissions to perform
-    /// the repository actions granted by the deleted policy.
-    /// </p>
+    /// <p> Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate. </p> <important>
+    /// <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, AWS users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepositoryPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1863,10 +1449,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRepositoryPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1874,62 +1460,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository associated with the resource policy to be deleted.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository associated with the resource policy to be deleted.
-        /// </p>
+        /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that is associated with the resource policy to be deleted
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that is associated with the resource policy to be deleted
-        /// </p>
+        /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which
-        /// prevents others from accidentally overwriting your changes to the repository's resource policy.
-        /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+        pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(input.into());
             self
         }
-        /// <p>
-        /// The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which
-        /// prevents others from accidentally overwriting your changes to the repository's resource policy.
-        /// </p>
+        /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
         pub fn set_policy_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1940,12 +1506,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
-    /// <p>
-    /// Returns a
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
-    /// object that contains information about the requested domain.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a> object that contains information about the requested domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1990,10 +1552,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2001,32 +1563,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A string that specifies the name of the requested domain.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> A string that specifies the name of the requested domain. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// A string that specifies the name of the requested domain.
-        /// </p>
+        /// <p> A string that specifies the name of the requested domain. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -2034,12 +1586,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePackageVersion`.
     ///
-    /// <p>
-    /// Returns a
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-    /// object that contains information about the requested package version.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackageVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2084,10 +1632,10 @@ pub mod fluent_builders {
                 crate::input::DescribePackageVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2095,39 +1643,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository that contains the package version. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the package version. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
         /// <p> The name of the repository that contains the package version. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository that contains the package version. </p>
@@ -2135,49 +1673,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the requested package version. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the requested package version. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the requested package version. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -2186,61 +1696,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
         /// <p> The name of the requested package version. </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
         /// <p> The name of the requested package version. </p>
@@ -2248,16 +1726,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+        pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2268,11 +1742,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRepository`.
     ///
-    /// <p>
-    /// Returns a <code>RepositoryDescription</code> object that contains detailed information
-    /// about the requested repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a <code>RepositoryDescription</code> object that contains detailed information about the requested repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2317,10 +1788,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2328,46 +1799,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository to describe.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository to describe. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository to describe.
-        /// </p>
+        /// <p> The name of the domain that contains the repository to describe. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// A string that specifies the name of the requested repository.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> A string that specifies the name of the requested repository. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// A string that specifies the name of the requested repository.
-        /// </p>
+        /// <p> A string that specifies the name of the requested repository. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
@@ -2375,10 +1832,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateExternalConnection`.
     ///
-    /// <p>
-    /// Removes an existing external connection from a repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Removes an existing external connection from a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateExternalConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2423,10 +1878,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateExternalConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2434,37 +1889,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the domain that contains the repository from which to remove the external
-        /// repository. </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>The name of the domain that contains the repository from which to remove the external
-        /// repository. </p>
+        /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p>The name of the repository from which the external connection will be removed. </p>
@@ -2473,8 +1920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
-        pub fn external_connection(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_connection(inp);
+        pub fn external_connection(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_connection(input.into());
             self
         }
         /// <p>The name of the external connection to be removed from the repository. </p>
@@ -2488,21 +1935,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisposePackageVersions`.
     ///
-    /// <p>
-    /// Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>.
-    /// A disposed package version cannot be restored in your repository because its assets are deleted.
-    /// </p>
-    ///
-    /// <p>
-    /// To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> and set the
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> parameter
-    /// to <code>Disposed</code>.
-    /// </p>
-    ///
-    /// <p>
-    /// To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted. </p>
+    /// <p> To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a> parameter to <code>Disposed</code>. </p>
+    /// <p> To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisposePackageVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2547,10 +1983,10 @@ pub mod fluent_builders {
                 crate::input::DisposePackageVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2558,93 +1994,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository you want to dispose.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository you want to dispose. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository you want to dispose.
-        /// </p>
+        /// <p> The name of the domain that contains the repository you want to dispose. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions you want to dispose.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that contains the package versions you want to dispose. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package versions you want to dispose.
-        /// </p>
+        /// <p> The name of the repository that contains the package versions you want to dispose. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of package versions you want to dispose. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of package versions you want to dispose. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -2653,68 +2047,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package with the versions you want to dispose.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package with the versions you want to dispose. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package with the versions you want to dispose.
-        /// </p>
+        /// <p> The name of the package with the versions you want to dispose. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -2723,16 +2081,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>
-        /// The versions of the package you want to dispose.
-        /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        /// <p> The versions of the package you want to dispose. </p>
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
-        /// <p>
-        /// The versions of the package you want to dispose.
-        /// </p>
+        /// <p> The versions of the package you want to dispose. </p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2744,20 +2098,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
-        /// <p>
-        /// The revisions of the package versions you want to dispose.
-        /// </p>
+        /// <p> The revisions of the package versions you want to dispose. </p>
         pub fn version_revisions(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
-        /// <p>
-        /// The revisions of the package versions you want to dispose.
-        /// </p>
+        /// <p> The revisions of the package versions you want to dispose. </p>
         pub fn set_version_revisions(
             mut self,
             input: std::option::Option<
@@ -2767,69 +2117,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_revisions(input);
             self
         }
-        /// <p>
-        /// The expected status of the package version to dispose. Valid values are:
-        /// </p>
+        /// <p> The expected status of the package version to dispose. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(input);
             self
         }
-        /// <p>
-        /// The expected status of the package version to dispose. Valid values are:
-        /// </p>
+        /// <p> The expected status of the package version to dispose. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
         pub fn set_expected_status(
             mut self,
@@ -2841,28 +2147,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAuthorizationToken`.
     ///
-    /// <p>
-    /// Generates a temporary authorization token for accessing repositories in the domain.
-    /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.
-    /// For more information about authorization tokens, see
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact authentication and tokens</a>.
-    /// </p>
-    /// <note>
-    /// <p>CodeArtifact authorization tokens are valid for a period of 12 hours when created with the <code>login</code> command.
-    /// You can call <code>login</code> periodically to refresh the token. When
-    /// you create an authorization token with the <code>GetAuthorizationToken</code> API, you can set a custom authorization period,
-    /// up to a maximum of 12 hours, with the <code>durationSeconds</code> parameter.</p>
-    /// <p>The authorization period begins after <code>login</code>
-    /// or <code>GetAuthorizationToken</code> is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while
-    /// assuming a role, the token lifetime is independent of the maximum session duration
-    /// of the role. For example, if you call <code>sts assume-role</code> and specify a session duration of 15 minutes, then
-    /// generate a CodeArtifact authorization token, the token will be valid for the full authorization period
-    /// even though this is longer than the 15-minute session duration.</p>
-    /// <p>See
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a>
-    /// for more information on controlling session duration. </p>
+    /// <p> Generates a temporary authorization token for accessing repositories in the domain. This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS CodeArtifact authentication and tokens</a>. </p> <note>
+    /// <p>CodeArtifact authorization tokens are valid for a period of 12 hours when created with the <code>login</code> command. You can call <code>login</code> periodically to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code> API, you can set a custom authorization period, up to a maximum of 12 hours, with the <code>durationSeconds</code> parameter.</p>
+    /// <p>The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code> is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while assuming a role, the token lifetime is independent of the maximum session duration of the role. For example, if you call <code>sts assume-role</code> and specify a session duration of 15 minutes, then generate a CodeArtifact authorization token, the token will be valid for the full authorization period even though this is longer than the 15-minute session duration.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> for more information on controlling session duration. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizationToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2907,10 +2197,10 @@ pub mod fluent_builders {
                 crate::input::GetAuthorizationTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2918,48 +2208,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that is in scope for the generated authorization token.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that is in scope for the generated authorization token. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that is in scope for the generated authorization token.
-        /// </p>
+        /// <p> The name of the domain that is in scope for the generated authorization token. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are
-        /// <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours).
-        /// A value of <code>0</code> will set the expiration of the authorization token to the same expiration of
-        /// the user's role's temporary credentials.</p>
-        pub fn duration_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.duration_seconds(inp);
+        /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
+        pub fn duration_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.duration_seconds(input);
             self
         }
-        /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are
-        /// <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours).
-        /// A value of <code>0</code> will set the expiration of the authorization token to the same expiration of
-        /// the user's role's temporary credentials.</p>
+        /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_duration_seconds(input);
             self
@@ -2967,17 +2241,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDomainPermissionsPolicy`.
     ///
-    /// <p>
-    /// Returns the resource policy attached to the specified domain.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// The policy is a resource-based policy, not an identity-based policy. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies
-    /// and resource-based policies </a> in the <i>AWS Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> Returns the resource policy attached to the specified domain. </p> <note>
+    /// <p> The policy is a resource-based policy, not an identity-based policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies </a> in the <i>AWS Identity and Access Management User Guide</i>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3022,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3033,32 +2300,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain to which the resource policy is attached.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain to which the resource policy is attached. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain to which the resource policy is attached.
-        /// </p>
+        /// <p> The name of the domain to which the resource policy is attached. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
@@ -3066,12 +2323,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionAsset`.
     ///
-    /// <p>
-    /// Returns an asset (or file) that is in a package. For example, for a Maven package version, use
-    /// <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file, a <code>POM</code> file,
-    /// or any other assets in the package version.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns an asset (or file) that is in a package. For example, for a Maven package version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file, a <code>POM</code> file, or any other assets in the package version. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3116,10 +2369,10 @@ pub mod fluent_builders {
                 crate::input::GetPackageVersionAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3127,93 +2380,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version with the requested asset.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version with the requested asset.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The repository that contains the package version with the requested asset.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The repository that contains the package version with the requested asset. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The repository that contains the package version with the requested asset.
-        /// </p>
+        /// <p> The repository that contains the package version with the requested asset. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package version with the requested asset file. The valid values are:
-        /// </p>    
+        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package version with the requested asset file. The valid values are:
-        /// </p>    
+        /// <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -3222,82 +2433,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package that contains the requested asset.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package that contains the requested asset. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that contains the requested asset.
-        /// </p>
+        /// <p> The name of the package that contains the requested asset. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+        pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3305,30 +2476,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_version(input);
             self
         }
-        /// <p>
-        /// The name of the requested asset.
-        /// </p>
-        pub fn asset(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset(inp);
+        /// <p> The name of the requested asset. </p>
+        pub fn asset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset(input.into());
             self
         }
-        /// <p>
-        /// The name of the requested asset.
-        /// </p>
+        /// <p> The name of the requested asset. </p>
         pub fn set_asset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_asset(input);
             self
         }
-        /// <p>
-        /// The name of the package version revision that contains the requested asset.
-        /// </p>
-        pub fn package_version_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version_revision(inp);
+        /// <p> The name of the package version revision that contains the requested asset. </p>
+        pub fn package_version_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version_revision(input.into());
             self
         }
-        /// <p>
-        /// The name of the package version revision that contains the requested asset.
-        /// </p>
+        /// <p> The name of the package version revision that contains the requested asset. </p>
         pub fn set_package_version_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3339,15 +2502,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPackageVersionReadme`.
     ///
-    /// <p>
-    /// Gets the readme file or descriptive text for a package version. For packages that do not contain a readme file, CodeArtifact
-    /// extracts a description from a metadata file. For example, from the <code><description></code> element in the
-    /// <code>pom.xml</code> file of a Maven package.
-    /// </p>
-    /// <p>
-    /// The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Gets the readme file or descriptive text for a package version. For packages that do not contain a readme file, CodeArtifact extracts a description from a metadata file. For example, from the <code>
+    /// <description></description></code> element in the <code>pom.xml</code> file of a Maven package. </p>
+    /// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionReadme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3392,10 +2550,10 @@ pub mod fluent_builders {
                 crate::input::GetPackageVersionReadmeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3403,93 +2561,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version with the requested readme file.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package version with the requested readme file.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The repository that contains the package with the requested readme file.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The repository that contains the package with the requested readme file. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The repository that contains the package with the requested readme file.
-        /// </p>
+        /// <p> The repository that contains the package with the requested readme file. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package version with the requested readme file. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package version with the requested readme file. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -3498,82 +2614,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package version that contains the requested readme file.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package version that contains the requested readme file. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package version that contains the requested readme file.
-        /// </p>
+        /// <p> The name of the package version that contains the requested readme file. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+        pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3584,28 +2660,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRepositoryEndpoint`.
     ///
-    /// <p>
-    /// Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each
-    /// package format:
-    /// </p>
+    /// <p> Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3650,10 +2711,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositoryEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3661,95 +2722,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository.
-        /// </p>
+        /// <p> The name of the domain that contains the repository. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository.
-        /// </p>
+        /// <p> The name of the repository. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// Returns which endpoint of a repository to return. A repository has one endpoint for each
-        /// package format:
-        /// </p>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// Returns which endpoint of a repository to return. A repository has one endpoint for each
-        /// package format:
-        /// </p>
+        /// <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -3761,10 +2778,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRepositoryPermissionsPolicy`.
     ///
-    /// <p>
-    /// Returns the resource policy that is set on a repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the resource policy that is set on a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3809,10 +2824,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositoryPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3820,46 +2835,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain containing the repository whose associated resource policy is to be retrieved.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain containing the repository whose associated resource policy is to be retrieved.
-        /// </p>
+        /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository whose associated resource policy is to be retrieved.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository whose associated resource policy is to be retrieved.
-        /// </p>
+        /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
@@ -3867,10 +2868,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomains`.
     ///
-    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a> objects for all domains owned by the AWS account that makes
-    /// this call. Each returned <code>DomainSummary</code> object contains information about a
-    /// domain. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a> objects for all domains owned by the AWS account that makes this call. Each returned <code>DomainSummary</code> object contains information about a domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3915,10 +2914,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3926,30 +2925,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator<C, M, R> {
+            crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3957,12 +2954,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPackages`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-    /// objects for packages in a repository that match the request parameters.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects for packages in a repository that match the request parameters. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4007,10 +3000,10 @@ pub mod fluent_builders {
                 crate::input::ListPackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4018,93 +3011,57 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the requested list of packages.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPackagesPaginator<C, M, R> {
+            crate::paginator::ListPackagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the requested list of packages.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository from which packages are to be listed.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository from which packages are to be listed. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository from which packages are to be listed.
-        /// </p>
+        /// <p> The name of the repository from which packages are to be listed. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The format of the packages. The valid package types are:
-        /// </p>
+        /// <p> The format of the packages. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the packages. The valid package types are:
-        /// </p>
+        /// <p> The format of the packages. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -4113,70 +3070,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// A prefix used to filter returned packages. Only packages with names that start with
-        /// <code>packagePrefix</code> are returned.
-        /// </p>
-        pub fn package_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_prefix(inp);
+        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+        pub fn package_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_prefix(input.into());
             self
         }
-        /// <p>
-        /// A prefix used to filter returned packages. Only packages with names that start with
-        /// <code>packagePrefix</code> are returned.
-        /// </p>
+        /// <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
         pub fn set_package_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4184,30 +3103,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_prefix(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4215,12 +3126,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPackageVersionAssets`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
-    /// objects for assets in a package version.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects for assets in a package version. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackageVersionAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4265,10 +3172,10 @@ pub mod fluent_builders {
                 crate::input::ListPackageVersionAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4276,93 +3183,59 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository associated with the package version assets.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackageVersionAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPackageVersionAssetsPaginator<C, M, R> {
+            crate::paginator::ListPackageVersionAssetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository associated with the package version assets.
-        /// </p>
+        /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package that contains the returned package version assets.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The name of the repository that contains the package that contains the returned package version assets. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The format of the package that contains the returned package version assets. The valid package types are:
-        /// </p>
+        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the package that contains the returned package version assets. The valid package types are:
-        /// </p>
+        /// <p> The format of the package that contains the returned package version assets. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -4371,82 +3244,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package version assets.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package that contains the returned package version assets. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The name of the package that contains the returned package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+        pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4454,30 +3287,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_version(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4485,14 +3310,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPackageVersionDependencies`.
     ///
-    /// <p>
-    /// Returns the direct dependencies for a package version. The dependencies are returned as
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
-    /// objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package
-    /// format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file
-    /// for Maven). Any package version dependencies that are not listed in the configuration file are not returned.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackageVersionDependencies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4537,10 +3356,10 @@ pub mod fluent_builders {
                 crate::input::ListPackageVersionDependenciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4548,93 +3367,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the requested package version dependencies.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the requested package version dependencies.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the requested package version.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that contains the requested package version. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the requested package version.
-        /// </p>
+        /// <p> The name of the repository that contains the requested package version. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The format of the package with the requested dependencies. The valid package types are:
-        /// </p>
+        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the package with the requested dependencies. The valid package types are:
-        /// </p>
+        /// <p> The format of the package with the requested dependencies. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -4643,82 +3420,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package versions' package.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package versions' package. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package versions' package.
-        /// </p>
+        /// <p> The name of the package versions' package. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
-        pub fn package_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_version(inp);
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+        pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_version(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4726,16 +3463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_version(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4743,12 +3476,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPackageVersions`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-    /// objects for package versions in a repository that match the request parameters.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects for package versions in a repository that match the request parameters. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackageVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4793,10 +3522,10 @@ pub mod fluent_builders {
                 crate::input::ListPackageVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4804,93 +3533,57 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the returned package versions.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackageVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPackageVersionsPaginator<C, M, R> {
+            crate::paginator::ListPackageVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the returned package versions.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the returned package versions. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository that contains the package. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository that contains the package.
-        /// </p>
+        /// <p> The name of the repository that contains the package. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// The format of the returned packages. The valid package types are:
-        /// </p>
+        /// <p> The format of the returned packages. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// The format of the returned packages. The valid package types are:
-        /// </p>
+        /// <p> The format of the returned packages. The valid package types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>: A Node Package Manager (npm) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>: A Python Package Index (PyPI) package.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -4899,135 +3592,55 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package for which you want to return a list of package versions.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package for which you want to return a list of package versions. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package for which you want to return a list of package versions.
-        /// </p>
+        /// <p> The name of the package for which you want to return a list of package versions. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
         }
-        /// <p>
-        /// A string that specifies the status of the package versions to include in the returned list. It can be one of the following:
-        /// </p>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>
-        /// A string that specifies the status of the package versions to include in the returned list. It can be one of the following:
-        /// </p>
+        /// <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Published</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unfinished</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unlisted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Archived</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disposed</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Published</code> </p> </li>
+        /// <li> <p> <code>Unfinished</code> </p> </li>
+        /// <li> <p> <code>Unlisted</code> </p> </li>
+        /// <li> <p> <code>Archived</code> </p> </li>
+        /// <li> <p> <code>Disposed</code> </p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -5036,16 +3649,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>
-        /// How to sort the returned list of package versions.
-        /// </p>
-        pub fn sort_by(mut self, inp: crate::model::PackageVersionSortType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p> How to sort the returned list of package versions. </p>
+        pub fn sort_by(mut self, input: crate::model::PackageVersionSortType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>
-        /// How to sort the returned list of package versions.
-        /// </p>
+        /// <p> How to sort the returned list of package versions. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::PackageVersionSortType>,
@@ -5053,30 +3662,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5084,13 +3685,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-    /// objects. Each <code>RepositorySummary</code> contains information about a repository in the specified AWS account and that matches the input
-    /// parameters.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified AWS account and that matches the input parameters. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5135,10 +3731,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5146,14 +3742,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A prefix used to filter returned repositories. Only repositories with names that start
-        /// with <code>repositoryPrefix</code> are returned.</p>
-        pub fn repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_prefix(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRepositoriesPaginator<C, M, R> {
+            crate::paginator::ListRepositoriesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+        pub fn repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_prefix(input.into());
             self
         }
-        /// <p> A prefix used to filter returned repositories. Only repositories with names that start
-        /// with <code>repositoryPrefix</code> are returned.</p>
+        /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
         pub fn set_repository_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5161,30 +3761,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_prefix(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5192,13 +3784,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRepositoriesInDomain`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-    /// objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input
-    /// parameters.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input parameters. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositoriesInDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5243,10 +3830,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositoriesInDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5254,46 +3841,40 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the returned list of repositories.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositoriesInDomainPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRepositoriesInDomainPaginator<C, M, R> {
+            crate::paginator::ListRepositoriesInDomainPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the domain that contains the returned list of repositories. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the returned list of repositories.
-        /// </p>
+        /// <p> The name of the domain that contains the returned list of repositories. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// Filter the list of repositories to only include those that are managed by the AWS account ID.
-        /// </p>
-        pub fn administrator_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_account(inp);
+        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+        pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_account(input.into());
             self
         }
-        /// <p>
-        /// Filter the list of repositories to only include those that are managed by the AWS account ID.
-        /// </p>
+        /// <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
         pub fn set_administrator_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5301,18 +3882,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_administrator_account(input);
             self
         }
-        /// <p>
-        /// A prefix used to filter returned repositories. Only repositories with names that start with
-        /// <code>repositoryPrefix</code> are returned.
-        /// </p>
-        pub fn repository_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_prefix(inp);
+        /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
+        pub fn repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_prefix(input.into());
             self
         }
-        /// <p>
-        /// A prefix used to filter returned repositories. Only repositories with names that start with
-        /// <code>repositoryPrefix</code> are returned.
-        /// </p>
+        /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
         pub fn set_repository_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5320,30 +3895,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_prefix(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return per page. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return per page.
-        /// </p>
+        /// <p> The maximum number of results to return per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5352,7 +3919,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeArtifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5397,10 +3964,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5409,8 +3976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
@@ -5421,15 +3988,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDomainPermissionsPolicy`.
     ///
-    /// <p>
-    /// Sets a resource policy on a domain that specifies permissions to access it.
-    /// </p>
-    /// <p>
-    /// When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when evaluting permissions.
-    /// This ensures that the owner of a domain cannot lock themselves out of the domain, which would prevent them from being
-    /// able to update the resource policy.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Sets a resource policy on a domain that specifies permissions to access it. </p>
+    /// <p> When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which would prevent them from being able to update the resource policy. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDomainPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5474,10 +4035,10 @@ pub mod fluent_builders {
                 crate::input::PutDomainPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5485,48 +4046,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain on which to set the resource policy.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain on which to set the resource policy. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain on which to set the resource policy.
-        /// </p>
+        /// <p> The name of the domain on which to set the resource policy. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The current revision of the resource policy to be set. This revision is used for optimistic locking, which
-        /// prevents others from overwriting your changes to the domain's resource policy.
-        /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+        pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(input.into());
             self
         }
-        /// <p>
-        /// The current revision of the resource policy to be set. This revision is used for optimistic locking, which
-        /// prevents others from overwriting your changes to the domain's resource policy.
-        /// </p>
+        /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
         pub fn set_policy_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5534,14 +4079,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_revision(input);
             self
         }
-        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
-        /// policy on the provided domain. </p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
-        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
-        /// policy on the provided domain. </p>
+        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5552,15 +4095,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRepositoryPermissionsPolicy`.
     ///
-    /// <p>
-    /// Sets the resource policy on a repository that specifies permissions to access it.
-    /// </p>
-    /// <p>
-    /// When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions.
-    /// This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being
-    /// able to update the resource policy.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Sets the resource policy on a repository that specifies permissions to access it. </p>
+    /// <p> When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRepositoryPermissionsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5605,10 +4142,10 @@ pub mod fluent_builders {
                 crate::input::PutRepositoryPermissionsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5616,39 +4153,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain containing the repository to set the resource policy on.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain containing the repository to set the resource policy on. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain containing the repository to set the resource policy on.
-        /// </p>
+        /// <p> The name of the domain containing the repository to set the resource policy on. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
         /// <p> The name of the repository to set the resource policy on. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository to set the resource policy on. </p>
@@ -5656,20 +4183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// Sets the revision of the resource policy that specifies permissions to access the repository.
-        /// This revision is used for optimistic locking, which prevents others from overwriting your
-        /// changes to the repository's resource policy.
-        /// </p>
-        pub fn policy_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_revision(inp);
+        /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
+        pub fn policy_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_revision(input.into());
             self
         }
-        /// <p>
-        /// Sets the revision of the resource policy that specifies permissions to access the repository.
-        /// This revision is used for optimistic locking, which prevents others from overwriting your
-        /// changes to the repository's resource policy.
-        /// </p>
+        /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
         pub fn set_policy_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5677,14 +4196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_revision(input);
             self
         }
-        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
-        /// policy on the provided repository. </p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
-        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource
-        /// policy on the provided repository. </p>
+        /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5696,7 +4213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or updates tags for a resource in AWS CodeArtifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5741,10 +4258,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5753,8 +4270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
@@ -5767,8 +4284,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
@@ -5783,7 +4300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource in AWS CodeArtifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5828,10 +4345,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5840,8 +4357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
@@ -5854,8 +4371,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
@@ -5869,10 +4386,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePackageVersionsStatus`.
     ///
-    /// <p>
-    /// Updates the status of one or more versions of a package.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates the status of one or more versions of a package. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackageVersionsStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5917,10 +4432,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePackageVersionsStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5928,93 +4443,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package versions with a status to be updated.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain that contains the repository that contains the package versions with a status to be updated.
-        /// </p>
+        /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The repository that contains the package versions with the status you want to update.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The repository that contains the package versions with the status you want to update. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The repository that contains the package versions with the status you want to update.
-        /// </p>
+        /// <p> The repository that contains the package versions with the status you want to update. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package with the statuses to update. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
-        pub fn format(mut self, inp: crate::model::PackageFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package with the statuses to update. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -6023,68 +4496,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>
-        /// The name of the package with the version statuses to update.
-        /// </p>
-        pub fn package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package(inp);
+        /// <p> The name of the package with the version statuses to update. </p>
+        pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package(input.into());
             self
         }
-        /// <p>
-        /// The name of the package with the version statuses to update.
-        /// </p>
+        /// <p> The name of the package with the version statuses to update. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package(input);
             self
@@ -6093,16 +4530,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>
-        /// An array of strings that specify the versions of the package with the statuses to update.
-        /// </p>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
-        /// <p>
-        /// An array of strings that specify the versions of the package with the statuses to update.
-        /// </p>
+        /// <p> An array of strings that specify the versions of the package with the statuses to update. </p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6114,20 +4547,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).
         ///
-        /// <p> A map of package versions and package version revisions. The map <code>key</code> is the
-        /// package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the
-        /// package version revision. </p>
+        /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
         pub fn version_revisions(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.version_revisions(k, v);
+            self.inner = self.inner.version_revisions(k.into(), v.into());
             self
         }
-        /// <p> A map of package versions and package version revisions. The map <code>key</code> is the
-        /// package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the
-        /// package version revision. </p>
+        /// <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
         pub fn set_version_revisions(
             mut self,
             input: std::option::Option<
@@ -6137,18 +4566,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_revisions(input);
             self
         }
-        /// <p> The package version’s expected status before it is updated. If
-        /// <code>expectedStatus</code> is provided, the package version's status is updated only if its
-        /// status at the time <code>UpdatePackageVersionsStatus</code> is called matches
-        /// <code>expectedStatus</code>. </p>
-        pub fn expected_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.expected_status(inp);
+        /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
+        pub fn expected_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.expected_status(input);
             self
         }
-        /// <p> The package version’s expected status before it is updated. If
-        /// <code>expectedStatus</code> is provided, the package version's status is updated only if its
-        /// status at the time <code>UpdatePackageVersionsStatus</code> is called matches
-        /// <code>expectedStatus</code>. </p>
+        /// <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
         pub fn set_expected_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -6156,16 +4579,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expected_status(input);
             self
         }
-        /// <p>
-        /// The status you want to change the package version status to.
-        /// </p>
-        pub fn target_status(mut self, inp: crate::model::PackageVersionStatus) -> Self {
-            self.inner = self.inner.target_status(inp);
+        /// <p> The status you want to change the package version status to. </p>
+        pub fn target_status(mut self, input: crate::model::PackageVersionStatus) -> Self {
+            self.inner = self.inner.target_status(input);
             self
         }
-        /// <p>
-        /// The status you want to change the package version status to.
-        /// </p>
+        /// <p> The status you want to change the package version status to. </p>
         pub fn set_target_status(
             mut self,
             input: std::option::Option<crate::model::PackageVersionStatus>,
@@ -6176,10 +4595,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRepository`.
     ///
-    /// <p>
-    /// Update the properties of a repository.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Update the properties of a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6224,10 +4641,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6235,60 +4652,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain associated with the repository to update.
-        /// </p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p> The name of the domain associated with the repository to update. </p>
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain associated with the repository to update.
-        /// </p>
+        /// <p> The name of the domain associated with the repository to update. </p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
-        pub fn domain_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_owner(inp);
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+        pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_owner(input.into());
             self
         }
-        /// <p>
-        /// The 12-digit account number of the AWS account that owns the domain. It does not include
-        /// dashes or spaces.
-        /// </p>
+        /// <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_owner(input);
             self
         }
-        /// <p>
-        /// The name of the repository to update.
-        /// </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        /// <p> The name of the repository to update. </p>
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
-        /// <p>
-        /// The name of the repository to update.
-        /// </p>
+        /// <p> The name of the repository to update. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p>
-        /// An updated repository description.
-        /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p> An updated repository description. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>
-        /// An updated repository description.
-        /// </p>
+        /// <p> An updated repository description. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -6297,16 +4696,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_upstreams`](Self::set_upstreams).
         ///
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
-        /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn upstreams(mut self, inp: impl Into<crate::model::UpstreamRepository>) -> Self {
-            self.inner = self.inner.upstreams(inp);
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        pub fn upstreams(mut self, input: crate::model::UpstreamRepository) -> Self {
+            self.inner = self.inner.upstreams(input);
             self
         }
-        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories
-        /// in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+        /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn set_upstreams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepository>>,
@@ -6316,6 +4711,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

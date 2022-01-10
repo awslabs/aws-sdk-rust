@@ -93,41 +93,19 @@ impl PutRecommendationFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -158,21 +136,10 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -184,21 +151,10 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -229,10 +185,7 @@ pub struct ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
     pub repository_association_summaries:
         std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request.
-    /// When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-    /// results to return. </p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoryAssociationsOutput {
@@ -242,10 +195,7 @@ impl ListRepositoryAssociationsOutput {
     ) -> std::option::Option<&[crate::model::RepositoryAssociationSummary]> {
         self.repository_association_summaries.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request.
-    /// When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-    /// results to return. </p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -279,10 +229,10 @@ pub mod list_repository_associations_output {
         /// <p>A list of repository associations that meet the criteria of the request.</p>
         pub fn repository_association_summaries(
             mut self,
-            input: impl Into<crate::model::RepositoryAssociationSummary>,
+            input: crate::model::RepositoryAssociationSummary,
         ) -> Self {
             let mut v = self.repository_association_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repository_association_summaries = Some(v);
             self
         }
@@ -294,18 +244,12 @@ pub mod list_repository_associations_output {
             self.repository_association_summaries = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request.
-        /// When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-        /// results to return. </p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request.
-        /// When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
-        /// results to return. </p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -330,28 +274,20 @@ impl ListRepositoryAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsOutput {
-    /// <p>
-    /// List of recommendations for the requested code review.
-    /// </p>
+    /// <p> List of recommendations for the requested code review. </p>
     pub recommendation_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsOutput {
-    /// <p>
-    /// List of recommendations for the requested code review.
-    /// </p>
+    /// <p> List of recommendations for the requested code review. </p>
     pub fn recommendation_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::RecommendationSummary]> {
         self.recommendation_summaries.as_deref()
     }
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -379,21 +315,17 @@ pub mod list_recommendations_output {
         ///
         /// To override the contents of this collection use [`set_recommendation_summaries`](Self::set_recommendation_summaries).
         ///
-        /// <p>
-        /// List of recommendations for the requested code review.
-        /// </p>
+        /// <p> List of recommendations for the requested code review. </p>
         pub fn recommendation_summaries(
             mut self,
-            input: impl Into<crate::model::RecommendationSummary>,
+            input: crate::model::RecommendationSummary,
         ) -> Self {
             let mut v = self.recommendation_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_summaries = Some(v);
             self
         }
-        /// <p>
-        /// List of recommendations for the requested code review.
-        /// </p>
+        /// <p> List of recommendations for the requested code review. </p>
         pub fn set_recommendation_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
@@ -401,16 +333,12 @@ pub mod list_recommendations_output {
             self.recommendation_summaries = input;
             self
         }
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -438,10 +366,7 @@ pub struct ListRecommendationFeedbackOutput {
     /// <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
     pub recommendation_feedback_summaries:
         std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
-    /// <p>
-    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationFeedbackOutput {
@@ -451,10 +376,7 @@ impl ListRecommendationFeedbackOutput {
     ) -> std::option::Option<&[crate::model::RecommendationFeedbackSummary]> {
         self.recommendation_feedback_summaries.as_deref()
     }
-    /// <p>
-    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -488,10 +410,10 @@ pub mod list_recommendation_feedback_output {
         /// <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
         pub fn recommendation_feedback_summaries(
             mut self,
-            input: impl Into<crate::model::RecommendationFeedbackSummary>,
+            input: crate::model::RecommendationFeedbackSummary,
         ) -> Self {
             let mut v = self.recommendation_feedback_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendation_feedback_summaries = Some(v);
             self
         }
@@ -503,18 +425,12 @@ pub mod list_recommendation_feedback_output {
             self.recommendation_feedback_summaries = input;
             self
         }
-        /// <p>
-        /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -539,25 +455,17 @@ impl ListRecommendationFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCodeReviewsOutput {
-    /// <p>
-    /// A list of code reviews that meet the criteria of the request.
-    /// </p>
+    /// <p> A list of code reviews that meet the criteria of the request. </p>
     pub code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCodeReviewsOutput {
-    /// <p>
-    /// A list of code reviews that meet the criteria of the request.
-    /// </p>
+    /// <p> A list of code reviews that meet the criteria of the request. </p>
     pub fn code_review_summaries(&self) -> std::option::Option<&[crate::model::CodeReviewSummary]> {
         self.code_review_summaries.as_deref()
     }
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -585,21 +493,14 @@ pub mod list_code_reviews_output {
         ///
         /// To override the contents of this collection use [`set_code_review_summaries`](Self::set_code_review_summaries).
         ///
-        /// <p>
-        /// A list of code reviews that meet the criteria of the request.
-        /// </p>
-        pub fn code_review_summaries(
-            mut self,
-            input: impl Into<crate::model::CodeReviewSummary>,
-        ) -> Self {
+        /// <p> A list of code reviews that meet the criteria of the request. </p>
+        pub fn code_review_summaries(mut self, input: crate::model::CodeReviewSummary) -> Self {
             let mut v = self.code_review_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.code_review_summaries = Some(v);
             self
         }
-        /// <p>
-        /// A list of code reviews that meet the criteria of the request.
-        /// </p>
+        /// <p> A list of code reviews that meet the criteria of the request. </p>
         pub fn set_code_review_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
@@ -607,16 +508,12 @@ pub mod list_code_reviews_output {
             self.code_review_summaries = input;
             self
         }
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -643,21 +540,10 @@ impl ListCodeReviewsOutput {
 pub struct DisassociateRepositoryOutput {
     /// <p>Information about the disassociated repository.</p>
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -669,21 +555,10 @@ impl DisassociateRepositoryOutput {
     ) -> std::option::Option<&crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -732,21 +607,10 @@ pub mod disassociate_repository_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -758,21 +622,10 @@ pub mod disassociate_repository_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -805,21 +658,10 @@ impl DisassociateRepositoryOutput {
 pub struct DescribeRepositoryAssociationOutput {
     /// <p>Information about the repository association.</p>
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -831,21 +673,10 @@ impl DescribeRepositoryAssociationOutput {
     ) -> std::option::Option<&crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -894,21 +725,10 @@ pub mod describe_repository_association_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -920,21 +740,10 @@ pub mod describe_repository_association_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -965,15 +774,11 @@ impl DescribeRepositoryAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationFeedbackOutput {
-    /// <p>
-    /// The recommendation feedback given by the user.
-    /// </p>
+    /// <p> The recommendation feedback given by the user. </p>
     pub recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
 }
 impl DescribeRecommendationFeedbackOutput {
-    /// <p>
-    /// The recommendation feedback given by the user.
-    /// </p>
+    /// <p> The recommendation feedback given by the user. </p>
     pub fn recommendation_feedback(
         &self,
     ) -> std::option::Option<&crate::model::RecommendationFeedback> {
@@ -997,9 +802,7 @@ pub mod describe_recommendation_feedback_output {
             std::option::Option<crate::model::RecommendationFeedback>,
     }
     impl Builder {
-        /// <p>
-        /// The recommendation feedback given by the user.
-        /// </p>
+        /// <p> The recommendation feedback given by the user. </p>
         pub fn recommendation_feedback(
             mut self,
             input: crate::model::RecommendationFeedback,
@@ -1007,9 +810,7 @@ pub mod describe_recommendation_feedback_output {
             self.recommendation_feedback = Some(input);
             self
         }
-        /// <p>
-        /// The recommendation feedback given by the user.
-        /// </p>
+        /// <p> The recommendation feedback given by the user. </p>
         pub fn set_recommendation_feedback(
             mut self,
             input: std::option::Option<crate::model::RecommendationFeedback>,
@@ -1036,15 +837,11 @@ impl DescribeRecommendationFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeReviewOutput {
-    /// <p>
-    /// Information about the code review.
-    /// </p>
+    /// <p> Information about the code review. </p>
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl DescribeCodeReviewOutput {
-    /// <p>
-    /// Information about the code review.
-    /// </p>
+    /// <p> Information about the code review. </p>
     pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
         self.code_review.as_ref()
     }
@@ -1065,16 +862,12 @@ pub mod describe_code_review_output {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the code review.
-        /// </p>
+        /// <p> Information about the code review. </p>
         pub fn code_review(mut self, input: crate::model::CodeReview) -> Self {
             self.code_review = Some(input);
             self
         }
-        /// <p>
-        /// Information about the code review.
-        /// </p>
+        /// <p> Information about the code review. </p>
         pub fn set_code_review(
             mut self,
             input: std::option::Option<crate::model::CodeReview>,
@@ -1101,15 +894,11 @@ impl DescribeCodeReviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeReviewOutput {
-    /// <p>
-    /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-    /// </p>
+    /// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl CreateCodeReviewOutput {
-    /// <p>
-    /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-    /// </p>
+    /// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
     pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
         self.code_review.as_ref()
     }
@@ -1130,16 +919,12 @@ pub mod create_code_review_output {
         pub(crate) code_review: std::option::Option<crate::model::CodeReview>,
     }
     impl Builder {
-        /// <p>
-        /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-        /// </p>
+        /// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
         pub fn code_review(mut self, input: crate::model::CodeReview) -> Self {
             self.code_review = Some(input);
             self
         }
-        /// <p>
-        /// Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-        /// </p>
+        /// <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
         pub fn set_code_review(
             mut self,
             input: std::option::Option<crate::model::CodeReview>,
@@ -1168,21 +953,10 @@ impl CreateCodeReviewOutput {
 pub struct AssociateRepositoryOutput {
     /// <p>Information about the repository association.</p>
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1194,21 +968,10 @@ impl AssociateRepositoryOutput {
     ) -> std::option::Option<&crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -1257,21 +1020,10 @@ pub mod associate_repository_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -1283,21 +1035,10 @@ pub mod associate_repository_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,

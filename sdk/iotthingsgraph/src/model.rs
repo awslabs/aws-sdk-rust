@@ -370,9 +370,7 @@ pub struct SystemInstanceSummary {
     pub greengrass_group_name: std::option::Option<std::string::String>,
     /// <p>The date when the system instance was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    ///
-    /// The date and time when the system instance was last updated.</p>
+    /// <p> The date and time when the system instance was last updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_id: std::option::Option<std::string::String>,
@@ -404,9 +402,7 @@ impl SystemInstanceSummary {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>
-    ///
-    /// The date and time when the system instance was last updated.</p>
+    /// <p> The date and time when the system instance was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -526,16 +522,12 @@ pub mod system_instance_summary {
             self.created_at = input;
             self
         }
-        /// <p>
-        ///
-        /// The date and time when the system instance was last updated.</p>
+        /// <p> The date and time when the system instance was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>
-        ///
-        /// The date and time when the system instance was last updated.</p>
+        /// <p> The date and time when the system instance was last updated.</p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1020,9 +1012,7 @@ impl AsRef<str> for SystemTemplateFilterName {
     }
 }
 
-/// <p>An object that filters a system instance search.
-/// Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a
-/// STATUS filter searches for system instances in the specified Greengrass group that have the specified status.</p>
+/// <p>An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemInstanceFilter {
@@ -1766,21 +1756,17 @@ impl AsRef<str> for EntityType {
     }
 }
 
-/// <p>An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes
-/// a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by
-/// the value of <code>REFERENCED_ENTITY_ID</code>.</p>
+/// <p>An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityFilter {
-    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     pub name: std::option::Option<crate::model::EntityFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EntityFilter {
-    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::EntityFilterName> {
         self.name.as_ref()
     }
@@ -1807,14 +1793,12 @@ pub mod entity_filter {
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         pub fn name(mut self, input: crate::model::EntityFilterName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::EntityFilterName>,
@@ -2352,9 +2336,7 @@ pub struct SystemInstanceDescription {
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
     pub validated_dependency_revisions:
         std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
-    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
-    /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
-    /// AWS services that the flow uses.</p>
+    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl SystemInstanceDescription {
@@ -2386,9 +2368,7 @@ impl SystemInstanceDescription {
     ) -> std::option::Option<&[crate::model::DependencyRevision]> {
         self.validated_dependency_revisions.as_deref()
     }
-    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
-    /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
-    /// AWS services that the flow uses.</p>
+    /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
         self.flow_actions_role_arn.as_deref()
     }
@@ -2497,10 +2477,10 @@ pub mod system_instance_description {
         /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
         pub fn validated_dependency_revisions(
             mut self,
-            input: impl Into<crate::model::DependencyRevision>,
+            input: crate::model::DependencyRevision,
         ) -> Self {
             let mut v = self.validated_dependency_revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validated_dependency_revisions = Some(v);
             self
         }
@@ -2512,16 +2492,12 @@ pub mod system_instance_description {
             self.validated_dependency_revisions = input;
             self
         }
-        /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
-        /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
-        /// AWS services that the flow uses.</p>
+        /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
         pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_actions_role_arn = Some(input.into());
             self
         }
-        /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
-        /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
-        /// AWS services that the flow uses.</p>
+        /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,

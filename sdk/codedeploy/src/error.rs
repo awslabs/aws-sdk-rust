@@ -12,8 +12,7 @@ pub struct AddTagsToOnPremisesInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToOnPremisesInstancesErrorKind {
-    /// <p>The maximum number of allowed on-premises instances in a single call was
-    /// exceeded.</p>
+    /// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
     InstanceLimitExceededException(crate::error::InstanceLimitExceededException),
     /// <p>An on-premises instance name was not specified.</p>
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
@@ -84,8 +83,6 @@ impl AddTagsToOnPremisesInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -264,8 +261,6 @@ impl BatchGetApplicationRevisionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -422,8 +417,6 @@ impl BatchGetApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -571,8 +564,6 @@ impl BatchGetDeploymentGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -691,8 +682,7 @@ pub enum BatchGetDeploymentInstancesErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The instance ID was not specified.</p>
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
@@ -759,8 +749,6 @@ impl BatchGetDeploymentInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -922,8 +910,6 @@ impl BatchGetDeploymentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1000,9 +986,7 @@ pub enum BatchGetDeploymentTargetsErrorKind {
     DeploymentTargetDoesNotExistException(crate::error::DeploymentTargetDoesNotExistException),
     /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::error::DeploymentTargetIdRequiredException),
-    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
-    /// deployment was exceeded. The target list of both types of deployments must have exactly
-    /// one item. This exception does not apply to EC2/On-premises deployments. </p>
+    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
     DeploymentTargetListSizeExceededException(
         crate::error::DeploymentTargetListSizeExceededException,
     ),
@@ -1079,8 +1063,6 @@ impl BatchGetDeploymentTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1268,8 +1250,6 @@ impl BatchGetOnPremisesInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1416,8 +1396,6 @@ impl ContinueDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1530,8 +1508,7 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>An application with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
     /// <p>More applications were attempted to be created than are allowed.</p>
     ApplicationLimitExceededException(crate::error::ApplicationLimitExceededException),
@@ -1539,8 +1516,7 @@ pub enum CreateApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p> The specified tags are not valid. </p>
     InvalidTagsToAddException(crate::error::InvalidTagsToAddException),
@@ -1590,8 +1566,6 @@ impl CreateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1698,9 +1672,7 @@ pub enum CreateDeploymentErrorKind {
     DescriptionTooLongException(crate::error::DescriptionTooLongException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// <p>The automatic rollback configuration was specified in an invalid format. For example,
-    /// automatic rollback is enabled, but an invalid triggering event type or no event types
-    /// were listed.</p>
+    /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
     InvalidAutoRollbackConfigException(crate::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
@@ -1708,16 +1680,11 @@ pub enum CreateDeploymentErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-    /// handles files or directories that already exist in a deployment target location, but
-    /// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-    /// "OVERWRITE," and "RETAIN."</p>
+    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
     InvalidFileExistsBehaviorException(crate::error::InvalidFileExistsBehaviorException),
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::error::InvalidGitHubAccountTokenException),
-    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments,
-    /// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-    /// or <code>false</code> is expected.</p>
+    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(
         crate::error::InvalidIgnoreApplicationStopFailuresValueException,
     ),
@@ -1725,35 +1692,21 @@ pub enum CreateDeploymentErrorKind {
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::error::InvalidRevisionException),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The target instance configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>Configuration data for target instances was entered for an in-place
-    /// deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>The limit of 10 tags for a tag type was exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>The combined length of the tag names exceeded the limit. </p>
-    /// </li>
-    /// <li>
-    /// <p>A specified tag is not currently applied to any instances.</p>
-    /// </li>
+    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
+    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
+    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
+    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
     /// </ul>
     InvalidTargetInstancesException(crate::error::InvalidTargetInstancesException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is
-    /// invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
-    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments,
-    /// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-    /// or <code>false</code> is expected.</p>
+    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(
         crate::error::InvalidUpdateOutdatedInstancesOnlyValueException,
     ),
@@ -1841,8 +1794,6 @@ impl CreateDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2085,22 +2036,19 @@ pub struct CreateDeploymentConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeploymentConfigErrorKind {
-    /// <p>A deployment configuration with the specified name with the IAM user or AWS account
-    /// already exists.</p>
+    /// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::error::DeploymentConfigAlreadyExistsException),
     /// <p>The deployment configurations limit was exceeded.</p>
     DeploymentConfigLimitExceededException(crate::error::DeploymentConfigLimitExceededException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::error::DeploymentConfigNameRequiredException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The minimum healthy instance value was specified in an invalid format.</p>
     InvalidMinimumHealthyHostValueException(crate::error::InvalidMinimumHealthyHostValueException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is
-    /// invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
@@ -2165,8 +2113,6 @@ impl CreateDeploymentConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2287,45 +2233,30 @@ pub enum CreateDeploymentGroupErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
     /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::error::DeploymentGroupLimitExceededException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
-    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon
-    /// ECS service can be associated with only one deployment group. </p>
+    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::error::EcsServiceMappingLimitExceededException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>The alarm list is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm object is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Two alarms with the same name have been specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm configuration is enabled, but the alarm list is empty.</p>
-    /// </li>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// <p>The automatic rollback configuration was specified in an invalid format. For example,
-    /// automatic rollback is enabled, but an invalid triggering event type or no event types
-    /// were listed.</p>
+    /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
     InvalidAutoRollbackConfigException(crate::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
-    /// <p>The configuration for the blue/green deployment group was provided in an invalid
-    /// format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>
+    /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
     InvalidBlueGreenDeploymentConfigurationException(
         crate::error::InvalidBlueGreenDeploymentConfigurationException,
     ),
@@ -2333,12 +2264,9 @@ pub enum CreateDeploymentGroupErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
-    /// and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and
-    /// "WITHOUT_TRAFFIC_CONTROL."</p>
+    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
     InvalidDeploymentStyleException(crate::error::InvalidDeploymentStyleException),
-    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of
-    /// these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
     InvalidEc2TagCombinationException(crate::error::InvalidEc2TagCombinationException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidEc2TagException(crate::error::InvalidEc2TagException),
@@ -2348,14 +2276,11 @@ pub enum CreateDeploymentGroupErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
-    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
-    /// but only one of these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
     InvalidOnPremisesTagCombinationException(
         crate::error::InvalidOnPremisesTagCombinationException,
     ),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidTagException(crate::error::InvalidTagException),
@@ -2363,8 +2288,7 @@ pub enum CreateDeploymentGroupErrorKind {
     InvalidTagsToAddException(crate::error::InvalidTagsToAddException),
     /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::error::InvalidTargetGroupPairException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is
-    /// invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
@@ -2374,8 +2298,7 @@ pub enum CreateDeploymentGroupErrorKind {
     LifecycleHookLimitExceededException(crate::error::LifecycleHookLimitExceededException),
     /// <p>The role ID was not specified.</p>
     RoleRequiredException(crate::error::RoleRequiredException),
-    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed
-    /// limit of 3.</p>
+    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
     TagSetListLimitExceededException(crate::error::TagSetListLimitExceededException),
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2498,8 +2421,6 @@ impl CreateDeploymentGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2848,9 +2769,7 @@ pub enum DeleteApplicationErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2895,8 +2814,6 @@ impl DeleteApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3021,8 +2938,6 @@ impl DeleteDeploymentConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3109,9 +3024,7 @@ pub enum DeleteDeploymentGroupErrorKind {
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3166,8 +3079,6 @@ impl DeleteDeploymentGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3319,8 +3230,6 @@ impl DeleteGitHubAccountTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3451,8 +3360,6 @@ impl DeleteResourcesByExternalIdError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3545,8 +3452,6 @@ impl DeregisterOnPremisesInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3658,8 +3563,6 @@ impl GetApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3790,8 +3693,6 @@ impl GetApplicationRevisionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3937,8 +3838,6 @@ impl GetDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4009,8 +3908,7 @@ pub enum GetDeploymentConfigErrorKind {
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::error::DeploymentConfigNameRequiredException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
@@ -4064,8 +3962,6 @@ impl GetDeploymentConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4215,8 +4111,6 @@ impl GetDeploymentGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4331,8 +4225,7 @@ pub enum GetDeploymentInstanceErrorKind {
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>The instance ID was not specified.</p>
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
@@ -4389,8 +4282,6 @@ impl GetDeploymentInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4559,8 +4450,6 @@ impl GetDeploymentTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4722,8 +4611,6 @@ impl GetOnPremisesInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4806,8 +4693,7 @@ pub enum ListApplicationRevisionsErrorKind {
     InvalidKeyPrefixFilterException(crate::error::InvalidKeyPrefixFilterException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The column name to sort by is either not present or was specified in an invalid
-    /// format.</p>
+    /// <p>The column name to sort by is either not present or was specified in an invalid format.</p>
     InvalidSortByException(crate::error::InvalidSortByException),
     /// <p>The sort order was specified in an invalid format.</p>
     InvalidSortOrderException(crate::error::InvalidSortOrderException),
@@ -4875,8 +4761,6 @@ impl ListApplicationRevisionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5056,8 +4940,6 @@ impl ListApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5151,8 +5033,6 @@ impl ListDeploymentConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5259,8 +5139,6 @@ impl ListDeploymentGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5341,19 +5219,15 @@ pub enum ListDeploymentInstancesErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>The specified deployment has not started.</p>
     DeploymentNotStartedException(crate::error::DeploymentNotStartedException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// <p>An instance type was specified for an in-place deployment. Instance types are
-    /// supported for blue/green deployments only.</p>
+    /// <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
     InvalidDeploymentInstanceTypeException(crate::error::InvalidDeploymentInstanceTypeException),
     /// <p>The specified instance status does not exist.</p>
     InvalidInstanceStatusException(crate::error::InvalidInstanceStatusException),
-    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid
-    /// values include "Blue" for an original environment and "Green" for a replacement
-    /// environment.</p>
+    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
     InvalidInstanceTypeException(crate::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -5423,8 +5297,6 @@ impl ListDeploymentInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5630,8 +5502,6 @@ impl ListDeploymentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5770,14 +5640,11 @@ pub enum ListDeploymentTargetsErrorKind {
     DeploymentNotStartedException(crate::error::DeploymentNotStartedException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// <p>An instance type was specified for an in-place deployment. Instance types are
-    /// supported for blue/green deployments only.</p>
+    /// <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
     InvalidDeploymentInstanceTypeException(crate::error::InvalidDeploymentInstanceTypeException),
     /// <p>The specified instance status does not exist.</p>
     InvalidInstanceStatusException(crate::error::InvalidInstanceStatusException),
-    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid
-    /// values include "Blue" for an original environment and "Green" for a replacement
-    /// environment.</p>
+    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
     InvalidInstanceTypeException(crate::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -5833,8 +5700,6 @@ impl ListDeploymentTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5998,8 +5863,6 @@ impl ListGitHubAccountTokenNamesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6121,8 +5984,6 @@ impl ListOnPremisesInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6191,8 +6052,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource
-    /// that is not expected. </p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
     /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::error::InvalidArnException),
@@ -6241,8 +6101,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6315,19 +6173,15 @@ pub enum PutLifecycleEventHookExecutionStatusErrorKind {
     DeploymentIdRequiredException(crate::error::DeploymentIdRequiredException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your
-    /// AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are
-    /// valid.</p>
+    /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
     InvalidLifecycleEventHookExecutionIdException(
         crate::error::InvalidLifecycleEventHookExecutionIdException,
     ),
-    /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid.
-    /// It should return <code>Succeeded</code> or <code>Failed</code>.</p>
+    /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
     InvalidLifecycleEventHookExecutionStatusException(
         crate::error::InvalidLifecycleEventHookExecutionStatusException,
     ),
-    /// <p>An attempt to return the status of an already completed lifecycle event
-    /// occurred.</p>
+    /// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
     LifecycleEventAlreadyCompletedException(crate::error::LifecycleEventAlreadyCompletedException),
     /// <p>A call was submitted that is not supported for the specified deployment type.</p>
     UnsupportedActionForDeploymentTypeException(
@@ -6399,8 +6253,6 @@ impl PutLifecycleEventHookExecutionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6576,8 +6428,6 @@ impl RegisterApplicationRevisionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6676,11 +6526,9 @@ pub struct RegisterOnPremisesInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterOnPremisesInstanceErrorKind {
-    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user
-    /// ARN in the request.</p>
+    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
     IamArnRequiredException(crate::error::IamArnRequiredException),
-    /// <p>The request included an IAM session ARN that has already been used to register a
-    /// different instance.</p>
+    /// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
     IamSessionArnAlreadyRegisteredException(crate::error::IamSessionArnAlreadyRegisteredException),
     /// <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
     IamUserArnAlreadyRegisteredException(crate::error::IamUserArnAlreadyRegisteredException),
@@ -6696,8 +6544,7 @@ pub enum RegisterOnPremisesInstanceErrorKind {
     InvalidIamUserArnException(crate::error::InvalidIamUserArnException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
-    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one
-    /// ARN type.</p>
+    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::error::MultipleIamArnsProvidedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6767,8 +6614,6 @@ impl RegisterOnPremisesInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6907,8 +6752,7 @@ pub struct RemoveTagsFromOnPremisesInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromOnPremisesInstancesErrorKind {
-    /// <p>The maximum number of allowed on-premises instances in a single call was
-    /// exceeded.</p>
+    /// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
     InstanceLimitExceededException(crate::error::InstanceLimitExceededException),
     /// <p>An on-premises instance name was not specified.</p>
     InstanceNameRequiredException(crate::error::InstanceNameRequiredException),
@@ -6986,8 +6830,6 @@ impl RemoveTagsFromOnPremisesInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7175,8 +7017,6 @@ impl SkipWaitTimeForInstanceTerminationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7340,8 +7180,6 @@ impl StopDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7436,8 +7274,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The application does not exist with the IAM user or AWS account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
-    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource
-    /// that is not expected. </p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
     /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
@@ -7499,8 +7336,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7603,8 +7438,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The application does not exist with the IAM user or AWS account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
-    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource
-    /// that is not expected. </p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
     /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
@@ -7666,8 +7500,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7768,8 +7600,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>An application with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
     /// <p>The application does not exist with the IAM user or AWS account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
@@ -7821,8 +7652,6 @@ impl UpdateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7905,45 +7734,30 @@ pub enum UpdateDeploymentGroupErrorKind {
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
     /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
     /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::error::DeploymentGroupNameRequiredException),
-    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon
-    /// ECS service can be associated with only one deployment group. </p>
+    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::error::EcsServiceMappingLimitExceededException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>The alarm list is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm object is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Two alarms with the same name have been specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm configuration is enabled, but the alarm list is empty.</p>
-    /// </li>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
-    /// <p>The automatic rollback configuration was specified in an invalid format. For example,
-    /// automatic rollback is enabled, but an invalid triggering event type or no event types
-    /// were listed.</p>
+    /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
     InvalidAutoRollbackConfigException(crate::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
-    /// <p>The configuration for the blue/green deployment group was provided in an invalid
-    /// format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>
+    /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
     InvalidBlueGreenDeploymentConfigurationException(
         crate::error::InvalidBlueGreenDeploymentConfigurationException,
     ),
@@ -7951,12 +7765,9 @@ pub enum UpdateDeploymentGroupErrorKind {
     InvalidDeploymentConfigNameException(crate::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
-    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
-    /// and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and
-    /// "WITHOUT_TRAFFIC_CONTROL."</p>
+    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
     InvalidDeploymentStyleException(crate::error::InvalidDeploymentStyleException),
-    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of
-    /// these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
     InvalidEc2TagCombinationException(crate::error::InvalidEc2TagCombinationException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidEc2TagException(crate::error::InvalidEc2TagException),
@@ -7966,21 +7777,17 @@ pub enum UpdateDeploymentGroupErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::error::InvalidLoadBalancerInfoException),
-    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
-    /// but only one of these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
     InvalidOnPremisesTagCombinationException(
         crate::error::InvalidOnPremisesTagCombinationException,
     ),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidTagException(crate::error::InvalidTagException),
     /// <p> A target group pair associated with this deployment is not valid. </p>
     InvalidTargetGroupPairException(crate::error::InvalidTargetGroupPairException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is
-    /// invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
@@ -7988,8 +7795,7 @@ pub enum UpdateDeploymentGroupErrorKind {
     InvalidTriggerConfigException(crate::error::InvalidTriggerConfigException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
     LifecycleHookLimitExceededException(crate::error::LifecycleHookLimitExceededException),
-    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed
-    /// limit of 3.</p>
+    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
     TagSetListLimitExceededException(crate::error::TagSetListLimitExceededException),
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -8110,8 +7916,6 @@ impl UpdateDeploymentGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8555,8 +8359,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>The number of tag groups included in the tag set list exceeded the maximum allowed
-/// limit of 3.</p>
+/// <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSetListLimitExceededException {
@@ -8748,8 +8551,7 @@ impl InvalidTriggerConfigException {
     }
 }
 
-/// <p> The configuration that specifies how traffic is routed during a deployment is
-/// invalid.</p>
+/// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTrafficRoutingConfigurationException {
@@ -8941,9 +8743,7 @@ impl InvalidTagException {
     }
 }
 
-/// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-/// was specified, the specified service role does not grant the appropriate permissions to
-/// Amazon EC2 Auto Scaling.</p>
+/// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRoleException {
@@ -9007,8 +8807,7 @@ impl InvalidRoleException {
     }
 }
 
-/// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
-/// but only one of these data types can be used in a single call.</p>
+/// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOnPremisesTagCombinationException {
@@ -9328,8 +9127,7 @@ impl InvalidEc2TagException {
     }
 }
 
-/// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of
-/// these data types can be used in a single call.</p>
+/// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEc2TagCombinationException {
@@ -9396,9 +9194,7 @@ impl InvalidEc2TagCombinationException {
     }
 }
 
-/// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
-/// and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and
-/// "WITHOUT_TRAFFIC_CONTROL."</p>
+/// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentStyleException {
@@ -9590,8 +9386,7 @@ impl InvalidDeploymentConfigNameException {
     }
 }
 
-/// <p>The configuration for the blue/green deployment group was provided in an invalid
-/// format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>
+/// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidBlueGreenDeploymentConfigurationException {
@@ -9720,9 +9515,7 @@ impl InvalidAutoScalingGroupException {
     }
 }
 
-/// <p>The automatic rollback configuration was specified in an invalid format. For example,
-/// automatic rollback is enabled, but an invalid triggering event type or no event types
-/// were listed.</p>
+/// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutoRollbackConfigException {
@@ -9852,21 +9645,11 @@ impl InvalidApplicationNameException {
 
 /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
 /// <ul>
-/// <li>
-/// <p>The alarm list is null.</p>
-/// </li>
-/// <li>
-/// <p>The alarm object is null.</p>
-/// </li>
-/// <li>
-/// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p>
-/// </li>
-/// <li>
-/// <p>Two alarms with the same name have been specified.</p>
-/// </li>
-/// <li>
-/// <p>The alarm configuration is enabled, but the alarm list is empty.</p>
-/// </li>
+/// <li> <p>The alarm list is null.</p> </li>
+/// <li> <p>The alarm object is null.</p> </li>
+/// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+/// <li> <p>Two alarms with the same name have been specified.</p> </li>
+/// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9931,8 +9714,7 @@ impl InvalidAlarmConfigException {
     }
 }
 
-/// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon
-/// ECS service can be associated with only one deployment group. </p>
+/// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EcsServiceMappingLimitExceededException {
@@ -10127,8 +9909,7 @@ impl DeploymentGroupDoesNotExistException {
     }
 }
 
-/// <p>A deployment group with the specified name with the IAM user or AWS account already
-/// exists.</p>
+/// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentGroupAlreadyExistsException {
@@ -10448,8 +10229,7 @@ impl AlarmsLimitExceededException {
     }
 }
 
-/// <p>An application with the specified name with the IAM user or AWS account already
-/// exists.</p>
+/// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationAlreadyExistsException {
@@ -10769,8 +10549,7 @@ impl InvalidArnException {
     }
 }
 
-/// <p> The specified ARN is not supported. For example, it might be an ARN for a resource
-/// that is not expected. </p>
+/// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArnNotSupportedException {
@@ -11474,8 +11253,7 @@ impl InstanceNameRequiredException {
     }
 }
 
-/// <p>The maximum number of allowed on-premises instances in a single call was
-/// exceeded.</p>
+/// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimitExceededException {
@@ -11539,8 +11317,7 @@ impl InstanceLimitExceededException {
     }
 }
 
-/// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one
-/// ARN type.</p>
+/// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultipleIamArnsProvidedException {
@@ -11924,8 +11701,7 @@ impl IamUserArnAlreadyRegisteredException {
     }
 }
 
-/// <p>The request included an IAM session ARN that has already been used to register a
-/// different instance.</p>
+/// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamSessionArnAlreadyRegisteredException {
@@ -11989,8 +11765,7 @@ impl IamSessionArnAlreadyRegisteredException {
     }
 }
 
-/// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user
-/// ARN in the request.</p>
+/// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamArnRequiredException {
@@ -12246,8 +12021,7 @@ impl DescriptionTooLongException {
     }
 }
 
-/// <p>An attempt to return the status of an already completed lifecycle event
-/// occurred.</p>
+/// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEventAlreadyCompletedException {
@@ -12311,8 +12085,7 @@ impl LifecycleEventAlreadyCompletedException {
     }
 }
 
-/// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid.
-/// It should return <code>Succeeded</code> or <code>Failed</code>.</p>
+/// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionStatusException {
@@ -12377,9 +12150,7 @@ impl InvalidLifecycleEventHookExecutionStatusException {
     }
 }
 
-/// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your
-/// AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are
-/// valid.</p>
+/// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLifecycleEventHookExecutionIdException {
@@ -12763,9 +12534,7 @@ impl OperationNotSupportedException {
     }
 }
 
-/// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid
-/// values include "Blue" for an original environment and "Green" for a replacement
-/// environment.</p>
+/// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInstanceTypeException {
@@ -12893,8 +12662,7 @@ impl InvalidInstanceStatusException {
     }
 }
 
-/// <p>An instance type was specified for an in-place deployment. Instance types are
-/// supported for blue/green deployments only.</p>
+/// <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeploymentInstanceTypeException {
@@ -13214,8 +12982,7 @@ impl InvalidTargetFilterNameException {
     }
 }
 
-/// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-/// <code>Server</code>, or <code>ECS</code>.</p>
+/// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidComputePlatformException {
@@ -13343,8 +13110,7 @@ impl InvalidSortOrderException {
     }
 }
 
-/// <p>The column name to sort by is either not present or was specified in an invalid
-/// format.</p>
+/// <p>The column name to sort by is either not present or was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSortByException {
@@ -14688,8 +14454,7 @@ impl DeploymentConfigLimitExceededException {
     }
 }
 
-/// <p>A deployment configuration with the specified name with the IAM user or AWS account
-/// already exists.</p>
+/// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentConfigAlreadyExistsException {
@@ -14753,9 +14518,7 @@ impl DeploymentConfigAlreadyExistsException {
     }
 }
 
-/// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments,
-/// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-/// or <code>false</code> is expected.</p>
+/// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUpdateOutdatedInstancesOnlyValueException {
@@ -14822,19 +14585,10 @@ impl InvalidUpdateOutdatedInstancesOnlyValueException {
 
 /// <p>The target instance configuration is invalid. Possible causes include:</p>
 /// <ul>
-/// <li>
-/// <p>Configuration data for target instances was entered for an in-place
-/// deployment.</p>
-/// </li>
-/// <li>
-/// <p>The limit of 10 tags for a tag type was exceeded.</p>
-/// </li>
-/// <li>
-/// <p>The combined length of the tag names exceeded the limit. </p>
-/// </li>
-/// <li>
-/// <p>A specified tag is not currently applied to any instances.</p>
-/// </li>
+/// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
+/// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
+/// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
+/// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14899,9 +14653,7 @@ impl InvalidTargetInstancesException {
     }
 }
 
-/// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments,
-/// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-/// or <code>false</code> is expected.</p>
+/// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIgnoreApplicationStopFailuresValueException {
@@ -15030,10 +14782,7 @@ impl InvalidGitHubAccountTokenException {
     }
 }
 
-/// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-/// handles files or directories that already exist in a deployment target location, but
-/// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-/// "OVERWRITE," and "RETAIN."</p>
+/// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileExistsBehaviorException {
@@ -15417,9 +15166,7 @@ impl BatchLimitExceededException {
     }
 }
 
-/// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
-/// deployment was exceeded. The target list of both types of deployments must have exactly
-/// one item. This exception does not apply to EC2/On-premises deployments. </p>
+/// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargetListSizeExceededException {

@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid. Something is wrong with the input to the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -14,8 +13,7 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have exceeded your service quota. To perform the requested action,
-    /// remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p> You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

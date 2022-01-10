@@ -12,8 +12,7 @@ pub struct AssociateApprovalRuleTemplateWithRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateApprovalRuleTemplateWithRepositoryErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -33,23 +32,15 @@ pub enum AssociateApprovalRuleTemplateWithRepositoryErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
-    /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25
-    /// approval rule templates with a repository.</p>
+    /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
     MaximumRuleTemplatesAssociatedWithRepositoryException(
         crate::error::MaximumRuleTemplatesAssociatedWithRepositoryException,
     ),
@@ -140,8 +131,6 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -294,8 +283,7 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -315,10 +303,7 @@ pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -407,8 +392,6 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -555,12 +538,8 @@ pub enum BatchDescribeMergeConflictsErrorKind {
     InvalidMaxMergeHunksException(crate::error::InvalidMaxMergeHunksException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::error::InvalidMergeOptionException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
@@ -575,8 +554,7 @@ pub enum BatchDescribeMergeConflictsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -677,8 +655,6 @@ impl BatchDescribeMergeConflictsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -927,8 +903,7 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -948,10 +923,7 @@ pub enum BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -1040,8 +1012,6 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1172,12 +1142,8 @@ pub enum BatchGetCommitsErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -1236,8 +1202,6 @@ impl BatchGetCommitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1374,12 +1338,8 @@ pub enum BatchGetRepositoriesErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The maximum number of allowed repository names was exceeded. Currently, this number is 100.</p>
@@ -1444,8 +1404,6 @@ impl BatchGetRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1564,9 +1522,7 @@ pub enum CreateApprovalRuleTemplateErrorKind {
     ApprovalRuleTemplateContentRequiredException(
         crate::error::ApprovalRuleTemplateContentRequiredException,
     ),
-    /// <p>You cannot create an approval rule template with that name because a template with
-    /// that name already exists in this AWS Region for your AWS account. Approval rule template
-    /// names must be unique.</p>
+    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(
         crate::error::ApprovalRuleTemplateNameAlreadyExistsException,
     ),
@@ -1578,17 +1534,11 @@ pub enum CreateApprovalRuleTemplateErrorKind {
     InvalidApprovalRuleTemplateContentException(
         crate::error::InvalidApprovalRuleTemplateContentException,
     ),
-    /// <p>The description for the approval rule template is not valid because it exceeds the
-    /// maximum characters allowed for a description. For more information about limits in AWS
-    /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User
-    /// Guide</a>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateDescriptionException(
         crate::error::InvalidApprovalRuleTemplateDescriptionException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -1657,8 +1607,6 @@ impl CreateApprovalRuleTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1773,8 +1721,7 @@ pub struct CreateBranchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBranchErrorKind {
-    /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name.
-    /// Branch names must be unique.</p>
+    /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
     BranchNameExistsException(crate::error::BranchNameExistsException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
@@ -1798,12 +1745,8 @@ pub enum CreateBranchErrorKind {
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -1866,8 +1809,6 @@ impl CreateBranchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2024,15 +1965,13 @@ pub struct CreateCommitError {
 pub enum CreateCommitErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
     /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::error::CommitMessageLengthExceededException),
-    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository.
-    /// Either provide a different name for the file, or specify a different path for the file.</p>
+    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(
         crate::error::DirectoryNameConflictsWithFileNameException,
     ),
@@ -2048,62 +1987,45 @@ pub enum CreateCommitErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The commit cannot be created because both a source file and file content have been
-    /// specified for the same file. You cannot provide both. Either specify a source file or
-    /// provide the file content directly.</p>
+    /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
     FileContentAndSourceFileSpecifiedException(
         crate::error::FileContentAndSourceFileSpecifiedException,
     ),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The specified file does not exist. Verify that you have used the correct file name,
-    /// full path, and extension.</p>
+    /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::error::FileDoesNotExistException),
     /// <p>The commit cannot be created because no files have been specified as added, updated, or changed (PutFile or DeleteFile) for the commit.</p>
     FileEntryRequiredException(crate::error::FileEntryRequiredException),
-    /// <p>The commit cannot be created because no file mode has been specified. A file mode is
-    /// required to update mode permissions for a file.</p>
+    /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::error::FileModeRequiredException),
-    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide
-    /// another name for the file, or add the file in a directory that does not match the file name.</p>
+    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
     FileNameConflictsWithDirectoryNameException(
         crate::error::FileNameConflictsWithDirectoryNameException,
     ),
-    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files
-    /// have valid file paths that do not point to a submodule.</p>
+    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(
         crate::error::FilePathConflictsWithSubmodulePathException,
     ),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
     /// <p>The specified deletion parameter is not valid.</p>
     InvalidDeletionParameterException(crate::error::InvalidDeletionParameterException),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
-    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you
-    /// want to add or update a file.</p>
+    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
-    /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files
-    /// that can be changed in a single commit. Consider using a Git client for these changes.</p>
+    /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
     MaximumFileEntriesExceededException(crate::error::MaximumFileEntriesExceededException),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::error::NameLengthExceededException),
@@ -2111,11 +2033,9 @@ pub enum CreateCommitErrorKind {
     NoChangeException(crate::error::NoChangeException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::error::ParentCommitDoesNotExistException),
-    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head
-    /// of the branch, use <a>GetBranch</a>.</p>
+    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
     ParentCommitIdOutdatedException(crate::error::ParentCommitIdOutdatedException),
-    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <a>GetBranch</a> or a Git command
-    /// (for example, git pull or git log).</p>
+    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
     ParentCommitIdRequiredException(crate::error::ParentCommitIdRequiredException),
     /// <p>The folderPath for a location cannot be null.</p>
     PathRequiredException(crate::error::PathRequiredException),
@@ -2127,9 +2047,7 @@ pub enum CreateCommitErrorKind {
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
     /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
     RestrictedSourceFileException(crate::error::RestrictedSourceFileException),
-    /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example,
-    /// you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same
-    /// file as part of the same commit.</p>
+    /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
     SamePathRequestException(crate::error::SamePathRequestException),
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
@@ -2221,8 +2139,6 @@ impl CreateCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2565,11 +2481,7 @@ pub struct CreatePullRequestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePullRequestErrorKind {
-    /// <p>A client request token is required. A client request token is an unique,
-    /// client-generated idempotency token that, when provided in a request, ensures the request
-    /// cannot be repeated with a changed parameter. If a request is received with the same
-    /// parameters and a token is included, the request returns information about the initial
-    /// request that used that token.</p>
+    /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
     /// <p>An encryption integrity check failed.</p>
     EncryptionIntegrityChecksFailedException(
@@ -2583,35 +2495,25 @@ pub enum CreatePullRequestErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The client request token is not valid. Either the token is not in a valid format, or
-    /// the token has been used in a previous request and cannot be reused.</p>
+    /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
     IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
     /// <p>The client request token is not valid.</p>
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
-    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000
-    /// characters.</p>
+    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
     InvalidDescriptionException(crate::error::InvalidDescriptionException),
-    /// <p>The specified reference name format is not valid. Reference names must conform to the
-    /// Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals -
-    /// Git References</a> or consult your Git documentation.</p>
+    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::error::InvalidReferenceNameException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The target for the pull request is not valid. A target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
-    /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for
-    /// the repository name, source branch, and destination branch for a pull request.</p>
+    /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
     InvalidTargetsException(crate::error::InvalidTargetsException),
     /// <p>The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.</p>
     InvalidTitleException(crate::error::InvalidTitleException),
-    /// <p>You cannot create the pull request because the repository has too many open pull requests.
-    /// The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
+    /// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
     MaximumOpenPullRequestsExceededException(
         crate::error::MaximumOpenPullRequestsExceededException,
     ),
@@ -2629,8 +2531,7 @@ pub enum CreatePullRequestErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The source branch and destination branch for the pull request are the same. You must
-    /// specify different branches for the source and destination.</p>
+    /// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
     SourceAndDestinationAreSameException(crate::error::SourceAndDestinationAreSameException),
     /// <p>A pull request target is required. It cannot be empty or null. A pull request target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
     TargetRequiredException(crate::error::TargetRequiredException),
@@ -2715,8 +2616,6 @@ impl CreatePullRequestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2971,8 +2870,7 @@ pub struct CreatePullRequestApprovalRuleError {
 pub enum CreatePullRequestApprovalRuleErrorKind {
     /// <p>The content for the approval rule is empty. You must provide some content for an approval rule. The content cannot be null.</p>
     ApprovalRuleContentRequiredException(crate::error::ApprovalRuleContentRequiredException),
-    /// <p>An approval rule with that name already exists. Approval rule names must be unique
-    /// within the scope of a pull request.</p>
+    /// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
     ApprovalRuleNameAlreadyExistsException(crate::error::ApprovalRuleNameAlreadyExistsException),
     /// <p>An approval rule name is required, but was not specified.</p>
     ApprovalRuleNameRequiredException(crate::error::ApprovalRuleNameRequiredException),
@@ -3090,8 +2988,6 @@ impl CreatePullRequestApprovalRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3298,12 +3194,8 @@ pub enum CreateRepositoryErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified repository description is not valid.</p>
     InvalidRepositoryDescriptionException(crate::error::InvalidRepositoryDescriptionException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
@@ -3378,8 +3270,6 @@ impl CreateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3555,16 +3445,11 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The commit cannot be created because no file mode has been specified. A file mode is
-    /// required to update mode permissions for a file.</p>
+    /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::error::FileModeRequiredException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::error::InvalidCommitException),
@@ -3576,10 +3461,9 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::error::InvalidMergeOptionException),
@@ -3589,12 +3473,8 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
@@ -3627,8 +3507,7 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3783,8 +3662,6 @@ impl CreateUnreferencedMergeCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4186,17 +4063,13 @@ pub struct DeleteApprovalRuleTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApprovalRuleTemplateErrorKind {
-    /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove
-    /// all associations, and then try again.</p>
+    /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
     ApprovalRuleTemplateInUseException(crate::error::ApprovalRuleTemplateInUseException),
     /// <p>An approval rule template name is required, but was not specified.</p>
     ApprovalRuleTemplateNameRequiredException(
         crate::error::ApprovalRuleTemplateNameRequiredException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -4249,8 +4122,6 @@ impl DeleteApprovalRuleTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4341,12 +4212,8 @@ pub enum DeleteBranchErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -4406,8 +4273,6 @@ impl DeleteBranchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4540,8 +4405,7 @@ pub struct DeleteCommentContentError {
 pub enum DeleteCommentContentErrorKind {
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -4591,8 +4455,6 @@ impl DeleteCommentContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4669,8 +4531,7 @@ pub struct DeleteFileError {
 pub enum DeleteFileErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
@@ -4688,36 +4549,27 @@ pub enum DeleteFileErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The specified file does not exist. Verify that you have used the correct file name,
-    /// full path, and extension.</p>
+    /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::error::FileDoesNotExistException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you
-    /// want to add or update a file.</p>
+    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::error::NameLengthExceededException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::error::ParentCommitDoesNotExistException),
-    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head
-    /// of the branch, use <a>GetBranch</a>.</p>
+    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
     ParentCommitIdOutdatedException(crate::error::ParentCommitIdOutdatedException),
-    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <a>GetBranch</a> or a Git command
-    /// (for example, git pull or git log).</p>
+    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
     ParentCommitIdRequiredException(crate::error::ParentCommitIdRequiredException),
     /// <p>The folderPath for a location cannot be null.</p>
     PathRequiredException(crate::error::PathRequiredException),
@@ -4787,8 +4639,6 @@ impl DeleteFileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5000,8 +4850,7 @@ pub struct DeletePullRequestApprovalRuleError {
 pub enum DeletePullRequestApprovalRuleErrorKind {
     /// <p>An approval rule name is required, but was not specified.</p>
     ApprovalRuleNameRequiredException(crate::error::ApprovalRuleNameRequiredException),
-    /// <p>The approval rule cannot be deleted from the pull request because it was created by an
-    /// approval rule template and applied to the pull request automatically.</p>
+    /// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotDeleteApprovalRuleFromTemplateException(
         crate::error::CannotDeleteApprovalRuleFromTemplateException,
     ),
@@ -5108,8 +4957,6 @@ impl DeletePullRequestApprovalRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5288,12 +5135,8 @@ pub enum DeleteRepositoryErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>A repository name is required, but was not specified.</p>
@@ -5347,8 +5190,6 @@ impl DeleteRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5465,8 +5306,7 @@ pub enum DescribeMergeConflictsErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The specified file does not exist. Verify that you have used the correct file name,
-    /// full path, and extension.</p>
+    /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::error::FileDoesNotExistException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::error::InvalidCommitException),
@@ -5484,12 +5324,8 @@ pub enum DescribeMergeConflictsErrorKind {
     InvalidMergeOptionException(crate::error::InvalidMergeOptionException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
@@ -5506,8 +5342,7 @@ pub enum DescribeMergeConflictsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5600,8 +5435,6 @@ impl DescribeMergeConflictsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5864,8 +5697,7 @@ pub enum DescribePullRequestEventsErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request,
-    /// and then try again.</p>
+    /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
     InvalidActorArnException(crate::error::InvalidActorArnException),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
@@ -5952,8 +5784,6 @@ impl DescribePullRequestEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6120,8 +5950,7 @@ pub struct DisassociateApprovalRuleTemplateFromRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateApprovalRuleTemplateFromRepositoryErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -6141,19 +5970,12 @@ pub enum DisassociateApprovalRuleTemplateFromRepositoryErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -6240,8 +6062,6 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6478,8 +6298,6 @@ impl EvaluatePullRequestApprovalRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6632,8 +6450,7 @@ pub struct GetApprovalRuleTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApprovalRuleTemplateErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -6641,10 +6458,7 @@ pub enum GetApprovalRuleTemplateErrorKind {
     ApprovalRuleTemplateNameRequiredException(
         crate::error::ApprovalRuleTemplateNameRequiredException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -6697,8 +6511,6 @@ impl GetApprovalRuleTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6787,17 +6599,12 @@ pub enum GetBlobErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     FileTooLargeException(crate::error::FileTooLargeException),
     /// <p>The specified blob is not valid.</p>
     InvalidBlobIdException(crate::error::InvalidBlobIdException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -6856,8 +6663,6 @@ impl GetBlobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7002,12 +6807,8 @@ pub enum GetBranchErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -7065,8 +6866,6 @@ impl GetBranchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7199,8 +6998,7 @@ pub struct GetCommentError {
 pub enum GetCommentErrorKind {
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -7267,8 +7065,6 @@ impl GetCommentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7382,8 +7178,7 @@ pub struct GetCommentReactionsError {
 pub enum GetCommentReactionsErrorKind {
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -7444,8 +7239,6 @@ impl GetCommentReactionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7566,12 +7359,8 @@ pub enum GetCommentsForComparedCommitErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -7657,8 +7446,6 @@ impl GetCommentsForComparedCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7853,12 +7640,8 @@ pub enum GetCommentsForPullRequestErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::error::InvalidPullRequestIdException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>
@@ -7958,8 +7741,6 @@ impl GetCommentsForPullRequestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8182,12 +7963,8 @@ pub enum GetCommitErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -8245,8 +8022,6 @@ impl GetCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8397,12 +8172,8 @@ pub enum GetDifferencesErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified path does not exist.</p>
@@ -8469,8 +8240,6 @@ impl GetDifferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8654,22 +8423,16 @@ pub enum GetFileErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The specified file does not exist. Verify that you have used the correct file name,
-    /// full path, and extension.</p>
+    /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::error::FileDoesNotExistException),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     FileTooLargeException(crate::error::FileTooLargeException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::error::InvalidCommitException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The folderPath for a location cannot be null.</p>
@@ -8732,8 +8495,6 @@ impl GetFileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8884,19 +8645,14 @@ pub enum GetFolderErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The specified folder does not exist. Either the folder name is not correct, or you did
-    /// not enter the full path to the folder.</p>
+    /// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
     FolderDoesNotExistException(crate::error::FolderDoesNotExistException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::error::InvalidCommitException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The folderPath for a location cannot be null.</p>
@@ -8958,8 +8714,6 @@ impl GetFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9121,12 +8875,8 @@ pub enum GetMergeCommitErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -9190,8 +8940,6 @@ impl GetMergeCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9376,12 +9124,8 @@ pub enum GetMergeConflictsErrorKind {
     InvalidMaxConflictFilesException(crate::error::InvalidMaxConflictFilesException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
     InvalidMergeOptionException(crate::error::InvalidMergeOptionException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
@@ -9398,8 +9142,7 @@ pub enum GetMergeConflictsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9477,8 +9220,6 @@ impl GetMergeConflictsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9733,12 +9474,8 @@ pub enum GetMergeOptionsErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
@@ -9751,8 +9488,7 @@ pub enum GetMergeOptionsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9818,8 +9554,6 @@ impl GetMergeOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10066,8 +9800,6 @@ impl GetPullRequestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10268,8 +10000,6 @@ impl GetPullRequestApprovalStatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10504,8 +10234,6 @@ impl GetPullRequestOverrideStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10660,12 +10388,8 @@ pub enum GetRepositoryErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -10722,8 +10446,6 @@ impl GetRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10844,12 +10566,8 @@ pub enum GetRepositoryTriggersErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -10914,8 +10632,6 @@ impl GetRepositoryTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11076,8 +10792,6 @@ impl ListApprovalRuleTemplatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11154,12 +10868,8 @@ pub enum ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -11243,8 +10953,6 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11378,12 +11086,8 @@ pub enum ListBranchesErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified continuation token is not valid.</p>
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -11441,8 +11145,6 @@ impl ListBranchesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11579,12 +11281,8 @@ pub enum ListPullRequestsErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>
     InvalidPullRequestStatusException(crate::error::InvalidPullRequestStatusException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -11646,8 +11344,6 @@ impl ListPullRequestsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11845,8 +11541,6 @@ impl ListRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11913,8 +11607,7 @@ pub struct ListRepositoriesForApprovalRuleTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRepositoriesForApprovalRuleTemplateErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -11934,10 +11627,7 @@ pub enum ListRepositoriesForApprovalRuleTemplateErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -12020,8 +11710,6 @@ impl ListRepositoriesForApprovalRuleTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12154,23 +11842,15 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::error::InvalidResourceArnException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12216,8 +11896,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12294,8 +11972,7 @@ pub struct MergeBranchesByFastForwardError {
 pub enum MergeBranchesByFastForwardErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
@@ -12321,12 +11998,8 @@ pub enum MergeBranchesByFastForwardErrorKind {
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::error::InvalidCommitException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified target branch is not valid.</p>
@@ -12337,8 +12010,7 @@ pub enum MergeBranchesByFastForwardErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12433,8 +12105,6 @@ impl MergeBranchesByFastForwardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12663,8 +12333,7 @@ pub struct MergeBranchesBySquashError {
 pub enum MergeBranchesBySquashErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
@@ -12688,16 +12357,11 @@ pub enum MergeBranchesBySquashErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The commit cannot be created because no file mode has been specified. A file mode is
-    /// required to update mode permissions for a file.</p>
+    /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::error::FileModeRequiredException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
@@ -12711,10 +12375,9 @@ pub enum MergeBranchesBySquashErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
@@ -12722,12 +12385,8 @@ pub enum MergeBranchesBySquashErrorKind {
     InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified target branch is not valid.</p>
@@ -12760,8 +12419,7 @@ pub enum MergeBranchesBySquashErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12884,8 +12542,6 @@ impl MergeBranchesBySquashError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13276,8 +12932,7 @@ pub struct MergeBranchesByThreeWayError {
 pub enum MergeBranchesByThreeWayErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
@@ -13301,16 +12956,11 @@ pub enum MergeBranchesByThreeWayErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The commit cannot be created because no file mode has been specified. A file mode is
-    /// required to update mode permissions for a file.</p>
+    /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::error::FileModeRequiredException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
@@ -13324,10 +12974,9 @@ pub enum MergeBranchesByThreeWayErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
@@ -13335,12 +12984,8 @@ pub enum MergeBranchesByThreeWayErrorKind {
     InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified target branch is not valid.</p>
@@ -13373,8 +13018,7 @@ pub enum MergeBranchesByThreeWayErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13503,8 +13147,6 @@ impl MergeBranchesByThreeWayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13925,12 +13567,8 @@ pub enum MergePullRequestByFastForwardErrorKind {
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::error::InvalidPullRequestIdException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
@@ -13955,8 +13593,7 @@ pub enum MergePullRequestByFastForwardErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request.
-    /// The pull request might have been updated. Make sure that you have the latest changes.</p>
+    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
@@ -14062,8 +13699,6 @@ impl MergePullRequestByFastForwardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14318,13 +13953,9 @@ pub enum MergePullRequestBySquashErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
@@ -14336,10 +13967,9 @@ pub enum MergePullRequestBySquashErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
@@ -14349,12 +13979,8 @@ pub enum MergePullRequestBySquashErrorKind {
     InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
@@ -14399,13 +14025,11 @@ pub enum MergePullRequestBySquashErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request.
-    /// The pull request might have been updated. Make sure that you have the latest changes.</p>
+    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14563,8 +14187,6 @@ impl MergePullRequestBySquashError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15005,13 +14627,9 @@ pub enum MergePullRequestByThreeWayErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
@@ -15023,10 +14641,9 @@ pub enum MergePullRequestByThreeWayErrorKind {
     InvalidConflictResolutionStrategyException(
         crate::error::InvalidConflictResolutionStrategyException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
@@ -15036,12 +14653,8 @@ pub enum MergePullRequestByThreeWayErrorKind {
     InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
@@ -15086,13 +14699,11 @@ pub enum MergePullRequestByThreeWayErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request.
-    /// The pull request might have been updated. Make sure that you have the latest changes.</p>
+    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15250,8 +14861,6 @@ impl MergePullRequestByThreeWayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15798,8 +15407,6 @@ impl OverridePullRequestApprovalRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15996,11 +15603,7 @@ pub enum PostCommentForComparedCommitErrorKind {
     BeforeCommitIdAndAfterCommitIdAreSameException(
         crate::error::BeforeCommitIdAndAfterCommitIdAreSameException,
     ),
-    /// <p>A client request token is required. A client request token is an unique,
-    /// client-generated idempotency token that, when provided in a request, ensures the request
-    /// cannot be repeated with a changed parameter. If a request is received with the same
-    /// parameters and a token is included, the request returns information about the initial
-    /// request that used that token.</p>
+    /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::error::CommentContentRequiredException),
@@ -16024,15 +15627,13 @@ pub enum PostCommentForComparedCommitErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The client request token is not valid. Either the token is not in a valid format, or
-    /// the token has been used in a previous request and cannot be reused.</p>
+    /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
     IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
     /// <p>The client request token is not valid.</p>
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
-    /// <p>The location of the file is not valid. Make sure that you include the file name and
-    /// extension.</p>
+    /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
     InvalidFileLocationException(crate::error::InvalidFileLocationException),
     /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
     InvalidFilePositionException(crate::error::InvalidFilePositionException),
@@ -16040,12 +15641,8 @@ pub enum PostCommentForComparedCommitErrorKind {
     InvalidPathException(crate::error::InvalidPathException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::error::InvalidRelativeFileVersionEnumException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified path does not exist.</p>
@@ -16167,8 +15764,6 @@ impl PostCommentForComparedCommitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16449,11 +16044,7 @@ pub enum PostCommentForPullRequestErrorKind {
     BeforeCommitIdAndAfterCommitIdAreSameException(
         crate::error::BeforeCommitIdAndAfterCommitIdAreSameException,
     ),
-    /// <p>A client request token is required. A client request token is an unique,
-    /// client-generated idempotency token that, when provided in a request, ensures the request
-    /// cannot be repeated with a changed parameter. If a request is received with the same
-    /// parameters and a token is included, the request returns information about the initial
-    /// request that used that token.</p>
+    /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::error::CommentContentRequiredException),
@@ -16477,15 +16068,13 @@ pub enum PostCommentForPullRequestErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The client request token is not valid. Either the token is not in a valid format, or
-    /// the token has been used in a previous request and cannot be reused.</p>
+    /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
     IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
     /// <p>The client request token is not valid.</p>
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::error::InvalidCommitIdException),
-    /// <p>The location of the file is not valid. Make sure that you include the file name and
-    /// extension.</p>
+    /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
     InvalidFileLocationException(crate::error::InvalidFileLocationException),
     /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
     InvalidFilePositionException(crate::error::InvalidFilePositionException),
@@ -16495,12 +16084,8 @@ pub enum PostCommentForPullRequestErrorKind {
     InvalidPullRequestIdException(crate::error::InvalidPullRequestIdException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::error::InvalidRelativeFileVersionEnumException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified path does not exist.</p>
@@ -16630,8 +16215,6 @@ impl PostCommentForPullRequestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16932,11 +16515,7 @@ pub struct PostCommentReplyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PostCommentReplyErrorKind {
-    /// <p>A client request token is required. A client request token is an unique,
-    /// client-generated idempotency token that, when provided in a request, ensures the request
-    /// cannot be repeated with a changed parameter. If a request is received with the same
-    /// parameters and a token is included, the request returns information about the initial
-    /// request that used that token.</p>
+    /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::error::CommentContentRequiredException),
@@ -16944,13 +16523,11 @@ pub enum PostCommentReplyErrorKind {
     CommentContentSizeLimitExceededException(
         crate::error::CommentContentSizeLimitExceededException,
     ),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
-    /// <p>The client request token is not valid. Either the token is not in a valid format, or
-    /// the token has been used in a previous request and cannot be reused.</p>
+    /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
     IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
     /// <p>The client request token is not valid.</p>
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
@@ -17008,8 +16585,6 @@ impl PostCommentReplyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17122,8 +16697,7 @@ pub struct PutCommentReactionError {
 pub enum PutCommentReactionErrorKind {
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -17182,8 +16756,6 @@ impl PutCommentReactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17284,15 +16856,13 @@ pub struct PutFileError {
 pub enum PutFileErrorKind {
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
     /// <p>The commit message is too long. Provide a shorter string. </p>
     CommitMessageLengthExceededException(crate::error::CommitMessageLengthExceededException),
-    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository.
-    /// Either provide a different name for the file, or specify a different path for the file.</p>
+    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(
         crate::error::DirectoryNameConflictsWithFileNameException,
     ),
@@ -17310,55 +16880,41 @@ pub enum PutFileErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
     FileContentRequiredException(crate::error::FileContentRequiredException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide
-    /// another name for the file, or add the file in a directory that does not match the file name.</p>
+    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
     FileNameConflictsWithDirectoryNameException(
         crate::error::FileNameConflictsWithDirectoryNameException,
     ),
-    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files
-    /// have valid file paths that do not point to a submodule.</p>
+    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(
         crate::error::FilePathConflictsWithSubmodulePathException,
     ),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
     /// <p>The specified deletion parameter is not valid.</p>
     InvalidDeletionParameterException(crate::error::InvalidDeletionParameterException),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
-    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you
-    /// want to add or update a file.</p>
+    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::error::NameLengthExceededException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::error::ParentCommitDoesNotExistException),
-    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head
-    /// of the branch, use <a>GetBranch</a>.</p>
+    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
     ParentCommitIdOutdatedException(crate::error::ParentCommitIdOutdatedException),
-    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <a>GetBranch</a> or a Git command
-    /// (for example, git pull or git log).</p>
+    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
     ParentCommitIdRequiredException(crate::error::ParentCommitIdRequiredException),
     /// <p>The folderPath for a location cannot be null.</p>
     PathRequiredException(crate::error::PathRequiredException),
@@ -17366,8 +16922,7 @@ pub enum PutFileErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch
-    /// that you specified.</p>
+    /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
     SameFileContentException(crate::error::SameFileContentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17439,8 +16994,6 @@ impl PutFileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17708,12 +17261,8 @@ pub enum PutRepositoryTriggersErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>One or more branch names specified for the trigger is not valid.</p>
@@ -17732,9 +17281,7 @@ pub enum PutRepositoryTriggersErrorKind {
     InvalidRepositoryTriggerEventsException(crate::error::InvalidRepositoryTriggerEventsException),
     /// <p>The name of the trigger is not valid.</p>
     InvalidRepositoryTriggerNameException(crate::error::InvalidRepositoryTriggerNameException),
-    /// <p>The AWS Region for the trigger target does not match the AWS Region for the
-    /// repository. Triggers must be created in the same Region as the target for the
-    /// trigger.</p>
+    /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::error::InvalidRepositoryTriggerRegionException),
     /// <p>The number of branches for the trigger was exceeded.</p>
     MaximumBranchesExceededException(crate::error::MaximumBranchesExceededException),
@@ -17746,13 +17293,11 @@ pub enum PutRepositoryTriggersErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>At least one branch name is required, but was not specified in the trigger
-    /// configuration.</p>
+    /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
     RepositoryTriggerBranchNameListRequiredException(
         crate::error::RepositoryTriggerBranchNameListRequiredException,
     ),
-    /// <p>A destination ARN for the target service for the trigger is required, but was not
-    /// specified.</p>
+    /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
     RepositoryTriggerDestinationArnRequiredException(
         crate::error::RepositoryTriggerDestinationArnRequiredException,
     ),
@@ -17861,8 +17406,6 @@ impl PutRepositoryTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18105,17 +17648,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::error::InvalidResourceArnException),
     /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
     InvalidSystemTagUsageException(crate::error::InvalidSystemTagUsageException),
@@ -18123,9 +17660,7 @@ pub enum TagResourceErrorKind {
     InvalidTagsMapException(crate::error::InvalidTagsMapException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>The tag policy is not valid.</p>
     TagPolicyException(crate::error::TagPolicyException),
@@ -18182,8 +17717,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18301,12 +17834,8 @@ pub enum TestRepositoryTriggersErrorKind {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>One or more branch names specified for the trigger is not valid.</p>
@@ -18325,9 +17854,7 @@ pub enum TestRepositoryTriggersErrorKind {
     InvalidRepositoryTriggerEventsException(crate::error::InvalidRepositoryTriggerEventsException),
     /// <p>The name of the trigger is not valid.</p>
     InvalidRepositoryTriggerNameException(crate::error::InvalidRepositoryTriggerNameException),
-    /// <p>The AWS Region for the trigger target does not match the AWS Region for the
-    /// repository. Triggers must be created in the same Region as the target for the
-    /// trigger.</p>
+    /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::error::InvalidRepositoryTriggerRegionException),
     /// <p>The number of branches for the trigger was exceeded.</p>
     MaximumBranchesExceededException(crate::error::MaximumBranchesExceededException),
@@ -18339,13 +17866,11 @@ pub enum TestRepositoryTriggersErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// <p>At least one branch name is required, but was not specified in the trigger
-    /// configuration.</p>
+    /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
     RepositoryTriggerBranchNameListRequiredException(
         crate::error::RepositoryTriggerBranchNameListRequiredException,
     ),
-    /// <p>A destination ARN for the target service for the trigger is required, but was not
-    /// specified.</p>
+    /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
     RepositoryTriggerDestinationArnRequiredException(
         crate::error::RepositoryTriggerDestinationArnRequiredException,
     ),
@@ -18460,8 +17985,6 @@ impl TestRepositoryTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18708,17 +18231,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::error::InvalidResourceArnException),
     /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
     InvalidSystemTagUsageException(crate::error::InvalidSystemTagUsageException),
@@ -18726,9 +18243,7 @@ pub enum UntagResourceErrorKind {
     InvalidTagKeysListException(crate::error::InvalidTagKeysListException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>A list of tag keys is required. The list cannot be empty or null.</p>
     TagKeysListRequiredException(crate::error::TagKeysListRequiredException),
@@ -18785,8 +18300,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18899,8 +18412,7 @@ pub enum UpdateApprovalRuleTemplateContentErrorKind {
     ApprovalRuleTemplateContentRequiredException(
         crate::error::ApprovalRuleTemplateContentRequiredException,
     ),
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -18912,10 +18424,7 @@ pub enum UpdateApprovalRuleTemplateContentErrorKind {
     InvalidApprovalRuleTemplateContentException(
         crate::error::InvalidApprovalRuleTemplateContentException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -18984,8 +18493,6 @@ impl UpdateApprovalRuleTemplateContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19093,8 +18600,7 @@ pub struct UpdateApprovalRuleTemplateDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApprovalRuleTemplateDescriptionErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
@@ -19102,17 +18608,11 @@ pub enum UpdateApprovalRuleTemplateDescriptionErrorKind {
     ApprovalRuleTemplateNameRequiredException(
         crate::error::ApprovalRuleTemplateNameRequiredException,
     ),
-    /// <p>The description for the approval rule template is not valid because it exceeds the
-    /// maximum characters allowed for a description. For more information about limits in AWS
-    /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User
-    /// Guide</a>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateDescriptionException(
         crate::error::InvalidApprovalRuleTemplateDescriptionException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -19173,8 +18673,6 @@ impl UpdateApprovalRuleTemplateDescriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19247,14 +18745,11 @@ pub struct UpdateApprovalRuleTemplateNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApprovalRuleTemplateNameErrorKind {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
-    /// <p>You cannot create an approval rule template with that name because a template with
-    /// that name already exists in this AWS Region for your AWS account. Approval rule template
-    /// names must be unique.</p>
+    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(
         crate::error::ApprovalRuleTemplateNameAlreadyExistsException,
     ),
@@ -19262,10 +18757,7 @@ pub enum UpdateApprovalRuleTemplateNameErrorKind {
     ApprovalRuleTemplateNameRequiredException(
         crate::error::ApprovalRuleTemplateNameRequiredException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -19326,8 +18818,6 @@ impl UpdateApprovalRuleTemplateNameError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19422,8 +18912,7 @@ pub enum UpdateCommentErrorKind {
     ),
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -19480,8 +18969,6 @@ impl UpdateCommentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19600,12 +19087,8 @@ pub enum UpdateDefaultBranchErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified reference name is not valid.</p>
     InvalidBranchNameException(crate::error::InvalidBranchNameException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -19669,8 +19152,6 @@ impl UpdateDefaultBranchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19811,8 +19292,7 @@ pub enum UpdatePullRequestApprovalRuleContentErrorKind {
     ApprovalRuleDoesNotExistException(crate::error::ApprovalRuleDoesNotExistException),
     /// <p>An approval rule name is required, but was not specified.</p>
     ApprovalRuleNameRequiredException(crate::error::ApprovalRuleNameRequiredException),
-    /// <p>The approval rule cannot be modified for the pull request because it was created by an
-    /// approval rule template and applied to the pull request automatically.</p>
+    /// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotModifyApprovalRuleFromTemplateException(
         crate::error::CannotModifyApprovalRuleFromTemplateException,
     ),
@@ -19935,8 +19415,6 @@ impl UpdatePullRequestApprovalRuleContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20166,8 +19644,7 @@ pub enum UpdatePullRequestApprovalStateErrorKind {
     ),
     /// <p>The pull request status cannot be updated because it is already closed.</p>
     PullRequestAlreadyClosedException(crate::error::PullRequestAlreadyClosedException),
-    /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull
-    /// request that you created.</p>
+    /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
     PullRequestCannotBeApprovedByAuthorException(
         crate::error::PullRequestCannotBeApprovedByAuthorException,
     ),
@@ -20272,8 +19749,6 @@ impl UpdatePullRequestApprovalStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20480,8 +19955,7 @@ pub struct UpdatePullRequestDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePullRequestDescriptionErrorKind {
-    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000
-    /// characters.</p>
+    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
     InvalidDescriptionException(crate::error::InvalidDescriptionException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::error::InvalidPullRequestIdException),
@@ -20546,8 +20020,6 @@ impl UpdatePullRequestDescriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20737,8 +20209,6 @@ impl UpdatePullRequestStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20953,8 +20423,6 @@ impl UpdatePullRequestTitleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21063,12 +20531,8 @@ pub enum UpdateRepositoryDescriptionErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The specified repository description is not valid.</p>
     InvalidRepositoryDescriptionException(crate::error::InvalidRepositoryDescriptionException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -21142,8 +20606,6 @@ impl UpdateRepositoryDescriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21276,12 +20738,8 @@ pub struct UpdateRepositoryNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRepositoryNameErrorKind {
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>The specified repository does not exist.</p>
@@ -21334,8 +20792,6 @@ impl UpdateRepositoryNameError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21589,12 +21045,8 @@ impl RepositoryDoesNotExistException {
     }
 }
 
-/// <p>A specified repository name is not valid.</p>
-///
-/// <note>
-/// <p>This exception occurs only when a specified repository name is not valid. Other
-/// exceptions occur when a required repository parameter is missing, or when a
-/// specified repository does not exist.</p>
+/// <p>A specified repository name is not valid.</p> <note>
+/// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -22619,8 +22071,7 @@ impl InvalidPullRequestStatusException {
     }
 }
 
-/// <p>The pull request description is not valid. Descriptions cannot be more than 1,000
-/// characters.</p>
+/// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDescriptionException {
@@ -22812,8 +22263,7 @@ impl RevisionIdRequiredException {
     }
 }
 
-/// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull
-/// request that you created.</p>
+/// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PullRequestCannotBeApprovedByAuthorException {
@@ -23325,8 +22775,7 @@ impl InvalidApprovalRuleContentException {
     }
 }
 
-/// <p>The approval rule cannot be modified for the pull request because it was created by an
-/// approval rule template and applied to the pull request automatically.</p>
+/// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotModifyApprovalRuleFromTemplateException {
@@ -23966,8 +23415,7 @@ impl CommentIdRequiredException {
     }
 }
 
-/// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-/// then try again.</p>
+/// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommentDoesNotExistException {
@@ -24223,10 +23671,7 @@ impl CommentContentRequiredException {
     }
 }
 
-/// <p>The name of the approval rule template is not valid. Template names must be between 1
-/// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-/// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-/// CodeCommit User Guide</a>.</p>
+/// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleTemplateNameException {
@@ -24354,9 +23799,7 @@ impl ApprovalRuleTemplateNameRequiredException {
     }
 }
 
-/// <p>You cannot create an approval rule template with that name because a template with
-/// that name already exists in this AWS Region for your AWS account. Approval rule template
-/// names must be unique.</p>
+/// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateNameAlreadyExistsException {
@@ -24421,8 +23864,7 @@ impl ApprovalRuleTemplateNameAlreadyExistsException {
     }
 }
 
-/// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-/// was created, and then try again.</p>
+/// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateDoesNotExistException {
@@ -24486,10 +23928,7 @@ impl ApprovalRuleTemplateDoesNotExistException {
     }
 }
 
-/// <p>The description for the approval rule template is not valid because it exceeds the
-/// maximum characters allowed for a description. For more information about limits in AWS
-/// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User
-/// Guide</a>.</p>
+/// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidApprovalRuleTemplateDescriptionException {
@@ -24874,9 +24313,7 @@ impl TagKeysListRequiredException {
     }
 }
 
-/// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see
-/// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-/// in the AWS CodeCommit User Guide.</p>
+/// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnRequiredException {
@@ -25068,9 +24505,7 @@ impl InvalidSystemTagUsageException {
     }
 }
 
-/// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-/// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-/// in the AWS CodeCommit User Guide.</p>
+/// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceArnException {
@@ -25326,8 +24761,7 @@ impl RepositoryTriggerEventsListRequiredException {
     }
 }
 
-/// <p>A destination ARN for the target service for the trigger is required, but was not
-/// specified.</p>
+/// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerDestinationArnRequiredException {
@@ -25392,8 +24826,7 @@ impl RepositoryTriggerDestinationArnRequiredException {
     }
 }
 
-/// <p>At least one branch name is required, but was not specified in the trigger
-/// configuration.</p>
+/// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryTriggerBranchNameListRequiredException {
@@ -25586,9 +25019,7 @@ impl MaximumBranchesExceededException {
     }
 }
 
-/// <p>The AWS Region for the trigger target does not match the AWS Region for the
-/// repository. Triggers must be created in the same Region as the target for the
-/// trigger.</p>
+/// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRepositoryTriggerRegionException {
@@ -26101,8 +25532,7 @@ impl InvalidTagsMapException {
     }
 }
 
-/// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch
-/// that you specified.</p>
+/// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SameFileContentException {
@@ -26230,8 +25660,7 @@ impl PathRequiredException {
     }
 }
 
-/// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <a>GetBranch</a> or a Git command
-/// (for example, git pull or git log).</p>
+/// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentCommitIdRequiredException {
@@ -26295,8 +25724,7 @@ impl ParentCommitIdRequiredException {
     }
 }
 
-/// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head
-/// of the branch, use <a>GetBranch</a>.</p>
+/// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParentCommitIdOutdatedException {
@@ -26552,8 +25980,7 @@ impl InvalidPathException {
     }
 }
 
-/// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you
-/// want to add or update a file.</p>
+/// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParentCommitIdException {
@@ -26617,7 +26044,7 @@ impl InvalidParentCommitIdException {
     }
 }
 
-/// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+/// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileModeException {
@@ -26681,8 +26108,7 @@ impl InvalidFileModeException {
     }
 }
 
-/// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-/// allowed for an email address.</p>
+/// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEmailException {
@@ -26810,9 +26236,7 @@ impl InvalidDeletionParameterException {
     }
 }
 
-/// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-/// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-/// or split the changes across multiple folders.</p>
+/// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderContentSizeLimitExceededException {
@@ -26876,8 +26300,7 @@ impl FolderContentSizeLimitExceededException {
     }
 }
 
-/// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files
-/// have valid file paths that do not point to a submodule.</p>
+/// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilePathConflictsWithSubmodulePathException {
@@ -26941,8 +26364,7 @@ impl FilePathConflictsWithSubmodulePathException {
     }
 }
 
-/// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide
-/// another name for the file, or add the file in a directory that does not match the file name.</p>
+/// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileNameConflictsWithDirectoryNameException {
@@ -27006,9 +26428,7 @@ impl FileNameConflictsWithDirectoryNameException {
     }
 }
 
-/// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-/// the combined file content change size is 7 MB. Consider making these changes using a Git
-/// client.</p>
+/// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileContentSizeLimitExceededException {
@@ -27136,8 +26556,7 @@ impl FileContentRequiredException {
     }
 }
 
-/// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository.
-/// Either provide a different name for the file, or specify a different path for the file.</p>
+/// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNameConflictsWithFileNameException {
@@ -27265,8 +26684,7 @@ impl CommitMessageLengthExceededException {
     }
 }
 
-/// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-/// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+/// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchNameIsTagNameException {
@@ -27586,8 +27004,7 @@ impl InvalidClientRequestTokenException {
     }
 }
 
-/// <p>The client request token is not valid. Either the token is not in a valid format, or
-/// the token has been used in a previous request and cannot be reused.</p>
+/// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotencyParameterMismatchException {
@@ -27651,11 +27068,7 @@ impl IdempotencyParameterMismatchException {
     }
 }
 
-/// <p>A client request token is required. A client request token is an unique,
-/// client-generated idempotency token that, when provided in a request, ensures the request
-/// cannot be repeated with a changed parameter. If a request is received with the same
-/// parameters and a token is included, the request returns information about the initial
-/// request that used that token.</p>
+/// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientRequestTokenRequiredException {
@@ -27976,8 +27389,7 @@ impl InvalidFilePositionException {
     }
 }
 
-/// <p>The location of the file is not valid. Make sure that you include the file name and
-/// extension.</p>
+/// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFileLocationException {
@@ -28490,8 +27902,7 @@ impl InvalidOverrideStatusException {
     }
 }
 
-/// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-/// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+/// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TipsDivergenceExceededException {
@@ -28555,8 +27966,7 @@ impl TipsDivergenceExceededException {
     }
 }
 
-/// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request.
-/// The pull request might have been updated. Make sure that you have the latest changes.</p>
+/// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TipOfSourceReferenceIsDifferentException {
@@ -29709,8 +29119,7 @@ impl InvalidCommitException {
     }
 }
 
-/// <p>The commit cannot be created because no file mode has been specified. A file mode is
-/// required to update mode permissions for a file.</p>
+/// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileModeRequiredException {
@@ -30542,8 +29951,7 @@ impl InvalidDestinationCommitSpecifierException {
     }
 }
 
-/// <p>The specified folder does not exist. Either the folder name is not correct, or you did
-/// not enter the full path to the folder.</p>
+/// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FolderDoesNotExistException {
@@ -30607,8 +30015,7 @@ impl FolderDoesNotExistException {
     }
 }
 
-/// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see
-/// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+/// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileTooLargeException {
@@ -30672,8 +30079,7 @@ impl FileTooLargeException {
     }
 }
 
-/// <p>The specified file does not exist. Verify that you have used the correct file name,
-/// full path, and extension.</p>
+/// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileDoesNotExistException {
@@ -31121,8 +30527,7 @@ impl InvalidPullRequestEventTypeException {
     }
 }
 
-/// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request,
-/// and then try again.</p>
+/// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActorArnException {
@@ -31314,8 +30719,7 @@ impl InvalidMaxMergeHunksException {
     }
 }
 
-/// <p>The approval rule cannot be deleted from the pull request because it was created by an
-/// approval rule template and applied to the pull request automatically.</p>
+/// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotDeleteApprovalRuleFromTemplateException {
@@ -31443,8 +30847,7 @@ impl DefaultBranchCannotBeDeletedException {
     }
 }
 
-/// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove
-/// all associations, and then try again.</p>
+/// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleTemplateInUseException {
@@ -31636,8 +31039,7 @@ impl NumberOfRulesExceededException {
     }
 }
 
-/// <p>An approval rule with that name already exists. Approval rule names must be unique
-/// within the scope of a pull request.</p>
+/// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApprovalRuleNameAlreadyExistsException {
@@ -31829,8 +31231,7 @@ impl TargetRequiredException {
     }
 }
 
-/// <p>The source branch and destination branch for the pull request are the same. You must
-/// specify different branches for the source and destination.</p>
+/// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceAndDestinationAreSameException {
@@ -32086,8 +31487,7 @@ impl MultipleRepositoriesInPullRequestException {
     }
 }
 
-/// <p>You cannot create the pull request because the repository has too many open pull requests.
-/// The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
+/// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumOpenPullRequestsExceededException {
@@ -32151,8 +31551,7 @@ impl MaximumOpenPullRequestsExceededException {
     }
 }
 
-/// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for
-/// the repository name, source branch, and destination branch for a pull request.</p>
+/// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetsException {
@@ -32280,9 +31679,7 @@ impl InvalidTargetException {
     }
 }
 
-/// <p>The specified reference name format is not valid. Reference names must conform to the
-/// Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals -
-/// Git References</a> or consult your Git documentation.</p>
+/// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidReferenceNameException {
@@ -32410,9 +31807,7 @@ impl SourceFileOrContentRequiredException {
     }
 }
 
-/// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example,
-/// you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same
-/// file as part of the same commit.</p>
+/// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamePathRequestException {
@@ -32668,8 +32063,7 @@ impl NoChangeException {
     }
 }
 
-/// <p>The number of specified files to change as part of this commit exceeds the maximum number of files
-/// that can be changed in a single commit. Consider using a Git client for these changes.</p>
+/// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumFileEntriesExceededException {
@@ -32797,9 +32191,7 @@ impl FileEntryRequiredException {
     }
 }
 
-/// <p>The commit cannot be created because both a source file and file content have been
-/// specified for the same file. You cannot provide both. Either specify a source file or
-/// provide the file content directly.</p>
+/// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileContentAndSourceFileSpecifiedException {
@@ -32863,8 +32255,7 @@ impl FileContentAndSourceFileSpecifiedException {
     }
 }
 
-/// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name.
-/// Branch names must be unique.</p>
+/// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BranchNameExistsException {
@@ -33248,8 +32639,7 @@ impl CommitIdsLimitExceededException {
     }
 }
 
-/// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25
-/// approval rule templates with a repository.</p>
+/// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaximumRuleTemplatesAssociatedWithRepositoryException {

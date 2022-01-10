@@ -8,14 +8,17 @@ pub mod create_cluster_input {
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30,6 +33,31 @@ pub mod create_cluster_input {
             self.cluster_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the cluster.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the cluster.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput)
         pub fn build(
             self,
@@ -40,6 +68,7 @@ pub mod create_cluster_input {
             Ok(crate::input::CreateClusterInput {
                 client_token: self.client_token,
                 cluster_name: self.cluster_name,
+                tags: self.tags,
             })
         }
     }
@@ -47,7 +76,7 @@ pub mod create_cluster_input {
 #[doc(hidden)]
 pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
 #[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
@@ -58,7 +87,7 @@ impl CreateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -140,7 +169,7 @@ impl CreateClusterInput {
             "CreateCluster",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -172,14 +201,17 @@ pub mod create_control_panel_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) control_panel_name: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -207,6 +239,31 @@ pub mod create_control_panel_input {
             self.control_panel_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the control panel.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the control panel.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateControlPanelInput`](crate::input::CreateControlPanelInput)
         pub fn build(
             self,
@@ -218,6 +275,7 @@ pub mod create_control_panel_input {
                 client_token: self.client_token,
                 cluster_arn: self.cluster_arn,
                 control_panel_name: self.control_panel_name,
+                tags: self.tags,
             })
         }
     }
@@ -225,7 +283,7 @@ pub mod create_control_panel_input {
 #[doc(hidden)]
 pub type CreateControlPanelInputOperationOutputAlias = crate::operation::CreateControlPanel;
 #[doc(hidden)]
-pub type CreateControlPanelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`CreateControlPanel`](crate::operation::CreateControlPanel)>
     #[allow(clippy::let_and_return)]
@@ -236,7 +294,7 @@ impl CreateControlPanelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateControlPanel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -319,7 +377,7 @@ impl CreateControlPanelInput {
             "CreateControlPanel",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -354,12 +412,12 @@ pub mod create_routing_control_input {
         pub(crate) routing_control_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -419,7 +477,7 @@ pub mod create_routing_control_input {
 #[doc(hidden)]
 pub type CreateRoutingControlInputOperationOutputAlias = crate::operation::CreateRoutingControl;
 #[doc(hidden)]
-pub type CreateRoutingControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoutingControl`](crate::operation::CreateRoutingControl)>
     #[allow(clippy::let_and_return)]
@@ -430,7 +488,7 @@ impl CreateRoutingControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoutingControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -515,7 +573,7 @@ impl CreateRoutingControlInput {
             "CreateRoutingControl",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -547,14 +605,17 @@ pub mod create_safety_rule_input {
         pub(crate) assertion_rule: std::option::Option<crate::model::NewAssertionRule>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) gating_rule: std::option::Option<crate::model::NewGatingRule>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
-        /// <p>A new assertion rule for a control panel.</p>
+        /// <p>The assertion rule requested.</p>
         pub fn assertion_rule(mut self, input: crate::model::NewAssertionRule) -> Self {
             self.assertion_rule = Some(input);
             self
         }
-        /// <p>A new assertion rule for a control panel.</p>
+        /// <p>The assertion rule requested.</p>
         pub fn set_assertion_rule(
             mut self,
             input: std::option::Option<crate::model::NewAssertionRule>,
@@ -562,27 +623,52 @@ pub mod create_safety_rule_input {
             self.assertion_rule = input;
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>A new gating rule for a control panel.</p>
+        /// <p>The gating rule requested.</p>
         pub fn gating_rule(mut self, input: crate::model::NewGatingRule) -> Self {
             self.gating_rule = Some(input);
             self
         }
-        /// <p>A new gating rule for a control panel.</p>
+        /// <p>The gating rule requested.</p>
         pub fn set_gating_rule(
             mut self,
             input: std::option::Option<crate::model::NewGatingRule>,
         ) -> Self {
             self.gating_rule = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the safety rule.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the safety rule.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSafetyRuleInput`](crate::input::CreateSafetyRuleInput)
@@ -596,6 +682,7 @@ pub mod create_safety_rule_input {
                 assertion_rule: self.assertion_rule,
                 client_token: self.client_token,
                 gating_rule: self.gating_rule,
+                tags: self.tags,
             })
         }
     }
@@ -603,7 +690,7 @@ pub mod create_safety_rule_input {
 #[doc(hidden)]
 pub type CreateSafetyRuleInputOperationOutputAlias = crate::operation::CreateSafetyRule;
 #[doc(hidden)]
-pub type CreateSafetyRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSafetyRule`](crate::operation::CreateSafetyRule)>
     #[allow(clippy::let_and_return)]
@@ -614,7 +701,7 @@ impl CreateSafetyRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSafetyRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -697,7 +784,7 @@ impl CreateSafetyRuleInput {
             "CreateSafetyRule",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -755,7 +842,7 @@ pub mod delete_cluster_input {
 #[doc(hidden)]
 pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
 #[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(clippy::let_and_return)]
@@ -766,7 +853,7 @@ impl DeleteClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -856,7 +943,7 @@ impl DeleteClusterInput {
             "DeleteCluster",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -880,12 +967,12 @@ pub mod delete_control_panel_input {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_panel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -909,7 +996,7 @@ pub mod delete_control_panel_input {
 #[doc(hidden)]
 pub type DeleteControlPanelInputOperationOutputAlias = crate::operation::DeleteControlPanel;
 #[doc(hidden)]
-pub type DeleteControlPanelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteControlPanel`](crate::operation::DeleteControlPanel)>
     #[allow(clippy::let_and_return)]
@@ -920,7 +1007,7 @@ impl DeleteControlPanelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteControlPanel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1014,7 +1101,7 @@ impl DeleteControlPanelInput {
             "DeleteControlPanel",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1067,7 +1154,7 @@ pub mod delete_routing_control_input {
 #[doc(hidden)]
 pub type DeleteRoutingControlInputOperationOutputAlias = crate::operation::DeleteRoutingControl;
 #[doc(hidden)]
-pub type DeleteRoutingControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoutingControl`](crate::operation::DeleteRoutingControl)>
     #[allow(clippy::let_and_return)]
@@ -1078,7 +1165,7 @@ impl DeleteRoutingControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoutingControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1172,7 +1259,7 @@ impl DeleteRoutingControlInput {
             "DeleteRoutingControl",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1196,12 +1283,12 @@ pub mod delete_safety_rule_input {
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.safety_rule_arn = Some(input.into());
             self
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1225,7 +1312,7 @@ pub mod delete_safety_rule_input {
 #[doc(hidden)]
 pub type DeleteSafetyRuleInputOperationOutputAlias = crate::operation::DeleteSafetyRule;
 #[doc(hidden)]
-pub type DeleteSafetyRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSafetyRule`](crate::operation::DeleteSafetyRule)>
     #[allow(clippy::let_and_return)]
@@ -1236,7 +1323,7 @@ impl DeleteSafetyRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSafetyRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1330,7 +1417,7 @@ impl DeleteSafetyRuleInput {
             "DeleteSafetyRule",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1354,12 +1441,12 @@ pub mod describe_cluster_input {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -1380,7 +1467,7 @@ pub mod describe_cluster_input {
 #[doc(hidden)]
 pub type DescribeClusterInputOperationOutputAlias = crate::operation::DescribeCluster;
 #[doc(hidden)]
-pub type DescribeClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(clippy::let_and_return)]
@@ -1391,7 +1478,7 @@ impl DescribeClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1481,7 +1568,7 @@ impl DescribeClusterInput {
             "DescribeCluster",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1505,12 +1592,12 @@ pub mod describe_control_panel_input {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_panel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1534,7 +1621,7 @@ pub mod describe_control_panel_input {
 #[doc(hidden)]
 pub type DescribeControlPanelInputOperationOutputAlias = crate::operation::DescribeControlPanel;
 #[doc(hidden)]
-pub type DescribeControlPanelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeControlPanel`](crate::operation::DescribeControlPanel)>
     #[allow(clippy::let_and_return)]
@@ -1545,7 +1632,7 @@ impl DescribeControlPanelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeControlPanel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1639,7 +1726,7 @@ impl DescribeControlPanelInput {
             "DescribeControlPanel",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1663,12 +1750,12 @@ pub mod describe_routing_control_input {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1692,7 +1779,7 @@ pub mod describe_routing_control_input {
 #[doc(hidden)]
 pub type DescribeRoutingControlInputOperationOutputAlias = crate::operation::DescribeRoutingControl;
 #[doc(hidden)]
-pub type DescribeRoutingControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRoutingControl`](crate::operation::DescribeRoutingControl)>
     #[allow(clippy::let_and_return)]
@@ -1703,7 +1790,7 @@ impl DescribeRoutingControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRoutingControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1797,7 +1884,7 @@ impl DescribeRoutingControlInput {
             "DescribeRoutingControl",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1821,12 +1908,12 @@ pub mod describe_safety_rule_input {
         pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.safety_rule_arn = Some(input.into());
             self
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1850,7 +1937,7 @@ pub mod describe_safety_rule_input {
 #[doc(hidden)]
 pub type DescribeSafetyRuleInputOperationOutputAlias = crate::operation::DescribeSafetyRule;
 #[doc(hidden)]
-pub type DescribeSafetyRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSafetyRule`](crate::operation::DescribeSafetyRule)>
     #[allow(clippy::let_and_return)]
@@ -1861,7 +1948,7 @@ impl DescribeSafetyRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSafetyRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1955,7 +2042,7 @@ impl DescribeSafetyRuleInput {
             "DescribeSafetyRule",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2001,12 +2088,12 @@ pub mod list_associated_route53_health_checks_input {
             self.next_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2033,7 +2120,8 @@ pub mod list_associated_route53_health_checks_input {
 pub type ListAssociatedRoute53HealthChecksInputOperationOutputAlias =
     crate::operation::ListAssociatedRoute53HealthChecks;
 #[doc(hidden)]
-pub type ListAssociatedRoute53HealthChecksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedRoute53HealthChecksInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedRoute53HealthChecksInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedRoute53HealthChecks`](crate::operation::ListAssociatedRoute53HealthChecks)>
     #[allow(clippy::let_and_return)]
@@ -2044,7 +2132,7 @@ impl ListAssociatedRoute53HealthChecksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedRoute53HealthChecks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2155,7 +2243,7 @@ impl ListAssociatedRoute53HealthChecksInput {
             "ListAssociatedRoute53HealthChecks",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2217,7 +2305,7 @@ pub mod list_clusters_input {
 #[doc(hidden)]
 pub type ListClustersInputOperationOutputAlias = crate::operation::ListClusters;
 #[doc(hidden)]
-pub type ListClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(clippy::let_and_return)]
@@ -2228,7 +2316,7 @@ impl ListClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2319,7 +2407,7 @@ impl ListClustersInput {
             "ListClusters",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2393,7 +2481,7 @@ pub mod list_control_panels_input {
 #[doc(hidden)]
 pub type ListControlPanelsInputOperationOutputAlias = crate::operation::ListControlPanels;
 #[doc(hidden)]
-pub type ListControlPanelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListControlPanelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListControlPanelsInput {
     /// Consumes the builder and constructs an Operation<[`ListControlPanels`](crate::operation::ListControlPanels)>
     #[allow(clippy::let_and_return)]
@@ -2404,7 +2492,7 @@ impl ListControlPanelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListControlPanels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2498,7 +2586,7 @@ impl ListControlPanelsInput {
             "ListControlPanels",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2524,12 +2612,12 @@ pub mod list_routing_controls_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_panel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2575,7 +2663,7 @@ pub mod list_routing_controls_input {
 #[doc(hidden)]
 pub type ListRoutingControlsInputOperationOutputAlias = crate::operation::ListRoutingControls;
 #[doc(hidden)]
-pub type ListRoutingControlsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRoutingControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoutingControlsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutingControls`](crate::operation::ListRoutingControls)>
     #[allow(clippy::let_and_return)]
@@ -2586,7 +2674,7 @@ impl ListRoutingControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoutingControls,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2697,7 +2785,7 @@ impl ListRoutingControlsInput {
             "ListRoutingControls",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2723,12 +2811,12 @@ pub mod list_safety_rules_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_panel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2774,7 +2862,7 @@ pub mod list_safety_rules_input {
 #[doc(hidden)]
 pub type ListSafetyRulesInputOperationOutputAlias = crate::operation::ListSafetyRules;
 #[doc(hidden)]
-pub type ListSafetyRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSafetyRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSafetyRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSafetyRules`](crate::operation::ListSafetyRules)>
     #[allow(clippy::let_and_return)]
@@ -2785,7 +2873,7 @@ impl ListSafetyRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSafetyRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2896,7 +2984,7 @@ impl ListSafetyRulesInput {
             "ListSafetyRules",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2908,6 +2996,535 @@ impl ListSafetyRulesInput {
     /// Creates a new builder-style object to manufacture [`ListSafetyRulesInput`](crate::input::ListSafetyRulesInput)
     pub fn builder() -> crate::input::list_safety_rules_input::Builder {
         crate::input::list_safety_rules_input::Builder::default()
+    }
+}
+
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+pub mod list_tags_for_resource_input {
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_18 = &_input.resource_arn;
+            let input_18 =
+                input_18
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+            if resource_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "route53recoverycontrolconfig",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
+/// See [`TagResourceInput`](crate::input::TagResourceInput)
+pub mod tag_resource_input {
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_19 = &_input.resource_arn;
+            let input_19 =
+                input_19
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
+            if resource_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "route53recoverycontrolconfig",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput)
+pub mod untag_resource_input {
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Keys for the tags to be removed.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        /// <p>Keys for the tags to be removed.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_20 = &_input.resource_arn;
+            let input_20 =
+                input_20
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
+            if resource_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::UntagResourceInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_21) = &_input.tag_keys {
+                for inner_22 in inner_21 {
+                    query.push_kv("TagKeys", &aws_smithy_http::query::fmt_string(&inner_22));
+                }
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "route53recoverycontrolconfig",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
     }
 }
 
@@ -2964,7 +3581,7 @@ pub mod update_control_panel_input {
 #[doc(hidden)]
 pub type UpdateControlPanelInputOperationOutputAlias = crate::operation::UpdateControlPanel;
 #[doc(hidden)]
-pub type UpdateControlPanelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateControlPanelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateControlPanelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateControlPanel`](crate::operation::UpdateControlPanel)>
     #[allow(clippy::let_and_return)]
@@ -2975,7 +3592,7 @@ impl UpdateControlPanelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateControlPanel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3055,7 +3672,7 @@ impl UpdateControlPanelInput {
             "UpdateControlPanel",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3131,7 +3748,7 @@ pub mod update_routing_control_input {
 #[doc(hidden)]
 pub type UpdateRoutingControlInputOperationOutputAlias = crate::operation::UpdateRoutingControl;
 #[doc(hidden)]
-pub type UpdateRoutingControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRoutingControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoutingControlInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControl`](crate::operation::UpdateRoutingControl)>
     #[allow(clippy::let_and_return)]
@@ -3142,7 +3759,7 @@ impl UpdateRoutingControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoutingControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3224,7 +3841,7 @@ impl UpdateRoutingControlInput {
             "UpdateRoutingControl",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3257,12 +3874,12 @@ pub mod update_safety_rule_input {
         pub(crate) gating_rule_update: std::option::Option<crate::model::GatingRuleUpdate>,
     }
     impl Builder {
-        /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The assertion rule to update.</p>
         pub fn assertion_rule_update(mut self, input: crate::model::AssertionRuleUpdate) -> Self {
             self.assertion_rule_update = Some(input);
             self
         }
-        /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The assertion rule to update.</p>
         pub fn set_assertion_rule_update(
             mut self,
             input: std::option::Option<crate::model::AssertionRuleUpdate>,
@@ -3270,12 +3887,12 @@ pub mod update_safety_rule_input {
             self.assertion_rule_update = input;
             self
         }
-        /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The gating rule to update.</p>
         pub fn gating_rule_update(mut self, input: crate::model::GatingRuleUpdate) -> Self {
             self.gating_rule_update = Some(input);
             self
         }
-        /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The gating rule to update.</p>
         pub fn set_gating_rule_update(
             mut self,
             input: std::option::Option<crate::model::GatingRuleUpdate>,
@@ -3300,7 +3917,7 @@ pub mod update_safety_rule_input {
 #[doc(hidden)]
 pub type UpdateSafetyRuleInputOperationOutputAlias = crate::operation::UpdateSafetyRule;
 #[doc(hidden)]
-pub type UpdateSafetyRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSafetyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSafetyRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSafetyRule`](crate::operation::UpdateSafetyRule)>
     #[allow(clippy::let_and_return)]
@@ -3311,7 +3928,7 @@ impl UpdateSafetyRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSafetyRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3391,7 +4008,7 @@ impl UpdateSafetyRuleInput {
             "UpdateSafetyRule",
             "route53recoverycontrolconfig",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3414,21 +4031,21 @@ impl UpdateSafetyRuleInput {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>A rule that you add to Application Recovery Controller to ensure that recovery actions don't accidentally impair your application's availability.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSafetyRuleInput {
-    /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    /// <p>The assertion rule to update.</p>
     pub assertion_rule_update: std::option::Option<crate::model::AssertionRuleUpdate>,
-    /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    /// <p>The gating rule to update.</p>
     pub gating_rule_update: std::option::Option<crate::model::GatingRuleUpdate>,
 }
 impl UpdateSafetyRuleInput {
-    /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    /// <p>The assertion rule to update.</p>
     pub fn assertion_rule_update(&self) -> std::option::Option<&crate::model::AssertionRuleUpdate> {
         self.assertion_rule_update.as_ref()
     }
-    /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+    /// <p>The gating rule to update.</p>
     pub fn gating_rule_update(&self) -> std::option::Option<&crate::model::GatingRuleUpdate> {
         self.gating_rule_update.as_ref()
     }
@@ -3501,8 +4118,89 @@ impl std::fmt::Debug for UpdateControlPanelInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Keys for the tags to be removed.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Keys for the tags to be removed.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+/// <p>Request of adding tag to the resource</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl TagResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSafetyRulesInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
@@ -3510,7 +4208,7 @@ pub struct ListSafetyRulesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSafetyRulesInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
@@ -3537,7 +4235,7 @@ impl std::fmt::Debug for ListSafetyRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutingControlsInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
@@ -3545,7 +4243,7 @@ pub struct ListRoutingControlsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutingControlsInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
@@ -3639,7 +4337,7 @@ pub struct ListAssociatedRoute53HealthChecksInput {
     pub max_results: i32,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl ListAssociatedRoute53HealthChecksInput {
@@ -3651,7 +4349,7 @@ impl ListAssociatedRoute53HealthChecksInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
@@ -3670,11 +4368,11 @@ impl std::fmt::Debug for ListAssociatedRoute53HealthChecksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSafetyRuleInput {
-    /// <p>The request body that you include when you update a safety rule.</p>
+    /// <p>The ARN of the safety rule.</p>
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSafetyRuleInput {
-    /// <p>The request body that you include when you update a safety rule.</p>
+    /// <p>The ARN of the safety rule.</p>
     pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
         self.safety_rule_arn.as_deref()
     }
@@ -3691,11 +4389,11 @@ impl std::fmt::Debug for DescribeSafetyRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRoutingControlInput {
-    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRoutingControlInput {
-    /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn routing_control_arn(&self) -> std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
@@ -3712,11 +4410,11 @@ impl std::fmt::Debug for DescribeRoutingControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeControlPanelInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
 impl DescribeControlPanelInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
@@ -3733,11 +4431,11 @@ impl std::fmt::Debug for DescribeControlPanelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterInput {
-    /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterInput {
-    /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
@@ -3754,11 +4452,11 @@ impl std::fmt::Debug for DescribeClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSafetyRuleInput {
-    /// <p>The request body that you include when you update a safety rule.</p>
+    /// <p>The ARN of the safety rule.</p>
     pub safety_rule_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSafetyRuleInput {
-    /// <p>The request body that you include when you update a safety rule.</p>
+    /// <p>The ARN of the safety rule.</p>
     pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
         self.safety_rule_arn.as_deref()
     }
@@ -3796,11 +4494,11 @@ impl std::fmt::Debug for DeleteRoutingControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteControlPanelInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
 impl DeleteControlPanelInput {
-    /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(&self) -> std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
@@ -3838,25 +4536,35 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSafetyRuleInput {
-    /// <p>A new assertion rule for a control panel.</p>
+    /// <p>The assertion rule requested.</p>
     pub assertion_rule: std::option::Option<crate::model::NewAssertionRule>,
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A new gating rule for a control panel.</p>
+    /// <p>The gating rule requested.</p>
     pub gating_rule: std::option::Option<crate::model::NewGatingRule>,
+    /// <p>The tags associated with the safety rule.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSafetyRuleInput {
-    /// <p>A new assertion rule for a control panel.</p>
+    /// <p>The assertion rule requested.</p>
     pub fn assertion_rule(&self) -> std::option::Option<&crate::model::NewAssertionRule> {
         self.assertion_rule.as_ref()
     }
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A new gating rule for a control panel.</p>
+    /// <p>The gating rule requested.</p>
     pub fn gating_rule(&self) -> std::option::Option<&crate::model::NewGatingRule> {
         self.gating_rule.as_ref()
+    }
+    /// <p>The tags associated with the safety rule.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }
 impl std::fmt::Debug for CreateSafetyRuleInput {
@@ -3865,6 +4573,7 @@ impl std::fmt::Debug for CreateSafetyRuleInput {
         formatter.field("assertion_rule", &self.assertion_rule);
         formatter.field("client_token", &self.client_token);
         formatter.field("gating_rule", &self.gating_rule);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -3873,7 +4582,7 @@ impl std::fmt::Debug for CreateSafetyRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoutingControlInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -3883,7 +4592,7 @@ pub struct CreateRoutingControlInput {
     pub routing_control_name: std::option::Option<std::string::String>,
 }
 impl CreateRoutingControlInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3915,15 +4624,18 @@ impl std::fmt::Debug for CreateRoutingControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateControlPanelInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The name of the control panel.</p>
     pub control_panel_name: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the control panel.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateControlPanelInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3935,6 +4647,13 @@ impl CreateControlPanelInput {
     pub fn control_panel_name(&self) -> std::option::Option<&str> {
         self.control_panel_name.as_deref()
     }
+    /// <p>The tags associated with the control panel.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateControlPanelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3942,6 +4661,7 @@ impl std::fmt::Debug for CreateControlPanelInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("cluster_arn", &self.cluster_arn);
         formatter.field("control_panel_name", &self.control_panel_name);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -3950,13 +4670,16 @@ impl std::fmt::Debug for CreateControlPanelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
+    /// <p>The tags associated with the cluster.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateClusterInput {
-    /// <p>Unique client idempotency token.</p>
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -3964,12 +4687,20 @@ impl CreateClusterInput {
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
+    /// <p>The tags associated with the cluster.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
         formatter.field("client_token", &self.client_token);
         formatter.field("cluster_name", &self.cluster_name);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

@@ -47,7 +47,7 @@ pub mod delete_thing_shadow_input {
 #[doc(hidden)]
 pub type DeleteThingShadowInputOperationOutputAlias = crate::operation::DeleteThingShadow;
 #[doc(hidden)]
-pub type DeleteThingShadowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThingShadow`](crate::operation::DeleteThingShadow)>
     #[allow(clippy::let_and_return)]
@@ -58,7 +58,7 @@ impl DeleteThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThingShadow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -159,7 +159,7 @@ impl DeleteThingShadowInput {
             "DeleteThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -207,7 +207,7 @@ pub mod get_retained_message_input {
 #[doc(hidden)]
 pub type GetRetainedMessageInputOperationOutputAlias = crate::operation::GetRetainedMessage;
 #[doc(hidden)]
-pub type GetRetainedMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRetainedMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRetainedMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetRetainedMessage`](crate::operation::GetRetainedMessage)>
     #[allow(clippy::let_and_return)]
@@ -218,7 +218,7 @@ impl GetRetainedMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRetainedMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -308,7 +308,7 @@ impl GetRetainedMessageInput {
             "GetRetainedMessage",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -370,7 +370,7 @@ pub mod get_thing_shadow_input {
 #[doc(hidden)]
 pub type GetThingShadowInputOperationOutputAlias = crate::operation::GetThingShadow;
 #[doc(hidden)]
-pub type GetThingShadowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`GetThingShadow`](crate::operation::GetThingShadow)>
     #[allow(clippy::let_and_return)]
@@ -381,7 +381,7 @@ impl GetThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetThingShadow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -482,7 +482,7 @@ impl GetThingShadowInput {
             "GetThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -557,7 +557,7 @@ pub mod list_named_shadows_for_thing_input {
 pub type ListNamedShadowsForThingInputOperationOutputAlias =
     crate::operation::ListNamedShadowsForThing;
 #[doc(hidden)]
-pub type ListNamedShadowsForThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNamedShadowsForThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamedShadowsForThingInput {
     /// Consumes the builder and constructs an Operation<[`ListNamedShadowsForThing`](crate::operation::ListNamedShadowsForThing)>
     #[allow(clippy::let_and_return)]
@@ -568,7 +568,7 @@ impl ListNamedShadowsForThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNamedShadowsForThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -679,7 +679,7 @@ impl ListNamedShadowsForThingInput {
             "ListNamedShadowsForThing",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -704,16 +704,12 @@ pub mod list_retained_messages_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -745,7 +741,7 @@ pub mod list_retained_messages_input {
 #[doc(hidden)]
 pub type ListRetainedMessagesInputOperationOutputAlias = crate::operation::ListRetainedMessages;
 #[doc(hidden)]
-pub type ListRetainedMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRetainedMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRetainedMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListRetainedMessages`](crate::operation::ListRetainedMessages)>
     #[allow(clippy::let_and_return)]
@@ -756,7 +752,7 @@ impl ListRetainedMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRetainedMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -847,7 +843,7 @@ impl ListRetainedMessagesInput {
             "ListRetainedMessages",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -896,34 +892,28 @@ pub mod publish_input {
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn retain(mut self, input: bool) -> Self {
             self.retain = Some(input);
             self
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
             self.retain = input;
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
@@ -945,7 +935,7 @@ pub mod publish_input {
 #[doc(hidden)]
 pub type PublishInputOperationOutputAlias = crate::operation::Publish;
 #[doc(hidden)]
-pub type PublishInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishInput {
     /// Consumes the builder and constructs an Operation<[`Publish`](crate::operation::Publish)>
     #[allow(clippy::let_and_return)]
@@ -956,7 +946,7 @@ impl PublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Publish,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1068,7 +1058,7 @@ impl PublishInput {
                     "Publish",
                     "iotdataplane",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1150,7 +1140,7 @@ pub mod update_thing_shadow_input {
 #[doc(hidden)]
 pub type UpdateThingShadowInputOperationOutputAlias = crate::operation::UpdateThingShadow;
 #[doc(hidden)]
-pub type UpdateThingShadowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateThingShadowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingShadowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingShadow`](crate::operation::UpdateThingShadow)>
     #[allow(clippy::let_and_return)]
@@ -1161,7 +1151,7 @@ impl UpdateThingShadowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThingShadow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1267,7 +1257,7 @@ impl UpdateThingShadowInput {
             "UpdateThingShadow",
             "iotdataplane",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1335,14 +1325,11 @@ pub struct PublishInput {
     pub qos: i32,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code>
-    /// </p>
-    /// <p>Default value: <code>false</code>
-    /// </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub retain: bool,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> =
-    /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PublishInput {
@@ -1356,16 +1343,13 @@ impl PublishInput {
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code>
-    /// </p>
-    /// <p>Default value: <code>false</code>
-    /// </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn retain(&self) -> bool {
         self.retain
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> =
-    /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
@@ -1385,17 +1369,13 @@ impl std::fmt::Debug for PublishInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetainedMessagesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: i32,
 }
 impl ListRetainedMessagesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

@@ -11,23 +11,19 @@ pub enum Error {
     ExpiredTokenException(crate::error::ExpiredTokenException),
     /// <p>Indicates that an error from the service occurred while trying to process a request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request is
-    /// invalid. For example, this can occur when a client sends an incorrect <code>clientId</code> or
-    /// an expired <code>clientSecret</code>.</p>
+    /// <p>Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code> or an expired <code>clientSecret</code>.</p>
     InvalidClientException(crate::error::InvalidClientException),
     /// <p>Indicates that the client information sent in the request during registration is invalid.</p>
     InvalidClientMetadataException(crate::error::InvalidClientMetadataException),
-    /// <p>Indicates that a request contains an invalid grant. This can occur if a client makes a <a>CreateToken</a> request with an invalid grant type.</p>
+    /// <p>Indicates that a request contains an invalid grant. This can occur if a client makes a <code>CreateToken</code> request with an invalid grant type.</p>
     InvalidGrantException(crate::error::InvalidGrantException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::error::InvalidScopeException),
     /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
     SlowDownException(crate::error::SlowDownException),
-    /// <p>Indicates that the client is not currently authorized to make the request. This can happen
-    /// when a <code>clientId</code> is not issued for a public client.</p>
+    /// <p>Indicates that the client is not currently authorized to make the request. This can happen when a <code>clientId</code> is not issued for a public client.</p>
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::error::UnsupportedGrantTypeException),

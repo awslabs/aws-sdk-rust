@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Signer
@@ -129,6 +129,7 @@ where
     ///
     /// See [`ListSigningJobs`](crate::client::fluent_builders::ListSigningJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningJobs::into_paginator).
     pub fn list_signing_jobs(&self) -> fluent_builders::ListSigningJobs<C, M, R> {
         fluent_builders::ListSigningJobs::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`ListSigningPlatforms`](crate::client::fluent_builders::ListSigningPlatforms) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningPlatforms::into_paginator).
     pub fn list_signing_platforms(&self) -> fluent_builders::ListSigningPlatforms<C, M, R> {
         fluent_builders::ListSigningPlatforms::new(self.handle.clone())
     }
@@ -143,6 +145,7 @@ where
     ///
     /// See [`ListSigningProfiles`](crate::client::fluent_builders::ListSigningProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningProfiles::into_paginator).
     pub fn list_signing_profiles(&self) -> fluent_builders::ListSigningProfiles<C, M, R> {
         fluent_builders::ListSigningProfiles::new(self.handle.clone())
     }
@@ -214,7 +217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddProfilePermission`.
     ///
     /// <p>Adds cross-account permissions to a signing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddProfilePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -259,10 +262,10 @@ pub mod fluent_builders {
                 crate::input::AddProfilePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -271,8 +274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The human-readable name of the signing profile.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The human-readable name of the signing profile.</p>
@@ -281,8 +284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the signing profile.</p>
-        pub fn profile_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_version(inp);
+        pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_version(input.into());
             self
         }
         /// <p>The version of the signing profile.</p>
@@ -294,8 +297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
         /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
@@ -303,21 +306,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-        /// another AWS account ID.</p>
-        pub fn principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(inp);
+        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-        /// another AWS account ID.</p>
+        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
         }
         /// <p>A unique identifier for the current profile revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>A unique identifier for the current profile revision.</p>
@@ -326,8 +327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the cross-account permission statement.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>A unique identifier for the cross-account permission statement.</p>
@@ -338,11 +339,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelSigningProfile`.
     ///
-    /// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>.
-    /// A canceled profile is still viewable with the <code>ListSigningProfiles</code>
-    /// operation, but it cannot perform new signing jobs, and is deleted two years after
-    /// cancelation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSigningProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,10 +385,10 @@ pub mod fluent_builders {
                 crate::input::CancelSigningProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -399,8 +397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be canceled.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be canceled.</p>
@@ -411,10 +409,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSigningJob`.
     ///
-    /// <p>Returns information about a specific code signing job. You specify the job by using
-    /// the <code>jobId</code> value that is returned by the <a>StartSigningJob</a>
-    /// operation. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about a specific code signing job. You specify the job by using the <code>jobId</code> value that is returned by the <code>StartSigningJob</code> operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSigningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -459,10 +455,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSigningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -471,8 +467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the signing job on input.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the signing job on input.</p>
@@ -484,7 +480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSigningPlatform`.
     ///
     /// <p>Returns information on a specific signing platform.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSigningPlatform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -529,10 +525,10 @@ pub mod fluent_builders {
                 crate::input::GetSigningPlatformInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -541,8 +537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the target signing platform.</p>
-        pub fn platform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(inp);
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>The ID of the target signing platform.</p>
@@ -554,7 +550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSigningProfile`.
     ///
     /// <p>Returns information on a specific signing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSigningProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -599,10 +595,10 @@ pub mod fluent_builders {
                 crate::input::GetSigningProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -611,8 +607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the target signing profile.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the target signing profile.</p>
@@ -621,8 +617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID of the profile owner.</p>
-        pub fn profile_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_owner(inp);
+        pub fn profile_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_owner(input.into());
             self
         }
         /// <p>The AWS account ID of the profile owner.</p>
@@ -637,7 +633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfilePermissions`.
     ///
     /// <p>Lists the cross-account permissions associated with a signing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfilePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -682,10 +678,10 @@ pub mod fluent_builders {
                 crate::input::ListProfilePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -694,8 +690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the signing profile containing the cross-account permissions.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>Name of the signing profile containing the cross-account permissions.</p>
@@ -704,8 +700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>String for specifying the next set of paginated results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>String for specifying the next set of paginated results.</p>
@@ -716,14 +712,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSigningJobs`.
     ///
-    /// <p>Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
-    /// limit the number of signing jobs that are returned in the response. If additional jobs
-    /// remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in
-    /// subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can
-    /// continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-    /// parameter and with new values that code signing returns in the <code>nextToken</code>
-    /// parameter until all of your signing jobs have been returned. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSigningJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -768,10 +758,10 @@ pub mod fluent_builders {
                 crate::input::ListSigningJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -779,9 +769,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSigningJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSigningJobsPaginator<C, M, R> {
+            crate::paginator::ListSigningJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A status value with which to filter your results.</p>
-        pub fn status(mut self, inp: crate::model::SigningStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::SigningStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>A status value with which to filter your results.</p>
@@ -792,21 +788,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The ID of microcontroller platform that you specified for the distribution of your
-        /// code image.</p>
-        pub fn platform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(inp);
+        /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
-        /// <p>The ID of microcontroller platform that you specified for the distribution of your
-        /// code image.</p>
+        /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_platform_id(input);
             self
         }
         /// <p>The IAM principal that requested the signing job.</p>
-        pub fn requested_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requested_by(inp);
+        pub fn requested_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requested_by(input.into());
             self
         }
         /// <p>The IAM principal that requested the signing job.</p>
@@ -814,41 +808,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_requested_by(input);
             self
         }
-        /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-        /// when paginating results. If additional items exist beyond the number you specify, the
-        /// <code>nextToken</code> element is set in the response. Use the
-        /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-        /// when paginating results. If additional items exist beyond the number you specify, the
-        /// <code>nextToken</code> element is set in the response. Use the
-        /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-        /// </p>
+        /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>String for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>String for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Filters results to return only signing jobs with revoked signatures.</p>
-        pub fn is_revoked(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_revoked(inp);
+        pub fn is_revoked(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_revoked(input);
             self
         }
         /// <p>Filters results to return only signing jobs with revoked signatures.</p>
@@ -856,14 +838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_is_revoked(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring before a
-        /// specified timestamp.</p>
-        pub fn signature_expires_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.signature_expires_before(inp);
+        /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
+        pub fn signature_expires_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.signature_expires_before(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring before a
-        /// specified timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
         pub fn set_signature_expires_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -871,14 +851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signature_expires_before(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-        /// timestamp.</p>
-        pub fn signature_expires_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.signature_expires_after(inp);
+        /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
+        pub fn signature_expires_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.signature_expires_after(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-        /// timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
         pub fn set_signature_expires_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -886,14 +864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signature_expires_after(input);
             self
         }
-        /// <p>Filters results to return only signing jobs initiated by a specified IAM
-        /// entity.</p>
-        pub fn job_invoker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_invoker(inp);
+        /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
+        pub fn job_invoker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_invoker(input.into());
             self
         }
-        /// <p>Filters results to return only signing jobs initiated by a specified IAM
-        /// entity.</p>
+        /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
         pub fn set_job_invoker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_invoker(input);
             self
@@ -901,14 +877,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSigningPlatforms`.
     ///
-    /// <p>Lists all signing platforms available in code signing that match the request parameters. If
-    /// additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use
-    /// this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining
-    /// values. You can continue calling <code>ListSigningJobs</code> with your
-    /// <code>maxResults</code> parameter and with new values that code signing returns in the
-    /// <code>nextToken</code> parameter until all of your signing jobs have been
-    /// returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all signing platforms available in code signing that match the request parameters. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSigningPlatforms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -953,10 +923,10 @@ pub mod fluent_builders {
                 crate::input::ListSigningPlatformsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -964,9 +934,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSigningPlatformsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSigningPlatformsPaginator<C, M, R> {
+            crate::paginator::ListSigningPlatformsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The category type of a signing platform.</p>
-        pub fn category(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(inp);
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// <p>The category type of a signing platform.</p>
@@ -975,8 +951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any partner entities connected to a signing platform.</p>
-        pub fn partner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner(inp);
+        pub fn partner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner(input.into());
             self
         }
         /// <p>Any partner entities connected to a signing platform.</p>
@@ -985,8 +961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The validation template that is used by the target signing platform.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The validation template that is used by the target signing platform.</p>
@@ -995,8 +971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned by this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned by this operation.</p>
@@ -1004,16 +980,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1021,15 +993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSigningProfiles`.
     ///
-    /// <p>Lists all available signing profiles in your AWS account. Returns only profiles with
-    /// an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field is
-    /// set to <code>true</code>. If additional jobs remain to be listed, code signing returns a
-    /// <code>nextToken</code> value. Use this value in subsequent calls to
-    /// <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling
-    /// <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with
-    /// new values that code signing returns in the <code>nextToken</code> parameter until all of your
-    /// signing jobs have been returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSigningProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1074,10 +1039,10 @@ pub mod fluent_builders {
                 crate::input::ListSigningProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1085,21 +1050,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Designates whether to include profiles with the status of
-        /// <code>CANCELED</code>.</p>
-        pub fn include_canceled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_canceled(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSigningProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSigningProfilesPaginator<C, M, R> {
+            crate::paginator::ListSigningProfilesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
+        pub fn include_canceled(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_canceled(input);
             self
         }
-        /// <p>Designates whether to include profiles with the status of
-        /// <code>CANCELED</code>.</p>
+        /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
         pub fn set_include_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_canceled(input);
             self
         }
         /// <p>The maximum number of profiles to be returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of profiles to be returned.</p>
@@ -1107,28 +1076,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Filters results to return only signing jobs initiated for a specified signing
-        /// platform.</p>
-        pub fn platform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(inp);
+        /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
-        /// <p>Filters results to return only signing jobs initiated for a specified signing
-        /// platform.</p>
+        /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_platform_id(input);
             self
@@ -1137,14 +1100,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
-        /// <p>Filters results to return only signing jobs with statuses in the specified
-        /// list.</p>
-        pub fn statuses(mut self, inp: impl Into<crate::model::SigningProfileStatus>) -> Self {
-            self.inner = self.inner.statuses(inp);
+        /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
+        pub fn statuses(mut self, input: crate::model::SigningProfileStatus) -> Self {
+            self.inner = self.inner.statuses(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with statuses in the specified
-        /// list.</p>
+        /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
         pub fn set_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
@@ -1156,7 +1117,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags associated with a signing profile resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1201,10 +1162,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1213,8 +1174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
@@ -1225,10 +1186,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSigningProfile`.
     ///
-    /// <p>Creates a signing profile. A signing profile is a code signing template that can be used to
-    /// carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSigningProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1273,10 +1232,10 @@ pub mod fluent_builders {
                 crate::input::PutSigningProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1285,8 +1244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be created.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be created.</p>
@@ -1294,14 +1253,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_name(input);
             self
         }
-        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-        /// profile.</p>
-        pub fn signing_material(mut self, inp: crate::model::SigningMaterial) -> Self {
-            self.inner = self.inner.signing_material(inp);
+        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
+        pub fn signing_material(mut self, input: crate::model::SigningMaterial) -> Self {
+            self.inner = self.inner.signing_material(input);
             self
         }
-        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-        /// profile.</p>
+        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
         pub fn set_signing_material(
             mut self,
             input: std::option::Option<crate::model::SigningMaterial>,
@@ -1309,17 +1266,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signing_material(input);
             self
         }
-        /// <p>The default validity period override for any signature generated using this signing
-        /// profile. If unspecified, the default is 135 months.</p>
+        /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
         pub fn signature_validity_period(
             mut self,
-            inp: crate::model::SignatureValidityPeriod,
+            input: crate::model::SignatureValidityPeriod,
         ) -> Self {
-            self.inner = self.inner.signature_validity_period(inp);
+            self.inner = self.inner.signature_validity_period(input);
             self
         }
-        /// <p>The default validity period override for any signature generated using this signing
-        /// profile. If unspecified, the default is 135 months.</p>
+        /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
         pub fn set_signature_validity_period(
             mut self,
             input: std::option::Option<crate::model::SignatureValidityPeriod>,
@@ -1328,8 +1283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the signing platform to be created.</p>
-        pub fn platform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(inp);
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>The ID of the signing platform to be created.</p>
@@ -1337,16 +1292,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_id(input);
             self
         }
-        /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-        /// options that you want to apply to the chosen platform (such as a different
-        /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
-        pub fn overrides(mut self, inp: crate::model::SigningPlatformOverrides) -> Self {
-            self.inner = self.inner.overrides(inp);
+        /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+        pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
+            self.inner = self.inner.overrides(input);
             self
         }
-        /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-        /// options that you want to apply to the chosen platform (such as a different
-        /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+        /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::SigningPlatformOverrides>,
@@ -1358,18 +1309,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
-        /// <p>Map of key-value pairs for signing. These can include any information that you want to
-        /// use during signing.</p>
+        /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
         pub fn signing_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.signing_parameters(k, v);
+            self.inner = self.inner.signing_parameters(k.into(), v.into());
             self
         }
-        /// <p>Map of key-value pairs for signing. These can include any information that you want to
-        /// use during signing.</p>
+        /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
         pub fn set_signing_parameters(
             mut self,
             input: std::option::Option<
@@ -1389,7 +1338,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to be associated with the signing profile that is being created.</p>
@@ -1406,7 +1355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveProfilePermission`.
     ///
     /// <p>Removes cross-account permissions from a signing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveProfilePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1451,10 +1400,10 @@ pub mod fluent_builders {
                 crate::input::RemoveProfilePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1463,8 +1412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
@@ -1473,8 +1422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for the current revision of the signing profile permissions.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>An identifier for the current revision of the signing profile permissions.</p>
@@ -1483,8 +1432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the cross-account permissions statement.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>A unique identifier for the cross-account permissions statement.</p>
@@ -1495,9 +1444,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RevokeSignature`.
     ///
-    /// <p>Changes the state of a signing job to REVOKED. This indicates that the signature is no
-    /// longer valid.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeSignature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1542,10 +1490,10 @@ pub mod fluent_builders {
                 crate::input::RevokeSignatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1554,8 +1502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the signing job to be revoked.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>ID of the signing job to be revoked.</p>
@@ -1564,8 +1512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>AWS account ID of the job owner.</p>
-        pub fn job_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_owner(inp);
+        pub fn job_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_owner(input.into());
             self
         }
         /// <p>AWS account ID of the job owner.</p>
@@ -1574,8 +1522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for revoking the signing job.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for revoking the signing job.</p>
@@ -1586,10 +1534,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RevokeSigningProfile`.
     ///
-    /// <p>Changes the state of a signing profile to REVOKED. This indicates that signatures
-    /// generated using the signing profile after an effective start date are no longer
-    /// valid.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeSigningProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1634,10 +1580,10 @@ pub mod fluent_builders {
                 crate::input::RevokeSigningProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1646,8 +1592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be revoked.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be revoked.</p>
@@ -1656,8 +1602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the signing profile to be revoked.</p>
-        pub fn profile_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_version(inp);
+        pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_version(input.into());
             self
         }
         /// <p>The version of the signing profile to be revoked.</p>
@@ -1669,8 +1615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for revoking a signing profile.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for revoking a signing profile.</p>
@@ -1678,16 +1624,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reason(input);
             self
         }
-        /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-        /// Signatures generated using the signing profile after this timestamp are not
-        /// trusted.</p>
-        pub fn effective_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.effective_time(inp);
+        /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+        pub fn effective_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.effective_time(input);
             self
         }
-        /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-        /// Signatures generated using the signing profile after this timestamp are not
-        /// trusted.</p>
+        /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
         pub fn set_effective_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1698,35 +1640,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSigningJob`.
     ///
-    /// <p>Initiates a signing job to be performed on the code provided. Signing jobs are
-    /// viewable by the <code>ListSigningJobs</code> operation for two years after they are
-    /// performed. Note the following requirements: </p>
+    /// <p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements: </p>
     /// <ul>
-    /// <li>
-    /// <p> You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the
-    /// <i>Amazon S3 Getting Started Guide</i>. </p>
-    /// </li>
-    /// <li>
-    /// <p>Your S3 source bucket must be version enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must create an S3 destination bucket. Code signing uses your S3 destination
-    /// bucket to write your signed code.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specify the name of the source and destination buckets when calling the
-    /// <code>StartSigningJob</code> operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must also specify a request token that identifies your request to
-    /// code signing.</p>
-    /// </li>
+    /// <li> <p> You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li>
+    /// <li> <p>Your S3 source bucket must be version enabled.</p> </li>
+    /// <li> <p>You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.</p> </li>
+    /// <li> <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p> </li>
+    /// <li> <p>You must also specify a request token that identifies your request to code signing.</p> </li>
     /// </ul>
-    /// <p>You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions after you call
-    /// <code>StartSigningJob</code>.</p>
-    /// <p>For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can call the <code>DescribeSigningJob</code> and the <code>ListSigningJobs</code> actions after you call <code>StartSigningJob</code>.</p>
+    /// <p>For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSigningJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1771,10 +1695,10 @@ pub mod fluent_builders {
                 crate::input::StartSigningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1782,26 +1706,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-        /// code.</p>
-        pub fn source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.source(inp);
+        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+        pub fn source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-        /// code.</p>
+        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.inner = self.inner.set_source(input);
             self
         }
-        /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-        /// of your bucket and an optional prefix.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(inp);
+        /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
-        /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-        /// of your bucket and an optional prefix.</p>
+        /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -1810,8 +1730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the signing profile.</p>
-        pub fn profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(inp);
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile.</p>
@@ -1819,14 +1739,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_name(input);
             self
         }
-        /// <p>String that identifies the signing request. All calls after the first that use this
-        /// token return the same response as the first call.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>String that identifies the signing request. All calls after the first that use this
-        /// token return the same response as the first call.</p>
+        /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1835,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID of the signing profile owner.</p>
-        pub fn profile_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_owner(inp);
+        pub fn profile_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_owner(input.into());
             self
         }
         /// <p>The AWS account ID of the signing profile owner.</p>
@@ -1850,11 +1768,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to a signing profile. Tags are labels that you can use to
-    /// identify and organize your AWS resources. Each tag consists of a key and an optional
-    /// value. To specify the signing profile, use its Amazon Resource Name (ARN). To specify
-    /// the tag, use a key-value pair.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a key and an optional value. To specify the signing profile, use its Amazon Resource Name (ARN). To specify the tag, use a key-value pair.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1899,10 +1814,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1911,8 +1826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
@@ -1930,7 +1845,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags to be associated with the signing profile.</p>
@@ -1946,9 +1861,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from a signing profile. To remove the tags, specify a list of
-    /// tag keys.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from a signing profile. To remove the tags, specify a list of tag keys.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1993,10 +1907,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2005,8 +1919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
@@ -2019,8 +1933,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys to be removed from the signing profile.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys to be removed from the signing profile.</p>
@@ -2033,6 +1947,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

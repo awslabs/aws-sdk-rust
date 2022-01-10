@@ -16,22 +16,22 @@ pub mod create_token_input {
         pub(crate) redirect_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+        /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -49,16 +49,12 @@ pub mod create_token_input {
             self.grant_type = input;
             self
         }
-        /// <p>Used only when calling this API for the device code grant type. This short-term code is
-        /// used to identify this authentication attempt. This should come from an in-memory reference to
-        /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+        /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
         pub fn device_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_code = Some(input.into());
             self
         }
-        /// <p>Used only when calling this API for the device code grant type. This short-term code is
-        /// used to identify this authentication attempt. This should come from an in-memory reference to
-        /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+        /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
         pub fn set_device_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_code = input;
             self
@@ -90,16 +86,14 @@ pub mod create_token_input {
         ///
         /// To override the contents of this collection use [`set_scope`](Self::set_scope).
         ///
-        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-        /// restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scope.unwrap_or_default();
             v.push(input.into());
             self.scope = Some(v);
             self
         }
-        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-        /// restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -107,14 +101,12 @@ pub mod create_token_input {
             self.scope = input;
             self
         }
-        /// <p>The location of the application that will receive the authorization code. Users authorize
-        /// the service to send the request to this location.</p>
+        /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
         pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.redirect_uri = Some(input.into());
             self
         }
-        /// <p>The location of the application that will receive the authorization code. Users authorize
-        /// the service to send the request to this location.</p>
+        /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
         pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.redirect_uri = input;
             self
@@ -142,7 +134,7 @@ pub mod create_token_input {
 #[doc(hidden)]
 pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
 #[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(clippy::let_and_return)]
@@ -153,7 +145,7 @@ impl CreateTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -233,7 +225,7 @@ impl CreateTokenInput {
             "CreateToken",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -291,16 +283,14 @@ pub mod register_client_input {
         ///
         /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
         ///
-        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-        /// to restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scopes.unwrap_or_default();
             v.push(input.into());
             self.scopes = Some(v);
             self
         }
-        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-        /// to restrict permissions when granting an access token.</p>
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -326,7 +316,7 @@ pub mod register_client_input {
 #[doc(hidden)]
 pub type RegisterClientInputOperationOutputAlias = crate::operation::RegisterClient;
 #[doc(hidden)]
-pub type RegisterClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterClientInput {
     /// Consumes the builder and constructs an Operation<[`RegisterClient`](crate::operation::RegisterClient)>
     #[allow(clippy::let_and_return)]
@@ -337,7 +327,7 @@ impl RegisterClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -418,7 +408,7 @@ impl RegisterClientInput {
             "RegisterClient",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -452,28 +442,22 @@ pub mod start_device_authorization_input {
         pub(crate) start_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-        /// should come from the persisted result of the <a>RegisterClient</a> API
-        /// operation.</p>
+        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-        /// should come from the persisted result of the <a>RegisterClient</a> API
-        /// operation.</p>
+        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>A secret string that is generated for the client. This value should come from the
-        /// persisted result of the <a>RegisterClient</a> API operation.</p>
+        /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p>A secret string that is generated for the client. This value should come from the
-        /// persisted result of the <a>RegisterClient</a> API operation.</p>
+        /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -481,14 +465,12 @@ pub mod start_device_authorization_input {
             self.client_secret = input;
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-        /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-        /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -512,7 +494,7 @@ pub mod start_device_authorization_input {
 pub type StartDeviceAuthorizationInputOperationOutputAlias =
     crate::operation::StartDeviceAuthorization;
 #[doc(hidden)]
-pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDeviceAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeviceAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`StartDeviceAuthorization`](crate::operation::StartDeviceAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -523,7 +505,7 @@ impl StartDeviceAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDeviceAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -606,7 +588,7 @@ impl StartDeviceAuthorizationInput {
             "StartDeviceAuthorization",
             "ssooidc",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -633,31 +615,23 @@ impl StartDeviceAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceAuthorizationInput {
-    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-    /// should come from the persisted result of the <a>RegisterClient</a> API
-    /// operation.</p>
+    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A secret string that is generated for the client. This value should come from the
-    /// persisted result of the <a>RegisterClient</a> API operation.</p>
+    /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub client_secret: std::option::Option<std::string::String>,
-    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-    /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
     pub start_url: std::option::Option<std::string::String>,
 }
 impl StartDeviceAuthorizationInput {
-    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
-    /// should come from the persisted result of the <a>RegisterClient</a> API
-    /// operation.</p>
+    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A secret string that is generated for the client. This value should come from the
-    /// persisted result of the <a>RegisterClient</a> API operation.</p>
+    /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
-    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-    /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
     pub fn start_url(&self) -> std::option::Option<&str> {
         self.start_url.as_deref()
     }
@@ -680,8 +654,7 @@ pub struct RegisterClientInput {
     pub client_name: std::option::Option<std::string::String>,
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
     pub client_type: std::option::Option<std::string::String>,
-    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-    /// to restrict permissions when granting an access token.</p>
+    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegisterClientInput {
@@ -693,8 +666,7 @@ impl RegisterClientInput {
     pub fn client_type(&self) -> std::option::Option<&str> {
         self.client_type.as_deref()
     }
-    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
-    /// to restrict permissions when granting an access token.</p>
+    /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub fn scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.scopes.as_deref()
     }
@@ -713,33 +685,29 @@ impl std::fmt::Debug for RegisterClientInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
-    /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
     pub grant_type: std::option::Option<std::string::String>,
-    /// <p>Used only when calling this API for the device code grant type. This short-term code is
-    /// used to identify this authentication attempt. This should come from an in-memory reference to
-    /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+    /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub device_code: std::option::Option<std::string::String>,
     /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
     pub code: std::option::Option<std::string::String>,
     /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-    /// restrict permissions when granting an access token.</p>
+    /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub scope: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The location of the application that will receive the authorization code. Users authorize
-    /// the service to send the request to this location.</p>
+    /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     pub redirect_uri: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {
-    /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
+    /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -747,9 +715,7 @@ impl CreateTokenInput {
     pub fn grant_type(&self) -> std::option::Option<&str> {
         self.grant_type.as_deref()
     }
-    /// <p>Used only when calling this API for the device code grant type. This short-term code is
-    /// used to identify this authentication attempt. This should come from an in-memory reference to
-    /// the result of the <a>StartDeviceAuthorization</a> API.</p>
+    /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn device_code(&self) -> std::option::Option<&str> {
         self.device_code.as_deref()
     }
@@ -761,13 +727,11 @@ impl CreateTokenInput {
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
-    /// restrict permissions when granting an access token.</p>
+    /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub fn scope(&self) -> std::option::Option<&[std::string::String]> {
         self.scope.as_deref()
     }
-    /// <p>The location of the application that will receive the authorization code. Users authorize
-    /// the service to send the request to this location.</p>
+    /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
     }

@@ -136,10 +136,10 @@ pub mod list_worker_configurations_output {
         /// <p>An array of worker configuration descriptions.</p>
         pub fn worker_configurations(
             mut self,
-            input: impl Into<crate::model::WorkerConfigurationSummary>,
+            input: crate::model::WorkerConfigurationSummary,
         ) -> Self {
             let mut v = self.worker_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.worker_configurations = Some(v);
             self
         }
@@ -210,12 +210,9 @@ pub mod list_custom_plugins_output {
         /// To override the contents of this collection use [`set_custom_plugins`](Self::set_custom_plugins).
         ///
         /// <p>An array of custom plugin descriptions.</p>
-        pub fn custom_plugins(
-            mut self,
-            input: impl Into<crate::model::CustomPluginSummary>,
-        ) -> Self {
+        pub fn custom_plugins(mut self, input: crate::model::CustomPluginSummary) -> Self {
             let mut v = self.custom_plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_plugins = Some(v);
             self
         }
@@ -295,9 +292,9 @@ pub mod list_connectors_output {
         /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
         ///
         /// <p>An array of connector descriptions.</p>
-        pub fn connectors(mut self, input: impl Into<crate::model::ConnectorSummary>) -> Self {
+        pub fn connectors(mut self, input: crate::model::ConnectorSummary) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connectors = Some(v);
             self
         }
@@ -1010,9 +1007,9 @@ pub mod describe_connector_output {
         /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
         ///
         /// <p>Specifies which plugins were used for this connector.</p>
-        pub fn plugins(mut self, input: impl Into<crate::model::PluginDescription>) -> Self {
+        pub fn plugins(mut self, input: crate::model::PluginDescription) -> Self {
             let mut v = self.plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.plugins = Some(v);
             self
         }

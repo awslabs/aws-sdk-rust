@@ -2,14 +2,8 @@
 /// <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p>
 /// <p>For example, an email subscriber would have the following parameters:</p>
 /// <ul>
-/// <li>
-/// <p>A <code>subscriptionType</code> of <code>EMAIL</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>An <code>address</code> of <code>example@example.com</code>
-/// </p>
-/// </li>
+/// <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li>
+/// <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -149,22 +143,10 @@ impl AsRef<str> for SubscriptionType {
 /// <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p>
 /// <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p>
 /// <ul>
-/// <li>
-/// <p>A notificationType of <code>ACTUAL</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>A <code>thresholdType</code> of <code>PERCENTAGE</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>A notification <code>threshold</code> of <code>80</code>
-/// </p>
-/// </li>
+/// <li> <p>A notificationType of <code>ACTUAL</code> </p> </li>
+/// <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li>
+/// <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li>
+/// <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -534,51 +516,33 @@ impl AsRef<str> for NotificationType {
     }
 }
 
-/// <p>
-/// A budget action resource.
-/// </p>
+/// <p> A budget action resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p>
-    /// Where you specify all of the type-specific parameters.
-    /// </p>
+    /// <p> Where you specify all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
-    /// <p>
-    /// The status of action.
-    /// </p>
+    /// <p> The status of action. </p>
     pub status: std::option::Option<crate::model::ActionStatus>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
 }
 impl Action {
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -590,39 +554,27 @@ impl Action {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>
-    /// Where you specify all of the type-specific parameters.
-    /// </p>
+    /// <p> Where you specify all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }
-    /// <p>
-    /// The status of action.
-    /// </p>
+    /// <p> The status of action. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
         self.status.as_ref()
     }
@@ -665,16 +617,12 @@ pub mod action {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
     }
     impl Builder {
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -702,16 +650,12 @@ pub mod action {
             self.notification_type = input;
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -719,16 +663,12 @@ pub mod action {
             self.action_type = input;
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -736,16 +676,12 @@ pub mod action {
             self.action_threshold = input;
             self
         }
-        /// <p>
-        /// Where you specify all of the type-specific parameters.
-        /// </p>
+        /// <p> Where you specify all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>
-        /// Where you specify all of the type-specific parameters.
-        /// </p>
+        /// <p> Where you specify all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -753,16 +689,12 @@ pub mod action {
             self.definition = input;
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -770,16 +702,12 @@ pub mod action {
             self.execution_role_arn = input;
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.approval_model = Some(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -787,16 +715,12 @@ pub mod action {
             self.approval_model = input;
             self
         }
-        /// <p>
-        /// The status of action.
-        /// </p>
+        /// <p> The status of action. </p>
         pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>
-        /// The status of action.
-        /// </p>
+        /// <p> The status of action. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ActionStatus>,
@@ -809,9 +733,9 @@ pub mod action {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -1000,41 +924,27 @@ impl AsRef<str> for ApprovalModel {
     }
 }
 
-/// <p>
-/// Specifies all of the type-specific parameters.
-/// </p>
+/// <p> Specifies all of the type-specific parameters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Definition {
-    /// <p>
-    /// The AWS Identity and Access Management (IAM) action definition details.
-    /// </p>
+    /// <p> The AWS Identity and Access Management (IAM) action definition details. </p>
     pub iam_action_definition: std::option::Option<crate::model::IamActionDefinition>,
-    /// <p>
-    /// The service control policies (SCPs) action definition details.
-    /// </p>
+    /// <p> The service control policies (SCPs) action definition details. </p>
     pub scp_action_definition: std::option::Option<crate::model::ScpActionDefinition>,
-    /// <p>
-    /// The AWS Systems Manager (SSM) action definition details.
-    /// </p>
+    /// <p> The AWS Systems Manager (SSM) action definition details. </p>
     pub ssm_action_definition: std::option::Option<crate::model::SsmActionDefinition>,
 }
 impl Definition {
-    /// <p>
-    /// The AWS Identity and Access Management (IAM) action definition details.
-    /// </p>
+    /// <p> The AWS Identity and Access Management (IAM) action definition details. </p>
     pub fn iam_action_definition(&self) -> std::option::Option<&crate::model::IamActionDefinition> {
         self.iam_action_definition.as_ref()
     }
-    /// <p>
-    /// The service control policies (SCPs) action definition details.
-    /// </p>
+    /// <p> The service control policies (SCPs) action definition details. </p>
     pub fn scp_action_definition(&self) -> std::option::Option<&crate::model::ScpActionDefinition> {
         self.scp_action_definition.as_ref()
     }
-    /// <p>
-    /// The AWS Systems Manager (SSM) action definition details.
-    /// </p>
+    /// <p> The AWS Systems Manager (SSM) action definition details. </p>
     pub fn ssm_action_definition(&self) -> std::option::Option<&crate::model::SsmActionDefinition> {
         self.ssm_action_definition.as_ref()
     }
@@ -1059,16 +969,12 @@ pub mod definition {
         pub(crate) ssm_action_definition: std::option::Option<crate::model::SsmActionDefinition>,
     }
     impl Builder {
-        /// <p>
-        /// The AWS Identity and Access Management (IAM) action definition details.
-        /// </p>
+        /// <p> The AWS Identity and Access Management (IAM) action definition details. </p>
         pub fn iam_action_definition(mut self, input: crate::model::IamActionDefinition) -> Self {
             self.iam_action_definition = Some(input);
             self
         }
-        /// <p>
-        /// The AWS Identity and Access Management (IAM) action definition details.
-        /// </p>
+        /// <p> The AWS Identity and Access Management (IAM) action definition details. </p>
         pub fn set_iam_action_definition(
             mut self,
             input: std::option::Option<crate::model::IamActionDefinition>,
@@ -1076,16 +982,12 @@ pub mod definition {
             self.iam_action_definition = input;
             self
         }
-        /// <p>
-        /// The service control policies (SCPs) action definition details.
-        /// </p>
+        /// <p> The service control policies (SCPs) action definition details. </p>
         pub fn scp_action_definition(mut self, input: crate::model::ScpActionDefinition) -> Self {
             self.scp_action_definition = Some(input);
             self
         }
-        /// <p>
-        /// The service control policies (SCPs) action definition details.
-        /// </p>
+        /// <p> The service control policies (SCPs) action definition details. </p>
         pub fn set_scp_action_definition(
             mut self,
             input: std::option::Option<crate::model::ScpActionDefinition>,
@@ -1093,16 +995,12 @@ pub mod definition {
             self.scp_action_definition = input;
             self
         }
-        /// <p>
-        /// The AWS Systems Manager (SSM) action definition details.
-        /// </p>
+        /// <p> The AWS Systems Manager (SSM) action definition details. </p>
         pub fn ssm_action_definition(mut self, input: crate::model::SsmActionDefinition) -> Self {
             self.ssm_action_definition = Some(input);
             self
         }
-        /// <p>
-        /// The AWS Systems Manager (SSM) action definition details.
-        /// </p>
+        /// <p> The AWS Systems Manager (SSM) action definition details. </p>
         pub fn set_ssm_action_definition(
             mut self,
             input: std::option::Option<crate::model::SsmActionDefinition>,
@@ -1127,41 +1025,27 @@ impl Definition {
     }
 }
 
-/// <p>
-/// The AWS Systems Manager (SSM) action definition details.
-/// </p>
+/// <p> The AWS Systems Manager (SSM) action definition details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmActionDefinition {
-    /// <p>
-    /// The action subType.
-    /// </p>
+    /// <p> The action subType. </p>
     pub action_sub_type: std::option::Option<crate::model::ActionSubType>,
-    /// <p>
-    /// The Region to run the SSM document.
-    /// </p>
+    /// <p> The Region to run the SSM document. </p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>
-    /// The EC2 and RDS instance IDs.
-    /// </p>
+    /// <p> The EC2 and RDS instance IDs. </p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SsmActionDefinition {
-    /// <p>
-    /// The action subType.
-    /// </p>
+    /// <p> The action subType. </p>
     pub fn action_sub_type(&self) -> std::option::Option<&crate::model::ActionSubType> {
         self.action_sub_type.as_ref()
     }
-    /// <p>
-    /// The Region to run the SSM document.
-    /// </p>
+    /// <p> The Region to run the SSM document. </p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>
-    /// The EC2 and RDS instance IDs.
-    /// </p>
+    /// <p> The EC2 and RDS instance IDs. </p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
@@ -1186,16 +1070,12 @@ pub mod ssm_action_definition {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The action subType.
-        /// </p>
+        /// <p> The action subType. </p>
         pub fn action_sub_type(mut self, input: crate::model::ActionSubType) -> Self {
             self.action_sub_type = Some(input);
             self
         }
-        /// <p>
-        /// The action subType.
-        /// </p>
+        /// <p> The action subType. </p>
         pub fn set_action_sub_type(
             mut self,
             input: std::option::Option<crate::model::ActionSubType>,
@@ -1203,16 +1083,12 @@ pub mod ssm_action_definition {
             self.action_sub_type = input;
             self
         }
-        /// <p>
-        /// The Region to run the SSM document.
-        /// </p>
+        /// <p> The Region to run the SSM document. </p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>
-        /// The Region to run the SSM document.
-        /// </p>
+        /// <p> The Region to run the SSM document. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1221,18 +1097,14 @@ pub mod ssm_action_definition {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>
-        /// The EC2 and RDS instance IDs.
-        /// </p>
+        /// <p> The EC2 and RDS instance IDs. </p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
-        /// <p>
-        /// The EC2 and RDS instance IDs.
-        /// </p>
+        /// <p> The EC2 and RDS instance IDs. </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1312,31 +1184,21 @@ impl AsRef<str> for ActionSubType {
     }
 }
 
-/// <p>
-/// The service control policies (SCP) action definition details.
-/// </p>
+/// <p> The service control policies (SCP) action definition details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScpActionDefinition {
-    /// <p>
-    /// The policy ID attached.
-    /// </p>
+    /// <p> The policy ID attached. </p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A list of target IDs.
-    /// </p>
+    /// <p> A list of target IDs. </p>
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ScpActionDefinition {
-    /// <p>
-    /// The policy ID attached.
-    /// </p>
+    /// <p> The policy ID attached. </p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>
-    /// A list of target IDs.
-    /// </p>
+    /// <p> A list of target IDs. </p>
     pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.target_ids.as_deref()
     }
@@ -1359,16 +1221,12 @@ pub mod scp_action_definition {
         pub(crate) target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The policy ID attached.
-        /// </p>
+        /// <p> The policy ID attached. </p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The policy ID attached.
-        /// </p>
+        /// <p> The policy ID attached. </p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1377,18 +1235,14 @@ pub mod scp_action_definition {
         ///
         /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
         ///
-        /// <p>
-        /// A list of target IDs.
-        /// </p>
+        /// <p> A list of target IDs. </p>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_ids.unwrap_or_default();
             v.push(input.into());
             self.target_ids = Some(v);
             self
         }
-        /// <p>
-        /// A list of target IDs.
-        /// </p>
+        /// <p> A list of target IDs. </p>
         pub fn set_target_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1412,51 +1266,33 @@ impl ScpActionDefinition {
     }
 }
 
-/// <p>
-/// The AWS Identity and Access Management (IAM) action definition details.
-/// </p>
+/// <p> The AWS Identity and Access Management (IAM) action definition details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamActionDefinition {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the policy to be attached.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the policy to be attached. </p>
     pub policy_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// A list of roles to be attached. There must be at least one role.
-    /// </p>
+    /// <p> A list of roles to be attached. There must be at least one role. </p>
     pub roles: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A list of groups to be attached. There must be at least one group.
-    /// </p>
+    /// <p> A list of groups to be attached. There must be at least one group. </p>
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A list of users to be attached. There must be at least one user.
-    /// </p>
+    /// <p> A list of users to be attached. There must be at least one user. </p>
     pub users: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IamActionDefinition {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the policy to be attached.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the policy to be attached. </p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>
-    /// A list of roles to be attached. There must be at least one role.
-    /// </p>
+    /// <p> A list of roles to be attached. There must be at least one role. </p>
     pub fn roles(&self) -> std::option::Option<&[std::string::String]> {
         self.roles.as_deref()
     }
-    /// <p>
-    /// A list of groups to be attached. There must be at least one group.
-    /// </p>
+    /// <p> A list of groups to be attached. There must be at least one group. </p>
     pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
         self.groups.as_deref()
     }
-    /// <p>
-    /// A list of users to be attached. There must be at least one user.
-    /// </p>
+    /// <p> A list of users to be attached. There must be at least one user. </p>
     pub fn users(&self) -> std::option::Option<&[std::string::String]> {
         self.users.as_deref()
     }
@@ -1483,16 +1319,12 @@ pub mod iam_action_definition {
         pub(crate) users: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the policy to be attached.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the policy to be attached. </p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the policy to be attached.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the policy to be attached. </p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -1501,18 +1333,14 @@ pub mod iam_action_definition {
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
-        /// <p>
-        /// A list of roles to be attached. There must be at least one role.
-        /// </p>
+        /// <p> A list of roles to be attached. There must be at least one role. </p>
         pub fn roles(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.roles.unwrap_or_default();
             v.push(input.into());
             self.roles = Some(v);
             self
         }
-        /// <p>
-        /// A list of roles to be attached. There must be at least one role.
-        /// </p>
+        /// <p> A list of roles to be attached. There must be at least one role. </p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1524,18 +1352,14 @@ pub mod iam_action_definition {
         ///
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
-        /// <p>
-        /// A list of groups to be attached. There must be at least one group.
-        /// </p>
+        /// <p> A list of groups to be attached. There must be at least one group. </p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
-        /// <p>
-        /// A list of groups to be attached. There must be at least one group.
-        /// </p>
+        /// <p> A list of groups to be attached. There must be at least one group. </p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1547,18 +1371,14 @@ pub mod iam_action_definition {
         ///
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
-        /// <p>
-        /// A list of users to be attached. There must be at least one user.
-        /// </p>
+        /// <p> A list of users to be attached. There must be at least one user. </p>
         pub fn users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
-        /// <p>
-        /// A list of users to be attached. There must be at least one user.
-        /// </p>
+        /// <p> A list of users to be attached. There must be at least one user. </p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1584,9 +1404,7 @@ impl IamActionDefinition {
     }
 }
 
-/// <p>
-/// The trigger threshold of the action.
-/// </p>
+/// <p> The trigger threshold of the action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionThreshold {
@@ -1723,55 +1541,39 @@ impl AsRef<str> for ActionType {
 
 /// <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p>
 /// <p>This is the ARN pattern for a budget: </p>
-/// <p>
-/// <code>arn:aws:budgets::AccountId:budget/budgetName</code>
-/// </p>
+/// <p> <code>arn:aws:budgets::AccountId:budget/budgetName</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</p>
     pub budget_name: std::option::Option<std::string::String>,
     /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
-    /// <p>
-    /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+    /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
     pub budget_limit: std::option::Option<crate::model::Spend>,
     /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
-    /// <p>
-    /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+    /// <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
     /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
     /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
     /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
-    /// <p>
-    /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
+    /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
     pub planned_budget_limits:
         std::option::Option<std::collections::HashMap<std::string::String, crate::model::Spend>>,
     /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
     /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Elastic Compute Cloud - Compute</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Redshift</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon ElastiCache</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Elasticsearch Service</p>
-    /// </li>
+    /// <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li>
+    /// <li> <p>Amazon Redshift</p> </li>
+    /// <li> <p>Amazon Relational Database Service</p> </li>
+    /// <li> <p>Amazon ElastiCache</p> </li>
+    /// <li> <p>Amazon Elasticsearch Service</p> </li>
     /// </ul>
     pub cost_filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
-    /// <p>
-    /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
     pub cost_types: std::option::Option<crate::model::CostTypes>,
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
     pub time_unit: std::option::Option<crate::model::TimeUnit>,
@@ -1793,21 +1595,18 @@ impl Budget {
         self.budget_name.as_deref()
     }
     /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
-    /// <p>
-    /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+    /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
     pub fn budget_limit(&self) -> std::option::Option<&crate::model::Spend> {
         self.budget_limit.as_ref()
     }
     /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
-    /// <p>
-    /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+    /// <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
     /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
     /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
     /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
-    /// <p>
-    /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
+    /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
     pub fn planned_budget_limits(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Spend>>
@@ -1817,21 +1616,11 @@ impl Budget {
     /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
     /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Elastic Compute Cloud - Compute</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Redshift</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon ElastiCache</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Elasticsearch Service</p>
-    /// </li>
+    /// <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li>
+    /// <li> <p>Amazon Redshift</p> </li>
+    /// <li> <p>Amazon Relational Database Service</p> </li>
+    /// <li> <p>Amazon ElastiCache</p> </li>
+    /// <li> <p>Amazon Elasticsearch Service</p> </li>
     /// </ul>
     pub fn cost_filters(
         &self,
@@ -1841,8 +1630,7 @@ impl Budget {
         self.cost_filters.as_ref()
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
-    /// <p>
-    /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+    /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
     pub fn cost_types(&self) -> std::option::Option<&crate::model::CostTypes> {
         self.cost_types.as_ref()
     }
@@ -1919,15 +1707,13 @@ pub mod budget {
             self
         }
         /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
-        /// <p>
-        /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+        /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
         pub fn budget_limit(mut self, input: crate::model::Spend) -> Self {
             self.budget_limit = Some(input);
             self
         }
         /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
-        /// <p>
-        /// <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
+        /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>, which is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
         pub fn set_budget_limit(mut self, input: std::option::Option<crate::model::Spend>) -> Self {
             self.budget_limit = input;
             self
@@ -1937,35 +1723,31 @@ pub mod budget {
         /// To override the contents of this collection use [`set_planned_budget_limits`](Self::set_planned_budget_limits).
         ///
         /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
-        /// <p>
-        /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+        /// <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
         /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
         /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
         /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
         /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
         /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
-        /// <p>
-        /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
+        /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
         pub fn planned_budget_limits(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Spend>,
+            v: crate::model::Spend,
         ) -> Self {
             let mut hash_map = self.planned_budget_limits.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.planned_budget_limits = Some(hash_map);
             self
         }
         /// <p>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</p>
-        /// <p>
-        /// <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+        /// <p> <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
         /// <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values. This must start from the current month and include the next 11 months. The <code>key</code> is the start of the month, <code>UTC</code> in epoch seconds. </p>
         /// <p>For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value entries in standard calendar quarter increments. This must start from the current quarter and include the next 3 quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in epoch seconds. </p>
         /// <p>If the planned budget expires before 12 months for monthly or 4 quarters for quarterly, provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
         /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
         /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
-        /// <p>
-        /// <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
+        /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and no <code>PlannedBudgetLimits</code>.</p>
         pub fn set_planned_budget_limits(
             mut self,
             input: std::option::Option<
@@ -1982,50 +1764,30 @@ pub mod budget {
         /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
         /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Elastic Compute Cloud - Compute</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Redshift</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon ElastiCache</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Elasticsearch Service</p>
-        /// </li>
+        /// <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li>
+        /// <li> <p>Amazon Redshift</p> </li>
+        /// <li> <p>Amazon Relational Database Service</p> </li>
+        /// <li> <p>Amazon ElastiCache</p> </li>
+        /// <li> <p>Amazon Elasticsearch Service</p> </li>
         /// </ul>
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.cost_filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cost_filters = Some(hash_map);
             self
         }
         /// <p>The cost filters, such as service or tag, that are applied to a budget.</p>
         /// <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Elastic Compute Cloud - Compute</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Redshift</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon ElastiCache</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Elasticsearch Service</p>
-        /// </li>
+        /// <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li>
+        /// <li> <p>Amazon Redshift</p> </li>
+        /// <li> <p>Amazon Relational Database Service</p> </li>
+        /// <li> <p>Amazon ElastiCache</p> </li>
+        /// <li> <p>Amazon Elasticsearch Service</p> </li>
         /// </ul>
         pub fn set_cost_filters(
             mut self,
@@ -2037,15 +1799,13 @@ pub mod budget {
             self
         }
         /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
-        /// <p>
-        /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+        /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
         pub fn cost_types(mut self, input: crate::model::CostTypes) -> Self {
             self.cost_types = Some(input);
             self
         }
         /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
-        /// <p>
-        /// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+        /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
         pub fn set_cost_types(
             mut self,
             input: std::option::Option<crate::model::CostTypes>,
@@ -2305,14 +2065,8 @@ impl CalculatedSpend {
 /// <p>The amount of cost or usage that is measured for a budget.</p>
 /// <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p>
 /// <ul>
-/// <li>
-/// <p>An <code>Amount</code> of <code>3</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>A <code>unit</code> of <code>GB</code>
-/// </p>
-/// </li>
+/// <li> <p>An <code>Amount</code> of <code>3</code> </p> </li>
+/// <li> <p>A <code>unit</code> of <code>GB</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2531,8 +2285,7 @@ impl AsRef<str> for TimeUnit {
 }
 
 /// <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p>
-/// <p>
-/// <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+/// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostTypes {
@@ -2898,8 +2651,7 @@ pub struct BudgetPerformanceHistory {
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a budget. It must be one of the following types: </p>
-    /// <p>
-    /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub budget_type: std::option::Option<crate::model::BudgetType>,
     /// <p>The history of the cost filters for a budget during the specified time period.</p>
     pub cost_filters: std::option::Option<
@@ -2919,8 +2671,7 @@ impl BudgetPerformanceHistory {
         self.budget_name.as_deref()
     }
     /// <p> The type of a budget. It must be one of the following types: </p>
-    /// <p>
-    /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+    /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
     pub fn budget_type(&self) -> std::option::Option<&crate::model::BudgetType> {
         self.budget_type.as_ref()
     }
@@ -2990,15 +2741,13 @@ pub mod budget_performance_history {
             self
         }
         /// <p> The type of a budget. It must be one of the following types: </p>
-        /// <p>
-        /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+        /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
         pub fn budget_type(mut self, input: crate::model::BudgetType) -> Self {
             self.budget_type = Some(input);
             self
         }
         /// <p> The type of a budget. It must be one of the following types: </p>
-        /// <p>
-        /// <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
+        /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
         pub fn set_budget_type(
             mut self,
             input: std::option::Option<crate::model::BudgetType>,
@@ -3014,10 +2763,10 @@ pub mod budget_performance_history {
         pub fn cost_filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.cost_filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.cost_filters = Some(hash_map);
             self
         }
@@ -3061,10 +2810,10 @@ pub mod budget_performance_history {
         /// <p>A list of amounts of cost or usage that you created budgets for, compared to your actual costs or usage.</p>
         pub fn budgeted_and_actual_amounts_list(
             mut self,
-            input: impl Into<crate::model::BudgetedAndActualAmounts>,
+            input: crate::model::BudgetedAndActualAmounts,
         ) -> Self {
             let mut v = self.budgeted_and_actual_amounts_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.budgeted_and_actual_amounts_list = Some(v);
             self
         }
@@ -3197,25 +2946,17 @@ impl BudgetedAndActualAmounts {
     }
 }
 
-/// <p>
-/// The historical records for a budget action.
-/// </p>
+/// <p> The historical records for a budget action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistory {
     /// <p> A generic time stamp. In Java, it is transformed to a <code>Date</code> object.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The status of action at the time of the event.
-    /// </p>
+    /// <p> The status of action at the time of the event. </p>
     pub status: std::option::Option<crate::model::ActionStatus>,
-    /// <p>
-    /// This distinguishes between whether the events are triggered by the user or generated by the system.
-    /// </p>
+    /// <p> This distinguishes between whether the events are triggered by the user or generated by the system. </p>
     pub event_type: std::option::Option<crate::model::EventType>,
-    /// <p>
-    /// The description of details of the event.
-    /// </p>
+    /// <p> The description of details of the event. </p>
     pub action_history_details: std::option::Option<crate::model::ActionHistoryDetails>,
 }
 impl ActionHistory {
@@ -3223,21 +2964,15 @@ impl ActionHistory {
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>
-    /// The status of action at the time of the event.
-    /// </p>
+    /// <p> The status of action at the time of the event. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// This distinguishes between whether the events are triggered by the user or generated by the system.
-    /// </p>
+    /// <p> This distinguishes between whether the events are triggered by the user or generated by the system. </p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
         self.event_type.as_ref()
     }
-    /// <p>
-    /// The description of details of the event.
-    /// </p>
+    /// <p> The description of details of the event. </p>
     pub fn action_history_details(
         &self,
     ) -> std::option::Option<&crate::model::ActionHistoryDetails> {
@@ -3279,16 +3014,12 @@ pub mod action_history {
             self.timestamp = input;
             self
         }
-        /// <p>
-        /// The status of action at the time of the event.
-        /// </p>
+        /// <p> The status of action at the time of the event. </p>
         pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>
-        /// The status of action at the time of the event.
-        /// </p>
+        /// <p> The status of action at the time of the event. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ActionStatus>,
@@ -3296,16 +3027,12 @@ pub mod action_history {
             self.status = input;
             self
         }
-        /// <p>
-        /// This distinguishes between whether the events are triggered by the user or generated by the system.
-        /// </p>
+        /// <p> This distinguishes between whether the events are triggered by the user or generated by the system. </p>
         pub fn event_type(mut self, input: crate::model::EventType) -> Self {
             self.event_type = Some(input);
             self
         }
-        /// <p>
-        /// This distinguishes between whether the events are triggered by the user or generated by the system.
-        /// </p>
+        /// <p> This distinguishes between whether the events are triggered by the user or generated by the system. </p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -3313,16 +3040,12 @@ pub mod action_history {
             self.event_type = input;
             self
         }
-        /// <p>
-        /// The description of details of the event.
-        /// </p>
+        /// <p> The description of details of the event. </p>
         pub fn action_history_details(mut self, input: crate::model::ActionHistoryDetails) -> Self {
             self.action_history_details = Some(input);
             self
         }
-        /// <p>
-        /// The description of details of the event.
-        /// </p>
+        /// <p> The description of details of the event. </p>
         pub fn set_action_history_details(
             mut self,
             input: std::option::Option<crate::model::ActionHistoryDetails>,
@@ -3348,17 +3071,13 @@ impl ActionHistory {
     }
 }
 
-/// <p>
-/// The description of details of the event.
-/// </p>
+/// <p> The description of details of the event. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>
-    /// The budget action resource.
-    /// </p>
+    /// <p> The budget action resource. </p>
     pub action: std::option::Option<crate::model::Action>,
 }
 impl ActionHistoryDetails {
@@ -3366,9 +3085,7 @@ impl ActionHistoryDetails {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>
-    /// The budget action resource.
-    /// </p>
+    /// <p> The budget action resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::Action> {
         self.action.as_ref()
     }
@@ -3401,16 +3118,12 @@ pub mod action_history_details {
             self.message = input;
             self
         }
-        /// <p>
-        /// The budget action resource.
-        /// </p>
+        /// <p> The budget action resource. </p>
         pub fn action(mut self, input: crate::model::Action) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>
-        /// The budget action resource.
-        /// </p>
+        /// <p> The budget action resource. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3559,9 +3272,9 @@ pub mod notification_with_subscribers {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers who are subscribed to this notification.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }

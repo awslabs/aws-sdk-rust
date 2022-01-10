@@ -12,8 +12,7 @@ pub struct CreateAutoPredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAutoPredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -21,8 +20,7 @@ pub enum CreateAutoPredictorErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -69,8 +67,6 @@ impl CreateAutoPredictorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -153,8 +149,7 @@ pub struct CreateDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -203,8 +198,6 @@ impl CreateDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -268,8 +261,7 @@ pub struct CreateDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -277,8 +269,7 @@ pub enum CreateDatasetGroupErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -325,8 +316,6 @@ impl CreateDatasetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -409,8 +398,7 @@ pub struct CreateDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -418,8 +406,7 @@ pub enum CreateDatasetImportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -468,8 +455,6 @@ impl CreateDatasetImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -552,8 +537,7 @@ pub struct CreateExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -561,8 +545,7 @@ pub enum CreateExplainabilityErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -609,8 +592,6 @@ impl CreateExplainabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -693,8 +674,7 @@ pub struct CreateExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -702,8 +682,7 @@ pub enum CreateExplainabilityExportErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -752,8 +731,6 @@ impl CreateExplainabilityExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -838,8 +815,7 @@ pub struct CreateForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -847,8 +823,7 @@ pub enum CreateForecastErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -895,8 +870,6 @@ impl CreateForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -979,8 +952,7 @@ pub struct CreateForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -988,8 +960,7 @@ pub enum CreateForecastExportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1038,8 +1009,6 @@ impl CreateForecastExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1124,8 +1093,7 @@ pub struct CreatePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1133,8 +1101,7 @@ pub enum CreatePredictorErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1181,8 +1148,6 @@ impl CreatePredictorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1265,8 +1230,7 @@ pub struct CreatePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1274,8 +1238,7 @@ pub enum CreatePredictorBacktestExportJobErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1335,8 +1298,6 @@ impl CreatePredictorBacktestExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1429,13 +1390,11 @@ pub struct DeleteDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1480,8 +1439,6 @@ impl DeleteDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1545,13 +1502,11 @@ pub struct DeleteDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1596,8 +1551,6 @@ impl DeleteDatasetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1664,13 +1617,11 @@ pub struct DeleteDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1715,8 +1666,6 @@ impl DeleteDatasetImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1783,13 +1732,11 @@ pub struct DeleteExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1834,8 +1781,6 @@ impl DeleteExplainabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1902,13 +1847,11 @@ pub struct DeleteExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1953,8 +1896,6 @@ impl DeleteExplainabilityExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2021,13 +1962,11 @@ pub struct DeleteForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2072,8 +2011,6 @@ impl DeleteForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2140,13 +2077,11 @@ pub struct DeleteForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2191,8 +2126,6 @@ impl DeleteForecastExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2259,13 +2192,11 @@ pub struct DeletePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2310,8 +2241,6 @@ impl DeletePredictorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2378,13 +2307,11 @@ pub struct DeletePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2438,8 +2365,6 @@ impl DeletePredictorBacktestExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2512,13 +2437,11 @@ pub struct DeleteResourceTreeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceTreeErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2563,8 +2486,6 @@ impl DeleteResourceTreeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2631,11 +2552,9 @@ pub struct DescribeAutoPredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAutoPredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2679,8 +2598,6 @@ impl DescribeAutoPredictorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2739,11 +2656,9 @@ pub struct DescribeDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2787,8 +2702,6 @@ impl DescribeDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2847,11 +2760,9 @@ pub struct DescribeDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2895,8 +2806,6 @@ impl DescribeDatasetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2955,11 +2864,9 @@ pub struct DescribeDatasetImportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetImportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3003,8 +2910,6 @@ impl DescribeDatasetImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3063,11 +2968,9 @@ pub struct DescribeExplainabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExplainabilityErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3111,8 +3014,6 @@ impl DescribeExplainabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3171,11 +3072,9 @@ pub struct DescribeExplainabilityExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExplainabilityExportErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3221,8 +3120,6 @@ impl DescribeExplainabilityExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3283,11 +3180,9 @@ pub struct DescribeForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeForecastErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3331,8 +3226,6 @@ impl DescribeForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3391,11 +3284,9 @@ pub struct DescribeForecastExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeForecastExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3439,8 +3330,6 @@ impl DescribeForecastExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3499,11 +3388,9 @@ pub struct DescribePredictorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePredictorErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3547,8 +3434,6 @@ impl DescribePredictorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3607,11 +3492,9 @@ pub struct DescribePredictorBacktestExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePredictorBacktestExportJobErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3662,8 +3545,6 @@ impl DescribePredictorBacktestExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3726,13 +3607,11 @@ pub struct GetAccuracyMetricsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccuracyMetricsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3777,8 +3656,6 @@ impl GetAccuracyMetricsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3888,8 +3765,6 @@ impl ListDatasetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3940,8 +3815,7 @@ pub struct ListDatasetImportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatasetImportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -3987,8 +3861,6 @@ impl ListDatasetImportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4090,8 +3962,6 @@ impl ListDatasetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4142,8 +4012,7 @@ pub struct ListExplainabilitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExplainabilitiesErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4189,8 +4058,6 @@ impl ListExplainabilitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4249,8 +4116,7 @@ pub struct ListExplainabilityExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExplainabilityExportsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4296,8 +4162,6 @@ impl ListExplainabilityExportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4356,8 +4220,7 @@ pub struct ListForecastExportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListForecastExportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4403,8 +4266,6 @@ impl ListForecastExportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4463,8 +4324,7 @@ pub struct ListForecastsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListForecastsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4510,8 +4370,6 @@ impl ListForecastsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4567,8 +4425,7 @@ pub struct ListPredictorBacktestExportJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPredictorBacktestExportJobsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4621,8 +4478,6 @@ impl ListPredictorBacktestExportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4683,8 +4538,7 @@ pub struct ListPredictorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPredictorsErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The token is not valid. Tokens expire after 24 hours.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
@@ -4730,8 +4584,6 @@ impl ListPredictorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4790,11 +4642,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4838,8 +4688,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4898,13 +4746,11 @@ pub struct StopResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4949,8 +4795,6 @@ impl StopResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5011,13 +4855,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The limit on the number of resources per account has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5062,8 +4904,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5124,11 +4964,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5172,8 +5010,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5229,13 +5065,11 @@ pub struct UpdateDatasetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDatasetGroupErrorKind {
-    /// <p>We can't process the request because it includes an invalid value or a value that exceeds
-    /// the valid range.</p>
+    /// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-    /// again.</p>
+    /// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5280,8 +5114,6 @@ impl UpdateDatasetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5335,8 +5167,7 @@ impl std::error::Error for UpdateDatasetGroupError {
     }
 }
 
-/// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
-/// again.</p>
+/// <p>We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -5464,8 +5295,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>We can't process the request because it includes an invalid value or a value that exceeds
-/// the valid range.</p>
+/// <p>We can't process the request because it includes an invalid value or a value that exceeds the valid range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {

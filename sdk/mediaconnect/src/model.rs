@@ -20,6 +20,10 @@ pub struct Source {
         std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
     /// The name of the source.
     pub name: std::option::Option<std::string::String>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The ARN of the source.
     pub source_arn: std::option::Option<std::string::String>,
     /// Attributes related to the transport stream that are used in the source.
@@ -64,6 +68,14 @@ impl Source {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
+    }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
+    }
     /// The ARN of the source.
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
@@ -98,6 +110,8 @@ impl std::fmt::Debug for Source {
             &self.media_stream_source_configurations,
         );
         formatter.field("name", &self.name);
+        formatter.field("sender_control_port", &self.sender_control_port);
+        formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("source_arn", &self.source_arn);
         formatter.field("transport", &self.transport);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
@@ -120,6 +134,8 @@ pub mod source {
         pub(crate) media_stream_source_configurations:
             std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
+        pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) transport: std::option::Option<crate::model::Transport>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
@@ -202,10 +218,10 @@ pub mod source {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfiguration>,
+            input: crate::model::MediaStreamSourceConfiguration,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }
@@ -225,6 +241,29 @@ pub mod source {
         /// The name of the source.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sender_ip_address = Some(input.into());
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
             self
         }
         /// The ARN of the source.
@@ -289,6 +328,8 @@ pub mod source {
                 ingest_port: self.ingest_port.unwrap_or_default(),
                 media_stream_source_configurations: self.media_stream_source_configurations,
                 name: self.name,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
                 source_arn: self.source_arn,
                 transport: self.transport,
                 vpc_interface_name: self.vpc_interface_name,
@@ -312,7 +353,7 @@ pub struct Transport {
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
     pub max_bitrate: i32,
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub max_sync_buffer: i32,
@@ -322,6 +363,10 @@ pub struct Transport {
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull stream.
     pub remote_id: std::option::Option<std::string::String>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -336,7 +381,7 @@ impl Transport {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(&self) -> i32 {
         self.max_latency
     }
@@ -355,6 +400,14 @@ impl Transport {
     /// The remote ID for the Zixi-pull stream.
     pub fn remote_id(&self) -> std::option::Option<&str> {
         self.remote_id.as_deref()
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
+    }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(&self) -> i32 {
@@ -375,6 +428,8 @@ impl std::fmt::Debug for Transport {
         formatter.field("min_latency", &self.min_latency);
         formatter.field("protocol", &self.protocol);
         formatter.field("remote_id", &self.remote_id);
+        formatter.field("sender_control_port", &self.sender_control_port);
+        formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("smoothing_latency", &self.smoothing_latency);
         formatter.field("stream_id", &self.stream_id);
         formatter.finish()
@@ -393,6 +448,8 @@ pub mod transport {
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) remote_id: std::option::Option<std::string::String>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
+        pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
     }
@@ -426,12 +483,12 @@ pub mod transport {
             self.max_bitrate = input;
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
             self.max_latency = Some(input);
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -476,6 +533,29 @@ pub mod transport {
             self.remote_id = input;
             self
         }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sender_ip_address = Some(input.into());
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
+            self
+        }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
             self.smoothing_latency = Some(input);
@@ -506,6 +586,8 @@ pub mod transport {
                 min_latency: self.min_latency.unwrap_or_default(),
                 protocol: self.protocol,
                 remote_id: self.remote_id,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
                 smoothing_latency: self.smoothing_latency.unwrap_or_default(),
                 stream_id: self.stream_id,
             }
@@ -534,6 +616,8 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     Cdi,
     #[allow(missing_docs)] // documentation missing in model
+    FujitsuQos,
+    #[allow(missing_docs)] // documentation missing in model
     Rist,
     #[allow(missing_docs)] // documentation missing in model
     Rtp,
@@ -554,6 +638,7 @@ impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
         match s {
             "cdi" => Protocol::Cdi,
+            "fujitsu-qos" => Protocol::FujitsuQos,
             "rist" => Protocol::Rist,
             "rtp" => Protocol::Rtp,
             "rtp-fec" => Protocol::RtpFec,
@@ -577,6 +662,7 @@ impl Protocol {
     pub fn as_str(&self) -> &str {
         match self {
             Protocol::Cdi => "cdi",
+            Protocol::FujitsuQos => "fujitsu-qos",
             Protocol::Rist => "rist",
             Protocol::Rtp => "rtp",
             Protocol::RtpFec => "rtp-fec",
@@ -591,6 +677,7 @@ impl Protocol {
     pub fn values() -> &'static [&'static str] {
         &[
             "cdi",
+            "fujitsu-qos",
             "rist",
             "rtp",
             "rtp-fec",
@@ -671,12 +758,9 @@ pub mod media_stream_source_configuration {
         /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
         ///
         /// The transport parameters that are associated with an incoming media stream.
-        pub fn input_configurations(
-            mut self,
-            input: impl Into<crate::model::InputConfiguration>,
-        ) -> Self {
+        pub fn input_configurations(mut self, input: crate::model::InputConfiguration) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_configurations = Some(v);
             self
         }
@@ -1333,10 +1417,10 @@ pub mod media_stream_source_configuration_request {
         /// The transport parameters that you want to associate with the media stream.
         pub fn input_configurations(
             mut self,
-            input: impl Into<crate::model::InputConfigurationRequest>,
+            input: crate::model::InputConfigurationRequest,
         ) -> Self {
             let mut v = self.input_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_configurations = Some(v);
             self
         }
@@ -1954,10 +2038,10 @@ pub mod output {
         /// The configuration for each media stream that is associated with the output.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfiguration>,
+            input: crate::model::MediaStreamOutputConfiguration,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }
@@ -2181,10 +2265,10 @@ pub mod media_stream_output_configuration {
         /// The transport parameters that are associated with each outbound media stream.
         pub fn destination_configurations(
             mut self,
-            input: impl Into<crate::model::DestinationConfiguration>,
+            input: crate::model::DestinationConfiguration,
         ) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_configurations = Some(v);
             self
         }
@@ -2571,10 +2655,10 @@ pub mod media_stream_output_configuration_request {
         /// The transport parameters that you want to associate with the media stream.
         pub fn destination_configurations(
             mut self,
-            input: impl Into<crate::model::DestinationConfigurationRequest>,
+            input: crate::model::DestinationConfigurationRequest,
         ) -> Self {
             let mut v = self.destination_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_configurations = Some(v);
             self
         }
@@ -4136,7 +4220,7 @@ pub struct Flow {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// The settings for the source of the flow.
     pub source: std::option::Option<crate::model::Source>,
-    /// The settings for source failover
+    /// The settings for source failover.
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
@@ -4182,7 +4266,7 @@ impl Flow {
     pub fn source(&self) -> std::option::Option<&crate::model::Source> {
         self.source.as_ref()
     }
-    /// The settings for source failover
+    /// The settings for source failover.
     pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
         self.source_failover_config.as_ref()
     }
@@ -4277,9 +4361,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements in this flow.
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -4306,9 +4390,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-        pub fn media_streams(mut self, input: impl Into<crate::model::MediaStream>) -> Self {
+        pub fn media_streams(mut self, input: crate::model::MediaStream) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -4335,9 +4419,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The outputs in this flow.
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -4359,12 +4443,12 @@ pub mod flow {
             self.source = input;
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::FailoverConfig) -> Self {
             self.source_failover_config = Some(input);
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::FailoverConfig>,
@@ -4376,9 +4460,9 @@ pub mod flow {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -4405,9 +4489,9 @@ pub mod flow {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The VPC Interfaces for this flow.
-        pub fn vpc_interfaces(mut self, input: impl Into<crate::model::VpcInterface>) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterface) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -4450,7 +4534,7 @@ impl Flow {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcInterface {
-    /// Immutable and has to be a unique against other VpcInterfaces in this Flow
+    /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
     pub name: std::option::Option<std::string::String>,
     /// IDs of the network interfaces created in customer's account by MediaConnect.
     pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4464,7 +4548,7 @@ pub struct VpcInterface {
     pub subnet_id: std::option::Option<std::string::String>,
 }
 impl VpcInterface {
-    /// Immutable and has to be a unique against other VpcInterfaces in this Flow
+    /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4517,12 +4601,12 @@ pub mod vpc_interface {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Immutable and has to be a unique against other VpcInterfaces in this Flow
+        /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// Immutable and has to be a unique against other VpcInterfaces in this Flow
+        /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4750,7 +4834,7 @@ impl AsRef<str> for Status {
     }
 }
 
-/// The settings for source failover
+/// The settings for source failover.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverConfig {
@@ -5034,7 +5118,7 @@ impl AsRef<str> for FailoverMode {
     }
 }
 
-/// The settings for source failover
+/// The settings for source failover.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFailoverConfig {
@@ -6676,7 +6760,7 @@ pub struct SetSourceRequest {
     pub ingest_port: i32,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
     pub max_bitrate: i32,
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub max_sync_buffer: i32,
@@ -6689,6 +6773,10 @@ pub struct SetSourceRequest {
     pub name: std::option::Option<std::string::String>,
     /// The protocol that is used by the source.
     pub protocol: std::option::Option<crate::model::Protocol>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub stream_id: std::option::Option<std::string::String>,
     /// The name of the VPC interface to use for this source.
@@ -6717,7 +6805,7 @@ impl SetSourceRequest {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(&self) -> i32 {
         self.max_latency
     }
@@ -6742,6 +6830,14 @@ impl SetSourceRequest {
     /// The protocol that is used by the source.
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
+    }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
     pub fn stream_id(&self) -> std::option::Option<&str> {
@@ -6773,6 +6869,8 @@ impl std::fmt::Debug for SetSourceRequest {
         formatter.field("min_latency", &self.min_latency);
         formatter.field("name", &self.name);
         formatter.field("protocol", &self.protocol);
+        formatter.field("sender_control_port", &self.sender_control_port);
+        formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
         formatter.field("whitelist_cidr", &self.whitelist_cidr);
@@ -6797,6 +6895,8 @@ pub mod set_source_request {
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
+        pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
         pub(crate) whitelist_cidr: std::option::Option<std::string::String>,
@@ -6858,12 +6958,12 @@ pub mod set_source_request {
             self.max_bitrate = input;
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
             self.max_latency = Some(input);
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -6885,10 +6985,10 @@ pub mod set_source_request {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }
@@ -6930,6 +7030,29 @@ pub mod set_source_request {
         /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sender_ip_address = Some(input.into());
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
             self
         }
         /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -6982,6 +7105,8 @@ pub mod set_source_request {
                 min_latency: self.min_latency.unwrap_or_default(),
                 name: self.name,
                 protocol: self.protocol,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
                 stream_id: self.stream_id,
                 vpc_interface_name: self.vpc_interface_name,
                 whitelist_cidr: self.whitelist_cidr,
@@ -7008,7 +7133,7 @@ pub struct AddOutputRequest {
     pub destination: std::option::Option<std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
     pub encryption: std::option::Option<crate::model::Encryption>,
-    /// The maximum latency in milliseconds for Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
     pub media_stream_output_configurations:
@@ -7023,6 +7148,8 @@ pub struct AddOutputRequest {
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull output stream.
     pub remote_id: std::option::Option<std::string::String>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -7047,7 +7174,7 @@ impl AddOutputRequest {
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
     }
-    /// The maximum latency in milliseconds for Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(&self) -> i32 {
         self.max_latency
     }
@@ -7076,6 +7203,10 @@ impl AddOutputRequest {
     /// The remote ID for the Zixi-pull output stream.
     pub fn remote_id(&self) -> std::option::Option<&str> {
         self.remote_id.as_deref()
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(&self) -> i32 {
@@ -7109,6 +7240,7 @@ impl std::fmt::Debug for AddOutputRequest {
         formatter.field("port", &self.port);
         formatter.field("protocol", &self.protocol);
         formatter.field("remote_id", &self.remote_id);
+        formatter.field("sender_control_port", &self.sender_control_port);
         formatter.field("smoothing_latency", &self.smoothing_latency);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
@@ -7133,6 +7265,7 @@ pub mod add_output_request {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) remote_id: std::option::Option<std::string::String>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_attachment:
@@ -7191,12 +7324,12 @@ pub mod add_output_request {
             self.encryption = input;
             self
         }
-        /// The maximum latency in milliseconds for Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
             self.max_latency = Some(input);
             self
         }
-        /// The maximum latency in milliseconds for Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -7208,10 +7341,10 @@ pub mod add_output_request {
         /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }
@@ -7275,6 +7408,16 @@ pub mod add_output_request {
             self.remote_id = input;
             self
         }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
             self.smoothing_latency = Some(input);
@@ -7325,6 +7468,7 @@ pub mod add_output_request {
                 port: self.port.unwrap_or_default(),
                 protocol: self.protocol,
                 remote_id: self.remote_id,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
                 smoothing_latency: self.smoothing_latency.unwrap_or_default(),
                 stream_id: self.stream_id,
                 vpc_interface_attachment: self.vpc_interface_attachment,

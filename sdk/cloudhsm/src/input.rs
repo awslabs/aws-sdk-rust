@@ -25,9 +25,9 @@ pub mod add_tags_to_resource_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>One or more tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -56,7 +56,7 @@ pub mod add_tags_to_resource_input {
 #[doc(hidden)]
 pub type AddTagsToResourceInputOperationOutputAlias = crate::operation::AddTagsToResource;
 #[doc(hidden)]
-pub type AddTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(clippy::let_and_return)]
@@ -67,7 +67,7 @@ impl AddTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -152,7 +152,7 @@ impl AddTagsToResourceInput {
             "AddTagsToResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -208,7 +208,7 @@ pub mod create_hapg_input {
 #[doc(hidden)]
 pub type CreateHapgInputOperationOutputAlias = crate::operation::CreateHapg;
 #[doc(hidden)]
-pub type CreateHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHapgInput {
     /// Consumes the builder and constructs an Operation<[`CreateHapg`](crate::operation::CreateHapg)>
     #[allow(clippy::let_and_return)]
@@ -219,7 +219,7 @@ impl CreateHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl CreateHapgInput {
             "CreateHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -363,27 +363,23 @@ pub mod create_hsm_input {
             self
         }
         /// <p>The IP address to assign to the HSM's ENI.</p>
-        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-        /// range of the subnet.</p>
+        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.eni_ip = Some(input.into());
             self
         }
         /// <p>The IP address to assign to the HSM's ENI.</p>
-        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-        /// range of the subnet.</p>
+        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
         }
-        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-        /// behalf.</p>
+        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-        /// behalf.</p>
+        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -400,16 +396,8 @@ pub mod create_hsm_input {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn subscription_type(mut self, input: crate::model::SubscriptionType) -> Self {
             self.subscription_type = Some(input);
@@ -417,16 +405,8 @@ pub mod create_hsm_input {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn set_subscription_type(
             mut self,
@@ -435,26 +415,22 @@ pub mod create_hsm_input {
             self.subscription_type = input;
             self
         }
-        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-        /// same token will be ignored.</p>
+        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-        /// same token will be ignored.</p>
+        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-        /// syslog monitoring server.</p>
+        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.syslog_ip = Some(input.into());
             self
         }
-        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-        /// syslog monitoring server.</p>
+        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.syslog_ip = input;
             self
@@ -480,7 +456,7 @@ pub mod create_hsm_input {
 #[doc(hidden)]
 pub type CreateHsmInputOperationOutputAlias = crate::operation::CreateHsm;
 #[doc(hidden)]
-pub type CreateHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsm`](crate::operation::CreateHsm)>
     #[allow(clippy::let_and_return)]
@@ -491,7 +467,7 @@ impl CreateHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -573,7 +549,7 @@ impl CreateHsmInput {
                     "CreateHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -616,14 +592,12 @@ pub mod create_luna_client_input {
             self.label = input;
             self
         }
-        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-        /// by this client.</p>
+        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate = Some(input.into());
             self
         }
-        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-        /// by this client.</p>
+        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -645,7 +619,7 @@ pub mod create_luna_client_input {
 #[doc(hidden)]
 pub type CreateLunaClientInputOperationOutputAlias = crate::operation::CreateLunaClient;
 #[doc(hidden)]
-pub type CreateLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`CreateLunaClient`](crate::operation::CreateLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -656,7 +630,7 @@ impl CreateLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -741,7 +715,7 @@ impl CreateLunaClientInput {
             "CreateLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -799,7 +773,7 @@ pub mod delete_hapg_input {
 #[doc(hidden)]
 pub type DeleteHapgInputOperationOutputAlias = crate::operation::DeleteHapg;
 #[doc(hidden)]
-pub type DeleteHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHapgInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHapg`](crate::operation::DeleteHapg)>
     #[allow(clippy::let_and_return)]
@@ -810,7 +784,7 @@ impl DeleteHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -894,7 +868,7 @@ impl DeleteHapgInput {
             "DeleteHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -950,7 +924,7 @@ pub mod delete_hsm_input {
 #[doc(hidden)]
 pub type DeleteHsmInputOperationOutputAlias = crate::operation::DeleteHsm;
 #[doc(hidden)]
-pub type DeleteHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsm`](crate::operation::DeleteHsm)>
     #[allow(clippy::let_and_return)]
@@ -961,7 +935,7 @@ impl DeleteHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1043,7 +1017,7 @@ impl DeleteHsmInput {
                     "DeleteHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1101,7 +1075,7 @@ pub mod delete_luna_client_input {
 #[doc(hidden)]
 pub type DeleteLunaClientInputOperationOutputAlias = crate::operation::DeleteLunaClient;
 #[doc(hidden)]
-pub type DeleteLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLunaClient`](crate::operation::DeleteLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -1112,7 +1086,7 @@ impl DeleteLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1197,7 +1171,7 @@ impl DeleteLunaClientInput {
             "DeleteLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1255,7 +1229,7 @@ pub mod describe_hapg_input {
 #[doc(hidden)]
 pub type DescribeHapgInputOperationOutputAlias = crate::operation::DescribeHapg;
 #[doc(hidden)]
-pub type DescribeHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHapgInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHapg`](crate::operation::DescribeHapg)>
     #[allow(clippy::let_and_return)]
@@ -1266,7 +1240,7 @@ impl DescribeHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1350,7 +1324,7 @@ impl DescribeHapgInput {
             "DescribeHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1383,26 +1357,22 @@ pub mod describe_hsm_input {
         pub(crate) hsm_serial_number: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-        /// parameter must be specified.</p>
+        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
         pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-        /// parameter must be specified.</p>
+        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_arn = input;
             self
         }
-        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-        /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
         pub fn hsm_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_serial_number = Some(input.into());
             self
         }
-        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-        /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
         pub fn set_hsm_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1427,7 +1397,7 @@ pub mod describe_hsm_input {
 #[doc(hidden)]
 pub type DescribeHsmInputOperationOutputAlias = crate::operation::DescribeHsm;
 #[doc(hidden)]
-pub type DescribeHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHsmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHsm`](crate::operation::DescribeHsm)>
     #[allow(clippy::let_and_return)]
@@ -1438,7 +1408,7 @@ impl DescribeHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1522,7 +1492,7 @@ impl DescribeHsmInput {
             "DescribeHsm",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1595,7 +1565,7 @@ pub mod describe_luna_client_input {
 #[doc(hidden)]
 pub type DescribeLunaClientInputOperationOutputAlias = crate::operation::DescribeLunaClient;
 #[doc(hidden)]
-pub type DescribeLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLunaClient`](crate::operation::DescribeLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -1606,7 +1576,7 @@ impl DescribeLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1691,7 +1661,7 @@ impl DescribeLunaClientInput {
             "DescribeLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1752,16 +1722,14 @@ pub mod get_config_input {
         ///
         /// To override the contents of this collection use [`set_hapg_list`](Self::set_hapg_list).
         ///
-        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-        /// with the client.</p>
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
         pub fn hapg_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hapg_list.unwrap_or_default();
             v.push(input.into());
             self.hapg_list = Some(v);
             self
         }
-        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-        /// with the client.</p>
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
         pub fn set_hapg_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1785,7 +1753,7 @@ pub mod get_config_input {
 #[doc(hidden)]
 pub type GetConfigInputOperationOutputAlias = crate::operation::GetConfig;
 #[doc(hidden)]
-pub type GetConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetConfig`](crate::operation::GetConfig)>
     #[allow(clippy::let_and_return)]
@@ -1796,7 +1764,7 @@ impl GetConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1878,7 +1846,7 @@ impl GetConfigInput {
                     "GetConfig",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1922,7 +1890,7 @@ pub mod list_available_zones_input {
 #[doc(hidden)]
 pub type ListAvailableZonesInputOperationOutputAlias = crate::operation::ListAvailableZones;
 #[doc(hidden)]
-pub type ListAvailableZonesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAvailableZonesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableZonesInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableZones`](crate::operation::ListAvailableZones)>
     #[allow(clippy::let_and_return)]
@@ -1933,7 +1901,7 @@ impl ListAvailableZonesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableZones,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2018,7 +1986,7 @@ impl ListAvailableZonesInput {
             "ListAvailableZones",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2042,14 +2010,12 @@ pub mod list_hapgs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2068,7 +2034,7 @@ pub mod list_hapgs_input {
 #[doc(hidden)]
 pub type ListHapgsInputOperationOutputAlias = crate::operation::ListHapgs;
 #[doc(hidden)]
-pub type ListHapgsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHapgsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHapgsInput {
     /// Consumes the builder and constructs an Operation<[`ListHapgs`](crate::operation::ListHapgs)>
     #[allow(clippy::let_and_return)]
@@ -2079,7 +2045,7 @@ impl ListHapgsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHapgs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2161,7 +2127,7 @@ impl ListHapgsInput {
                     "ListHapgs",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2193,14 +2159,12 @@ pub mod list_hsms_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-        /// null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2219,7 +2183,7 @@ pub mod list_hsms_input {
 #[doc(hidden)]
 pub type ListHsmsInputOperationOutputAlias = crate::operation::ListHsms;
 #[doc(hidden)]
-pub type ListHsmsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHsmsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHsmsInput {
     /// Consumes the builder and constructs an Operation<[`ListHsms`](crate::operation::ListHsms)>
     #[allow(clippy::let_and_return)]
@@ -2230,7 +2194,7 @@ impl ListHsmsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHsms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2311,7 +2275,7 @@ impl ListHsmsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListHsms", "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2343,14 +2307,12 @@ pub mod list_luna_clients_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-        /// Pass null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-        /// Pass null if this is the first call.</p>
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2371,7 +2333,7 @@ pub mod list_luna_clients_input {
 #[doc(hidden)]
 pub type ListLunaClientsInputOperationOutputAlias = crate::operation::ListLunaClients;
 #[doc(hidden)]
-pub type ListLunaClientsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLunaClientsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLunaClientsInput {
     /// Consumes the builder and constructs an Operation<[`ListLunaClients`](crate::operation::ListLunaClients)>
     #[allow(clippy::let_and_return)]
@@ -2382,7 +2344,7 @@ impl ListLunaClientsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLunaClients,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2467,7 +2429,7 @@ impl ListLunaClientsInput {
             "ListLunaClients",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2525,7 +2487,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2536,7 +2498,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2623,7 +2585,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2681,16 +2643,14 @@ pub mod modify_hapg_input {
         ///
         /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
         ///
-        /// <p>The list of partition serial numbers to make members of the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
         pub fn partition_serial_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_serial_list.unwrap_or_default();
             v.push(input.into());
             self.partition_serial_list = Some(v);
             self
         }
-        /// <p>The list of partition serial numbers to make members of the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
         pub fn set_partition_serial_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2716,7 +2676,7 @@ pub mod modify_hapg_input {
 #[doc(hidden)]
 pub type ModifyHapgInputOperationOutputAlias = crate::operation::ModifyHapg;
 #[doc(hidden)]
-pub type ModifyHapgInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyHapgInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyHapgInput {
     /// Consumes the builder and constructs an Operation<[`ModifyHapg`](crate::operation::ModifyHapg)>
     #[allow(clippy::let_and_return)]
@@ -2727,7 +2687,7 @@ impl ModifyHapgInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHapg,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2811,7 +2771,7 @@ impl ModifyHapgInput {
             "ModifyHapg",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2858,30 +2818,24 @@ pub mod modify_hsm_input {
             self.hsm_arn = input;
             self
         }
-        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-        /// Availability Zone as the current subnet.</p>
+        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
         }
-        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-        /// Availability Zone as the current subnet.</p>
+        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
         }
-        /// <p>The new IP address for the elastic network interface (ENI) attached to the
-        /// HSM.</p>
-        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-        /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+        /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.eni_ip = Some(input.into());
             self
         }
-        /// <p>The new IP address for the elastic network interface (ENI) attached to the
-        /// HSM.</p>
-        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-        /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+        /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
@@ -2906,14 +2860,12 @@ pub mod modify_hsm_input {
             self.external_id = input;
             self
         }
-        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-        /// one syslog monitoring server.</p>
+        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.syslog_ip = Some(input.into());
             self
         }
-        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-        /// one syslog monitoring server.</p>
+        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.syslog_ip = input;
             self
@@ -2937,7 +2889,7 @@ pub mod modify_hsm_input {
 #[doc(hidden)]
 pub type ModifyHsmInputOperationOutputAlias = crate::operation::ModifyHsm;
 #[doc(hidden)]
-pub type ModifyHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyHsmInput {
     /// Consumes the builder and constructs an Operation<[`ModifyHsm`](crate::operation::ModifyHsm)>
     #[allow(clippy::let_and_return)]
@@ -2948,7 +2900,7 @@ impl ModifyHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3030,7 +2982,7 @@ impl ModifyHsmInput {
                     "ModifyHsm",
                     "cloudhsm",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3100,7 +3052,7 @@ pub mod modify_luna_client_input {
 #[doc(hidden)]
 pub type ModifyLunaClientInputOperationOutputAlias = crate::operation::ModifyLunaClient;
 #[doc(hidden)]
-pub type ModifyLunaClientInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyLunaClientInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLunaClientInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLunaClient`](crate::operation::ModifyLunaClient)>
     #[allow(clippy::let_and_return)]
@@ -3111,7 +3063,7 @@ impl ModifyLunaClientInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLunaClient,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3196,7 +3148,7 @@ impl ModifyLunaClientInput {
             "ModifyLunaClient",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3244,8 +3196,7 @@ pub mod remove_tags_from_resource_input {
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
         /// <p>The tag key or keys to remove.</p>
-        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-        /// existing tag, use <a>AddTagsToResource</a>.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
@@ -3253,8 +3204,7 @@ pub mod remove_tags_from_resource_input {
             self
         }
         /// <p>The tag key or keys to remove.</p>
-        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-        /// existing tag, use <a>AddTagsToResource</a>.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3279,7 +3229,7 @@ pub mod remove_tags_from_resource_input {
 #[doc(hidden)]
 pub type RemoveTagsFromResourceInputOperationOutputAlias = crate::operation::RemoveTagsFromResource;
 #[doc(hidden)]
-pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(clippy::let_and_return)]
@@ -3290,7 +3240,7 @@ impl RemoveTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3377,7 +3327,7 @@ impl RemoveTagsFromResourceInput {
             "RemoveTagsFromResource",
             "cloudhsm",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3407,8 +3357,7 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag key or keys to remove.</p>
-    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-    /// existing tag, use <a>AddTagsToResource</a>.</p>
+    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
@@ -3417,8 +3366,7 @@ impl RemoveTagsFromResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>The tag key or keys to remove.</p>
-    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
-    /// existing tag, use <a>AddTagsToResource</a>.</p>
+    /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_key_list.as_deref()
     }
@@ -3460,26 +3408,22 @@ impl std::fmt::Debug for ModifyLunaClientInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
+/// <p>Contains the inputs for the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHsmInput {
     /// <p>The ARN of the HSM to modify.</p>
     pub hsm_arn: std::option::Option<std::string::String>,
-    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-    /// Availability Zone as the current subnet.</p>
+    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The new IP address for the elastic network interface (ENI) attached to the
-    /// HSM.</p>
-    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-    /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+    /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>The new IAM role ARN.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The new external ID.</p>
     pub external_id: std::option::Option<std::string::String>,
-    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-    /// one syslog monitoring server.</p>
+    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub syslog_ip: std::option::Option<std::string::String>,
 }
 impl ModifyHsmInput {
@@ -3487,15 +3431,12 @@ impl ModifyHsmInput {
     pub fn hsm_arn(&self) -> std::option::Option<&str> {
         self.hsm_arn.as_deref()
     }
-    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
-    /// Availability Zone as the current subnet.</p>
+    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The new IP address for the elastic network interface (ENI) attached to the
-    /// HSM.</p>
-    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
-    /// address will be randomly chosen from the CIDR range of the new subnet.</p>
+    /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
     pub fn eni_ip(&self) -> std::option::Option<&str> {
         self.eni_ip.as_deref()
     }
@@ -3507,8 +3448,7 @@ impl ModifyHsmInput {
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
-    /// one syslog monitoring server.</p>
+    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn syslog_ip(&self) -> std::option::Option<&str> {
         self.syslog_ip.as_deref()
     }
@@ -3534,8 +3474,7 @@ pub struct ModifyHapgInput {
     pub hapg_arn: std::option::Option<std::string::String>,
     /// <p>The new label for the high-availability partition group.</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>The list of partition serial numbers to make members of the high-availability partition
-    /// group.</p>
+    /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
     pub partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyHapgInput {
@@ -3547,8 +3486,7 @@ impl ModifyHapgInput {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>The list of partition serial numbers to make members of the high-availability partition
-    /// group.</p>
+    /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
     pub fn partition_serial_list(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_serial_list.as_deref()
     }
@@ -3588,13 +3526,11 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLunaClientsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-    /// Pass null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLunaClientsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
-    /// Pass null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3611,13 +3547,11 @@ impl std::fmt::Debug for ListLunaClientsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHsmsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-    /// null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHsmsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
-    /// null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3634,13 +3568,11 @@ impl std::fmt::Debug for ListHsmsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHapgsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-    /// null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHapgsInput {
-    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
-    /// null if this is the first call.</p>
+    /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3653,7 +3585,7 @@ impl std::fmt::Debug for ListHapgsInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>
+/// <p>Contains the inputs for the <code>ListAvailableZones</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableZonesInput {}
@@ -3672,8 +3604,7 @@ pub struct GetConfigInput {
     pub client_arn: std::option::Option<std::string::String>,
     /// <p>The client version.</p>
     pub client_version: std::option::Option<crate::model::ClientVersion>,
-    /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-    /// with the client.</p>
+    /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetConfigInput {
@@ -3685,8 +3616,7 @@ impl GetConfigInput {
     pub fn client_version(&self) -> std::option::Option<&crate::model::ClientVersion> {
         self.client_version.as_ref()
     }
-    /// <p>A list of ARNs that identify the high-availability partition groups that are associated
-    /// with the client.</p>
+    /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
     pub fn hapg_list(&self) -> std::option::Option<&[std::string::String]> {
         self.hapg_list.as_deref()
     }
@@ -3729,25 +3659,21 @@ impl std::fmt::Debug for DescribeLunaClientInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DescribeHsm</a> operation.</p>
+/// <p>Contains the inputs for the <code>DescribeHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmInput {
-    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-    /// parameter must be specified.</p>
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
     pub hsm_arn: std::option::Option<std::string::String>,
-    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-    /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
     pub hsm_serial_number: std::option::Option<std::string::String>,
 }
 impl DescribeHsmInput {
-    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-    /// parameter must be specified.</p>
+    /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
     pub fn hsm_arn(&self) -> std::option::Option<&str> {
         self.hsm_arn.as_deref()
     }
-    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
-    /// <code>HsmSerialNumber</code> parameter must be specified.</p>
+    /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
     pub fn hsm_serial_number(&self) -> std::option::Option<&str> {
         self.hsm_serial_number.as_deref()
     }
@@ -3761,7 +3687,7 @@ impl std::fmt::Debug for DescribeHsmInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DescribeHapg</a> action.</p>
+/// <p>Contains the inputs for the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHapgInput {
@@ -3803,7 +3729,7 @@ impl std::fmt::Debug for DeleteLunaClientInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>
+/// <p>Contains the inputs for the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmInput {
@@ -3824,7 +3750,7 @@ impl std::fmt::Debug for DeleteHsmInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>DeleteHapg</a> action.</p>
+/// <p>Contains the inputs for the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHapgInput {
@@ -3845,14 +3771,13 @@ impl std::fmt::Debug for DeleteHapgInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>
+/// <p>Contains the inputs for the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLunaClientInput {
     /// <p>The label for the client.</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-    /// by this client.</p>
+    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub certificate: std::option::Option<std::string::String>,
 }
 impl CreateLunaClientInput {
@@ -3860,8 +3785,7 @@ impl CreateLunaClientInput {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
-    /// by this client.</p>
+    /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
@@ -3884,33 +3808,21 @@ pub struct CreateHsmInput {
     /// <p>The SSH public key to install on the HSM.</p>
     pub ssh_key: std::option::Option<std::string::String>,
     /// <p>The IP address to assign to the HSM's ENI.</p>
-    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-    /// range of the subnet.</p>
+    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub eni_ip: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-    /// behalf.</p>
+    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
     pub external_id: std::option::Option<std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>PRODUCTION</b> - The HSM is being used in a production
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TRIAL</b> - The HSM is being used in a product
-    /// trial.</p>
-    /// </li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
-    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-    /// same token will be ignored.</p>
+    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-    /// syslog monitoring server.</p>
+    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub syslog_ip: std::option::Option<std::string::String>,
 }
 impl CreateHsmInput {
@@ -3923,13 +3835,11 @@ impl CreateHsmInput {
         self.ssh_key.as_deref()
     }
     /// <p>The IP address to assign to the HSM's ENI.</p>
-    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
-    /// range of the subnet.</p>
+    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub fn eni_ip(&self) -> std::option::Option<&str> {
         self.eni_ip.as_deref()
     }
-    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
-    /// behalf.</p>
+    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
@@ -3939,27 +3849,17 @@ impl CreateHsmInput {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>PRODUCTION</b> - The HSM is being used in a production
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TRIAL</b> - The HSM is being used in a product
-    /// trial.</p>
-    /// </li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
         self.subscription_type.as_ref()
     }
-    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
-    /// same token will be ignored.</p>
+    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
-    /// syslog monitoring server.</p>
+    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn syslog_ip(&self) -> std::option::Option<&str> {
         self.syslog_ip.as_deref()
     }
@@ -3979,7 +3879,7 @@ impl std::fmt::Debug for CreateHsmInput {
     }
 }
 
-/// <p>Contains the inputs for the <a>CreateHapgRequest</a> action.</p>
+/// <p>Contains the inputs for the <code>CreateHapgRequest</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHapgInput {

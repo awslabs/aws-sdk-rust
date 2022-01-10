@@ -330,9 +330,9 @@ pub mod get_resources_output {
         /// To override the contents of this collection use [`set_folders`](Self::set_folders).
         ///
         /// <p>The folders in the specified folder.</p>
-        pub fn folders(mut self, input: impl Into<crate::model::FolderMetadata>) -> Self {
+        pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folders = Some(v);
             self
         }
@@ -349,9 +349,9 @@ pub mod get_resources_output {
         /// To override the contents of this collection use [`set_documents`](Self::set_documents).
         ///
         /// <p>The documents in the specified collection.</p>
-        pub fn documents(mut self, input: impl Into<crate::model::DocumentMetadata>) -> Self {
+        pub fn documents(mut self, input: crate::model::DocumentMetadata) -> Self {
             let mut v = self.documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.documents = Some(v);
             self
         }
@@ -845,8 +845,7 @@ pub struct DescribeUsersOutput {
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
     /// <p>The total number of users included in the results.</p>
     pub total_number_of_users: std::option::Option<i64>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -858,8 +857,7 @@ impl DescribeUsersOutput {
     pub fn total_number_of_users(&self) -> std::option::Option<i64> {
         self.total_number_of_users
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -889,9 +887,9 @@ pub mod describe_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -913,14 +911,12 @@ pub mod describe_users_output {
             self.total_number_of_users = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -984,9 +980,9 @@ pub mod describe_root_folders_output {
         /// To override the contents of this collection use [`set_folders`](Self::set_folders).
         ///
         /// <p>The user's special folders.</p>
-        pub fn folders(mut self, input: impl Into<crate::model::FolderMetadata>) -> Self {
+        pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folders = Some(v);
             self
         }
@@ -1030,8 +1026,7 @@ impl DescribeRootFoldersOutput {
 pub struct DescribeResourcePermissionsOutput {
     /// <p>The principals.</p>
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsOutput {
@@ -1039,8 +1034,7 @@ impl DescribeResourcePermissionsOutput {
     pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principals.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1068,9 +1062,9 @@ pub mod describe_resource_permissions_output {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The principals.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -1082,14 +1076,12 @@ pub mod describe_resource_permissions_output {
             self.principals = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1116,8 +1108,7 @@ impl DescribeResourcePermissionsOutput {
 pub struct DescribeNotificationSubscriptionsOutput {
     /// <p>The subscriptions.</p>
     pub subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationSubscriptionsOutput {
@@ -1125,8 +1116,7 @@ impl DescribeNotificationSubscriptionsOutput {
     pub fn subscriptions(&self) -> std::option::Option<&[crate::model::Subscription]> {
         self.subscriptions.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1154,9 +1144,9 @@ pub mod describe_notification_subscriptions_output {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// <p>The subscriptions.</p>
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -1168,14 +1158,12 @@ pub mod describe_notification_subscriptions_output {
             self.subscriptions = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1202,8 +1190,7 @@ impl DescribeNotificationSubscriptionsOutput {
 pub struct DescribeGroupsOutput {
     /// <p>The list of groups.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no additional
-    /// results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeGroupsOutput {
@@ -1211,8 +1198,7 @@ impl DescribeGroupsOutput {
     pub fn groups(&self) -> std::option::Option<&[crate::model::GroupMetadata]> {
         self.groups.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no additional
-    /// results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1240,9 +1226,9 @@ pub mod describe_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The list of groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupMetadata>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupMetadata) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1254,14 +1240,12 @@ pub mod describe_groups_output {
             self.groups = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no additional
-        /// results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no additional
-        /// results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1290,8 +1274,7 @@ pub struct DescribeFolderContentsOutput {
     pub folders: std::option::Option<std::vec::Vec<crate::model::FolderMetadata>>,
     /// <p>The documents in the specified folder.</p>
     pub documents: std::option::Option<std::vec::Vec<crate::model::DocumentMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsOutput {
@@ -1303,8 +1286,7 @@ impl DescribeFolderContentsOutput {
     pub fn documents(&self) -> std::option::Option<&[crate::model::DocumentMetadata]> {
         self.documents.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1334,9 +1316,9 @@ pub mod describe_folder_contents_output {
         /// To override the contents of this collection use [`set_folders`](Self::set_folders).
         ///
         /// <p>The subfolders in the specified folder.</p>
-        pub fn folders(mut self, input: impl Into<crate::model::FolderMetadata>) -> Self {
+        pub fn folders(mut self, input: crate::model::FolderMetadata) -> Self {
             let mut v = self.folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folders = Some(v);
             self
         }
@@ -1353,9 +1335,9 @@ pub mod describe_folder_contents_output {
         /// To override the contents of this collection use [`set_documents`](Self::set_documents).
         ///
         /// <p>The documents in the specified folder.</p>
-        pub fn documents(mut self, input: impl Into<crate::model::DocumentMetadata>) -> Self {
+        pub fn documents(mut self, input: crate::model::DocumentMetadata) -> Self {
             let mut v = self.documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.documents = Some(v);
             self
         }
@@ -1367,14 +1349,12 @@ pub mod describe_folder_contents_output {
             self.documents = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1403,8 +1383,7 @@ pub struct DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
     pub document_versions:
         std::option::Option<std::vec::Vec<crate::model::DocumentVersionMetadata>>,
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsOutput {
@@ -1414,8 +1393,7 @@ impl DescribeDocumentVersionsOutput {
     ) -> std::option::Option<&[crate::model::DocumentVersionMetadata]> {
         self.document_versions.as_deref()
     }
-    /// <p>The marker to use when requesting the next set of results. If there are no
-    /// additional results, the string is empty.</p>
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1444,12 +1422,9 @@ pub mod describe_document_versions_output {
         /// To override the contents of this collection use [`set_document_versions`](Self::set_document_versions).
         ///
         /// <p>The document versions.</p>
-        pub fn document_versions(
-            mut self,
-            input: impl Into<crate::model::DocumentVersionMetadata>,
-        ) -> Self {
+        pub fn document_versions(mut self, input: crate::model::DocumentVersionMetadata) -> Self {
             let mut v = self.document_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.document_versions = Some(v);
             self
         }
@@ -1461,14 +1436,12 @@ pub mod describe_document_versions_output {
             self.document_versions = input;
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker to use when requesting the next set of results. If there are no
-        /// additional results, the string is empty.</p>
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1495,8 +1468,7 @@ impl DescribeDocumentVersionsOutput {
 pub struct DescribeCommentsOutput {
     /// <p>The list of comments for the specified document version.</p>
     pub comments: std::option::Option<std::vec::Vec<crate::model::Comment>>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsOutput {
@@ -1504,8 +1476,7 @@ impl DescribeCommentsOutput {
     pub fn comments(&self) -> std::option::Option<&[crate::model::Comment]> {
         self.comments.as_deref()
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1533,9 +1504,9 @@ pub mod describe_comments_output {
         /// To override the contents of this collection use [`set_comments`](Self::set_comments).
         ///
         /// <p>The list of comments for the specified document version.</p>
-        pub fn comments(mut self, input: impl Into<crate::model::Comment>) -> Self {
+        pub fn comments(mut self, input: crate::model::Comment) -> Self {
             let mut v = self.comments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.comments = Some(v);
             self
         }
@@ -1547,14 +1518,12 @@ pub mod describe_comments_output {
             self.comments = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1617,9 +1586,9 @@ pub mod describe_activities_output {
         /// To override the contents of this collection use [`set_user_activities`](Self::set_user_activities).
         ///
         /// <p>The list of activities for the specified user and time period.</p>
-        pub fn user_activities(mut self, input: impl Into<crate::model::Activity>) -> Self {
+        pub fn user_activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.user_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_activities = Some(v);
             self
         }
@@ -2241,9 +2210,9 @@ pub mod add_resource_permissions_output {
         /// To override the contents of this collection use [`set_share_results`](Self::set_share_results).
         ///
         /// <p>The share results.</p>
-        pub fn share_results(mut self, input: impl Into<crate::model::ShareResult>) -> Self {
+        pub fn share_results(mut self, input: crate::model::ShareResult) -> Self {
             let mut v = self.share_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.share_results = Some(v);
             self
         }

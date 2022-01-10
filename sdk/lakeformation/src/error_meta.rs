@@ -21,6 +21,8 @@ pub enum Error {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>The engine does not support filtering data based on the enforced permissions. For example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level permissions exist on the table, this exception is thrown.</p>
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
     /// <p>Contains details about an error related to a resource which is not ready for a transaction.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>A resource numerical limit was exceeded.</p>
@@ -52,6 +54,7 @@ impl std::fmt::Display for Error {
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::OperationTimeoutException(inner) => inner.fmt(f),
+            Error::PermissionTypeMismatchException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ResourceNumberLimitExceededException(inner) => inner.fmt(f),
             Error::StatisticsNotReadyYetException(inner) => inner.fmt(f),
@@ -702,6 +705,62 @@ where
                 }
                 crate::error::GetTableObjectsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetTemporaryGluePartitionCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetTemporaryGluePartitionCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException(inner) => Error::PermissionTypeMismatchException(inner),
+                crate::error::GetTemporaryGluePartitionCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetTemporaryGlueTableCredentialsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetTemporaryGlueTableCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException(inner) => Error::PermissionTypeMismatchException(inner),
+                crate::error::GetTemporaryGlueTableCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

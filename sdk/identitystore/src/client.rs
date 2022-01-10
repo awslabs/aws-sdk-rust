@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS SSO Identity Store
@@ -101,6 +101,7 @@ where
     ///
     /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
@@ -108,6 +109,7 @@ where
     ///
     /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
@@ -123,7 +125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -168,10 +170,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -179,20 +181,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -201,8 +195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a group in the identity store.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier for a group in the identity store.</p>
@@ -214,7 +208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Retrieves the user metadata and attributes from <code>UserId</code> in an identity store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -259,10 +253,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -270,20 +264,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -292,8 +278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a user in the identity store.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier for a user in the identity store.</p>
@@ -304,10 +290,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroups`.
     ///
-    /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter
-    /// attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group
-    /// <code>DisplayName</code> in the response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group <code>DisplayName</code> in the response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -352,10 +336,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -363,20 +347,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupsPaginator<C, M, R> {
+            crate::paginator::ListGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,32 +366,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -419,8 +391,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
@@ -434,10 +406,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUsers`.
     ///
-    /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute
-    /// path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the
-    /// response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -482,10 +452,10 @@ pub mod fluent_builders {
                 crate::input::ListUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -493,20 +463,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
-        pub fn identity_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_store_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUsersPaginator<C, M, R> {
+            crate::paginator::ListUsersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+        pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,32 +482,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -549,8 +507,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
@@ -563,6 +521,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

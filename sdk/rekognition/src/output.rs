@@ -180,11 +180,11 @@ impl StopProjectVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionOutput {
-    /// <p>Identifier for the text detection job.  Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+    /// <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartTextDetectionOutput {
-    /// <p>Identifier for the text detection job.  Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+    /// <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -205,12 +205,12 @@ pub mod start_text_detection_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifier for the text detection job.  Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+        /// <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Identifier for the text detection job.  Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+        /// <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -264,13 +264,11 @@ impl StartStreamProcessorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionOutput {
-    /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>.
-    /// </p>
+    /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartSegmentDetectionOutput {
-    /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>.
-    /// </p>
+    /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -291,14 +289,12 @@ pub mod start_segment_detection_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>.
-        /// </p>
+        /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>.
-        /// </p>
+        /// <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -379,13 +375,11 @@ impl StartProjectVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPersonTrackingOutput {
-    /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetPersonTracking</code>.</p>
+    /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPersonTrackingOutput {
-    /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetPersonTracking</code>.</p>
+    /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -406,14 +400,12 @@ pub mod start_person_tracking_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetPersonTracking</code>.</p>
+        /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetPersonTracking</code>.</p>
+        /// <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -437,13 +429,11 @@ impl StartPersonTrackingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLabelDetectionOutput {
-    /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetLabelDetection</code>. </p>
+    /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartLabelDetectionOutput {
-    /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetLabelDetection</code>. </p>
+    /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -464,14 +454,12 @@ pub mod start_label_detection_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetLabelDetection</code>. </p>
+        /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetLabelDetection</code>. </p>
+        /// <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -549,13 +537,11 @@ impl StartFaceSearchOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceDetectionOutput {
-    /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetFaceDetection</code>.</p>
+    /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartFaceDetectionOutput {
-    /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetFaceDetection</code>.</p>
+    /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -576,14 +562,12 @@ pub mod start_face_detection_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetFaceDetection</code>.</p>
+        /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetFaceDetection</code>.</p>
+        /// <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -607,13 +591,11 @@ impl StartFaceDetectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationOutput {
-    /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetContentModeration</code>.</p>
+    /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartContentModerationOutput {
-    /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetContentModeration</code>.</p>
+    /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -634,14 +616,12 @@ pub mod start_content_moderation_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetContentModeration</code>.</p>
+        /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetContentModeration</code>.</p>
+        /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -665,13 +645,11 @@ impl StartContentModerationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCelebrityRecognitionOutput {
-    /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+    /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartCelebrityRecognitionOutput {
-    /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+    /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -692,14 +670,12 @@ pub mod start_celebrity_recognition_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+        /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+        /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -723,35 +699,29 @@ impl StartCelebrityRecognitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesByImageOutput {
-    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the
-    /// search.</p>
+    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
     pub searched_face_bounding_box: std::option::Option<crate::model::BoundingBox>,
-    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a
-    /// face.</p>
+    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     pub searched_face_confidence: std::option::Option<f32>,
-    /// <p>An array of faces that match the input face, along with the confidence in the
-    /// match.</p>
+    /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl SearchFacesByImageOutput {
-    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the
-    /// search.</p>
+    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
     pub fn searched_face_bounding_box(&self) -> std::option::Option<&crate::model::BoundingBox> {
         self.searched_face_bounding_box.as_ref()
     }
-    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a
-    /// face.</p>
+    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     pub fn searched_face_confidence(&self) -> std::option::Option<f32> {
         self.searched_face_confidence
     }
-    /// <p>An array of faces that match the input face, along with the confidence in the
-    /// match.</p>
+    /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
     pub fn face_matches(&self) -> std::option::Option<&[crate::model::FaceMatch]> {
         self.face_matches.as_deref()
     }
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
@@ -781,14 +751,12 @@ pub mod search_faces_by_image_output {
         pub(crate) face_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the
-        /// search.</p>
+        /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
         pub fn searched_face_bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
             self.searched_face_bounding_box = Some(input);
             self
         }
-        /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the
-        /// search.</p>
+        /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
         pub fn set_searched_face_bounding_box(
             mut self,
             input: std::option::Option<crate::model::BoundingBox>,
@@ -796,14 +764,12 @@ pub mod search_faces_by_image_output {
             self.searched_face_bounding_box = input;
             self
         }
-        /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a
-        /// face.</p>
+        /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
         pub fn searched_face_confidence(mut self, input: f32) -> Self {
             self.searched_face_confidence = Some(input);
             self
         }
-        /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a
-        /// face.</p>
+        /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
         pub fn set_searched_face_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.searched_face_confidence = input;
             self
@@ -812,16 +778,14 @@ pub mod search_faces_by_image_output {
         ///
         /// To override the contents of this collection use [`set_face_matches`](Self::set_face_matches).
         ///
-        /// <p>An array of faces that match the input face, along with the confidence in the
-        /// match.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::FaceMatch>) -> Self {
+        /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
+        pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
-        /// <p>An array of faces that match the input face, along with the confidence in the
-        /// match.</p>
+        /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
         pub fn set_face_matches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
@@ -829,12 +793,12 @@ pub mod search_faces_by_image_output {
             self.face_matches = input;
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -866,10 +830,9 @@ impl SearchFacesByImageOutput {
 pub struct SearchFacesOutput {
     /// <p>ID of the face that was searched for matches in a collection.</p>
     pub searched_face_id: std::option::Option<std::string::String>,
-    /// <p>An array of faces that matched the input face, along with the confidence in the
-    /// match.</p>
+    /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl SearchFacesOutput {
@@ -877,12 +840,11 @@ impl SearchFacesOutput {
     pub fn searched_face_id(&self) -> std::option::Option<&str> {
         self.searched_face_id.as_deref()
     }
-    /// <p>An array of faces that matched the input face, along with the confidence in the
-    /// match.</p>
+    /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
     pub fn face_matches(&self) -> std::option::Option<&[crate::model::FaceMatch]> {
         self.face_matches.as_deref()
     }
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
@@ -924,16 +886,14 @@ pub mod search_faces_output {
         ///
         /// To override the contents of this collection use [`set_face_matches`](Self::set_face_matches).
         ///
-        /// <p>An array of faces that matched the input face, along with the confidence in the
-        /// match.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::FaceMatch>) -> Self {
+        /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
+        pub fn face_matches(mut self, input: crate::model::FaceMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
-        /// <p>An array of faces that matched the input face, along with the confidence in the
-        /// match.</p>
+        /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
         pub fn set_face_matches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FaceMatch>>,
@@ -941,12 +901,12 @@ pub mod search_faces_output {
             self.face_matches = input;
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -975,40 +935,20 @@ impl SearchFacesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeCelebritiesOutput {
-    /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
-    /// celebrities in an image. Each celebrity object includes the following attributes:
-    /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
-    /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
-    /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
-    /// <code>Urls</code>.</p>
+    /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
     pub celebrity_faces: std::option::Option<std::vec::Vec<crate::model::Celebrity>>,
     /// <p>Details about each unrecognized face in the image.</p>
     pub unrecognized_faces: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
     /// <note>
-    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
-    /// Any returned values for this field included in an API response will always be NULL.</p>
+    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
     /// </note>
-    /// <p>The orientation of the input image (counterclockwise direction). If your application
-    /// displays the image, you can use this value to correct the orientation. The bounding box
-    /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
-    /// represent face locations before the image orientation is corrected. </p>
-    /// <note>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif)
-    /// metadata that includes the image's orientation. If so, and the Exif metadata for the input
-    /// image populates the orientation field, the value of <code>OrientationCorrection</code> is
-    /// null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box
-    /// coordinates represent face locations after Exif metadata is used to correct the image
-    /// orientation. Images in .png format don't contain Exif metadata. </p>
+    /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
 }
 impl RecognizeCelebritiesOutput {
-    /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
-    /// celebrities in an image. Each celebrity object includes the following attributes:
-    /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
-    /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
-    /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
-    /// <code>Urls</code>.</p>
+    /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
     pub fn celebrity_faces(&self) -> std::option::Option<&[crate::model::Celebrity]> {
         self.celebrity_faces.as_deref()
     }
@@ -1017,20 +957,10 @@ impl RecognizeCelebritiesOutput {
         self.unrecognized_faces.as_deref()
     }
     /// <note>
-    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
-    /// Any returned values for this field included in an API response will always be NULL.</p>
+    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
     /// </note>
-    /// <p>The orientation of the input image (counterclockwise direction). If your application
-    /// displays the image, you can use this value to correct the orientation. The bounding box
-    /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
-    /// represent face locations before the image orientation is corrected. </p>
-    /// <note>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif)
-    /// metadata that includes the image's orientation. If so, and the Exif metadata for the input
-    /// image populates the orientation field, the value of <code>OrientationCorrection</code> is
-    /// null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box
-    /// coordinates represent face locations after Exif metadata is used to correct the image
-    /// orientation. Images in .png format don't contain Exif metadata. </p>
+    /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
     /// </note>
     pub fn orientation_correction(
         &self,
@@ -1063,24 +993,14 @@ pub mod recognize_celebrities_output {
         ///
         /// To override the contents of this collection use [`set_celebrity_faces`](Self::set_celebrity_faces).
         ///
-        /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
-        /// celebrities in an image. Each celebrity object includes the following attributes:
-        /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
-        /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
-        /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
-        /// <code>Urls</code>.</p>
-        pub fn celebrity_faces(mut self, input: impl Into<crate::model::Celebrity>) -> Self {
+        /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
+        pub fn celebrity_faces(mut self, input: crate::model::Celebrity) -> Self {
             let mut v = self.celebrity_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.celebrity_faces = Some(v);
             self
         }
-        /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
-        /// celebrities in an image. Each celebrity object includes the following attributes:
-        /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
-        /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
-        /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
-        /// <code>Urls</code>.</p>
+        /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
         pub fn set_celebrity_faces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Celebrity>>,
@@ -1093,9 +1013,9 @@ pub mod recognize_celebrities_output {
         /// To override the contents of this collection use [`set_unrecognized_faces`](Self::set_unrecognized_faces).
         ///
         /// <p>Details about each unrecognized face in the image.</p>
-        pub fn unrecognized_faces(mut self, input: impl Into<crate::model::ComparedFace>) -> Self {
+        pub fn unrecognized_faces(mut self, input: crate::model::ComparedFace) -> Self {
             let mut v = self.unrecognized_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unrecognized_faces = Some(v);
             self
         }
@@ -1108,20 +1028,10 @@ pub mod recognize_celebrities_output {
             self
         }
         /// <note>
-        /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
-        /// Any returned values for this field included in an API response will always be NULL.</p>
+        /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
         /// </note>
-        /// <p>The orientation of the input image (counterclockwise direction). If your application
-        /// displays the image, you can use this value to correct the orientation. The bounding box
-        /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
-        /// represent face locations before the image orientation is corrected. </p>
-        /// <note>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif)
-        /// metadata that includes the image's orientation. If so, and the Exif metadata for the input
-        /// image populates the orientation field, the value of <code>OrientationCorrection</code> is
-        /// null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box
-        /// coordinates represent face locations after Exif metadata is used to correct the image
-        /// orientation. Images in .png format don't contain Exif metadata. </p>
+        /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
         /// </note>
         pub fn orientation_correction(
             mut self,
@@ -1131,20 +1041,10 @@ pub mod recognize_celebrities_output {
             self
         }
         /// <note>
-        /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
-        /// Any returned values for this field included in an API response will always be NULL.</p>
+        /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
         /// </note>
-        /// <p>The orientation of the input image (counterclockwise direction). If your application
-        /// displays the image, you can use this value to correct the orientation. The bounding box
-        /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
-        /// represent face locations before the image orientation is corrected. </p>
-        /// <note>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif)
-        /// metadata that includes the image's orientation. If so, and the Exif metadata for the input
-        /// image populates the orientation field, the value of <code>OrientationCorrection</code> is
-        /// null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box
-        /// coordinates represent face locations after Exif metadata is used to correct the image
-        /// orientation. Images in .png format don't contain Exif metadata. </p>
+        /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
         /// </note>
         pub fn set_orientation_correction(
             mut self,
@@ -1174,16 +1074,12 @@ impl RecognizeCelebritiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>
-    /// A list of key-value tags assigned to the resource.
-    /// </p>
+    /// <p> A list of key-value tags assigned to the resource. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>
-    /// A list of key-value tags assigned to the resource.
-    /// </p>
+    /// <p> A list of key-value tags assigned to the resource. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1213,9 +1109,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A list of key-value tags assigned to the resource.
-        /// </p>
+        /// <p> A list of key-value tags assigned to the resource. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1226,9 +1120,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of key-value tags assigned to the resource.
-        /// </p>
+        /// <p> A list of key-value tags assigned to the resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1255,15 +1147,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamProcessorsOutput {
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of stream processors. </p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of stream processors that you have created.</p>
     pub stream_processors: std::option::Option<std::vec::Vec<crate::model::StreamProcessor>>,
 }
 impl ListStreamProcessorsOutput {
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of stream processors. </p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1291,14 +1181,12 @@ pub mod list_stream_processors_output {
             std::option::Option<std::vec::Vec<crate::model::StreamProcessor>>,
     }
     impl Builder {
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of stream processors. </p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of stream processors. </p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1308,12 +1196,9 @@ pub mod list_stream_processors_output {
         /// To override the contents of this collection use [`set_stream_processors`](Self::set_stream_processors).
         ///
         /// <p>List of stream processors that you have created.</p>
-        pub fn stream_processors(
-            mut self,
-            input: impl Into<crate::model::StreamProcessor>,
-        ) -> Self {
+        pub fn stream_processors(mut self, input: crate::model::StreamProcessor) -> Self {
             let mut v = self.stream_processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_processors = Some(v);
             self
         }
@@ -1347,10 +1232,9 @@ impl ListStreamProcessorsOutput {
 pub struct ListFacesOutput {
     /// <p>An array of <code>Face</code> objects. </p>
     pub faces: std::option::Option<std::vec::Vec<crate::model::Face>>,
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the
-    /// subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl ListFacesOutput {
@@ -1358,12 +1242,11 @@ impl ListFacesOutput {
     pub fn faces(&self) -> std::option::Option<&[crate::model::Face]> {
         self.faces.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the
-    /// subsequent request to retrieve the next set of faces.</p>
+    /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
@@ -1393,9 +1276,9 @@ pub mod list_faces_output {
         /// To override the contents of this collection use [`set_faces`](Self::set_faces).
         ///
         /// <p>An array of <code>Face</code> objects. </p>
-        pub fn faces(mut self, input: impl Into<crate::model::Face>) -> Self {
+        pub fn faces(mut self, input: crate::model::Face) -> Self {
             let mut v = self.faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.faces = Some(v);
             self
         }
@@ -1407,24 +1290,22 @@ pub mod list_faces_output {
             self.faces = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the
-        /// subsequent request to retrieve the next set of faces.</p>
+        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the
-        /// subsequent request to retrieve the next set of faces.</p>
+        /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
-        /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1453,28 +1334,20 @@ impl ListFacesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetLabelsOutput {
-    /// <p>
-    /// A list of the labels in the dataset.
-    /// </p>
+    /// <p> A list of the labels in the dataset. </p>
     pub dataset_label_descriptions:
         std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetLabelsOutput {
-    /// <p>
-    /// A list of the labels in the dataset.
-    /// </p>
+    /// <p> A list of the labels in the dataset. </p>
     pub fn dataset_label_descriptions(
         &self,
     ) -> std::option::Option<&[crate::model::DatasetLabelDescription]> {
         self.dataset_label_descriptions.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1505,21 +1378,17 @@ pub mod list_dataset_labels_output {
         ///
         /// To override the contents of this collection use [`set_dataset_label_descriptions`](Self::set_dataset_label_descriptions).
         ///
-        /// <p>
-        /// A list of the labels in the dataset.
-        /// </p>
+        /// <p> A list of the labels in the dataset. </p>
         pub fn dataset_label_descriptions(
             mut self,
-            input: impl Into<crate::model::DatasetLabelDescription>,
+            input: crate::model::DatasetLabelDescription,
         ) -> Self {
             let mut v = self.dataset_label_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_label_descriptions = Some(v);
             self
         }
-        /// <p>
-        /// A list of the labels in the dataset.
-        /// </p>
+        /// <p> A list of the labels in the dataset. </p>
         pub fn set_dataset_label_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetLabelDescription>>,
@@ -1527,16 +1396,12 @@ pub mod list_dataset_labels_output {
             self.dataset_label_descriptions = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1561,25 +1426,17 @@ impl ListDatasetLabelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesOutput {
-    /// <p>
-    /// A list of entries (images) in the dataset.
-    /// </p>
+    /// <p> A list of entries (images) in the dataset. </p>
     pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetEntriesOutput {
-    /// <p>
-    /// A list of entries (images) in the dataset.
-    /// </p>
+    /// <p> A list of entries (images) in the dataset. </p>
     pub fn dataset_entries(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_entries.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1606,18 +1463,14 @@ pub mod list_dataset_entries_output {
         ///
         /// To override the contents of this collection use [`set_dataset_entries`](Self::set_dataset_entries).
         ///
-        /// <p>
-        /// A list of entries (images) in the dataset.
-        /// </p>
+        /// <p> A list of entries (images) in the dataset. </p>
         pub fn dataset_entries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_entries.unwrap_or_default();
             v.push(input.into());
             self.dataset_entries = Some(v);
             self
         }
-        /// <p>
-        /// A list of entries (images) in the dataset.
-        /// </p>
+        /// <p> A list of entries (images) in the dataset. </p>
         pub fn set_dataset_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1625,16 +1478,12 @@ pub mod list_dataset_entries_output {
             self.dataset_entries = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1661,12 +1510,9 @@ impl ListDatasetEntriesOutput {
 pub struct ListCollectionsOutput {
     /// <p>An array of collection IDs.</p>
     pub collection_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can
-    /// use in the subsequent request to fetch the next set of collection IDs.</p>
+    /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>.
-    /// For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used
-    /// by the collection in <code>CollectionId[2]</code>.</p>
+    /// <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
     pub face_model_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCollectionsOutput {
@@ -1674,14 +1520,11 @@ impl ListCollectionsOutput {
     pub fn collection_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.collection_ids.as_deref()
     }
-    /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can
-    /// use in the subsequent request to fetch the next set of collection IDs.</p>
+    /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>.
-    /// For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used
-    /// by the collection in <code>CollectionId[2]</code>.</p>
+    /// <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
     pub fn face_model_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.face_model_versions.as_deref()
     }
@@ -1725,14 +1568,12 @@ pub mod list_collections_output {
             self.collection_ids = input;
             self
         }
-        /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can
-        /// use in the subsequent request to fetch the next set of collection IDs.</p>
+        /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can
-        /// use in the subsequent request to fetch the next set of collection IDs.</p>
+        /// <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1741,18 +1582,14 @@ pub mod list_collections_output {
         ///
         /// To override the contents of this collection use [`set_face_model_versions`](Self::set_face_model_versions).
         ///
-        /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>.
-        /// For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used
-        /// by the collection in <code>CollectionId[2]</code>.</p>
+        /// <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
         pub fn face_model_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.face_model_versions.unwrap_or_default();
             v.push(input.into());
             self.face_model_versions = Some(v);
             self
         }
-        /// <p>Version numbers of the face detection models associated with the collections in the array <code>CollectionIds</code>.
-        /// For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used
-        /// by the collection in <code>CollectionId[2]</code>.</p>
+        /// <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
         pub fn set_face_model_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1781,95 +1618,43 @@ impl ListCollectionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFacesOutput {
-    /// <p>An array of faces detected and added to the collection.
-    /// For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
-    /// </p>
+    /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
     pub face_records: std::option::Option<std::vec::Vec<crate::model::FaceRecord>>,
-    /// <p>If your collection is associated with a face detection model that's later
-    /// than version 3.0, the value of <code>OrientationCorrection</code>
-    /// is always null and no orientation information is returned.</p>
-    ///
-    /// <p>If your collection is associated with a face detection model that's
-    /// version 3.0 or earlier, the following applies:</p>
+    /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
+    /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction - the bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>
-    /// is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns
-    /// an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform
-    /// image correction for images. The bounding box coordinates aren't translated and represent the
-    /// object locations before the image is rotated.</p>
-    /// </li>
+    /// <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>
+    /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
-    ///
-    ///
-    ///
-    /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the
-    /// version of the face detection model by calling <a>DescribeCollection</a>. </p>
+    /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
-    /// <p>The version number of the face detection model that's associated with the input
-    /// collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub face_model_version: std::option::Option<std::string::String>,
-    /// <p>An array of faces that were detected in the image but weren't indexed. They weren't
-    /// indexed because the quality filter identified them as low quality, or the
-    /// <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-    /// specify the <code>QualityFilter</code> request parameter.</p>
+    /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
     pub unindexed_faces: std::option::Option<std::vec::Vec<crate::model::UnindexedFace>>,
 }
 impl IndexFacesOutput {
-    /// <p>An array of faces detected and added to the collection.
-    /// For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
-    /// </p>
+    /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
     pub fn face_records(&self) -> std::option::Option<&[crate::model::FaceRecord]> {
         self.face_records.as_deref()
     }
-    /// <p>If your collection is associated with a face detection model that's later
-    /// than version 3.0, the value of <code>OrientationCorrection</code>
-    /// is always null and no orientation information is returned.</p>
-    ///
-    /// <p>If your collection is associated with a face detection model that's
-    /// version 3.0 or earlier, the following applies:</p>
+    /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
+    /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction - the bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>
-    /// is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns
-    /// an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform
-    /// image correction for images. The bounding box coordinates aren't translated and represent the
-    /// object locations before the image is rotated.</p>
-    /// </li>
+    /// <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>
+    /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
     /// </ul>
-    ///
-    ///
-    ///
-    /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the
-    /// version of the face detection model by calling <a>DescribeCollection</a>. </p>
+    /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
     pub fn orientation_correction(
         &self,
     ) -> std::option::Option<&crate::model::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
-    /// <p>The version number of the face detection model that's associated with the input
-    /// collection (<code>CollectionId</code>).</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
-    /// <p>An array of faces that were detected in the image but weren't indexed. They weren't
-    /// indexed because the quality filter identified them as low quality, or the
-    /// <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-    /// specify the <code>QualityFilter</code> request parameter.</p>
+    /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
     pub fn unindexed_faces(&self) -> std::option::Option<&[crate::model::UnindexedFace]> {
         self.unindexed_faces.as_deref()
     }
@@ -1900,18 +1685,14 @@ pub mod index_faces_output {
         ///
         /// To override the contents of this collection use [`set_face_records`](Self::set_face_records).
         ///
-        /// <p>An array of faces detected and added to the collection.
-        /// For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
-        /// </p>
-        pub fn face_records(mut self, input: impl Into<crate::model::FaceRecord>) -> Self {
+        /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
+        pub fn face_records(mut self, input: crate::model::FaceRecord) -> Self {
             let mut v = self.face_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_records = Some(v);
             self
         }
-        /// <p>An array of faces detected and added to the collection.
-        /// For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
-        /// </p>
+        /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
         pub fn set_face_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FaceRecord>>,
@@ -1919,33 +1700,13 @@ pub mod index_faces_output {
             self.face_records = input;
             self
         }
-        /// <p>If your collection is associated with a face detection model that's later
-        /// than version 3.0, the value of <code>OrientationCorrection</code>
-        /// is always null and no orientation information is returned.</p>
-        ///
-        /// <p>If your collection is associated with a face detection model that's
-        /// version 3.0 or earlier, the following applies:</p>
+        /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
+        /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction - the bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>
-        /// is null.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns
-        /// an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform
-        /// image correction for images. The bounding box coordinates aren't translated and represent the
-        /// object locations before the image is rotated.</p>
-        /// </li>
+        /// <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>
+        /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
         /// </ul>
-        ///
-        ///
-        ///
-        /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the
-        /// version of the face detection model by calling <a>DescribeCollection</a>. </p>
+        /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
         pub fn orientation_correction(
             mut self,
             input: crate::model::OrientationCorrection,
@@ -1953,33 +1714,13 @@ pub mod index_faces_output {
             self.orientation_correction = Some(input);
             self
         }
-        /// <p>If your collection is associated with a face detection model that's later
-        /// than version 3.0, the value of <code>OrientationCorrection</code>
-        /// is always null and no orientation information is returned.</p>
-        ///
-        /// <p>If your collection is associated with a face detection model that's
-        /// version 3.0 or earlier, the following applies:</p>
+        /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
+        /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction - the bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>
-        /// is null.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns
-        /// an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform
-        /// image correction for images. The bounding box coordinates aren't translated and represent the
-        /// object locations before the image is rotated.</p>
-        /// </li>
+        /// <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>
+        /// <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>
         /// </ul>
-        ///
-        ///
-        ///
-        /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the
-        /// version of the face detection model by calling <a>DescribeCollection</a>. </p>
+        /// <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
         pub fn set_orientation_correction(
             mut self,
             input: std::option::Option<crate::model::OrientationCorrection>,
@@ -1987,14 +1728,12 @@ pub mod index_faces_output {
             self.orientation_correction = input;
             self
         }
-        /// <p>The version number of the face detection model that's associated with the input
-        /// collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
-        /// <p>The version number of the face detection model that's associated with the input
-        /// collection (<code>CollectionId</code>).</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2006,20 +1745,14 @@ pub mod index_faces_output {
         ///
         /// To override the contents of this collection use [`set_unindexed_faces`](Self::set_unindexed_faces).
         ///
-        /// <p>An array of faces that were detected in the image but weren't indexed. They weren't
-        /// indexed because the quality filter identified them as low quality, or the
-        /// <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-        /// specify the <code>QualityFilter</code> request parameter.</p>
-        pub fn unindexed_faces(mut self, input: impl Into<crate::model::UnindexedFace>) -> Self {
+        /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
+        pub fn unindexed_faces(mut self, input: crate::model::UnindexedFace) -> Self {
             let mut v = self.unindexed_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unindexed_faces = Some(v);
             self
         }
-        /// <p>An array of faces that were detected in the image but weren't indexed. They weren't
-        /// indexed because the quality filter identified them as low quality, or the
-        /// <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-        /// specify the <code>QualityFilter</code> request parameter.</p>
+        /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
         pub fn set_unindexed_faces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnindexedFace>>,
@@ -2053,14 +1786,11 @@ pub struct GetTextDetectionOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
-    /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds
-    /// from the start of the video that the text was detected, and where it was detected on the screen.</p>
+    /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
     pub text_detections: std::option::Option<std::vec::Vec<crate::model::TextDetectionResult>>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of text.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version number of the text detection model that was used to detect text.</p>
     pub text_model_version: std::option::Option<std::string::String>,
@@ -2074,18 +1804,15 @@ impl GetTextDetectionOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds
-    /// from the start of the video that the text was detected, and where it was detected on the screen.</p>
+    /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
     pub fn text_detections(&self) -> std::option::Option<&[crate::model::TextDetectionResult]> {
         self.text_detections.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of text.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2147,14 +1874,12 @@ pub mod get_text_detection_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -2166,19 +1891,14 @@ pub mod get_text_detection_output {
         ///
         /// To override the contents of this collection use [`set_text_detections`](Self::set_text_detections).
         ///
-        /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds
-        /// from the start of the video that the text was detected, and where it was detected on the screen.</p>
-        pub fn text_detections(
-            mut self,
-            input: impl Into<crate::model::TextDetectionResult>,
-        ) -> Self {
+        /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
+        pub fn text_detections(mut self, input: crate::model::TextDetectionResult) -> Self {
             let mut v = self.text_detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_detections = Some(v);
             self
         }
-        /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds
-        /// from the start of the video that the text was detected, and where it was detected on the screen.</p>
+        /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
         pub fn set_text_detections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextDetectionResult>>,
@@ -2186,14 +1906,12 @@ pub mod get_text_detection_output {
             self.text_detections = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of text.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of text.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2239,29 +1957,15 @@ pub struct GetSegmentDetectionOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Currently, Amazon Rekognition Video returns a single   object in the
-    /// <code>VideoMetadata</code> array. The object
-    /// contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze.  
-    /// The <code>VideoMetadata</code> object includes the video codec, video format and other information.
-    /// Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
     pub video_metadata: std::option::Option<std::vec::Vec<crate::model::VideoMetadata>>,
-    /// <p>An array of
-    /// objects. There can be multiple audio streams.
-    /// Each <code>AudioMetadata</code> object contains metadata for a single audio stream.
-    /// Audio information in an <code>AudioMetadata</code> objects includes
-    /// the audio codec, the number of audio channels, the duration of the audio stream,
-    /// and the sample rate. Audio metadata is returned in each page of information returned
-    /// by <code>GetSegmentDetection</code>.</p>
+    /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
     pub audio_metadata: std::option::Option<std::vec::Vec<crate::model::AudioMetadata>>,
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-    /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of segments detected in a video.  The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
-    /// specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
-    /// each segment type the array is sorted by timestamp values.</p>
+    /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
     pub segments: std::option::Option<std::vec::Vec<crate::model::SegmentDetection>>,
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
-    /// </p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub selected_segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentTypeInfo>>,
 }
 impl GetSegmentDetectionOutput {
@@ -2273,37 +1977,23 @@ impl GetSegmentDetectionOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Currently, Amazon Rekognition Video returns a single   object in the
-    /// <code>VideoMetadata</code> array. The object
-    /// contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze.  
-    /// The <code>VideoMetadata</code> object includes the video codec, video format and other information.
-    /// Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
     pub fn video_metadata(&self) -> std::option::Option<&[crate::model::VideoMetadata]> {
         self.video_metadata.as_deref()
     }
-    /// <p>An array of
-    /// objects. There can be multiple audio streams.
-    /// Each <code>AudioMetadata</code> object contains metadata for a single audio stream.
-    /// Audio information in an <code>AudioMetadata</code> objects includes
-    /// the audio codec, the number of audio channels, the duration of the audio stream,
-    /// and the sample rate. Audio metadata is returned in each page of information returned
-    /// by <code>GetSegmentDetection</code>.</p>
+    /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
     pub fn audio_metadata(&self) -> std::option::Option<&[crate::model::AudioMetadata]> {
         self.audio_metadata.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-    /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of segments detected in a video.  The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
-    /// specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
-    /// each segment type the array is sorted by timestamp values.</p>
+    /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
     pub fn segments(&self) -> std::option::Option<&[crate::model::SegmentDetection]> {
         self.segments.as_deref()
     }
-    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
-    /// </p>
+    /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
     pub fn selected_segment_types(&self) -> std::option::Option<&[crate::model::SegmentTypeInfo]> {
         self.selected_segment_types.as_deref()
     }
@@ -2367,22 +2057,14 @@ pub mod get_segment_detection_output {
         ///
         /// To override the contents of this collection use [`set_video_metadata`](Self::set_video_metadata).
         ///
-        /// <p>Currently, Amazon Rekognition Video returns a single   object in the
-        /// <code>VideoMetadata</code> array. The object
-        /// contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze.  
-        /// The <code>VideoMetadata</code> object includes the video codec, video format and other information.
-        /// Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-        pub fn video_metadata(mut self, input: impl Into<crate::model::VideoMetadata>) -> Self {
+        /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+        pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             let mut v = self.video_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.video_metadata = Some(v);
             self
         }
-        /// <p>Currently, Amazon Rekognition Video returns a single   object in the
-        /// <code>VideoMetadata</code> array. The object
-        /// contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze.  
-        /// The <code>VideoMetadata</code> object includes the video codec, video format and other information.
-        /// Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+        /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VideoMetadata>>,
@@ -2394,26 +2076,14 @@ pub mod get_segment_detection_output {
         ///
         /// To override the contents of this collection use [`set_audio_metadata`](Self::set_audio_metadata).
         ///
-        /// <p>An array of
-        /// objects. There can be multiple audio streams.
-        /// Each <code>AudioMetadata</code> object contains metadata for a single audio stream.
-        /// Audio information in an <code>AudioMetadata</code> objects includes
-        /// the audio codec, the number of audio channels, the duration of the audio stream,
-        /// and the sample rate. Audio metadata is returned in each page of information returned
-        /// by <code>GetSegmentDetection</code>.</p>
-        pub fn audio_metadata(mut self, input: impl Into<crate::model::AudioMetadata>) -> Self {
+        /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+        pub fn audio_metadata(mut self, input: crate::model::AudioMetadata) -> Self {
             let mut v = self.audio_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_metadata = Some(v);
             self
         }
-        /// <p>An array of
-        /// objects. There can be multiple audio streams.
-        /// Each <code>AudioMetadata</code> object contains metadata for a single audio stream.
-        /// Audio information in an <code>AudioMetadata</code> objects includes
-        /// the audio codec, the number of audio channels, the duration of the audio stream,
-        /// and the sample rate. Audio metadata is returned in each page of information returned
-        /// by <code>GetSegmentDetection</code>.</p>
+        /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
         pub fn set_audio_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AudioMetadata>>,
@@ -2421,14 +2091,12 @@ pub mod get_segment_detection_output {
             self.audio_metadata = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-        /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-        /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2437,18 +2105,14 @@ pub mod get_segment_detection_output {
         ///
         /// To override the contents of this collection use [`set_segments`](Self::set_segments).
         ///
-        /// <p>An array of segments detected in a video.  The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
-        /// specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
-        /// each segment type the array is sorted by timestamp values.</p>
-        pub fn segments(mut self, input: impl Into<crate::model::SegmentDetection>) -> Self {
+        /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
+        pub fn segments(mut self, input: crate::model::SegmentDetection) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segments = Some(v);
             self
         }
-        /// <p>An array of segments detected in a video.  The array is sorted by the segment types (TECHNICAL_CUE or SHOT)
-        /// specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within
-        /// each segment type the array is sorted by timestamp values.</p>
+        /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
         pub fn set_segments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDetection>>,
@@ -2460,19 +2124,14 @@ pub mod get_segment_detection_output {
         ///
         /// To override the contents of this collection use [`set_selected_segment_types`](Self::set_selected_segment_types).
         ///
-        /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
-        /// </p>
-        pub fn selected_segment_types(
-            mut self,
-            input: impl Into<crate::model::SegmentTypeInfo>,
-        ) -> Self {
+        /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
+        pub fn selected_segment_types(mut self, input: crate::model::SegmentTypeInfo) -> Self {
             let mut v = self.selected_segment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.selected_segment_types = Some(v);
             self
         }
-        /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
-        /// </p>
+        /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
         pub fn set_selected_segment_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentTypeInfo>>,
@@ -2509,13 +2168,11 @@ pub struct GetPersonTrackingOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
-    /// An array element will exist for each time a person's path is tracked. </p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub persons: std::option::Option<std::vec::Vec<crate::model::PersonDetection>>,
 }
 impl GetPersonTrackingOutput {
@@ -2527,8 +2184,7 @@ impl GetPersonTrackingOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
@@ -2536,8 +2192,7 @@ impl GetPersonTrackingOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
-    /// An array element will exist for each time a person's path is tracked. </p>
+    /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
     pub fn persons(&self) -> std::option::Option<&[crate::model::PersonDetection]> {
         self.persons.as_deref()
     }
@@ -2592,14 +2247,12 @@ pub mod get_person_tracking_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -2621,16 +2274,14 @@ pub mod get_person_tracking_output {
         ///
         /// To override the contents of this collection use [`set_persons`](Self::set_persons).
         ///
-        /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
-        /// An array element will exist for each time a person's path is tracked. </p>
-        pub fn persons(mut self, input: impl Into<crate::model::PersonDetection>) -> Self {
+        /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
+        pub fn persons(mut self, input: crate::model::PersonDetection) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
-        /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
-        /// An array element will exist for each time a person's path is tracked. </p>
+        /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
         pub fn set_persons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PersonDetection>>,
@@ -2665,14 +2316,11 @@ pub struct GetLabelDetectionOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-    /// to retrieve the next set of labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time,
-    /// in milliseconds from the start of the video, that the label was detected. </p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::LabelDetection>>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub label_model_version: std::option::Option<std::string::String>,
@@ -2686,18 +2334,15 @@ impl GetLabelDetectionOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-    /// to retrieve the next set of labels.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of labels detected in the video. Each element contains the detected label and the time,
-    /// in milliseconds from the start of the video, that the label was detected. </p>
+    /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
     pub fn labels(&self) -> std::option::Option<&[crate::model::LabelDetection]> {
         self.labels.as_deref()
     }
@@ -2758,14 +2403,12 @@ pub mod get_label_detection_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -2773,14 +2416,12 @@ pub mod get_label_detection_output {
             self.video_metadata = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-        /// to retrieve the next set of labels.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-        /// to retrieve the next set of labels.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2789,16 +2430,14 @@ pub mod get_label_detection_output {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>An array of labels detected in the video. Each element contains the detected label and the time,
-        /// in milliseconds from the start of the video, that the label was detected. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::LabelDetection>) -> Self {
+        /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
+        pub fn labels(mut self, input: crate::model::LabelDetection) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
-        /// <p>An array of labels detected in the video. Each element contains the detected label and the time,
-        /// in milliseconds from the start of the video, that the label was detected. </p>
+        /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LabelDetection>>,
@@ -2849,16 +2488,9 @@ pub struct GetFaceSearchOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses
-    /// from a Amazon Rekognition Video operation. </p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
-    /// <p>An array of persons,  <a>PersonMatch</a>,
-    /// in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information
-    /// for when persons are matched in the video.
-    /// You specify the input collection in an initial call to <code>StartFaceSearch</code>.
-    /// Each  <code>Persons</code> element includes a time the person was matched,
-    /// face match details (<code>FaceMatches</code>) for matching faces in the collection,
-    /// and person information (<code>Person</code>) for the matched person. </p>
+    /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
     pub persons: std::option::Option<std::vec::Vec<crate::model::PersonMatch>>,
 }
 impl GetFaceSearchOutput {
@@ -2874,18 +2506,11 @@ impl GetFaceSearchOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses
-    /// from a Amazon Rekognition Video operation. </p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>An array of persons,  <a>PersonMatch</a>,
-    /// in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information
-    /// for when persons are matched in the video.
-    /// You specify the input collection in an initial call to <code>StartFaceSearch</code>.
-    /// Each  <code>Persons</code> element includes a time the person was matched,
-    /// face match details (<code>FaceMatches</code>) for matching faces in the collection,
-    /// and person information (<code>Person</code>) for the matched person. </p>
+    /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
     pub fn persons(&self) -> std::option::Option<&[crate::model::PersonMatch]> {
         self.persons.as_deref()
     }
@@ -2950,14 +2575,12 @@ pub mod get_face_search_output {
             self.next_token = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses
-        /// from a Amazon Rekognition Video operation. </p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses
-        /// from a Amazon Rekognition Video operation. </p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -2969,26 +2592,14 @@ pub mod get_face_search_output {
         ///
         /// To override the contents of this collection use [`set_persons`](Self::set_persons).
         ///
-        /// <p>An array of persons,  <a>PersonMatch</a>,
-        /// in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information
-        /// for when persons are matched in the video.
-        /// You specify the input collection in an initial call to <code>StartFaceSearch</code>.
-        /// Each  <code>Persons</code> element includes a time the person was matched,
-        /// face match details (<code>FaceMatches</code>) for matching faces in the collection,
-        /// and person information (<code>Person</code>) for the matched person. </p>
-        pub fn persons(mut self, input: impl Into<crate::model::PersonMatch>) -> Self {
+        /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
+        pub fn persons(mut self, input: crate::model::PersonMatch) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
-        /// <p>An array of persons,  <a>PersonMatch</a>,
-        /// in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information
-        /// for when persons are matched in the video.
-        /// You specify the input collection in an initial call to <code>StartFaceSearch</code>.
-        /// Each  <code>Persons</code> element includes a time the person was matched,
-        /// face match details (<code>FaceMatches</code>) for matching faces in the collection,
-        /// and person information (<code>Person</code>) for the matched person. </p>
+        /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
         pub fn set_persons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PersonMatch>>,
@@ -3023,13 +2634,11 @@ pub struct GetFaceDetectionOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time,
-    /// in milliseconds from the start of the video, the face was detected. </p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub faces: std::option::Option<std::vec::Vec<crate::model::FaceDetection>>,
 }
 impl GetFaceDetectionOutput {
@@ -3041,8 +2650,7 @@ impl GetFaceDetectionOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
@@ -3050,8 +2658,7 @@ impl GetFaceDetectionOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time,
-    /// in milliseconds from the start of the video, the face was detected. </p>
+    /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub fn faces(&self) -> std::option::Option<&[crate::model::FaceDetection]> {
         self.faces.as_deref()
     }
@@ -3106,14 +2713,12 @@ pub mod get_face_detection_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -3135,16 +2740,14 @@ pub mod get_face_detection_output {
         ///
         /// To override the contents of this collection use [`set_faces`](Self::set_faces).
         ///
-        /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time,
-        /// in milliseconds from the start of the video, the face was detected. </p>
-        pub fn faces(mut self, input: impl Into<crate::model::FaceDetection>) -> Self {
+        /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
+        pub fn faces(mut self, input: crate::model::FaceDetection) -> Self {
             let mut v = self.faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.faces = Some(v);
             self
         }
-        /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time,
-        /// in milliseconds from the start of the video, the face was detected. </p>
+        /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
         pub fn set_faces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FaceDetection>>,
@@ -3179,14 +2782,12 @@ pub struct GetContentModerationOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-    /// is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     pub moderation_labels:
         std::option::Option<std::vec::Vec<crate::model::ContentModerationDetection>>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of content moderation labels. </p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
     pub moderation_model_version: std::option::Option<std::string::String>,
@@ -3200,8 +2801,7 @@ impl GetContentModerationOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-    /// is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+    /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
@@ -3211,8 +2811,7 @@ impl GetContentModerationOutput {
     ) -> std::option::Option<&[crate::model::ContentModerationDetection]> {
         self.moderation_labels.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of content moderation labels. </p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3274,14 +2873,12 @@ pub mod get_content_moderation_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-        /// is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-        /// is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+        /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -3296,10 +2893,10 @@ pub mod get_content_moderation_output {
         /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
         pub fn moderation_labels(
             mut self,
-            input: impl Into<crate::model::ContentModerationDetection>,
+            input: crate::model::ContentModerationDetection,
         ) -> Self {
             let mut v = self.moderation_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moderation_labels = Some(v);
             self
         }
@@ -3311,14 +2908,12 @@ pub mod get_content_moderation_output {
             self.moderation_labels = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of content moderation labels. </p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of content moderation labels. </p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3364,11 +2959,9 @@ pub struct GetCelebrityRecognitionOutput {
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-    /// to retrieve the next set of celebrities.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Array of celebrities recognized in the video.</p>
     pub celebrities: std::option::Option<std::vec::Vec<crate::model::CelebrityRecognition>>,
@@ -3382,13 +2975,11 @@ impl GetCelebrityRecognitionOutput {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-    /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub fn video_metadata(&self) -> std::option::Option<&crate::model::VideoMetadata> {
         self.video_metadata.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-    /// to retrieve the next set of celebrities.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3448,14 +3039,12 @@ pub mod get_celebrity_recognition_output {
             self.status_message = input;
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
         pub fn video_metadata(mut self, input: crate::model::VideoMetadata) -> Self {
             self.video_metadata = Some(input);
             self
         }
-        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in
-        /// every page of paginated responses from a Amazon Rekognition Video operation.</p>
+        /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
         pub fn set_video_metadata(
             mut self,
             input: std::option::Option<crate::model::VideoMetadata>,
@@ -3463,14 +3052,12 @@ pub mod get_celebrity_recognition_output {
             self.video_metadata = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-        /// to retrieve the next set of celebrities.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request
-        /// to retrieve the next set of celebrities.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3480,9 +3067,9 @@ pub mod get_celebrity_recognition_output {
         /// To override the contents of this collection use [`set_celebrities`](Self::set_celebrities).
         ///
         /// <p>Array of celebrities recognized in the video.</p>
-        pub fn celebrities(mut self, input: impl Into<crate::model::CelebrityRecognition>) -> Self {
+        pub fn celebrities(mut self, input: crate::model::CelebrityRecognition) -> Self {
             let mut v = self.celebrities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.celebrities = Some(v);
             self
         }
@@ -3689,9 +3276,9 @@ pub mod detect_text_output {
         /// To override the contents of this collection use [`set_text_detections`](Self::set_text_detections).
         ///
         /// <p>An array of text that was detected in the input image.</p>
-        pub fn text_detections(mut self, input: impl Into<crate::model::TextDetection>) -> Self {
+        pub fn text_detections(mut self, input: crate::model::TextDetection) -> Self {
             let mut v = self.text_detections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_detections = Some(v);
             self
         }
@@ -3740,8 +3327,7 @@ pub struct DetectProtectiveEquipmentOutput {
     pub protective_equipment_model_version: std::option::Option<std::string::String>,
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
     pub persons: std::option::Option<std::vec::Vec<crate::model::ProtectiveEquipmentPerson>>,
-    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input
-    /// parameter.</p>
+    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     pub summary: std::option::Option<crate::model::ProtectiveEquipmentSummary>,
 }
 impl DetectProtectiveEquipmentOutput {
@@ -3753,8 +3339,7 @@ impl DetectProtectiveEquipmentOutput {
     pub fn persons(&self) -> std::option::Option<&[crate::model::ProtectiveEquipmentPerson]> {
         self.persons.as_deref()
     }
-    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input
-    /// parameter.</p>
+    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::ProtectiveEquipmentSummary> {
         self.summary.as_ref()
     }
@@ -3804,12 +3389,9 @@ pub mod detect_protective_equipment_output {
         /// To override the contents of this collection use [`set_persons`](Self::set_persons).
         ///
         /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-        pub fn persons(
-            mut self,
-            input: impl Into<crate::model::ProtectiveEquipmentPerson>,
-        ) -> Self {
+        pub fn persons(mut self, input: crate::model::ProtectiveEquipmentPerson) -> Self {
             let mut v = self.persons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.persons = Some(v);
             self
         }
@@ -3821,14 +3403,12 @@ pub mod detect_protective_equipment_output {
             self.persons = input;
             self
         }
-        /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input
-        /// parameter.</p>
+        /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
         pub fn summary(mut self, input: crate::model::ProtectiveEquipmentSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input
-        /// parameter.</p>
+        /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::ProtectiveEquipmentSummary>,
@@ -3857,8 +3437,7 @@ impl DetectProtectiveEquipmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectModerationLabelsOutput {
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the
-    /// start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     pub moderation_labels: std::option::Option<std::vec::Vec<crate::model::ModerationLabel>>,
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
     pub moderation_model_version: std::option::Option<std::string::String>,
@@ -3866,8 +3445,7 @@ pub struct DetectModerationLabelsOutput {
     pub human_loop_activation_output: std::option::Option<crate::model::HumanLoopActivationOutput>,
 }
 impl DetectModerationLabelsOutput {
-    /// <p>Array of detected Moderation labels and the time, in milliseconds from the
-    /// start of the video, they were detected.</p>
+    /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn moderation_labels(&self) -> std::option::Option<&[crate::model::ModerationLabel]> {
         self.moderation_labels.as_deref()
     }
@@ -3911,19 +3489,14 @@ pub mod detect_moderation_labels_output {
         ///
         /// To override the contents of this collection use [`set_moderation_labels`](Self::set_moderation_labels).
         ///
-        /// <p>Array of detected Moderation labels and the time, in milliseconds from the
-        /// start of the video, they were detected.</p>
-        pub fn moderation_labels(
-            mut self,
-            input: impl Into<crate::model::ModerationLabel>,
-        ) -> Self {
+        /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+        pub fn moderation_labels(mut self, input: crate::model::ModerationLabel) -> Self {
             let mut v = self.moderation_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moderation_labels = Some(v);
             self
         }
-        /// <p>Array of detected Moderation labels and the time, in milliseconds from the
-        /// start of the video, they were detected.</p>
+        /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
         pub fn set_moderation_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ModerationLabel>>,
@@ -3984,15 +3557,8 @@ pub struct DetectLabelsOutput {
     /// <p>An array of labels for the real-world objects detected. </p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub label_model_version: std::option::Option<std::string::String>,
@@ -4003,15 +3569,8 @@ impl DetectLabelsOutput {
         self.labels.as_deref()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn orientation_correction(
         &self,
     ) -> std::option::Option<&crate::model::OrientationCorrection> {
@@ -4047,9 +3606,9 @@ pub mod detect_labels_output {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>An array of labels for the real-world objects detected. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -4062,15 +3621,8 @@ pub mod detect_labels_output {
             self
         }
         /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn orientation_correction(
             mut self,
             input: crate::model::OrientationCorrection,
@@ -4079,15 +3631,8 @@ pub mod detect_labels_output {
             self
         }
         /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn set_orientation_correction(
             mut self,
             input: std::option::Option<crate::model::OrientationCorrection>,
@@ -4132,15 +3677,8 @@ pub struct DetectFacesOutput {
     /// <p>Details of each face found in the image. </p>
     pub face_details: std::option::Option<std::vec::Vec<crate::model::FaceDetail>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub orientation_correction: std::option::Option<crate::model::OrientationCorrection>,
 }
 impl DetectFacesOutput {
@@ -4149,15 +3687,8 @@ impl DetectFacesOutput {
         self.face_details.as_deref()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn orientation_correction(
         &self,
     ) -> std::option::Option<&crate::model::OrientationCorrection> {
@@ -4187,9 +3718,9 @@ pub mod detect_faces_output {
         /// To override the contents of this collection use [`set_face_details`](Self::set_face_details).
         ///
         /// <p>Details of each face found in the image. </p>
-        pub fn face_details(mut self, input: impl Into<crate::model::FaceDetail>) -> Self {
+        pub fn face_details(mut self, input: crate::model::FaceDetail) -> Self {
             let mut v = self.face_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_details = Some(v);
             self
         }
@@ -4202,15 +3733,8 @@ pub mod detect_faces_output {
             self
         }
         /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn orientation_correction(
             mut self,
             input: crate::model::OrientationCorrection,
@@ -4219,15 +3743,8 @@ pub mod detect_faces_output {
             self
         }
         /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn set_orientation_correction(
             mut self,
             input: std::option::Option<crate::model::OrientationCorrection>,
@@ -4285,9 +3802,9 @@ pub mod detect_custom_labels_output {
         /// To override the contents of this collection use [`set_custom_labels`](Self::set_custom_labels).
         ///
         /// <p>An array of custom labels detected in the input image.</p>
-        pub fn custom_labels(mut self, input: impl Into<crate::model::CustomLabel>) -> Self {
+        pub fn custom_labels(mut self, input: crate::model::CustomLabel) -> Self {
             let mut v = self.custom_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_labels = Some(v);
             self
         }
@@ -4328,8 +3845,7 @@ pub struct DescribeStreamProcessorOutput {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Date and time the stream processor was created</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
-    /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+    /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Kinesis video stream that provides the source streaming video.</p>
     pub input: std::option::Option<crate::model::StreamProcessorInput>,
@@ -4337,9 +3853,7 @@ pub struct DescribeStreamProcessorOutput {
     pub output: std::option::Option<crate::model::StreamProcessorOutput>,
     /// <p>ARN of the IAM role that allows access to the stream processor.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Face recognition input parameters that are being used by the stream processor.
-    /// Includes the collection to use for face recognition and the face
-    /// attributes to detect.</p>
+    /// <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
     pub settings: std::option::Option<crate::model::StreamProcessorSettings>,
 }
 impl DescribeStreamProcessorOutput {
@@ -4363,8 +3877,7 @@ impl DescribeStreamProcessorOutput {
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
-    /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+    /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
     pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
@@ -4380,9 +3893,7 @@ impl DescribeStreamProcessorOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Face recognition input parameters that are being used by the stream processor.
-    /// Includes the collection to use for face recognition and the face
-    /// attributes to detect.</p>
+    /// <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::StreamProcessorSettings> {
         self.settings.as_ref()
     }
@@ -4483,14 +3994,12 @@ pub mod describe_stream_processor_output {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
-        /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+        /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
         pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
-        /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream
-        /// processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+        /// <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
         pub fn set_last_update_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4534,16 +4043,12 @@ pub mod describe_stream_processor_output {
             self.role_arn = input;
             self
         }
-        /// <p>Face recognition input parameters that are being used by the stream processor.
-        /// Includes the collection to use for face recognition and the face
-        /// attributes to detect.</p>
+        /// <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
         pub fn settings(mut self, input: crate::model::StreamProcessorSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Face recognition input parameters that are being used by the stream processor.
-        /// Includes the collection to use for face recognition and the face
-        /// attributes to detect.</p>
+        /// <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorSettings>,
@@ -4579,26 +4084,20 @@ impl DescribeStreamProcessorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectVersionsOutput {
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of
-    /// the model versions, latest to earliest.</p>
+    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
     pub project_version_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ProjectVersionDescription>>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeProjectVersionsOutput {
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of
-    /// the model versions, latest to earliest.</p>
+    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
     pub fn project_version_descriptions(
         &self,
     ) -> std::option::Option<&[crate::model::ProjectVersionDescription]> {
         self.project_version_descriptions.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4629,19 +4128,17 @@ pub mod describe_project_versions_output {
         ///
         /// To override the contents of this collection use [`set_project_version_descriptions`](Self::set_project_version_descriptions).
         ///
-        /// <p>A list of model descriptions. The list is sorted by the creation date and time of
-        /// the model versions, latest to earliest.</p>
+        /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
         pub fn project_version_descriptions(
             mut self,
-            input: impl Into<crate::model::ProjectVersionDescription>,
+            input: crate::model::ProjectVersionDescription,
         ) -> Self {
             let mut v = self.project_version_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_version_descriptions = Some(v);
             self
         }
-        /// <p>A list of model descriptions. The list is sorted by the creation date and time of
-        /// the model versions, latest to earliest.</p>
+        /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
         pub fn set_project_version_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectVersionDescription>>,
@@ -4649,16 +4146,12 @@ pub mod describe_project_versions_output {
             self.project_version_descriptions = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4685,9 +4178,7 @@ impl DescribeProjectVersionsOutput {
 pub struct DescribeProjectsOutput {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
     pub project_descriptions: std::option::Option<std::vec::Vec<crate::model::ProjectDescription>>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeProjectsOutput {
@@ -4695,9 +4186,7 @@ impl DescribeProjectsOutput {
     pub fn project_descriptions(&self) -> std::option::Option<&[crate::model::ProjectDescription]> {
         self.project_descriptions.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4726,12 +4215,9 @@ pub mod describe_projects_output {
         /// To override the contents of this collection use [`set_project_descriptions`](Self::set_project_descriptions).
         ///
         /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-        pub fn project_descriptions(
-            mut self,
-            input: impl Into<crate::model::ProjectDescription>,
-        ) -> Self {
+        pub fn project_descriptions(mut self, input: crate::model::ProjectDescription) -> Self {
             let mut v = self.project_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.project_descriptions = Some(v);
             self
         }
@@ -4743,16 +4229,12 @@ pub mod describe_projects_output {
             self.project_descriptions = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4777,15 +4259,11 @@ impl DescribeProjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetOutput {
-    /// <p>
-    /// The description for the dataset.
-    /// </p>
+    /// <p> The description for the dataset. </p>
     pub dataset_description: std::option::Option<crate::model::DatasetDescription>,
 }
 impl DescribeDatasetOutput {
-    /// <p>
-    /// The description for the dataset.
-    /// </p>
+    /// <p> The description for the dataset. </p>
     pub fn dataset_description(&self) -> std::option::Option<&crate::model::DatasetDescription> {
         self.dataset_description.as_ref()
     }
@@ -4806,16 +4284,12 @@ pub mod describe_dataset_output {
         pub(crate) dataset_description: std::option::Option<crate::model::DatasetDescription>,
     }
     impl Builder {
-        /// <p>
-        /// The description for the dataset.
-        /// </p>
+        /// <p> The description for the dataset. </p>
         pub fn dataset_description(mut self, input: crate::model::DatasetDescription) -> Self {
             self.dataset_description = Some(input);
             self
         }
-        /// <p>
-        /// The description for the dataset.
-        /// </p>
+        /// <p> The description for the dataset. </p>
         pub fn set_dataset_description(
             mut self,
             input: std::option::Option<crate::model::DatasetDescription>,
@@ -4842,30 +4316,23 @@ impl DescribeDatasetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCollectionOutput {
-    /// <p>The number of faces that are indexed into the collection. To index faces into a
-    /// collection, use <a>IndexFaces</a>.</p>
+    /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
     pub face_count: std::option::Option<i64>,
     /// <p>The version of the face model that's used by the collection for face detection.</p>
-    ///
-    /// <p>For more information, see Model Versioning in the
-    /// Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
     pub face_model_version: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub collection_arn: std::option::Option<std::string::String>,
-    /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
-    /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCollectionOutput {
-    /// <p>The number of faces that are indexed into the collection. To index faces into a
-    /// collection, use <a>IndexFaces</a>.</p>
+    /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
     pub fn face_count(&self) -> std::option::Option<i64> {
         self.face_count
     }
     /// <p>The version of the face model that's used by the collection for face detection.</p>
-    ///
-    /// <p>For more information, see Model Versioning in the
-    /// Amazon Rekognition Developer Guide.</p>
+    /// <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
@@ -4873,8 +4340,7 @@ impl DescribeCollectionOutput {
     pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
-    /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
-    /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
@@ -4901,30 +4367,24 @@ pub mod describe_collection_output {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The number of faces that are indexed into the collection. To index faces into a
-        /// collection, use <a>IndexFaces</a>.</p>
+        /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
         pub fn face_count(mut self, input: i64) -> Self {
             self.face_count = Some(input);
             self
         }
-        /// <p>The number of faces that are indexed into the collection. To index faces into a
-        /// collection, use <a>IndexFaces</a>.</p>
+        /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
         pub fn set_face_count(mut self, input: std::option::Option<i64>) -> Self {
             self.face_count = input;
             self
         }
         /// <p>The version of the face model that's used by the collection for face detection.</p>
-        ///
-        /// <p>For more information, see Model Versioning in the
-        /// Amazon Rekognition Developer Guide.</p>
+        /// <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
         /// <p>The version of the face model that's used by the collection for face detection.</p>
-        ///
-        /// <p>For more information, see Model Versioning in the
-        /// Amazon Rekognition Developer Guide.</p>
+        /// <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4945,14 +4405,12 @@ pub mod describe_collection_output {
             self.collection_arn = input;
             self
         }
-        /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
-        /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+        /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
-        /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection.
-        /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+        /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5330,13 +4788,11 @@ impl CreateStreamProcessorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectVersionOutput {
-    /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code>
-    /// to get the current status of the training operation.</p>
+    /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectVersionOutput {
-    /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code>
-    /// to get the current status of the training operation.</p>
+    /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
     pub fn project_version_arn(&self) -> std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
@@ -5357,14 +4813,12 @@ pub mod create_project_version_output {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code>
-        /// to get the current status of the training operation.</p>
+        /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
         pub fn project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_version_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code>
-        /// to get the current status of the training operation.</p>
+        /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
         pub fn set_project_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5391,13 +4845,11 @@ impl CreateProjectVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectOutput {
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to
-    /// configure IAM access to the project. </p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateProjectOutput {
-    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to
-    /// configure IAM access to the project. </p>
+    /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -5418,14 +4870,12 @@ pub mod create_project_output {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to
-        /// configure IAM access to the project. </p>
+        /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to
-        /// configure IAM access to the project. </p>
+        /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -5449,15 +4899,11 @@ impl CreateProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetOutput {
-    /// <p>
-    /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
-    /// </p>
+    /// <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetOutput {
-    /// <p>
-    /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
-    /// </p>
+    /// <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
@@ -5478,16 +4924,12 @@ pub mod create_dataset_output {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
-        /// </p>
+        /// <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the created  Amazon Rekognition Custom Labels dataset.
-        /// </p>
+        /// <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -5513,10 +4955,9 @@ impl CreateDatasetOutput {
 pub struct CreateCollectionOutput {
     /// <p>HTTP status code indicating the result of the operation.</p>
     pub status_code: std::option::Option<i32>,
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on
-    /// your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     pub collection_arn: std::option::Option<std::string::String>,
-    /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub face_model_version: std::option::Option<std::string::String>,
 }
 impl CreateCollectionOutput {
@@ -5524,12 +4965,11 @@ impl CreateCollectionOutput {
     pub fn status_code(&self) -> std::option::Option<i32> {
         self.status_code
     }
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on
-    /// your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
-    /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+    /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
     pub fn face_model_version(&self) -> std::option::Option<&str> {
         self.face_model_version.as_deref()
     }
@@ -5564,14 +5004,12 @@ pub mod create_collection_output {
             self.status_code = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on
-        /// your resources. </p>
+        /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on
-        /// your resources. </p>
+        /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
         pub fn set_collection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5579,12 +5017,12 @@ pub mod create_collection_output {
             self.collection_arn = input;
             self
         }
-        /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.face_model_version = Some(input.into());
             self
         }
-        /// <p>Version number of the face detection model associated with the collection you are creating.</p>
+        /// <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
         pub fn set_face_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5615,36 +5053,18 @@ impl CreateCollectionOutput {
 pub struct CompareFacesOutput {
     /// <p>The face in the source image that was used for comparison.</p>
     pub source_image_face: std::option::Option<crate::model::ComparedSourceImageFace>,
-    /// <p>An array of faces in the target image that match the source image face. Each
-    /// <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that
-    /// the bounding box contains a face, and the similarity score for the face in the bounding box
-    /// and the face in the source image.</p>
+    /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
     pub face_matches: std::option::Option<std::vec::Vec<crate::model::CompareFacesMatch>>,
-    /// <p>An array of faces in the target image that did not match the source image
-    /// face.</p>
+    /// <p>An array of faces in the target image that did not match the source image face.</p>
     pub unmatched_faces: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
     /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub source_image_orientation_correction:
         std::option::Option<crate::model::OrientationCorrection>,
     /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub target_image_orientation_correction:
         std::option::Option<crate::model::OrientationCorrection>,
 }
@@ -5653,43 +5073,25 @@ impl CompareFacesOutput {
     pub fn source_image_face(&self) -> std::option::Option<&crate::model::ComparedSourceImageFace> {
         self.source_image_face.as_ref()
     }
-    /// <p>An array of faces in the target image that match the source image face. Each
-    /// <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that
-    /// the bounding box contains a face, and the similarity score for the face in the bounding box
-    /// and the face in the source image.</p>
+    /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
     pub fn face_matches(&self) -> std::option::Option<&[crate::model::CompareFacesMatch]> {
         self.face_matches.as_deref()
     }
-    /// <p>An array of faces in the target image that did not match the source image
-    /// face.</p>
+    /// <p>An array of faces in the target image that did not match the source image face.</p>
     pub fn unmatched_faces(&self) -> std::option::Option<&[crate::model::ComparedFace]> {
         self.unmatched_faces.as_deref()
     }
     /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn source_image_orientation_correction(
         &self,
     ) -> std::option::Option<&crate::model::OrientationCorrection> {
         self.source_image_orientation_correction.as_ref()
     }
     /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
-    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-    /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-    /// image correction. The bounding box coordinates are translated to represent object locations
-    /// after the orientation information in the Exif metadata is used to correct the image orientation.
-    /// Images in .png format don't contain Exif metadata.</p>
-    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-    /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-    /// coordinates aren't translated and represent the object locations before the image is rotated.
-    /// </p>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+    /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
     pub fn target_image_orientation_correction(
         &self,
     ) -> std::option::Option<&crate::model::OrientationCorrection> {
@@ -5746,20 +5148,14 @@ pub mod compare_faces_output {
         ///
         /// To override the contents of this collection use [`set_face_matches`](Self::set_face_matches).
         ///
-        /// <p>An array of faces in the target image that match the source image face. Each
-        /// <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that
-        /// the bounding box contains a face, and the similarity score for the face in the bounding box
-        /// and the face in the source image.</p>
-        pub fn face_matches(mut self, input: impl Into<crate::model::CompareFacesMatch>) -> Self {
+        /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
+        pub fn face_matches(mut self, input: crate::model::CompareFacesMatch) -> Self {
             let mut v = self.face_matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.face_matches = Some(v);
             self
         }
-        /// <p>An array of faces in the target image that match the source image face. Each
-        /// <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that
-        /// the bounding box contains a face, and the similarity score for the face in the bounding box
-        /// and the face in the source image.</p>
+        /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
         pub fn set_face_matches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompareFacesMatch>>,
@@ -5771,16 +5167,14 @@ pub mod compare_faces_output {
         ///
         /// To override the contents of this collection use [`set_unmatched_faces`](Self::set_unmatched_faces).
         ///
-        /// <p>An array of faces in the target image that did not match the source image
-        /// face.</p>
-        pub fn unmatched_faces(mut self, input: impl Into<crate::model::ComparedFace>) -> Self {
+        /// <p>An array of faces in the target image that did not match the source image face.</p>
+        pub fn unmatched_faces(mut self, input: crate::model::ComparedFace) -> Self {
             let mut v = self.unmatched_faces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unmatched_faces = Some(v);
             self
         }
-        /// <p>An array of faces in the target image that did not match the source image
-        /// face.</p>
+        /// <p>An array of faces in the target image that did not match the source image face.</p>
         pub fn set_unmatched_faces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
@@ -5789,15 +5183,8 @@ pub mod compare_faces_output {
             self
         }
         /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn source_image_orientation_correction(
             mut self,
             input: crate::model::OrientationCorrection,
@@ -5806,15 +5193,8 @@ pub mod compare_faces_output {
             self
         }
         /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn set_source_image_orientation_correction(
             mut self,
             input: std::option::Option<crate::model::OrientationCorrection>,
@@ -5823,15 +5203,8 @@ pub mod compare_faces_output {
             self
         }
         /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn target_image_orientation_correction(
             mut self,
             input: crate::model::OrientationCorrection,
@@ -5840,15 +5213,8 @@ pub mod compare_faces_output {
             self
         }
         /// <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>
-        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata
-        /// that includes the image's orientation. Amazon Rekognition uses this orientation information to perform
-        /// image correction. The bounding box coordinates are translated to represent object locations
-        /// after the orientation information in the Exif metadata is used to correct the image orientation.
-        /// Images in .png format don't contain Exif metadata.</p>
-        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and
-        /// .jpeg images without orientation information in the image Exif metadata. The bounding box
-        /// coordinates aren't translated and represent the object locations before the image is rotated.
-        /// </p>
+        /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
+        /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
         pub fn set_target_image_orientation_correction(
             mut self,
             input: std::option::Option<crate::model::OrientationCorrection>,

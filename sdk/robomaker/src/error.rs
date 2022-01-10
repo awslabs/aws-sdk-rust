@@ -14,8 +14,7 @@ pub struct BatchDeleteWorldsError {
 pub enum BatchDeleteWorldsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -62,8 +61,6 @@ impl BatchDeleteWorldsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -132,8 +129,7 @@ pub struct BatchDescribeSimulationJobError {
 pub enum BatchDescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -183,8 +179,6 @@ impl BatchDescribeSimulationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -261,8 +255,7 @@ pub struct CancelDeploymentJobError {
 pub enum CancelDeploymentJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -312,8 +305,6 @@ impl CancelDeploymentJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -390,8 +381,7 @@ pub struct CancelSimulationJobError {
 pub enum CancelSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -441,8 +431,6 @@ impl CancelSimulationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -519,8 +507,7 @@ pub struct CancelSimulationJobBatchError {
 pub enum CancelSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -570,8 +557,6 @@ impl CancelSimulationJobBatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -648,8 +633,7 @@ pub struct CancelWorldExportJobError {
 pub enum CancelWorldExportJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -699,8 +683,6 @@ impl CancelWorldExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -777,8 +759,7 @@ pub struct CancelWorldGenerationJobError {
 pub enum CancelWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -828,8 +809,6 @@ impl CancelWorldGenerationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -906,16 +885,13 @@ pub struct CreateDeploymentJobError {
 pub enum CreateDeploymentJobErrorKind {
     /// <p>The failure percentage threshold percentage was met.</p>
     ConcurrentDeploymentException(crate::error::ConcurrentDeploymentException),
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -970,8 +946,6 @@ impl CreateDeploymentJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1074,11 +1048,9 @@ pub struct CreateFleetError {
 pub enum CreateFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1126,8 +1098,6 @@ impl CreateFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1195,11 +1165,9 @@ pub struct CreateRobotError {
 pub enum CreateRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1250,8 +1218,6 @@ impl CreateRobotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1325,16 +1291,13 @@ pub struct CreateRobotApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRobotApplicationErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1390,8 +1353,6 @@ impl CreateRobotApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1484,16 +1445,13 @@ pub struct CreateRobotApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRobotApplicationVersionErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1551,8 +1509,6 @@ impl CreateRobotApplicationVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1639,16 +1595,13 @@ pub struct CreateSimulationApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationApplicationErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1706,8 +1659,6 @@ impl CreateSimulationApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1802,16 +1753,13 @@ pub struct CreateSimulationApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationApplicationVersionErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1873,8 +1821,6 @@ impl CreateSimulationApplicationVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1967,16 +1913,13 @@ pub struct CreateSimulationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2033,8 +1976,6 @@ impl CreateSimulationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2135,13 +2076,11 @@ pub struct CreateWorldExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorldExportJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2197,8 +2136,6 @@ impl CreateWorldExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2291,16 +2228,13 @@ pub struct CreateWorldGenerationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorldGenerationJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2357,8 +2291,6 @@ impl CreateWorldGenerationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2461,11 +2393,9 @@ pub struct CreateWorldTemplateError {
 pub enum CreateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -2519,8 +2449,6 @@ impl CreateWorldTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2613,8 +2541,7 @@ pub struct DeleteFleetError {
 pub enum DeleteFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2661,8 +2588,6 @@ impl DeleteFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2725,8 +2650,7 @@ pub struct DeleteRobotError {
 pub enum DeleteRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2773,8 +2697,6 @@ impl DeleteRobotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2837,8 +2759,7 @@ pub struct DeleteRobotApplicationError {
 pub enum DeleteRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2885,8 +2806,6 @@ impl DeleteRobotApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2955,8 +2874,7 @@ pub struct DeleteSimulationApplicationError {
 pub enum DeleteSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3005,8 +2923,6 @@ impl DeleteSimulationApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3075,8 +2991,7 @@ pub struct DeleteWorldTemplateError {
 pub enum DeleteWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3126,8 +3041,6 @@ impl DeleteWorldTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3204,8 +3117,7 @@ pub struct DeregisterRobotError {
 pub enum DeregisterRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3255,8 +3167,6 @@ impl DeregisterRobotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3330,8 +3240,7 @@ pub struct DescribeDeploymentJobError {
 pub enum DescribeDeploymentJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3381,8 +3290,6 @@ impl DescribeDeploymentJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3459,8 +3366,7 @@ pub struct DescribeFleetError {
 pub enum DescribeFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3510,8 +3416,6 @@ impl DescribeFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3585,8 +3489,7 @@ pub struct DescribeRobotError {
 pub enum DescribeRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3636,8 +3539,6 @@ impl DescribeRobotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3711,8 +3612,7 @@ pub struct DescribeRobotApplicationError {
 pub enum DescribeRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3762,8 +3662,6 @@ impl DescribeRobotApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3840,8 +3738,7 @@ pub struct DescribeSimulationApplicationError {
 pub enum DescribeSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3900,8 +3797,6 @@ impl DescribeSimulationApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3982,8 +3877,7 @@ pub struct DescribeSimulationJobError {
 pub enum DescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4033,8 +3927,6 @@ impl DescribeSimulationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4111,8 +4003,7 @@ pub struct DescribeSimulationJobBatchError {
 pub enum DescribeSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4159,8 +4050,6 @@ impl DescribeSimulationJobBatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4229,8 +4118,7 @@ pub struct DescribeWorldError {
 pub enum DescribeWorldErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4280,8 +4168,6 @@ impl DescribeWorldError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4355,8 +4241,7 @@ pub struct DescribeWorldExportJobError {
 pub enum DescribeWorldExportJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4406,8 +4291,6 @@ impl DescribeWorldExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4484,8 +4367,7 @@ pub struct DescribeWorldGenerationJobError {
 pub enum DescribeWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4535,8 +4417,6 @@ impl DescribeWorldGenerationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4613,8 +4493,7 @@ pub struct DescribeWorldTemplateError {
 pub enum DescribeWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4664,8 +4543,6 @@ impl DescribeWorldTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4742,8 +4619,7 @@ pub struct GetWorldTemplateBodyError {
 pub enum GetWorldTemplateBodyErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4793,8 +4669,6 @@ impl GetWorldTemplateBodyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4871,8 +4745,7 @@ pub struct ListDeploymentJobsError {
 pub enum ListDeploymentJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4922,8 +4795,6 @@ impl ListDeploymentJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5000,8 +4871,7 @@ pub struct ListFleetsError {
 pub enum ListFleetsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5051,8 +4921,6 @@ impl ListFleetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5123,8 +4991,7 @@ pub struct ListRobotApplicationsError {
 pub enum ListRobotApplicationsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5171,8 +5038,6 @@ impl ListRobotApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5241,8 +5106,7 @@ pub struct ListRobotsError {
 pub enum ListRobotsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5292,8 +5156,6 @@ impl ListRobotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5364,8 +5226,7 @@ pub struct ListSimulationApplicationsError {
 pub enum ListSimulationApplicationsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5412,8 +5273,6 @@ impl ListSimulationApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5482,8 +5341,7 @@ pub struct ListSimulationJobBatchesError {
 pub enum ListSimulationJobBatchesErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5527,8 +5385,6 @@ impl ListSimulationJobBatchesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5589,8 +5445,7 @@ pub struct ListSimulationJobsError {
 pub enum ListSimulationJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5637,8 +5492,6 @@ impl ListSimulationJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5707,8 +5560,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5758,8 +5610,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5836,8 +5686,7 @@ pub struct ListWorldExportJobsError {
 pub enum ListWorldExportJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5884,8 +5733,6 @@ impl ListWorldExportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5954,8 +5801,7 @@ pub struct ListWorldGenerationJobsError {
 pub enum ListWorldGenerationJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6002,8 +5848,6 @@ impl ListWorldGenerationJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6072,8 +5916,7 @@ pub struct ListWorldsError {
 pub enum ListWorldsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6120,8 +5963,6 @@ impl ListWorldsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6184,8 +6025,7 @@ pub struct ListWorldTemplatesError {
 pub enum ListWorldTemplatesErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6232,8 +6072,6 @@ impl ListWorldTemplatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6302,11 +6140,9 @@ pub struct RegisterRobotError {
 pub enum RegisterRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6357,8 +6193,6 @@ impl RegisterRobotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6440,11 +6274,9 @@ pub struct RestartSimulationJobError {
 pub enum RestartSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6495,8 +6327,6 @@ impl RestartSimulationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6579,16 +6409,13 @@ pub struct StartSimulationJobBatchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSimulationJobBatchErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6639,8 +6466,6 @@ impl StartSimulationJobBatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6727,16 +6552,13 @@ pub struct SyncDeploymentJobError {
 pub enum SyncDeploymentJobErrorKind {
     /// <p>The failure percentage threshold percentage was met.</p>
     ConcurrentDeploymentException(crate::error::ConcurrentDeploymentException),
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6791,8 +6613,6 @@ impl SyncDeploymentJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6895,8 +6715,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6946,8 +6765,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7018,8 +6835,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7069,8 +6885,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7144,11 +6958,9 @@ pub struct UpdateRobotApplicationError {
 pub enum UpdateRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7199,8 +7011,6 @@ impl UpdateRobotApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7285,11 +7095,9 @@ pub struct UpdateSimulationApplicationError {
 pub enum UpdateSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7344,8 +7152,6 @@ impl UpdateSimulationApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7430,8 +7236,7 @@ pub struct UpdateWorldTemplateError {
 pub enum UpdateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7481,8 +7286,6 @@ impl UpdateWorldTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7672,8 +7475,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-/// returned message provides an explanation of the error value.</p>
+/// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -7801,8 +7603,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-/// stream requests exceeds the maximum number allowed. </p>
+/// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7866,8 +7667,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The request uses the same client token as a previous, but non-identical request. Do not
-/// reuse a client token with different requests, unless the requests are identical. </p>
+/// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {

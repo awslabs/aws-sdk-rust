@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request contains invalid parameters for the ARN or tags. This exception also
-    /// occurs when you call a tagging API on a cancelled signing profile.</p>
+    /// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>The resource encountered a conflicting state.</p>
     ConflictException(crate::error::ConflictException),

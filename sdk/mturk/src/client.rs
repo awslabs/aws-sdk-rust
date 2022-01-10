@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Mechanical Turk
@@ -228,6 +228,7 @@ where
     ///
     /// See [`ListAssignmentsForHIT`](crate::client::fluent_builders::ListAssignmentsForHIT) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssignmentsForHIT::into_paginator).
     pub fn list_assignments_for_hit(&self) -> fluent_builders::ListAssignmentsForHIT<C, M, R> {
         fluent_builders::ListAssignmentsForHIT::new(self.handle.clone())
     }
@@ -235,6 +236,7 @@ where
     ///
     /// See [`ListBonusPayments`](crate::client::fluent_builders::ListBonusPayments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBonusPayments::into_paginator).
     pub fn list_bonus_payments(&self) -> fluent_builders::ListBonusPayments<C, M, R> {
         fluent_builders::ListBonusPayments::new(self.handle.clone())
     }
@@ -242,6 +244,7 @@ where
     ///
     /// See [`ListHITs`](crate::client::fluent_builders::ListHITs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHITs::into_paginator).
     pub fn list_hi_ts(&self) -> fluent_builders::ListHITs<C, M, R> {
         fluent_builders::ListHITs::new(self.handle.clone())
     }
@@ -249,6 +252,7 @@ where
     ///
     /// See [`ListHITsForQualificationType`](crate::client::fluent_builders::ListHITsForQualificationType) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHITsForQualificationType::into_paginator).
     pub fn list_hi_ts_for_qualification_type(
         &self,
     ) -> fluent_builders::ListHITsForQualificationType<C, M, R> {
@@ -258,6 +262,7 @@ where
     ///
     /// See [`ListQualificationRequests`](crate::client::fluent_builders::ListQualificationRequests) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQualificationRequests::into_paginator).
     pub fn list_qualification_requests(
         &self,
     ) -> fluent_builders::ListQualificationRequests<C, M, R> {
@@ -267,6 +272,7 @@ where
     ///
     /// See [`ListQualificationTypes`](crate::client::fluent_builders::ListQualificationTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQualificationTypes::into_paginator).
     pub fn list_qualification_types(&self) -> fluent_builders::ListQualificationTypes<C, M, R> {
         fluent_builders::ListQualificationTypes::new(self.handle.clone())
     }
@@ -274,6 +280,7 @@ where
     ///
     /// See [`ListReviewableHITs`](crate::client::fluent_builders::ListReviewableHITs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReviewableHITs::into_paginator).
     pub fn list_reviewable_hi_ts(&self) -> fluent_builders::ListReviewableHITs<C, M, R> {
         fluent_builders::ListReviewableHITs::new(self.handle.clone())
     }
@@ -281,6 +288,7 @@ where
     ///
     /// See [`ListReviewPolicyResultsForHIT`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT::into_paginator).
     pub fn list_review_policy_results_for_hit(
         &self,
     ) -> fluent_builders::ListReviewPolicyResultsForHIT<C, M, R> {
@@ -290,6 +298,7 @@ where
     ///
     /// See [`ListWorkerBlocks`](crate::client::fluent_builders::ListWorkerBlocks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkerBlocks::into_paginator).
     pub fn list_worker_blocks(&self) -> fluent_builders::ListWorkerBlocks<C, M, R> {
         fluent_builders::ListWorkerBlocks::new(self.handle.clone())
     }
@@ -297,6 +306,7 @@ where
     ///
     /// See [`ListWorkersWithQualificationType`](crate::client::fluent_builders::ListWorkersWithQualificationType) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkersWithQualificationType::into_paginator).
     pub fn list_workers_with_qualification_type(
         &self,
     ) -> fluent_builders::ListWorkersWithQualificationType<C, M, R> {
@@ -389,17 +399,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptQualificationRequest`.
     ///
-    /// <p>
-    /// The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification.
-    /// </p>
-    /// <p>
-    /// Only the owner of the Qualification type can grant a Qualification request for that  type.
-    /// </p>
-    /// <p>
-    /// A successful request for the <code>AcceptQualificationRequest</code> operation
-    /// returns with no errors and an empty body.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification. </p>
+    /// <p> Only the owner of the Qualification type can grant a Qualification request for that type. </p>
+    /// <p> A successful request for the <code>AcceptQualificationRequest</code> operation returns with no errors and an empty body. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptQualificationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -444,10 +447,10 @@ pub mod fluent_builders {
                 crate::input::AcceptQualificationRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -456,8 +459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-        pub fn qualification_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_request_id(inp);
+        pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_request_id(input.into());
             self
         }
         /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
@@ -468,18 +471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_request_id(input);
             self
         }
-        /// <p>
-        /// The value of the Qualification. You can omit this value if you are using the
-        /// presence or absence of the Qualification as the basis for a HIT requirement.
-        /// </p>
-        pub fn integer_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.integer_value(inp);
+        /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+        pub fn integer_value(mut self, input: i32) -> Self {
+            self.inner = self.inner.integer_value(input);
             self
         }
-        /// <p>
-        /// The value of the Qualification. You can omit this value if you are using the
-        /// presence or absence of the Qualification as the basis for a HIT requirement.
-        /// </p>
+        /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_integer_value(input);
             self
@@ -487,37 +484,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ApproveAssignment`.
     ///
-    /// <p>
-    /// The <code>ApproveAssignment</code> operation approves the results of a completed assignment.
-    /// </p>
-    /// <p>
-    /// Approving an assignment initiates two payments from the Requester's Amazon.com account
-    /// </p>
+    /// <p> The <code>ApproveAssignment</code> operation approves the results of a completed assignment. </p>
+    /// <p> Approving an assignment initiates two payments from the Requester's Amazon.com account </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The Worker who submitted the results is paid the reward specified in the HIT.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Amazon Mechanical Turk fees are debited.
-    /// </p>
-    /// </li>
+    /// <li> <p> The Worker who submitted the results is paid the reward specified in the HIT. </p> </li>
+    /// <li> <p> Amazon Mechanical Turk fees are debited. </p> </li>
     /// </ul>
-    /// <p>
-    /// If the Requester's account does not have adequate funds for these payments,
-    /// the call to ApproveAssignment returns an exception, and the approval is not processed.
-    /// You can include an optional feedback message with the approval,
-    /// which the Worker can see in the Status section of the web site.
-    /// </p>
-    /// <p>
-    /// You can also call this operation for assignments that were previous rejected
-    /// and approve them by explicitly overriding the previous rejection.
-    /// This only works on rejected assignments that were submitted within the previous 30 days
-    /// and only if the assignment's related HIT has not been deleted.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> If the Requester's account does not have adequate funds for these payments, the call to ApproveAssignment returns an exception, and the approval is not processed. You can include an optional feedback message with the approval, which the Worker can see in the Status section of the web site. </p>
+    /// <p> You can also call this operation for assignments that were previous rejected and approve them by explicitly overriding the previous rejection. This only works on rejected assignments that were submitted within the previous 30 days and only if the assignment's related HIT has not been deleted. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApproveAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -562,10 +537,10 @@ pub mod fluent_builders {
                 crate::input::ApproveAssignmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -573,16 +548,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -590,16 +561,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_id(input);
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
-        pub fn requester_feedback(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_feedback(inp);
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+        pub fn requester_feedback(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_feedback(input.into());
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -607,16 +574,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_requester_feedback(input);
             self
         }
-        /// <p>
-        /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-        /// </p>
-        pub fn override_rejection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.override_rejection(inp);
+        /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
+        pub fn override_rejection(mut self, input: bool) -> Self {
+            self.inner = self.inner.override_rejection(input);
             self
         }
-        /// <p>
-        /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-        /// </p>
+        /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
         pub fn set_override_rejection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_override_rejection(input);
             self
@@ -624,28 +587,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateQualificationWithWorker`.
     ///
-    /// <p>
-    /// The <code>AssociateQualificationWithWorker</code> operation gives a Worker a
-    /// Qualification. <code>AssociateQualificationWithWorker</code> does not require that the Worker
-    /// submit a Qualification request. It gives the Qualification directly to the Worker.
-    /// </p>
-    ///
-    /// <p>
-    /// You can only assign a Qualification of a Qualification type that you created (using
-    /// the <code>CreateQualificationType</code> operation).
-    /// </p>
-    ///
-    /// <note>
-    /// <p>
-    /// Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification
-    /// requests for the Qualification by the Worker. If you assign a Qualification to a
-    /// Worker, then later grant a Qualification request made by the Worker, the granting of
-    /// the request may modify the Qualification score. To resolve a pending Qualification
-    /// request without affecting the Qualification the Worker already has, reject the
-    /// request with the <code>RejectQualificationRequest</code> operation.
-    /// </p>
+    /// <p> The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification. <code>AssociateQualificationWithWorker</code> does not require that the Worker submit a Qualification request. It gives the Qualification directly to the Worker. </p>
+    /// <p> You can only assign a Qualification of a Qualification type that you created (using the <code>CreateQualificationType</code> operation). </p> <note>
+    /// <p> Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification requests for the Qualification by the Worker. If you assign a Qualification to a Worker, then later grant a Qualification request made by the Worker, the granting of the request may modify the Qualification score. To resolve a pending Qualification request without affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code> operation. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateQualificationWithWorker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -690,10 +636,10 @@ pub mod fluent_builders {
                 crate::input::AssociateQualificationWithWorkerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -702,8 +648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
@@ -714,25 +660,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_type_id(input);
             self
         }
-        /// <p>
-        /// The ID of the Worker to whom the Qualification is being assigned.
-        /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-        /// </p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Worker to whom the Qualification is being assigned.
-        /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-        /// </p>
+        /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_worker_id(input);
             self
         }
         /// <p>The value of the Qualification to assign.</p>
-        pub fn integer_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.integer_value(inp);
+        pub fn integer_value(mut self, input: i32) -> Self {
+            self.inner = self.inner.integer_value(input);
             self
         }
         /// <p>The value of the Qualification to assign.</p>
@@ -740,20 +680,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integer_value(input);
             self
         }
-        /// <p>
-        /// Specifies whether to send a notification email message to the Worker
-        /// saying that the qualification was assigned to the Worker.
-        /// Note: this is true by default.
-        /// </p>
-        pub fn send_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.send_notification(inp);
+        /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+        pub fn send_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.send_notification(input);
             self
         }
-        /// <p>
-        /// Specifies whether to send a notification email message to the Worker
-        /// saying that the qualification was assigned to the Worker.
-        /// Note: this is true by default.
-        /// </p>
+        /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
         pub fn set_send_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_send_notification(input);
             self
@@ -761,30 +693,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAdditionalAssignmentsForHIT`.
     ///
-    /// <p>
-    /// The
-    /// <code>CreateAdditionalAssignmentsForHIT</code>
-    /// operation increases the maximum number of assignments of an existing HIT.
-    /// </p>
-    /// <p>
-    /// To extend the maximum number of assignments, specify the number of additional assignments.</p>
-    /// <note>
+    /// <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the maximum number of assignments of an existing HIT. </p>
+    /// <p> To extend the maximum number of assignments, specify the number of additional assignments.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>HITs created with fewer than 10 assignments cannot be extended to have 10 or more assignments. Attempting to add assignments in a way that brings the total number of assignments for a HIT from fewer than 10 assignments to 10 or more
-    /// assignments will result in an
-    /// <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code>
-    /// exception.</p>
-    /// </li>
-    /// <li>
-    /// <p>HITs that were created before July 22, 2015 cannot be extended. Attempting to extend HITs that were created before July 22, 2015 will result in an
-    /// <code>AWS.MechanicalTurk.HITTooOldForExtension</code>
-    /// exception.
-    /// </p>
-    /// </li>
+    /// <li> <p>HITs created with fewer than 10 assignments cannot be extended to have 10 or more assignments. Attempting to add assignments in a way that brings the total number of assignments for a HIT from fewer than 10 assignments to 10 or more assignments will result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.</p> </li>
+    /// <li> <p>HITs that were created before July 22, 2015 cannot be extended. Attempting to extend HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAdditionalAssignmentsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -829,10 +745,10 @@ pub mod fluent_builders {
                 crate::input::CreateAdditionalAssignmentsForHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -841,8 +757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to extend.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The ID of the HIT to extend.</p>
@@ -851,8 +767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of additional assignments to request for this HIT.</p>
-        pub fn number_of_additional_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_additional_assignments(inp);
+        pub fn number_of_additional_assignments(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_additional_assignments(input);
             self
         }
         /// <p>The number of additional assignments to request for this HIT.</p>
@@ -863,26 +779,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_number_of_additional_assignments(input);
             self
         }
-        /// <p>
-        /// A unique identifier for this request, which allows you to retry the call on error
-        /// without extending the HIT multiple times.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server. If the extend HIT already exists in the system
-        /// from a previous call using the same <code>UniqueRequestToken</code>,
-        /// subsequent calls will return an error with a message containing the request ID.
-        /// </p>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
+        pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request, which allows you to retry the call on error
-        /// without extending the HIT multiple times.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server. If the extend HIT already exists in the system
-        /// from a previous call using the same <code>UniqueRequestToken</code>,
-        /// subsequent calls will return an error with a message containing the request ID.
-        /// </p>
+        /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -893,24 +795,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHIT`.
     ///
-    /// <p>The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT).
-    /// The new HIT is made available for Workers to find and accept on the Amazon Mechanical
-    /// Turk website. </p>
-    /// <p>
-    /// This operation allows you to specify a new HIT by passing in values for the properties of the HIT, such as its title, reward amount and number of assignments. When you pass these values to <code>CreateHIT</code>, a new HIT is created for you, with a new <code>HITTypeID</code>. The HITTypeID can be used to create additional HITs in the future without needing to specify common parameters such as the title, description and reward amount each time.</p>
-    /// <p> An alternative way to create HITs is to first generate a HITTypeID using the <code>CreateHITType</code> operation and then call the <code>CreateHITWithHITType</code> operation. This is the recommended best practice for Requesters who are creating large numbers of HITs.
-    /// </p>
-    ///
-    /// <p>CreateHIT also supports several ways to provide question data: by providing a value
-    /// for the <code>Question</code> parameter that fully specifies the contents of the HIT, or by providing
-    /// a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
-    /// </p>
-    ///
-    /// <note>
-    /// <p> If a HIT is created with 10 or more maximum assignments, there is an additional fee. For more information, see
-    /// <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>.</p>
+    /// <p>The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT). The new HIT is made available for Workers to find and accept on the Amazon Mechanical Turk website. </p>
+    /// <p> This operation allows you to specify a new HIT by passing in values for the properties of the HIT, such as its title, reward amount and number of assignments. When you pass these values to <code>CreateHIT</code>, a new HIT is created for you, with a new <code>HITTypeID</code>. The HITTypeID can be used to create additional HITs in the future without needing to specify common parameters such as the title, description and reward amount each time.</p>
+    /// <p> An alternative way to create HITs is to first generate a HITTypeID using the <code>CreateHITType</code> operation and then call the <code>CreateHITWithHITType</code> operation. This is the recommended best practice for Requesters who are creating large numbers of HITs. </p>
+    /// <p>CreateHIT also supports several ways to provide question data: by providing a value for the <code>Question</code> parameter that fully specifies the contents of the HIT, or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>. </p> <note>
+    /// <p> If a HIT is created with 10 or more maximum assignments, there is an additional fee. For more information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,10 +846,10 @@ pub mod fluent_builders {
                 crate::input::CreateHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -966,34 +857,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
-        pub fn max_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_assignments(inp);
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+        pub fn max_assignments(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_assignments(input);
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_assignments(input);
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
-        pub fn auto_approval_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.auto_approval_delay_in_seconds(inp);
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+        pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.auto_approval_delay_in_seconds(input);
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1001,42 +880,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_approval_delay_in_seconds(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
-        pub fn lifetime_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.lifetime_in_seconds(inp);
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+        pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.lifetime_in_seconds(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_lifetime_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
-        pub fn assignment_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.assignment_duration_in_seconds(inp);
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+        pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.assignment_duration_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1044,134 +903,70 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_duration_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
-        pub fn reward(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reward(inp);
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+        pub fn reward(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reward(input.into());
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reward(input);
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
-        pub fn question(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question(inp);
+        pub fn question(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question(input.into());
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_question(input);
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
-        pub fn requester_annotation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_annotation(inp);
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+        pub fn requester_annotation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_annotation(input.into());
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1183,29 +978,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
         ///
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn qualification_requirements(
             mut self,
-            inp: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
-            self.inner = self.inner.qualification_requirements(inp);
+            self.inner = self.inner.qualification_requirements(input);
             self
         }
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -1213,41 +994,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_requirements(input);
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn set_unique_request_token(
             mut self,
@@ -1256,18 +1011,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_unique_request_token(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
-        pub fn assignment_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.assignment_review_policy(inp);
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+        pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.assignment_review_policy(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1275,18 +1024,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_review_policy(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
-        pub fn hit_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.hit_review_policy(inp);
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+        pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.hit_review_policy(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1294,24 +1037,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hit_review_policy(input);
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
-        pub fn hit_layout_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_layout_id(inp);
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+        pub fn hit_layout_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_layout_id(input.into());
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1323,21 +1056,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
         ///
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            inp: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
-            self.inner = self.inner.hit_layout_parameters(inp);
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
+            self.inner = self.inner.hit_layout_parameters(input);
             self
         }
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1348,13 +1072,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHITType`.
     ///
-    /// <p>
-    /// The <code>CreateHITType</code> operation creates a new HIT type. This operation
-    /// allows you to define a standard set of HIT properties to use when creating HITs.
-    /// If you register a HIT type with values that match an existing HIT type, the HIT type
-    /// ID of the existing type will be returned.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>CreateHITType</code> operation creates a new HIT type. This operation allows you to define a standard set of HIT properties to use when creating HITs. If you register a HIT type with values that match an existing HIT type, the HIT type ID of the existing type will be returned. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHITType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1399,10 +1118,10 @@ pub mod fluent_builders {
                 crate::input::CreateHitTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1410,20 +1129,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
-        pub fn auto_approval_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.auto_approval_delay_in_seconds(inp);
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+        pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.auto_approval_delay_in_seconds(input);
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1431,24 +1142,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_approval_delay_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
-        pub fn assignment_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.assignment_duration_in_seconds(inp);
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+        pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.assignment_duration_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1456,70 +1155,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_duration_in_seconds(input);
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
-        pub fn reward(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reward(inp);
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+        pub fn reward(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reward(input.into());
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reward(input);
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1528,29 +1199,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
         ///
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn qualification_requirements(
             mut self,
-            inp: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
-            self.inner = self.inner.qualification_requirements(inp);
+            self.inner = self.inner.qualification_requirements(input);
             self
         }
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -1561,25 +1218,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHITWithHITType`.
     ///
-    /// <p>
-    /// The <code>CreateHITWithHITType</code> operation creates a new Human Intelligence Task (HIT)
-    /// using an existing HITTypeID generated by the <code>CreateHITType</code> operation.
-    /// </p>
-    /// <p>
-    /// This is an alternative way to create HITs from the <code>CreateHIT</code> operation.
-    /// This is the recommended best practice for Requesters who are creating large numbers of HITs.
-    /// </p>
-    /// <p>CreateHITWithHITType also supports several ways to provide question data:
-    /// by providing a value for the <code>Question</code> parameter that fully specifies the contents of the HIT,
-    /// or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If a HIT is created with 10 or more maximum assignments, there is an additional fee.
-    /// For more information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>.
-    /// </p>
+    /// <p> The <code>CreateHITWithHITType</code> operation creates a new Human Intelligence Task (HIT) using an existing HITTypeID generated by the <code>CreateHITType</code> operation. </p>
+    /// <p> This is an alternative way to create HITs from the <code>CreateHIT</code> operation. This is the recommended best practice for Requesters who are creating large numbers of HITs. </p>
+    /// <p>CreateHITWithHITType also supports several ways to provide question data: by providing a value for the <code>Question</code> parameter that fully specifies the contents of the HIT, or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>. </p> <note>
+    /// <p> If a HIT is created with 10 or more maximum assignments, there is an additional fee. For more information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical Turk Pricing</a>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHITWithHITType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1624,10 +1268,10 @@ pub mod fluent_builders {
                 crate::input::CreateHitWithHitTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1636,8 +1280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The HIT type ID you want to create this HIT with.</p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(input.into());
             self
         }
         /// <p>The HIT type ID you want to create this HIT with.</p>
@@ -1645,98 +1289,50 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hit_type_id(input);
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
-        pub fn max_assignments(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_assignments(inp);
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+        pub fn max_assignments(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_assignments(input);
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_assignments(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
-        pub fn lifetime_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.lifetime_in_seconds(inp);
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+        pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.lifetime_in_seconds(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_lifetime_in_seconds(input);
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
-        pub fn question(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question(inp);
+        pub fn question(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question(input.into());
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_question(input);
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
-        pub fn requester_annotation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_annotation(inp);
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+        pub fn requester_annotation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_annotation(input.into());
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1744,41 +1340,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_requester_annotation(input);
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn set_unique_request_token(
             mut self,
@@ -1787,18 +1357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_unique_request_token(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
-        pub fn assignment_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.assignment_review_policy(inp);
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+        pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.assignment_review_policy(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1806,18 +1370,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_review_policy(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
-        pub fn hit_review_policy(mut self, inp: crate::model::ReviewPolicy) -> Self {
-            self.inner = self.inner.hit_review_policy(inp);
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+        pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
+            self.inner = self.inner.hit_review_policy(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1825,24 +1383,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hit_review_policy(input);
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
-        pub fn hit_layout_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_layout_id(inp);
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+        pub fn hit_layout_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_layout_id(input.into());
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1854,21 +1402,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
         ///
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            inp: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
-            self.inner = self.inner.hit_layout_parameters(inp);
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
+            self.inner = self.inner.hit_layout_parameters(input);
             self
         }
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1879,14 +1418,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateQualificationType`.
     ///
-    /// <p>
-    /// The
-    /// <code>CreateQualificationType</code>
-    /// operation creates a new Qualification type, which is represented by a
-    /// <code>QualificationType</code>
-    /// data structure.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>CreateQualificationType</code> operation creates a new Qualification type, which is represented by a <code>QualificationType</code> data structure. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1931,10 +1464,10 @@ pub mod fluent_builders {
                 crate::input::CreateQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1942,46 +1475,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name you give to the Qualification type. The type name
-        /// is used to represent the Qualification to Workers, and to find the
-        /// type using a Qualification type search. It must be unique across all
-        /// of your Qualification types.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p> The name you give to the Qualification type. The type name
-        /// is used to represent the Qualification to Workers, and to find the
-        /// type using a Qualification type search. It must be unique across all
-        /// of your Qualification types.</p>
+        /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>One or more words or phrases that describe the Qualification
-        /// type, separated by commas. The keywords of a type make the type
-        /// easier to find during a search.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
-        /// <p>One or more words or phrases that describe the Qualification
-        /// type, separated by commas. The keywords of a type make the type
-        /// easier to find during a search.</p>
+        /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>A long description for the Qualification type. On the Amazon
-        /// Mechanical Turk website, the long description is displayed when a
-        /// Worker examines a Qualification type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A long description for the Qualification type. On the Amazon
-        /// Mechanical Turk website, the long description is displayed when a
-        /// Worker examines a Qualification type.</p>
+        /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1990,9 +1509,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Valid values are: Active | Inactive</p>
         pub fn qualification_type_status(
             mut self,
-            inp: crate::model::QualificationTypeStatus,
+            input: crate::model::QualificationTypeStatus,
         ) -> Self {
-            self.inner = self.inner.qualification_type_status(inp);
+            self.inner = self.inner.qualification_type_status(input);
             self
         }
         /// <p>The initial status of the Qualification type.</p>
@@ -2004,126 +1523,74 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_type_status(input);
             self
         }
-        /// <p>The number of seconds that a Worker must wait after
-        /// requesting a Qualification of the Qualification type before the
-        /// worker can retry the Qualification request.</p>
-        /// <p>Constraints: None. If not specified, retries are disabled and
-        /// Workers can request a Qualification of this type only once, even if
-        /// the Worker has not been granted the Qualification. It is not possible
-        /// to disable retries for a Qualification type after it has been created
-        /// with retries enabled. If you want to disable retries, you must delete
-        /// existing retry-enabled Qualification type and then create a new
-        /// Qualification type with retries disabled.</p>
-        pub fn retry_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.retry_delay_in_seconds(inp);
+        /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+        /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
+        pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.retry_delay_in_seconds(input);
             self
         }
-        /// <p>The number of seconds that a Worker must wait after
-        /// requesting a Qualification of the Qualification type before the
-        /// worker can retry the Qualification request.</p>
-        /// <p>Constraints: None. If not specified, retries are disabled and
-        /// Workers can request a Qualification of this type only once, even if
-        /// the Worker has not been granted the Qualification. It is not possible
-        /// to disable retries for a Qualification type after it has been created
-        /// with retries enabled. If you want to disable retries, you must delete
-        /// existing retry-enabled Qualification type and then create a new
-        /// Qualification type with retries disabled.</p>
+        /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+        /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_retry_delay_in_seconds(input);
             self
         }
-        /// <p>
-        /// The questions for the Qualification test a Worker must answer
-        /// correctly to obtain a Qualification of this type. If this parameter
-        /// is specified,
-        /// <code>TestDurationInSeconds</code>
-        /// must also be specified.
-        /// </p>
-        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-        /// QuestionForm data structure. This parameter cannot be specified if
-        /// AutoGranted is true.</p>
-        /// <p>Constraints: None. If not specified, the Worker may request
-        /// the Qualification without answering any questions.</p>
-        pub fn test(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.test(inp);
+        /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+        pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.test(input.into());
             self
         }
-        /// <p>
-        /// The questions for the Qualification test a Worker must answer
-        /// correctly to obtain a Qualification of this type. If this parameter
-        /// is specified,
-        /// <code>TestDurationInSeconds</code>
-        /// must also be specified.
-        /// </p>
-        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-        /// QuestionForm data structure. This parameter cannot be specified if
-        /// AutoGranted is true.</p>
-        /// <p>Constraints: None. If not specified, the Worker may request
-        /// the Qualification without answering any questions.</p>
+        /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_test(input);
             self
         }
-        /// <p>The answers to the Qualification test specified in the Test
-        /// parameter, in the form of an AnswerKey data structure.</p>
+        /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-        /// <p>Constraints: None. If not specified, you must process
-        /// Qualification requests manually.</p>
-        pub fn answer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.answer_key(inp);
+        /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
+        pub fn answer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.answer_key(input.into());
             self
         }
-        /// <p>The answers to the Qualification test specified in the Test
-        /// parameter, in the form of an AnswerKey data structure.</p>
+        /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-        /// <p>Constraints: None. If not specified, you must process
-        /// Qualification requests manually.</p>
+        /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
         pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_answer_key(input);
             self
         }
-        /// <p>The number of seconds the Worker has to complete the
-        /// Qualification test, starting from the time the Worker requests the
-        /// Qualification.</p>
-        pub fn test_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.test_duration_in_seconds(inp);
+        /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+        pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.test_duration_in_seconds(input);
             self
         }
-        /// <p>The number of seconds the Worker has to complete the
-        /// Qualification test, starting from the time the Worker requests the
-        /// Qualification.</p>
+        /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
         pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_test_duration_in_seconds(input);
             self
         }
-        /// <p>Specifies whether requests for the Qualification type are
-        /// granted immediately, without prompting the Worker with a
-        /// Qualification test.</p>
-        /// <p>Constraints: If the Test parameter is specified, this
-        /// parameter cannot be true.</p>
-        pub fn auto_granted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_granted(inp);
+        /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+        pub fn auto_granted(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_granted(input);
             self
         }
-        /// <p>Specifies whether requests for the Qualification type are
-        /// granted immediately, without prompting the Worker with a
-        /// Qualification test.</p>
-        /// <p>Constraints: If the Test parameter is specified, this
-        /// parameter cannot be true.</p>
+        /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
         pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_granted(input);
             self
         }
-        /// <p>The Qualification value to use for automatically granted
-        /// Qualifications. This parameter is used only if the AutoGranted
-        /// parameter is true.</p>
-        pub fn auto_granted_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.auto_granted_value(inp);
+        /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+        pub fn auto_granted_value(mut self, input: i32) -> Self {
+            self.inner = self.inner.auto_granted_value(input);
             self
         }
-        /// <p>The Qualification value to use for automatically granted
-        /// Qualifications. This parameter is used only if the AutoGranted
-        /// parameter is true.</p>
+        /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
         pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_auto_granted_value(input);
             self
@@ -2132,7 +1599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkerBlock`.
     ///
     /// <p>The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker from working on your HITs. For example, you can block a Worker who is producing poor quality work. You can block up to 100,000 Workers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkerBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2177,10 +1644,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkerBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2189,8 +1656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker to block.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
         /// <p>The ID of the Worker to block.</p>
@@ -2199,8 +1666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
@@ -2211,43 +1678,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHIT`.
     ///
-    /// <p>
-    /// The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed.
-    /// Only the Requester who created the HIT can delete it.
-    /// </p>
-    /// <p>
-    /// You can only dispose of HITs that are in the <code>Reviewable</code> state,
-    /// with all of their submitted assignments already either approved or rejected.
-    /// If you call the DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
-    /// (for example, that has not expired, or still has active assignments),
-    /// or on a HIT that is Reviewable but without all of its submitted assignments
-    /// already approved or rejected, the service will return an error.
-    /// </p>
-    /// <note>
+    /// <p> The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed. Only the Requester who created the HIT can delete it. </p>
+    /// <p> You can only dispose of HITs that are in the <code>Reviewable</code> state, with all of their submitted assignments already either approved or rejected. If you call the DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state (for example, that has not expired, or still has active assignments), or on a HIT that is Reviewable but without all of its submitted assignments already approved or rejected, the service will return an error. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// HITs are automatically disposed of after 120 days.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// After you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Disposed HITs are not returned in results for the ListHITs operation.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Disposing HITs can improve the performance of operations such as ListReviewableHITs and ListHITs.
-    /// </p>
-    /// </li>
+    /// <li> <p> HITs are automatically disposed of after 120 days. </p> </li>
+    /// <li> <p> After you dispose of a HIT, you can no longer approve the HIT's rejected assignments. </p> </li>
+    /// <li> <p> Disposed HITs are not returned in results for the ListHITs operation. </p> </li>
+    /// <li> <p> Disposing HITs can improve the performance of operations such as ListReviewableHITs and ListHITs. </p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2292,10 +1732,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2304,8 +1744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to be deleted.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The ID of the HIT to be deleted.</p>
@@ -2316,26 +1756,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteQualificationType`.
     ///
-    /// <p>
-    /// The
-    /// <code>DeleteQualificationType</code>
-    /// deletes a Qualification type and deletes any HIT types that are
-    /// associated with the Qualification type.
-    /// </p>
-    /// <p>This operation does not revoke Qualifications already assigned
-    /// to Workers because the Qualifications might be needed for active HITs.
-    /// If there are any pending requests for the Qualification type, Amazon
-    /// Mechanical Turk rejects those requests. After you delete a
-    /// Qualification type, you can no longer use it to create HITs or HIT
-    /// types.</p>
-    /// <note>
-    /// <p>DeleteQualificationType must wait for all the HITs that use
-    /// the deleted Qualification type to be deleted before completing. It
-    /// may take up to 48 hours before DeleteQualificationType completes and
-    /// the unique name of the Qualification type is available for reuse with
-    /// CreateQualificationType.</p>
+    /// <p> The <code>DeleteQualificationType</code> deletes a Qualification type and deletes any HIT types that are associated with the Qualification type. </p>
+    /// <p>This operation does not revoke Qualifications already assigned to Workers because the Qualifications might be needed for active HITs. If there are any pending requests for the Qualification type, Amazon Mechanical Turk rejects those requests. After you delete a Qualification type, you can no longer use it to create HITs or HIT types.</p> <note>
+    /// <p>DeleteQualificationType must wait for all the HITs that use the deleted Qualification type to be deleted before completing. It may take up to 48 hours before DeleteQualificationType completes and the unique name of the Qualification type is available for reuse with CreateQualificationType.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2380,10 +1805,10 @@ pub mod fluent_builders {
                 crate::input::DeleteQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2392,8 +1817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType to dispose.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the QualificationType to dispose.</p>
@@ -2408,7 +1833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkerBlock`.
     ///
     /// <p>The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker to work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation. You need the Worker ID to use this operation. If the Worker ID is missing or invalid, this operation fails and returns the message “WorkerId is invalid.” If the specified Worker is not blocked, this operation returns successfully.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkerBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2453,10 +1878,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkerBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2465,8 +1890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker to unblock.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
         /// <p>The ID of the Worker to unblock.</p>
@@ -2475,8 +1900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
@@ -2487,15 +1912,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateQualificationFromWorker`.
     ///
-    /// <p>
-    /// The   <code>DisassociateQualificationFromWorker</code>
-    /// revokes a previously granted Qualification from a user.
-    /// </p>
-    /// <p>
-    /// You can provide a text message explaining why the Qualification was
-    /// revoked. The user who had the Qualification can see this message.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>DisassociateQualificationFromWorker</code> revokes a previously granted Qualification from a user. </p>
+    /// <p> You can provide a text message explaining why the Qualification was revoked. The user who had the Qualification can see this message. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateQualificationFromWorker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2542,10 +1961,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateQualificationFromWorkerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2554,8 +1973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
         /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
@@ -2564,8 +1983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
@@ -2577,8 +1996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
@@ -2589,10 +2008,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountBalance`.
     ///
-    /// <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in your Amazon Mechanical Turk account if you are a Prepaid Requester.
-    /// Alternatively, this operation will retrieve the remaining available AWS Billing usage if you have enabled AWS Billing.
-    /// Note: If you have enabled AWS Billing and still have a remaining Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester console.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in your Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively, this operation will retrieve the remaining available AWS Billing usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and still have a remaining Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester console.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountBalance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2637,10 +2054,10 @@ pub mod fluent_builders {
                 crate::input::GetAccountBalanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2651,10 +2068,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssignment`.
     ///
-    /// <p>
-    /// The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>GetAssignment</code> operation retrieves the details of the specified Assignment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2699,10 +2114,10 @@ pub mod fluent_builders {
                 crate::input::GetAssignmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2711,8 +2126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Assignment to be retrieved.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
         /// <p>The ID of the Assignment to be retrieved.</p>
@@ -2726,25 +2141,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFileUploadURL`.
     ///
-    /// <p>
-    /// The
-    /// <code>GetFileUploadURL</code>
-    /// operation generates and returns a temporary URL. You use the
-    /// temporary URL to retrieve a file uploaded by a Worker as an answer to
-    /// a FileUploadAnswer question for a HIT. The temporary URL is generated
-    /// the instant the GetFileUploadURL operation is called, and is valid
-    /// for 60 seconds. You can get a temporary file upload URL any time
-    /// until the HIT is disposed. After the HIT is disposed, any uploaded
-    /// files are deleted, and cannot be retrieved.
-    ///
-    /// Pending Deprecation on December 12, 2017. The Answer Specification  
-    /// structure will no longer  support the <code>FileUploadAnswer</code>
-    /// element to be used for the QuestionForm data structure.
-    /// Instead, we recommend that Requesters who want to create HITs asking
-    /// Workers to upload files to use Amazon S3.
-    ///
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>GetFileUploadURL</code> operation generates and returns a temporary URL. You use the temporary URL to retrieve a file uploaded by a Worker as an answer to a FileUploadAnswer question for a HIT. The temporary URL is generated the instant the GetFileUploadURL operation is called, and is valid for 60 seconds. You can get a temporary file upload URL any time until the HIT is disposed. After the HIT is disposed, any uploaded files are deleted, and cannot be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification structure will no longer support the <code>FileUploadAnswer</code> element to be used for the QuestionForm data structure. Instead, we recommend that Requesters who want to create HITs asking Workers to upload files to use Amazon S3. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFileUploadURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,10 +2187,10 @@ pub mod fluent_builders {
                 crate::input::GetFileUploadUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2800,14 +2198,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the assignment that contains the question with a
-        /// FileUploadAnswer.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
-        /// <p>The ID of the assignment that contains the question with a
-        /// FileUploadAnswer.</p>
+        /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2815,14 +2211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_id(input);
             self
         }
-        /// <p>The identifier of the question with a FileUploadAnswer, as
-        /// specified in the QuestionForm of the HIT.</p>
-        pub fn question_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_identifier(inp);
+        /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+        pub fn question_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_identifier(input.into());
             self
         }
-        /// <p>The identifier of the question with a FileUploadAnswer, as
-        /// specified in the QuestionForm of the HIT.</p>
+        /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
         pub fn set_question_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2833,10 +2227,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetHIT`.
     ///
-    /// <p>
-    /// The <code>GetHIT</code> operation retrieves the details of the specified HIT.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>GetHIT</code> operation retrieves the details of the specified HIT. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2881,10 +2273,10 @@ pub mod fluent_builders {
                 crate::input::GetHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2893,8 +2285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the HIT to be retrieved.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The ID of the HIT to be retrieved.</p>
@@ -2905,21 +2297,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQualificationScore`.
     ///
-    /// <p>
-    /// The
-    /// <code>GetQualificationScore</code>
-    /// operation returns the value of a Worker's Qualification for a given
-    /// Qualification type.
-    /// </p>
-    /// <p>
-    /// To get a Worker's Qualification, you must know the Worker's ID. The
-    /// Worker's ID is included in the assignment data returned by the
-    /// <code>ListAssignmentsForHIT</code>
-    /// operation.
-    /// </p>
-    /// <p>Only the owner of a Qualification type can query the value of
-    /// a Worker's Qualification of that type.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>GetQualificationScore</code> operation returns the value of a Worker's Qualification for a given Qualification type. </p>
+    /// <p> To get a Worker's Qualification, you must know the Worker's ID. The Worker's ID is included in the assignment data returned by the <code>ListAssignmentsForHIT</code> operation. </p>
+    /// <p>Only the owner of a Qualification type can query the value of a Worker's Qualification of that type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQualificationScore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2964,10 +2345,10 @@ pub mod fluent_builders {
                 crate::input::GetQualificationScoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2976,8 +2357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -2989,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Worker whose Qualification is being updated.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
         /// <p>The ID of the Worker whose Qualification is being updated.</p>
@@ -3001,10 +2382,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQualificationType`.
     ///
-    /// <p>
-    /// The <code>GetQualificationType</code>operation retrieves information about a Qualification type using its ID.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>GetQualificationType</code>operation retrieves information about a Qualification type using its ID. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3049,10 +2428,10 @@ pub mod fluent_builders {
                 crate::input::GetQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3061,8 +2440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -3076,34 +2455,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssignmentsForHIT`.
     ///
-    /// <p>
-    /// The
-    /// <code>ListAssignmentsForHIT</code>
-    /// operation retrieves completed assignments for a HIT. You can use this
-    /// operation to retrieve the results for a HIT.
-    /// </p>
-    /// <p> You can get assignments for a HIT at any time, even if the
-    /// HIT is not yet Reviewable. If a HIT requested multiple assignments,
-    /// and has received some results but has not yet become Reviewable, you
-    /// can still retrieve the partial results with this operation.
-    /// </p>
-    /// <p> Use the AssignmentStatus parameter to control which set of
-    /// assignments for a HIT are returned. The ListAssignmentsForHIT
-    /// operation
-    /// can return submitted assignments awaiting approval, or it can return
-    /// assignments that have already been approved or rejected. You can set
-    /// AssignmentStatus=Approved,Rejected to get assignments that have
-    /// already been approved and rejected together in one result set.
-    /// </p>
-    /// <p> Only the Requester who created the HIT can retrieve the
-    /// assignments for that HIT.
-    /// </p>
-    /// <p> Results are sorted and divided into numbered pages and the
-    /// operation returns a single page of results. You can use the
-    /// parameters
-    /// of the operation to control sorting and pagination.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments for a HIT. You can use this operation to retrieve the results for a HIT. </p>
+    /// <p> You can get assignments for a HIT at any time, even if the HIT is not yet Reviewable. If a HIT requested multiple assignments, and has received some results but has not yet become Reviewable, you can still retrieve the partial results with this operation. </p>
+    /// <p> Use the AssignmentStatus parameter to control which set of assignments for a HIT are returned. The ListAssignmentsForHIT operation can return submitted assignments awaiting approval, or it can return assignments that have already been approved or rejected. You can set AssignmentStatus=Approved,Rejected to get assignments that have already been approved and rejected together in one result set. </p>
+    /// <p> Only the Requester who created the HIT can retrieve the assignments for that HIT. </p>
+    /// <p> Results are sorted and divided into numbered pages and the operation returns a single page of results. You can use the parameters of the operation to control sorting and pagination. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssignmentsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3148,10 +2505,10 @@ pub mod fluent_builders {
                 crate::input::ListAssignmentsForHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3159,9 +2516,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssignmentsForHitPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssignmentsForHitPaginator<C, M, R> {
+            crate::paginator::ListAssignmentsForHitPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the HIT.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The ID of the HIT.</p>
@@ -3170,8 +2533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3180,8 +2543,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3193,17 +2556,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_assignment_statuses`](Self::set_assignment_statuses).
         ///
-        /// <p>The status of the assignments to return: Submitted | Approved
-        /// | Rejected</p>
-        pub fn assignment_statuses(
-            mut self,
-            inp: impl Into<crate::model::AssignmentStatus>,
-        ) -> Self {
-            self.inner = self.inner.assignment_statuses(inp);
+        /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+        pub fn assignment_statuses(mut self, input: crate::model::AssignmentStatus) -> Self {
+            self.inner = self.inner.assignment_statuses(input);
             self
         }
-        /// <p>The status of the assignments to return: Submitted | Approved
-        /// | Rejected</p>
+        /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
         pub fn set_assignment_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssignmentStatus>>,
@@ -3214,13 +2572,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBonusPayments`.
     ///
-    /// <p>
-    /// The
-    /// <code>ListBonusPayments</code>
-    /// operation retrieves the amounts of bonuses you have paid to Workers
-    /// for a given HIT or assignment.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you have paid to Workers for a given HIT or assignment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBonusPayments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3265,10 +2618,10 @@ pub mod fluent_builders {
                 crate::input::ListBonusPaymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3276,34 +2629,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the HIT associated with the bonus payments to
-        /// retrieve. If not specified, all bonus payments for all assignments
-        /// for the given HIT are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBonusPaymentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBonusPaymentsPaginator<C, M, R> {
+            crate::paginator::ListBonusPaymentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
-        /// <p>The ID of the HIT associated with the bonus payments to
-        /// retrieve. If not specified, all bonus payments for all assignments
-        /// for the given HIT are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hit_id(input);
             self
         }
-        /// <p>The ID of the assignment associated with the bonus payments
-        /// to retrieve. If specified, only bonus payments for the given
-        /// assignment are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
-        /// <p>The ID of the assignment associated with the bonus payments
-        /// to retrieve. If specified, only bonus payments for the given
-        /// assignment are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3312,8 +2659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3322,8 +2669,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3334,14 +2681,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHITs`.
     ///
-    /// <p>
-    /// The
-    /// <code>ListHITs</code>
-    /// operation returns all of a Requester's HITs. The operation returns
-    /// HITs of any status, except for HITs that have been deleted of with
-    /// the DeleteHIT operation or that have been auto-deleted.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation or that have been auto-deleted. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHITs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3386,10 +2727,10 @@ pub mod fluent_builders {
                 crate::input::ListHiTsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3397,9 +2738,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHiTsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHiTsPaginator<C, M, R> {
+            crate::paginator::ListHiTsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token</p>
@@ -3408,8 +2755,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3420,13 +2767,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHITsForQualificationType`.
     ///
-    /// <p>
-    /// The <code>ListHITsForQualificationType</code> operation returns the HITs that use
-    /// the given Qualification type for a Qualification requirement.
-    /// The operation returns HITs of any status, except for HITs that have been deleted
-    /// with the <code>DeleteHIT</code> operation or that have been auto-deleted.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListHITsForQualificationType</code> operation returns the HITs that use the given Qualification type for a Qualification requirement. The operation returns HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code> operation or that have been auto-deleted. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHITsForQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3471,10 +2813,10 @@ pub mod fluent_builders {
                 crate::input::ListHiTsForQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3482,16 +2824,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the Qualification type to use when querying HITs.
-        /// </p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHiTsForQualificationTypePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListHiTsForQualificationTypePaginator<C, M, R> {
+            crate::paginator::ListHiTsForQualificationTypePaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ID of the Qualification type to use when querying HITs. </p>
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Qualification type to use when querying HITs.
-        /// </p>
+        /// <p> The ID of the Qualification type to use when querying HITs. </p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3500,8 +2846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -3509,16 +2855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> Limit the number of results returned. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3526,15 +2868,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQualificationRequests`.
     ///
-    /// <p>
-    /// The
-    /// <code>ListQualificationRequests</code>
-    /// operation retrieves requests for Qualifications of a particular
-    /// Qualification type. The owner of the Qualification type calls this
-    /// operation to poll for pending requests, and accepts them using the
-    /// AcceptQualification operation.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListQualificationRequests</code> operation retrieves requests for Qualifications of a particular Qualification type. The owner of the Qualification type calls this operation to poll for pending requests, and accepts them using the AcceptQualification operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQualificationRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3579,10 +2914,10 @@ pub mod fluent_builders {
                 crate::input::ListQualificationRequestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3590,9 +2925,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQualificationRequestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListQualificationRequestsPaginator<C, M, R> {
+            crate::paginator::ListQualificationRequestsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the QualificationType.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the QualificationType.</p>
@@ -3603,30 +2946,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_type_id(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return in a single call. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3634,13 +2969,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQualificationTypes`.
     ///
-    /// <p>
-    /// The
-    /// <code>ListQualificationTypes</code>
-    /// operation returns a list of Qualification types, filtered by
-    /// an optional search term.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListQualificationTypes</code> operation returns a list of Qualification types, filtered by an optional search term. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQualificationTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3685,10 +3015,10 @@ pub mod fluent_builders {
                 crate::input::ListQualificationTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3696,84 +3026,58 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A text query against all of the searchable attributes of
-        /// Qualification types.
-        /// </p>
-        pub fn query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQualificationTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQualificationTypesPaginator<C, M, R> {
+            crate::paginator::ListQualificationTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> A text query against all of the searchable attributes of Qualification types. </p>
+        pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query(input.into());
             self
         }
-        /// <p> A text query against all of the searchable attributes of
-        /// Qualification types.
-        /// </p>
+        /// <p> A text query against all of the searchable attributes of Qualification types. </p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_query(input);
             self
         }
-        /// <p>Specifies that only Qualification types that a user can
-        /// request through the Amazon Mechanical Turk web site, such as by
-        /// taking a Qualification test, are returned as results of the search.
-        /// Some Qualification types, such as those assigned automatically by the
-        /// system, cannot be requested directly by users. If false, all
-        /// Qualification types, including those managed by the system, are
-        /// considered. Valid values are True | False.
-        /// </p>
-        pub fn must_be_requestable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.must_be_requestable(inp);
+        /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
+        pub fn must_be_requestable(mut self, input: bool) -> Self {
+            self.inner = self.inner.must_be_requestable(input);
             self
         }
-        /// <p>Specifies that only Qualification types that a user can
-        /// request through the Amazon Mechanical Turk web site, such as by
-        /// taking a Qualification test, are returned as results of the search.
-        /// Some Qualification types, such as those assigned automatically by the
-        /// system, cannot be requested directly by users. If false, all
-        /// Qualification types, including those managed by the system, are
-        /// considered. Valid values are True | False.
-        /// </p>
+        /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
         pub fn set_must_be_requestable(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_must_be_requestable(input);
             self
         }
-        /// <p> Specifies that only Qualification types that the Requester
-        /// created are returned. If false, the operation returns all
-        /// Qualification types.
-        /// </p>
-        pub fn must_be_owned_by_caller(mut self, inp: bool) -> Self {
-            self.inner = self.inner.must_be_owned_by_caller(inp);
+        /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
+        pub fn must_be_owned_by_caller(mut self, input: bool) -> Self {
+            self.inner = self.inner.must_be_owned_by_caller(input);
             self
         }
-        /// <p> Specifies that only Qualification types that the Requester
-        /// created are returned. If false, the operation returns all
-        /// Qualification types.
-        /// </p>
+        /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
         pub fn set_must_be_owned_by_caller(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_must_be_owned_by_caller(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to return in a single call. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3781,11 +3085,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReviewableHITs`.
     ///
-    /// <p>
-    /// The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to
-    /// Reviewable or Status equal to Reviewing that belong to the Requester calling the operation.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to Reviewable or Status equal to Reviewing that belong to the Requester calling the operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReviewableHITs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3830,10 +3131,10 @@ pub mod fluent_builders {
                 crate::input::ListReviewableHiTsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3841,34 +3142,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the HIT type of the HITs to consider for the query.
-        /// If not specified, all HITs for the Reviewer are considered
-        /// </p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReviewableHiTsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReviewableHiTsPaginator<C, M, R> {
+            crate::paginator::ListReviewableHiTsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+        pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT type of the HITs to consider for the query.
-        /// If not specified, all HITs for the Reviewer are considered
-        /// </p>
+        /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hit_type_id(input);
             self
         }
-        /// <p>
-        /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-        /// Reviewable is the default value.
-        /// </p>
-        pub fn status(mut self, inp: crate::model::ReviewableHitStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+        pub fn status(mut self, input: crate::model::ReviewableHitStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>
-        /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-        /// Reviewable is the default value.
-        /// </p>
+        /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReviewableHitStatus>,
@@ -3877,8 +3172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -3886,16 +3181,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> Limit the number of results returned. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3903,14 +3194,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReviewPolicyResultsForHIT`.
     ///
-    /// <p>
-    /// The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results
-    /// and the actions taken in the course of executing your Review Policies for a given HIT.
-    /// For information about how to specify Review Policies when you call CreateHIT,
-    /// see Review Policies. The ListReviewPolicyResultsForHIT operation can return results for both
-    /// Assignment-level and HIT-level review results.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results and the actions taken in the course of executing your Review Policies for a given HIT. For information about how to specify Review Policies when you call CreateHIT, see Review Policies. The ListReviewPolicyResultsForHIT operation can return results for both Assignment-level and HIT-level review results. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReviewPolicyResultsForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3955,10 +3240,10 @@ pub mod fluent_builders {
                 crate::input::ListReviewPolicyResultsForHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3966,9 +3251,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReviewPolicyResultsForHitPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListReviewPolicyResultsForHitPaginator<C, M, R> {
+            crate::paginator::ListReviewPolicyResultsForHitPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the HIT to retrieve review results for.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The unique identifier of the HIT to retrieve review results for.</p>
@@ -3980,20 +3273,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_policy_levels`](Self::set_policy_levels).
         ///
-        /// <p>
-        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-        /// If omitted, the default behavior is to retrieve all data for both policy levels.
-        /// For a list of all the described policies, see Review Policies.
-        /// </p>
-        pub fn policy_levels(mut self, inp: impl Into<crate::model::ReviewPolicyLevel>) -> Self {
-            self.inner = self.inner.policy_levels(inp);
+        /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
+        pub fn policy_levels(mut self, input: crate::model::ReviewPolicyLevel) -> Self {
+            self.inner = self.inner.policy_levels(input);
             self
         }
-        /// <p>
-        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-        /// If omitted, the default behavior is to retrieve all data for both policy levels.
-        /// For a list of all the described policies, see Review Policies.
-        /// </p>
+        /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
         pub fn set_policy_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReviewPolicyLevel>>,
@@ -4001,39 +3286,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_levels(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the actions taken executing
-        /// the Review Policies and their outcomes.
-        /// </p>
-        pub fn retrieve_actions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retrieve_actions(inp);
+        /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
+        pub fn retrieve_actions(mut self, input: bool) -> Self {
+            self.inner = self.inner.retrieve_actions(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the actions taken executing
-        /// the Review Policies and their outcomes.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
         pub fn set_retrieve_actions(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retrieve_actions(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-        /// </p>
-        pub fn retrieve_results(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retrieve_results(inp);
+        /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
+        pub fn retrieve_results(mut self, input: bool) -> Self {
+            self.inner = self.inner.retrieve_results(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
         pub fn set_retrieve_results(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retrieve_results(input);
             self
         }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token</p>
@@ -4042,8 +3317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limit the number of results returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limit the number of results returned.</p>
@@ -4055,7 +3330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkerBlocks`.
     ///
     /// <p>The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked from working on your HITs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkerBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4100,10 +3375,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkerBlocksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4111,9 +3386,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkerBlocksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkerBlocksPaginator<C, M, R> {
+            crate::paginator::ListWorkerBlocksPaginator::new(self.handle, self.inner)
+        }
         /// <p>Pagination token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token</p>
@@ -4122,8 +3403,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -4134,11 +3415,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWorkersWithQualificationType`.
     ///
-    /// <p>
-    /// The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers
-    /// that have been associated with a given Qualification type.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers that have been associated with a given Qualification type. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkersWithQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4183,10 +3461,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkersWithQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4194,14 +3472,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Qualification type of the Qualifications to
-        /// return.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkersWithQualificationTypePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListWorkersWithQualificationTypePaginator<C, M, R> {
+            crate::paginator::ListWorkersWithQualificationTypePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ID of the Qualification type of the Qualifications to return.</p>
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
-        /// <p>The ID of the Qualification type of the Qualifications to
-        /// return.</p>
+        /// <p>The ID of the Qualification type of the Qualifications to return.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4209,18 +3496,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_type_id(input);
             self
         }
-        /// <p>
-        /// The status of the Qualifications to return.
-        /// Can be <code>Granted | Revoked</code>.
-        /// </p>
-        pub fn status(mut self, inp: crate::model::QualificationStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+        pub fn status(mut self, input: crate::model::QualificationStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>
-        /// The status of the Qualifications to return.
-        /// Can be <code>Granted | Revoked</code>.
-        /// </p>
+        /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QualificationStatus>,
@@ -4229,8 +3510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination Token</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination Token</p>
@@ -4238,16 +3519,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> Limit the number of results returned. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4255,17 +3532,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyWorkers`.
     ///
-    /// <p>
-    /// The
-    /// <code>NotifyWorkers</code>
-    /// operation sends an email to one or more Workers that you specify with
-    /// the Worker ID. You can specify up to 100 Worker IDs to send the same
-    /// message with a single call to the NotifyWorkers operation. The
-    /// NotifyWorkers operation will send a notification email to a Worker
-    /// only if you have previously approved or rejected work from the
-    /// Worker.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyWorkers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4310,10 +3578,10 @@ pub mod fluent_builders {
                 crate::input::NotifyWorkersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4321,26 +3589,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The subject line of the email message to send. Can include up
-        /// to 200 characters.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(input.into());
             self
         }
-        /// <p>The subject line of the email message to send. Can include up
-        /// to 200 characters.</p>
+        /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subject(input);
             self
         }
-        /// <p>The text of the email message to send. Can include up to
-        /// 4,096 characters</p>
-        pub fn message_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_text(inp);
+        /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
+        pub fn message_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_text(input.into());
             self
         }
-        /// <p>The text of the email message to send. Can include up to
-        /// 4,096 characters</p>
+        /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
         pub fn set_message_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message_text(input);
             self
@@ -4349,16 +3613,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_worker_ids`](Self::set_worker_ids).
         ///
-        /// <p>A list of Worker IDs you wish to notify. You
-        /// can notify upto
-        /// 100 Workers at a time.</p>
-        pub fn worker_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_ids(inp);
+        /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
+        pub fn worker_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_ids(input.into());
             self
         }
-        /// <p>A list of Worker IDs you wish to notify. You
-        /// can notify upto
-        /// 100 Workers at a time.</p>
+        /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
         pub fn set_worker_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4369,20 +3629,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectAssignment`.
     ///
-    /// <p>
-    /// The <code>RejectAssignment</code> operation rejects the results of a completed assignment.
-    /// </p>
-    /// <p>
-    /// You can include an optional feedback message with the rejection,
-    /// which the Worker can see in the Status section of the web site.
-    /// When you include a feedback message with the rejection,
-    /// it helps the Worker understand why the assignment was rejected,
-    /// and can improve the quality of the results the Worker submits in the future.
-    /// </p>
-    /// <p>
-    /// Only the Requester who created the HIT can reject an assignment for the HIT.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>RejectAssignment</code> operation rejects the results of a completed assignment. </p>
+    /// <p> You can include an optional feedback message with the rejection, which the Worker can see in the Status section of the web site. When you include a feedback message with the rejection, it helps the Worker understand why the assignment was rejected, and can improve the quality of the results the Worker submits in the future. </p>
+    /// <p> Only the Requester who created the HIT can reject an assignment for the HIT. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4427,10 +3677,10 @@ pub mod fluent_builders {
                 crate::input::RejectAssignmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4438,16 +3688,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4455,16 +3701,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_id(input);
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
-        pub fn requester_feedback(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_feedback(inp);
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+        pub fn requester_feedback(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_feedback(input.into());
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4475,14 +3717,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectQualificationRequest`.
     ///
-    /// <p>
-    /// The
-    /// <code>RejectQualificationRequest</code>
-    /// operation rejects a user's request for a Qualification.
-    /// </p>
-    /// <p> You can provide a text message explaining why the request was
-    /// rejected. The Worker who made the request can see this message.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>RejectQualificationRequest</code> operation rejects a user's request for a Qualification. </p>
+    /// <p> You can provide a text message explaining why the request was rejected. The Worker who made the request can see this message.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectQualificationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4527,10 +3764,10 @@ pub mod fluent_builders {
                 crate::input::RejectQualificationRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4538,20 +3775,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the Qualification request, as returned by the
-        /// <code>ListQualificationRequests</code>
-        /// operation.
-        /// </p>
-        pub fn qualification_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_request_id(inp);
+        /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+        pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_request_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Qualification request, as returned by the
-        /// <code>ListQualificationRequests</code>
-        /// operation.
-        /// </p>
+        /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
         pub fn set_qualification_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4559,14 +3788,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_qualification_request_id(input);
             self
         }
-        /// <p>A text message explaining why the request was rejected, to be
-        /// shown to the Worker who made the request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
-        /// <p>A text message explaining why the request was rejected, to be
-        /// shown to the Worker who made the request.</p>
+        /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
@@ -4574,21 +3801,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendBonus`.
     ///
-    /// <p>
-    /// The
-    /// <code>SendBonus</code>
-    /// operation issues a payment of money from your account to a Worker.
-    /// This payment happens separately from the reward you pay to the Worker
-    /// when you approve the Worker's assignment. The SendBonus operation
-    /// requires the Worker's ID and the assignment ID as parameters to
-    /// initiate payment of the bonus. You must include a message that
-    /// explains the reason for the bonus payment, as the Worker may not be
-    /// expecting the payment. Amazon Mechanical Turk collects a fee for
-    /// bonus payments, similar to the HIT listing fee. This operation fails
-    /// if your account does not have enough funds to pay for both the bonus
-    /// and the fees.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>SendBonus</code> operation issues a payment of money from your account to a Worker. This payment happens separately from the reward you pay to the Worker when you approve the Worker's assignment. The SendBonus operation requires the Worker's ID and the assignment ID as parameters to initiate payment of the bonus. You must include a message that explains the reason for the bonus payment, as the Worker may not be expecting the payment. Amazon Mechanical Turk collects a fee for bonus payments, similar to the HIT listing fee. This operation fails if your account does not have enough funds to pay for both the bonus and the fees. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBonus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4633,10 +3847,10 @@ pub mod fluent_builders {
                 crate::input::SendBonusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4645,8 +3859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Worker being paid the bonus.</p>
-        pub fn worker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_id(inp);
+        pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_id(input.into());
             self
         }
         /// <p>The ID of the Worker being paid the bonus.</p>
@@ -4654,25 +3868,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_worker_id(input);
             self
         }
-        /// <p>
-        /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-        /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-        /// </p>
-        pub fn bonus_amount(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bonus_amount(inp);
+        /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+        pub fn bonus_amount(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bonus_amount(input.into());
             self
         }
-        /// <p>
-        /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-        /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-        /// </p>
+        /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
         pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bonus_amount(input);
             self
         }
         /// <p>The ID of the assignment for which this bonus is paid.</p>
-        pub fn assignment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_id(inp);
+        pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_id(input.into());
             self
         }
         /// <p>The ID of the assignment for which this bonus is paid.</p>
@@ -4683,36 +3891,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assignment_id(input);
             self
         }
-        /// <p>A message that explains the reason for the bonus payment. The
-        /// Worker receiving the bonus can see this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
-        /// <p>A message that explains the reason for the bonus payment. The
-        /// Worker receiving the bonus can see this message.</p>
+        /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
         }
-        /// <p>A unique identifier for this request, which allows you to
-        /// retry the call on error without granting multiple bonuses. This is
-        /// useful in cases such as network timeouts where it is unclear whether
-        /// or not the call succeeded on the server. If the bonus already exists
-        /// in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return an error with a message containing the
-        /// request ID.</p>
-        pub fn unique_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_request_token(inp);
+        /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
+        pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for this request, which allows you to
-        /// retry the call on error without granting multiple bonuses. This is
-        /// useful in cases such as network timeouts where it is unclear whether
-        /// or not the call succeeded on the server. If the bonus already exists
-        /// in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return an error with a message containing the
-        /// request ID.</p>
+        /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4723,14 +3917,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendTestEventNotification`.
     ///
-    /// <p>
-    /// The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk to send
-    /// a notification message as if a HIT event occurred, according to the provided
-    /// notification specification. This allows you to test notifications without
-    /// setting up notifications for a real HIT type and trying to trigger them using the website.
-    /// When you call this operation, the service attempts to send the test notification immediately.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk to send a notification message as if a HIT event occurred, according to the provided notification specification. This allows you to test notifications without setting up notifications for a real HIT type and trying to trigger them using the website. When you call this operation, the service attempts to send the test notification immediately. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTestEventNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4775,10 +3963,10 @@ pub mod fluent_builders {
                 crate::input::SendTestEventNotificationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4786,20 +3974,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The notification specification to test. This value is identical to the value
-        /// you would provide to the UpdateNotificationSettings operation when you establish
-        /// the notification specification for a HIT type.
-        /// </p>
-        pub fn notification(mut self, inp: crate::model::NotificationSpecification) -> Self {
-            self.inner = self.inner.notification(inp);
+        /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+        pub fn notification(mut self, input: crate::model::NotificationSpecification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
-        /// <p>
-        /// The notification specification to test. This value is identical to the value
-        /// you would provide to the UpdateNotificationSettings operation when you establish
-        /// the notification specification for a HIT type.
-        /// </p>
+        /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -4807,22 +3987,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>
-        /// The event to simulate to test the notification specification.
-        /// This event is included in the test message even if the notification specification
-        /// does not include the event type.
-        /// The notification specification does not filter out the test event.
-        /// </p>
-        pub fn test_event_type(mut self, inp: crate::model::EventType) -> Self {
-            self.inner = self.inner.test_event_type(inp);
+        /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+        pub fn test_event_type(mut self, input: crate::model::EventType) -> Self {
+            self.inner = self.inner.test_event_type(input);
             self
         }
-        /// <p>
-        /// The event to simulate to test the notification specification.
-        /// This event is included in the test message even if the notification specification
-        /// does not include the event type.
-        /// The notification specification does not filter out the test event.
-        /// </p>
+        /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
         pub fn set_test_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -4833,11 +4003,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateExpirationForHIT`.
     ///
-    /// <p>
-    /// The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT.
-    /// If you update it to a time in the past, the HIT will be immediately expired.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT. If you update it to a time in the past, the HIT will be immediately expired. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExpirationForHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4882,10 +4049,10 @@ pub mod fluent_builders {
                 crate::input::UpdateExpirationForHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4893,30 +4060,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The HIT to update.
-        /// </p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        /// <p> The HIT to update. </p>
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
-        /// <p>
-        /// The HIT to update.
-        /// </p>
+        /// <p> The HIT to update. </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hit_id(input);
             self
         }
-        /// <p>
-        /// The date and time at which you want the HIT to expire
-        /// </p>
-        pub fn expire_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expire_at(inp);
+        /// <p> The date and time at which you want the HIT to expire </p>
+        pub fn expire_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expire_at(input);
             self
         }
-        /// <p>
-        /// The date and time at which you want the HIT to expire
-        /// </p>
+        /// <p> The date and time at which you want the HIT to expire </p>
         pub fn set_expire_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4927,12 +4086,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHITReviewStatus`.
     ///
-    /// <p>
-    /// The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT.
-    /// If the status is Reviewable, this operation can update the status to Reviewing,
-    /// or it can revert a Reviewing HIT back to the Reviewable status.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If the status is Reviewable, this operation can update the status to Reviewing, or it can revert a Reviewing HIT back to the Reviewable status. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHITReviewStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4977,10 +4132,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHitReviewStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4988,53 +4143,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the HIT to update.
-        /// </p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        /// <p> The ID of the HIT to update. </p>
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT to update.
-        /// </p>
+        /// <p> The ID of the HIT to update. </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hit_id(input);
             self
         }
-        /// <p>
-        /// Specifies how to update the HIT status. Default is <code>False</code>.
-        /// </p>
+        /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+        /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
         /// </ul>
-        pub fn revert(mut self, inp: bool) -> Self {
-            self.inner = self.inner.revert(inp);
+        pub fn revert(mut self, input: bool) -> Self {
+            self.inner = self.inner.revert(input);
             self
         }
-        /// <p>
-        /// Specifies how to update the HIT status. Default is <code>False</code>.
-        /// </p>
+        /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+        /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
         /// </ul>
         pub fn set_revert(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_revert(input);
@@ -5043,15 +4174,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHITTypeOfHIT`.
     ///
-    /// <p>
-    /// The
-    /// <code>UpdateHITTypeOfHIT</code>
-    /// operation allows you to change the HITType properties of a HIT. This
-    /// operation disassociates the HIT from its old HITType properties and
-    /// associates it with the new HITType properties. The HIT takes on the
-    /// properties of the new HITType in place of the old ones.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties of a HIT. This operation disassociates the HIT from its old HITType properties and associates it with the new HITType properties. The HIT takes on the properties of the new HITType in place of the old ones. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHITTypeOfHIT<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5096,10 +4220,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHitTypeOfHitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5108,8 +4232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The HIT to update.</p>
-        pub fn hit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_id(inp);
+        pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_id(input.into());
             self
         }
         /// <p>The HIT to update.</p>
@@ -5118,8 +4242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the new HIT type.</p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(input.into());
             self
         }
         /// <p>The ID of the new HIT type.</p>
@@ -5130,19 +4254,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateNotificationSettings`.
     ///
-    /// <p>
-    /// The <code>UpdateNotificationSettings</code> operation creates, updates,
-    /// disables or re-enables notifications for a HIT type.
-    /// If you call the UpdateNotificationSettings operation for a HIT type that already has a
-    /// notification specification, the operation replaces the old specification with a new one.
-    /// You can call the UpdateNotificationSettings operation to enable or disable notifications
-    /// for the HIT type, without having to modify the notification specification itself by providing
-    /// updates to the Active status without specifying a new notification specification.
-    /// To change the Active status of a HIT type's notifications,
-    /// the HIT type must already have a notification specification,
-    /// or one must be provided in the same call to <code>UpdateNotificationSettings</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>UpdateNotificationSettings</code> operation creates, updates, disables or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings operation for a HIT type that already has a notification specification, the operation replaces the old specification with a new one. You can call the UpdateNotificationSettings operation to enable or disable notifications for the HIT type, without having to modify the notification specification itself by providing updates to the Active status without specifying a new notification specification. To change the Active status of a HIT type's notifications, the HIT type must already have a notification specification, or one must be provided in the same call to <code>UpdateNotificationSettings</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotificationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5187,10 +4300,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNotificationSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5198,30 +4311,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ID of the HIT type whose notification specification is being updated.
-        /// </p>
-        pub fn hit_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hit_type_id(inp);
+        /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+        pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hit_type_id(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT type whose notification specification is being updated.
-        /// </p>
+        /// <p> The ID of the HIT type whose notification specification is being updated. </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hit_type_id(input);
             self
         }
-        /// <p>
-        /// The notification specification for the HIT type.
-        /// </p>
-        pub fn notification(mut self, inp: crate::model::NotificationSpecification) -> Self {
-            self.inner = self.inner.notification(inp);
+        /// <p> The notification specification for the HIT type. </p>
+        pub fn notification(mut self, input: crate::model::NotificationSpecification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
-        /// <p>
-        /// The notification specification for the HIT type.
-        /// </p>
+        /// <p> The notification specification for the HIT type. </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -5229,22 +4334,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>
-        /// Specifies whether notifications are sent for HITs of this HIT type,
-        /// according to the notification specification.
-        /// You must specify either the Notification parameter or the Active parameter
-        /// for the call to UpdateNotificationSettings to succeed.
-        /// </p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
             self
         }
-        /// <p>
-        /// Specifies whether notifications are sent for HITs of this HIT type,
-        /// according to the notification specification.
-        /// You must specify either the Notification parameter or the Active parameter
-        /// for the call to UpdateNotificationSettings to succeed.
-        /// </p>
+        /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_active(input);
             self
@@ -5252,40 +4347,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateQualificationType`.
     ///
-    /// <p>
-    /// The
-    /// <code>UpdateQualificationType</code>
-    /// operation modifies the attributes of an existing Qualification type,
-    /// which is represented by a QualificationType data structure. Only the
-    /// owner of a Qualification type can modify its attributes.
-    /// </p>
-    /// <p> Most attributes of a Qualification type can be changed after
-    /// the type has been created. However, the Name and Keywords fields
-    /// cannot be modified. The RetryDelayInSeconds parameter can be modified
-    /// or added to change the delay or to enable retries, but
-    /// RetryDelayInSeconds cannot be used to disable retries. </p>
-    /// <p> You can use this operation to update the test for a
-    /// Qualification type. The test is updated based on the values specified
-    /// for the Test, TestDurationInSeconds and AnswerKey parameters. All
-    /// three parameters specify the updated test. If you are updating the
-    /// test for a type, you must specify the Test and TestDurationInSeconds
-    /// parameters. The AnswerKey parameter is optional; omitting it specifies
-    /// that the updated test does not have an answer key. </p>
-    /// <p> If you omit the Test parameter, the test for the
-    /// Qualification type is unchanged. There is no way to remove a test from
-    /// a Qualification type that has one. If the type already has a test, you
-    /// cannot update it to be AutoGranted. If the Qualification type does not
-    /// have a test and one is provided by an update, the type will henceforth
-    /// have a test. </p>
-    /// <p> If you want to update the test duration or answer key for an
-    /// existing test without changing the questions, you must specify a Test
-    /// parameter with the original questions, along with the updated values. </p>
-    /// <p> If you provide an updated Test but no AnswerKey, the new test
-    /// will not have an answer key. Requests for such Qualifications must be
-    /// granted manually. </p>
-    /// <p> You can also update the AutoGranted and AutoGrantedValue
-    /// attributes of the Qualification type.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The <code>UpdateQualificationType</code> operation modifies the attributes of an existing Qualification type, which is represented by a QualificationType data structure. Only the owner of a Qualification type can modify its attributes. </p>
+    /// <p> Most attributes of a Qualification type can be changed after the type has been created. However, the Name and Keywords fields cannot be modified. The RetryDelayInSeconds parameter can be modified or added to change the delay or to enable retries, but RetryDelayInSeconds cannot be used to disable retries. </p>
+    /// <p> You can use this operation to update the test for a Qualification type. The test is updated based on the values specified for the Test, TestDurationInSeconds and AnswerKey parameters. All three parameters specify the updated test. If you are updating the test for a type, you must specify the Test and TestDurationInSeconds parameters. The AnswerKey parameter is optional; omitting it specifies that the updated test does not have an answer key. </p>
+    /// <p> If you omit the Test parameter, the test for the Qualification type is unchanged. There is no way to remove a test from a Qualification type that has one. If the type already has a test, you cannot update it to be AutoGranted. If the Qualification type does not have a test and one is provided by an update, the type will henceforth have a test. </p>
+    /// <p> If you want to update the test duration or answer key for an existing test without changing the questions, you must specify a Test parameter with the original questions, along with the updated values. </p>
+    /// <p> If you provide an updated Test but no AnswerKey, the new test will not have an answer key. Requests for such Qualifications must be granted manually. </p>
+    /// <p> You can also update the AutoGranted and AutoGrantedValue attributes of the Qualification type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQualificationType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5330,10 +4399,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQualificationTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5342,8 +4411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Qualification type to update.</p>
-        pub fn qualification_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.qualification_type_id(inp);
+        pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.qualification_type_id(input.into());
             self
         }
         /// <p>The ID of the Qualification type to update.</p>
@@ -5355,8 +4424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the Qualification type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the Qualification type.</p>
@@ -5367,9 +4436,9 @@ pub mod fluent_builders {
         /// <p>The new status of the Qualification type - Active | Inactive</p>
         pub fn qualification_type_status(
             mut self,
-            inp: crate::model::QualificationTypeStatus,
+            input: crate::model::QualificationTypeStatus,
         ) -> Self {
-            self.inner = self.inner.qualification_type_status(inp);
+            self.inner = self.inner.qualification_type_status(input);
             self
         }
         /// <p>The new status of the Qualification type - Active | Inactive</p>
@@ -5383,8 +4452,8 @@ pub mod fluent_builders {
         /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
         /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
-        pub fn test(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.test(inp);
+        pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.test(input.into());
             self
         }
         /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
@@ -5395,8 +4464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
-        pub fn answer_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.answer_key(inp);
+        pub fn answer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.answer_key(input.into());
             self
         }
         /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
@@ -5405,8 +4474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
-        pub fn test_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.test_duration_in_seconds(inp);
+        pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.test_duration_in_seconds(input);
             self
         }
         /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
@@ -5414,34 +4483,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_test_duration_in_seconds(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Workers must wait
-        /// after requesting a Qualification of the specified Qualification type
-        /// before they can retry the Qualification request. It is not possible to
-        /// disable retries for a Qualification type after it has been created with
-        /// retries enabled. If you want to disable retries, you must dispose of
-        /// the existing retry-enabled Qualification type using
-        /// DisposeQualificationType and then create a new Qualification type with
-        /// retries disabled using CreateQualificationType.</p>
-        pub fn retry_delay_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.retry_delay_in_seconds(inp);
+        /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
+        pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.retry_delay_in_seconds(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Workers must wait
-        /// after requesting a Qualification of the specified Qualification type
-        /// before they can retry the Qualification request. It is not possible to
-        /// disable retries for a Qualification type after it has been created with
-        /// retries enabled. If you want to disable retries, you must dispose of
-        /// the existing retry-enabled Qualification type using
-        /// DisposeQualificationType and then create a new Qualification type with
-        /// retries disabled using CreateQualificationType.</p>
+        /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_retry_delay_in_seconds(input);
             self
         }
         /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
         /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
-        pub fn auto_granted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_granted(inp);
+        pub fn auto_granted(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_granted(input);
             self
         }
         /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
@@ -5451,8 +4506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
-        pub fn auto_granted_value(mut self, inp: i32) -> Self {
-            self.inner = self.inner.auto_granted_value(inp);
+        pub fn auto_granted_value(mut self, input: i32) -> Self {
+            self.inner = self.inner.auto_granted_value(input);
             self
         }
         /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
@@ -5462,6 +4517,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

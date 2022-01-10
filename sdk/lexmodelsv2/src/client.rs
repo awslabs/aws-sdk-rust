@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Lex Model Building V2
@@ -338,6 +338,7 @@ where
     ///
     /// See [`ListAggregatedUtterances`](crate::client::fluent_builders::ListAggregatedUtterances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAggregatedUtterances::into_paginator).
     pub fn list_aggregated_utterances(&self) -> fluent_builders::ListAggregatedUtterances<C, M, R> {
         fluent_builders::ListAggregatedUtterances::new(self.handle.clone())
     }
@@ -345,6 +346,7 @@ where
     ///
     /// See [`ListBotAliases`](crate::client::fluent_builders::ListBotAliases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBotAliases::into_paginator).
     pub fn list_bot_aliases(&self) -> fluent_builders::ListBotAliases<C, M, R> {
         fluent_builders::ListBotAliases::new(self.handle.clone())
     }
@@ -352,6 +354,7 @@ where
     ///
     /// See [`ListBotLocales`](crate::client::fluent_builders::ListBotLocales) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBotLocales::into_paginator).
     pub fn list_bot_locales(&self) -> fluent_builders::ListBotLocales<C, M, R> {
         fluent_builders::ListBotLocales::new(self.handle.clone())
     }
@@ -359,6 +362,7 @@ where
     ///
     /// See [`ListBotRecommendations`](crate::client::fluent_builders::ListBotRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBotRecommendations::into_paginator).
     pub fn list_bot_recommendations(&self) -> fluent_builders::ListBotRecommendations<C, M, R> {
         fluent_builders::ListBotRecommendations::new(self.handle.clone())
     }
@@ -366,6 +370,7 @@ where
     ///
     /// See [`ListBots`](crate::client::fluent_builders::ListBots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBots::into_paginator).
     pub fn list_bots(&self) -> fluent_builders::ListBots<C, M, R> {
         fluent_builders::ListBots::new(self.handle.clone())
     }
@@ -373,6 +378,7 @@ where
     ///
     /// See [`ListBotVersions`](crate::client::fluent_builders::ListBotVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBotVersions::into_paginator).
     pub fn list_bot_versions(&self) -> fluent_builders::ListBotVersions<C, M, R> {
         fluent_builders::ListBotVersions::new(self.handle.clone())
     }
@@ -380,6 +386,7 @@ where
     ///
     /// See [`ListBuiltInIntents`](crate::client::fluent_builders::ListBuiltInIntents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuiltInIntents::into_paginator).
     pub fn list_built_in_intents(&self) -> fluent_builders::ListBuiltInIntents<C, M, R> {
         fluent_builders::ListBuiltInIntents::new(self.handle.clone())
     }
@@ -387,6 +394,7 @@ where
     ///
     /// See [`ListBuiltInSlotTypes`](crate::client::fluent_builders::ListBuiltInSlotTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuiltInSlotTypes::into_paginator).
     pub fn list_built_in_slot_types(&self) -> fluent_builders::ListBuiltInSlotTypes<C, M, R> {
         fluent_builders::ListBuiltInSlotTypes::new(self.handle.clone())
     }
@@ -394,6 +402,7 @@ where
     ///
     /// See [`ListExports`](crate::client::fluent_builders::ListExports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExports::into_paginator).
     pub fn list_exports(&self) -> fluent_builders::ListExports<C, M, R> {
         fluent_builders::ListExports::new(self.handle.clone())
     }
@@ -401,6 +410,7 @@ where
     ///
     /// See [`ListImports`](crate::client::fluent_builders::ListImports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImports::into_paginator).
     pub fn list_imports(&self) -> fluent_builders::ListImports<C, M, R> {
         fluent_builders::ListImports::new(self.handle.clone())
     }
@@ -408,6 +418,7 @@ where
     ///
     /// See [`ListIntents`](crate::client::fluent_builders::ListIntents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIntents::into_paginator).
     pub fn list_intents(&self) -> fluent_builders::ListIntents<C, M, R> {
         fluent_builders::ListIntents::new(self.handle.clone())
     }
@@ -415,6 +426,7 @@ where
     ///
     /// See [`ListRecommendedIntents`](crate::client::fluent_builders::ListRecommendedIntents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendedIntents::into_paginator).
     pub fn list_recommended_intents(&self) -> fluent_builders::ListRecommendedIntents<C, M, R> {
         fluent_builders::ListRecommendedIntents::new(self.handle.clone())
     }
@@ -422,6 +434,7 @@ where
     ///
     /// See [`ListSlots`](crate::client::fluent_builders::ListSlots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSlots::into_paginator).
     pub fn list_slots(&self) -> fluent_builders::ListSlots<C, M, R> {
         fluent_builders::ListSlots::new(self.handle.clone())
     }
@@ -429,6 +442,7 @@ where
     ///
     /// See [`ListSlotTypes`](crate::client::fluent_builders::ListSlotTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSlotTypes::into_paginator).
     pub fn list_slot_types(&self) -> fluent_builders::ListSlotTypes<C, M, R> {
         fluent_builders::ListSlotTypes::new(self.handle.clone())
     }
@@ -550,10 +564,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BuildBotLocale`.
     ///
-    /// <p>Builds a bot, its intents, and its slot types into a specific
-    /// locale. A bot can be built into multiple locales. At runtime the locale
-    /// is used to choose a specific build of the bot.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BuildBotLocale<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -598,10 +610,10 @@ pub mod fluent_builders {
                 crate::input::BuildBotLocaleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -609,42 +621,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot to build. This can only be the draft version
-        /// of the bot.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot to build. This can only be the draft version
-        /// of the bot.</p>
+        /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -653,7 +655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBot`.
     ///
     /// <p>Creates an Amazon Lex conversational bot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -698,10 +700,10 @@ pub mod fluent_builders {
                 crate::input::CreateBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -709,50 +711,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bot. The bot name must be unique in the account that
-        /// creates the bot.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
-        /// <p>The name of the bot. The bot name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>A description of the bot. It appears in lists to help you identify a
-        /// particular bot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the bot. It appears in lists to help you identify a
-        /// particular bot.</p>
+        /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-        /// access the bot.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-        /// access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
-        pub fn data_privacy(mut self, inp: crate::model::DataPrivacy) -> Self {
-            self.inner = self.inner.data_privacy(inp);
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
+        pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
+            self.inner = self.inner.data_privacy(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -760,24 +754,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_privacy(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
-        pub fn idle_session_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_session_ttl_in_seconds(inp);
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+        pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_session_ttl_in_seconds(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
             self
@@ -786,22 +772,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
         ///
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot. You can't use the <code>UpdateBot</code> operation to
-        /// update tags. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn bot_tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.bot_tags(k, v);
+            self.inner = self.inner.bot_tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot. You can't use the <code>UpdateBot</code> operation to
-        /// update tags. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_bot_tags(
             mut self,
             input: std::option::Option<
@@ -815,22 +795,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
         ///
-        /// <p>A list of tags to add to the test alias for a bot. You can only add
-        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-        /// operation to update tags. To update tags on the test alias, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
         pub fn test_bot_alias_tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.test_bot_alias_tags(k, v);
+            self.inner = self.inner.test_bot_alias_tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to add to the test alias for a bot. You can only add
-        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-        /// operation to update tags. To update tags on the test alias, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
         pub fn set_test_bot_alias_tags(
             mut self,
             input: std::option::Option<
@@ -843,12 +817,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBotAlias`.
     ///
-    /// <p>Creates an alias for the specified version of a bot. Use an alias to
-    /// enable you to change the version of a bot without updating applications
-    /// that use the bot.</p>
-    /// <p>For example, you can create an alias called "PROD" that your
-    /// applications use to call the Amazon Lex bot. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.</p>
+    /// <p>For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -893,10 +864,10 @@ pub mod fluent_builders {
                 crate::input::CreateBotAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -905,8 +876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias to create. The name must be unique for the bot.</p>
-        pub fn bot_alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_name(inp);
+        pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_name(input.into());
             self
         }
         /// <p>The alias to create. The name must be unique for the bot.</p>
@@ -917,28 +888,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias_name(input);
             self
         }
-        /// <p>A description of the alias. Use this description to help identify
-        /// the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the alias. Use this description to help identify the alias.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the alias. Use this description to help identify
-        /// the alias.</p>
+        /// <p>A description of the alias. Use this description to help identify the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The version of the bot that this alias points to. You can use the
-        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-        /// bot version associated with the alias.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that this alias points to. You can use the
-        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-        /// bot version associated with the alias.</p>
+        /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
@@ -947,20 +912,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
-        /// <p>Maps configuration information to a specific locale. You can use
-        /// this parameter to specify a specific Lambda function to run different
-        /// functions in different locales.</p>
+        /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
-            self.inner = self.inner.bot_alias_locale_settings(k, v);
+            self.inner = self.inner.bot_alias_locale_settings(k.into(), v);
             self
         }
-        /// <p>Maps configuration information to a specific locale. You can use
-        /// this parameter to specify a specific Lambda function to run different
-        /// functions in different locales.</p>
+        /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -973,21 +934,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias_locale_settings(input);
             self
         }
-        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-        /// the bot. When you enable conversation logs, text logs store text input,
-        /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-        /// logs store audio input in Amazon S3.</p>
+        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
         pub fn conversation_log_settings(
             mut self,
-            inp: crate::model::ConversationLogSettings,
+            input: crate::model::ConversationLogSettings,
         ) -> Self {
-            self.inner = self.inner.conversation_log_settings(inp);
+            self.inner = self.inner.conversation_log_settings(input);
             self
         }
-        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-        /// the bot. When you enable conversation logs, text logs store text input,
-        /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-        /// logs store audio input in Amazon S3.</p>
+        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -995,17 +950,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conversation_log_settings(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn sentiment_analysis_settings(
             mut self,
-            inp: crate::model::SentimentAnalysisSettings,
+            input: crate::model::SentimentAnalysisSettings,
         ) -> Self {
-            self.inner = self.inner.sentiment_analysis_settings(inp);
+            self.inner = self.inner.sentiment_analysis_settings(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -1014,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the bot that the alias applies to.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot that the alias applies to.</p>
@@ -1027,22 +980,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the bot alias. You can only add tags when
-        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-        /// operation to update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tags to add to the bot alias. You can only add tags when
-        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-        /// operation to update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1055,11 +1002,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBotLocale`.
     ///
-    /// <p>Creates a locale in the bot. The locale contains the intents and
-    /// slot types that the bot uses in conversations with users in the
-    /// specified language and locale. You must add a locale to a bot before
-    /// you can add intents and slot types to the bot.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBotLocale<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1104,10 +1048,10 @@ pub mod fluent_builders {
                 crate::input::CreateBotLocaleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1116,8 +1060,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot to create the locale for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to create the locale for.</p>
@@ -1125,99 +1069,55 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot to create the locale for. This can only be
-        /// the draft version of the bot.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot to create the locale for. This can only be
-        /// the draft version of the bot.</p>
+        /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>A description of the bot locale. Use this to help identify the bot
-        /// locale in lists.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the bot locale. Use this to help identify the bot
-        /// locale in lists.</p>
+        /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>For example, suppose a bot is configured with the confidence
-        /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-        /// returns three alternative intents with the following confidence scores:
-        /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>RecognizeText</code> operation would be:</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
-        pub fn nlu_intent_confidence_threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.nlu_intent_confidence_threshold(inp);
+        pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>For example, suppose a bot is configured with the confidence
-        /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-        /// returns three alternative intents with the following confidence scores:
-        /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>RecognizeText</code> operation would be:</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
@@ -1226,14 +1126,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-        /// user.</p>
-        pub fn voice_settings(mut self, inp: crate::model::VoiceSettings) -> Self {
-            self.inner = self.inner.voice_settings(inp);
+        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
+        pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
+            self.inner = self.inner.voice_settings(input);
             self
         }
-        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-        /// user.</p>
+        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -1244,13 +1142,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBotVersion`.
     ///
-    /// <p>Creates a new version of the bot based on the <code>DRAFT</code>
-    /// version. If the <code>DRAFT</code> version of this resource hasn't
-    /// changed since you created the last version, Amazon Lex doesn't create a new
-    /// version, it returns the last created version.</p>
-    /// <p>When you create the first version of a bot, Amazon Lex sets the version
-    /// to 1. Subsequent versions increment by 1.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it returns the last created version.</p>
+    /// <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBotVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1295,10 +1189,10 @@ pub mod fluent_builders {
                 crate::input::CreateBotVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1307,8 +1201,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot to create the version for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to create the version for.</p>
@@ -1316,14 +1210,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>A description of the version. Use the description to help identify
-        /// the version in lists.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the version. Use the description to help identify the version in lists.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the version. Use the description to help identify
-        /// the version in lists.</p>
+        /// <p>A description of the version. Use the description to help identify the version in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1332,22 +1224,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bot_version_locale_specification`](Self::set_bot_version_locale_specification).
         ///
-        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-        /// choose the <code>Draft</code> version or any other previously published
-        /// version for each locale. When you specify a source version, the locale
-        /// data is copied from the source version to the new version.</p>
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
         pub fn bot_version_locale_specification(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotVersionLocaleDetails>,
+            v: crate::model::BotVersionLocaleDetails,
         ) -> Self {
-            self.inner = self.inner.bot_version_locale_specification(k, v);
+            self.inner = self.inner.bot_version_locale_specification(k.into(), v);
             self
         }
-        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-        /// choose the <code>Draft</code> version or any other previously published
-        /// version for each locale. When you specify a source version, the locale
-        /// data is copied from the source version to the new version.</p>
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
         pub fn set_bot_version_locale_specification(
             mut self,
             input: std::option::Option<
@@ -1363,17 +1249,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExport`.
     ///
-    /// <p>Creates a zip archive containing the contents of a bot or a bot
-    /// locale. The archive contains a directory structure that contains JSON
-    /// files that define the bot.</p>
-    /// <p>You can create an archive that contains the complete definition of a
-    /// bot, or you can specify that the archive contain only the definition of
-    /// a single bot locale.</p>
-    /// <p>For more information about exporting bots, and about the structure
-    /// of the export archive, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and
-    /// exporting bots </a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot.</p>
+    /// <p>You can create an archive that contains the complete definition of a bot, or you can specify that the archive contain only the definition of a single bot locale.</p>
+    /// <p>For more information about exporting bots, and about the structure of the export archive, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1418,10 +1297,10 @@ pub mod fluent_builders {
                 crate::input::CreateExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1429,17 +1308,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the type of resource to export, either a bot or a bot
-        /// locale. You can only specify one type of resource to export.</p>
+        /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
         pub fn resource_specification(
             mut self,
-            inp: crate::model::ExportResourceSpecification,
+            input: crate::model::ExportResourceSpecification,
         ) -> Self {
-            self.inner = self.inner.resource_specification(inp);
+            self.inner = self.inner.resource_specification(input);
             self
         }
-        /// <p>Specifies the type of resource to export, either a bot or a bot
-        /// locale. You can only specify one type of resource to export.</p>
+        /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ExportResourceSpecification>,
@@ -1448,8 +1325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The file format of the bot or bot locale definition files.</p>
-        pub fn file_format(mut self, inp: crate::model::ImportExportFileFormat) -> Self {
-            self.inner = self.inner.file_format(inp);
+        pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The file format of the bot or bot locale definition files.</p>
@@ -1460,16 +1337,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_format(input);
             self
         }
-        /// <p>An password to use to encrypt the exported archive. Using a password
-        /// is optional, but you should encrypt the archive to protect the data in
-        /// transit between Amazon Lex and your local computer.</p>
-        pub fn file_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_password(inp);
+        /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
+        pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_password(input.into());
             self
         }
-        /// <p>An password to use to encrypt the exported archive. Using a password
-        /// is optional, but you should encrypt the archive to protect the data in
-        /// transit between Amazon Lex and your local computer.</p>
+        /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1481,44 +1354,17 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntent`.
     ///
     /// <p>Creates an intent.</p>
-    /// <p>To define the interaction between the user and your bot, you define
-    /// one or more intents. For example, for a pizza ordering bot you would
-    /// create an <code>OrderPizza</code> intent.</p>
-    /// <p>When you create an intent, you must provide a name. You can
-    /// optionally provide the following:</p>
+    /// <p>To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an <code>OrderPizza</code> intent.</p>
+    /// <p>When you create an intent, you must provide a name. You can optionally provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Sample utterances. For example, "I want to order a pizza" and
-    /// "Can I order a pizza." You can't provide utterances for built-in
-    /// intents.</p>
-    /// </li>
-    /// <li>
-    /// <p>Information to be gathered. You specify slots for the
-    /// information that you bot requests from the user. You can specify
-    /// standard slot types, such as date and time, or custom slot types
-    /// for your application.</p>
-    /// </li>
-    /// <li>
-    /// <p>How the intent is fulfilled. You can provide a Lambda function
-    /// or configure the intent to return the intent information to your
-    /// client application. If you use a Lambda function, Amazon Lex invokes
-    /// the function when all of the intent information is
-    /// available.</p>
-    /// </li>
-    /// <li>
-    /// <p>A confirmation prompt to send to the user to confirm an
-    /// intent. For example, "Shall I order your pizza?"</p>
-    /// </li>
-    /// <li>
-    /// <p>A conclusion statement to send to the user after the intent is
-    /// fulfilled. For example, "I ordered your pizza."</p>
-    /// </li>
-    /// <li>
-    /// <p>A follow-up prompt that asks the user for additional activity.
-    /// For example, "Do you want a drink with your pizza?"</p>
-    /// </li>
+    /// <li> <p>Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can't provide utterances for built-in intents.</p> </li>
+    /// <li> <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p> </li>
+    /// <li> <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p> </li>
+    /// <li> <p>A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li>
+    /// <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p> </li>
+    /// <li> <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1563,10 +1409,10 @@ pub mod fluent_builders {
                 crate::input::CreateIntentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1574,40 +1420,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the intent. Intent names must be unique in the locale
-        /// that contains the intent and cannot match the name of any built-in
-        /// intent.</p>
-        pub fn intent_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_name(inp);
+        /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
+        pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_name(input.into());
             self
         }
-        /// <p>The name of the intent. Intent names must be unique in the locale
-        /// that contains the intent and cannot match the name of any built-in
-        /// intent.</p>
+        /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_intent_name(input);
             self
         }
-        /// <p>A description of the intent. Use the description to help identify
-        /// the intent in lists.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the intent. Use the description to help identify
-        /// the intent in lists.</p>
+        /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent
-        /// on.</p>
-        pub fn parent_intent_signature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_intent_signature(inp);
+        /// <p>A unique identifier for the built-in intent to base this intent on.</p>
+        pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_intent_signature(input.into());
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent
-        /// on.</p>
+        /// <p>A unique identifier for the built-in intent to base this intent on.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1619,20 +1457,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
-        /// <p>An array of strings that a user might say to signal the intent. For
-        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-        /// to indicate where they should be displayed in the utterance shown to
-        /// the user.. </p>
-        pub fn sample_utterances(mut self, inp: impl Into<crate::model::SampleUtterance>) -> Self {
-            self.inner = self.inner.sample_utterances(inp);
+        /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
+            self.inner = self.inner.sample_utterances(input);
             self
         }
-        /// <p>An array of strings that a user might say to signal the intent. For
-        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-        /// to indicate where they should be displayed in the utterance shown to
-        /// the user.. </p>
+        /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
@@ -1640,30 +1472,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sample_utterances(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-        /// input. You can invoke this Lambda function to personalize user
-        /// interaction.</p>
-        /// <p>For example, suppose that your bot determines that the user's name
-        /// is John. You Lambda function might retrieve John's information from a
-        /// backend database and prepopulate some of the values. For example, if
-        /// you find that John is gluten intolerant, you might set the
-        /// corresponding intent slot, <code>glutenIntolerant</code> to
-        /// <code>true</code>. You might find John's phone number and set the
-        /// corresponding session attribute.</p>
-        pub fn dialog_code_hook(mut self, inp: crate::model::DialogCodeHookSettings) -> Self {
-            self.inner = self.inner.dialog_code_hook(inp);
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+        /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
+        pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
+            self.inner = self.inner.dialog_code_hook(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-        /// input. You can invoke this Lambda function to personalize user
-        /// interaction.</p>
-        /// <p>For example, suppose that your bot determines that the user's name
-        /// is John. You Lambda function might retrieve John's information from a
-        /// backend database and prepopulate some of the values. For example, if
-        /// you find that John is gluten intolerant, you might set the
-        /// corresponding intent slot, <code>glutenIntolerant</code> to
-        /// <code>true</code>. You might find John's phone number and set the
-        /// corresponding session attribute.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+        /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -1671,25 +1487,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dialog_code_hook(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-        /// intent is ready for fulfillment. You can invoke this function to
-        /// complete the bot's transaction with the user.</p>
-        /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-        /// the closest pizza restaurant to the customer's location and then place
-        /// an order on the customer's behalf.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+        /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
         pub fn fulfillment_code_hook(
             mut self,
-            inp: crate::model::FulfillmentCodeHookSettings,
+            input: crate::model::FulfillmentCodeHookSettings,
         ) -> Self {
-            self.inner = self.inner.fulfillment_code_hook(inp);
+            self.inner = self.inner.fulfillment_code_hook(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-        /// intent is ready for fulfillment. You can invoke this function to
-        /// complete the bot's transaction with the user.</p>
-        /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-        /// the closest pizza restaurant to the customer's location and then place
-        /// an order on the customer's behalf.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+        /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -1697,19 +1505,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fulfillment_code_hook(input);
             self
         }
-        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-        /// completion of an intent. If the user answers "no," the settings contain
-        /// a statement that is sent to the user to end the intent.</p>
+        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
         pub fn intent_confirmation_setting(
             mut self,
-            inp: crate::model::IntentConfirmationSetting,
+            input: crate::model::IntentConfirmationSetting,
         ) -> Self {
-            self.inner = self.inner.intent_confirmation_setting(inp);
+            self.inner = self.inner.intent_confirmation_setting(input);
             self
         }
-        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-        /// completion of an intent. If the user answers "no," the settings contain
-        /// a statement that is sent to the user to end the intent.</p>
+        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -1717,14 +1521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intent_confirmation_setting(input);
             self
         }
-        /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-        /// closed.</p>
-        pub fn intent_closing_setting(mut self, inp: crate::model::IntentClosingSetting) -> Self {
-            self.inner = self.inner.intent_closing_setting(inp);
+        /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
+        pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
+            self.inner = self.inner.intent_closing_setting(input);
             self
         }
-        /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-        /// closed.</p>
+        /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -1736,40 +1538,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
-        /// <p>A list of contexts that must be active for this intent to be
-        /// considered by Amazon Lex.</p>
-        /// <p>When an intent has an input context list, Amazon Lex only considers using
-        /// the intent in an interaction with the user when the specified contexts
-        /// are included in the active context list for the session. If the
-        /// contexts are not active, then Amazon Lex will not use the intent.</p>
-        /// <p>A context can be automatically activated using the
-        /// <code>outputContexts</code> property or it can be set at
-        /// runtime.</p>
-        /// <p> For example, if there are two intents with different input contexts
-        /// that respond to the same utterances, only the intent with the active
-        /// context will respond.</p>
-        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-        /// input contexts, all of the contexts must be active to consider the
-        /// intent.</p>
-        pub fn input_contexts(mut self, inp: impl Into<crate::model::InputContext>) -> Self {
-            self.inner = self.inner.input_contexts(inp);
+        /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
+            self.inner = self.inner.input_contexts(input);
             self
         }
-        /// <p>A list of contexts that must be active for this intent to be
-        /// considered by Amazon Lex.</p>
-        /// <p>When an intent has an input context list, Amazon Lex only considers using
-        /// the intent in an interaction with the user when the specified contexts
-        /// are included in the active context list for the session. If the
-        /// contexts are not active, then Amazon Lex will not use the intent.</p>
-        /// <p>A context can be automatically activated using the
-        /// <code>outputContexts</code> property or it can be set at
-        /// runtime.</p>
-        /// <p> For example, if there are two intents with different input contexts
-        /// that respond to the same utterances, only the intent with the active
-        /// context will respond.</p>
-        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-        /// input contexts, all of the contexts must be active to consider the
-        /// intent.</p>
+        /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -1781,28 +1563,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
-        /// <p>A lists of contexts that the intent activates when it is
-        /// fulfilled.</p>
-        /// <p>You can use an output context to indicate the intents that Amazon Lex
-        /// should consider for the next turn of the conversation with a customer. </p>
-        /// <p>When you use the <code>outputContextsList</code> property, all of
-        /// the contexts specified in the list are activated when the intent is
-        /// fulfilled. You can set up to 10 output contexts. You can also set the
-        /// number of conversation turns that the context should be active, or the
-        /// length of time that the context should be active.</p>
-        pub fn output_contexts(mut self, inp: impl Into<crate::model::OutputContext>) -> Self {
-            self.inner = self.inner.output_contexts(inp);
+        /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
+            self.inner = self.inner.output_contexts(input);
             self
         }
-        /// <p>A lists of contexts that the intent activates when it is
-        /// fulfilled.</p>
-        /// <p>You can use an output context to indicate the intents that Amazon Lex
-        /// should consider for the next turn of the conversation with a customer. </p>
-        /// <p>When you use the <code>outputContextsList</code> property, all of
-        /// the contexts specified in the list are activated when the intent is
-        /// fulfilled. You can set up to 10 output contexts. You can also set the
-        /// number of conversation turns that the context should be active, or the
-        /// length of time that the context should be active.</p>
+        /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -1810,18 +1580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_contexts(input);
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-        /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-        /// Amazon Lex can't determine another intent to invoke.</p>
-        pub fn kendra_configuration(mut self, inp: crate::model::KendraConfiguration) -> Self {
-            self.inner = self.inner.kendra_configuration(inp);
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
+        pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
+            self.inner = self.inner.kendra_configuration(input);
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-        /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-        /// Amazon Lex can't determine another intent to invoke.</p>
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
         pub fn set_kendra_configuration(
             mut self,
             input: std::option::Option<crate::model::KendraConfiguration>,
@@ -1830,8 +1594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with this intent.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with this intent.</p>
@@ -1839,28 +1603,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The identifier of the version of the bot associated with this
-        /// intent.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The identifier of the version of the bot associated with this intent.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The identifier of the version of the bot associated with this
-        /// intent.</p>
+        /// <p>The identifier of the version of the bot associated with this intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// All of the bots, slot types, and slots used by the intent must have the
-        /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// All of the bots, slot types, and slots used by the intent must have the
-        /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -1868,9 +1626,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourcePolicy`.
     ///
-    /// <p>Creates a new resource policy with the specified policy
-    /// statements.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new resource policy with the specified policy statements.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1915,10 +1672,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1926,36 +1683,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
@@ -1963,12 +1708,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourcePolicyStatement`.
     ///
-    /// <p>Adds a new resource policy statement to a bot or bot alias. If a
-    /// resource policy exists, the statement is added to the current resource
-    /// policy. If a policy doesn't exist, a new policy is created.</p>
-    /// <p>You can't create a resource policy statement that allows
-    /// cross-account access.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p>
+    /// <p>You can't create a resource policy statement that allows cross-account access.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourcePolicyStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2013,10 +1755,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourcePolicyStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2024,42 +1766,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The name of the statement. The ID is the same as the
-        /// <code>Sid</code> IAM property. The statement name must be unique
-        /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-        /// JSON policy elements: Sid</a>. </p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
-        /// <p>The name of the statement. The ID is the same as the
-        /// <code>Sid</code> IAM property. The statement name must be unique
-        /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-        /// JSON policy elements: Sid</a>. </p>
+        /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_statement_id(input);
             self
         }
-        /// <p>Determines whether the statement allows or denies access to the
-        /// resource.</p>
-        pub fn effect(mut self, inp: crate::model::Effect) -> Self {
-            self.inner = self.inner.effect(inp);
+        /// <p>Determines whether the statement allows or denies access to the resource.</p>
+        pub fn effect(mut self, input: crate::model::Effect) -> Self {
+            self.inner = self.inner.effect(input);
             self
         }
-        /// <p>Determines whether the statement allows or denies access to the
-        /// resource.</p>
+        /// <p>Determines whether the statement allows or denies access to the resource.</p>
         pub fn set_effect(mut self, input: std::option::Option<crate::model::Effect>) -> Self {
             self.inner = self.inner.set_effect(input);
             self
@@ -2068,16 +1800,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principal`](Self::set_principal).
         ///
-        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-        /// that is allowed or denied access to a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
-        pub fn principal(mut self, inp: impl Into<crate::model::Principal>) -> Self {
-            self.inner = self.inner.principal(inp);
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+        pub fn principal(mut self, input: crate::model::Principal) -> Self {
+            self.inner = self.inner.principal(input);
             self
         }
-        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-        /// that is allowed or denied access to a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -2089,18 +1817,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_action`](Self::set_action).
         ///
-        /// <p>The Amazon Lex action that this policy either allows or denies. The
-        /// action must apply to the resource type of the specified ARN. For more
-        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
-        /// <p>The Amazon Lex action that this policy either allows or denies. The
-        /// action must apply to the resource type of the specified ARN. For more
-        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+        /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2112,23 +1834,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_condition`](Self::set_condition).
         ///
-        /// <p>Specifies a condition when the policy is in effect. If the principal
-        /// of the policy is a service principal, you must provide two condition
-        /// blocks, one with a SourceAccount global condition key and one with a
-        /// SourceArn global condition key.</p>
+        /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn condition(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
-            self.inner = self.inner.condition(k, v);
+            self.inner = self.inner.condition(k.into(), v);
             self
         }
-        /// <p>Specifies a condition when the policy is in effect. If the principal
-        /// of the policy is a service principal, you must provide two condition
-        /// blocks, one with a SourceAccount global condition key and one with a
-        /// SourceArn global condition key.</p>
+        /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn set_condition(
             mut self,
@@ -2142,20 +1858,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_condition(input);
             self
         }
-        /// <p>The identifier of the revision of the policy to edit. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
-        pub fn expected_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_revision_id(inp);
+        /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+        pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_revision_id(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to edit. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2166,12 +1876,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSlot`.
     ///
-    /// <p>Creates a slot in an intent. A slot is a variable needed to fulfill
-    /// an intent. For example, an <code>OrderPizza</code> intent might need
-    /// slots for size, crust, and number of pizzas. For each slot, you define
-    /// one or more utterances that Amazon Lex uses to elicit a response from the
-    /// user. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSlot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2216,10 +1922,10 @@ pub mod fluent_builders {
                 crate::input::CreateSlotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2227,55 +1933,45 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the slot. Slot names must be unique within the bot that
-        /// contains the slot.</p>
-        pub fn slot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_name(inp);
+        /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
+        pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_name(input.into());
             self
         }
-        /// <p>The name of the slot. Slot names must be unique within the bot that
-        /// contains the slot.</p>
+        /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_slot_name(input);
             self
         }
-        /// <p>A description of the slot. Use this to help identify the slot in
-        /// lists.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the slot. Use this to help identify the slot in
-        /// lists.</p>
+        /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The unique identifier for the slot type associated with this slot.
-        /// The slot type determines the values that can be entered into the
-        /// slot.</p>
-        pub fn slot_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_id(inp);
+        /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
+        pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_id(input.into());
             self
         }
-        /// <p>The unique identifier for the slot type associated with this slot.
-        /// The slot type determines the values that can be entered into the
-        /// slot.</p>
+        /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_slot_type_id(input);
             self
         }
-        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-        /// that provides the value for the slot. </p>
+        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
         pub fn value_elicitation_setting(
             mut self,
-            inp: crate::model::SlotValueElicitationSetting,
+            input: crate::model::SlotValueElicitationSetting,
         ) -> Self {
-            self.inner = self.inner.value_elicitation_setting(inp);
+            self.inner = self.inner.value_elicitation_setting(input);
             self
         }
-        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-        /// that provides the value for the slot. </p>
+        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -2283,21 +1979,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_value_elicitation_setting(input);
             self
         }
-        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-        /// the <code>obfuscationSetting</code> parameter is
-        /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-        /// log output. If the value is <code>None</code>, the actual value is
-        /// present in the log output.</p>
+        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
         /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
-        pub fn obfuscation_setting(mut self, inp: crate::model::ObfuscationSetting) -> Self {
-            self.inner = self.inner.obfuscation_setting(inp);
+        pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
+            self.inner = self.inner.obfuscation_setting(input);
             self
         }
-        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-        /// the <code>obfuscationSetting</code> parameter is
-        /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-        /// log output. If the value is <code>None</code>, the actual value is
-        /// present in the log output.</p>
+        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
         /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
         pub fn set_obfuscation_setting(
             mut self,
@@ -2307,8 +1995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the slot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the slot.</p>
@@ -2317,8 +2005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the slot.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the slot.</p>
@@ -2326,25 +2014,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// bots, intents, slot types used by the slot must have the same locale.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// bots, intents, slot types used by the slot must have the same locale.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
@@ -2352,22 +2034,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intent_id(input);
             self
         }
-        /// <p>Indicates whether the slot returns multiple values in one response.
-        /// Multi-value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>. </p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
-        pub fn multiple_values_setting(mut self, inp: crate::model::MultipleValuesSetting) -> Self {
-            self.inner = self.inner.multiple_values_setting(inp);
+        /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+        pub fn multiple_values_setting(
+            mut self,
+            input: crate::model::MultipleValuesSetting,
+        ) -> Self {
+            self.inner = self.inner.multiple_values_setting(input);
             self
         }
-        /// <p>Indicates whether the slot returns multiple values in one response.
-        /// Multi-value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>. </p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -2379,10 +2056,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSlotType`.
     ///
     /// <p>Creates a custom slot type</p>
-    /// <p> To create a custom slot type, specify a name for the slot type and
-    /// a set of enumeration values, the values that a slot of this type can
-    /// assume. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2427,10 +2102,10 @@ pub mod fluent_builders {
                 crate::input::CreateSlotTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2438,14 +2113,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the slot. A slot type name must be unique within the
-        /// account.</p>
-        pub fn slot_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_name(inp);
+        /// <p>The name for the slot. A slot type name must be unique within the account.</p>
+        pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_name(input.into());
             self
         }
-        /// <p>The name for the slot. A slot type name must be unique within the
-        /// account.</p>
+        /// <p>The name for the slot. A slot type name must be unique within the account.</p>
         pub fn set_slot_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2453,14 +2126,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_slot_type_name(input);
             self
         }
-        /// <p>A description of the slot type. Use the description to help identify
-        /// the slot type in lists.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the slot type. Use the description to help identify
-        /// the slot type in lists.</p>
+        /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -2469,18 +2140,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
-        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-        /// that the slot type can take. Each value can have a list of synonyms,
-        /// additional values that help train the machine learning model about the
-        /// values that it resolves for a slot.</p>
-        pub fn slot_type_values(mut self, inp: impl Into<crate::model::SlotTypeValue>) -> Self {
-            self.inner = self.inner.slot_type_values(inp);
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
+            self.inner = self.inner.slot_type_values(input);
             self
         }
-        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-        /// that the slot type can take. Each value can have a list of synonyms,
-        /// additional values that help train the machine learning model about the
-        /// values that it resolves for a slot.</p>
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -2488,49 +2153,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_slot_type_values(input);
             self
         }
-        /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-        /// list of possible values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OriginalValue</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TopResolution</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list. If there
-        /// is no resolution list, return null.</p>
-        /// </li>
+        /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionSetting</code>
-        /// parameter, the default is <code>OriginalValue</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
         pub fn value_selection_setting(
             mut self,
-            inp: crate::model::SlotValueSelectionSetting,
+            input: crate::model::SlotValueSelectionSetting,
         ) -> Self {
-            self.inner = self.inner.value_selection_setting(inp);
+            self.inner = self.inner.value_selection_setting(input);
             self
         }
-        /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-        /// list of possible values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OriginalValue</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TopResolution</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list. If there
-        /// is no resolution list, return null.</p>
-        /// </li>
+        /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionSetting</code>
-        /// parameter, the default is <code>OriginalValue</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -2538,17 +2179,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_value_selection_setting(input);
             self
         }
-        /// <p>The built-in slot type used as a parent of this slot type. When you
-        /// define a parent slot type, the new slot type has the configuration of
-        /// the parent slot type.</p>
+        /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-        pub fn parent_slot_type_signature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_slot_type_signature(inp);
+        pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_slot_type_signature(input.into());
             self
         }
-        /// <p>The built-in slot type used as a parent of this slot type. When you
-        /// define a parent slot type, the new slot type has the configuration of
-        /// the parent slot type.</p>
+        /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
@@ -2558,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with this slot type.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with this slot type.</p>
@@ -2567,40 +2204,47 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The identifier of the bot version associated with this slot
-        /// type.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The identifier of the bot version associated with this slot type.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The identifier of the bot version associated with this slot
-        /// type.</p>
+        /// <p>The identifier of the bot version associated with this slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// used in. The string must match one of the supported locales. All of the
-        /// bots, intents, and slots used by the slot type must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// used in. The string must match one of the supported locales. All of the
-        /// bots, intents, and slots used by the slot type must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
+            self
+        }
+        /// <p>Sets the type of external information used to create the slot type.</p>
+        pub fn external_source_setting(
+            mut self,
+            input: crate::model::ExternalSourceSetting,
+        ) -> Self {
+            self.inner = self.inner.external_source_setting(input);
+            self
+        }
+        /// <p>Sets the type of external information used to create the slot type.</p>
+        pub fn set_external_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::ExternalSourceSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_external_source_setting(input);
             self
         }
     }
     /// Fluent builder constructing a request to `CreateUploadUrl`.
     ///
-    /// <p>Gets a pre-signed S3 write URL that you use to upload the zip
-    /// archive when importing a bot or a bot locale. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUploadUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2645,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::CreateUploadUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2659,17 +2303,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBot`.
     ///
-    /// <p>Deletes all versions of a bot, including the <code>Draft</code>
-    /// version. To delete a specific version, use the
-    /// <code>DeleteBotVersion</code> operation.</p>
-    /// <p>When you delete a bot, all of the resources contained in the bot are
-    /// also deleted. Deleting a bot removes all locales, intents, slot, and
-    /// slot types defined for the bot.</p>
-    /// <p>If a bot has an alias, the <code>DeleteBot</code> operation returns
-    /// a <code>ResourceInUseException</code> exception. If you want to delete
-    /// the bot and the alias, set the <code>skipResourceInUseCheck</code>
-    /// parameter to <code>true</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the <code>DeleteBotVersion</code> operation.</p>
+    /// <p>When you delete a bot, all of the resources contained in the bot are also deleted. Deleting a bot removes all locales, intents, slot, and slot types defined for the bot.</p>
+    /// <p>If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2714,10 +2351,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2726,8 +2363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot to delete. </p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to delete. </p>
@@ -2735,16 +2372,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-        /// resource, such as an alias, is using the bot before it is
-        /// deleted.</p>
-        pub fn skip_resource_in_use_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_resource_in_use_check(inp);
+        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
+        pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_resource_in_use_check(input);
             self
         }
-        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-        /// resource, such as an alias, is using the bot before it is
-        /// deleted.</p>
+        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_resource_in_use_check(input);
             self
@@ -2753,7 +2386,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBotAlias`.
     ///
     /// <p>Deletes the specified bot alias.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2798,10 +2431,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBotAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2810,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot alias to delete.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot alias to delete.</p>
@@ -2819,26 +2452,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
-        /// <p>The unique identifier of the bot associated with the alias to
-        /// delete.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot associated with the alias to delete.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the alias to
-        /// delete.</p>
+        /// <p>The unique identifier of the bot associated with the alias to delete.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-        /// resource is using the alias before it is deleted.</p>
-        pub fn skip_resource_in_use_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_resource_in_use_check(inp);
+        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
+        pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_resource_in_use_check(input);
             self
         }
-        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-        /// resource is using the alias before it is deleted.</p>
+        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_resource_in_use_check(input);
             self
@@ -2847,9 +2476,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBotLocale`.
     ///
     /// <p>Removes a locale from a bot.</p>
-    /// <p>When you delete a locale, all intents, slots, and slot types defined
-    /// for the locale are also deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotLocale<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2894,10 +2522,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBotLocaleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2906,8 +2534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot that contains the locale.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -2916,8 +2544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot that contains the locale. </p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot that contains the locale. </p>
@@ -2925,16 +2553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that will be deleted. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that will be deleted. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -2942,9 +2566,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBotVersion`.
     ///
-    /// <p>Deletes a specific version of a bot. To delete all version of a bot,
-    /// use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specific version of a bot. To delete all version of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2989,10 +2612,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBotVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3001,8 +2624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that contains the version.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the version.</p>
@@ -3011,8 +2634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot to delete.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot to delete.</p>
@@ -3020,22 +2643,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// bot version that has an alias pointing at it. Set the
-        /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-        /// to skip this check and remove the version even if an alias points to
-        /// it.</p>
-        pub fn skip_resource_in_use_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_resource_in_use_check(inp);
+        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
+        pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_resource_in_use_check(input);
             self
         }
-        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// bot version that has an alias pointing at it. Set the
-        /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-        /// to skip this check and remove the version even if an alias points to
-        /// it.</p>
+        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_resource_in_use_check(input);
             self
@@ -3043,9 +2656,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteExport`.
     ///
-    /// <p>Removes a previous export and the associated files stored in an S3
-    /// bucket.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a previous export and the associated files stored in an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3090,10 +2702,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3102,8 +2714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the export to delete.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input.into());
             self
         }
         /// <p>The unique identifier of the export to delete.</p>
@@ -3114,9 +2726,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImport`.
     ///
-    /// <p>Removes a previous import and the associated file stored in an S3
-    /// bucket.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a previous import and the associated file stored in an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3161,10 +2772,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3173,8 +2784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the import to delete.</p>
-        pub fn import_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_id(inp);
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_id(input.into());
             self
         }
         /// <p>The unique identifier of the import to delete.</p>
@@ -3186,9 +2797,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntent`.
     ///
     /// <p>Removes the specified intent.</p>
-    /// <p>Deleting an intent also deletes the slots associated with the
-    /// intent.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deleting an intent also deletes the slots associated with the intent.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3233,10 +2843,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIntentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3245,8 +2855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the intent to delete.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The unique identifier of the intent to delete.</p>
@@ -3255,8 +2865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
@@ -3265,8 +2875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the intent.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the intent.</p>
@@ -3274,16 +2884,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale where the bot will be
-        /// deleted. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the bot will be
-        /// deleted. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -3291,9 +2897,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
-    /// <p>Removes an existing policy from a bot or bot alias. If the resource
-    /// doesn't have a policy attached, Amazon Lex returns an exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes an existing policy from a bot or bot alias. If the resource doesn't have a policy attached, Amazon Lex returns an exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3338,10 +2943,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3349,30 +2954,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-        /// resource policy attached.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-        /// resource policy attached.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The identifier of the revision to edit. If this ID doesn't match the
-        /// current revision number, Amazon Lex returns an exception</p>
-        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-        /// policy.</p>
-        pub fn expected_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_revision_id(inp);
+        /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
+        pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_revision_id(input.into());
             self
         }
-        /// <p>The identifier of the revision to edit. If this ID doesn't match the
-        /// current revision number, Amazon Lex returns an exception</p>
-        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-        /// policy.</p>
+        /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3383,12 +2982,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourcePolicyStatement`.
     ///
-    /// <p>Deletes a policy statement from a resource policy. If you delete the
-    /// last statement from a policy, the policy is deleted. If you specify a
-    /// statement ID that doesn't exist in the policy, or if the bot or bot
-    /// alias doesn't have a policy attached, Amazon Lex returns an
-    /// exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicyStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3433,10 +3028,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3444,21 +3039,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name of the statement (SID) to delete from the policy.</p>
-        pub fn statement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(inp);
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>The name of the statement (SID) to delete from the policy.</p>
@@ -3466,20 +3059,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_statement_id(input);
             self
         }
-        /// <p>The identifier of the revision of the policy to delete the statement
-        /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-        /// throws an exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-        /// of the statement. </p>
-        pub fn expected_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_revision_id(inp);
+        /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+        pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_revision_id(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to delete the statement
-        /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-        /// throws an exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-        /// of the statement. </p>
+        /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3491,7 +3078,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSlot`.
     ///
     /// <p>Deletes the specified slot from an intent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3536,10 +3123,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSlotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3548,8 +3135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the slot to delete. </p>
-        pub fn slot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_id(inp);
+        pub fn slot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_id(input.into());
             self
         }
         /// <p>The identifier of the slot to delete. </p>
@@ -3558,8 +3145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the slot to delete.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the slot to delete.</p>
@@ -3568,8 +3155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the slot to delete.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the slot to delete.</p>
@@ -3577,23 +3164,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The identifier of the intent associated with the slot.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The identifier of the intent associated with the slot.</p>
@@ -3605,11 +3188,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSlotType`.
     ///
     /// <p>Deletes a slot type from a bot locale.</p>
-    /// <p>If a slot is using the slot type, Amazon Lex throws a
-    /// <code>ResourceInUseException</code> exception. To avoid the
-    /// exception, set the <code>skipResourceInUseCheck</code> parameter to
-    /// <code>true</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code> exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3654,10 +3234,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSlotTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3666,8 +3246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the slot type to delete.</p>
-        pub fn slot_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_id(inp);
+        pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_id(input.into());
             self
         }
         /// <p>The identifier of the slot type to delete.</p>
@@ -3676,8 +3256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
@@ -3686,8 +3266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the slot type.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the slot type.</p>
@@ -3695,34 +3275,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code> to skip this check and remove the slot
-        /// type even if a slot uses it.</p>
-        pub fn skip_resource_in_use_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_resource_in_use_check(inp);
+        /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
+        pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_resource_in_use_check(input);
             self
         }
-        /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code> to skip this check and remove the slot
-        /// type even if a slot uses it.</p>
+        /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_resource_in_use_check(input);
             self
@@ -3731,18 +3299,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUtterances`.
     ///
     /// <p>Deletes stored utterances.</p>
-    /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances
-    /// are stored for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, and
-    /// then stored indefinitely for use in improving the ability of your bot
-    /// to respond to user input..</p>
-    /// <p>Use the <code>DeleteUtterances</code> operation to manually delete
-    /// utterances for a specific session. When you use the
-    /// <code>DeleteUtterances</code> operation, utterances stored for
-    /// improving your bot's ability to respond to user input are deleted
-    /// immediately. Utterances stored for use with the
-    /// <code>ListAggregatedUtterances</code> operation are deleted after 15
-    /// days.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..</p>
+    /// <p>Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>ListAggregatedUtterances</code> operation are deleted after 15 days.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUtterances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3787,10 +3346,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUtterancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3798,42 +3357,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot that contains the
-        /// utterances.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot that contains the utterances.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the
-        /// utterances.</p>
+        /// <p>The unique identifier of the bot that contains the utterances.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+        /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
@@ -3842,7 +3391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBot`.
     ///
     /// <p>Provides metadata information about a bot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3887,10 +3436,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3899,8 +3448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot to describe.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot to describe.</p>
@@ -3912,7 +3461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBotAlias`.
     ///
     /// <p>Get information about a specific bot alias.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3957,10 +3506,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBotAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3969,8 +3518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot alias to describe.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The identifier of the bot alias to describe.</p>
@@ -3978,14 +3527,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
-        /// <p>The identifier of the bot associated with the bot alias to
-        /// describe.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The identifier of the bot associated with the bot alias to describe.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The identifier of the bot associated with the bot alias to
-        /// describe.</p>
+        /// <p>The identifier of the bot associated with the bot alias to describe.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
@@ -3994,7 +3541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBotLocale`.
     ///
     /// <p>Describes the settings that a bot has for a specific locale. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBotLocale<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4039,10 +3586,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBotLocaleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4051,8 +3598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot associated with the locale.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the locale.</p>
@@ -4060,26 +3607,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The identifier of the version of the bot associated with the
-        /// locale.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The identifier of the version of the bot associated with the locale.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The identifier of the version of the bot associated with the
-        /// locale.</p>
+        /// <p>The identifier of the version of the bot associated with the locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The unique identifier of the locale to describe. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The unique identifier of the locale to describe. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+        /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -4087,12 +3630,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBotRecommendation`.
     ///
-    /// <p>Provides metadata information about a bot recommendation. This
-    /// information will enable you to get a description on the request inputs,
-    /// to download associated transcripts after processing is complete, and to
-    /// download intents and slot-types generated by the bot
-    /// recommendation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides metadata information about a bot recommendation. This information will enable you to get a description on the request inputs, to download associated transcripts after processing is complete, and to download intents and slot-types generated by the bot recommendation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBotRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4137,10 +3676,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBotRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4148,47 +3687,39 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot associated with the bot
-        /// recommendation.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot associated with the bot
-        /// recommendation.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot associated with the bot recommendation.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The version of the bot associated with the bot recommendation.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to describe. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to describe. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The identifier of the bot recommendation to describe.</p>
-        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_recommendation_id(inp);
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(input.into());
             self
         }
         /// <p>The identifier of the bot recommendation to describe.</p>
@@ -4203,7 +3734,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBotVersion`.
     ///
     /// <p>Provides metadata about a version of a bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBotVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4248,10 +3779,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBotVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4259,21 +3790,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the bot containing the version to return metadata
-        /// for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The identifier of the bot containing the version to return metadata for.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The identifier of the bot containing the version to return metadata
-        /// for.</p>
+        /// <p>The identifier of the bot containing the version to return metadata for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
         /// <p>The version of the bot to return metadata for.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot to return metadata for.</p>
@@ -4285,7 +3814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExport`.
     ///
     /// <p>Gets information about a specific export.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4330,10 +3859,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4342,8 +3871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the export to describe.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input.into());
             self
         }
         /// <p>The unique identifier of the export to describe.</p>
@@ -4355,7 +3884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImport`.
     ///
     /// <p>Gets information about a specific import.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4400,10 +3929,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4412,8 +3941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the import to describe.</p>
-        pub fn import_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_id(inp);
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_id(input.into());
             self
         }
         /// <p>The unique identifier of the import to describe.</p>
@@ -4425,7 +3954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIntent`.
     ///
     /// <p>Returns metadata about an intent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4470,10 +3999,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIntentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4482,8 +4011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the intent to describe.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The identifier of the intent to describe.</p>
@@ -4492,8 +4021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the intent.</p>
@@ -4502,8 +4031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the intent.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the intent.</p>
@@ -4511,16 +4040,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the intent to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intent to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -4528,9 +4053,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResourcePolicy`.
     ///
-    /// <p>Gets the resource policy and policy revision for a bot or bot
-    /// alias.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the resource policy and policy revision for a bot or bot alias.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4575,10 +4099,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4586,14 +4110,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4602,7 +4124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSlot`.
     ///
     /// <p>Gets metadata information about a slot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSlot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4647,10 +4169,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSlotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4659,8 +4181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the slot.</p>
-        pub fn slot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_id(inp);
+        pub fn slot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_id(input.into());
             self
         }
         /// <p>The unique identifier for the slot.</p>
@@ -4669,8 +4191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the slot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the slot.</p>
@@ -4679,8 +4201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the slot.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the slot.</p>
@@ -4688,23 +4210,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the slot to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
@@ -4716,7 +4234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSlotType`.
     ///
     /// <p>Gets metadata information about a slot type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4761,10 +4279,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSlotTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4773,8 +4291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the slot type.</p>
-        pub fn slot_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_id(inp);
+        pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_id(input.into());
             self
         }
         /// <p>The identifier of the slot type.</p>
@@ -4783,8 +4301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot associated with the slot type.</p>
@@ -4793,8 +4311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot associated with the slot type.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot associated with the slot type.</p>
@@ -4802,16 +4320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the slot type to
-        /// describe. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot type to
-        /// describe. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -4819,32 +4333,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAggregatedUtterances`.
     ///
-    /// <p>Provides a list of utterances that users have sent to the
-    /// bot.</p>
-    /// <p>Utterances are aggregated by the text of the utterance. For example,
-    /// all instances where customers used the phrase "I want to order pizza"
-    /// are aggregated into the same line in the response.</p>
-    /// <p>You can see both detected utterances and missed utterances. A
-    /// detected utterance is where the bot properly recognized the utterance
-    /// and activated the associated intent. A missed utterance was not
-    /// recognized by the bot and didn't activate an intent.</p>
-    /// <p>Utterances can be aggregated for a bot alias or for a bot version,
-    /// but not both at the same time.</p>
-    /// <p>Utterances statistics are not generated under the following
-    /// conditions:</p>
+    /// <p>Provides a list of utterances that users have sent to the bot.</p>
+    /// <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response.</p>
+    /// <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p>
+    /// <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p>
+    /// <p>Utterances statistics are not generated under the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>childDirected</code> field was set to true when the
-    /// bot was created.</p>
-    /// </li>
-    /// <li>
-    /// <p>You are using slot obfuscation with one or more slots.</p>
-    /// </li>
-    /// <li>
-    /// <p>You opted out of participating in improving Amazon Lex.</p>
-    /// </li>
+    /// <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li>
+    /// <li> <p>You are using slot obfuscation with one or more slots.</p> </li>
+    /// <li> <p>You opted out of participating in improving Amazon Lex.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAggregatedUtterances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4889,10 +4388,10 @@ pub mod fluent_builders {
                 crate::input::ListAggregatedUtterancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4900,67 +4399,63 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot associated with this
-        /// request.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAggregatedUtterancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAggregatedUtterancesPaginator<C, M, R> {
+            crate::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique identifier of the bot associated with this request.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with this
-        /// request.</p>
+        /// <p>The unique identifier of the bot associated with this request.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The identifier of the bot alias associated with this request. If you
-        /// specify the bot alias, you can't specify the bot version.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
-        /// <p>The identifier of the bot alias associated with this request. If you
-        /// specify the bot alias, you can't specify the bot version.</p>
+        /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias_id(input);
             self
         }
-        /// <p>The identifier of the bot version associated with this request. If
-        /// you specify the bot version, you can't specify the bot alias.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The identifier of the bot version associated with this request. If
-        /// you specify the bot version, you can't specify the bot alias.</p>
+        /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The time window for aggregating the utterance information. You can
-        /// specify a time between one hour and two weeks.</p>
+        /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
         pub fn aggregation_duration(
             mut self,
-            inp: crate::model::UtteranceAggregationDuration,
+            input: crate::model::UtteranceAggregationDuration,
         ) -> Self {
-            self.inner = self.inner.aggregation_duration(inp);
+            self.inner = self.inner.aggregation_duration(input);
             self
         }
-        /// <p>The time window for aggregating the utterance information. You can
-        /// specify a time between one hour and two weeks.</p>
+        /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
         pub fn set_aggregation_duration(
             mut self,
             input: std::option::Option<crate::model::UtteranceAggregationDuration>,
@@ -4968,16 +4463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aggregation_duration(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of utterances. You can
-        /// sort by the hit count, the missed count, or the number of distinct
-        /// sessions the utterance appeared in.</p>
-        pub fn sort_by(mut self, inp: crate::model::AggregatedUtterancesSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
+        pub fn sort_by(mut self, input: crate::model::AggregatedUtterancesSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of utterances. You can
-        /// sort by the hit count, the missed count, or the number of distinct
-        /// sessions the utterance appeared in.</p>
+        /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::AggregatedUtterancesSortBy>,
@@ -4989,16 +4480,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the utterances
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::AggregatedUtterancesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::AggregatedUtterancesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the utterances
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesFilter>>,
@@ -5006,38 +4493,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of utterances to return in each page of results.
-        /// If there are fewer results than the maximum page size, only the actual
-        /// number of results are returned. If you don't specify the
-        /// <code>maxResults</code> parameter, 1,000 results are
-        /// returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of utterances to return in each page of results.
-        /// If there are fewer results than the maximum page size, only the actual
-        /// number of results are returned. If you don't specify the
-        /// <code>maxResults</code> parameter, 1,000 results are
-        /// returned.</p>
+        /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListAggregatedUtterances</code>
-        /// operation contains more results that specified in the
-        /// <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to
-        /// return the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListAggregatedUtterances</code>
-        /// operation contains more results that specified in the
-        /// <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5046,7 +4517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBotAliases`.
     ///
     /// <p>Gets a list of aliases for the specified bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBotAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5091,10 +4562,10 @@ pub mod fluent_builders {
                 crate::input::ListBotAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5102,9 +4573,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotAliasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotAliasesPaginator<C, M, R> {
+            crate::paginator::ListBotAliasesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the bot to list aliases for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to list aliases for.</p>
@@ -5112,34 +4589,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBotAliases</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBotAliases</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5148,7 +4613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBotLocales`.
     ///
     /// <p>Gets a list of locales for the specified bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBotLocales<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5193,10 +4658,10 @@ pub mod fluent_builders {
                 crate::input::ListBotLocalesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5204,9 +4669,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotLocalesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotLocalesPaginator<C, M, R> {
+            crate::paginator::ListBotLocalesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the bot to list locales for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to list locales for.</p>
@@ -5215,8 +4686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot to list locales for.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot to list locales for.</p>
@@ -5224,14 +4695,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of locales. You can sort
-        /// by locale name in ascending or descending order.</p>
-        pub fn sort_by(mut self, inp: crate::model::BotLocaleSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::BotLocaleSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of locales. You can sort
-        /// by locale name in ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotLocaleSortBy>,
@@ -5243,16 +4712,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification for a filter used to limit the response
-        /// to only those locales that match the filter specification. You can only
-        /// specify one filter and one value to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::BotLocaleFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
+        pub fn filters(mut self, input: crate::model::BotLocaleFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification for a filter used to limit the response
-        /// to only those locales that match the filter specification. You can only
-        /// specify one filter and one value to filter on.</p>
+        /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotLocaleFilter>>,
@@ -5260,34 +4725,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBotLocales</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token as the
-        /// <code>nextToken</code> parameter to return the next page of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBotLocales</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token as the
-        /// <code>nextToken</code> parameter to return the next page of results.
-        /// </p>
+        /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5295,9 +4748,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBotRecommendations`.
     ///
-    /// <p>Get a list of bot recommendations that meet the specified
-    /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get a list of bot recommendations that meet the specified criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBotRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5342,10 +4794,10 @@ pub mod fluent_builders {
                 crate::input::ListBotRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5353,68 +4805,58 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot that contains the bot
-        /// recommendation list.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListBotRecommendationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the bot
-        /// recommendation list.</p>
+        /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot that contains the bot recommendation
-        /// list.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that contains the bot recommendation list.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that contains the bot recommendation
-        /// list.</p>
+        /// <p>The version of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// list.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the bot recommendation list.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// list.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the ListBotRecommendation operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the ListBotRecommendation operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5423,7 +4865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>Gets a list of available bots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5468,10 +4910,10 @@ pub mod fluent_builders {
                 crate::input::ListBotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5479,16 +4921,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies sorting parameters for the list of bots. You can specify
-        /// that the list be sorted by bot name in ascending or descending
-        /// order.</p>
-        pub fn sort_by(mut self, inp: crate::model::BotSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotsPaginator<C, M, R> {
+            crate::paginator::ListBotsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::BotSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of bots. You can specify
-        /// that the list be sorted by bot name in ascending or descending
-        /// order.</p>
+        /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::BotSortBy>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
@@ -5497,16 +4941,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::BotFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::BotFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotFilter>>,
@@ -5514,34 +4954,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of bots to return in each page of results. If
-        /// there are fewer results than the maximum page size, only the actual
-        /// number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bots to return in each page of results. If
-        /// there are fewer results than the maximum page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5550,14 +4978,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBotVersions`.
     ///
     /// <p>Gets information about all of the versions of a bot.</p>
-    /// <p>The <code>ListBotVersions</code> operation returns a summary of each
-    /// version of a bot. For example, if a bot has three numbered versions,
-    /// the <code>ListBotVersions</code> operation returns for summaries, one
-    /// for each numbered version and one for the <code>DRAFT</code>
-    /// version.</p>
-    /// <p>The <code>ListBotVersions</code> operation always returns at least
-    /// one version, the <code>DRAFT</code> version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>ListBotVersions</code> operation returns a summary of each version of a bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code> operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code> version.</p>
+    /// <p>The <code>ListBotVersions</code> operation always returns at least one version, the <code>DRAFT</code> version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBotVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5602,10 +5025,10 @@ pub mod fluent_builders {
                 crate::input::ListBotVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5613,9 +5036,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotVersionsPaginator<C, M, R> {
+            crate::paginator::ListBotVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the bot to list versions for.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot to list versions for.</p>
@@ -5623,16 +5052,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of versions. You can
-        /// specify that the list be sorted by version name in either ascending or
-        /// descending order.</p>
-        pub fn sort_by(mut self, inp: crate::model::BotVersionSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::BotVersionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of versions. You can
-        /// specify that the list be sorted by version name in either ascending or
-        /// descending order.</p>
+        /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotVersionSortBy>,
@@ -5640,34 +5065,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The maximum number of versions to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of versions to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response to the <code>ListBotVersion</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to the <code>ListBotVersion</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5675,13 +5088,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBuiltInIntents`.
     ///
-    /// <p>Gets a list of built-in intents provided by Amazon Lex that you can use
-    /// in your bot. </p>
-    /// <p>To use a built-in intent as a the base for your own intent, include
-    /// the built-in intent signature in the <code>parentIntentSignature</code>
-    /// parameter when you call the <code>CreateIntent</code> operation. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of built-in intents provided by Amazon Lex that you can use in your bot. </p>
+    /// <p>To use a built-in intent as a the base for your own intent, include the built-in intent signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuiltInIntents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5726,10 +5135,10 @@ pub mod fluent_builders {
                 crate::input::ListBuiltInIntentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5737,30 +5146,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuiltInIntentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuiltInIntentsPaginator<C, M, R> {
+            crate::paginator::ListBuiltInIntentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of built-in intents. You
-        /// can specify that the list be sorted by the built-in intent signature in
-        /// either ascending or descending order.</p>
-        pub fn sort_by(mut self, inp: crate::model::BuiltInIntentSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::BuiltInIntentSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of built-in intents. You
-        /// can specify that the list be sorted by the built-in intent signature in
-        /// either ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInIntentSortBy>,
@@ -5768,34 +5175,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The maximum number of built-in intents to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of built-in intents to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5803,9 +5198,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBuiltInSlotTypes`.
     ///
-    /// <p>Gets a list of built-in slot types that meet the specified
-    /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of built-in slot types that meet the specified criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuiltInSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5850,10 +5244,10 @@ pub mod fluent_builders {
                 crate::input::ListBuiltInSlotTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5861,32 +5255,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuiltInSlotTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuiltInSlotTypesPaginator<C, M, R> {
+            crate::paginator::ListBuiltInSlotTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-        /// by the slot type signature in either ascending or descending
-        /// order.</p>
-        pub fn sort_by(mut self, inp: crate::model::BuiltInSlotTypeSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::BuiltInSlotTypeSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-        /// by the slot type signature in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInSlotTypeSortBy>,
@@ -5894,34 +5284,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The maximum number of built-in slot types to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of built-in slot types to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5929,9 +5307,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExports`.
     ///
-    /// <p>Lists the exports for a bot or bot locale. Exports are kept in the
-    /// list for 7 days.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5976,10 +5353,10 @@ pub mod fluent_builders {
                 crate::input::ListExportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5987,9 +5364,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExportsPaginator<C, M, R> {
+            crate::paginator::ListExportsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
@@ -5998,8 +5381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot to list exports for. </p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot to list exports for. </p>
@@ -6007,16 +5390,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>Determines the field that the list of exports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
-        pub fn sort_by(mut self, inp: crate::model::ExportSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::ExportSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the field that the list of exports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ExportSortBy>,
@@ -6028,16 +5407,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the exports in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ExportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the exports in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
@@ -6045,34 +5420,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of exports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of exports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains
-        /// more results that specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains
-        /// more results that specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6080,9 +5443,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListImports`.
     ///
-    /// <p>Lists the imports for a bot or bot locale. Imports are kept in the
-    /// list for 7 days.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6127,10 +5489,10 @@ pub mod fluent_builders {
                 crate::input::ListImportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6138,9 +5500,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImportsPaginator<C, M, R> {
+            crate::paginator::ListImportsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
@@ -6149,8 +5517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot to list imports for.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot to list imports for.</p>
@@ -6158,16 +5526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>Determines the field that the list of imports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
-        pub fn sort_by(mut self, inp: crate::model::ImportSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::ImportSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the field that the list of imports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ImportSortBy>,
@@ -6179,16 +5543,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ImportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::ImportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportFilter>>,
@@ -6196,34 +5556,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of imports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of imports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6232,7 +5580,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIntents`.
     ///
     /// <p>Get a list of intents that meet the specified criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6277,10 +5625,10 @@ pub mod fluent_builders {
                 crate::input::ListIntentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6288,9 +5636,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIntentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIntentsPaginator<C, M, R> {
+            crate::paginator::ListIntentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the bot that contains the intent.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot that contains the intent.</p>
@@ -6299,8 +5653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot that contains the intent.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot that contains the intent.</p>
@@ -6308,32 +5662,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListIntents</code> operation. You can choose to sort by the
-        /// intent name or last updated date in either ascending or descending
-        /// order.</p>
-        pub fn sort_by(mut self, inp: crate::model::IntentSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::IntentSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListIntents</code> operation. You can choose to sort by the
-        /// intent name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::IntentSortBy>,
@@ -6345,16 +5689,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the intents in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::IntentFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::IntentFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the intents in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentFilter>>,
@@ -6362,34 +5702,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of intents to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of intents to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6397,9 +5725,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecommendedIntents`.
     ///
-    /// <p>Gets a list of recommended intents provided by the bot
-    /// recommendation that you can use in your bot.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendedIntents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6444,10 +5771,10 @@ pub mod fluent_builders {
                 crate::input::ListRecommendedIntentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6455,21 +5782,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot associated with the recommended
-        /// intents.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecommendedIntentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRecommendedIntentsPaginator<C, M, R> {
+            crate::paginator::ListRecommendedIntentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique identifier of the bot associated with the recommended intents.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the recommended
-        /// intents.</p>
+        /// <p>The unique identifier of the bot associated with the recommended intents.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
         /// <p>The version of the bot that contains the recommended intents.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot that contains the recommended intents.</p>
@@ -6477,26 +5808,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the recommended
-        /// intents.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the recommended intents.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the recommended
-        /// intents.</p>
+        /// <p>The identifier of the language and locale of the recommended intents.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The identifier of the bot recommendation that contains the
-        /// recommended intents.</p>
-        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_recommendation_id(inp);
+        /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(input.into());
             self
         }
-        /// <p>The identifier of the bot recommendation that contains the
-        /// recommended intents.</p>
+        /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6504,32 +5831,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_recommendation_id(input);
             self
         }
-        /// <p>If the response from the ListRecommendedIntents operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the ListRecommendedIntents operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6538,7 +5855,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSlots`.
     ///
     /// <p>Gets a list of slots that match the specified criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSlots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6583,10 +5900,10 @@ pub mod fluent_builders {
                 crate::input::ListSlotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6594,9 +5911,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSlotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSlotsPaginator<C, M, R> {
+            crate::paginator::ListSlotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the bot that contains the slot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the slot.</p>
@@ -6605,8 +5928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot that contains the slot.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot that contains the slot.</p>
@@ -6614,23 +5937,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the slots to list. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slots to list. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The unique identifier of the intent that contains the slot.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The unique identifier of the intent that contains the slot.</p>
@@ -6638,18 +5957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intent_id(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlots</code> operation. You can choose to sort by the slot
-        /// name or last updated date in either ascending or descending
-        /// order.</p>
-        pub fn sort_by(mut self, inp: crate::model::SlotSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::SlotSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlots</code> operation. You can choose to sort by the slot
-        /// name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SlotSortBy>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
@@ -6658,16 +5971,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the slots in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SlotFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::SlotFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the slots in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotFilter>>,
@@ -6675,34 +5984,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of slots to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of slots to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListSlots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListSlots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6711,7 +6008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSlotTypes`.
     ///
     /// <p>Gets a list of slot types that match the specified criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6756,10 +6053,10 @@ pub mod fluent_builders {
                 crate::input::ListSlotTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6767,21 +6064,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot that contains the slot
-        /// types.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSlotTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSlotTypesPaginator<C, M, R> {
+            crate::paginator::ListSlotTypesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique identifier of the bot that contains the slot types.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the slot
-        /// types.</p>
+        /// <p>The unique identifier of the bot that contains the slot types.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
         /// <p>The version of the bot that contains the slot type.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot that contains the slot type.</p>
@@ -6789,32 +6090,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-        /// slot type name or last updated date in either ascending or descending
-        /// order.</p>
-        pub fn sort_by(mut self, inp: crate::model::SlotTypeSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
+        pub fn sort_by(mut self, input: crate::model::SlotTypeSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-        /// slot type name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SlotTypeSortBy>,
@@ -6826,16 +6117,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the slot types
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SlotTypeFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::SlotTypeFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the slot types
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeFilter>>,
@@ -6843,34 +6130,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of slot types to return in each page of results.
-        /// If there are fewer results than the max page size, only the actual
-        /// number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of slot types to return in each page of results.
-        /// If there are fewer results than the max page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the <code>ListSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response from the <code>ListSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6878,9 +6153,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets a list of tags associated with a resource. Only bots, bot
-    /// aliases, and bot channels can have tags associated with them.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6925,10 +6199,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6936,14 +6210,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6951,9 +6223,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchAssociatedTranscripts`.
     ///
-    /// <p>Search for associated transcripts that meet the specified
-    /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Search for associated transcripts that meet the specified criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAssociatedTranscripts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6998,10 +6269,10 @@ pub mod fluent_builders {
                 crate::input::SearchAssociatedTranscriptsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7009,54 +6280,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot associated with the transcripts
-        /// that you are searching.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the transcripts
-        /// that you are searching.</p>
+        /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot containing the transcripts that you are
-        /// searching.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot containing the transcripts that you are searching.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot containing the transcripts that you are
-        /// searching.</p>
+        /// <p>The version of the bot containing the transcripts that you are searching.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the transcripts to
-        /// search. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the transcripts to
-        /// search. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The unique identifier of the bot recommendation associated with the
-        /// transcripts to search.</p>
-        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_recommendation_id(inp);
+        /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot recommendation associated with the
-        /// transcripts to search.</p>
+        /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7064,14 +6323,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_recommendation_id(input);
             self
         }
-        /// <p>How SearchResults are ordered. Valid values are Ascending or
-        /// Descending. The default is Descending.</p>
-        pub fn search_order(mut self, inp: crate::model::SearchOrder) -> Self {
-            self.inner = self.inner.search_order(inp);
+        /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
+        pub fn search_order(mut self, input: crate::model::SearchOrder) -> Self {
+            self.inner = self.inner.search_order(input);
             self
         }
-        /// <p>How SearchResults are ordered. Valid values are Ascending or
-        /// Descending. The default is Descending.</p>
+        /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
         pub fn set_search_order(
             mut self,
             input: std::option::Option<crate::model::SearchOrder>,
@@ -7084,8 +6341,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of filter objects.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::AssociatedTranscriptFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::AssociatedTranscriptFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of filter objects.</p>
@@ -7096,32 +6353,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the response from the SearchAssociatedTranscriptsRequest
-        /// operation contains more results than specified in the maxResults
-        /// parameter, an index is returned in the response. Use that index in the
-        /// nextIndex parameter to return the next page of results.</p>
-        pub fn next_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.next_index(inp);
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
+        pub fn next_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.next_index(input);
             self
         }
-        /// <p>If the response from the SearchAssociatedTranscriptsRequest
-        /// operation contains more results than specified in the maxResults
-        /// parameter, an index is returned in the response. Use that index in the
-        /// nextIndex parameter to return the next page of results.</p>
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
         pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_next_index(input);
             self
@@ -7129,9 +6376,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartBotRecommendation`.
     ///
-    /// <p>Use this to provide your transcript data, and to start the bot
-    /// recommendation process.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Use this to provide your transcript data, and to start the bot recommendation process.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBotRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7176,10 +6422,10 @@ pub mod fluent_builders {
                 crate::input::StartBotRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7187,21 +6433,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot containing the bot
-        /// recommendation.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot containing the bot recommendation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot containing the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
         /// <p>The version of the bot containing the bot recommendation.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot containing the bot recommendation.</p>
@@ -7209,33 +6453,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to start. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to start. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The object representing the Amazon S3 bucket containing the transcript,
-        /// as well as the associated metadata.</p>
+        /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
         pub fn transcript_source_setting(
             mut self,
-            inp: crate::model::TranscriptSourceSetting,
+            input: crate::model::TranscriptSourceSetting,
         ) -> Self {
-            self.inner = self.inner.transcript_source_setting(inp);
+            self.inner = self.inner.transcript_source_setting(input);
             self
         }
-        /// <p>The object representing the Amazon S3 bucket containing the transcript,
-        /// as well as the associated metadata.</p>
+        /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
         pub fn set_transcript_source_setting(
             mut self,
             input: std::option::Option<crate::model::TranscriptSourceSetting>,
@@ -7243,16 +6479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transcript_source_setting(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
-        pub fn encryption_setting(mut self, inp: crate::model::EncryptionSetting) -> Self {
-            self.inner = self.inner.encryption_setting(inp);
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.inner = self.inner.encryption_setting(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn set_encryption_setting(
             mut self,
             input: std::option::Option<crate::model::EncryptionSetting>,
@@ -7263,9 +6495,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImport`.
     ///
-    /// <p>Starts importing a bot or bot locale from a zip archive that you
-    /// uploaded to an S3 bucket.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7310,10 +6541,10 @@ pub mod fluent_builders {
                 crate::input::StartImportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7321,14 +6552,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the import. It is included in the response
-        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-        pub fn import_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_id(inp);
+        /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_id(input.into());
             self
         }
-        /// <p>The unique identifier for the import. It is included in the response
-        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+        /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_import_id(input);
             self
@@ -7336,9 +6565,9 @@ pub mod fluent_builders {
         /// <p>Parameters for creating the bot or bot locale.</p>
         pub fn resource_specification(
             mut self,
-            inp: crate::model::ImportResourceSpecification,
+            input: crate::model::ImportResourceSpecification,
         ) -> Self {
-            self.inner = self.inner.resource_specification(inp);
+            self.inner = self.inner.resource_specification(input);
             self
         }
         /// <p>Parameters for creating the bot or bot locale.</p>
@@ -7349,18 +6578,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_specification(input);
             self
         }
-        /// <p>The strategy to use when there is a name conflict between the
-        /// imported resource and an existing resource. When the merge strategy is
-        /// <code>FailOnConflict</code> existing resources are not overwritten
-        /// and the import fails.</p>
-        pub fn merge_strategy(mut self, inp: crate::model::MergeStrategy) -> Self {
-            self.inner = self.inner.merge_strategy(inp);
+        /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+        pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
+            self.inner = self.inner.merge_strategy(input);
             self
         }
-        /// <p>The strategy to use when there is a name conflict between the
-        /// imported resource and an existing resource. When the merge strategy is
-        /// <code>FailOnConflict</code> existing resources are not overwritten
-        /// and the import fails.</p>
+        /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
         pub fn set_merge_strategy(
             mut self,
             input: std::option::Option<crate::model::MergeStrategy>,
@@ -7368,16 +6591,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_merge_strategy(input);
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot
-        /// or bot locale definition. You should always encrypt the zip archive to
-        /// protect it during transit between your site and Amazon Lex.</p>
-        pub fn file_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_password(inp);
+        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+        pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_password(input.into());
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot
-        /// or bot locale definition. You should always encrypt the zip archive to
-        /// protect it during transit between your site and Amazon Lex.</p>
+        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7388,10 +6607,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds the specified tags to the specified resource. If a tag key
-    /// already exists, the existing value is replaced with the new
-    /// value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7436,10 +6653,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7447,14 +6664,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7463,18 +6678,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7488,7 +6701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a bot, bot alias, or bot channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7533,10 +6746,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7544,14 +6757,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7560,14 +6771,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys to remove from the resource. If a tag key does
-        /// not exist on the resource, it is ignored.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of tag keys to remove from the resource. If a tag key does
-        /// not exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7579,7 +6788,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBot`.
     ///
     /// <p>Updates the configuration of an existing bot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7624,10 +6833,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7635,33 +6844,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The new name of the bot. The name must be unique in the account that
-        /// creates the bot.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
-        /// <p>The new name of the bot. The name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_name(input);
             self
         }
         /// <p>A description of the bot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the bot.</p>
@@ -7669,26 +6874,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-        /// to access the bot.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-        /// to access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
-        pub fn data_privacy(mut self, inp: crate::model::DataPrivacy) -> Self {
-            self.inner = self.inner.data_privacy(inp);
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
+        pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
+            self.inner = self.inner.data_privacy(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -7696,24 +6897,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_privacy(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot.</p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
-        pub fn idle_session_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_session_ttl_in_seconds(inp);
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+        pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_session_ttl_in_seconds(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot.</p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
             self
@@ -7722,7 +6915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBotAlias`.
     ///
     /// <p>Updates the configuration of an existing bot alias.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBotAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7767,10 +6960,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBotAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7779,8 +6972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot alias.</p>
-        pub fn bot_alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(inp);
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot alias.</p>
@@ -7789,8 +6982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name to assign to the bot alias.</p>
-        pub fn bot_alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_name(inp);
+        pub fn bot_alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_name(input.into());
             self
         }
         /// <p>The new name to assign to the bot alias.</p>
@@ -7802,8 +6995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description to assign to the bot alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description to assign to the bot alias.</p>
@@ -7812,8 +7005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new bot version to assign to the bot alias.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The new bot version to assign to the bot alias.</p>
@@ -7825,18 +7018,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
-        /// <p>The new Lambda functions to use in each locale for the bot
-        /// alias.</p>
+        /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
-            self.inner = self.inner.bot_alias_locale_settings(k, v);
+            self.inner = self.inner.bot_alias_locale_settings(k.into(), v);
             self
         }
-        /// <p>The new Lambda functions to use in each locale for the bot
-        /// alias.</p>
+        /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -7849,17 +7040,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias_locale_settings(input);
             self
         }
-        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-        /// Amazon S3 buckets.</p>
+        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
         pub fn conversation_log_settings(
             mut self,
-            inp: crate::model::ConversationLogSettings,
+            input: crate::model::ConversationLogSettings,
         ) -> Self {
-            self.inner = self.inner.conversation_log_settings(inp);
+            self.inner = self.inner.conversation_log_settings(input);
             self
         }
-        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-        /// Amazon S3 buckets.</p>
+        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -7867,17 +7056,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conversation_log_settings(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn sentiment_analysis_settings(
             mut self,
-            inp: crate::model::SentimentAnalysisSettings,
+            input: crate::model::SentimentAnalysisSettings,
         ) -> Self {
-            self.inner = self.inner.sentiment_analysis_settings(inp);
+            self.inner = self.inner.sentiment_analysis_settings(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -7886,8 +7073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot with the updated alias.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot with the updated alias.</p>
@@ -7899,7 +7086,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBotLocale`.
     ///
     /// <p>Updates the settings that a bot has for a specific locale.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBotLocale<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7944,10 +7131,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBotLocaleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7956,8 +7143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the bot that contains the locale.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -7965,33 +7152,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot that contains the locale to be updated. The
-        /// version can only be the <code>DRAFT</code> version.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that contains the locale to be updated. The
-        /// version can only be the <code>DRAFT</code> version.</p>
+        /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale to update. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale to update. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The new description of the locale.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the locale.</p>
@@ -7999,18 +7182,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The new confidence threshold where Amazon Lex inserts the
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-        /// possible intents for an utterance.</p>
-        pub fn nlu_intent_confidence_threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.nlu_intent_confidence_threshold(inp);
+        /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
+        pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>The new confidence threshold where Amazon Lex inserts the
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-        /// possible intents for an utterance.</p>
+        /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
             input: std::option::Option<f64>,
@@ -8018,14 +7195,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-        /// user.</p>
-        pub fn voice_settings(mut self, inp: crate::model::VoiceSettings) -> Self {
-            self.inner = self.inner.voice_settings(inp);
+        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
+        pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
+            self.inner = self.inner.voice_settings(input);
             self
         }
-        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-        /// user.</p>
+        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -8037,7 +7212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBotRecommendation`.
     ///
     /// <p>Updates an existing bot recommendation request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBotRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8082,10 +7257,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBotRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8093,54 +7268,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the bot containing the bot recommendation
-        /// to be updated.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot containing the bot recommendation
-        /// to be updated.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot containing the bot recommendation to be
-        /// updated.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot containing the bot recommendation to be updated.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot containing the bot recommendation to be
-        /// updated.</p>
+        /// <p>The version of the bot containing the bot recommendation to be updated.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to update. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to update. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
-        /// <p>The unique identifier of the bot recommendation to be
-        /// updated.</p>
-        pub fn bot_recommendation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_recommendation_id(inp);
+        /// <p>The unique identifier of the bot recommendation to be updated.</p>
+        pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_recommendation_id(input.into());
             self
         }
-        /// <p>The unique identifier of the bot recommendation to be
-        /// updated.</p>
+        /// <p>The unique identifier of the bot recommendation to be updated.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8148,16 +7311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_recommendation_id(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
-        pub fn encryption_setting(mut self, inp: crate::model::EncryptionSetting) -> Self {
-            self.inner = self.inner.encryption_setting(inp);
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
+        pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
+            self.inner = self.inner.encryption_setting(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn set_encryption_setting(
             mut self,
             input: std::option::Option<crate::model::EncryptionSetting>,
@@ -8169,11 +7328,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateExport`.
     ///
     /// <p>Updates the password used to protect an export zip archive.</p>
-    /// <p>The password is not required. If you don't supply a password, Amazon Lex
-    /// generates a zip file that is not protected by a password. This is the
-    /// archive that is available at the pre-signed S3 URL provided by the
-    /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8218,10 +7374,10 @@ pub mod fluent_builders {
                 crate::input::UpdateExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8230,8 +7386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier Amazon Lex assigned to the export.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input.into());
             self
         }
         /// <p>The unique identifier Amazon Lex assigned to the export.</p>
@@ -8240,8 +7396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password to use to encrypt the export zip archive.</p>
-        pub fn file_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_password(inp);
+        pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_password(input.into());
             self
         }
         /// <p>The new password to use to encrypt the export zip archive.</p>
@@ -8256,7 +7412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIntent`.
     ///
     /// <p>Updates the settings for an intent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIntent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8301,10 +7457,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIntentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8313,8 +7469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the intent to update.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The unique identifier of the intent to update.</p>
@@ -8323,8 +7479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the intent.</p>
-        pub fn intent_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_name(inp);
+        pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_name(input.into());
             self
         }
         /// <p>The new name for the intent.</p>
@@ -8333,8 +7489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the intent.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the intent.</p>
@@ -8342,14 +7498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The signature of the new built-in intent to use as the parent of
-        /// this intent.</p>
-        pub fn parent_intent_signature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_intent_signature(inp);
+        /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
+        pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_intent_signature(input.into());
             self
         }
-        /// <p>The signature of the new built-in intent to use as the parent of
-        /// this intent.</p>
+        /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8362,8 +7516,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>New utterances used to invoke the intent.</p>
-        pub fn sample_utterances(mut self, inp: impl Into<crate::model::SampleUtterance>) -> Self {
-            self.inner = self.inner.sample_utterances(inp);
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
+            self.inner = self.inner.sample_utterances(input);
             self
         }
         /// <p>New utterances used to invoke the intent.</p>
@@ -8374,14 +7528,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sample_utterances(input);
             self
         }
-        /// <p>The new Lambda function to use between each turn of the conversation
-        /// with the bot.</p>
-        pub fn dialog_code_hook(mut self, inp: crate::model::DialogCodeHookSettings) -> Self {
-            self.inner = self.inner.dialog_code_hook(inp);
+        /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
+        pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
+            self.inner = self.inner.dialog_code_hook(input);
             self
         }
-        /// <p>The new Lambda function to use between each turn of the conversation
-        /// with the bot.</p>
+        /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -8389,17 +7541,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dialog_code_hook(input);
             self
         }
-        /// <p>The new Lambda function to call when all of the intents required
-        /// slots are provided and the intent is ready for fulfillment.</p>
+        /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
         pub fn fulfillment_code_hook(
             mut self,
-            inp: crate::model::FulfillmentCodeHookSettings,
+            input: crate::model::FulfillmentCodeHookSettings,
         ) -> Self {
-            self.inner = self.inner.fulfillment_code_hook(inp);
+            self.inner = self.inner.fulfillment_code_hook(input);
             self
         }
-        /// <p>The new Lambda function to call when all of the intents required
-        /// slots are provided and the intent is ready for fulfillment.</p>
+        /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -8411,14 +7561,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_slot_priorities`](Self::set_slot_priorities).
         ///
-        /// <p>A new list of slots and their priorities that are contained by the
-        /// intent.</p>
-        pub fn slot_priorities(mut self, inp: impl Into<crate::model::SlotPriority>) -> Self {
-            self.inner = self.inner.slot_priorities(inp);
+        /// <p>A new list of slots and their priorities that are contained by the intent.</p>
+        pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
+            self.inner = self.inner.slot_priorities(input);
             self
         }
-        /// <p>A new list of slots and their priorities that are contained by the
-        /// intent.</p>
+        /// <p>A new list of slots and their priorities that are contained by the intent.</p>
         pub fn set_slot_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
@@ -8426,17 +7574,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_slot_priorities(input);
             self
         }
-        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-        /// of an intent.</p>
+        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
         pub fn intent_confirmation_setting(
             mut self,
-            inp: crate::model::IntentConfirmationSetting,
+            input: crate::model::IntentConfirmationSetting,
         ) -> Self {
-            self.inner = self.inner.intent_confirmation_setting(inp);
+            self.inner = self.inner.intent_confirmation_setting(input);
             self
         }
-        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-        /// of an intent.</p>
+        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -8444,14 +7590,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intent_confirmation_setting(input);
             self
         }
-        /// <p>The new response that Amazon Lex sends the user when the intent is
-        /// closed.</p>
-        pub fn intent_closing_setting(mut self, inp: crate::model::IntentClosingSetting) -> Self {
-            self.inner = self.inner.intent_closing_setting(inp);
+        /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
+        pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
+            self.inner = self.inner.intent_closing_setting(input);
             self
         }
-        /// <p>The new response that Amazon Lex sends the user when the intent is
-        /// closed.</p>
+        /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -8463,14 +7607,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
-        /// <p>A new list of contexts that must be active in order for Amazon Lex to
-        /// consider the intent.</p>
-        pub fn input_contexts(mut self, inp: impl Into<crate::model::InputContext>) -> Self {
-            self.inner = self.inner.input_contexts(inp);
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
+            self.inner = self.inner.input_contexts(input);
             self
         }
-        /// <p>A new list of contexts that must be active in order for Amazon Lex to
-        /// consider the intent.</p>
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -8482,14 +7624,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
-        /// <p>A new list of contexts that Amazon Lex activates when the intent is
-        /// fulfilled.</p>
-        pub fn output_contexts(mut self, inp: impl Into<crate::model::OutputContext>) -> Self {
-            self.inner = self.inner.output_contexts(inp);
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
+            self.inner = self.inner.output_contexts(input);
             self
         }
-        /// <p>A new list of contexts that Amazon Lex activates when the intent is
-        /// fulfilled.</p>
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -8498,8 +7638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
-        pub fn kendra_configuration(mut self, inp: crate::model::KendraConfiguration) -> Self {
-            self.inner = self.inner.kendra_configuration(inp);
+        pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
+            self.inner = self.inner.kendra_configuration(input);
             self
         }
         /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
@@ -8511,8 +7651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot that contains the intent.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the intent.</p>
@@ -8520,28 +7660,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot that contains the intent. Must be
-        /// <code>DRAFT</code>.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that contains the intent. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
@@ -8549,10 +7683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResourcePolicy`.
     ///
-    /// <p>Replaces the existing resource policy for a bot or bot alias with a
-    /// new one. If the policy doesn't exist, Amazon Lex returns an
-    /// exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8597,10 +7729,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8608,54 +7740,36 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p>The identifier of the revision of the policy to update. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
-        pub fn expected_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expected_revision_id(inp);
+        /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+        pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expected_revision_id(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to update. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8667,7 +7781,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSlot`.
     ///
     /// <p>Updates the settings for a slot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSlot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8712,10 +7826,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSlotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8724,8 +7838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the slot to update.</p>
-        pub fn slot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_id(inp);
+        pub fn slot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_id(input.into());
             self
         }
         /// <p>The unique identifier for the slot to update.</p>
@@ -8734,8 +7848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the slot.</p>
-        pub fn slot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_name(inp);
+        pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_name(input.into());
             self
         }
         /// <p>The new name for the slot.</p>
@@ -8744,8 +7858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the slot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the slot.</p>
@@ -8753,29 +7867,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The unique identifier of the new slot type to associate with this
-        /// slot. </p>
-        pub fn slot_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_id(inp);
+        /// <p>The unique identifier of the new slot type to associate with this slot. </p>
+        pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_id(input.into());
             self
         }
-        /// <p>The unique identifier of the new slot type to associate with this
-        /// slot. </p>
+        /// <p>The unique identifier of the new slot type to associate with this slot. </p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_slot_type_id(input);
             self
         }
-        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-        /// response the provides a value for the slot.</p>
+        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
         pub fn value_elicitation_setting(
             mut self,
-            inp: crate::model::SlotValueElicitationSetting,
+            input: crate::model::SlotValueElicitationSetting,
         ) -> Self {
-            self.inner = self.inner.value_elicitation_setting(inp);
+            self.inner = self.inner.value_elicitation_setting(input);
             self
         }
-        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-        /// response the provides a value for the slot.</p>
+        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -8783,14 +7893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_value_elicitation_setting(input);
             self
         }
-        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-        /// logs. </p>
-        pub fn obfuscation_setting(mut self, inp: crate::model::ObfuscationSetting) -> Self {
-            self.inner = self.inner.obfuscation_setting(inp);
+        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
+        pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
+            self.inner = self.inner.obfuscation_setting(input);
             self
         }
-        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-        /// logs. </p>
+        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
         pub fn set_obfuscation_setting(
             mut self,
             input: std::option::Option<crate::model::ObfuscationSetting>,
@@ -8799,8 +7907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the bot that contains the slot.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The unique identifier of the bot that contains the slot.</p>
@@ -8808,35 +7916,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot that contains the slot. Must always be
-        /// <code>DRAFT</code>.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that contains the slot. Must always be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
-        pub fn intent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.intent_id(inp);
+        pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.intent_id(input.into());
             self
         }
         /// <p>The identifier of the intent that contains the slot.</p>
@@ -8844,22 +7946,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intent_id(input);
             self
         }
-        /// <p>Determines whether the slot accepts multiple values in one response.
-        /// Multiple value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>.</p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
-        pub fn multiple_values_setting(mut self, inp: crate::model::MultipleValuesSetting) -> Self {
-            self.inner = self.inner.multiple_values_setting(inp);
+        /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+        pub fn multiple_values_setting(
+            mut self,
+            input: crate::model::MultipleValuesSetting,
+        ) -> Self {
+            self.inner = self.inner.multiple_values_setting(input);
             self
         }
-        /// <p>Determines whether the slot accepts multiple values in one response.
-        /// Multiple value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>.</p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -8871,7 +7968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSlotType`.
     ///
     /// <p>Updates the configuration of an existing slot type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSlotType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8916,10 +8013,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSlotTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8928,8 +8025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the slot type to update.</p>
-        pub fn slot_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_id(inp);
+        pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_id(input.into());
             self
         }
         /// <p>The unique identifier of the slot type to update.</p>
@@ -8938,8 +8035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the slot type.</p>
-        pub fn slot_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.slot_type_name(inp);
+        pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.slot_type_name(input.into());
             self
         }
         /// <p>The new name of the slot type.</p>
@@ -8951,8 +8048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the slot type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the slot type.</p>
@@ -8964,14 +8061,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
-        /// <p>A new list of values and their optional synonyms that define the
-        /// values that the slot type can take.</p>
-        pub fn slot_type_values(mut self, inp: impl Into<crate::model::SlotTypeValue>) -> Self {
-            self.inner = self.inner.slot_type_values(inp);
+        /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
+            self.inner = self.inner.slot_type_values(input);
             self
         }
-        /// <p>A new list of values and their optional synonyms that define the
-        /// values that the slot type can take.</p>
+        /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -8979,17 +8074,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_slot_type_values(input);
             self
         }
-        /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-        /// list of slot type values.</p>
+        /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
         pub fn value_selection_setting(
             mut self,
-            inp: crate::model::SlotValueSelectionSetting,
+            input: crate::model::SlotValueSelectionSetting,
         ) -> Self {
-            self.inner = self.inner.value_selection_setting(inp);
+            self.inner = self.inner.value_selection_setting(input);
             self
         }
-        /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-        /// list of slot type values.</p>
+        /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -8997,14 +8090,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_value_selection_setting(input);
             self
         }
-        /// <p>The new built-in slot type that should be used as the parent of this
-        /// slot type.</p>
-        pub fn parent_slot_type_signature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_slot_type_signature(inp);
+        /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
+        pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_slot_type_signature(input.into());
             self
         }
-        /// <p>The new built-in slot type that should be used as the parent of this
-        /// slot type.</p>
+        /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9013,8 +8104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the bot that contains the slot type.</p>
-        pub fn bot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(inp);
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the slot type.</p>
@@ -9022,34 +8113,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_id(input);
             self
         }
-        /// <p>The version of the bot that contains the slot type. Must be
-        /// <code>DRAFT</code>.</p>
-        pub fn bot_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(inp);
+        /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
-        /// <p>The version of the bot that contains the slot type. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_version(input);
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot
-        /// type. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-        pub fn locale_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(inp);
+        /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot
-        /// type. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale_id(input);
             self
         }
+        /// <p>Provides information about the external source of the slot type's definition.</p>
+        pub fn external_source_setting(
+            mut self,
+            input: crate::model::ExternalSourceSetting,
+        ) -> Self {
+            self.inner = self.inner.external_source_setting(input);
+            self
+        }
+        /// <p>Provides information about the external source of the slot type's definition.</p>
+        pub fn set_external_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::ExternalSourceSetting>,
+        ) -> Self {
+            self.inner = self.inner.set_external_source_setting(input);
+            self
+        }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

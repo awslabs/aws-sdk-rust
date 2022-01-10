@@ -61,8 +61,6 @@ impl AcknowledgeJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -175,8 +173,6 @@ impl AcknowledgeThirdPartyJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -255,8 +251,7 @@ pub enum CreateCustomActionTypeErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The specified resource tags are invalid.</p>
     InvalidTagsException(crate::error::InvalidTagsException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit
-    /// allowed for the account.</p>
+    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The tags limit for a resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
@@ -309,8 +304,6 @@ impl CreateCustomActionTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -407,8 +400,7 @@ pub enum CreatePipelineErrorKind {
     InvalidStructureException(crate::error::InvalidStructureException),
     /// <p>The specified resource tags are invalid.</p>
     InvalidTagsException(crate::error::InvalidTagsException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit
-    /// allowed for the account.</p>
+    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified pipeline name is already in use.</p>
     PipelineNameInUseException(crate::error::PipelineNameInUseException),
@@ -466,8 +458,6 @@ impl CreatePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -629,8 +619,6 @@ impl DeleteCustomActionTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -737,8 +725,6 @@ impl DeletePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -840,8 +826,6 @@ impl DeleteWebhookError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -899,8 +883,7 @@ pub struct DeregisterWebhookWithThirdPartyError {
 pub enum DeregisterWebhookWithThirdPartyErrorKind {
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// <p>The specified webhook was entered in an invalid format or cannot be
-    /// found.</p>
+    /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -949,8 +932,6 @@ impl DeregisterWebhookWithThirdPartyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1060,8 +1041,6 @@ impl DisableStageTransitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1177,8 +1156,6 @@ impl EnableStageTransitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1291,8 +1268,6 @@ impl GetActionTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1394,8 +1369,6 @@ impl GetJobDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1450,8 +1423,7 @@ pub struct GetPipelineError {
 pub enum GetPipelineErrorKind {
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// <p>The pipeline version was specified in an invalid format or cannot be
-    /// found.</p>
+    /// <p>The pipeline version was specified in an invalid format or cannot be found.</p>
     PipelineVersionNotFoundException(crate::error::PipelineVersionNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -1498,8 +1470,6 @@ impl GetPipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1563,8 +1533,7 @@ pub struct GetPipelineExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPipelineExecutionErrorKind {
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an
-    /// execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
     PipelineExecutionNotFoundException(crate::error::PipelineExecutionNotFoundException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -1615,8 +1584,6 @@ impl GetPipelineExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1731,8 +1698,6 @@ impl GetPipelineStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1843,8 +1808,6 @@ impl GetThirdPartyJobDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1919,11 +1882,9 @@ pub struct ListActionExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListActionExecutionsErrorKind {
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an
-    /// execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
     PipelineExecutionNotFoundException(crate::error::PipelineExecutionNotFoundException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -1975,8 +1936,6 @@ impl ListActionExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2053,8 +2012,7 @@ pub struct ListActionTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListActionTypesErrorKind {
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -2100,8 +2058,6 @@ impl ListActionTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2157,8 +2113,7 @@ pub struct ListPipelineExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPipelineExecutionsErrorKind {
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -2207,8 +2162,6 @@ impl ListPipelineExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2275,8 +2228,7 @@ pub struct ListPipelinesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPipelinesErrorKind {
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -2322,8 +2274,6 @@ impl ListPipelinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2381,8 +2331,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The specified resource ARN is invalid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The resource was specified in an invalid format.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2432,8 +2381,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2508,8 +2455,7 @@ pub struct ListWebhooksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListWebhooksErrorKind {
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -2555,8 +2501,6 @@ impl ListWebhooksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2658,8 +2602,6 @@ impl PollForJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2761,8 +2703,6 @@ impl PollForThirdPartyJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2873,8 +2813,6 @@ impl PutActionRevisionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3007,8 +2945,6 @@ impl PutApprovalResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3148,8 +3084,6 @@ impl PutJobFailureResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3270,8 +3204,6 @@ impl PutJobSuccessResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3407,8 +3339,6 @@ impl PutThirdPartyJobFailureResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3546,8 +3476,6 @@ impl PutThirdPartyJobSuccessResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3636,8 +3564,7 @@ pub enum PutWebhookErrorKind {
     ),
     /// <p>The specified event filter rule is in an invalid format.</p>
     InvalidWebhookFilterPatternException(crate::error::InvalidWebhookFilterPatternException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit
-    /// allowed for the account.</p>
+    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -3695,8 +3622,6 @@ impl PutWebhookError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3795,8 +3720,7 @@ pub struct RegisterWebhookWithThirdPartyError {
 pub enum RegisterWebhookWithThirdPartyErrorKind {
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// <p>The specified webhook was entered in an invalid format or cannot be
-    /// found.</p>
+    /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3845,8 +3769,6 @@ impl RegisterWebhookWithThirdPartyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3907,19 +3829,15 @@ pub struct RetryStageExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetryStageExecutionErrorKind {
-    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing
-    /// activities. Try again later.</p>
+    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId
-    /// associated with the request is out of date.</p>
+    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
     NotLatestPipelineExecutionException(crate::error::NotLatestPipelineExecutionException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The stage was specified in an invalid format or cannot be found.</p>
     StageNotFoundException(crate::error::StageNotFoundException),
-    /// <p>Unable to retry. The pipeline structure or stage state might have changed while
-    /// actions awaited retry, or the stage contains no failed
-    /// actions.</p>
+    /// <p>Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or the stage contains no failed actions.</p>
     StageNotRetryableException(crate::error::StageNotRetryableException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -3971,8 +3889,6 @@ impl RetryStageExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4065,8 +3981,7 @@ pub struct StartPipelineExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartPipelineExecutionErrorKind {
-    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing
-    /// activities. Try again later.</p>
+    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -4115,8 +4030,6 @@ impl StartPipelineExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4183,17 +4096,11 @@ pub struct StopPipelineExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopPipelineExecutionErrorKind {
-    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing
-    /// activities. Try again later.</p>
+    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already
-    /// chose to stop and wait, you cannot make that request again. You can choose to stop and
-    /// abandon now, but be aware that this option can lead to failed tasks or out of sequence
-    /// tasks. If you already chose to stop and abandon, you cannot make that request
-    /// again.</p>
+    /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
     DuplicatedStopRequestException(crate::error::DuplicatedStopRequestException),
-    /// <p>Unable to stop the pipeline execution. The execution might already be in a
-    /// <code>Stopped</code> state, or it might no longer be in progress.</p>
+    /// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
     PipelineExecutionNotStoppableException(crate::error::PipelineExecutionNotStoppableException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
@@ -4246,8 +4153,6 @@ impl StopPipelineExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4390,8 +4295,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4525,8 +4428,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4649,8 +4550,6 @@ impl UpdateActionTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4725,8 +4624,7 @@ pub enum UpdatePipelineErrorKind {
     InvalidStageDeclarationException(crate::error::InvalidStageDeclarationException),
     /// <p>The structure was specified in an invalid format.</p>
     InvalidStructureException(crate::error::InvalidStructureException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit
-    /// allowed for the account.</p>
+    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
@@ -4776,8 +4674,6 @@ impl UpdatePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4916,8 +4812,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The number of pipelines associated with the AWS account has exceeded the limit
-/// allowed for the account.</p>
+/// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -5749,8 +5644,7 @@ impl PipelineNotFoundException {
     }
 }
 
-/// <p>Unable to stop the pipeline execution. The execution might already be in a
-/// <code>Stopped</code> state, or it might no longer be in progress.</p>
+/// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecutionNotStoppableException {
@@ -5814,11 +5708,7 @@ impl PipelineExecutionNotStoppableException {
     }
 }
 
-/// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already
-/// chose to stop and wait, you cannot make that request again. You can choose to stop and
-/// abandon now, but be aware that this option can lead to failed tasks or out of sequence
-/// tasks. If you already chose to stop and abandon, you cannot make that request
-/// again.</p>
+/// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicatedStopRequestException {
@@ -5882,8 +5772,7 @@ impl DuplicatedStopRequestException {
     }
 }
 
-/// <p>Your request cannot be handled because the pipeline is busy handling ongoing
-/// activities. Try again later.</p>
+/// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -5947,9 +5836,7 @@ impl ConflictException {
     }
 }
 
-/// <p>Unable to retry. The pipeline structure or stage state might have changed while
-/// actions awaited retry, or the stage contains no failed
-/// actions.</p>
+/// <p>Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or the stage contains no failed actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageNotRetryableException {
@@ -6077,8 +5964,7 @@ impl StageNotFoundException {
     }
 }
 
-/// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId
-/// associated with the request is out of date.</p>
+/// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotLatestPipelineExecutionException {
@@ -6142,8 +6028,7 @@ impl NotLatestPipelineExecutionException {
     }
 }
 
-/// <p>The specified webhook was entered in an invalid format or cannot be
-/// found.</p>
+/// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebhookNotFoundException {
@@ -6783,8 +6668,7 @@ impl ActionNotFoundException {
     }
 }
 
-/// <p>The next token was specified in an invalid format. Make sure that the next token
-/// you provide is the token returned by a previous call.</p>
+/// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -6848,8 +6732,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The pipeline execution was specified in an invalid format or cannot be found, or an
-/// execution ID does not belong to the specified pipeline. </p>
+/// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineExecutionNotFoundException {
@@ -6977,8 +6860,7 @@ impl InvalidJobException {
     }
 }
 
-/// <p>The pipeline version was specified in an invalid format or cannot be
-/// found.</p>
+/// <p>The pipeline version was specified in an invalid format or cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PipelineVersionNotFoundException {

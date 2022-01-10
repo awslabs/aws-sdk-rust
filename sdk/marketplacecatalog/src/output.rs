@@ -121,12 +121,9 @@ pub mod list_entities_output {
         /// To override the contents of this collection use [`set_entity_summary_list`](Self::set_entity_summary_list).
         ///
         /// <p> Array of <code>EntitySummary</code> object.</p>
-        pub fn entity_summary_list(
-            mut self,
-            input: impl Into<crate::model::EntitySummary>,
-        ) -> Self {
+        pub fn entity_summary_list(mut self, input: crate::model::EntitySummary) -> Self {
             let mut v = self.entity_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_summary_list = Some(v);
             self
         }
@@ -212,10 +209,10 @@ pub mod list_change_sets_output {
         /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
         pub fn change_set_summary_list(
             mut self,
-            input: impl Into<crate::model::ChangeSetSummaryListItem>,
+            input: crate::model::ChangeSetSummaryListItem,
         ) -> Self {
             let mut v = self.change_set_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_set_summary_list = Some(v);
             self
         }
@@ -259,14 +256,11 @@ impl ListChangeSetsOutput {
 pub struct DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     pub entity_type: std::option::Option<std::string::String>,
-    /// <p>The identifier of the entity, in the format of
-    /// <code>EntityId@RevisionId</code>.</p>
+    /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub entity_identifier: std::option::Option<std::string::String>,
-    /// <p>The ARN associated to the unique identifier for the change set referenced in this
-    /// request.</p>
+    /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
     pub entity_arn: std::option::Option<std::string::String>,
-    /// <p>The last modified date of the entity, in ISO 8601 format
-    /// (2018-02-27T13:45:22Z).</p>
+    /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub details: std::option::Option<std::string::String>,
@@ -276,18 +270,15 @@ impl DescribeEntityOutput {
     pub fn entity_type(&self) -> std::option::Option<&str> {
         self.entity_type.as_deref()
     }
-    /// <p>The identifier of the entity, in the format of
-    /// <code>EntityId@RevisionId</code>.</p>
+    /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub fn entity_identifier(&self) -> std::option::Option<&str> {
         self.entity_identifier.as_deref()
     }
-    /// <p>The ARN associated to the unique identifier for the change set referenced in this
-    /// request.</p>
+    /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
     pub fn entity_arn(&self) -> std::option::Option<&str> {
         self.entity_arn.as_deref()
     }
-    /// <p>The last modified date of the entity, in ISO 8601 format
-    /// (2018-02-27T13:45:22Z).</p>
+    /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn last_modified_date(&self) -> std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
@@ -330,14 +321,12 @@ pub mod describe_entity_output {
             self.entity_type = input;
             self
         }
-        /// <p>The identifier of the entity, in the format of
-        /// <code>EntityId@RevisionId</code>.</p>
+        /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
         pub fn entity_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the entity, in the format of
-        /// <code>EntityId@RevisionId</code>.</p>
+        /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
         pub fn set_entity_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -345,26 +334,22 @@ pub mod describe_entity_output {
             self.entity_identifier = input;
             self
         }
-        /// <p>The ARN associated to the unique identifier for the change set referenced in this
-        /// request.</p>
+        /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
         pub fn entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_arn = Some(input.into());
             self
         }
-        /// <p>The ARN associated to the unique identifier for the change set referenced in this
-        /// request.</p>
+        /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_arn = input;
             self
         }
-        /// <p>The last modified date of the entity, in ISO 8601 format
-        /// (2018-02-27T13:45:22Z).</p>
+        /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
         pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_date = Some(input.into());
             self
         }
-        /// <p>The last modified date of the entity, in ISO 8601 format
-        /// (2018-02-27T13:45:22Z).</p>
+        /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -407,28 +392,19 @@ impl DescribeEntityOutput {
 pub struct DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
     pub change_set_id: std::option::Option<std::string::String>,
-    /// <p>The ARN associated with the unique identifier for the change set referenced in this
-    /// request.</p>
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub change_set_arn: std::option::Option<std::string::String>,
-    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not
-    /// provide a name, one is set by default.</p>
+    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
-    /// </p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub start_time: std::option::Option<std::string::String>,
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned
-    /// to a terminal state. The change cannot transition to a different state. Null if the
-    /// request is not in a terminal state. </p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub end_time: std::option::Option<std::string::String>,
     /// <p>The status of the change request.</p>
     pub status: std::option::Option<crate::model::ChangeStatus>,
-    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
-    /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
-    /// <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a
-    /// problem in the system, and you should retry your request.</p>
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub failure_code: std::option::Option<crate::model::FailureCode>,
-    /// <p>Returned if there is a failure on the change set, but that failure is not related to
-    /// any of the changes in the request.</p>
+    /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
     pub failure_description: std::option::Option<std::string::String>,
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
     pub change_set: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
@@ -438,24 +414,19 @@ impl DescribeChangeSetOutput {
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
-    /// <p>The ARN associated with the unique identifier for the change set referenced in this
-    /// request.</p>
+    /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub fn change_set_arn(&self) -> std::option::Option<&str> {
         self.change_set_arn.as_deref()
     }
-    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not
-    /// provide a name, one is set by default.</p>
+    /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
-    /// </p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
-    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned
-    /// to a terminal state. The change cannot transition to a different state. Null if the
-    /// request is not in a terminal state. </p>
+    /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }
@@ -463,15 +434,11 @@ impl DescribeChangeSetOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
         self.status.as_ref()
     }
-    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
-    /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
-    /// <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a
-    /// problem in the system, and you should retry your request.</p>
+    /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
         self.failure_code.as_ref()
     }
-    /// <p>Returned if there is a failure on the change set, but that failure is not related to
-    /// any of the changes in the request.</p>
+    /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
     pub fn failure_description(&self) -> std::option::Option<&str> {
         self.failure_description.as_deref()
     }
@@ -525,14 +492,12 @@ pub mod describe_change_set_output {
             self.change_set_id = input;
             self
         }
-        /// <p>The ARN associated with the unique identifier for the change set referenced in this
-        /// request.</p>
+        /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
         pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_arn = Some(input.into());
             self
         }
-        /// <p>The ARN associated with the unique identifier for the change set referenced in this
-        /// request.</p>
+        /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
         pub fn set_change_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -540,14 +505,12 @@ pub mod describe_change_set_output {
             self.change_set_arn = input;
             self
         }
-        /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not
-        /// provide a name, one is set by default.</p>
+        /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_name = Some(input.into());
             self
         }
-        /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not
-        /// provide a name, one is set by default.</p>
+        /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -555,28 +518,22 @@ pub mod describe_change_set_output {
             self.change_set_name = input;
             self
         }
-        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
-        /// </p>
+        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_time = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
-        /// </p>
+        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned
-        /// to a terminal state. The change cannot transition to a different state. Null if the
-        /// request is not in a terminal state. </p>
+        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_time = Some(input.into());
             self
         }
-        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned
-        /// to a terminal state. The change cannot transition to a different state. Null if the
-        /// request is not in a terminal state. </p>
+        /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -594,18 +551,12 @@ pub mod describe_change_set_output {
             self.status = input;
             self
         }
-        /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
-        /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
-        /// <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a
-        /// problem in the system, and you should retry your request.</p>
+        /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
         pub fn failure_code(mut self, input: crate::model::FailureCode) -> Self {
             self.failure_code = Some(input);
             self
         }
-        /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
-        /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
-        /// <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a
-        /// problem in the system, and you should retry your request.</p>
+        /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
         pub fn set_failure_code(
             mut self,
             input: std::option::Option<crate::model::FailureCode>,
@@ -613,14 +564,12 @@ pub mod describe_change_set_output {
             self.failure_code = input;
             self
         }
-        /// <p>Returned if there is a failure on the change set, but that failure is not related to
-        /// any of the changes in the request.</p>
+        /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
         pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_description = Some(input.into());
             self
         }
-        /// <p>Returned if there is a failure on the change set, but that failure is not related to
-        /// any of the changes in the request.</p>
+        /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
         pub fn set_failure_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -633,9 +582,9 @@ pub mod describe_change_set_output {
         /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
         ///
         /// <p>An array of <code>ChangeSummary</code> objects.</p>
-        pub fn change_set(mut self, input: impl Into<crate::model::ChangeSummary>) -> Self {
+        pub fn change_set(mut self, input: crate::model::ChangeSummary) -> Self {
             let mut v = self.change_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_set = Some(v);
             self
         }

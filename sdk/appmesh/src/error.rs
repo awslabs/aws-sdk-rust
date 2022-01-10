@@ -14,24 +14,19 @@ pub struct CreateGatewayRouteError {
 pub enum CreateGatewayRouteErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -92,8 +87,6 @@ impl CreateGatewayRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -202,24 +195,19 @@ pub struct CreateMeshError {
 pub enum CreateMeshErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -280,8 +268,6 @@ impl CreateMeshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -372,24 +358,19 @@ pub struct CreateRouteError {
 pub enum CreateRouteErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -450,8 +431,6 @@ impl CreateRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -545,24 +524,19 @@ pub struct CreateVirtualGatewayError {
 pub enum CreateVirtualGatewayErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -623,8 +597,6 @@ impl CreateVirtualGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -733,24 +705,19 @@ pub struct CreateVirtualNodeError {
 pub enum CreateVirtualNodeErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -811,8 +778,6 @@ impl CreateVirtualNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -915,24 +880,19 @@ pub struct CreateVirtualRouterError {
 pub enum CreateVirtualRouterErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -993,8 +953,6 @@ impl CreateVirtualRouterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1103,24 +1061,19 @@ pub struct CreateVirtualServiceError {
 pub enum CreateVirtualServiceErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1181,8 +1134,6 @@ impl CreateVirtualServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1293,19 +1244,15 @@ pub enum DeleteGatewayRouteErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1365,8 +1312,6 @@ impl DeleteGatewayRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1469,19 +1414,15 @@ pub enum DeleteMeshErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1541,8 +1482,6 @@ impl DeleteMeshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1630,19 +1569,15 @@ pub enum DeleteRouteErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1702,8 +1637,6 @@ impl DeleteRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1794,19 +1727,15 @@ pub enum DeleteVirtualGatewayErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1866,8 +1795,6 @@ impl DeleteVirtualGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1970,19 +1897,15 @@ pub enum DeleteVirtualNodeErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2042,8 +1965,6 @@ impl DeleteVirtualNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2143,19 +2064,15 @@ pub enum DeleteVirtualRouterErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2215,8 +2132,6 @@ impl DeleteVirtualRouterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2319,19 +2234,15 @@ pub enum DeleteVirtualServiceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2391,8 +2302,6 @@ impl DeleteVirtualServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2495,16 +2404,13 @@ pub enum DescribeGatewayRouteErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2563,8 +2469,6 @@ impl DescribeGatewayRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2659,16 +2563,13 @@ pub enum DescribeMeshErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2727,8 +2628,6 @@ impl DescribeMeshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2814,16 +2713,13 @@ pub enum DescribeRouteErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2882,8 +2778,6 @@ impl DescribeRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2969,16 +2863,13 @@ pub enum DescribeVirtualGatewayErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3037,8 +2928,6 @@ impl DescribeVirtualGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3133,16 +3022,13 @@ pub enum DescribeVirtualNodeErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3201,8 +3087,6 @@ impl DescribeVirtualNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3297,16 +3181,13 @@ pub enum DescribeVirtualRouterErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3365,8 +3246,6 @@ impl DescribeVirtualRouterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3461,16 +3340,13 @@ pub enum DescribeVirtualServiceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3529,8 +3405,6 @@ impl DescribeVirtualServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3625,16 +3499,13 @@ pub enum ListGatewayRoutesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3693,8 +3564,6 @@ impl ListGatewayRoutesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3786,16 +3655,13 @@ pub enum ListMeshesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3854,8 +3720,6 @@ impl ListMeshesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3938,16 +3802,13 @@ pub enum ListRoutesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4006,8 +3867,6 @@ impl ListRoutesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4090,16 +3949,13 @@ pub enum ListTagsForResourceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4158,8 +4014,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4254,16 +4108,13 @@ pub enum ListVirtualGatewaysErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4322,8 +4173,6 @@ impl ListVirtualGatewaysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4418,16 +4267,13 @@ pub enum ListVirtualNodesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4486,8 +4332,6 @@ impl ListVirtualNodesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4576,16 +4420,13 @@ pub enum ListVirtualRoutersErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4644,8 +4485,6 @@ impl ListVirtualRoutersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4740,16 +4579,13 @@ pub enum ListVirtualServicesErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4808,8 +4644,6 @@ impl ListVirtualServicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4904,20 +4738,15 @@ pub enum TagResourceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current
-    /// limit is 50 user tags per resource. You must reduce the number of tags in the request. None
-    /// of the tags in this request were applied.</p>
+    /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4977,8 +4806,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5069,16 +4896,13 @@ pub enum UntagResourceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5137,8 +4961,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5222,24 +5044,19 @@ pub struct UpdateGatewayRouteError {
 pub enum UpdateGatewayRouteErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5300,8 +5117,6 @@ impl UpdateGatewayRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5410,21 +5225,17 @@ pub struct UpdateMeshError {
 pub enum UpdateMeshErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5484,8 +5295,6 @@ impl UpdateMeshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5571,24 +5380,19 @@ pub struct UpdateRouteError {
 pub enum UpdateRouteErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5649,8 +5453,6 @@ impl UpdateRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5744,24 +5546,19 @@ pub struct UpdateVirtualGatewayError {
 pub enum UpdateVirtualGatewayErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5822,8 +5619,6 @@ impl UpdateVirtualGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5932,24 +5727,19 @@ pub struct UpdateVirtualNodeError {
 pub enum UpdateVirtualNodeErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6010,8 +5800,6 @@ impl UpdateVirtualNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6114,24 +5902,19 @@ pub struct UpdateVirtualRouterError {
 pub enum UpdateVirtualRouterErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6192,8 +5975,6 @@ impl UpdateVirtualRouterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6302,24 +6083,19 @@ pub struct UpdateVirtualServiceError {
 pub enum UpdateVirtualServiceErrorKind {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6380,8 +6156,6 @@ impl UpdateVirtualServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6475,9 +6249,7 @@ impl std::error::Error for UpdateVirtualServiceError {
     }
 }
 
-/// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-/// account. For best results, use an increasing or variable sleep interval between
-/// requests.</p>
+/// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -6677,8 +6449,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception, or
-/// failure.</p>
+/// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
@@ -6874,8 +6645,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-/// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+/// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -6939,8 +6709,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The request contains a client token that was used for a previous update resource call
-/// with different specifications. Try the request again with a new client token.</p>
+/// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -7004,8 +6773,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You can't delete the specified resource because it's in use or required by another
-/// resource.</p>
+/// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -7069,9 +6837,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current
-/// limit is 50 user tags per resource. You must reduce the number of tags in the request. None
-/// of the tags in this request were applied.</p>
+/// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {

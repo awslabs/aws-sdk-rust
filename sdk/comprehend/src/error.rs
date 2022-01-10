@@ -12,8 +12,7 @@ pub struct BatchDetectDominantLanguageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectDominantLanguageErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -69,8 +68,6 @@ impl BatchDetectDominantLanguageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -149,8 +146,7 @@ pub struct BatchDetectEntitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectEntitiesErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -158,9 +154,7 @@ pub enum BatchDetectEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -207,8 +201,6 @@ impl BatchDetectEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -291,8 +283,7 @@ pub struct BatchDetectKeyPhrasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectKeyPhrasesErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -300,9 +291,7 @@ pub enum BatchDetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -351,8 +340,6 @@ impl BatchDetectKeyPhrasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -435,8 +422,7 @@ pub struct BatchDetectSentimentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectSentimentErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -444,9 +430,7 @@ pub enum BatchDetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -493,8 +477,6 @@ impl BatchDetectSentimentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -577,8 +559,7 @@ pub struct BatchDetectSyntaxError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectSyntaxErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -586,9 +567,7 @@ pub enum BatchDetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -635,8 +614,6 @@ impl BatchDetectSyntaxError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -723,8 +700,7 @@ pub enum ClassifyDocumentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
@@ -772,8 +748,6 @@ impl ClassifyDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -854,9 +828,7 @@ pub enum ContainsPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -902,8 +874,6 @@ impl ContainsPiiEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -982,24 +952,17 @@ pub enum CreateDocumentClassifierErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1053,8 +1016,6 @@ impl CreateDocumentClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1167,22 +1128,17 @@ pub enum CreateEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1232,8 +1188,6 @@ impl CreateEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1341,24 +1295,17 @@ pub enum CreateEntityRecognizerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1410,8 +1357,6 @@ impl CreateEntityRecognizerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1522,13 +1467,11 @@ pub enum DeleteDocumentClassifierErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1580,8 +1523,6 @@ impl DeleteDocumentClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1676,8 +1617,7 @@ pub enum DeleteEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1728,8 +1668,6 @@ impl DeleteEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1816,13 +1754,11 @@ pub enum DeleteEntityRecognizerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1872,8 +1808,6 @@ impl DeleteEntityRecognizerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2027,8 +1961,6 @@ impl DescribeDocumentClassificationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2163,8 +2095,6 @@ impl DescribeDocumentClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2302,8 +2232,6 @@ impl DescribeDominantLanguageDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2440,8 +2368,6 @@ impl DescribeEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2570,8 +2496,6 @@ impl DescribeEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2698,8 +2622,6 @@ impl DescribeEntityRecognizerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2826,8 +2748,6 @@ impl DescribeEventsDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2963,8 +2883,6 @@ impl DescribeKeyPhrasesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3106,8 +3024,6 @@ impl DescribePiiEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3249,8 +3165,6 @@ impl DescribeSentimentDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3379,8 +3293,6 @@ impl DescribeTopicsDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3506,8 +3418,6 @@ impl DetectDominantLanguageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3578,14 +3488,11 @@ pub enum DetectEntitiesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3632,8 +3539,6 @@ impl DetectEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3722,9 +3627,7 @@ pub enum DetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3770,8 +3673,6 @@ impl DetectKeyPhrasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3852,9 +3753,7 @@ pub enum DetectPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3900,8 +3799,6 @@ impl DetectPiiEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3982,9 +3879,7 @@ pub enum DetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4030,8 +3925,6 @@ impl DetectSentimentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4112,9 +4005,7 @@ pub enum DetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4160,8 +4051,6 @@ impl DetectSyntaxError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4238,8 +4127,7 @@ pub struct ListDocumentClassificationJobsError {
 pub enum ListDocumentClassificationJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4300,8 +4188,6 @@ impl ListDocumentClassificationJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4384,8 +4270,7 @@ pub struct ListDocumentClassifiersError {
 pub enum ListDocumentClassifiersErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4435,8 +4320,6 @@ impl ListDocumentClassifiersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4569,8 +4452,6 @@ impl ListDocumentClassifierSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4645,8 +4526,7 @@ pub struct ListDominantLanguageDetectionJobsError {
 pub enum ListDominantLanguageDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4707,8 +4587,6 @@ impl ListDominantLanguageDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4840,8 +4718,6 @@ impl ListEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4910,8 +4786,7 @@ pub struct ListEntitiesDetectionJobsError {
 pub enum ListEntitiesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4961,8 +4836,6 @@ impl ListEntitiesDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5039,8 +4912,7 @@ pub struct ListEntityRecognizersError {
 pub enum ListEntityRecognizersErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5090,8 +4962,6 @@ impl ListEntityRecognizersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5224,8 +5094,6 @@ impl ListEntityRecognizerSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5296,8 +5164,7 @@ pub struct ListEventsDetectionJobsError {
 pub enum ListEventsDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5347,8 +5214,6 @@ impl ListEventsDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5425,8 +5290,7 @@ pub struct ListKeyPhrasesDetectionJobsError {
 pub enum ListKeyPhrasesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5476,8 +5340,6 @@ impl ListKeyPhrasesDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5554,8 +5416,7 @@ pub struct ListPiiEntitiesDetectionJobsError {
 pub enum ListPiiEntitiesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5607,8 +5468,6 @@ impl ListPiiEntitiesDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5685,8 +5544,7 @@ pub struct ListSentimentDetectionJobsError {
 pub enum ListSentimentDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5736,8 +5594,6 @@ impl ListSentimentDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5861,8 +5717,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5931,8 +5785,7 @@ pub struct ListTopicsDetectionJobsError {
 pub enum ListTopicsDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5982,8 +5835,6 @@ impl ListTopicsDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6062,19 +5913,15 @@ pub enum StartDocumentClassificationJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6138,8 +5985,6 @@ impl StartDocumentClassificationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6254,14 +6099,11 @@ pub enum StartDominantLanguageDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6321,8 +6163,6 @@ impl StartDominantLanguageDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6419,19 +6259,15 @@ pub enum StartEntitiesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6482,8 +6318,6 @@ impl StartEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6588,14 +6422,11 @@ pub enum StartEventsDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6642,8 +6473,6 @@ impl StartEventsDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6730,14 +6559,11 @@ pub enum StartKeyPhrasesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6786,8 +6612,6 @@ impl StartKeyPhrasesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6874,14 +6698,11 @@ pub enum StartPiiEntitiesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6932,8 +6753,6 @@ impl StartPiiEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7022,14 +6841,11 @@ pub enum StartSentimentDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7076,8 +6892,6 @@ impl StartSentimentDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7164,14 +6978,11 @@ pub enum StartTopicsDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7218,8 +7029,6 @@ impl StartTopicsDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7360,8 +7169,6 @@ impl StopDominantLanguageDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7481,8 +7288,6 @@ impl StopEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7598,8 +7403,6 @@ impl StopEventsDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7715,8 +7518,6 @@ impl StopKeyPhrasesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7832,8 +7633,6 @@ impl StopPiiEntitiesDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7949,8 +7748,6 @@ impl StopSentimentDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8080,8 +7877,6 @@ impl StopTrainingDocumentClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8220,8 +8015,6 @@ impl StopTrainingEntityRecognizerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8298,8 +8091,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-    /// supported. </p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -8307,9 +8099,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8356,8 +8146,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8431,8 +8219,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-    /// supported. </p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -8440,8 +8227,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per
-    /// resource).</p>
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
     TooManyTagKeysException(crate::error::TooManyTagKeysException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8488,8 +8274,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8576,16 +8360,13 @@ pub enum UpdateEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8636,8 +8417,6 @@ impl UpdateEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8787,8 +8566,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The specified resource is not available. Check the resource and try your request
-/// again.</p>
+/// <p>The specified resource is not available. Check the resource and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
@@ -8916,8 +8694,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-/// then try your request again.</p>
+/// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
@@ -8981,8 +8758,7 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>The specified resource name is already in use. Use a different name and try your request
-/// again.</p>
+/// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -9174,8 +8950,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per
-/// resource).</p>
+/// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagKeysException {
@@ -9239,8 +9014,7 @@ impl TooManyTagKeysException {
     }
 }
 
-/// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-/// supported. </p>
+/// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -9304,9 +9078,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The request contains more tags than can be associated with a resource (50 tags per
-/// resource). The maximum number of tags includes both existing tags and those included in your
-/// current request. </p>
+/// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -9434,8 +9206,7 @@ impl JobNotFoundException {
     }
 }
 
-/// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-/// re-enter it.</p>
+/// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyValidationException {
@@ -9499,8 +9270,7 @@ impl KmsKeyValidationException {
     }
 }
 
-/// <p>The filter specified for the operation is invalid. Specify a different
-/// filter.</p>
+/// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterException {
@@ -9564,9 +9334,7 @@ impl InvalidFilterException {
     }
 }
 
-/// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-/// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-/// For a list of supported languages, see <a>supported-languages</a>. </p>
+/// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedLanguageException {
@@ -9694,8 +9462,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-/// with fewer documents.</p>
+/// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSizeLimitExceededException {

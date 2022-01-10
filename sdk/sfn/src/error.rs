@@ -12,13 +12,11 @@ pub struct CreateActivityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateActivityErrorKind {
-    /// <p>The maximum number of activities has been reached. Existing activities must be deleted
-    /// before a new activity can be created.</p>
+    /// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
     ActivityLimitExceeded(crate::error::ActivityLimitExceeded),
     /// <p>The provided name is invalid.</p>
     InvalidName(crate::error::InvalidName),
-    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
-    /// AWS Step Functions Developer Guide.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -63,8 +61,6 @@ impl CreateActivityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -135,18 +131,15 @@ pub enum CreateStateMachineErrorKind {
     InvalidName(crate::error::InvalidName),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::error::InvalidTracingConfiguration),
-    /// <p>A state machine with the same name but a different definition or role ARN already
-    /// exists.</p>
+    /// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
     StateMachineAlreadyExists(crate::error::StateMachineAlreadyExists),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::error::StateMachineDeleting),
-    /// <p>The maximum number of state machines has been reached. Existing state machines must be
-    /// deleted before a new state machine can be created.</p>
+    /// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
     StateMachineLimitExceeded(crate::error::StateMachineLimitExceeded),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
-    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
-    /// AWS Step Functions Developer Guide.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -198,8 +191,6 @@ impl CreateStateMachineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -356,8 +347,6 @@ impl DeleteActivityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -448,8 +437,6 @@ impl DeleteStateMachineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -543,8 +530,6 @@ impl DescribeActivityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -646,8 +631,6 @@ impl DescribeExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -749,8 +732,6 @@ impl DescribeStateMachineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -857,8 +838,6 @@ impl DescribeStateMachineForExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -921,8 +900,7 @@ pub struct GetActivityTaskError {
 pub enum GetActivityTaskErrorKind {
     /// <p>The specified activity does not exist.</p>
     ActivityDoesNotExist(crate::error::ActivityDoesNotExist),
-    /// <p>The maximum number of workers concurrently polling for activity tasks has been
-    /// reached.</p>
+    /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
     ActivityWorkerLimitExceeded(crate::error::ActivityWorkerLimitExceeded),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
@@ -969,8 +947,6 @@ impl GetActivityTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1083,8 +1059,6 @@ impl GetExecutionHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1188,8 +1162,6 @@ impl ListActivitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1289,8 +1261,6 @@ impl ListExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1402,8 +1372,6 @@ impl ListStateMachinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1453,8 +1421,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
-    /// supported.</p>
+    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1498,8 +1465,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1604,8 +1569,6 @@ impl SendTaskFailureError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1712,8 +1675,6 @@ impl SendTaskHeartbeatError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1823,8 +1784,6 @@ impl SendTaskSuccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1887,15 +1846,11 @@ pub struct StartExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExecutionErrorKind {
-    /// <p>The execution has the same <code>name</code> as another execution (but a different
-    /// <code>input</code>).</p>
-    /// <note>
-    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered
-    /// idempotent.</p>
+    /// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
+    /// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
     /// </note>
     ExecutionAlreadyExists(crate::error::ExecutionAlreadyExists),
-    /// <p>The maximum number of running executions has been reached. Running executions must end or
-    /// be stopped before a new execution can be started.</p>
+    /// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
     ExecutionLimitExceeded(crate::error::ExecutionLimitExceeded),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
@@ -1954,8 +1909,6 @@ impl StartExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2103,8 +2056,6 @@ impl StartSyncExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2235,8 +2186,6 @@ impl StopExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2291,11 +2240,9 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
-    /// supported.</p>
+    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
-    /// AWS Step Functions Developer Guide.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2340,8 +2287,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2401,8 +2346,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are
-    /// supported.</p>
+    /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2446,8 +2390,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2508,8 +2450,7 @@ pub enum UpdateStateMachineErrorKind {
     InvalidLoggingConfiguration(crate::error::InvalidLoggingConfiguration),
     /// <p>Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to <code>true</code> or <code>false</code>.</p>
     InvalidTracingConfiguration(crate::error::InvalidTracingConfiguration),
-    /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code>
-    /// and <code>roleArn</code> are not specified.</p>
+    /// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
     MissingRequiredParameter(crate::error::MissingRequiredParameter),
     /// <p>The specified state machine is being deleted.</p>
     StateMachineDeleting(crate::error::StateMachineDeleting),
@@ -2562,8 +2503,6 @@ impl UpdateStateMachineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2774,8 +2713,7 @@ impl StateMachineDeleting {
     }
 }
 
-/// <p>Request is missing a required parameter. This error occurs if both <code>definition</code>
-/// and <code>roleArn</code> are not specified.</p>
+/// <p>Request is missing a required parameter. This error occurs if both <code>definition</code> and <code>roleArn</code> are not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingRequiredParameter {
@@ -3095,8 +3033,7 @@ impl InvalidArn {
     }
 }
 
-/// <p>Could not find the referenced resource. Only state machine and activity ARNs are
-/// supported.</p>
+/// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
@@ -3184,8 +3121,7 @@ impl ResourceNotFound {
     }
 }
 
-/// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the
-/// AWS Step Functions Developer Guide.</p>
+/// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTags {
@@ -3529,8 +3465,7 @@ impl InvalidExecutionInput {
     }
 }
 
-/// <p>The maximum number of running executions has been reached. Running executions must end or
-/// be stopped before a new execution can be started.</p>
+/// <p>The maximum number of running executions has been reached. Running executions must end or be stopped before a new execution can be started.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionLimitExceeded {
@@ -3594,11 +3529,8 @@ impl ExecutionLimitExceeded {
     }
 }
 
-/// <p>The execution has the same <code>name</code> as another execution (but a different
-/// <code>input</code>).</p>
-/// <note>
-/// <p>Executions with the same <code>name</code> and <code>input</code> are considered
-/// idempotent.</p>
+/// <p>The execution has the same <code>name</code> as another execution (but a different <code>input</code>).</p> <note>
+/// <p>Executions with the same <code>name</code> and <code>input</code> are considered idempotent.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3919,8 +3851,7 @@ impl InvalidOutput {
     }
 }
 
-/// <p>The maximum number of workers concurrently polling for activity tasks has been
-/// reached.</p>
+/// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityWorkerLimitExceeded {
@@ -4048,8 +3979,7 @@ impl ActivityDoesNotExist {
     }
 }
 
-/// <p>The maximum number of state machines has been reached. Existing state machines must be
-/// deleted before a new state machine can be created.</p>
+/// <p>The maximum number of state machines has been reached. Existing state machines must be deleted before a new state machine can be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineLimitExceeded {
@@ -4113,8 +4043,7 @@ impl StateMachineLimitExceeded {
     }
 }
 
-/// <p>A state machine with the same name but a different definition or role ARN already
-/// exists.</p>
+/// <p>A state machine with the same name but a different definition or role ARN already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateMachineAlreadyExists {
@@ -4178,8 +4107,7 @@ impl StateMachineAlreadyExists {
     }
 }
 
-/// <p>The maximum number of activities has been reached. Existing activities must be deleted
-/// before a new activity can be created.</p>
+/// <p>The maximum number of activities has been reached. Existing activities must be deleted before a new activity can be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivityLimitExceeded {

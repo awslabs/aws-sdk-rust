@@ -12,17 +12,11 @@ pub struct AddDraftAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddDraftAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -89,8 +83,6 @@ impl AddDraftAppVersionResourceMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -191,22 +183,15 @@ pub struct CreateAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -259,8 +244,6 @@ impl CreateAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -341,17 +324,11 @@ pub struct CreateRecommendationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRecommendationTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -407,8 +384,6 @@ impl CreateRecommendationTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -501,20 +476,13 @@ pub struct CreateResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -566,8 +534,6 @@ impl CreateResiliencyPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -658,13 +624,9 @@ pub struct DeleteAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppErrorKind {
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -717,8 +679,6 @@ impl DeleteAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -786,17 +746,11 @@ pub struct DeleteAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -850,8 +804,6 @@ impl DeleteAppAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -942,12 +894,9 @@ pub struct DeleteRecommendationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRecommendationTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1002,8 +951,6 @@ impl DeleteRecommendationTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1088,17 +1035,11 @@ pub struct DeleteResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1152,8 +1093,6 @@ impl DeleteResiliencyPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1244,12 +1183,9 @@ pub struct DescribeAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1302,8 +1238,6 @@ impl DescribeAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1374,12 +1308,9 @@ pub struct DescribeAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1432,8 +1363,6 @@ impl DescribeAppAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1516,12 +1445,9 @@ pub struct DescribeAppVersionResourcesResolutionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppVersionResourcesResolutionStatusErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1591,8 +1517,6 @@ impl DescribeAppVersionResourcesResolutionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1687,12 +1611,9 @@ pub struct DescribeAppVersionTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppVersionTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1745,8 +1666,6 @@ impl DescribeAppVersionTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1829,12 +1748,9 @@ pub struct DescribeDraftAppVersionResourcesImportStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDraftAppVersionResourcesImportStatusErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1904,8 +1820,6 @@ impl DescribeDraftAppVersionResourcesImportStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2000,12 +1914,9 @@ pub struct DescribeResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2058,8 +1969,6 @@ impl DescribeResiliencyPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2142,17 +2051,11 @@ pub struct ImportResourcesToDraftAppVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportResourcesToDraftAppVersionErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2215,8 +2118,6 @@ impl ImportResourcesToDraftAppVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2313,12 +2214,9 @@ pub struct ListAlarmRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAlarmRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2371,8 +2269,6 @@ impl ListAlarmRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2455,12 +2351,9 @@ pub struct ListAppAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppAssessmentsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2513,8 +2406,6 @@ impl ListAppAssessmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2597,12 +2488,9 @@ pub struct ListAppComponentCompliancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppComponentCompliancesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2657,8 +2545,6 @@ impl ListAppComponentCompliancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2741,12 +2627,9 @@ pub struct ListAppComponentRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppComponentRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2808,8 +2691,6 @@ impl ListAppComponentRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2896,12 +2777,9 @@ pub struct ListAppsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2951,8 +2829,6 @@ impl ListAppsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3015,12 +2891,9 @@ pub struct ListAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3080,8 +2953,6 @@ impl ListAppVersionResourceMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3168,17 +3039,11 @@ pub struct ListAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3232,8 +3097,6 @@ impl ListAppVersionResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3324,12 +3187,9 @@ pub struct ListAppVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3379,8 +3239,6 @@ impl ListAppVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3452,12 +3310,9 @@ pub struct ListRecommendationTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendationTemplatesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3507,8 +3362,6 @@ impl ListRecommendationTemplatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3583,12 +3436,9 @@ pub struct ListResiliencyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResiliencyPoliciesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3641,8 +3491,6 @@ impl ListResiliencyPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3725,17 +3573,11 @@ pub struct ListSopRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSopRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3789,8 +3631,6 @@ impl ListSopRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3881,12 +3721,9 @@ pub struct ListSuggestedResiliencyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSuggestedResiliencyPoliciesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3948,8 +3785,6 @@ impl ListSuggestedResiliencyPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4036,12 +3871,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4094,8 +3926,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4178,17 +4008,11 @@ pub struct ListTestRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTestRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4242,8 +4066,6 @@ impl ListTestRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4334,17 +4156,11 @@ pub struct ListUnsupportedAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUnsupportedAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4411,8 +4227,6 @@ impl ListUnsupportedAppVersionResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4513,17 +4327,11 @@ pub struct PublishAppVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishAppVersionErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4577,8 +4385,6 @@ impl PublishAppVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4666,17 +4472,11 @@ pub struct PutDraftAppVersionTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDraftAppVersionTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4730,8 +4530,6 @@ impl PutDraftAppVersionTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4822,17 +4620,11 @@ pub struct RemoveDraftAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveDraftAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4901,8 +4693,6 @@ impl RemoveDraftAppVersionResourceMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5007,17 +4797,11 @@ pub struct ResolveAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResolveAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5071,8 +4855,6 @@ impl ResolveAppVersionResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5163,22 +4945,15 @@ pub struct StartAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5231,8 +5006,6 @@ impl StartAppAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5331,12 +5104,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5389,8 +5159,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5461,12 +5229,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5519,8 +5284,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5594,17 +5357,11 @@ pub struct UpdateAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5658,8 +5415,6 @@ impl UpdateAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5732,17 +5487,11 @@ pub struct UpdateResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5796,8 +5545,6 @@ impl UpdateResiliencyPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6131,8 +5878,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-/// service.</p>
+/// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -6196,10 +5942,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-/// when the previous write did not have time to propagate to the host serving the current
-/// request. A retry (with appropriate backoff logic) is the recommended response to this
-/// exception.</p>
+/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -6306,9 +6049,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You don't have permissions to perform the requested operation. The user or role that is
-/// making the request must have at least one IAM permissions policy attached that grants the
-/// required permissions.</p>
+/// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -6372,8 +6113,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-/// relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
